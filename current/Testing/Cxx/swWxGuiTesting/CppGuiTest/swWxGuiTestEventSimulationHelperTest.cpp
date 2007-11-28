@@ -43,11 +43,11 @@ WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
     sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
 
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load ("../../../Cxx/swWxGuiTesting/CppGuiTest/EvtSimHlpTest_wdr.xrc");
+    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
 
     m_miniFrame = NULL;
 
-    //wxLog::AddTraceMask ("wxGuiTestIdle");
+    //wxLog::AddTraceMask (_T("wxGuiTestIdle"));
 }
 
 
@@ -60,7 +60,7 @@ WxGuiTestEventSimulationHelperTest::~WxGuiTestEventSimulationHelperTest ()
 void WxGuiTestEventSimulationHelperTest::setUp ()
 {
     sw::MainFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ();
-    mainFrame->SetTitle ("EvtSimHlpFrame");    
+    mainFrame->SetTitle (_T("EvtSimHlpFrame"));    
     m_testFrame = mainFrame->GetFrame ();
     m_testFrame->SetSize (250, 700);
 
@@ -74,24 +74,24 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
     // Because generic toolbars are only creatable by the frame factory for
     // registration only abuse symbolic IDs from XRC test file:
     sw::ToolBar *toolBar = sw::FrameFactory::GetInstance ()->CreateNamedToolBar (
-            "ToolBar", wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL);
+            _T("ToolBar"), wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL);
     const unsigned int NMB_TOOLS = 2;
-    wxBitmap *icon1 = new wxBitmap (wxImage ("../../../Cxx/swWxGuiTesting/CppGuiTest/icon1.bmp"));
-    wxBitmap *icon2 = new wxBitmap (wxImage ("../../../Cxx/swWxGuiTesting/CppGuiTest/icon2.bmp"));
-    toolBar->AddTool (XRCID ("Tool"), "", *icon1, "Tool");
-    toolBar->AddTool (XRCID ("ToggleTool"), "", *icon2, "ToggleTool", true);
+    wxBitmap *icon1 = new wxBitmap (wxImage (_T("../../../Cxx/swWxGuiTesting/CppGuiTest/icon1.bmp")));
+    wxBitmap *icon2 = new wxBitmap (wxImage (_T("../../../Cxx/swWxGuiTesting/CppGuiTest/icon2.bmp")));
+    toolBar->AddTool (XRCID ("Tool"), _T(""), *icon1, _T("Tool"));
+    toolBar->AddTool (XRCID ("ToggleTool"), _T(""), *icon2, _T("ToggleTool"), true);
     delete icon1;
     delete icon2;
     toolBar->Realize ();
 
-    m_miniFrame = new wxMiniFrame (m_testFrame, -1, "EvtSimHlpMiniFrame");
+    m_miniFrame = new wxMiniFrame (m_testFrame, -1, _T("EvtSimHlpMiniFrame"));
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (m_miniFrame, "EvtSimHlpTestPanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (m_miniFrame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
     // Include the unknown double spin control:
     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (m_testFrame, 
             -1,
-            "",
+            _T(""),
             wxDefaultPosition,
             wxSize (80, 21),
             wxNO_BORDER,
@@ -100,7 +100,7 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
             0.5,
             0.1);
     spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl ("SpinCtrlDbl", spinCtrl, m_testFrame);
+    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, m_testFrame);
 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (m_miniFrame);
@@ -127,7 +127,7 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
 void WxGuiTestEventSimulationHelperTest::tearDown ()
 {
     m_miniFrame->Close ();
-    sw::ToolBarRegistry::GetInstance ()->Unregister ("ToolBar");
+    sw::ToolBarRegistry::GetInstance ()->Unregister (_T("ToolBar"));
     m_testFrame->SetMenuBar (NULL);
     m_testFrame->SetToolBar (NULL);
     m_testFrame->SetSizer (NULL);
@@ -197,7 +197,7 @@ void WxGuiTestEventSimulationHelperTest::testClickButton ()
 
 void WxGuiTestEventSimulationHelperTest::testSetTextCtrlValue ()
 {
-    const wxString value = "VaLuE";
+    const wxString value = _T("VaLuE");
 
     wxTextCtrl *textCtrl = XRCCTRL (*m_testFrame, "TextCtrl", wxTextCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Text control not found", textCtrl != NULL);
@@ -265,8 +265,8 @@ void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlDblValueWithoutEvent ()
 void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
 {
     wxTreeCtrl *treeCtrl = XRCCTRL (*m_testFrame, "TreeCtrl", wxTreeCtrl);
-    wxTreeItemId root = treeCtrl->AddRoot ("Root");
-    wxTreeItemId item = treeCtrl->AppendItem (root, "item");
+    wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
+    wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
 
     CPPUNIT_ASSERT_MESSAGE ("Tree item already selected",
         treeCtrl->GetSelection () != item);
@@ -284,8 +284,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
 void WxGuiTestEventSimulationHelperTest::testRightClickTreeItem ()
 {
     wxTreeCtrl *treeCtrl = XRCCTRL (*m_testFrame, "TreeCtrl", wxTreeCtrl);
-    wxTreeItemId root = treeCtrl->AddRoot ("Root");
-    wxTreeItemId item = treeCtrl->AppendItem (root, "item");
+    wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
+    wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
     // Expand tree to show item required for bounding box calculation in right
     // click event simulation:
     treeCtrl->Expand (root);
@@ -487,12 +487,12 @@ void WxGuiTestEventSimulationHelperTest::testToggleCheckableTool ()
 {
 /*  int id = XRCID ("ToggleTool"); // WORKS
     wxWindow *wdw = wxWindow::FindWindowById (id); // FAILS
-    wxWindow *wdw = wxWindow::FindWindowByName ("ToggleTool"); // FAILS
+    wxWindow *wdw = wxWindow::FindWindowByName (_T("ToggleTool")); // FAILS
     CPPUNIT_ASSERT_MESSAGE ("Tool window not found", wdw != NULL); // FAILS
     wxToolBarToolBase *toggleTool = dynamic_cast< wxToolBarToolBase * >(wdw);
     CPPUNIT_ASSERT_MESSAGE ("No checkable toggle tool to test!", toggleTool != NULL);
 */
-    sw::ToolBar *toolbar = sw::ToolBarRegistry::GetInstance ()->FindToolBarByName ("ToolBar");
+    sw::ToolBar *toolbar = sw::ToolBarRegistry::GetInstance ()->FindToolBarByName (_T("ToolBar"));
     CPPUNIT_ASSERT_MESSAGE ("Toolbar not found", toolbar != NULL);
     WxGuiTestEventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), true, toolbar, m_testFrame);
     WxGuiTestHelper::FlushEventQueue ();

@@ -54,13 +54,14 @@ void writeTree (Tst::CRXRCNode *node, const char *indent)
 
 void CRXRCReaderTest::testReadingXRC ()
 {
-    wxString xrcFilename = "../../../TestData/xrc/CapturePanel_wdr.xrc";
+    wxString xrcFilename = _T("../../../TestData/xrc/CapturePanel_wdr.xrc");
     swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcFilename);
 
     swTst::CRXRCResource *xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
-    CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", "resource" == resName);
+    CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
+			    resName == _T("resource"));
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have one child", 1 == xrcResource->GetNmbChildren ());
     // wxPanel
@@ -86,13 +87,14 @@ void CRXRCReaderTest::testReadingXRC ()
 
 void CRXRCReaderTest::testResPathReadingXRC ()
 {
-    wxString xrcPath = "../../../TestData/xrc";
+    wxString xrcPath = _T("../../../TestData/xrc");
     swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcPath);
 
     swTst::CRXRCResource *xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
-    CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", "resource" == resName);
+    CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
+			    resName == _T("resource"));
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have three children", 3 == xrcResource->GetNmbChildren ());
 }

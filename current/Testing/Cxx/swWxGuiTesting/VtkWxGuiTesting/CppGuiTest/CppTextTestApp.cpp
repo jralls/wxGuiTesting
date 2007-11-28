@@ -21,7 +21,7 @@
 
 int main (int argc, char* argv[])
 {
-    //wxLog::AddTraceMask ("wxGuiTestCallTrace");
+    //wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 
     // Configure unit testing:
     swTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);

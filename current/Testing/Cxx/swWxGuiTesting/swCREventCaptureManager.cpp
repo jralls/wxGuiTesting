@@ -178,17 +178,17 @@ if (!m_eventList.empty ())
             if (!evtDesc.IsEmpty ()) {
 
                 CRCppEmitter::GetInstance ()->AddComment (
-                        wxString::Format ("Unsupported event %s %s\n",
+                        wxString::Format (_T("Unsupported event %s %s\n"),
                         evtDesc.c_str (), this->GetEventDetails (event).c_str ()));
                 this->LogEventDetails (event, wxString::Format (
-                        "Unsupported event %s", evtDesc.c_str ()));
+                        _T("Unsupported event %s"), evtDesc.c_str ()));
             }
         }
         // Log all events to file:
         wxString evtDesc = this->GetEventDesc (event);
         if (!evtDesc.IsEmpty ()) {
 
-            (*m_logStream) << evtDesc.c_str () << ": " <<
+            (*m_logStream) << evtDesc.c_str () << _T(": ") <<
                     this->GetEventDetails (event).c_str () << std::endl;
         }
     }
@@ -205,7 +205,7 @@ bool CREventCaptureManager::CanIgnore (wxEvent &event)
     wxWindow *child = wxWindow::FindWindowById (event.GetId (), m_ignoreWdw);
     if (child) {
 
-        //std::cout << "child:" << child << " - ";
+        //std::cout << _T("child:") << child << _T(" - ");
         return true;
     }
     */
@@ -214,7 +214,7 @@ bool CREventCaptureManager::CanIgnore (wxEvent &event)
 
         if (wdw == m_ignoreWdw) {
 
-            //std::cout << "wdw: " << wdw << std::endl;
+            //std::cout << _T("wdw: ") << wdw << std::endl;
             return true;
         }
         wxWindow *parent = wdw->GetParent ();
@@ -222,14 +222,14 @@ bool CREventCaptureManager::CanIgnore (wxEvent &event)
 
             if (parent == m_ignoreWdw) {
 
-                //std::cout << "parent:" << parent << std::endl;
+                //std::cout << _T("parent:") << parent << std::endl;
                 return true;
             }
 
             wxWindow *grandParent = wdw->GetGrandParent ();
             if (grandParent && grandParent == m_ignoreWdw) {
 
-                //std::cout << "grandParent:" << grandParent << std::endl;
+                //std::cout << _T("grandParent:") << grandParent << std::endl;
                 return true;
             }
         }
@@ -255,7 +255,7 @@ wxString CREventCaptureManager::GetDescForUnsupportedEvent (
 {
 #define UNSUPPORTED_EVENT_DESC(eventtype) \
     if (et == eventtype) \
-        return #eventtype;
+        return _T(#eventtype);
 
     int et = event.GetEventType ();
 
@@ -383,7 +383,7 @@ wxString CREventCaptureManager::GetDescForUnsupportedEvent (
     else UNSUPPORTED_EVENT_DESC(wxEVT_COMMAND_TEXT_URL)
     else UNSUPPORTED_EVENT_DESC(wxEVT_COMMAND_TEXT_MAXLEN)       
     else
-        return "";
+        return _T("");
 }
 
 
@@ -391,7 +391,7 @@ wxString CREventCaptureManager::GetEventDesc (wxEvent &event) const
 {
 #define EVENT_DESC(eventtype) \
     if (et == eventtype) \
-        desc = #eventtype;
+        desc = _T(#eventtype);
 
     int et = event.GetEventType ();
     wxString desc;
@@ -555,12 +555,12 @@ wxString CREventCaptureManager::GetEventDetails (wxEvent& event) const
             wxWindow *parent = wdw->GetParent ();
             if (parent) {
 
-                evtObjHierarchy += "-> " + parent->GetName ();
+                evtObjHierarchy += _T("-> ") + parent->GetName ();
             }
             parent = wdw->GetGrandParent ();
             if (parent) {
 
-                evtObjHierarchy += " -> " + parent->GetName ();
+                evtObjHierarchy += _T(" -> ") + parent->GetName ();
             }
 
         } else {
@@ -587,23 +587,24 @@ wxString CREventCaptureManager::GetEventDetails (wxEvent& event) const
 
                 //wxWindow *child = wxWindow::FindWindowById (event.GetId (), wdw);
                 wxWindow *child = wxWindow::FindWindowById (event.GetId ());
-                wxASSERT ((event.GetId () == XRCID (evtObjName)) ||
+                wxASSERT ((event.GetId () == 
+			   wxXmlResource::GetXRCID (evtObjName)) ||
                         (child != NULL));
 
             } else {
 
-                wxASSERT (event.GetId () == XRCID (evtObjName));
+                wxASSERT (event.GetId () == wxXmlResource::GetXRCID (evtObjName));
             }
 
             wxWindow *parent = wdw->GetParent ();
             if (parent) {
 
-                evtObjHierarchy += "-> " + parent->GetName ();
+                evtObjHierarchy += _T("-> ") + parent->GetName ();
             }
             parent = wdw->GetGrandParent ();
             if (parent) {
 
-                evtObjHierarchy += " -> " + parent->GetName ();
+                evtObjHierarchy += _T(" -> ") + parent->GetName ();
             }
         } else {
 
@@ -618,8 +619,8 @@ wxString CREventCaptureManager::GetEventDetails (wxEvent& event) const
 
     // Timestamp is mostly 0 and therefore irrelevant; if it is a command event
     // or not is not important:
-    //wxString evtInfo = wxString::Format ("[%d]: id %d cmd %d - EvtObj '%s' %s",
-    wxString evtInfo = wxString::Format ("id %d, EvtObj '%s' %s",
+    //wxString evtInfo = wxString::Format (_T("[%d]: id %d cmd %d - EvtObj '%s' %s"),
+    wxString evtInfo = wxString::Format (_T("id %d, EvtObj '%s' %s"),
             //event.GetTimestamp (),
             event.GetId (),
             //event.IsCommandEvent (),
@@ -637,7 +638,7 @@ void CREventCaptureManager::LogEventDetails (wxEvent& event,
     //wxASSERT (m_log != NULL);
     if (m_log) {
     
-        m_log->Log (prefix + " " + this->GetEventDetails (event) + "\n");
+        m_log->Log (prefix + _T(" ") + this->GetEventDetails (event) + _T("\n"));
     }
 }
 

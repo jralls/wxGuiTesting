@@ -147,28 +147,28 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("spin control '%s'",
+            m_containerName, wxString::Format (_T("spin control '%s'"),
             m_spinCtrlName.c_str ()));
 
-    wxString spinCtrlWdwVarName = emitter->MakeVarName (m_spinCtrlName, "Wdw");
+    wxString spinCtrlWdwVarName = emitter->MakeVarName (m_spinCtrlName, _T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << spinCtrlWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << spinCtrlWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_spinCtrlName << "\"));";
+        str << _T("XRCID(\"") << m_spinCtrlName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_spinCtrlName << "\");";
+        str << _T("\"") << m_spinCtrlName << _T("\");");
     }
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for spin control '" <<
-            m_spinCtrlName << "' not found\", " << spinCtrlWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for spin control '") <<
+	m_spinCtrlName << _T("' not found\", ") << spinCtrlWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString spinCtrlVarName = emitter->MakeVarName (m_spinCtrlName);
@@ -176,40 +176,43 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
     if (m_isDblType) {
 
         str.Clear ();
-        str << "sw::SpinCtrlDouble *" << spinCtrlVarName << " = wxDynamicCast (" <<
-                spinCtrlWdwVarName << ", SpinCtrlDouble);";
+        str << _T("sw::SpinCtrlDouble *") << spinCtrlVarName << 
+	    _T(" = wxDynamicCast (") << spinCtrlWdwVarName << 
+	    _T(", SpinCtrlDouble);");
         emitter->AddCode (str);
 
     } else {
 
         str.Clear ();
-        str << "wxSpinCtrl *" << spinCtrlVarName << " = wxDynamicCast (" <<
-                spinCtrlWdwVarName << ", wxSpinCtrl);";
+        str << _T("wxSpinCtrl *") << spinCtrlVarName << 
+	    _T(" = wxDynamicCast (") << spinCtrlWdwVarName << 
+	    _T(", wxSpinCtrl);");
         emitter->AddCode (str);
     }
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for spin control '" <<
-            m_spinCtrlName << "' failed\", " << spinCtrlVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for spin control '") <<
+	m_spinCtrlName << _T("' failed\", ") << spinCtrlVarName << 
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     if (m_isDblType) {
 
         str.Clear ();
-        str << "swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (" <<
-                spinCtrlVarName << ", " << m_spinCtrlDblValue << ");";
+        str << _T("swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (")
+	    << spinCtrlVarName << _T(", ") << m_spinCtrlDblValue << _T(");");
         emitter->AddCode (str);
 
     } else {
 
         str.Clear ();
-        str << "swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlValue (" <<
-                spinCtrlVarName << ", " << m_spinCtrlValue << ");";
+        str << _T("swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlValue (") <<
+	    spinCtrlVarName << _T(", ") << m_spinCtrlValue << _T(");");
         emitter->AddCode (str);
     }
 
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

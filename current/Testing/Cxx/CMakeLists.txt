@@ -7,6 +7,8 @@
 ###############################################################################
 
 PROJECT (Testing)
-
+if ( APPLE )
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+endif ( APPLE )
 SUBDIRS (swFrameworkDependent)
 SUBDIRS (swWxGuiTesting)

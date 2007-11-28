@@ -142,50 +142,52 @@ void CRTextUpdateEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("text control '%s'",
+            m_containerName, wxString::Format (_T("text control '%s'"),
             m_textCtrlName.c_str ()));
 
-    wxString textCtrlWdwVarName = emitter->MakeVarName (m_textCtrlName, "Wdw");
+    wxString textCtrlWdwVarName = emitter->MakeVarName (m_textCtrlName,
+							_T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << textCtrlWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << textCtrlWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_textCtrlName << "\"));";
+        str << _T("XRCID(\"") << m_textCtrlName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_textCtrlName << "\");";
+        str << _T("\"") << m_textCtrlName << _T("\");");
     }
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for text control '" <<
-            m_textCtrlName << "' not found\", " << textCtrlWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for text control '") <<
+	m_textCtrlName <<  _T("' not found\", ") << textCtrlWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString textCtrlVarName = emitter->MakeVarName (m_textCtrlName);
 
     str.Clear ();
-    str << "wxTextCtrl *" << textCtrlVarName << " = wxDynamicCast (" <<
-            textCtrlWdwVarName << ", wxTextCtrl);";
+    str << _T("wxTextCtrl *") << textCtrlVarName << _T(" = wxDynamicCast (") <<
+            textCtrlWdwVarName << _T(", wxTextCtrl);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for text control '" <<
-            m_textCtrlName << "' failed\", " << textCtrlVarName << " != NULL);";
+    str <<  _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for text control '")
+	<< m_textCtrlName <<  _T("' failed\", ") << textCtrlVarName 
+	<< _T(" != NULL);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (" <<
-            textCtrlVarName << ", \"" << this->GetEscaped (m_textCtrlValue) <<
-            "\");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") <<
+	textCtrlVarName << _T(", \"") << this->GetEscaped (m_textCtrlValue) <<
+	_T("\");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 
@@ -198,7 +200,7 @@ wxString CRTextUpdateEvent::GetEscaped (const wxString &str) const
 
         if (str[i] == 92) { // '\'
 
-            escaped.Append ("\\\\");
+            escaped.Append (_T("\\\\"));
 
         } else {
 

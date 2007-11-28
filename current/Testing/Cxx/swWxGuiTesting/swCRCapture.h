@@ -62,7 +62,7 @@ public:
         wxASSERT (guiTestApp != NULL);                                        \
         guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); \
                                                                               \
-        wxString excMsg;                                                      \
+	std::string excMsg;						\
         swTst::CRCapture *capture = new swTst::CRCapture ();                  \
         try {                                                                 \
             capture->Capture (__FILE__, __LINE__);                            \
@@ -74,7 +74,7 @@ public:
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
         swTst::CRCppEmitter::Destroy ();                                      \
-        if (!excMsg.IsEmpty ()) {                                             \
+        if (!excMsg.empty ()) {                                             \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
     }

@@ -55,7 +55,7 @@ CRXRCResource * CRXRCReader::GetResource ()
     
             if (!doc.Load(m_filename)) {
                 isFailed = true;
-                failMsg = wxString::Format ("%s: %s",
+                failMsg = wxString::Format (_T("%s: %s"),
                         _("Given filename is not a valid xrc file"),
                         m_filename.c_str ());
             } else {
@@ -65,12 +65,12 @@ CRXRCResource * CRXRCReader::GetResource ()
         } else if (::wxDirExists (m_filename)) {
     
             // Should we restrict looking in sub directories?
-            wxString file = ::wxFindFirstFile (m_filename + "/*.xrc" /*, wxFILE*/);
+            wxString file = ::wxFindFirstFile (m_filename + _T("/*.xrc") /*, wxFILE*/);
             while (!file.IsEmpty ()) {
                 
                 if (!doc.Load(file)) {
                     isFailed = true;
-                    failMsg = wxString::Format ("%s: %s",
+                    failMsg = wxString::Format (_T("%s: %s"),
                             _("Given filename is not a valid xrc file"),
                             file.c_str ());
                 } else {
@@ -82,7 +82,7 @@ CRXRCResource * CRXRCReader::GetResource ()
         } else {
     
             isFailed = true;
-            failMsg = wxString::Format ("%s: %s",
+            failMsg = wxString::Format (_T("%s: %s"),
                     _("Given filename is neither a valid file, nor a path"),
                     m_filename.c_str ());
         }
@@ -90,12 +90,12 @@ CRXRCResource * CRXRCReader::GetResource ()
     } catch (std::exception &e) {
 
         isFailed = true;
-        failMsg = wxString::Format ("%s: %s", _("XML error"), e.what ());
+        failMsg = wxString::Format (_T("%s: %s"), _("XML error"), e.what ());
 
     } catch (...) {
 
         isFailed = true;
-        failMsg = wxString::Format ("%s", _("XML error"));
+        failMsg = wxString::Format (_T("%s"), _("XML error"));
     }
 
     if (isFailed) {

@@ -54,7 +54,7 @@ bool ModalDialogTimer::Start (int milliseconds, bool oneShot)
 {
     if (oneShot == false) {
 
-        throw sw::WxLogicErrorException ("Only one-shot timer is allowed");
+        throw sw::WxLogicErrorException (_T("Only one-shot timer is allowed"));
     }
     return wxTimer::Start (milliseconds, oneShot);
 }
@@ -65,7 +65,7 @@ void ModalDialogTimer::Notify ()
     // GUI interaction is only allowed if the timer is actually fired in the
     // main thread:
     if (!wxThread::IsMain()) {
-        throw sw::WxLogicErrorException ("not main thread");
+        throw sw::WxLogicErrorException (_T("not main thread"));
     }
 
     if (m_interactor) {
@@ -91,7 +91,7 @@ void ModalDialogTimer::Notify ()
 
     } else {
 
-        wxFAIL_MSG ("Invalid return code");
+        wxFAIL_MSG (_T("Invalid return code"));
     }
 }
  

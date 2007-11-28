@@ -50,8 +50,8 @@ void ModalDialogTest::tearDown ()
 
 void ModalDialogTest::testModalDialog ()
 {
-    wxDialog dialog (NULL, -1, "Title", wxDefaultPosition, wxDefaultSize,
-            wxDEFAULT_DIALOG_STYLE, "modalDialog");
+    wxDialog dialog (NULL, -1, _T("Title"), wxDefaultPosition, wxDefaultSize,
+            wxDEFAULT_DIALOG_STYLE, _T("modalDialog"));
     
     wxTextCtrl *textCtrl = new wxTextCtrl (&dialog, -1);
 
@@ -64,7 +64,7 @@ void ModalDialogTest::testModalDialog ()
     timer.SetModalDialog (&dialog);
     timer.Start (1000, true);
 
-    WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl, "init");
+    WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl, _T("init"));
     WxGuiTestHelper::FlushEventQueue ();
 
     ModalDialogManipulator * manip = new ModalDialogManipulator (textCtrl);
@@ -79,7 +79,7 @@ void ModalDialogTest::testModalDialog ()
             dialog.GetReturnCode () == wxID_OK);
 
     CPPUNIT_ASSERT_MESSAGE ("Text control value was not set correctly",
-            textCtrl->GetValue () == "hello");
+            textCtrl->GetValue () == _T("hello"));
 }
 
 
@@ -97,7 +97,7 @@ void ModalDialogTest::testStdModalDialog ()
     if (dialog.ShowModal() == wxID_OK) {
 
         CPPUNIT_ASSERT_MESSAGE ("Invalid directory was selected",
-                dialog.GetPath () == "z:\\test");
+                dialog.GetPath () == _T("z:\\test"));
     
     } else {
         

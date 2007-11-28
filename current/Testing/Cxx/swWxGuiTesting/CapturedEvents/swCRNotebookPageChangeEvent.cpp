@@ -107,62 +107,65 @@ void CRNotebookPageChangeEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString notebookWdwVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("notebook '%s'", m_notebookName.c_str ()),
-            "Wdw");
+            m_containerName, wxString::Format (_T("notebook '%s'"), m_notebookName.c_str ()),
+            _T("Wdw"));
 
     wxString notebookVarName = emitter->MakeVarName (m_notebookName);
 
     wxString str;
     str.Clear ();
-    str << "wxNotebook *" << notebookVarName << " = wxDynamicCast (" <<
-            notebookWdwVarName << ", wxNotebook);";
+    str << _T("wxNotebook *") << notebookVarName << _T(" = wxDynamicCast (") <<
+            notebookWdwVarName << _T(", wxNotebook);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for notebook '" <<
-            m_notebookName << "' failed\", " << notebookVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for notebook '") <<
+	m_notebookName << _T("' failed\", ") << notebookVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
     
     wxString pageTextVarName = emitter->MakeVarName (notebookVarName,
-            "PageText");
+            _T("PageText"));
 
     str.Clear ();
-    str << "const wxString " << pageTextVarName << " (_(\"" << m_notebookPageText << "\"));";
+    str << _T("const wxString ") << pageTextVarName << _T(" (_(\"") << 
+	m_notebookPageText << _T("\"));");
     emitter->AddCode (str);
 
-    wxString pageVarName = emitter->MakeVarName (notebookVarName, "Page");
+    wxString pageVarName = emitter->MakeVarName (notebookVarName, _T("Page"));
 
     str.Clear ();
-    str << "int " << pageVarName << " = 0;";
-    emitter->AddCode (str);
-    
-    str.Clear ();
-    str << "while ((" << pageVarName << " < " << notebookVarName <<
-            "->GetPageCount ()) && (" << notebookVarName << "->GetPageText (" <<
-            pageVarName << ") != " << pageTextVarName << ")) {\n";
-    emitter->AddCode (str);
-
-    str.Clear ();
-    str << emitter->GetTab () << pageVarName << "++;";
-    emitter->AddCode (str);
-
-    str.Clear ();
-    str << "}";
-    emitter->AddCode (str);
-
-    str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Page of notebook '" << m_notebookName <<
-            "' not found\", " << pageVarName << " < " << notebookVarName <<
-            "->GetPageCount ());";
-    emitter->AddCode (str);
-
-    str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (" <<
-            notebookVarName << ", " << pageVarName << ");";
+    str << _T("int ") << pageVarName << _T(" = 0;");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("while ((") << pageVarName << _T(" < ") << notebookVarName <<
+	_T("->GetPageCount ()) && (") << notebookVarName << 
+	_T("->GetPageText (") << pageVarName << _T(") != ") << pageTextVarName <<
+	_T(")) {\n");
+    emitter->AddCode (str);
+
+    str.Clear ();
+    str << emitter->GetTab () << pageVarName << _T("++;");
+    emitter->AddCode (str);
+
+    str.Clear ();
+    str << _T("}");
+    emitter->AddCode (str);
+
+    str.Clear ();
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Page of notebook '") << m_notebookName <<
+	_T("' not found\", ") << pageVarName << _T(" < ") << notebookVarName <<
+	_T("->GetPageCount ());");
+    emitter->AddCode (str);
+
+    str.Clear ();
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (") <<
+            notebookVarName << _T(", ") << pageVarName << _T(");");
+    emitter->AddCode (str);
+    
+    str.Clear ();
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

@@ -85,52 +85,54 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("tree control '%s'",
+            m_containerName, wxString::Format (_T("tree control '%s'"),
             m_treeCtrlName.c_str ()));
 
-    wxString treeCtrlWdwVarName = emitter->MakeVarName (m_treeCtrlName, "Wdw");
+    wxString treeCtrlWdwVarName = emitter->MakeVarName (m_treeCtrlName, 
+							_T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << treeCtrlWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << treeCtrlWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_treeCtrlName << "\"));";
+        str << _T("XRCID(\"") << m_treeCtrlName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_treeCtrlName << "\");";
+        str << _T("\"") << m_treeCtrlName << _T("\");");
     }
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for tree control '" <<
-            m_treeCtrlName << "' not found\", " << treeCtrlWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for tree control '") <<
+	m_treeCtrlName << _T("' not found\", ") << treeCtrlWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString treeCtrlVarName = emitter->MakeVarName (m_treeCtrlName);
 
     str.Clear ();
-    str << "wxTreeCtrl *" << treeCtrlVarName << " = wxDynamicCast (" <<
-            treeCtrlWdwVarName << ", wxTreeCtrl);";
+    str << _T("wxTreeCtrl *") << treeCtrlVarName << _T(" = wxDynamicCast (") <<
+            treeCtrlWdwVarName << _T(", wxTreeCtrl);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for tree control '" <<
-            m_treeCtrlName << "' failed\", " << treeCtrlVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for tree control '") <<
+	m_treeCtrlName << _T("' failed\", ") << treeCtrlVarName << 
+	_T(" != NULL);");
     emitter->AddCode (str);
 
-    wxString rootIdVarName = "rootId";
+    wxString rootIdVarName = _T("rootId");
 
     str.Clear ();
-    str << "wxTreeItemId " << rootIdVarName << " = " << treeCtrlVarName <<
-            "->GetRootItem ();";
+    str << _T("wxTreeItemId ") << rootIdVarName << _T(" = ") << treeCtrlVarName <<
+            _T("->GetRootItem ();");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Tree control root item is invalid\", " <<
-            rootIdVarName << ".IsOk ());";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Tree control root item is invalid\", ")
+	<< rootIdVarName << _T(".IsOk ());");
     emitter->AddCode (str);
 
     wxString parentItemIdVarName = rootIdVarName;
@@ -141,29 +143,29 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
             it != m_treeItemSiblingIdxHierarchyList.end (); it++, cnt++) {
 
         wxString curTreeItemIdVarName = emitter->MakeVarName (
-                wxString::Format ("treeItemId%d", cnt));
+                wxString::Format (_T("treeItemId%d"), cnt));
 
         str.Clear ();
-        str << "wxTreeItemId " << curTreeItemIdVarName <<
-                " = sw::TreeCtrl::GetNthChild (" << treeCtrlVarName << ", " <<
-                (*it) << ", " << parentItemIdVarName << ");";
+        str << _T("wxTreeItemId ") << curTreeItemIdVarName <<
+	    _T(" = sw::TreeCtrl::GetNthChild (") << treeCtrlVarName << _T(", ") <<
+	    (*it) << _T(", ") << parentItemIdVarName << _T(");");
         emitter->AddCode (str);
 
         str.Clear ();
-        str << "CPPUNIT_ASSERT_MESSAGE (\"Tree control item is invalid\", " <<
-                curTreeItemIdVarName << ".IsOk ());";
+        str << _T("CPPUNIT_ASSERT_MESSAGE (\"Tree control item is invalid\", ") <<
+	    curTreeItemIdVarName << _T(".IsOk ());");
         emitter->AddCode (str);
 
         parentItemIdVarName = curTreeItemIdVarName;
     }
 
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SelectTreeItem (" <<
-            parentItemIdVarName << ", " << treeCtrlVarName << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SelectTreeItem (") <<
+            parentItemIdVarName << _T(", ") << treeCtrlVarName << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

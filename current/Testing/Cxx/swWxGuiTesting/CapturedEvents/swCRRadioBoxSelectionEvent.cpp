@@ -86,64 +86,67 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("radio box '%s'", m_radioBoxName.c_str ()));
+            m_containerName, wxString::Format (_T("radio box '%s'"), 
+					       m_radioBoxName.c_str ()));
 
-    wxString radioBoxWdwVarName = emitter->MakeVarName (m_radioBoxName, "Wdw");
+    wxString radioBoxWdwVarName = emitter->MakeVarName (m_radioBoxName, 
+							_T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << radioBoxWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << radioBoxWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_radioBoxName << "\"));";
+        str << _T("XRCID(\"") << m_radioBoxName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_radioBoxName << "\");";
+        str << _T("\"") << m_radioBoxName << _T("\");");
     }
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for radio box '" <<
-            m_radioBoxName << "' not found\", " << radioBoxWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for radio box '") <<
+	m_radioBoxName << _T("' not found\", ") << radioBoxWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString radioBoxVarName = emitter->MakeVarName (m_radioBoxName);
 
     str.Clear ();
-    str << "wxRadioBox *" << radioBoxVarName << " = wxDynamicCast (" <<
-            radioBoxWdwVarName << ", wxRadioBox);";
+    str << _T("wxRadioBox *") << radioBoxVarName << _T(" = wxDynamicCast (") <<
+            radioBoxWdwVarName << _T(", wxRadioBox);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for radio box '" <<
-            m_radioBoxName << "' failed\", " << radioBoxVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for radio box '") <<
+	m_radioBoxName << _T("' failed\", ") << radioBoxVarName << 
+	_T(" != NULL);");
     emitter->AddCode (str);
     
     wxString radioBoxSelTextVarName = emitter->MakeVarName (radioBoxVarName,
-            "SelectionText");
+            _T("SelectionText"));
 
     str.Clear ();
-    str << "const wxString " << radioBoxSelTextVarName << " (_(\"" <<
-            m_radioBoxValue << "\"));";
+    str << _T("const wxString ") << radioBoxSelTextVarName << _T(" (_(\"") <<
+            m_radioBoxValue << _T("\"));");
     emitter->AddCode (str);
 
     wxString radioBoxSelVarName = emitter->MakeVarName (radioBoxVarName,
-            "Selection");
+            _T("Selection"));
 
     str.Clear ();
-    str << "int " << radioBoxSelVarName << " = " << radioBoxVarName <<
-            "->FindString (" << radioBoxSelTextVarName << ");";
+    str << _T("int ") << radioBoxSelVarName << _T(" = ") << radioBoxVarName <<
+            _T("->FindString (") << radioBoxSelTextVarName << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SelectRadioBoxItem (" <<
-            radioBoxVarName << ", " << radioBoxSelVarName << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SelectRadioBoxItem (") <<
+            radioBoxVarName << _T(", ") << radioBoxSelVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

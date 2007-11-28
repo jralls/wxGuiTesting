@@ -116,7 +116,7 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
             wxASSERT_MSG (renderers->GetNumberOfItems () > 0,
                     "At least one renderer must exist in each render window; and only the first one is fully supported.");
 			if (renderers->GetNumberOfItems () != 1) {
-				::wxLogTrace ("VtkWxGuiTesting", "Currently only one renderer per render window interactor is supported");
+				::wxLogTrace (_T("VtkWxGuiTesting"), _T("Currently only one renderer per render window interactor is supported"));
 			}
             vtkCamera *camera = renderers->GetFirstRenderer ()->GetActiveCamera ();
             camera->SetParallelScale (1.23);
@@ -248,7 +248,7 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << emitter->GetTab () << "::wxLogTrace (\"VtkWxGuiTesting\", \"Currently only one renderer per render window interactor is supported\");";
+                str << emitter->GetTab () << "::wxLogTrace (_T(\"VtkWxGuiTesting\"), _T(\"Currently only one renderer per render window interactor is supported\"));";
                 emitter->AddCode (str);
 
                 str.Clear ();

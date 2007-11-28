@@ -41,21 +41,21 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( SimpleTest, "WxGuiTest_" );
 void SimpleTest::setUp ()
 {
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load ("../Cxx/EvtSimHlpTest_wdr.xrc");
+    wxXmlResource::Get()->Load (_T("../Cxx/EvtSimHlpTest_wdr.xrc"));
 
-    wxFrame *frame = new wxFrame (NULL, -1, "EvtSimHlpFrame");
+    wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
     wxMenuBar *menuBar = wxXmlResource::Get ()->LoadMenuBar (wxT("MenuBar"));
     wxASSERT (menuBar != NULL);
     frame->SetMenuBar (menuBar);
 
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, "EvtSimHlpTestPanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
     // Include the unknown double spin control:
     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (frame,
             -1,
-            "",
+            _T(""),
             wxDefaultPosition,
             wxSize (80, 21),
             wxNO_BORDER,
@@ -64,12 +64,12 @@ void SimpleTest::setUp ()
             0.5,
             0.1);
     spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl ("SpinCtrlDbl", spinCtrl, frame);
+    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
-    wxTreeItemId root = treeCtrl->AddRoot ("Root");
-    wxTreeItemId item = treeCtrl->AppendItem (root, "item");
-    wxTreeItemId item2 = treeCtrl->AppendItem (root, "item2");
+    wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
+    wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
+    wxTreeItemId item2 = treeCtrl->AppendItem (root, _T("item2"));
 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (frame);
@@ -123,7 +123,7 @@ void SimpleTest::testCapture ()
 
     // *** Set text control value ***
     wxWindow *evtSimHlpTestPanel = wxWindow::FindWindowByName (
-            "EvtSimHlpTestPanel");
+            _T("EvtSimHlpTestPanel"));
     CPPUNIT_ASSERT_MESSAGE ("Container window for button 'Button' not found",
             evtSimHlpTestPanel != NULL);
     wxWindow *textCtrlWdw = evtSimHlpTestPanel->FindWindow (XRCID("TextCtrl"));
@@ -133,7 +133,7 @@ void SimpleTest::testCapture ()
     CPPUNIT_ASSERT_MESSAGE ("Converting window for text control 'TextCtrl' "
             "failed", textCtrl != NULL);
     swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl,
-            "oh-la-la");
+            _T("oh-la-la"));
     swTst::WxGuiTestHelper::FlushEventQueue ();
 
     interactive.ShowCurrentGui ();
@@ -178,7 +178,7 @@ void SimpleTest::testCapture ()
     swTst::WxGuiTestHelper::FlushEventQueue ();
 
     // *** Go to second notebook tab/page ***
-    wxWindow *notebookWdw = wxWindow::FindWindowByName ("Notebook");
+    wxWindow *notebookWdw = wxWindow::FindWindowByName (_T("Notebook"));
     CPPUNIT_ASSERT_MESSAGE ("Container window for notebook 'Notebook' not "
             "found", notebookWdw != NULL);
     wxNotebook *notebook = wxDynamicCast (notebookWdw, wxNotebook);

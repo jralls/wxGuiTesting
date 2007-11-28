@@ -87,63 +87,64 @@ void CRChoiceSelectionEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("choice '%s'", m_choiceName.c_str ()));
+            m_containerName, wxString::Format (_T("choice '%s'"), 
+					       m_choiceName.c_str ()));
 
-    wxString choiceWdwVarName = emitter->MakeVarName (m_choiceName, "Wdw");
+    wxString choiceWdwVarName = emitter->MakeVarName (m_choiceName, _T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << choiceWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << choiceWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_choiceName << "\"));";
+        str << _T("XRCID(\"") << m_choiceName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_choiceName << "\");";
+        str << _T("\"") << m_choiceName << _T("\");");
     }
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for choice '" << m_choiceName <<
-            "' not found\", " << choiceWdwVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for choice '") << m_choiceName <<
+	_T("' not found\", ") << choiceWdwVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString choiceVarName = emitter->MakeVarName (m_choiceName);
 
     str.Clear ();
-    str << "wxChoice *" << choiceVarName << " = wxDynamicCast (" <<
-            choiceWdwVarName << ", wxChoice);";
+    str << _T("wxChoice *") << choiceVarName << _T(" = wxDynamicCast (") <<
+            choiceWdwVarName << _T(", wxChoice);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for choice '" <<
-            m_choiceName << "' failed\", " << choiceVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for choice '") <<
+	m_choiceName << _T("' failed\", ") << choiceVarName << _T(" != NULL);");
     emitter->AddCode (str);
     
     wxString choiceSelTextVarName = emitter->MakeVarName (choiceVarName,
-            "SelectionText");
+            _T("SelectionText"));
 
     str.Clear ();
-    str << "const wxString " << choiceSelTextVarName << " (_(\"" <<
-            m_choiceValue << "\"));";
+    str << _T("const wxString ") << choiceSelTextVarName << _T(" (_(\"") <<
+            m_choiceValue << _T("\"));");
     emitter->AddCode (str);
 
     wxString choiceSelVarName = emitter->MakeVarName (choiceVarName,
-            "Selection");
+            _T("Selection"));
 
     str.Clear ();
-    str << "int " << choiceSelVarName << " = " << choiceVarName <<
-            "->FindString (" << choiceSelTextVarName << ");";
+    str << _T("int ") << choiceSelVarName << _T(" = ") << choiceVarName <<
+            _T("->FindString (") << choiceSelTextVarName << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SelectChoiceItem (" <<
-            choiceVarName << ", " << choiceSelVarName << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SelectChoiceItem (") <<
+            choiceVarName << _T(", ") << choiceSelVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

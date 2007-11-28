@@ -101,9 +101,10 @@ bool MdiMainWindow::IsMainWindowMaximized ()
 
 MdiMainFrame::MdiMainFrame(wxDocManager *docManager) 
 {
-	m_window = new MdiMainWindow (docManager, NULL, -1,
-            "title set in MdiMainFrame constructor", wxDefaultPosition,
-            wxDefaultSize, wxDEFAULT_FRAME_STYLE | wxNO_FULL_REPAINT_ON_RESIZE, "");
+	m_window = new MdiMainWindow (
+	    docManager, NULL, -1, _T("title set in MdiMainFrame constructor"),
+	    wxDefaultPosition, wxDefaultSize,
+	    wxDEFAULT_FRAME_STYLE | wxNO_FULL_REPAINT_ON_RESIZE, _T(""));
 	m_window->SetMainFrame (this);
 }
 
@@ -135,14 +136,19 @@ void MdiMainFrame::SaveState ()
             return;
         }
 
-        wxConfig::Get ()->Write (GetConfigKey("MdiWidth"), m_window->GetMainWindowSize ().GetWidth ());	
-		wxConfig::Get ()->Write (GetConfigKey("MdiHeight"), m_window->GetMainWindowSize ().GetHeight ());	
-		if (!m_window->IsMainWindowMaximized ()) {
+        wxConfig::Get ()->Write (GetConfigKey(_T("MdiWidth")), 
+				 m_window->GetMainWindowSize ().GetWidth ());	
+	wxConfig::Get ()->Write (GetConfigKey(_T("MdiHeight")), 
+				 m_window->GetMainWindowSize ().GetHeight ());	
+	if (!m_window->IsMainWindowMaximized ()) {
 			
-			wxConfig::Get ()->Write (GetConfigKey("MdiX"), m_window->GetMainWindowPosition ().x);	
-			wxConfig::Get ()->Write (GetConfigKey("MdiY"), m_window->GetMainWindowPosition ().y);
-		}
-		wxConfig::Get ()->Write (GetConfigKey("MdiMaximized"), m_window->IsMainWindowMaximized ());
+	    wxConfig::Get ()->Write (GetConfigKey(_T("MdiX")),
+				     m_window->GetMainWindowPosition ().x);
+	    wxConfig::Get ()->Write (GetConfigKey(_T("MdiY")), 
+				     m_window->GetMainWindowPosition ().y);
+	}
+	wxConfig::Get ()->Write (GetConfigKey(_T("MdiMaximized")), 
+				 m_window->IsMainWindowMaximized ());
 	}
 }
 
@@ -154,21 +160,22 @@ void MdiMainFrame::RestoreState ()
 		int width = GetWindow ()->GetSize ().GetWidth ();
 		int height = GetWindow ()->GetSize ().GetWidth ();
 
-		wxConfig::Get ()->Read (GetConfigKey("MdiWidth"), &width);
-		wxConfig::Get ()->Read (GetConfigKey("MdiHeight"), &height);
+		wxConfig::Get ()->Read (GetConfigKey(_T("MdiWidth")), &width);
+		wxConfig::Get ()->Read (GetConfigKey(_T("MdiHeight")), &height);
 
 		GetWindow ()->SetSize (width, height);
 
 		wxPoint position = GetWindow ()->GetPosition ();
 
-		wxConfig::Get ()->Read (GetConfigKey("MdiX"), &position.x);
-		wxConfig::Get ()->Read (GetConfigKey("MdiY"), &position.y);
+		wxConfig::Get ()->Read (GetConfigKey(_T("MdiX")), &position.x);
+		wxConfig::Get ()->Read (GetConfigKey(_T("MdiY")), &position.y);
 	
 		GetWindow ()->Move (position);
 
 		bool isMaximized = FALSE;
 
-		if (wxConfig::Get ()->Read (GetConfigKey("MdiMaximized"), &isMaximized) && isMaximized) {
+		if (wxConfig::Get ()->Read (GetConfigKey(_T("MdiMaximized")),
+					    &isMaximized) && isMaximized) {
 
 			GetFrame ()->Maximize (TRUE);
 		}

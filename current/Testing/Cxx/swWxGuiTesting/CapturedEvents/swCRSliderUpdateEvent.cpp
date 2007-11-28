@@ -104,49 +104,49 @@ void CRSliderUpdateEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("slider '%s'",
+            m_containerName, wxString::Format (_T("slider '%s'"),
             m_sliderName.c_str ()));
 
-    wxString sliderWdwVarName = emitter->MakeVarName (m_sliderName, "Wdw");
+    wxString sliderWdwVarName = emitter->MakeVarName (m_sliderName, _T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << sliderWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << sliderWdwVarName << _T(" = ") << 
+	containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_sliderName << "\"));";
+        str << _T("XRCID(\"") << m_sliderName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_sliderName << "\");";
+        str << _T("\"") << m_sliderName << _T("\");");
     }
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for slider '" <<
-            m_sliderName << "' not found\", " << sliderWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for slider '") <<
+	m_sliderName << _T("' not found\", ") << sliderWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString sliderVarName = emitter->MakeVarName (m_sliderName);
 
     str.Clear ();
-    str << "wxSlider *" << sliderVarName << " = wxDynamicCast (" <<
-            sliderWdwVarName << ", wxSlider);";
+    str << _T("wxSlider *") << sliderVarName << _T(" = wxDynamicCast (") <<
+            sliderWdwVarName << _T(", wxSlider);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for slider '" <<
-            m_sliderName << "' failed\", " << sliderVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for slider '") <<
+	m_sliderName << _T("' failed\", ") << sliderVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SetSliderValue (" <<
-            sliderVarName << ", " << m_sliderValue << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SetSliderValue (") <<
+            sliderVarName << _T(", ") << m_sliderValue << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

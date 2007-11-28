@@ -82,49 +82,49 @@ void CRCheckBoxClickEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("check box '%s'", m_checkBoxName.c_str ()));
+            m_containerName, wxString::Format (_T("check box '%s'"), m_checkBoxName.c_str ()));
 
-    wxString checkBoxWdwVarName = emitter->MakeVarName (m_checkBoxName, "Wdw");
+    wxString checkBoxWdwVarName = emitter->MakeVarName (m_checkBoxName, _T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << checkBoxWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << checkBoxWdwVarName << _T(" = ") << containerVarName <<
+            _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_checkBoxName << "\"));";
+        str << _T("XRCID(\"") << m_checkBoxName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_checkBoxName << "\");";
+	str << _T("\"") << m_checkBoxName << _T("\");");
     }
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for check box '" <<
-            m_checkBoxName << "' not found\", " << checkBoxWdwVarName <<
-            " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for check box '") <<
+	m_checkBoxName << _T("' not found\", ") << checkBoxWdwVarName <<
+	_T(" != NULL);");
     emitter->AddCode (str);
 
     wxString checkBoxVarName = emitter->MakeVarName (m_checkBoxName);
 
     str.Clear ();
-    str << "wxCheckBox *" << checkBoxVarName << " = wxDynamicCast (" <<
-            checkBoxWdwVarName << ", wxCheckBox);";
+    str << _T("wxCheckBox *") << checkBoxVarName << _T(" = wxDynamicCast (") <<
+            checkBoxWdwVarName << _T(", wxCheckBox);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Converting window for check box '" <<
-            m_checkBoxName << "' failed\", " << checkBoxVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for check box '") <<
+	m_checkBoxName << _T("' failed\", ") << checkBoxVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
-    wxString isCheckedBoolStr = m_isChecked ? "true" : "false";
+    wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (" <<
-            checkBoxVarName << ", " << isCheckedBoolStr << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (") <<
+            checkBoxVarName << _T(", ") << isCheckedBoolStr << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

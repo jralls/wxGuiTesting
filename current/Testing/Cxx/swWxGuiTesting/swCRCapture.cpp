@@ -47,7 +47,8 @@ CRCapture::~CRCapture ()
 
 void CRCapture::Capture (const char *file, int line)
 {
-    CRCppEmitter::GetInstance ()->SetTestCaseFileContext (file, line);
+    wxString filestr(file, *wxConvCurrent);
+    CRCppEmitter::GetInstance ()->SetTestCaseFileContext (filestr, line);
 
     this->Show ();
 }
@@ -123,7 +124,7 @@ void CRCapture::CreateDialog ()
 wxPanel * CRCapture::LoadPanel ()
 {
     InitCapturePanelXRC ();
-    return wxXmlResource::Get ()->LoadPanel (m_dialog, "CapturePanel");
+    return wxXmlResource::Get ()->LoadPanel (m_dialog, _T("CapturePanel"));
 }
 
 } // End namespace swTst

@@ -150,8 +150,8 @@ void TreeCtrl::SetChildrenNumber (const wxTreeItemId &parentId, unsigned int chi
 	int diff = childrenNumber - GetChildrenCount (parentId, FALSE);
 	if (diff > 0) {
 
-		AppendItem (parentId, "");
-		SetChildrenNumber (parentId, childrenNumber);
+	    AppendItem (parentId, _T(""));
+	    SetChildrenNumber (parentId, childrenNumber);
 
 	} else if (diff < 0) {
 

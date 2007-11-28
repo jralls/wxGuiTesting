@@ -111,7 +111,7 @@ void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 
     const swTst::WxGuiTestProvokedWarning * knownWarning =
             provWarningRegistry.FindRegisteredWarning (
-            _("Direct CAD Voxelisation Warning"), "bla");
+		_("Direct CAD Voxelisation Warning"), _T("bla"));
 
     CPPUNIT_ASSERT_MESSAGE ("Warning was not found",
             knownWarning != NULL);
@@ -122,7 +122,7 @@ void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 
     const swTst::WxGuiTestProvokedWarning * unknownWarning =
             provWarningRegistry.FindRegisteredWarning (
-            _("Unknown Direct CAD Voxelisation Warning"), "bla");
+		_("Unknown Direct CAD Voxelisation Warning"), _T("bla"));
 
     CPPUNIT_ASSERT_MESSAGE ("Warning was found",
             unknownWarning == NULL);

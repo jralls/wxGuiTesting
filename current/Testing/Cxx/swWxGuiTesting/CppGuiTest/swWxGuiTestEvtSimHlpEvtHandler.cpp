@@ -171,7 +171,7 @@ bool WxGuiTestEvtSimHlpEvtHandler::HasCheckableToolTogglingProcessed () const
 void WxGuiTestEvtSimHlpEvtHandler::OnMenuItem (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_menuItemSelProcessed == false,
-            "Menu item event handler has already been processed");
+            _T("Menu item event handler has already been processed"));
 
     m_menuItemSelProcessed = true;
 }
@@ -180,7 +180,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnMenuItem (wxCommandEvent& event)
 void WxGuiTestEvtSimHlpEvtHandler::OnCheckableMenuItem (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_chkMenuItemSelProcessed == false,
-            "Checkable menu item event handler has already been processed");
+            _T("Checkable menu item event handler has already been processed"));
 
     m_chkMenuItemSelProcessed = !m_chkMenuItemSelProcessed;
 }
@@ -189,7 +189,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnCheckableMenuItem (wxCommandEvent& event)
 void WxGuiTestEvtSimHlpEvtHandler::OnButtonClick (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_buttonClickProcessed == false,
-            "Button event handler has already been processed");
+            _T("Button event handler has already been processed"));
 
     m_buttonClickProcessed = true;
 }
@@ -198,7 +198,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnButtonClick (wxCommandEvent& event)
 void WxGuiTestEvtSimHlpEvtHandler::OnTextCtrlChange (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_textCtrlValChangeEvent == false,
-            "Text control event handler has already been processed");
+            _T("Text control event handler has already been processed"));
 
     m_textCtrlValChangeEvent = true;
 }
@@ -207,7 +207,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnTextCtrlChange (wxCommandEvent& event)
 void WxGuiTestEvtSimHlpEvtHandler::OnSpinCtrlDblChange (wxSpinEvent& event)
 {
     wxASSERT_MSG (m_spinCtrlDblValChangeEvent == false,
-            "Double typed spin control event handler has already been processed");
+            _T("Double typed spin control event handler has already been processed"));
 
     m_spinCtrlDblValChangeEvent = true;
 }
@@ -217,7 +217,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnTreeSelChange (wxTreeEvent &event)
 {
     // Under MSW this event is fired more than once:
 //    wxASSERT_MSG (m_treeSelProcessed == false,
-//            "Tree selection event handler has already been processed");
+//            _T("Tree selection event handler has already been processed"));
     m_treeSelProcessed = true;
 }
 
@@ -225,22 +225,22 @@ void WxGuiTestEvtSimHlpEvtHandler::OnTreeSelChange (wxTreeEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnTreeItemRightClick (wxTreeEvent &event)
 {
     wxASSERT_MSG (m_treeItemRightClickProcessed == false,
-            "Tree item right click event handler has already been processed");
+            _T("Tree item right click event handler has already been processed"));
 
     m_treeItemRightClickProcessed = true;
 
-    wxMenu *m = new wxMenu ("PopupMenu");
-    m->Append (1234, "PopupMenuItem");
+    wxMenu *m = new wxMenu (_T("PopupMenu"));
+    m->Append (1234, _T("PopupMenuItem"));
     wxPoint p (0, 0);
     WxGuiTestHelper::PopupMenu ((wxTreeCtrl *) event.GetEventObject (), m,
-            event.GetPoint (), "sccDatasetBrowserPopupMenu");
+            event.GetPoint (), _T("sccDatasetBrowserPopupMenu"));
 }
 
 
 void WxGuiTestEvtSimHlpEvtHandler::OnNotebookPageChange (wxNotebookEvent &event)
 {
     wxASSERT_MSG (m_notebookPageSelProcessed == false,
-            "Notebook page change event handler has already been processed");
+            _T("Notebook page change event handler has already been processed"));
 
     m_notebookPageSelProcessed = true;
 }
@@ -249,7 +249,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnNotebookPageChange (wxNotebookEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnChoiceSelChange (wxCommandEvent &event)
 {
     wxASSERT_MSG (m_choiceSelProcessed == false,
-            "Choice selection change event handler has already been processed");
+            _T("Choice selection change event handler has already been processed"));
 
     m_choiceSelProcessed = true;
 }
@@ -258,7 +258,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnChoiceSelChange (wxCommandEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnCheckboxChecking (wxCommandEvent &event)
 {
     wxASSERT_MSG (m_checkboxChkgProcessed == false,
-            "Checkbox checking event handler has already been processed");
+            _T("Checkbox checking event handler has already been processed"));
 
     m_checkboxChkgProcessed = true;
 }
@@ -267,7 +267,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnCheckboxChecking (wxCommandEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnRadioBoxSelChange (wxCommandEvent &event)
 {
     wxASSERT_MSG (m_radioBoxSelProcessed == false,
-            "Radio box selection event handler has already been processed");
+            _T("Radio box selection event handler has already been processed"));
 
     m_radioBoxSelProcessed = true;
 }
@@ -276,7 +276,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnRadioBoxSelChange (wxCommandEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnSliderChange (wxScrollEvent &event)
 {
     wxASSERT_MSG (m_sliderChangeProcessed == false,
-            "Slider change event handler has already been processed");
+            _T("Slider change event handler has already been processed"));
 
     m_sliderChangeProcessed = true;
 }
@@ -285,7 +285,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnSliderChange (wxScrollEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnSpinCtrlChange (wxSpinEvent &event)
 {
     wxASSERT_MSG (m_spinCtrlChangeProcessed == false,
-            "Spin control change event handler has already been processed");
+            _T("Spin control change event handler has already been processed"));
 
     m_spinCtrlChangeProcessed = true;
 }
@@ -294,7 +294,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnSpinCtrlChange (wxSpinEvent &event)
 void WxGuiTestEvtSimHlpEvtHandler::OnToggleTool (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_toolTogglingProcessed == false,
-            "Toggle tool event handler has already been processed");
+            _T("Toggle tool event handler has already been processed"));
 
     m_toolTogglingProcessed = true;
 }
@@ -303,7 +303,7 @@ void WxGuiTestEvtSimHlpEvtHandler::OnToggleTool (wxCommandEvent& event)
 void WxGuiTestEvtSimHlpEvtHandler::OnToggleCheckableTool (wxCommandEvent& event)
 {
     wxASSERT_MSG (m_checkableToolTogglingProcessed == false,
-            "Checkable toggle tool event handler has already been processed");
+            _T("Checkable toggle tool event handler has already been processed"));
 
     m_checkableToolTogglingProcessed = true;
 }

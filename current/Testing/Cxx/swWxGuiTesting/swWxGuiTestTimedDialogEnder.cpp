@@ -36,7 +36,8 @@ WxGuiTestTimedDialogEnder::WxGuiTestTimedDialogEnder (unsigned int milliseconds,
 
 WxGuiTestTimedDialogEnder::~WxGuiTestTimedDialogEnder ()
 {
-    ::wxLogTrace ("WxGuiTestTimedDialogEnder", "~WxGuiTestTimedDialogEnder");
+    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), 
+		  _T("~WxGuiTestTimedDialogEnder"));
     this->DestroyTimer ();
 }
 
@@ -63,7 +64,7 @@ void WxGuiTestTimedDialogEnder::DestroyTimer ()
 
 void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
 {
-    ::wxLogTrace ("WxGuiTestTimedDialogEnder", "OnTimer");
+    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("OnTimer"));
 
     if (event.GetId () == m_timerId) {
 
@@ -86,14 +87,14 @@ void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
             if (dlg) {
 
                 dlg->EndModal (m_returnCode);
-                ::wxLogTrace ("WxGuiTestTimedDialogEnder", "Window killed");
+                ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("Window killed"));
                 this->DestroyTimer ();
             }
         }*/
 
         // So we currently have to use M$ specific code :-(((
         #ifndef WIN32
-            wxFAIL_MSG ("Only supported under M$ Windows");
+            wxFAIL_MSG (_T("Only supported under M$ Windows"));
         #else
             HWND wdw = FindWindow (NULL, m_windowCaption);
             if (wdw) {
@@ -105,7 +106,7 @@ void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
                 // not irregular detected:
                 if (EndDialog (wdw, m_returnCode)) {
 
-                    ::wxLogTrace ("WxGuiTestTimedDialogEnder", "Window killed");
+                    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("Window killed"));
                     this->DestroyTimer ();
                     m_success = true;
                 }

@@ -74,35 +74,35 @@ void CRButtonClickEvent::EmitCpp ()
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
     wxString containerVarName = emitter->AddContainerLookupCode (
-            m_containerName, wxString::Format ("button '%s'", m_buttonName.c_str ()));
+            m_containerName, wxString::Format (_T("button '%s'"), m_buttonName.c_str ()));
 
-    wxString buttonWdwVarName = emitter->MakeVarName (m_buttonName, "Wdw");
+    wxString buttonWdwVarName = emitter->MakeVarName (m_buttonName, _T("Wdw"));
 
     wxString str;
-    str << "wxWindow *" << buttonWdwVarName << " = " << containerVarName <<
-            "->FindWindow (";
+    str << _T("wxWindow *") << buttonWdwVarName << _T(" = ") << containerVarName <<
+            _T("->FindWindow (");
     if (m_isXRC) {
         
-        str << "XRCID(\"" << m_buttonName << "\"));";
+        str << _T("XRCID(\"") << m_buttonName << _T("\"));");
 
     } else {
 
-        str << "\"" << m_buttonName << "\");";
+        str << _T("\"") << m_buttonName << _T("\");");
     }
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "CPPUNIT_ASSERT_MESSAGE (\"Window for button '" << m_buttonName <<
-            "' not found\", " << buttonWdwVarName << " != NULL);";
+    str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for button '") << m_buttonName <<
+	_T("' not found\", ") << buttonWdwVarName << _T(" != NULL);");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestEventSimulationHelper::ClickButton (" <<
-            buttonWdwVarName << "->GetId (), " << buttonWdwVarName << ");";
+    str << _T("swTst::WxGuiTestEventSimulationHelper::ClickButton (") <<
+            buttonWdwVarName << _T("->GetId (), ") << buttonWdwVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << "swTst::WxGuiTestHelper::FlushEventQueue ();\n";
+    str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

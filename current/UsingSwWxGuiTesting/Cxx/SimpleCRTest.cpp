@@ -39,21 +39,21 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( SimpleCRTest, "WxGuiTest" );
 void SimpleCRTest::setUp ()
 {
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load ("../Cxx/EvtSimHlpTest_wdr.xrc");
+    wxXmlResource::Get()->Load (_T("../Cxx/EvtSimHlpTest_wdr.xrc"));
 
-    wxFrame *frame = new wxFrame (NULL, -1, "EvtSimHlpFrame");
+    wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
     wxMenuBar *menuBar = wxXmlResource::Get ()->LoadMenuBar (wxT("MenuBar"));
     wxASSERT (menuBar != NULL);
     frame->SetMenuBar (menuBar);
 
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, "EvtSimHlpTestPanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
     // Include the unknown double spin control:
     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (frame,
             -1,
-            "",
+            _T(""),
             wxDefaultPosition,
             wxSize (80, 21),
             wxNO_BORDER,
@@ -62,12 +62,12 @@ void SimpleCRTest::setUp ()
             0.5,
             0.1);
     spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl ("SpinCtrlDbl", spinCtrl, frame);
+    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
-    wxTreeItemId root = treeCtrl->AddRoot ("Root");
-    wxTreeItemId item = treeCtrl->AppendItem (root, "item");
-    wxTreeItemId item2 = treeCtrl->AppendItem (root, "item2");
+    wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
+    wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
+    wxTreeItemId item2 = treeCtrl->AppendItem (root, _T("item2"));
 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (frame);
@@ -79,7 +79,7 @@ void SimpleCRTest::setUp ()
     swTst::WxGuiTestHelper::FlushEventQueue ();
 
     // For C&R:
-    wxString xrcDir = "../../Testing/TestData/xrc/CaptureTest/";
+    wxString xrcDir = _T("../../Testing/TestData/xrc/CaptureTest/");
     sw::Config *configInit = new sw::Config ();
     configInit->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (configInit);

@@ -17,8 +17,8 @@ namespace sw {
 
 MdiDefaultDialog::MdiDefaultDialog(MainFrame *parent, long style)
 	: wxDialog((wxWindow *) (parent->GetFrame()), -1,
-            "title set in MdiDefaultDialog constructor", wxDefaultPosition,
-            wxDefaultSize, style)
+		   _T("title set in MdiDefaultDialog constructor"), 
+		   wxDefaultPosition, wxDefaultSize, style)
 {
 	// Nothing to do
 }

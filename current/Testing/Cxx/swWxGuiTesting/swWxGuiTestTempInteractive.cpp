@@ -90,7 +90,7 @@ void WxGuiTestTempInteractive::ShowCurrentGui (const char *file, int line)
     }
     if (strcmp (file, "") == 0) {
 
-        throw sw::WxLogicErrorException ("WxGuiTestTempInteractive: Empty filename");
+        throw sw::WxLogicErrorException (_T("WxGuiTestTempInteractive: Empty filename"));
     }
     if (m_file) {
         
@@ -101,7 +101,7 @@ void WxGuiTestTempInteractive::ShowCurrentGui (const char *file, int line)
 
     if (line < 0) {
 
-        throw sw::WxLogicErrorException ("WxGuiTestTempInteractive: Invalid line number");
+        throw sw::WxLogicErrorException (_T("WxGuiTestTempInteractive: Invalid line number"));
     }
     m_line = line;
 
@@ -125,7 +125,7 @@ void WxGuiTestTempInteractive::CreateDialog ()
     if ((m_file) && (m_line > -1)) {
 
         wxStaticText *fileInfoText = new wxStaticText (m_dialog, -1,
-                wxString::Format ("%s: %s\n%s: %d", _("File"), m_file,
+                wxString::Format (_T("%s: %s\n%s: %d"), _("File"), m_file,
                 _("Line"), m_line), wxDefaultPosition, wxDefaultSize, 0);
         sizer->Add (fileInfoText, 0, wxALIGN_CENTER | wxALL, 10);
     }

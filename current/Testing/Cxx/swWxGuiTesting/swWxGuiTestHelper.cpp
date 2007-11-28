@@ -326,7 +326,7 @@ wxString WxGuiTestHelper::FindPopupMenuKey (wxMenu *menu)
             it++;
         }
     }
-    return (found ? (*it).first : "");
+    return (found ? (*it).first : _T(""));
 }
 
 
@@ -361,10 +361,10 @@ bool WxGuiTestHelper::IsProvokedWarning (const wxString &caption,
 
             // Unexpected warning -> test case failure:
             wxString failMsg = wxString::Format (
-                    "Caption \"%s\", message \"%s\" occured", caption.c_str (),
+		_T("Caption \"%s\", message \"%s\" occured"), caption.c_str (),
                     message.c_str ());
-            WxGuiTestHelper::AddTestFailure ("", -1,
-                    "Unexpected App application warning detected", failMsg);
+            WxGuiTestHelper::AddTestFailure (_T(""), -1,
+                    _T("Unexpected App application warning detected"), failMsg);
             //WxGuiTestHelper::SetCheckForProvokedWarnings (false);
             wxTheApp->ExitMainLoop ();
         }
@@ -407,14 +407,14 @@ void WxGuiTestHelper::AddTestFailure (const wxString &file, const int line,
 
     } else {
 
-        s_accTestFailures += "\nAND SUBSEQUENTLY:";
+        s_accTestFailures += _T("\nAND SUBSEQUENTLY:");
         if (!shortDescription.IsEmpty ()) {
 
-            s_accTestFailures += "\n";
+            s_accTestFailures += _T("\n");
             s_accTestFailures += shortDescription;
         }
     }
-    s_accTestFailures += "\n";
+    s_accTestFailures += _T("\n");
     s_accTestFailures += message;
 }
 

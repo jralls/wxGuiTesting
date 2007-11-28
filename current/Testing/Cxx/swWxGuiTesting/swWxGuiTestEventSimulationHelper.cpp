@@ -124,7 +124,7 @@ void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (
     // 2. Event:
     wxCommandEvent evt (wxEVT_COMMAND_SPINCTRL_UPDATED, spinCtrl->GetId ());
     evt.SetEventObject (spinCtrl);
-    evt.SetString (wxString::Format ("%f", value));
+    evt.SetString (wxString::Format (_T("%f"), value));
     evt.SetInt ((int) value); // Useless, just for the sake of simulation
     ::wxPostEvent (spinCtrl->GetEventHandler (), evt);
 }

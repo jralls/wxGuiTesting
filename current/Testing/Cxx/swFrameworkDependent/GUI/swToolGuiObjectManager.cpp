@@ -59,7 +59,7 @@ void ToolGuiObjectManager::AddTool (ToolGuiObject &toolGuiObject,
         // We assume:
         //   (a) the label gives enough information as tooltip.
         //   (b) an exclusive tool must be toggleable.
-        toolBar.AddTool (id, "", toolGuiObject.GetToolIcon (),
+        toolBar.AddTool (id, _T(""), toolGuiObject.GetToolIcon (),
                 toolGuiObject.GetName (), toolGuiObject.IsToggle (),
                 !toolGuiObject.IsExclusive ());
     }

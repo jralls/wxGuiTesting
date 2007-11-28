@@ -103,6 +103,8 @@ SET (LIBS
 
     ${ThirdPartyLibs_CppUnit_LIBRARIES}
 )
+MESSAGE(STATUS "${CMAKE_CURRENT_LIST_FILE}(${CMAKE_CURRENT_LIST_LINE}): wxWidgets_LIBRARIES ${wxWidgets_LIBRARIES}")
+MESSAGE(STATUS "${CMAKE_CURRENT_LIST_FILE}(${CMAKE_CURRENT_LIST_LINE}): LIBRARIES ${LIBS}")
 #-----------------------------------------------------------------------------
 
 

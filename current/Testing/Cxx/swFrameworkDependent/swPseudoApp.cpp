@@ -35,15 +35,15 @@ void PseudoApp::SetPseudoAppInstance ()
 
         if (dynamic_cast< PseudoApp * >(app)) {
 
-            ::wxLogTrace ("PseudoApp", "void PseudoApp::SetPseudoAppInstance (): Instance already set, type is PseudoApp");
+            ::wxLogTrace (_T("PseudoApp"), _T("void PseudoApp::SetPseudoAppInstance (): Instance already set, type is PseudoApp"));
             return;
 
         } else {
 
             // Should never be necessary:
-            ::wxLogTrace ("PseudoApp", "void PseudoApp::SetPseudoAppInstance (): Instance already set, type is NOT PseudoApp");
+            ::wxLogTrace (_T("PseudoApp"), _T("void PseudoApp::SetPseudoAppInstance (): Instance already set, type is NOT PseudoApp"));
             App::Nullify ();
-            wxFAIL_MSG ("Instance already set, type is NOT PseudoApp");
+            wxFAIL_MSG (_T("Instance already set, type is NOT PseudoApp"));
         }
     }
 
@@ -52,7 +52,7 @@ void PseudoApp::SetPseudoAppInstance ()
     // Initialise wxWidgets application - necessary for global objects like
     // wxTheColourDatabase:
     int argc = 0;
-    char **argv = NULL;
+    wxChar **argv = NULL;
     app->Initialize (argc, argv);
 }
 
@@ -60,8 +60,8 @@ void PseudoApp::SetPseudoAppInstance ()
 bool PseudoApp::DisplayWarning (const wxString &caption,
         const wxString &message, bool canBypass)
 {
-    WriteLn (_("[DisplayWarning] ") + caption + ":");
-    WriteLn (wxString ("    ") + message);
+    WriteLn (_("[DisplayWarning] ") + caption + _T(":"));
+    WriteLn (wxString (_T("    ")) + message);
 
     if (canBypass) {
 
@@ -89,7 +89,7 @@ void PseudoApp::DisplayHint (const wxString &hint)
 void PseudoApp::StartProgressInfo (unsigned int maxProgress,
         const wxString &progressInfo)
 {
-    DisplayHint (progressInfo + wxString::Format (" (maxProgress: %d)",
+    DisplayHint (progressInfo + wxString::Format (_T(" (maxProgress: %d)"),
             maxProgress));
 }
 
@@ -97,14 +97,14 @@ void PseudoApp::StartProgressInfo (unsigned int maxProgress,
 void PseudoApp::DisplayProgressInfo (unsigned int currentProgress,
         const wxString &progressInfo)
 {
-    DisplayHint (progressInfo + wxString::Format (" (progress: %d)",
+    DisplayHint (progressInfo + wxString::Format (_T(" (progress: %d)"),
             currentProgress));
 }
 
 
 void PseudoApp::EndProgressInfo (const wxString &progressInfo, bool realEnd)
 {
-    DisplayHint (progressInfo + wxString::Format (" (realEnd: %d)",
+    DisplayHint (progressInfo + wxString::Format (_T(" (realEnd: %d)"),
             realEnd));
 }
 
@@ -135,7 +135,7 @@ void PseudoApp::Write (const wxString &str) const
 
 void PseudoApp::WriteLn (const wxString &str) const
 {
-    Write (str + "\n");
+    Write (str + _T('\n'));
 }
 
 } // End namespace sw

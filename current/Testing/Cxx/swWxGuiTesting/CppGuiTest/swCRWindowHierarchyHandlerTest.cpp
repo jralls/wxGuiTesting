@@ -32,14 +32,14 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRWindowHierarchyHandlerTest, "WxGuiTest"
 
 void CRWindowHierarchyHandlerTest::setUp ()
 {
-    wxString xrcDir = "../../../TestData/xrc/";
+    wxString xrcDir = _T("../../../TestData/xrc/");
     sw::Config *config = new sw::Config ();
     config->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (config);
 
     wxXmlResource::Get()->InitAllHandlers ();
-    wxXmlResource::Get()->Load (xrcDir + "CapturePanel_wdr.xrc");
-    wxXmlResource::Get()->Load (xrcDir + "xrc_two_object_nodes.xrc");
+    wxXmlResource::Get()->Load (xrcDir + _T("CapturePanel_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("xrc_two_object_nodes.xrc"));
 }
 
 
@@ -51,13 +51,13 @@ void CRWindowHierarchyHandlerTest::tearDown ()
 
 void CRWindowHierarchyHandlerTest::testFindXRCNode ()
 {
-    wxDialog dialog (NULL, -1, "CRWindowHierarchyHandlerTest Dialog",
+    wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
             wxDefaultPosition);
 #ifndef __WXGTK__
     WxGuiTestHelper::FlushEventQueue ();
 #endif
 
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, "CapturePanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, _T("CapturePanel"));
     CPPUNIT_ASSERT_MESSAGE ("Loading test panel failed", panel != NULL);
     wxButton *button = XRCCTRL (*panel, "ExitButton", wxButton);
     CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
@@ -69,19 +69,19 @@ void CRWindowHierarchyHandlerTest::testFindXRCNode ()
     CPPUNIT_ASSERT_MESSAGE ("Find button window failed (name)",
             button->GetName () == btnNode->GetName ());
     CPPUNIT_ASSERT_MESSAGE ("Find button window failed (class)",
-            "wxButton" == btnNode->GetClass ());
+            _T("wxButton") == btnNode->GetClass ());
 }
 
 
 void CRWindowHierarchyHandlerTest::testFindWindowContainer ()
 {
-    wxDialog dialog (NULL, -1, "CRWindowHierarchyHandlerTest Dialog",
+    wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
             wxDefaultPosition);
 #ifndef __WXGTK__
     WxGuiTestHelper::FlushEventQueue ();
 #endif
 
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, "CapturePanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, _T("CapturePanel"));
     CPPUNIT_ASSERT_MESSAGE ("Loading test panel failed", panel != NULL);
     wxButton *button = XRCCTRL (*panel, "ExitButton", wxButton);
     CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
@@ -93,13 +93,13 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainer ()
     CPPUNIT_ASSERT_MESSAGE ("Find button window container failed (name)",
             panel->GetName () == btnContNode->GetName ());
     CPPUNIT_ASSERT_MESSAGE ("Find button window container failed (class)",
-            "wxPanel" == btnContNode->GetClass ());
+            _T("wxPanel") == btnContNode->GetClass ());
 }
 
 
 void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
 {
-    wxDialog dialog (NULL, -1, "CRWindowHierarchyHandlerTest Dialog",
+    wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
             wxDefaultPosition);
 #ifndef __WXGTK__
     WxGuiTestHelper::FlushEventQueue ();
@@ -107,17 +107,17 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
 
     wxSizer *topSizer = new wxBoxSizer (wxVERTICAL);
     wxPanel *upperPanel = new wxPanel (&dialog);
-    upperPanel->SetName ("UpperPanel");
+    upperPanel->SetName (_T("UpperPanel"));
     // XRC panel and button:
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (upperPanel, "CapturePanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (upperPanel, _T("CapturePanel"));
     CPPUNIT_ASSERT_MESSAGE ("Loading test panel failed", panel != NULL);
     wxButton *button = XRCCTRL (*panel, "ExitButton", wxButton);
     CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
     // "Manual panel and button:
     wxPanel *panel2 = new wxPanel (&dialog);
-    panel2->SetName ("NonXRCPanel");
-    wxButton *button2 = new wxButton (panel2, -1, "Button2");//, wxDefaultPosition
-    button2->SetName ("NonXRCButton");
+    panel2->SetName (_T("NonXRCPanel"));
+    wxButton *button2 = new wxButton (panel2, -1, _T("Button2"));//, wxDefaultPosition
+    button2->SetName (_T("NonXRCButton"));
     wxSizer *sizer = new wxBoxSizer (wxVERTICAL);
     sizer->Add (button2);
     panel2->SetSizer (sizer);

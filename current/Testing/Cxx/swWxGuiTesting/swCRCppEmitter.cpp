@@ -68,7 +68,7 @@ void CRCppEmitter::Destroy ()
 
 void CRCppEmitter::SetTabSize (unsigned int size)
 {
-    m_tab = wxString (' ', size);
+    m_tab = wxString (_T(' '), size);
 }
 
 
@@ -88,9 +88,9 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
 {
     wxASSERT (::wxFileExists (filename));
     wxASSERT (lineNmb != 0);
-    if (!m_origFile.Open (filename)) {
+    if (!m_origFile.Open (filename, *wxConvCurrent)) {
      
-        throw new sw::WxLogicErrorException (wxString::Format ("%s: %s",
+        throw new sw::WxLogicErrorException (wxString::Format (_T("%s: %s"),
                 _("Could not open test case file"), filename.c_str ()));
     }
     // Find unique filename with prefix of current test case filename in order
@@ -101,16 +101,19 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
     do {
 
         uniqueCnt++;
-        newFilename = wxString::Format ("%s.cr%d", filename.c_str (), uniqueCnt);
+        newFilename = wxString::Format (_T("%s.cr%d"), filename.c_str (), 
+					uniqueCnt);
 
     } while (::wxFileExists (newFilename));
     if (!m_newFile.Create (newFilename)) {
 
-        throw new sw::WxLogicErrorException (wxString::Format ("%s: %s",
-                _("Could not create bootstrap test case file"), filename.c_str ()));
+        throw new sw::WxLogicErrorException (
+	    wxString::Format (_T("%s: %s"),
+			      _("Could not create bootstrap test case file"), 
+			      filename.c_str ()));
     }
     // Copy old file until line number or first occurence of capture keyword:
-    const wxString CAPTURE_KEYWORD = "CAPTURE";
+    const wxString CAPTURE_KEYWORD = _T("CAPTURE");
     bool isDone = false;
     wxString line = m_origFile.GetFirstLine ();
     while ((!isDone) && (!m_origFile.Eof ())) {
@@ -148,14 +151,14 @@ wxString CRCppEmitter::GetCaptureFilename() const {
 void CRCppEmitter::AddComment (wxString str)
 {
     wxArrayString COMMENT_BREAK_CHARS;
-    COMMENT_BREAK_CHARS.Add (" ");
-    COMMENT_BREAK_CHARS.Add (",");
-    COMMENT_BREAK_CHARS.Add (".");
-    COMMENT_BREAK_CHARS.Add (":");
-    COMMENT_BREAK_CHARS.Add ("!");
-    COMMENT_BREAK_CHARS.Add ("?");
+    COMMENT_BREAK_CHARS.Add (_T(" "));
+    COMMENT_BREAK_CHARS.Add (_T(","));
+    COMMENT_BREAK_CHARS.Add (_T("."));
+    COMMENT_BREAK_CHARS.Add (_T(":"));
+    COMMENT_BREAK_CHARS.Add (_T("!"));
+    COMMENT_BREAK_CHARS.Add (_T("?"));
 
-    wxString pre = m_tab + "// ";
+    wxString pre = m_tab + _T("// ");
     const unsigned int MIN_CONTENT_LEN = 20;
     str.Prepend (pre);
 
@@ -179,12 +182,12 @@ void CRCppEmitter::AddComment (wxString str)
 void CRCppEmitter::AddCode (wxString str)
 {
     wxArrayString CODE_BREAK_CHARS;
-    CODE_BREAK_CHARS.Add (" ");
-    CODE_BREAK_CHARS.Add (",");
-    CODE_BREAK_CHARS.Add (".");
-    CODE_BREAK_CHARS.Add ("(");
-    CODE_BREAK_CHARS.Add ("::");
-    CODE_BREAK_CHARS.Add ("->");
+    CODE_BREAK_CHARS.Add (_T(" "));
+    CODE_BREAK_CHARS.Add (_T(","));
+    CODE_BREAK_CHARS.Add (_T("."));
+    CODE_BREAK_CHARS.Add (_T("("));
+    CODE_BREAK_CHARS.Add (_T("::"));
+    CODE_BREAK_CHARS.Add (_T("->"));
 
     wxString pre = m_tab;
     const unsigned int MIN_CONTENT_LEN = 20;
@@ -200,7 +203,7 @@ void CRCppEmitter::AddCode (wxString str)
         isInString = this->HasBrokenInString (line);
         if (isInString) {
 
-            line.Append ("\"");
+            line.Append (_T("\""));
         }
 
         m_newFile.AddLine (line);
@@ -212,7 +215,7 @@ void CRCppEmitter::AddCode (wxString str)
             // "\"" and start next line with "\"":
             if (isInString) {
 
-                str.Prepend ("\"");
+                str.Prepend (_T("\""));
             }
 
             for (int i = 0; i < 3; i++) {
@@ -247,8 +250,12 @@ wxString CRCppEmitter::AddContainerLookupCode (const wxString &containerName,
     // Has not been emitted yet!
     // Make first letter of container variable name lower case:
     wxString containerVarName = containerName + containerVarNameSuffix;
-    char &firstChar = containerVarName.GetWritableChar (0);
+    wxChar &firstChar = containerVarName.GetWritableChar (0);
+#ifdef UNICODE
+    firstChar = towlower (firstChar); //Very risky: Depends on C99 locales
+#else
     firstChar = tolower (firstChar);
+#endif
     // Make container variable name unique:
     unsigned int cnt = 0;
     wxString uniqueContainerVarName = containerVarName;
@@ -256,25 +263,26 @@ wxString CRCppEmitter::AddContainerLookupCode (const wxString &containerName,
             (m_varNameSet.find (uniqueContainerVarName) != m_varNameSet.end ())) {
 
         cnt++;
-        uniqueContainerVarName = wxString::Format ("%s%d", containerVarName.c_str (), cnt);
+        uniqueContainerVarName = wxString::Format (_T("%s%d"), containerVarName.c_str (), cnt);
     }
     m_contMap[containerName] = uniqueContainerVarName;
     m_varNameSet.insert (uniqueContainerVarName);
     // And acutal emitting:
     wxString lookup, assert;
-    lookup << "wxWindow *" << uniqueContainerVarName << " = wxWindow::FindWindowByName (\"" << containerName << "\");";
+    lookup << _T("wxWindow *") << uniqueContainerVarName << 
+	_T(" = wxWindow::FindWindowByName (\"") << containerName << _T("\");");
     this->AddCode (lookup);
 
-    assert << "CPPUNIT_ASSERT_MESSAGE (\"Container window ";
+    assert << _T("CPPUNIT_ASSERT_MESSAGE (\"Container window ");
     if (itemDesc.IsEmpty ()) {
 
-        assert << "'" << containerName << "'";
+        assert << _T("'") << containerName << _T("'");
 
     } else {
 
-        assert << "for " << itemDesc;
+        assert << _T("for ") << itemDesc;
     }
-    assert << " not found\", "<< uniqueContainerVarName << " != NULL);";
+    assert << _T(" not found\", ") << uniqueContainerVarName << _T(" != NULL);");
     this->AddCode (assert);
 
     return uniqueContainerVarName;
@@ -287,8 +295,8 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
     // Remove '&' and ' ' characters -- the former is often used for
     // accelerator keys in menus et al.:
     wxString varNameToClean = name;
-    varNameToClean.Replace (" ", "");
-    varNameToClean.Replace ("&", "");
+    varNameToClean.Replace (_T(" "), _T(""));
+    varNameToClean.Replace (_T("&"), _T(""));
     // Extract alphanumeric characters till first non-alphanumeric char (e.g.
     // "&Open...  Ctrl+O" => "Open...  Ctrl+O" => "Open"):
     wxString varName;
@@ -299,7 +307,7 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
     } else {
 
         // Variable names must start with alphabetical character:
-        varName.Append ("var");
+        varName.Append (_T("var"));
     }
     bool foundTerminator = false;
     int idx = 1;
@@ -316,8 +324,12 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
         idx++;
     }
     // Make first letter lower case:
-    char &firstChar = varName.GetWritableChar (0);
+    wxChar &firstChar = varName.GetWritableChar (0);
+#ifdef UNICODE
+    firstChar = towlower (firstChar); //Risky: Depends on C99 locale 
+#else
     firstChar = tolower (firstChar);
+#endif
     // Append suffix before unifying:
     varName.Append (suffix);
     // Make variable name unique:
@@ -327,7 +339,7 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
             (m_varNameSet.find (uniqueVarName) != m_varNameSet.end ())) {
 
         cnt++;
-        uniqueVarName = wxString::Format ("%s%d", varName.c_str (), cnt);
+        uniqueVarName = wxString::Format (_T("%s%d"), varName.c_str (), cnt);
     }
     m_varNameSet.insert (uniqueVarName);
 
@@ -362,7 +374,7 @@ wxString CRCppEmitter::BreakString (const wxString &str,
             if (foundIdx != wxString::npos) {
                 
                 // Prevent line break in non-integer number code emitting: 
-                if (breakStrs.Item (i) == ".") {
+                if (breakStrs.Item (i) == _T(".")) {
                     // 1. Check that "." is not in a string
                     wxString line = str.Left (foundIdx);
                     if (!HasBrokenInString(line)) {

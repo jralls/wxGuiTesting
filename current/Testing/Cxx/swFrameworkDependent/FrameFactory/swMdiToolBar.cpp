@@ -22,7 +22,8 @@ MdiToolBar::MdiToolBar (MainFrame *mainFrame, const long style)
     // It seems that by default only one toolbar is allowed per frame?
     wxASSERT (mainFrame->GetFrame ()->GetToolBar () == NULL);
     m_realToolBar = new WxToolBar (mainFrame->GetWindow (), -1,
-            wxDefaultPosition, wxDefaultSize, style, "MdiToolBar");
+				   wxDefaultPosition, wxDefaultSize, style, 
+				   _T("MdiToolBar"));
     mainFrame->GetFrame ()->SetToolBar (m_realToolBar);
 }
 
@@ -45,7 +46,7 @@ void MdiToolBar::AddTool (const int toolId, const wxString &label,
 {
     wxItemKind kind = (isToggle ? wxITEM_CHECK : wxITEM_NORMAL);
     m_realToolBar->AddTool (toolId, label, bitmap, wxNullBitmap, kind,
-            toolTip, "", NULL, isToggleOffable);
+			    toolTip, _T(""), NULL, isToggleOffable);
 }
 
 
@@ -53,7 +54,7 @@ void MdiToolBar::AddControl (wxWindow *control)
 {
     wxASSERT (control != NULL);
     wxControl *realControl = dynamic_cast< wxControl * >(control);
-    wxASSERT_MSG (realControl != NULL, "Takes only wxControl");
+    wxASSERT_MSG (realControl != NULL, _T("Takes only wxControl"));
     m_realToolBar->AddControl (realControl);
 }
 

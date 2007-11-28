@@ -133,7 +133,7 @@ bool SpinCtrlDouble::Create(wxWindow *parent, wxWindowID id,
     SetDigits( digits );
 
     // set the value here without generating an event
-    if (value != "") SetValue( value );
+    if (value != _T("")) SetValue( value );
     else SetValue( initial );
 
     return TRUE;
@@ -330,7 +330,7 @@ void SpinCtrlDouble::SetDigits( int digits, bool exponential )
         int lastplace = -1, extra_digits = 0;
         if (exponential) 
         {
-            wxstr.Printf( "%le", m_increment );
+            wxstr.Printf( _T("%le"), m_increment );
             wxstr.LowerCase();
             lastplace = wxstr.Find('e') - 2;
             long places;
@@ -339,7 +339,7 @@ void SpinCtrlDouble::SetDigits( int digits, bool exponential )
         }
         else
         {
-            wxstr.Printf( "%lf", m_increment );
+            wxstr.Printf( _T("%lf"), m_increment );
             lastplace = wxstr.Len()-1;
         }
         int decimalplace = wxstr.Find('.');
@@ -351,21 +351,21 @@ void SpinCtrlDouble::SetDigits( int digits, bool exponential )
             if ( wxstr.GetChar(i) != '0' )
             {
                 m_digits = extra_digits + i-decimalplace;
-                if (exponential) m_text_format.Printf( "%%.%dle", m_digits );
-                else             m_text_format.Printf( "%%.%dlf", m_digits );
+                if (exponential) m_text_format.Printf( _T("%%.%dle"), m_digits );
+                else             m_text_format.Printf( _T("%%.%dlf"), m_digits );
                 SetValue(m_value);
                 return;
             }
         }
         m_digits = 0;  // no digits, I guess
-        if (exponential) m_text_format.Printf( "%%.%dle", m_digits );
-        else             m_text_format.Printf( "%%.%dlf", m_digits );
+        if (exponential) m_text_format.Printf( _T("%%.%dle"), m_digits );
+        else             m_text_format.Printf( _T("%%.%dlf"), m_digits );
     }
     else
     {
         m_digits = digits;
-        if (exponential) m_text_format.Printf( "%%.%dle", m_digits );
-        else             m_text_format.Printf( "%%.%dlf", m_digits );
+        if (exponential) m_text_format.Printf( _T("%%.%dle"), m_digits );
+        else             m_text_format.Printf( _T("%%.%dlf"), m_digits );
     }
     SetValue(m_value);
 }

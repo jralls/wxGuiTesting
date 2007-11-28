@@ -255,13 +255,13 @@ void GuiObjectManager::AddToMenu (GuiObject *guiObject, long id)
 
 void GuiObjectManager::AddToMenu (wxMenu *menu, GuiObject *guiObject, long id)
 {
-	wxString helpString ("");
+    wxString helpString( _T(""));
 	wxString title (guiObject->GetName ());
 
 	bool isCheckable = guiObject->IsExclusive () || guiObject->IsInteractive ();
 
 	if (!guiObject->IsInteractive ()) {
-		title << "...";
+	    title << _T("...");
 	}
 
 	menu->Append (id, title, helpString, isCheckable);
@@ -285,7 +285,8 @@ void GuiObjectManager::RemoveFromMenu (GuiObject *guiObject, long id)
 void GuiObjectManager::UpdateStatus (GuiObject *guiObject)
 {
 	MenuList *menuList = m_menuListList[guiObject->GetCategory ()];
-	wxASSERT_MSG (menuList != NULL, "guiObject has not been registered !!");
+	wxASSERT_MSG (menuList != NULL, 
+		      _T("guiObject has not been registered !!"));
 
 	bool enabled = guiObject->IsEnabled ();
 	int id = FindId (guiObject);
@@ -371,7 +372,7 @@ long GuiObjectManager::FindId (GuiObject *guiObject)
 		}
 	}
 
-	wxCHECK_MSG(FALSE, wxNOT_FOUND, "guiObject not registered !!");
+	wxCHECK_MSG(FALSE, wxNOT_FOUND, _T("guiObject not registered !!"));
 }
 
 

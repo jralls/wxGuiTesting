@@ -23,7 +23,7 @@ ModalDialogManipulator::ModalDialogManipulator (wxTextCtrl *textCtrl)
 
 void ModalDialogManipulator::Execute ()
 {
-    m_textCtrl->SetValue ("hello");
+    m_textCtrl->SetValue (_T("hello"));
 }
 
 } // End namespace swTst

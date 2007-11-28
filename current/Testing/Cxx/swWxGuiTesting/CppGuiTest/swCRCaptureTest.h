@@ -1,19 +1,22 @@
-///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swCRCaptureTest.h
-// Author:      Reinhold Füreder
-// Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
-// Licence:     wxWindows licence
-///////////////////////////////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////////////////////////// */
+/* // Name:        swWxGuiTesting/CppGuiTest/swCRCaptureTest.h */
+/* // Author:      Reinhold Füreder */
+/* // Created:     2004 */
+/* // Copyright:   (c) 2005 Reinhold Füreder */
+/* // Licence:     wxWindows licence */
+/* ////////////////////////////////////////////////////////////////////////////// */
 
-#ifndef SWCRCAPTURETEST_H
-#define SWCRCAPTURETEST_H
+//This file was entirely commented out in the distro, causing the
+//associated code file to not build. WTF?
 
-#ifdef __GNUG__
-    #pragma interface "swCRCaptureTest.h"
-#endif
+ #ifndef SWCRCAPTURETEST_H 
+ #define SWCRCAPTURETEST_H 
 
-#include <cppunit/extensions/HelperMacros.h>
+#ifdef __GNUG__ 
+     #pragma interface "swCRCaptureTest.h" 
+#endif 
+
+#include <cppunit/extensions/HelperMacros.h> 
 
 namespace swTst {
 
@@ -55,5 +58,5 @@ private:
 
 } // End namespace swTst
 
-#endif // SWCRCAPTURETEST_H
+#endif // SWCRCAPT URETEST_H
 

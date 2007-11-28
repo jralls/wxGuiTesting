@@ -51,13 +51,14 @@ CPPUNIT_NS::Test * InitWxGuiTest::suite ()
 
 void InitWxGuiTest::setUp ()
 {
-    ::wxLogTrace ("wxGuiTestCallTrace", "void InitWxGuiTest::setUp ()");
+    ::wxLogTrace (_T("wxGuiTestCallTrace"), _T("void InitWxGuiTest::setUp ()"));
 }
 
 
 void InitWxGuiTest::tearDown ()
 {
-    ::wxLogTrace ("wxGuiTestCallTrace", "void InitWxGuiTest::tearDown ()");
+    ::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		  _T("void InitWxGuiTest::tearDown ()"));
 }
 
 } // End namespace swTst

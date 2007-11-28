@@ -109,7 +109,7 @@ wxString ToolBarRegistry::FindToolBarNameByWdwPtr (wxWindow *wdw) const
         }
     }
 
-    return (it != m_toolBarMap.end ()) ? it->first : "";
+    return (it != m_toolBarMap.end ()) ? it->first : _T("");
 }
 
 } // End namespace sw

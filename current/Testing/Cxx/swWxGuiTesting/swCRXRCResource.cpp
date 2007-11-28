@@ -16,7 +16,7 @@ namespace swTst {
 
 
 CRXRCResource::CRXRCResource () :
-CRXRCNode ("resource", "")
+CRXRCNode (_T("resource"), _T(""))
 {
     // Nothing to do
 }

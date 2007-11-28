@@ -12,6 +12,11 @@ PROJECT(UsingSwWxGuiTesting)
 # Use wxWidgets:
 SET( wxWidgets_USE_LIBS  base core xrc adv html xml)
 FIND_PACKAGE(wxWidgets REQUIRED)
+
+if ( APPLE )
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+endif ( APPLE )
+
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------
 

@@ -77,14 +77,14 @@ void WxGuiTestApp::OnAssert (const wxChar *file, int line,
 
     } else {
 
-        wxString failMsg = wxString::Format ("Assert \"%s\" failed", cond);
+        wxString failMsg = wxString::Format (_T("Assert \"%s\" failed"), cond);
         if (msg != NULL) {
 
             failMsg << _T(": ") << msg;
         }
 
         WxGuiTestHelper::AddTestFailure (file, line,
-                "wxWidgets assert failure", failMsg);
+                _T("wxWidgets assert failure"), failMsg);
         //WxGuiTestHelper::SetCheckForProvokedWarnings (false);
         wxTheApp->ExitMainLoop ();
     }
@@ -95,7 +95,8 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
 {
     // Called too often, maybe in combination with a boolean flag, temporarily
     // set to true => show OnIdle() call trace:
-    ::wxLogTrace ("wxGuiTestCallTrace", "void WxGuiTestApp::OnIdle (wxIdleEvent &event)");
+    ::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		  _T("void WxGuiTestApp::OnIdle (wxIdleEvent &event)"));
 
     PseudoApp::OnIdle (event);
 
@@ -121,7 +122,7 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
 
 int WxGuiTestApp::OnRun ()
 {
-    ::wxLogTrace ("wxGuiTestCallTrace", "int WxGuiTestApp::OnRun ()");
+    ::wxLogTrace (_T("wxGuiTestCallTrace"), _T("int WxGuiTestApp::OnRun ()"));
 
     // TODO: Allow configuration of m_exitOnFrameDelete flag by means of
     //   WxGuiTestHelper?

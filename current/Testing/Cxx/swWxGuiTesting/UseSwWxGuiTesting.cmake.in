@@ -15,4 +15,4 @@ SET (Testing_swWxGuiTesting_LIBRARY_DIRS @swWxGuiTesting_LIBRARY_DIRS_CONFIG@)
 
 
 # A list of all libraries for swWxGuiTesting.
-SET (Testing_swWxGuiTesting_LIBRARIES @swWxGuiTesting_LIBRARIES_CONFIG@)
+SET (Testing_swWxGuiTesting_LIBRARIES "@swWxGuiTesting_LIBRARIES_CONFIG@")

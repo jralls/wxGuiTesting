@@ -14,12 +14,9 @@
 #endif
 
 #include "Common.h"
-
 #include "swCRCapturedEvent.h"
 
 namespace swTst {
-
-
 /*! \class CRChoiceSelectionEvent
     \brief Handle choice selection events.
 */

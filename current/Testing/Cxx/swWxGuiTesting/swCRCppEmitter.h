@@ -126,8 +126,8 @@ public:
         \return name of container variable in emitted code
     */
     virtual wxString AddContainerLookupCode (const wxString &containerName,
-            const wxString &itemDesc = "",
-            const wxString &containerVarNameSuffix = "");
+            const wxString &itemDesc = _T(""),
+            const wxString &containerVarNameSuffix = _T(""));
 
 
     /*! \fn virtual wxString MakeVarName (const wxString &name, const wxString &suffix = "")
@@ -145,7 +145,7 @@ public:
         \return unique variable name based on given name
     */
     virtual wxString MakeVarName (const wxString &name,
-            const wxString &suffix = "");
+            const wxString &suffix = _T(""));
 
 protected:
     /*! \fn CRCppEmitter ()

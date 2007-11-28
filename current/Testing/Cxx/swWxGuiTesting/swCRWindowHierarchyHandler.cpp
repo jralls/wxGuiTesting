@@ -32,10 +32,10 @@ CRWindowHierarchyHandler::CRWindowHierarchyHandler ()
     m_xrcResource = NULL;
     m_configCached = NULL;
 
-    m_contMap["wxDialog"] = "dialog";
-    m_contMap["wxFrame"] = "frame";
-    m_contMap["wxPanel"] = "panel";
-    m_contMap["wxNotebook"] = "notebook";
+    m_contMap[_T("wxDialog")] = _T("dialog");
+    m_contMap[_T("wxFrame")] = _T("frame");
+    m_contMap[_T("wxPanel")] = _T("panel");
+    m_contMap[_T("wxNotebook")] = _T("notebook");
 }
 
 
@@ -87,7 +87,7 @@ wxString CRWindowHierarchyHandler::FindContainerName (wxWindow *window,
         } else {
 
             // Something went wrong
-            return "";
+            return _T("");
         }
     }
     // 2. Maybe it should have been looked after an unknown control?
@@ -103,7 +103,7 @@ wxString CRWindowHierarchyHandler::FindContainerName (wxWindow *window,
             } else {
 
                 // Something went wrong
-                return "";
+                return _T("");
             }
         }
     }
@@ -128,7 +128,7 @@ wxString CRWindowHierarchyHandler::FindContainerName (wxWindow *window,
         }
     }
 
-    return (found ? containerWdw->GetName () : "");
+    return (found ? containerWdw->GetName () : _T(""));
 }
 
 
@@ -195,10 +195,10 @@ CRXRCNode * CRWindowHierarchyHandler::FindXRCNode (CRXRCNode *parent,
             return foundNode;
 
         } else if (isUnknownCtrl && (node->GetName () == window->GetName ()) &&
-                (node->GetClass () == "unknown")) {
+                (node->GetClass () == _T("unknown"))) {
 
             // "Double-check":
-            wxASSERT (XRCID (node->GetName ()) == window->GetId ());
+            wxASSERT (wxXmlResource::GetXRCID (node->GetName ()) == window->GetId ());
 
             return node;
 
@@ -210,7 +210,8 @@ CRXRCNode * CRWindowHierarchyHandler::FindXRCNode (CRXRCNode *parent,
             //   but node->GetClass (): wxSlider
 
             // "Double-check":
-            wxASSERT (XRCID (node->GetName ()) == window->GetId ());
+            wxASSERT (wxXmlResource::GetXRCID (node->GetName ()) == 
+		      window->GetId ());
 
             return node;
         }

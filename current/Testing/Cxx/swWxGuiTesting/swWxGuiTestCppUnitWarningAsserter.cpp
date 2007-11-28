@@ -24,13 +24,24 @@ void WxGuiTestCppUnitWarningAsserter::FailAssert (const wxString &file,
     CPPUNIT_NS::SourceLine sourceLine;
 
     if ((!file.IsEmpty ()) || (line != -1)) {
-
+#ifdef UNICODE
+	std::string filestr(wxConvCurrent->cWC2MB(file.c_str ()).data());
+        sourceLine = CPPUNIT_NS::SourceLine (filestr, line);
+#else
         sourceLine = CPPUNIT_NS::SourceLine (file.c_str (), line);
+#endif
     }
 
-    CPPUNIT_NS::Asserter::fail (
-            CPPUNIT_NS::Message (shortDescription.c_str (), message.c_str ()),
-            sourceLine);
+#ifdef UNICODE
+    std::string descstr(wxConvCurrent->cWC2MB(shortDescription.c_str()).data());
+    std::string msgstr(wxConvCurrent->cWC2MB(message.c_str ()).data());
+    CPPUNIT_NS::Asserter::fail (CPPUNIT_NS::Message (descstr, msgstr),
+				sourceLine);
+#else
+     CPPUNIT_NS::Asserter::fail (
+           CPPUNIT_NS::Message (shortDescription.c_str (), message.c_str ()),
+	   sourceLine);
+#endif
 }
 
 } // End namespace swTst

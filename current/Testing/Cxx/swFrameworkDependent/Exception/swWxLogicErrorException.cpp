@@ -29,7 +29,7 @@ WxLogicErrorException::~WxLogicErrorException () throw()
 
 const char *WxLogicErrorException::what () const throw()
 {
-    return m_what.c_str ();
+    return wxConvCurrent->cWX2MB(m_what.c_str ());
 }
 
 } // End namespace sw
