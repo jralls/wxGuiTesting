@@ -126,6 +126,8 @@ void CRTreeItemRightClickEvent::EmitCpp ()
 
     wxString rootIdVarName = _T("rootId");
 
+//FIXME!!! If this gets called more than once (because tester revists the tree), the variable gets redeclared in the test file, causing a compile error.
+
     str.Clear ();
     str << _T("wxTreeItemId ") << rootIdVarName << _T(" = ") << treeCtrlVarName <<
 	_T("->GetRootItem ();");

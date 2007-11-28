@@ -293,6 +293,8 @@ void CRMenuSelectionEvent::EmitCpp ()
 
     if (!m_isTool) {
 
+//FIXME!!! string variables aren't getting set, creating invalid code... assert added to CPPEmitter::MakeVarName() to catch.
+
         //TODO: prevent double emitting of:
         //  - eventHdlVarName (mainframe; pop-up: event object container)
         //  - menuItemContVarName (menubar; pop-up: menu)

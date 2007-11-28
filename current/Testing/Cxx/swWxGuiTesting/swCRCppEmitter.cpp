@@ -270,7 +270,7 @@ wxString CRCppEmitter::AddContainerLookupCode (const wxString &containerName,
     // And acutal emitting:
     wxString lookup, assert;
     lookup << _T("wxWindow *") << uniqueContainerVarName << 
-	_T(" = wxWindow::FindWindowByName (\"") << containerName << _T("\");");
+	_T(" = wxWindow::FindWindowByName (_T(\"") << containerName << _T("\"));");
     this->AddCode (lookup);
 
     assert << _T("CPPUNIT_ASSERT_MESSAGE (\"Container window ");
@@ -341,6 +341,7 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
         cnt++;
         uniqueVarName = wxString::Format (_T("%s%d"), varName.c_str (), cnt);
     }
+    wxASSERT(!uniqueVarName.IsEmpty());
     m_varNameSet.insert (uniqueVarName);
 
     return uniqueVarName;

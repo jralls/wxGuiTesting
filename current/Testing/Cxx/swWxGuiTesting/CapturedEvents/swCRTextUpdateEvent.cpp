@@ -157,7 +157,7 @@ void CRTextUpdateEvent::EmitCpp ()
 
     } else {
 
-        str << _T("\"") << m_textCtrlName << _T("\");");
+        str << _T("_T(\"") << m_textCtrlName << _T("\"));");
     }
     emitter->AddCode (str);
 
@@ -182,8 +182,8 @@ void CRTextUpdateEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") <<
-	textCtrlVarName << _T(", \"") << this->GetEscaped (m_textCtrlValue) <<
-	_T("\");");
+	textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue) <<
+	_T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();
