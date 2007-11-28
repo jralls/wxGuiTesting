@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -134,25 +134,25 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
 
             wxString str;
 
-            wxString recorderVarName = emitter->MakeVarName ((*it).first, "Recorder");
+            wxString recorderVarName = emitter->MakeVarName ((*it).first, _T("Recorder"));
 
-            str << "swTst::WxVtkInteractorEventRecorder *" << recorderVarName <<
-                    " = swTst::VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (\"" <<
-                    (*it).first << "\");";
+            str << _T("swTst::WxVtkInteractorEventRecorder *") << recorderVarName <<
+                    _T(" = swTst::VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T(\"") <<
+                    (*it).first << _T("\"));");
             emitter->AddCode (str);
 
             // Restore scene settings: size of render window, camera settings, ...
-            wxString wdwStackVarName = emitter->MakeVarName ("wdwStack");
+            wxString wdwStackVarName = emitter->MakeVarName (_T("wdwStack"));
 
             str.Clear ();
-            str << "std::stack< wxWindow *, std::list< wxWindow * > > " <<
-                    wdwStackVarName << ";";
+            str << _T("std::stack< wxWindow *, std::list< wxWindow * > > ") <<
+                    wdwStackVarName << _T(";");
             emitter->AddCode (str);
 
-            wxString wdwVarName = emitter->MakeVarName ("wdw");
+            wxString wdwVarName = emitter->MakeVarName (_T("wdw"));
 
             str.Clear ();
-            str << "wxWindow *" << wdwVarName << " = NULL;";
+            str << _T("wxWindow *") << wdwVarName << _T(" = NULL;");
             emitter->AddCode (str);
 
             const WxVtkInteractorEventRecorder::WxVtkMap & wxVtkMap =
@@ -164,50 +164,50 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
                 wxASSERT ((*it).second->camera != NULL);
 
                 // wx container position and sizes:
-                wxString rwiVarName = emitter->MakeVarName ((*it).first, "WxVtkRwi");
+                wxString rwiVarName = emitter->MakeVarName ((*it).first, _T("WxVtkRwi"));
 
                 str.Clear ();
-                str << "wxVTKRenderWindowInteractor * " << rwiVarName <<
-                        " = " << recorderVarName << "->GetInteractor (\"" <<
-                        (*it).first << "\");";
+                str << _T("wxVTKRenderWindowInteractor * ") << rwiVarName <<
+                        _T(" = ") << recorderVarName << _T("->GetInteractor (_T(\"") <<
+                        (*it).first << _T("\"));");
                 emitter->AddCode (str);
 
-                wxString rwiWdwVarName = emitter->MakeVarName ((*it).first, "Wdw");
+                wxString rwiWdwVarName = emitter->MakeVarName ((*it).first, _T("Wdw"));
 
                 str.Clear ();
-                str << "wxWindow *" << rwiWdwVarName << " = " << rwiVarName << ";";
-                emitter->AddCode (str);
-
-                str.Clear ();
-                str << wdwVarName << " = " << rwiWdwVarName << ";";
+                str << _T("wxWindow *") << rwiWdwVarName << _T(" = ") << rwiVarName << _T(";");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << wdwStackVarName << ".push (" << wdwVarName << ");";
+                str << wdwVarName << _T(" = ") << rwiWdwVarName << _T(";");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << "while (" << wdwVarName << "->GetParent () != NULL) {";
+                str << wdwStackVarName << _T(".push (") << wdwVarName << _T(");");
+                emitter->AddCode (str);
+
+                str.Clear ();
+                str << _T("while (") << wdwVarName << _T("->GetParent () != NULL) {");
                 emitter->AddCode (str);                
 
-                emitter->AddCode ("");
+                emitter->AddCode (_T(""));
 
                 str.Clear ();
-                str << emitter->GetTab () << wdwVarName << " = " <<
-                        wdwVarName << "->GetParent ();";
+                str << emitter->GetTab () << wdwVarName << _T(" = ") <<
+                        wdwVarName << _T("->GetParent ();");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << emitter->GetTab () << wdwStackVarName << ".push (" <<
-                        wdwVarName << ");";
+                str << emitter->GetTab () << wdwStackVarName << _T(".push (") <<
+                        wdwVarName << _T(");");
                 emitter->AddCode (str);
 
-                emitter->AddCode ("}");
+                emitter->AddCode (_T("}"));
 
                 str.Clear ();
-                str << wdwVarName << "->Move (" <<
-                        (*it).second->position.x << ", " <<
-                        (*it).second->position.y << ");";
+                str << wdwVarName << _T("->Move (") <<
+                        (*it).second->position.x << _T(", ") <<
+                        (*it).second->position.y << _T(");");
                 emitter->AddCode (str);
 
                 WxVtkInteractorEventRecorder::SizeList::const_iterator sizeIt =
@@ -215,107 +215,107 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
                 while (sizeIt != (*it).second->sizeList.end ()) {
 
                     str.Clear ();
-                    str << wdwStackVarName << ".top ()->SetSize (" <<
-                            (*sizeIt).GetWidth () << ", " <<
-                            (*sizeIt).GetHeight () << ");";
+                    str << wdwStackVarName << _T(".top ()->SetSize (") <<
+                            (*sizeIt).GetWidth () << _T(", ") <<
+                            (*sizeIt).GetHeight () << _T(");");
                     emitter->AddCode (str);
 
                     str.Clear ();
-                    str << wdwStackVarName << ".pop ();";
+                    str << wdwStackVarName << _T(".pop ();");
                     emitter->AddCode (str);
 
                     sizeIt++;
                 }
 
                 str.Clear ();
-                str << "wxASSERT (" << wdwStackVarName << ".empty ());";
+                str << _T("wxASSERT (") << wdwStackVarName << _T(".empty ());");
                 emitter->AddCode (str);
 
                 // Camera:
-                wxString renderersVarName = emitter->MakeVarName ("renderers");
+                wxString renderersVarName = emitter->MakeVarName (_T("renderers"));
 
                 str.Clear ();
-                str << "vtkRendererCollection *" << renderersVarName <<
-                        " = " << rwiVarName << "->GetRenderWindow ()->GetRenderers ();";
+                str << _T("vtkRendererCollection *") << renderersVarName <<
+                        _T(" = ") << rwiVarName << _T("->GetRenderWindow ()->GetRenderers ();");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << "wxASSERT_MSG (" << renderersVarName << "->GetNumberOfItems () > 0, \"At least one renderer must exist in each render window; and only the first one is fully supported.\");";
+                str << _T("wxASSERT_MSG (") << renderersVarName << _T("->GetNumberOfItems () > 0, _T(\"At least one renderer must exist in each render window; and only the first one is fully supported.\"));");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << "if (" << renderersVarName << "->GetNumberOfItems () != 1) {";
+                str << _T("if (") << renderersVarName << _T("->GetNumberOfItems () != 1) {");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << emitter->GetTab () << "::wxLogTrace (_T(\"VtkWxGuiTesting\"), _T(\"Currently only one renderer per render window interactor is supported\"));";
+                str << emitter->GetTab () << _T("::wxLogTrace (_T(\"VtkWxGuiTesting\"), _T(\"Currently only one renderer per render window interactor is supported\"));");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << "}";
+                str << _T("}");
                 emitter->AddCode (str);
 
-                wxString cameraVarName = emitter->MakeVarName ("camera");
+                wxString cameraVarName = emitter->MakeVarName (_T("camera"));
 
                 str.Clear ();
-                str << "vtkCamera *" << cameraVarName << " = " <<
-                        renderersVarName << "->GetFirstRenderer ()->GetActiveCamera ();";
-                emitter->AddCode (str);
-
-                str.Clear ();
-                str << cameraVarName << "->SetParallelScale (" <<
-                        (*it).second->camera->GetParallelScale () << ");";
+                str << _T("vtkCamera *") << cameraVarName << _T(" = ") <<
+                        renderersVarName << _T("->GetFirstRenderer ()->GetActiveCamera ();");
                 emitter->AddCode (str);
 
                 str.Clear ();
-                str << cameraVarName << "->SetViewAngle (" <<
-                        (*it).second->camera->GetViewAngle () << ");";
+                str << cameraVarName << _T("->SetParallelScale (") <<
+                        (*it).second->camera->GetParallelScale () << _T(");");
+                emitter->AddCode (str);
+
+                str.Clear ();
+                str << cameraVarName << _T("->SetViewAngle (") <<
+                        (*it).second->camera->GetViewAngle () << _T(");");
                 emitter->AddCode (str);
 
                 double array[3];
 
                 (*it).second->camera->GetClippingRange (array);
                 str.Clear ();
-                str << cameraVarName << "->SetClippingRange (" << array[0] <<
-                        ", " << array[1] << ");";
+                str << cameraVarName << _T("->SetClippingRange (") << array[0] <<
+                        _T(", ") << array[1] << _T(");");
                 emitter->AddCode (str);
 
                 (*it).second->camera->GetFocalPoint (array);
                 str.Clear ();
-                str << cameraVarName << "->SetFocalPoint (" << array[0] <<
-                        ", " << array[1] << ", " << array[2] << ");";
+                str << cameraVarName << _T("->SetFocalPoint (") << array[0] <<
+                        _T(", ") << array[1] << _T(", ") << array[2] << _T(");");
                 emitter->AddCode (str);
 
                 (*it).second->camera->GetPosition (array);
                 str.Clear ();
-                str << cameraVarName << "->SetPosition (" << array[0] <<
-                        ", " << array[1] << ", " << array[2] << ");";
+                str << cameraVarName << _T("->SetPosition (") << array[0] <<
+                        _T(", ") << array[1] << _T(", ") << array[2] << _T(");");
                 emitter->AddCode (str);
 
                 (*it).second->camera->GetViewUp (array);
                 str.Clear ();
-                str << cameraVarName << "->SetViewUp (" << array[0] <<
-                        ", " << array[1] << ", " << array[2] << ");";
+                str << cameraVarName << _T("->SetViewUp (") << array[0] <<
+                        _T(", ") << array[1] << _T(", ") << array[2] << _T(");");
                 emitter->AddCode (str);
             }
 
             str.Clear ();
-            str << recorderVarName << "->ReadFromInputStringOn ();";
+            str << recorderVarName << _T("->ReadFromInputStringOn ();");
             emitter->AddCode (str);
 
             str.Clear ();
-            str << recorderVarName << "->SetInputString (";
+            str << recorderVarName << _T("->SetInputString (");
             emitter->AddCode (str);
 
             emitter->AddVerbatimStringWithLineBreaks (
                     wxVtkRec->GetRecordingAsEmitString (emitter->GetTab ()).RemoveLast ());
 
             str.Clear ();
-            str << ");";
+            str << _T(");");
             emitter->AddCode (str);
 
             str.Clear ();
-            str << recorderVarName << "->Play ();";
+            str << recorderVarName << _T("->Play ();");
             emitter->AddCode (str);
         }
     }

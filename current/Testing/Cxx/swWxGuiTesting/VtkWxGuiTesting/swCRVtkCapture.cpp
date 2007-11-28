@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -50,7 +50,7 @@ void CRVtkCapture::CreateDialog ()
 wxPanel * CRVtkCapture::LoadPanel ()
 {
     InitVtkCapturePanelXRC ();
-    return wxXmlResource::Get ()->LoadPanel (m_dialog, "VtkCapturePanel");
+    return wxXmlResource::Get ()->LoadPanel (m_dialog, _T("VtkCapturePanel"));
 }
 
 } // End namespace swTst

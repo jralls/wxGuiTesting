@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -57,7 +57,7 @@ public:
         wxASSERT (guiTestApp != NULL);                                        \
         guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); \
                                                                               \
-        wxString excMsg;                                                      \
+        std::string excMsg;                                                   \
         swTst::CRVtkCapture *capture = new swTst::CRVtkCapture ();            \
         try {                                                                 \
             capture->Capture (__FILE__, __LINE__);                            \
@@ -69,7 +69,7 @@ public:
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
         swTst::CRCppEmitter::Destroy ();                                      \
-        if (!excMsg.IsEmpty ()) {                                             \
+        if (!excMsg.empty ()) {                                             \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
     }

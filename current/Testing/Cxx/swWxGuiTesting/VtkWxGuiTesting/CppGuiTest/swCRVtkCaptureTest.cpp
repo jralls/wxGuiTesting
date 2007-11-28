@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/CppTest/swCRVtkCaptureTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -61,21 +61,21 @@ void CRVtkCaptureTest::setUp ()
 	char *vtkFilename = "../../../../TestData/vtk/hipStl.vtp";
 
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load ("../../../../Cxx/swWxGuiTesting/CppGuiTest/EvtSimHlpTest_wdr.xrc");
+    wxXmlResource::Get()->Load (_T("../../../../Cxx/swWxGuiTesting/CppGuiTest/EvtSimHlpTest_wdr.xrc"));
 
-    wxFrame *frame = new wxFrame (NULL, -1, "EvtSimHlpFrame");
+    wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
     wxMenuBar *menuBar = wxXmlResource::Get ()->LoadMenuBar (wxT("MenuBar"));
     wxASSERT (menuBar != NULL);
     frame->SetMenuBar (menuBar);
 
     wxBoxSizer *topsizer = new wxBoxSizer (wxHORIZONTAL);
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, "EvtSimHlpTestPanel");
+    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
     // Include the unknown double spin control:
     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (frame,
             -1,
-            "",
+            _T(""),
             wxDefaultPosition,
             wxSize (80, 21),
             wxNO_BORDER,
@@ -84,12 +84,12 @@ void CRVtkCaptureTest::setUp ()
             0.5,
             0.1);
     spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl ("SpinCtrlDbl", spinCtrl, frame);
+    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
-    wxTreeItemId root = treeCtrl->AddRoot ("Root");
-    wxTreeItemId item = treeCtrl->AppendItem (root, "item");
-    wxTreeItemId item2 = treeCtrl->AppendItem (root, "item2");
+    wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
+    wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
+    wxTreeItemId item2 = treeCtrl->AppendItem (root, _T("item2"));
 
     // VTK stuff:
 	vtkXMLPolyDataReader *reader = vtkXMLPolyDataReader::New ();
@@ -103,13 +103,13 @@ void CRVtkCaptureTest::setUp ()
 
     m_iren1 = new wxVTKRenderWindowInteractor (frame, -1);
     m_iren1->UseCaptureMouseOn ();
-    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren1, "Multi",
-            "iren1");
+    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren1, _T("Multi"),
+            _T("iren1"));
 
     m_iren2 = new wxVTKRenderWindowInteractor (frame, -1);
     m_iren2->UseCaptureMouseOn ();
-    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren2, "Multi",
-            "iren2");
+    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren2, _T("Multi"),
+            _T("iren2"));
 
 	vtkRenderer *renderer1 = vtkRenderer::New ();
     vtkRenderer *renderer2 = vtkRenderer::New ();
@@ -158,7 +158,7 @@ void CRVtkCaptureTest::tearDown ()
 
 void CRVtkCaptureTest::testVtkCapture ()
 {
-    wxString xrcDir = "../../../../TestData/xrc/CaptureTest/";
+    wxString xrcDir = _T("../../../../TestData/xrc/CaptureTest/");
     sw::Config *configInit = new sw::Config ();
     configInit->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (configInit);
@@ -176,17 +176,18 @@ void CRVtkCaptureTest::testVtkCapture ()
         WxGuiTestApp *guiTestApp = dynamic_cast< WxGuiTestApp * >(app);
         wxASSERT (guiTestApp != NULL);
         guiTestApp->SetEventFilter (CREventCaptureManager::GetInstance ());
-        CRCppEmitter::GetInstance ()->SetTestCaseFileContext (__FILE__);
+        CRCppEmitter::GetInstance ()->SetTestCaseFileContext (
+                wxString (__FILE__, *wxConvCurrent));
         CREventCaptureManager::GetInstance ()->On ();
 
         try {
             // Put here the emitted code:
     swTst::WxVtkInteractorEventRecorder *multiRecorder = swTst::
-            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder ("Multi");
+            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T("Multi"));
     std::stack< wxWindow *, std::list< wxWindow * > > wdwStack;
     wxWindow *wdw = NULL;
     wxVTKRenderWindowInteractor * iren1WxVtkRwi = multiRecorder->GetInteractor 
-            ("iren1");
+            (_T("iren1"));
     wxWindow *iren1Wdw = iren1WxVtkRwi;
     wdw = iren1Wdw;
     wdwStack.push (wdw);
@@ -203,8 +204,8 @@ void CRVtkCaptureTest::testVtkCapture ()
     wxASSERT (wdwStack.empty ());
     vtkRendererCollection *renderers = iren1WxVtkRwi->GetRenderWindow ()->
             GetRenderers ();
-    wxASSERT_MSG (renderers->GetNumberOfItems () == 1, "Currently only one "
-            "renderer per render window interactor is supported");
+    wxASSERT_MSG (renderers->GetNumberOfItems () == 1, _T("Currently only one ")
+            _T("renderer per render window interactor is supported"));
     vtkCamera *camera = renderers->GetFirstRenderer ()->GetActiveCamera ();
     camera->SetParallelScale (87.6875);
     camera->SetViewAngle (30);
@@ -213,7 +214,7 @@ void CRVtkCaptureTest::testVtkCapture ()
     camera->SetPosition (-453.827, 190.15, 322.665);
     camera->SetViewUp (0.949353, 0.155696, 0.272924);
     wxVTKRenderWindowInteractor * iren2WxVtkRwi = multiRecorder->GetInteractor 
-            ("iren2");
+            (_T("iren2"));
     wxWindow *iren2Wdw = iren2WxVtkRwi;
     wdw = iren2Wdw;
     wdwStack.push (wdw);
@@ -230,8 +231,8 @@ void CRVtkCaptureTest::testVtkCapture ()
     wxASSERT (wdwStack.empty ());
     vtkRendererCollection *renderers1 = iren2WxVtkRwi->GetRenderWindow ()->
             GetRenderers ();
-    wxASSERT_MSG (renderers1->GetNumberOfItems () == 1, "Currently only one "
-            "renderer per render window interactor is supported");
+    wxASSERT_MSG (renderers1->GetNumberOfItems () == 1, _T("Currently only one ")
+            _T("renderer per render window interactor is supported"));
     vtkCamera *camera1 = renderers1->GetFirstRenderer ()->GetActiveCamera ();
     camera1->SetParallelScale (87.6875);
     camera1->SetViewAngle (30);

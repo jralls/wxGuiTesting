@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -425,7 +425,8 @@ void WxVtkInteractorEventRecorder::Play ()
                     *this->InputStream >> wxVtkId;
 
                     wxVTKRenderWindowInteractor *wxVtkRwi =
-                            WxVtkInteractorEventRecorder::GetInteractor (wxVtkId);
+                            WxVtkInteractorEventRecorder::GetInteractor (
+                            wxString (wxVtkId, *wxConvCurrent));
                     wxASSERT (wxVtkRwi != NULL);
 
                     wxVtkRwi->SetEventPosition (pos);
@@ -466,7 +467,7 @@ void WxVtkInteractorEventRecorder::Rewind()
 // This adds the keypress event observer and the delete event observer
 void WxVtkInteractorEventRecorder::SetInteractor (vtkRenderWindowInteractor *i)
 {
-    wxFAIL_MSG ("Change of class interface: use AddInteractor() method instead!");
+    wxFAIL_MSG (_T("Change of class interface: use AddInteractor() method instead!"));
 
   if (i == this->Interactor)
     {
@@ -545,7 +546,7 @@ wxString WxVtkInteractorEventRecorder::GetInteractorId (
         }
     }
 
-    return (it == m_wxVtkMap.end () ? "" : (*it).first);
+    return (it == m_wxVtkMap.end () ? _T("") : (*it).first);
 }
 
 
@@ -630,7 +631,8 @@ void WxVtkInteractorEventRecorder::ProcessEvents (vtkObject *object,
             self->WriteEvent (vtkCommand::GetStringFromEventId (event),
                     wxVtkRwi->GetEventPosition (), wxVtkRwi->GetControlKey (), 
                     wxVtkRwi->GetShiftKey (), wxVtkRwi->GetKeyCode (),
-                    wxVtkRwi->GetRepeatCount (), wxVtkRwi->GetKeySym (), wxVtkId);
+                    wxVtkRwi->GetRepeatCount (), wxVtkRwi->GetKeySym (),
+                    wxConvCurrent->cWX2MB(wxVtkId));
         }
         self->OutputStream->flush ();
     }
@@ -690,7 +692,7 @@ bool WxVtkInteractorEventRecorder::HasInputStream () const
 
 bool WxVtkInteractorEventRecorder::IsEmptyRecording () const
 {
-    return (!::wxFileExists (this->FileName));
+    return (!::wxFileExists (wxString(this->FileName, *wxConvCurrent)));
 }
 
 
@@ -705,7 +707,8 @@ wxString WxVtkInteractorEventRecorder::GetRecordingAsEmitString (
 
     while (std::getline (*inStr, line)) {
 
-        fileContent << tab << tab << tab << "\"" << line.c_str () << "\\n\"\n";
+        fileContent << tab << tab << tab << _T("\"") <<
+                wxString (line.c_str (), *wxConvCurrent) << _T("\\n\"\n");
     }
     inStr->close ();
 
@@ -725,7 +728,7 @@ void WxVtkInteractorEventRecorder::ResetRecording ()
         delete this->InputStream;
         this->InputStream = NULL;
     }
-    if (::wxFileExists (this->FileName)) {
+    if (::wxFileExists (wxString (this->FileName, *wxConvCurrent))) {
 
         int ret = remove (this->FileName);
         wxASSERT (ret == 0);

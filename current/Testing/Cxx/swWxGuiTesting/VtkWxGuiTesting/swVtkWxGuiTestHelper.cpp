@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -89,7 +89,8 @@ void VtkWxGuiTestHelper::RegisterForRecording (
 
         recorder = WxVtkInteractorEventRecorder::New ();
         m_recorderMap[recorderId] = recorder;
-        recorder->SetFileName (wxString::Format ("%s_wxVtk.rec", recorderId.c_str ()));
+        recorder->SetFileName (wxConvCurrent->cWX2MB (wxString::Format (
+                _T("%s_wxVtk.rec"), recorderId.c_str ())));
     }
     wxASSERT (recorder != NULL);
     recorder->AddInteractor (wxVtkId, wxVtkRwi);
