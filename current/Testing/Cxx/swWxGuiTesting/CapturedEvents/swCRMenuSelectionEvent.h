@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRMenuSelectionEvent.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +64,7 @@ private:
     
     bool m_isFromMainFrameMenuBar;
     bool m_isFromTopWindow;
+    bool m_eventObjectIsMenu;
     bool m_isFromPopupMenu;
     bool m_isChecked;
 

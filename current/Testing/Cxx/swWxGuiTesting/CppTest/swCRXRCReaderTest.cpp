@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppTest/swCRXRCReaderTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -61,7 +61,7 @@ void CRXRCReaderTest::testReadingXRC ()
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
-			    resName == _T("resource"));
+            resName == _T("resource"));
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have one child", 1 == xrcResource->GetNmbChildren ());
     // wxPanel
@@ -94,7 +94,7 @@ void CRXRCReaderTest::testResPathReadingXRC ()
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
-			    resName == _T("resource"));
+            resName == _T("resource"));
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have three children", 3 == xrcResource->GetNmbChildren ());
 }

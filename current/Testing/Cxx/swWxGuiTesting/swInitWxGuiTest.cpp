@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swInitWxGuiTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -58,7 +58,7 @@ void InitWxGuiTest::setUp ()
 void InitWxGuiTest::tearDown ()
 {
     ::wxLogTrace (_T("wxGuiTestCallTrace"), 
-		  _T("void InitWxGuiTest::tearDown ()"));
+            _T("void InitWxGuiTest::tearDown ()"));
 }
 
 } // End namespace swTst

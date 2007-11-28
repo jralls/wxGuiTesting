@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRChoiceSelectionEvent.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -14,9 +14,12 @@
 #endif
 
 #include "Common.h"
+
 #include "swCRCapturedEvent.h"
 
 namespace swTst {
+
+
 /*! \class CRChoiceSelectionEvent
     \brief Handle choice selection events.
 */

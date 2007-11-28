@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCRCapture.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -75,7 +75,7 @@ void CRCapture::Show ()
     if (m_dialog == NULL) {
 
         this->CreateDialog ();
-        this->CreateEvtHandler ();
+        m_control = this->CreateEvtHandler ();
         m_dialog->PushEventHandler (m_control);
 
         CREventCaptureManager::GetInstance ()->IgnoreWindow (m_dialog);
@@ -95,9 +95,9 @@ void CRCapture::Show ()
 }
 
 
-void CRCapture::CreateEvtHandler ()
+CRCaptureControl * CRCapture::CreateEvtHandler () const
 {
-    m_control = new CRCaptureControl (m_dialog);
+    return new CRCaptureControl (m_dialog);
 }
 
 

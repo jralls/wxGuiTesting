@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppTest/swCRCppEmitterTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ void CRCppEmitterTest::tearDown ()
 
 void CRCppEmitterTest::testExample ()
 {
-    wxChar *filename = _T("../../../Cxx/swWxGuiTesting/CppGuiTest/swCRCaptureTest.cpp");
+    wxString filename = _T("../../../Cxx/swWxGuiTesting/CppGuiTest/swCRCaptureTest.cpp");
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
     CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);
@@ -75,6 +75,20 @@ void CRCppEmitterTest::testExample ()
     expectedCode.Add (_T("    Method (\"Check line break in emitting of non-integer numbers          \", "));
     expectedCode.Add (_T("            0.5);"));
     checkEmittedCode (captureFilename, expectedCode);
+
+    CRCppEmitter::Destroy ();
+}
+
+
+void CRCppEmitterTest::testMakeVarName()
+{
+    wxString filename = _T("../../../Cxx/swWxGuiTesting/CppGuiTest/swCRCaptureTest.cpp");
+
+    CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
+    CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);
+    emitter->SetTestCaseFileContext (filename);
+
+    CPPUNIT_ASSERT_EQUAL (wxString(_T("var")), emitter->MakeVarName(_T("Var")));
 
     CRCppEmitter::Destroy ();
 }

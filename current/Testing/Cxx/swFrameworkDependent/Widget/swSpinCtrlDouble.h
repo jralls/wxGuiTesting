@@ -3,7 +3,7 @@
 // Author:      John Labenski
 // Created:     11/05/02
 // Copyright:   John Labenski, 2002
-// Modified:    Viet Bui Xuan, Reinhold Füreder
+// Modified:    Viet Bui Xuan, Reinhold Fuereder
 // License:     wxWindows v2
 /////////////////////////////////////////////////////////////////////////////
 
@@ -84,7 +84,7 @@ public:
 
     // wxSpinCtrl compatibility, call SetIncrement(increment,digits) after
     SpinCtrlDouble(wxWindow *parent, wxWindowID id = -1,
-                 const wxString &value = _T(""),
+                 const wxString &value = _(""),
                  const wxPoint& pos = wxDefaultPosition,
                  const wxSize& size = wxSize(95,-1),
                  long style = wxNO_BORDER,

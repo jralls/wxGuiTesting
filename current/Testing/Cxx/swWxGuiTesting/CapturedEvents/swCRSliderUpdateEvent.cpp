@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRSliderUpdateEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -111,7 +111,7 @@ void CRSliderUpdateEvent::EmitCpp ()
 
     wxString str;
     str << _T("wxWindow *") << sliderWdwVarName << _T(" = ") << 
-	containerVarName << _T("->FindWindow (");
+            containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
         str << _T("XRCID(\"") << m_sliderName << _T("\"));");
@@ -124,8 +124,8 @@ void CRSliderUpdateEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for slider '") <<
-	m_sliderName << _T("' not found\", ") << sliderWdwVarName <<
-	_T(" != NULL);");
+            m_sliderName << _T("' not found\", ") << sliderWdwVarName <<
+            _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString sliderVarName = emitter->MakeVarName (m_sliderName);
@@ -137,7 +137,7 @@ void CRSliderUpdateEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for slider '") <<
-	m_sliderName << _T("' failed\", ") << sliderVarName << _T(" != NULL);");
+            m_sliderName << _T("' failed\", ") << sliderVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     str.Clear ();

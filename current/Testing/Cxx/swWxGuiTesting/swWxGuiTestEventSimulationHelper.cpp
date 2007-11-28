@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -86,6 +86,21 @@ void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id,
     evt.SetEventObject (window);
     evt.SetInt (1);
     ::wxPostEvent (window->GetEventHandler (), evt);
+}
+
+
+void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id, wxMenu *menu)
+{
+    // 1. GUI control state:
+    wxMenuItem *menuItem = menu->FindItem (id, &menu);
+    CPPUNIT_ASSERT_MESSAGE ("Menu item specified with 'id' not found in 'menu'",
+            menuItem != NULL);
+    menuItem->Check (!menuItem->IsChecked ());
+    // 2. Event: (Code duplication WRT SelectMenuItem() method on purpose!)
+    wxCommandEvent evt (wxEVT_COMMAND_MENU_SELECTED, id);
+    evt.SetEventObject (menu);
+    evt.SetInt (1);
+    ::wxPostEvent (menu, evt);
 }
 
 

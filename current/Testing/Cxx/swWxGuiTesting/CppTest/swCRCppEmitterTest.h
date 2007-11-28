@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppTest/swCRCppEmitterTest.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -28,6 +28,7 @@ class CRCppEmitterTest : public CPPUNIT_NS::TestFixture
     CPPUNIT_TEST_SUITE( CRCppEmitterTest );
 
         CPPUNIT_TEST( testExample );
+        CPPUNIT_TEST( testMakeVarName );
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -48,6 +49,12 @@ public:
         \brief Example test case.
     */
     virtual void testExample ();
+
+
+    /*! \fn virtual void testMakeVarName ()
+        \brief Test making of variable names (incl. first letter lower case).
+    */
+    virtual void testMakeVarName ();
 
 protected:
     /*! \fn void checkEmittedCode (const wxString &captureFilename, const wxArrayString &expectedCode) const

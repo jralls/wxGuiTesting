@@ -20,6 +20,10 @@ ENDIF (VTK_FOUND)
 #-----------------------------------------------------------------------------
 # Look for WXWINDOWS.
 SET( wxWidgets_USE_LIBS  base core gl xrc adv html xml)
+IF (APPLE)
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+   SET (GUI_EXECUTABLE MACOSX_BUNDLE)
+ENDIF (APPLE)
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------
@@ -55,7 +59,7 @@ LINK_DIRECTORIES (
 )
 
 
-ADD_EXECUTABLE (CppGuiTestVtkCaptureReplay
+ADD_EXECUTABLE (CppGuiTestVtkCaptureReplay ${GUI_EXECUTABLE}
     CppTextTestApp.cpp
     swCRVtkCaptureTest.h
     swCRVtkCaptureTest.cpp

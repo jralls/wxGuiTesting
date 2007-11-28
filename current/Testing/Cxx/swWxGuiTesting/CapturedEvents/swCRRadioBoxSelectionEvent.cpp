@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRRadioBoxSelectionEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -87,14 +87,14 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
 
     wxString containerVarName = emitter->AddContainerLookupCode (
             m_containerName, wxString::Format (_T("radio box '%s'"), 
-					       m_radioBoxName.c_str ()));
+            m_radioBoxName.c_str ()));
 
     wxString radioBoxWdwVarName = emitter->MakeVarName (m_radioBoxName, 
-							_T("Wdw"));
+            _T("Wdw"));
 
     wxString str;
     str << _T("wxWindow *") << radioBoxWdwVarName << _T(" = ") << 
-	containerVarName << _T("->FindWindow (");
+            containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
         str << _T("XRCID(\"") << m_radioBoxName << _T("\"));");
@@ -107,8 +107,8 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for radio box '") <<
-	m_radioBoxName << _T("' not found\", ") << radioBoxWdwVarName <<
-	_T(" != NULL);");
+            m_radioBoxName << _T("' not found\", ") << radioBoxWdwVarName <<
+            _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString radioBoxVarName = emitter->MakeVarName (m_radioBoxName);
@@ -120,8 +120,8 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for radio box '") <<
-	m_radioBoxName << _T("' failed\", ") << radioBoxVarName << 
-	_T(" != NULL);");
+            m_radioBoxName << _T("' failed\", ") << radioBoxVarName << 
+            _T(" != NULL);");
     emitter->AddCode (str);
     
     wxString radioBoxSelTextVarName = emitter->MakeVarName (radioBoxVarName,

@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestTimedDialogEnder.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -37,7 +37,7 @@ WxGuiTestTimedDialogEnder::WxGuiTestTimedDialogEnder (unsigned int milliseconds,
 WxGuiTestTimedDialogEnder::~WxGuiTestTimedDialogEnder ()
 {
     ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), 
-		  _T("~WxGuiTestTimedDialogEnder"));
+            _T("~WxGuiTestTimedDialogEnder"));
     this->DestroyTimer ();
 }
 

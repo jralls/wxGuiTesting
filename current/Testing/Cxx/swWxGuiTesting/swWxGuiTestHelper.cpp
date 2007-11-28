@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestHelper.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -361,7 +361,7 @@ bool WxGuiTestHelper::IsProvokedWarning (const wxString &caption,
 
             // Unexpected warning -> test case failure:
             wxString failMsg = wxString::Format (
-		_T("Caption \"%s\", message \"%s\" occured"), caption.c_str (),
+                    _T("Caption \"%s\", message \"%s\" occured"), caption.c_str (),
                     message.c_str ());
             WxGuiTestHelper::AddTestFailure (_T(""), -1,
                     _T("Unexpected App application warning detected"), failMsg);

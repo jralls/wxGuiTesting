@@ -69,18 +69,18 @@ public:
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
         swTst::CRCppEmitter::Destroy ();                                      \
-        if (!excMsg.empty ()) {                                             \
+        if (!excMsg.empty ()) {                                               \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
     }
 
 protected:
-    /*! \fn virtual wxEvtHandler * CreateEvtHandler () const
+    /*! \fn virtual CRCaptureControl * CreateEvtHandler () const
         \brief Create event handler for capturing dialog.
 
         \return new event handler for capturing dialog
     */
-    virtual wxEvtHandler * CreateEvtHandler () const;
+    virtual CRCaptureControl * CreateEvtHandler () const;
 
 
     /*! \fn virtual void CreateDialog ()

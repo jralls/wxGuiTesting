@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppTest/swWxGuiTestProvokedWarningRegistryTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -111,7 +111,7 @@ void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 
     const swTst::WxGuiTestProvokedWarning * knownWarning =
             provWarningRegistry.FindRegisteredWarning (
-		_("Direct CAD Voxelisation Warning"), _T("bla"));
+            _("Direct CAD Voxelisation Warning"), _T("bla"));
 
     CPPUNIT_ASSERT_MESSAGE ("Warning was not found",
             knownWarning != NULL);
@@ -122,7 +122,7 @@ void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 
     const swTst::WxGuiTestProvokedWarning * unknownWarning =
             provWarningRegistry.FindRegisteredWarning (
-		_("Unknown Direct CAD Voxelisation Warning"), _T("bla"));
+            _("Unknown Direct CAD Voxelisation Warning"), _T("bla"));
 
     CPPUNIT_ASSERT_MESSAGE ("Warning was found",
             unknownWarning == NULL);

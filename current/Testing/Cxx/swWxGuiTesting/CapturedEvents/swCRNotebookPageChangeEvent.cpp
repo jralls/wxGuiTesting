@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRNotebookPageChangeEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -120,8 +120,8 @@ void CRNotebookPageChangeEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for notebook '") <<
-	m_notebookName << _T("' failed\", ") << notebookVarName <<
-	_T(" != NULL);");
+            m_notebookName << _T("' failed\", ") << notebookVarName <<
+            _T(" != NULL);");
     emitter->AddCode (str);
     
     wxString pageTextVarName = emitter->MakeVarName (notebookVarName,
@@ -129,7 +129,7 @@ void CRNotebookPageChangeEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("const wxString ") << pageTextVarName << _T(" (_(\"") << 
-	m_notebookPageText << _T("\"));");
+            m_notebookPageText << _T("\"));");
     emitter->AddCode (str);
 
     wxString pageVarName = emitter->MakeVarName (notebookVarName, _T("Page"));
@@ -140,9 +140,9 @@ void CRNotebookPageChangeEvent::EmitCpp ()
     
     str.Clear ();
     str << _T("while ((") << pageVarName << _T(" < ") << notebookVarName <<
-	_T("->GetPageCount ()) && (") << notebookVarName << 
-	_T("->GetPageText (") << pageVarName << _T(") != ") << pageTextVarName <<
-	_T(")) {\n");
+            _T("->GetPageCount ()) && (") << notebookVarName << 
+            _T("->GetPageText (") << pageVarName << _T(") != ") << pageTextVarName <<
+            _T(")) {\n");
     emitter->AddCode (str);
 
     str.Clear ();
@@ -155,8 +155,8 @@ void CRNotebookPageChangeEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Page of notebook '") << m_notebookName <<
-	_T("' not found\", ") << pageVarName << _T(" < ") << notebookVarName <<
-	_T("->GetPageCount ());");
+            _T("' not found\", ") << pageVarName << _T(" < ") << notebookVarName <<
+            _T("->GetPageCount ());");
     emitter->AddCode (str);
 
     str.Clear ();

@@ -1,14 +1,18 @@
 ###############################################################################
 # Name:        swWxGuiTesting/CppGuiTest/CMakeLists.txt
-# Author:      Reinhold Füreder
+# Author:      Reinhold Fuereder
 # Created:     2004
-# Copyright:   (c) 2005 Reinhold Füreder
+# Copyright:   (c) 2005 Reinhold Fuereder
 # Licence:     wxWindows licence
 ###############################################################################
 
 #-----------------------------------------------------------------------------
 # Look for WXWINDOWS.
 SET( wxWidgets_USE_LIBS  base core xrc adv html xml)
+IF (APPLE)
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+   SET (GUI_EXECUTABLE MACOSX_BUNDLE)
+ENDIF (APPLE)
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------
@@ -43,7 +47,7 @@ LINK_DIRECTORIES(
 )
 
 
-ADD_EXECUTABLE (CppGuiTestEventSimulation
+ADD_EXECUTABLE (CppGuiTestEventSimulation ${GUI_EXECUTABLE}
     CppTextTestApp.cpp
     swWxGuiTestEventSimulationHelperTest.h
     swWxGuiTestEventSimulationHelperTest.cpp
@@ -63,7 +67,7 @@ TARGET_LINK_LIBRARIES (CppGuiTestEventSimulation
 
 #-----------------------------------------------------------------------------
 # Test capture and replay.
-ADD_EXECUTABLE (CppGuiTestCaptureReplay
+ADD_EXECUTABLE (CppGuiTestCaptureReplay ${GUI_EXECUTABLE}
     CppTextTestApp.cpp
     swCRCaptureTest.h
     swCRCaptureTest.cpp
@@ -83,7 +87,7 @@ TARGET_LINK_LIBRARIES (CppGuiTestCaptureReplay
 
 #-----------------------------------------------------------------------------
 # Test modal dialogs.
-ADD_EXECUTABLE (CppGuiTestModalDialog
+ADD_EXECUTABLE (CppGuiTestModalDialog ${GUI_EXECUTABLE}
     CppTextTestApp.cpp
     swModalDialogTest.h
 	swModalDialogTest.cpp
@@ -101,3 +105,23 @@ TARGET_LINK_LIBRARIES (CppGuiTestModalDialog
     swWxGuiTesting
 )
 #-----------------------------------------------------------------------------
+
+
+#-----------------------------------------------------------------------------
+# Test platform dependent emitting of captured simulated events.
+ADD_EXECUTABLE (CppGuiTestCapturePlusEmit ${GUI_EXECUTABLE}
+    CppTextTestApp.cpp
+    swCapturePlusEmittingTest.h
+    swCapturePlusEmittingTest.cpp
+)
+
+
+TARGET_LINK_LIBRARIES (CppGuiTestCapturePlusEmit
+    ${wxWidgets_LIBRARIES}
+    ${ThirdPartyLibs_CppUnit_LIBRARIES}
+    swFrameworkDependent
+    swWxGuiTesting
+)
+#-----------------------------------------------------------------------------
+
+

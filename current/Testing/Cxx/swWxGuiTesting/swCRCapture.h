@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCRCapture.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -62,7 +62,7 @@ public:
         wxASSERT (guiTestApp != NULL);                                        \
         guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); \
                                                                               \
-	std::string excMsg;						\
+        std::string excMsg;						                              \
         swTst::CRCapture *capture = new swTst::CRCapture ();                  \
         try {                                                                 \
             capture->Capture (__FILE__, __LINE__);                            \
@@ -74,7 +74,7 @@ public:
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
         swTst::CRCppEmitter::Destroy ();                                      \
-        if (!excMsg.empty ()) {                                             \
+        if (!excMsg.empty ()) {                                               \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
     }
@@ -105,10 +105,12 @@ protected:
     virtual void Show ();
 
 
-    /*! \fn virtual void CreateEvtHandler ()
+    /*! \fn virtual CRCaptureControl * CreateEvtHandler () const
         \brief Create event handler for capturing dialog.
+
+        \return new event handler for capturing dialog
     */
-    virtual void CreateEvtHandler ();
+    virtual CRCaptureControl * CreateEvtHandler () const;
 
 
     /*! \fn virtual void CreateDialog ()

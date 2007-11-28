@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppGuiTest/swWxGuiTestEventSimulationHelperTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +41,10 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( WxGuiTestEventSimulationHelperTest, "WxGu
 WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
 {
     sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
+
+    wxXmlResource::Get()->InitAllHandlers();
+    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
+
     m_miniFrame = NULL;
 
     //wxLog::AddTraceMask (_T("wxGuiTestIdle"));
@@ -55,10 +59,6 @@ WxGuiTestEventSimulationHelperTest::~WxGuiTestEventSimulationHelperTest ()
 
 void WxGuiTestEventSimulationHelperTest::setUp ()
 {
-
-    wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
-
     sw::MainFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ();
     mainFrame->SetTitle (_T("EvtSimHlpFrame"));    
     m_testFrame = mainFrame->GetFrame ();

@@ -769,16 +769,21 @@ void CRVtkCaptureTest::testVtkCapture ()
         wxASSERT (guiTestApp != NULL);
         guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ());
 
-        swTst::CRCapture *capture = new swTst::CRCapture ();
+        std::string excMsg;
+        swTst::CRVtkCapture *capture = new swTst::CRVtkCapture ();
         try {
             capture->Capture (__FILE__, __LINE__);
+        } catch (std::exception &e) {
+            excMsg = e.what ();
         } catch (...) {
-            guiTestApp->SetEventFilter (NULL);
-            throw;
+            excMsg = "Unexpected capturing exception";
         }
         guiTestApp->SetEventFilter (NULL);
         delete capture;
         swTst::CRCppEmitter::Destroy ();
+        if (!excMsg.empty ()) {
+            CPPUNIT_FAIL (excMsg.c_str ());
+        }
     }
 */
     // Or use easier macro:

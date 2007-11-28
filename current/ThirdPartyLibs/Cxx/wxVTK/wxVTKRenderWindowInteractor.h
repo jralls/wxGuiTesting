@@ -33,7 +33,7 @@
 // wxVTKRenderWindowInteractor.py wxVTKRenderWindow.py
 //
 // Slightly modified version from Mathieu Malaterre's wxVTK project by
-// Viet Bui Xuan and Reinhold Füreder.
+// Viet Bui Xuan and Reinhold Fuereder.
 
 #ifndef _wxVTKRenderWindowInteractor_h_
 #define _wxVTKRenderWindowInteractor_h_

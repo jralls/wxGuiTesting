@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestEventSimulationHelper.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -77,6 +77,15 @@ public:
             is in fact a wxFrame with a menu bar holding the menu item
     */
     static void SelectAndCheckMenuItem (int id, wxWindow *window, wxMenu **menu = NULL);
+
+
+    /*! \fn static void SelectAndCheckMenuItem (int id, wxMenu *menu = NULL)
+        \brief Select and check a menu item.
+
+        \param id id of menu item to select and check
+        \param menu menu owning the menu item
+    */
+    static void SelectAndCheckMenuItem (int id, wxMenu *menu = NULL);
 
 
     /*! \fn static void ClickButton (int id, wxWindow *parent)

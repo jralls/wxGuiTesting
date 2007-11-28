@@ -1,8 +1,8 @@
 ###############################################################################
 # Name:        CMakeLists.txt
-# Author:      Reinhold Füreder
+# Author:      Reinhold Fuereder
 # Created:     2004
-# Copyright:   (c) 2005 Reinhold Füreder
+# Copyright:   (c) 2005 Reinhold Fuereder
 # Licence:     wxWindows licence
 ###############################################################################
 
@@ -11,12 +11,11 @@ PROJECT(UsingSwWxGuiTesting)
 #-----------------------------------------------------------------------------
 # Use wxWidgets:
 SET( wxWidgets_USE_LIBS  base core xrc adv html xml)
-FIND_PACKAGE(wxWidgets REQUIRED)
-
-if ( APPLE )
+IF (APPLE)
    SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
-endif ( APPLE )
-
+   SET (GUI_EXECUTABLE MACOSX_BUNDLE)
+ENDIF (APPLE)
+FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------
 
@@ -59,7 +58,7 @@ LINK_DIRECTORIES (${Testing_swWxGuiTesting_LIBRARY_DIRS})
 FILE (GLOB CPP *.cpp)
 FILE (GLOB HDR *.h)
 
-ADD_EXECUTABLE (UsingSwWxGuiTesting
+ADD_EXECUTABLE (UsingSwWxGuiTesting ${GUI_EXECUTABLE}
     ${CPP}
     ${HDR}
 )

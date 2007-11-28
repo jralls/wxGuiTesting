@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRTextUpdateEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -146,11 +146,11 @@ void CRTextUpdateEvent::EmitCpp ()
             m_textCtrlName.c_str ()));
 
     wxString textCtrlWdwVarName = emitter->MakeVarName (m_textCtrlName,
-							_T("Wdw"));
+            _T("Wdw"));
 
     wxString str;
     str << _T("wxWindow *") << textCtrlWdwVarName << _T(" = ") << 
-	containerVarName << _T("->FindWindow (");
+            containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
         str << _T("XRCID(\"") << m_textCtrlName << _T("\"));");
@@ -163,8 +163,8 @@ void CRTextUpdateEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for text control '") <<
-	m_textCtrlName <<  _T("' not found\", ") << textCtrlWdwVarName <<
-	_T(" != NULL);");
+            m_textCtrlName <<  _T("' not found\", ") << textCtrlWdwVarName <<
+            _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString textCtrlVarName = emitter->MakeVarName (m_textCtrlName);
@@ -176,14 +176,14 @@ void CRTextUpdateEvent::EmitCpp ()
 
     str.Clear ();
     str <<  _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for text control '")
-	<< m_textCtrlName <<  _T("' failed\", ") << textCtrlVarName 
-	<< _T(" != NULL);");
+            << m_textCtrlName <<  _T("' failed\", ") << textCtrlVarName 
+            << _T(" != NULL);");
     emitter->AddCode (str);
 
     str.Clear ();
     str << _T("swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") <<
-	textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue) <<
-	_T("\"));");
+            textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue) <<
+            _T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();

@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCRCppEmitter.h
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -199,6 +199,15 @@ protected:
         \return true, if given string is a duplicate
     */
     virtual bool IsContainerVarNameDuplicate (const wxString &str) const;
+
+
+    /*! \fn virtual wxString MakeFirstCharLowerCase (const wxString &str) const
+        \brief Get given string with first character converted to lower case.
+
+        \param str string to convert
+        \return string with first character converted to lower case
+    */
+    virtual wxString MakeFirstCharLowerCase (const wxString &str) const;
 
 private:
     static CRCppEmitter *ms_instance;

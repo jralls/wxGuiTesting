@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRTreeSelectionChangingEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -89,11 +89,11 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
             m_treeCtrlName.c_str ()));
 
     wxString treeCtrlWdwVarName = emitter->MakeVarName (m_treeCtrlName, 
-							_T("Wdw"));
+            _T("Wdw"));
 
     wxString str;
     str << _T("wxWindow *") << treeCtrlWdwVarName << _T(" = ") << 
-	containerVarName << _T("->FindWindow (");
+            containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
         str << _T("XRCID(\"") << m_treeCtrlName << _T("\"));");
@@ -106,8 +106,8 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for tree control '") <<
-	m_treeCtrlName << _T("' not found\", ") << treeCtrlWdwVarName <<
-	_T(" != NULL);");
+            m_treeCtrlName << _T("' not found\", ") << treeCtrlWdwVarName <<
+            _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString treeCtrlVarName = emitter->MakeVarName (m_treeCtrlName);
@@ -119,8 +119,8 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for tree control '") <<
-	m_treeCtrlName << _T("' failed\", ") << treeCtrlVarName << 
-	_T(" != NULL);");
+            m_treeCtrlName << _T("' failed\", ") << treeCtrlVarName << 
+            _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString rootIdVarName = _T("rootId");
@@ -132,7 +132,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Tree control root item is invalid\", ")
-	<< rootIdVarName << _T(".IsOk ());");
+            << rootIdVarName << _T(".IsOk ());");
     emitter->AddCode (str);
 
     wxString parentItemIdVarName = rootIdVarName;
@@ -147,13 +147,13 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
 
         str.Clear ();
         str << _T("wxTreeItemId ") << curTreeItemIdVarName <<
-	    _T(" = sw::TreeCtrl::GetNthChild (") << treeCtrlVarName << _T(", ") <<
-	    (*it) << _T(", ") << parentItemIdVarName << _T(");");
+                _T(" = sw::TreeCtrl::GetNthChild (") << treeCtrlVarName << _T(", ") <<
+                (*it) << _T(", ") << parentItemIdVarName << _T(");");
         emitter->AddCode (str);
 
         str.Clear ();
         str << _T("CPPUNIT_ASSERT_MESSAGE (\"Tree control item is invalid\", ") <<
-	    curTreeItemIdVarName << _T(".IsOk ());");
+                curTreeItemIdVarName << _T(".IsOk ());");
         emitter->AddCode (str);
 
         parentItemIdVarName = curTreeItemIdVarName;

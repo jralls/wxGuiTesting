@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRCheckBoxClickEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -101,8 +101,8 @@ void CRCheckBoxClickEvent::EmitCpp ()
     
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for check box '") <<
-	m_checkBoxName << _T("' not found\", ") << checkBoxWdwVarName <<
-	_T(" != NULL);");
+            m_checkBoxName << _T("' not found\", ") <<
+            checkBoxWdwVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString checkBoxVarName = emitter->MakeVarName (m_checkBoxName);
@@ -114,7 +114,7 @@ void CRCheckBoxClickEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for check box '") <<
-	m_checkBoxName << _T("' failed\", ") << checkBoxVarName << _T(" != NULL);");
+            m_checkBoxName << _T("' failed\", ") << checkBoxVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");

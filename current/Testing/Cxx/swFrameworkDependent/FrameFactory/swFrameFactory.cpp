@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swFrameworkDependent/FrameFactory/swFrameFactory.cpp
-// Author:      Yann Rouillard, Viet Bui Xuan, Reinhold Füreder
+// Author:      Yann Rouillard, Viet Bui Xuan, Reinhold Fuereder
 // Created:     2002
-// Copyright:   (c) 2002 Yann Rouillard, Viet Bui Xuan, Reinhold Füreder
+// Copyright:   (c) 2002 Yann Rouillard, Viet Bui Xuan, Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 

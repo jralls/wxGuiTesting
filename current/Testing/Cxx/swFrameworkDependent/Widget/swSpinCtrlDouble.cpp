@@ -3,7 +3,7 @@
 // Author:      John Labenski
 // Created:     11/05/02
 // Copyright:   John Labenski, 2002
-// Modified:    Viet Bui Xuan, Reinhold Füreder
+// Modified:    Viet Bui Xuan, Reinhold Fuereder
 // License:     wxWindows v2
 /////////////////////////////////////////////////////////////////////////////
 

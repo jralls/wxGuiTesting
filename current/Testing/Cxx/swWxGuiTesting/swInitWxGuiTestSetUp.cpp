@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swInitWxGuiTestSetUp.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -17,9 +17,6 @@
 #ifdef WIN32
     extern int wxEntry (HINSTANCE hInstance, HINSTANCE hPrevInstance,
             char *pCmdLine, int nCmdShow);
-//Where did this idea come from?
-//#elif __DARWIN__
-//    int wxEntry (int argc, char *argv[], bool enterLoop = TRUE);
 #endif
 
 
@@ -42,7 +39,7 @@ InitWxGuiTestSetUp::~InitWxGuiTestSetUp ()
 void InitWxGuiTestSetUp::run (CPPUNIT_NS::TestResult *result)
 {
     ::wxLogTrace (_T("wxGuiTestCallTrace"), 
-		  _T("void InitWxGuiTestSetUp::run (CPPUNIT_NS::TestResult *result)"));
+            _T("void InitWxGuiTestSetUp::run (CPPUNIT_NS::TestResult *result)"));
 
     // Store result for latter call (direct or indirect) from
     // WxGuiTestApp::OnRun() allowing us to make up for call of
@@ -59,7 +56,7 @@ void InitWxGuiTestSetUp::run (CPPUNIT_NS::TestResult *result)
 void InitWxGuiTestSetUp::RunAsDecorator ()
 {
     ::wxLogTrace (_T("wxGuiTestCallTrace"), 
-		  _T("void InitWxGuiTestSetUp::RunAsDecorator ()"));
+            _T("void InitWxGuiTestSetUp::RunAsDecorator ()"));
 
     TestDecorator::run (m_result);
 }
@@ -68,7 +65,7 @@ void InitWxGuiTestSetUp::RunAsDecorator ()
 void InitWxGuiTestSetUp::setUp ()
 {
     ::wxLogTrace (_T("wxGuiTestCallTrace"),
-		  _T("void InitWxGuiTestSetUp::setUp ()"));
+            _T("void InitWxGuiTestSetUp::setUp ()"));
 
     // If there would be additional non GUI test cases/suites requiring the
     // initialisation of an PseudoApp instance beforehand, it would be
@@ -128,7 +125,7 @@ void InitWxGuiTestSetUp::tearDown ()
     // While this method is called as expected due to the wxWidgets library
     // uninitialisation the debug logging trace is no more "processed":
     //::wxLogTrace (_T("wxGuiTestCallTrace"), 
-    //		  _T("void InitWxGuiTestSetUp::tearDown ()"));
+    //        _T("void InitWxGuiTestSetUp::tearDown ()"));
 }
 
 } // End namespace swTst

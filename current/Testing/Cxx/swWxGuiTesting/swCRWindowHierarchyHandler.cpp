@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCRWindowHierarchyHandler.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -211,7 +211,7 @@ CRXRCNode * CRWindowHierarchyHandler::FindXRCNode (CRXRCNode *parent,
 
             // "Double-check":
             wxASSERT (wxXmlResource::GetXRCID (node->GetName ()) == 
-		      window->GetId ());
+                    window->GetId ());
 
             return node;
         }

@@ -15,7 +15,7 @@
 =========================================================================*/
 
 // Slightly modified version from Mathieu Malaterre's wxVTK project by
-// Viet Bui Xuan and Reinhold Füreder.
+// Viet Bui Xuan and Reinhold Fuereder.
 
 #include "wxVTKRenderWindowInteractor.h"
 

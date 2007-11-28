@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCREventCaptureManager.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -587,9 +587,8 @@ wxString CREventCaptureManager::GetEventDetails (wxEvent& event) const
 
                 //wxWindow *child = wxWindow::FindWindowById (event.GetId (), wdw);
                 wxWindow *child = wxWindow::FindWindowById (event.GetId ());
-                wxASSERT ((event.GetId () == 
-			   wxXmlResource::GetXRCID (evtObjName)) ||
-                        (child != NULL));
+                wxASSERT ((event.GetId () == wxXmlResource::GetXRCID (evtObjName))
+                        || (child != NULL));
 
             } else {
 

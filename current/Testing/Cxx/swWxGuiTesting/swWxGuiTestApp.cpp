@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestApp.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -96,7 +96,7 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
     // Called too often, maybe in combination with a boolean flag, temporarily
     // set to true => show OnIdle() call trace:
     ::wxLogTrace (_T("wxGuiTestCallTrace"), 
-		  _T("void WxGuiTestApp::OnIdle (wxIdleEvent &event)"));
+            _T("void WxGuiTestApp::OnIdle (wxIdleEvent &event)"));
 
     PseudoApp::OnIdle (event);
 

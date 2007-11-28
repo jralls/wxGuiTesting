@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swFrameworkDependent/swPseudoApp.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -60,7 +60,7 @@ void PseudoApp::SetPseudoAppInstance ()
 bool PseudoApp::DisplayWarning (const wxString &caption,
         const wxString &message, bool canBypass)
 {
-    WriteLn (_("[DisplayWarning] ") + caption + _T(":"));
+    WriteLn (_T("[DisplayWarning] ") + caption + _T(":"));
     WriteLn (wxString (_T("    ")) + message);
 
     if (canBypass) {

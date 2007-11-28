@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRButtonClickEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -93,7 +93,7 @@ void CRButtonClickEvent::EmitCpp ()
     
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for button '") << m_buttonName <<
-	_T("' not found\", ") << buttonWdwVarName << _T(" != NULL);");
+            _T("' not found\", ") << buttonWdwVarName << _T(" != NULL);");
     emitter->AddCode (str);
     
     str.Clear ();

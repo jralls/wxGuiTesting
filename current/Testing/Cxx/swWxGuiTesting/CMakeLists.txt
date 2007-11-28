@@ -1,8 +1,8 @@
 ###############################################################################
 # Name:        swWxGuiTesting/CMakeLists.txt
-# Author:      Reinhold Füreder
+# Author:      Reinhold Fuereder
 # Created:     2004
-# Copyright:   (c) 2005 Reinhold Füreder
+# Copyright:   (c) 2005 Reinhold Fuereder
 # Licence:     wxWindows licence
 ###############################################################################
 
@@ -11,6 +11,9 @@ PROJECT (swWxGuiTesting)
 #-----------------------------------------------------------------------------
 # Use wxWidgets:
 SET( wxWidgets_USE_LIBS  base core xrc)
+IF (APPLE)
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+ENDIF (APPLE)
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------
@@ -103,8 +106,6 @@ SET (LIBS
 
     ${ThirdPartyLibs_CppUnit_LIBRARIES}
 )
-MESSAGE(STATUS "${CMAKE_CURRENT_LIST_FILE}(${CMAKE_CURRENT_LIST_LINE}): wxWidgets_LIBRARIES ${wxWidgets_LIBRARIES}")
-MESSAGE(STATUS "${CMAKE_CURRENT_LIST_FILE}(${CMAKE_CURRENT_LIST_LINE}): LIBRARIES ${LIBS}")
 #-----------------------------------------------------------------------------
 
 

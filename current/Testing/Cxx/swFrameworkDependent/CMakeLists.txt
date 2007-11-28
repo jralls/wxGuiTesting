@@ -1,8 +1,8 @@
 ###############################################################################
 # Name:        swFrameworkDependent/CMakeLists.txt
-# Author:      Reinhold Füreder
+# Author:      Reinhold Fuereder
 # Created:     2004
-# Copyright:   (c) 2005 Reinhold Füreder
+# Copyright:   (c) 2005 Reinhold Fuereder
 # Licence:     wxWindows licence
 ###############################################################################
 
@@ -10,7 +10,10 @@ PROJECT (swFrameworkDependent)
 
 #-----------------------------------------------------------------------------
 # Look for WXWINDOWS.
-SET( wxWidgets_USE_LIBS  base core xrc adv html)
+SET (wxWidgets_USE_LIBS base core xrc adv html)
+IF (APPLE)
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+ENDIF (APPLE)
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 #-----------------------------------------------------------------------------

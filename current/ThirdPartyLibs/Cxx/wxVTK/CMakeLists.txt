@@ -1,8 +1,8 @@
 ###############################################################################
 # Name:        wxVTK/CMakeLists.txt
-# Author:      Reinhold Füreder
+# Author:      Reinhold Fuereder
 # Created:     2004
-# Copyright:   (c) 2005 Reinhold Füreder
+# Copyright:   (c) 2005 Reinhold Fuereder
 # Licence:     wxWindows licence
 ###############################################################################
 
@@ -21,6 +21,9 @@ ENDIF(VTK_FOUND)
 #-----------------------------------------------------------------------------
 # Look for WXWINDOWS.
 SET( wxWidgets_USE_LIBS  base core gl xml xrc )
+IF (APPLE)
+   SET (wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+ENDIF (APPLE)
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE( ${wxWidgets_USE_FILE} )
 

@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CaptureEvents/swCRChoiceSelectionEvent.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -88,13 +88,13 @@ void CRChoiceSelectionEvent::EmitCpp ()
 
     wxString containerVarName = emitter->AddContainerLookupCode (
             m_containerName, wxString::Format (_T("choice '%s'"), 
-					       m_choiceName.c_str ()));
+            m_choiceName.c_str ()));
 
     wxString choiceWdwVarName = emitter->MakeVarName (m_choiceName, _T("Wdw"));
 
     wxString str;
     str << _T("wxWindow *") << choiceWdwVarName << _T(" = ") << 
-	containerVarName << _T("->FindWindow (");
+            containerVarName << _T("->FindWindow (");
     if (m_isXRC) {
         
         str << _T("XRCID(\"") << m_choiceName << _T("\"));");
@@ -107,7 +107,7 @@ void CRChoiceSelectionEvent::EmitCpp ()
     
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Window for choice '") << m_choiceName <<
-	_T("' not found\", ") << choiceWdwVarName << _T(" != NULL);");
+            _T("' not found\", ") << choiceWdwVarName << _T(" != NULL);");
     emitter->AddCode (str);
 
     wxString choiceVarName = emitter->MakeVarName (m_choiceName);
@@ -119,7 +119,7 @@ void CRChoiceSelectionEvent::EmitCpp ()
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for choice '") <<
-	m_choiceName << _T("' failed\", ") << choiceVarName << _T(" != NULL);");
+            m_choiceName << _T("' failed\", ") << choiceVarName << _T(" != NULL);");
     emitter->AddCode (str);
     
     wxString choiceSelTextVarName = emitter->MakeVarName (choiceVarName,

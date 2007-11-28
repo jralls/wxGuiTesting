@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -24,24 +24,14 @@ void WxGuiTestCppUnitWarningAsserter::FailAssert (const wxString &file,
     CPPUNIT_NS::SourceLine sourceLine;
 
     if ((!file.IsEmpty ()) || (line != -1)) {
-#ifdef UNICODE
-	std::string filestr(wxConvCurrent->cWC2MB(file.c_str ()).data());
-        sourceLine = CPPUNIT_NS::SourceLine (filestr, line);
-#else
-        sourceLine = CPPUNIT_NS::SourceLine (file.c_str (), line);
-#endif
+
+        sourceLine = CPPUNIT_NS::SourceLine (std::string(
+                (file).mb_str(*wxConvCurrent)), line);
     }
 
-#ifdef UNICODE
-    std::string descstr(wxConvCurrent->cWC2MB(shortDescription.c_str()).data());
-    std::string msgstr(wxConvCurrent->cWC2MB(message.c_str ()).data());
-    CPPUNIT_NS::Asserter::fail (CPPUNIT_NS::Message (descstr, msgstr),
-				sourceLine);
-#else
-     CPPUNIT_NS::Asserter::fail (
-           CPPUNIT_NS::Message (shortDescription.c_str (), message.c_str ()),
-	   sourceLine);
-#endif
+	CPPUNIT_NS::Asserter::fail (CPPUNIT_NS::Message (
+	        std::string((shortDescription).mb_str(*wxConvCurrent)),
+	        std::string((message).mb_str(*wxConvCurrent))), sourceLine);
 }
 
 } // End namespace swTst

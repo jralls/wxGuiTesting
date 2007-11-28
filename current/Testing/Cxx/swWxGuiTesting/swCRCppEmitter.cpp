@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/swCRCppEmitter.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -86,12 +86,12 @@ wxString CRCppEmitter::GetTab () const
 
 void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb)
 {
-    wxASSERT (::wxFileExists (filename));
+    wxASSERT_MSG (::wxFileExists (filename), _T("File does not exist"));
     wxASSERT (lineNmb != 0);
-    if (!m_origFile.Open (filename, *wxConvCurrent)) {
-     
-        throw new sw::WxLogicErrorException (wxString::Format (_T("%s: %s"),
-                _("Could not open test case file"), filename.c_str ()));
+    if (!m_origFile.Open (filename)) {
+
+        throw new sw::WxLogicErrorException (wxString::Format (
+        		_T("Could not open test case file: %s"), filename.c_str ()));
     }
     // Find unique filename with prefix of current test case filename in order
     // to prevent file overwritting and create "backup" files, plus allow
@@ -102,15 +102,15 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
 
         uniqueCnt++;
         newFilename = wxString::Format (_T("%s.cr%d"), filename.c_str (), 
-					uniqueCnt);
+                uniqueCnt);
 
     } while (::wxFileExists (newFilename));
     if (!m_newFile.Create (newFilename)) {
 
         throw new sw::WxLogicErrorException (
-	    wxString::Format (_T("%s: %s"),
-			      _("Could not create bootstrap test case file"), 
-			      filename.c_str ()));
+        wxString::Format (_T("%s: %s"),
+                _("Could not create bootstrap test case file"), 
+                filename.c_str ()));
     }
     // Copy old file until line number or first occurence of capture keyword:
     const wxString CAPTURE_KEYWORD = _T("CAPTURE");
@@ -249,13 +249,8 @@ wxString CRCppEmitter::AddContainerLookupCode (const wxString &containerName,
     }
     // Has not been emitted yet!
     // Make first letter of container variable name lower case:
-    wxString containerVarName = containerName + containerVarNameSuffix;
-    wxChar &firstChar = containerVarName.GetWritableChar (0);
-#ifdef UNICODE
-    firstChar = towlower (firstChar); //Very risky: Depends on C99 locales
-#else
-    firstChar = tolower (firstChar);
-#endif
+    wxString containerVarName = MakeFirstCharLowerCase(containerName +
+            containerVarNameSuffix);
     // Make container variable name unique:
     unsigned int cnt = 0;
     wxString uniqueContainerVarName = containerVarName;
@@ -270,7 +265,7 @@ wxString CRCppEmitter::AddContainerLookupCode (const wxString &containerName,
     // And acutal emitting:
     wxString lookup, assert;
     lookup << _T("wxWindow *") << uniqueContainerVarName << 
-	_T(" = wxWindow::FindWindowByName (_T(\"") << containerName << _T("\"));");
+            _T(" = wxWindow::FindWindowByName (_T(\"") << containerName << _T("\"));");
     this->AddCode (lookup);
 
     assert << _T("CPPUNIT_ASSERT_MESSAGE (\"Container window ");
@@ -324,12 +319,7 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
         idx++;
     }
     // Make first letter lower case:
-    wxChar &firstChar = varName.GetWritableChar (0);
-#ifdef UNICODE
-    firstChar = towlower (firstChar); //Risky: Depends on C99 locale 
-#else
-    firstChar = tolower (firstChar);
-#endif
+    varName = MakeFirstCharLowerCase(varName);
     // Append suffix before unifying:
     varName.Append (suffix);
     // Make variable name unique:
@@ -468,6 +458,13 @@ bool CRCppEmitter::IsContainerVarNameDuplicate (const wxString &str) const
         }
     }
     return found;
+}
+
+
+wxString CRCppEmitter::MakeFirstCharLowerCase (const wxString &str) const
+{
+    wxString firstChar = str.Mid(0, 1).Lower();
+    return firstChar + str.Mid(1);
 }
 
 } // End namespace swTst

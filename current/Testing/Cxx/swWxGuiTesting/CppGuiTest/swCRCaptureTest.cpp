@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Name:        swWxGuiTesting/CppGuiTest/swCRCaptureTest.cpp
-// Author:      Reinhold Füreder
+// Author:      Reinhold Fuereder
 // Created:     2004
-// Copyright:   (c) 2005 Reinhold Füreder
+// Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -54,20 +54,20 @@ void CRCaptureTest::setUp ()
     
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, 
-						       _T("EvtSimHlpTestPanel"));
+            _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
     // Include the unknown double spin control:
     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (
-	frame,
-	-1,
-	_T(""),
-	wxDefaultPosition,
-	wxSize (80, 21),
-	wxNO_BORDER,
-	0.00000,
-	9999.99999,
-	0.5,
-	0.1);
+            frame,
+            -1,
+            _T(""),
+            wxDefaultPosition,
+            wxSize (80, 21),
+            wxNO_BORDER,
+            0.00000,
+            9999.99999,
+            0.5,
+            0.1);
     spinCtrl->SetDigits (5, false);
     wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
@@ -292,16 +292,21 @@ void CRCaptureTest::testCapture ()
         wxASSERT (guiTestApp != NULL);
         guiTestApp->SetEventFilter (Tst::CREventCaptureManager::GetInstance ());
 
+        std::string excMsg;
         Tst::CRCapture *capture = new Tst::CRCapture ();
         try {
             capture->Capture (__FILE__, __LINE__);
+        } catch (std::exception &e) {
+            excMsg = e.what ();
         } catch (...) {
-            guiTestApp->SetEventFilter (NULL);
-            throw;
+            excMsg = "Unexpected capturing exception";
         }
         guiTestApp->SetEventFilter (NULL);
         delete capture;
         Tst::CRCppEmitter::Destroy ();
+        if (!excMsg.empty ()) {
+            CPPUNIT_FAIL (excMsg.c_str ());
+        }
     }
 */
     // Or use easier macro:
@@ -314,5 +319,6 @@ void CRCaptureTest::testCapture ()
 }
 
 } // End namespace swTst
+
 
 
