@@ -1,0 +1,419 @@
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>swWxGuiTesting</title>
+<meta name="description" content="Making an automated wxWidgets GUI testing framework open source">
+<meta name="author" content="Reinhold F&uuml;reder">
+<meta name="keywords" content="automated, wxWidgets, wxWindows, GUI, testing, framework, open source">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#FF0000" alink="#FF0000" vlink="#FF0000">
+<div>
+
+<table >
+<tr>
+ <td width="75%">
+ 	<font size="+4">swWxGuiTesting</font>
+ </td>
+ <td align="right">
+ 	<a href="http://www.simpleware.com" target="_blank"><img src="SimplewareLogo.gif" border="0" alt="Simpleware Logo"></a>
+ </td>
+</tr>
+</table>
+
+<p/>
+
+<div>
+	<font size="-1">&copy; 2004-2006 Reinhold F&uuml;reder (<a href="mailto:reinholdfuereder@gmx.at">reinholdfuereder_AT_gmx_DOT_at</a>)</font>
+</div>
+
+<p/>
+
+<font size="+1">Contents</font>
+<div>
+	<ul>
+	   <li><a href="#Introduction">Introduction & documentation</a></li>
+	   <li><a href="#Sources">Sources</a></li>
+	   <li><a href="#Building">Building</a></li>
+	   <li><a href="#Dependencies">Remaining internal dependencies</a></li>
+	   <li><a href="#TestCaseSkeletons">Automatic skeleton code generation of test cases and test drivers</a></li>
+	   <li><a href="#Examples">Example usages for swWxGuiTesting</a></li>
+	   <li><a href="#FurtherWork">Further work</a></li>
+	   <li><a href="#Updates">Updates</a></li>
+	</ul>
+</div>
+
+<p/>
+
+<font size="+1"><a name="Introduction">Introduction & documentation</a></font>
+<div>
+	While I developed <i>swWxGuiTesting</i> as part of my MPhil study at the University of Exeter, UK,
+   in collaboration with <a href="http://www.simpleware.com">Simpleware Ltd</a> -- a spin-off company
+   from this university --, the company director Dr Philippe G Young is embracing the idea of contributing
+   it to the open source community. For the sake of simplicity and striving/hoping for an integration into the
+   wxWidgets framework we have decided to put it under
+   <a href="http://www.wxwidgets.org/newlicen.htm">wxWindows licence</a> (thanks to Julian Smart's
+   explanations and advise).
+</div>
+
+<p/>
+
+<div>
+	<p>As discussed in the <a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:sss:70153:lgacjbjinginbnfabhjn#b">
+   wxWidgets developers mailing list</a> under subject "<i>Contributing an automated wxWidgets GUI testing framework to
+   the open source community</i>" this site hosts the offered automated wxWidgets GUI testing framework -- named swWxGuiTesting.
+	However, ideally this site will be only the temporary home of the project until it finds a better place that is
+   hopefully within wxWidgets itself.</p>
+	<p>A first <i>overview</i> about swWxGuiTesting is given in the mailing list postings:</p>
+	<a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70153:200601:lgacjbjinginbnfabhjn">Reinhold F&uuml;reder, 30 Jan 2006</a> &nbsp;&nbsp; &lt;&lt;&lt; <i> recommended introductory starting point</i>
+	<ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70165:200601:lgacjbjinginbnfabhjn">Julian Smart, 31 Jan 2006</a></ul>
+	<ul><ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70185:200601:lgacjbjinginbnfabhjn">Reinhold F&uuml;reder, 31 Jan 2006</a></ul></ul>
+	<ul><ul><ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70194:200602:lgacjbjinginbnfabhjn">Julian Smart, 1 Feb 2006</a></ul></ul></ul>
+	<ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70192:200602:lgacjbjinginbnfabhjn">Ron, 1 Feb 2006</a></ul>
+	<ul><ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70201:200602:lgacjbjinginbnfabhjn">Reinhold F&uuml;reder, 1 Feb 2006</a></ul></ul>
+	<ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70275:200602:lgacjbjinginbnfabhjn">Vadim Zeitlin, 5 Feb 2006</a></ul>
+	<ul><ul><a href="http://lists.wxwidgets.org/cgi-bin/ezmlm-cgi?5:mss:70300:200602:lgacjbjinginbnfabhjn">Reinhold F&uuml;reder, 5 Feb 2006</a></ul></ul>
+   <ul>etc...</ul>
+</div>
+
+<p/>
+
+<div>
+	Much more <i>details</i> on the motivation and especially concepts of swWxGuiTesting are found in the standalone <i>MPhil
+   thesis chapter</i> at <a href="MPhilThesisChapterSwWxGuiTesting.pdf">MPhilThesisChapterSwWxGuiTesting.pdf</a> (1.3MB).
+	While this chapter also lists the required steps to make any wxWidgets based GUI application testable by this pragmatic
+   framework, it admittedly does not replace a more developer-friendly tutorial...
+</div>
+
+<p/>
+
+<font size="+1"><a name="Sources">Sources</a></font>
+<div>
+	The sources (including building instructions and via Doxygen generatable API documentation) are zipped into:
+   <ul>
+   <li><a href="swWxGuiTesting-1.4.zip">swWxGuiTesting-1.4.zip</a> release supporting latest stable release wxWidgets 2.8.0 under Linux (GTK2) and MSW.</li>
+   <li><a href="swWxGuiTesting-1.3.3.zip">swWxGuiTesting-1.3.3.zip</a> minor release with some minor fixes/improvements.</li>
+   <li><a href="swWxGuiTesting-1.3.2.zip">swWxGuiTesting-1.3.2.zip</a> minor release demonstrating easier approach for handling user-defined modal dialogs.</li>
+   <li><a href="swWxGuiTesting-1.3.1.zip">swWxGuiTesting-1.3.1.zip</a> minor release supporting building with release of CMake: version 2.4.3.</li>
+   <li><a href="swWxGuiTesting-1.3.zip">swWxGuiTesting-1.3.zip</a> release supporting testing release wxWidgets 2.7.0 under Linux (GTK2) and MSW.</li>
+   <li><a href="swWxGuiTesting-1.2.2.zip">swWxGuiTesting-1.2.2.zip</a> minor release supporting VTK 5; plus fix building for C&R of VTK render window interactions under Linux.</li>
+   <li><a href="swWxGuiTesting-1.2.zip">swWxGuiTesting-1.2.zip</a> release supporting stable release wxWidgets 2.6.3 under Linux (GTK2) and MSW.</li>
+   <li><a href="swWxGuiTesting-1.1.zip">swWxGuiTesting-1.1.zip</a> intermediate release supporting latest stable release wxWidgets 2.6.3 with patch 2 under MSW
+   	(not for any other platform).</li>
+   <li><a href="swWxGuiTesting-1.0.zip">swWxGuiTesting-1.0.zip</a> initial release supporting old wxWidgets version, see below for platform and version details.</li>
+	</ul>
+   For version details please see <a href="#Updates">Updates</a>.
+</div>
+
+<p/>
+
+<font size="+1"><a name="Building">Building</a></font>
+<div>
+   Instructions for building are found in <a href="Building.txt">Building.txt</a>, that is also part of the source archive.
+
+   <p/>
+
+	The building was tested under Microsoft Windows (2000, XP) for Microsoft Visual C++ 6 and
+   Ubuntu Dapper Linux with GCC 4 (for versions >= 1.2 of swWxGuiTesting; version 1.0 was tested with
+   an ancient Red Hat 8 Linux installation with GCC 3.2 -- choosing this version is reasoned in the aforementioned
+   mailing list postings).
+
+   <p/>
+
+	The build process is based on the open source tool <a href="http://www.cmake.org">CMake</a> (the latest release version 2.4.5
+   is required for wxWidgets 2.8.0),
+   after the third party dependencies are built independently according to their respective standard
+   build rules (non-standard building settings are outlined below, and potentially specified
+	in some detail in the doxygen documentation).
+	<ul>
+   	<li>Starting from version 1.4 the stable release version 2.8.0 of wxWidgets is supported and tested
+      under MSW and Linux (GTK2). The build procedure is now based on standard CMake wxWidgets utilisation modules,
+      which in turn requires CMake 2.4.5 in order to support wxWidgets 2.8.0. This step makes building easier because
+      (a) no non-standard CMake modules need to be copied initially, (b) there is no need to edit CMakeLists.txt to
+      specify wxWidgets version, and (c) configuration within CMake is easier: e.g. when wxWidgets was installed with
+      the installer under MSW, or by means of "make install" under Linux everything is found automatically; alternatively
+      just unzipping under MSW requires only the manual setting of wxWidgets_LIB_DIR (e.g. D:\CVS\wxWidgets-2.8.0-rc3\lib\vc_lib)
+      and wxWidgets_ROOT_DIR (e.g. D:\CVS\wxWidgets-2.8.0-rc3).
+      </li>
+      <li>Starting from version 1.3 the testing release version 2.7.0 of wxWidgets
+      is supported and tested under MSW and Linux (GTK2). Also the dependency of
+      <a href="http://xml.apache.org/xerces-c/">Xerces-C++</a> was replaced in favour of the
+      expat library which already comes with wxWidgets.
+
+		Choosing the wxWidgets version required:
+      <ol start="1" type="1">
+			<li>In all CMakeLists.txt replace the following:<br/>
+         <ul>
+	         <code>
+	            SET(WXW_FILE_VERSION "27")<br/>
+	            SET(WXW_VERSION "2.7")<br/>
+	         </code>
+         </ul>
+	      with for instance:<br/>
+         <ul>
+	         <code>
+	            SET(WXW_FILE_VERSION "26")<br/>
+	            SET(WXW_VERSION "2.6")<br/>
+	         </code>
+         </ul>
+			</li>
+         <li>Only under Microsoft Windows: When running CMake select the right wxWidgets root directory.</li>
+		</ol>
+      </li>
+		<li>Starting from version 1.2 the stable release version 2.6.3 of wxWidgets
+      is supported and tested under MSW and Linux (GTK2).
+      This change required a few changes in the swWxGuiTesting sources and
+      also in the utilisation of the CMake based build system. On the other hand, XRC is
+      already included in wxWidgets; cf. initial release:
+      <ul>In the initial release (version 1.0) the supported wxWidgets was:
+      	2.4.2 &lt; used version from August 2003 &lt; 2.5 (at that time the additionally
+         required XRC library was not included in wxWidgets).
+      </ul>
+      (Static build; of course, dynamic should work as well, but may or may not require little
+      adaptations in the build instructions. The used configuration of a recent wxWidgets version itself:
+      <a href="setup.h">setup.h</a> for MSW; configure settings are straightforward for Linux).
+      Also the wxrc executable is required during the building.
+		</li>
+   	<li><a href="http://cppunit.sourceforge.net">CppUnit</a>: versions 1.8 - 1.12.0 were tested</li>
+   </ul>
+
+   There is an optional dependency on <a href="http://www.vtk.org">VTK</a> (tested with versions 4.x - 5.0 built with CMake)
+   to allow Capture & Replay (C&R) of VTK render window interactions. However, the generated test cases for such interactions
+   do not fulfil the ultimate goal of being easily maintainable.
+
+   <p/>
+
+   <i>Building notes/hints for Linux (Ubuntu Dapper):</i>
+   <ul>
+   	<li>Configuration for wxWidgets build: "configure --with-gtk --enable-debug_flag --with-opengl"</li>
+   	<li>Check correct permissions for FindwxWin.cmake and FindwxW.cmake CMake modules when copying them into the
+      CMake installation folder's "Module" subfolder: cf. other modules, "chmod 644 ..."</li>
+      <li>Install lib and dev packages for CppUnit (and previously also for Xerces-C++)</li>
+      <li>Install X11 header packages: xlibs-dev</li>
+      <li>Install mesa-glx (incl. -dev) and/or nvidia-glx (incl. -dev) packages</li>
+      <li>Potentially adapt LD_CONFIG_PATH to include /usr/local/lib to allow using/running the standard build of wxrc tool</li>
+   </ul>
+</div>
+
+<p/>
+
+<font size="+1"><a name="Dependencies">Remaining internal dependencies</a></font>
+<div>
+	Dependencies from swWxGuiTesting to SimplewareFramework (whose subcomponent it originally was) were
+   removed to some extent by:
+   <ol start="1" type="a">
+	<li>replacing wxWidgets based extensions again with wxWidgets base classes</li>
+   <li>removing any non-core classes, and related methods (e.g. ViewFrame + FrameFactory's CreateViewFrame() method)</li>
+	</ol>
+   Nevertheless, there are still dependencies that demand that the user of the testing framework builds her system under
+   test (SUT) with some constraints (cf. so-called FrameFactory). In case swWxGuiTesting will be integrated into
+   wxWidgets, one could get rid of these dependencies if wxWidgets takes over their strictly required responsibilities.
+</div>
+
+<p/>
+
+<font size="+1"><a name="TestCaseSkeletons">Automatic skeleton code generation of test cases and test drivers</a></font>
+<div>
+	As outlined in the MPhil thesis chapter test case skeletons and test drivers can be generated by means of the free
+   tool <a href="http://www.xs4all.nl/~jorgb/wxcrp/">wxCRP</a>. It should be sufficient to point the installed wxCRP
+   application to the decompressed <a href="wxCrpRepositorySwWxGuiTesting.zip">swWxGuiTesting wxCRP repository</a>.
+   A <a href="wxCRP.avi">movie</a> (4.4MB) with crap quality (sorry) shows the process and result of utilising wxCRP.
+</div>
+
+<p/>
+
+<font size="+1"><a name="Examples">Example usages for swWxGuiTesting</a></font>
+<div>
+	<ul>
+   <li>Examples (except complex ScanCAD ones) can be found in "external" UsingSwWxGuiTesting project.
+   (Note: Only test suites registered with the name "WxGuiTest" are part of a swWxGuiTesting test
+   execution.)</li>
+   <li>"Movies" initially recorded with the wonderful vncrec tool (<a href="http://www.sodan.org/~penny/vncrec/">http://www.sodan.org/~penny/vncrec/</a>)
+   are available for easy demonstration purposes. (Sorry for the partly disappointing movie quality.)</li>
+   <li>Note that the "Simple Test" and "Simple C&R Test" are in fact testing the GUI testing framework, and
+   the GUI is only for the sake of simplicity initialised in the setup() method instead of in the application
+   under test (AUT).</li>
+   </ul>
+
+	<ol start="1" type="1">
+	<li>Simple Test (UsingSwWxGuiTesting/Cxx/SimpleTest.*):
+	   <ul>
+		<li>Test case source file: <a href="SimpleTest.cpp">SimpleTest.cpp</a></li>
+		<li>Movie: <a href="SimpleTest.avi">SimpleTest.avi</a> (2.0MB), <a href="SimpleTestProtocol.html">step-by-step protocol</a></li>
+      <li>Based on original test of Capture & Replay (C&R) in Testing/Cxx/swWxGuiTesting/CppGuiTest/swCRCaptureTest.cpp</li>
+      <li>Artificially sleep for 1 second after each event simulation: wxThread::Sleep(1000) at end of WxGuiTestHelper::FlushEventQueue() method</li>
+      <li>Using temporary interactivity (breakpoint afterwards is not reached) to demonstrate control flow splitting and easy visual inspection</li>
+      <li>Using breakpoint to demonstrate control flow splitting and easy debuggability</li>
+		</ul>
+   </li>
+
+   <p/>
+
+	<li>Simple Capture & Replay Test (UsingSwWxGuiTesting/Cxx/SimpleCRTest.*):
+	   <ul>
+		<li>Test case source file: <a href="SimpleCRTest.cpp">SimpleCRTest.cpp</a></li>
+		<li>Movie: <a href="SimpleCRTest.avi">SimpleCRTest.avi</a> (7.9MB), <a href="SimpleCRTestProtocol.html">step-by-step protocol</a></li>
+      <li>Bootstrap GUI test case built solely upon a GUI initialisation in setup() and the CAPTURE macro in the test case:
+			<ul>
+         <li>during bootstrapping the test case is written directly into backup file (*.cr*)</li>
+         <li>each key stroke in a text control results in an event => collect them</li>
+      	</ul>
+      </li>
+      <li>Fix pragmatic code generation of capture phase:
+      	<ul>
+         <li>adding include directories</li>
+         <li>removing duplicate container lookups and variable declarations</li>
+         <li>adding assertions</li>
+        	</ul>
+      </li>
+      <li>Replay captured test case like a normal test case</li>
+		</ul>
+   </li>
+
+   <p/>
+
+	<li>Complex Test - <a href="http://www.simpleware.com/software/scancad.php">ScanCAD</a>
+	   <ul>
+		<li>Test case source file: <a href="sccCADFileImportGuiTest.cpp">sccCADFileImportGuiTest.cpp</a></li>
+		<li>Movie: <a href="ComplexTest_ScanCAD.avi">ComplexTest_ScanCAD.avi</a> (1.4MB,
+      <a href="ComplexTestScanCADProtocol.html">step-by-step protocol</a>) for the CAD file import GUI test
+      which is based on a modal dialog, and the first three minutes of executing the ScanCAD GUI test suite is shown in
+      <a href="ComplexTest_ScanCAD_TestSuite.avi">ComplexTest_ScanCAD_TestSuite.avi</a> (7.8MB)</li>
+      <li>Deal with modal dialogs (message boxes and pop-up menus)</li>
+      <li>Whole use case (= integration/application test)</li>
+      <li>Disabling temporary interactivity for real automation</li>
+		</ul>
+   </li>
+	</ol>
+
+</div>
+
+<p/>
+<hr noshade size="1">
+<p/>
+
+<font size="+1"><a name="FurtherWork">Further work</a></font>
+<div>
+Most importantly see the conclusion section of the MPhil thesis chapter and the mailing list discussions so far.
+</div>
+
+<p/>
+
+<div>
+
+Must:
+<ul>
+	<li>Tutorial/cookbook that is more developer-friendly than the thesis chapter.</li>
+</ul>
+
+
+Fix:
+<ul>
+	<li>wxWidgets warnings in one of the examples (test case) with respect to resources.</li>
+</ul>
+
+
+Improve:
+<ul>
+	<li>C&R: looked up containers => cache them somehow to prevent duplicate lookups and variable declarations.</li>
+	<li>C&R: do not emit code directly + fill map of include directories during emitting => all include directories (without duplicates) can be actually emitted first, before the rest of the code follows.</li>
+</ul>
+
+
+Comments:
+<ul>
+<li>
+   Dialog creation under M$ Windows seems to require FlushEventQueue() -- see swCRWindowHierarchyHandlerTest.cpp:
+   <p/>
+   <pre>
+   #ifndef __WXGTK__
+       WxGuiTestHelper::FlushEventQueue ();
+   #endif
+   </pre>
+</li>
+</ul>
+
+</div>
+
+<p/>
+<hr noshade size="1">
+<p/>
+
+<font size="+1"><a name="Updates">Updates</a></font>
+<div>
+	18.12.2006 - Release 1.4 supporting wxWidgets 2.8.0 under MSW and Linux GTK:
+   <ul>
+   	<li>Switch to official CMake wxWidgets utilisation modules -- wxWidgets 2.8.0 requires at least CMake 2.4.5</li>
+      <li>wxGuiTestHelper::CreateDefaultDialog() -- modal flag at dialog creation time is no more needed in order to have testable dialogs</li>
+   </ul>
+   Known bug with wxWidgets 2.8.0 under Linux GTK2:
+   <ul>
+   	<li>If C&R capturing is active, spin control scrolling seemingly leads to no less than 6 events, but spin control values do not change...</li>
+   </ul>
+</div>
+<div>
+	26.11.2006 - Minor release 1.3.3 with some minor fixes/improvements:
+   <ul>
+   	<li>Minor refactoring of emitting of pending events, plus also apply it before adding new comments.</li>
+      <li>Improve C&R control: enable/disalbe start and stop button accordingly.</li>
+   	<li>Modal dialog timer approach - don't forget to call TransferDataFromWindow etc (cf. OnOk, OnCancel
+      methods): call appropriate standard dialog event hanlder directly depending on the desired return code.</li>
+      <li>Don't allow duplicate calling of event handler (cf. CppGuiTestEventSimulation): seemingly this cannot
+      be prevented for tree item selection, or is the tree item even simulation buggy (MSW, Linux + GTK2)?</li>
+   </ul>
+</div>
+<div>
+	18.10.2006 - Minor release 1.3.2 demonstrating another approach (as in the MPhil thesis chapter) to handle user-defined
+   modal dialogs (cf. CppGuiTestModalDialog test case):<br>
+   <ul> Based on Julian Smart's hint a one-shot timer fires and allows the
+   subsequent execution of some dialog interaction code before actually dismissing the modal dialog with the specified return
+   code. Although this does not work for standard predefined modal dialogs in a platform independent way (e.g. wxDirDialog
+   under MSW), it is an improvement to the previous solution by not strictly requiring to use an event-driven modal dialog
+   usage instead of the easier function-like usage (cf. Section 1.5.4.1 in the MPhil Thesis chapter).
+   </ul>
+</div>
+<div>
+	13.10.2006 - Minor release 1.3.1 supporting building with latest release of CMake: Version 2.4.3 required a few tiny
+   but critial modifications in the CMakeLists.txt.
+</div>
+<div>
+	05.10.2006 - Release version 1.3 supporting wxWidgets 2.7 plus removed Xerces-C++ dependency in favour of the expat library which already comes with wxWidgets.
+   Plus minor improvements:
+   <ul>
+   	<li>Make "real" test cases in CRCppEmitterTest.</li>
+      <li>C&R: fix line break in emitting of non-integer numbers in code (e.g. was: "0.5" => "0.\n5").</li>
+   </ul>
+</div>
+<div>
+	14.08.2006 - Minor release version 1.2.2 supporting VTK 5; plus fix building for C&R of VTK render window interactions under Linux.
+</div>
+<div>
+	07.07.2006 - Release version 1.2 supporting latest stable release wxWidgets 2.6.3 also under Linux (GTK2).
+</div>
+<div>
+	27.06.2006 - Move website to new host, because the previous free webspace provider has shut down the page
+   without any notice some time ago. Thanks to my friend Werner Fischer for hosting it.
+</div>
+<div>
+	09.06.2006 - Recreate VNC movies in the shape of MPEG videos to allow playing them on all
+   systems. Thanks to Carl Godkin for reporting the problem.
+</div>
+<div>
+	03.05.2006 - Release version 1.1 supporting latest stable release wxWidgets 2.6.3 with patch 2 under MSW.
+   Initiated by Carl Godkin.
+</div>
+<div>
+	14.04.2006 - Uploaded recompiled <a href="MPhilThesisChapterSwWxGuiTesting.pdf">MPhil thesis chapter</a>: now recognizable full sequence diagrams in Appendix A, Section 1.5 (page 95).
+</div>
+<div>
+	17.02.2006 - Initial "release".
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-274326-2";
+urchinTracker();
+</script>
+
+</body>
+</html>
