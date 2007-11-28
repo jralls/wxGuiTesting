@@ -1,0 +1,127 @@
+$ext:h
+///////////////////////////////////////////////////////////////////////////////
+// Name:        swTstMySwWxGuiCppUnitTestClass.h
+// Author:      Reinhold Füreder
+// Modified by:
+// Created:     2006-02-14
+// RCS-ID:      $Id: preview.txt,v 1.1 2006/02/14 01:12:59 reinhold Exp $
+// Copyright:   (c) Reinhold Füreder
+// Licence:     wxWindows licence
+///////////////////////////////////////////////////////////////////////////////
+
+#ifndef SWTSTMYSWWXGUICPPUNITTESTCLASS_H
+#define SWTSTMYSWWXGUICPPUNITTESTCLASS_H
+
+#ifdef __GNUG__
+    #pragma interface "swTstMySwWxGuiCppUnitTestClass.h"
+#endif
+
+// Includes:
+#include <cppunit/extensions/HelperMacros.h>
+
+namespace swTst {
+
+
+/*! \class MySwWxGuiCppUnitTestClass
+    \brief ...
+
+    ...
+*/
+class MySwWxGuiCppUnitTestClass : public CPPUNIT_NS::TestFixture
+{
+    CPPUNIT_TEST_SUITE( MySwWxGuiCppUnitTestClass );
+
+        CPPUNIT_TEST( testExample );
+
+    CPPUNIT_TEST_SUITE_END();
+
+// Methods:
+public:
+    /*! \fn virtual void setUp ()
+        \brief Set up context before running a test.
+
+        ...
+    */
+    virtual void setUp ();
+
+
+    /*! \fn virtual void tearDown ()
+        \brief Clean up after the test run.
+
+        ...
+    */
+    virtual void tearDown ();
+
+
+    /*! \fn virtual void testExample ()
+        \brief Example test case.
+
+        ...
+    */
+    virtual void testExample ();
+
+
+protected:
+
+private:
+
+// Data components:
+public:
+
+protected:
+
+private:
+
+};
+
+} // End namespace swTst
+
+#endif // SWTSTMYSWWXGUICPPUNITTESTCLASS_H
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Name:        swTstMySwWxGuiCppUnitTestClass.cpp
+// Author:      Reinhold Füreder
+// Modified by:
+// Created:     2006-02-14
+// RCS-ID:      $Id: preview.txt,v 1.1 2006/02/14 01:12:59 reinhold Exp $
+// Copyright:   (c) Reinhold Füreder
+// Licence:     wxWindows licence
+///////////////////////////////////////////////////////////////////////////////
+
+#ifdef __GNUG__
+    #pragma implementation "swTstMySwWxGuiCppUnitTestClass.h"
+#endif
+
+#include "swTstMySwWxGuiCppUnitTestClass.h"
+
+#include "swWxGuiTestHelper.h"
+#include "swWxGuiTestEventSimulationHelper.h"
+#include "swWxGuiTestTimedDialogEnder.h"
+#include "swWxGuiTestTempInteractive.h"
+
+namespace swTst {
+
+
+// Register test suite with special name in order to be identifiable as test
+// which must be run after GUI part of wxWidgets library is initialised:
+CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( MySwWxGuiCppUnitTestClass, "WxGuiTest" );
+
+
+void MySwWxGuiCppUnitTestClass::setUp ()
+{
+}
+
+
+void MySwWxGuiCppUnitTestClass::tearDown ()
+{
+}
+
+
+void MySwWxGuiCppUnitTestClass::testExample ()
+{
+}
+
+} // End namespace swTst

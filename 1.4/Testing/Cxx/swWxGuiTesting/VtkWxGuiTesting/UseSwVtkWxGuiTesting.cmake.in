@@ -1,0 +1,18 @@
+###############################################################################
+# Name:        swWxGuiTesting/VtkWxGuiTesting/UseSwVtkWxGuiTesting.cmake.in
+# Author:      Reinhold Füreder
+# Created:     2004
+# Copyright:   (c) 2005 Reinhold Füreder
+# Licence:     wxWindows licence
+###############################################################################
+
+# Add include directories needed to use swVtkWxGuiTesting.
+SET (Testing_swVtkWxGuiTesting_INCLUDE_DIRS @swVtkWxGuiTesting_INCLUDE_DIRS_CONFIG@)
+
+
+# Add link directories needed to use swVtkWxGuiTesting.
+SET (Testing_swVtkWxGuiTesting_LIBRARY_DIRS @swVtkWxGuiTesting_LIBRARY_DIRS_CONFIG@)
+
+
+# A list of all libraries for swVtkWxGuiTesting.
+SET (Testing_swVtkWxGuiTesting_LIBRARIES @swVtkWxGuiTesting_LIBRARIES_CONFIG@)

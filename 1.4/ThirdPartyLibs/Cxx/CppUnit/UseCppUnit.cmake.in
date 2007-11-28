@@ -1,0 +1,18 @@
+###############################################################################
+# Name:        CppUnit/UseCppUnit.cmake.in
+# Author:      Reinhold Füreder
+# Created:     2004
+# Copyright:   (c) 2005 Reinhold Füreder
+# Licence:     wxWindows licence
+###############################################################################
+
+# Add include directories needed to use CppUnit.
+SET (ThirdPartyLibs_CppUnit_INCLUDE_DIRS @CPPUNIT_INCLUDE_DIRS_CONFIG@)
+
+
+# Add link directories needed to use CppUnit.
+SET (ThirdPartyLibs_CppUnit_LIBRARY_DIRS @CPPUNIT_LIBRARY_DIRS_CONFIG@)
+
+
+# A list of all libraries for CppUnit.
+SET (ThirdPartyLibs_CppUnit_LIBRARIES @CPPUNIT_LIBRARIES_CONFIG@)
