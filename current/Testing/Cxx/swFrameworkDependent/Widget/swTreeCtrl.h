@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 // Name:        swFrameworkDependent/Widget/swTreeCtrl.h
 // Author:      Yann Rouillard, Viet Bui Xuan, Reinhold Füreder
 // Created:     2002
@@ -37,7 +37,7 @@ public:
 			   const wxSize& size = wxDefaultSize,
 			   long style = wxTR_EDIT_LABELS | wxTR_HAS_BUTTONS,
 			   const wxValidator& validator = wxDefaultValidator,
-			   const wxString& name = "listCtrl");
+			   const wxString& name = _T("listCtrl"));
 
 	~TreeCtrl ();
 

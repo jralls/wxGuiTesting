@@ -48,8 +48,8 @@ public:
             const wxBitmap& bitmap1,
             const wxBitmap& bitmap2 = wxNullBitmap,
             wxItemKind kind = wxITEM_NORMAL,            
-            const wxString& shortHelpString = "",
-            const wxString& longHelpString = "",
+            const wxString& shortHelpString = _T(""),
+            const wxString& longHelpString = _T(""),
             wxObject* clientData = NULL,
             bool isToggleOffable = true)
     {

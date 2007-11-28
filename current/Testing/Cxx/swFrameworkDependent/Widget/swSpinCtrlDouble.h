@@ -68,7 +68,7 @@ public:
     SpinCtrlDouble() {}
     
     SpinCtrlDouble(wxWindow *parent, wxWindowID id = -1,
-                 const wxString &value = "",
+                 const wxString &value = _T(""),
                  const wxPoint& pos = wxDefaultPosition,
                  const wxSize& size = wxSize(95,-1),
                  long style = wxNO_BORDER,
@@ -84,7 +84,7 @@ public:
 
     // wxSpinCtrl compatibility, call SetIncrement(increment,digits) after
     SpinCtrlDouble(wxWindow *parent, wxWindowID id = -1,
-                 const wxString &value = "",
+                 const wxString &value = _T(""),
                  const wxPoint& pos = wxDefaultPosition,
                  const wxSize& size = wxSize(95,-1),
                  long style = wxNO_BORDER,
@@ -99,7 +99,7 @@ public:
 
     bool Create(wxWindow *parent,
                 wxWindowID id = -1,
-                const wxString &value = "",
+                const wxString &value = _T(""),
                 const wxPoint& pos = wxDefaultPosition,
                 const wxSize& size = wxSize(100,-1),
                 long style = wxNO_BORDER,
