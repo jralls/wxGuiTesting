@@ -85,12 +85,6 @@ protected:
     virtual void checkEmittedCode (const wxString &expectedFilename,
         int startLineNmb, int endLineNmb) const;
 
-private:
-    // Filename of test case file template containing only CAPTURE macro:
-    static const wxString FILENAME;
-    // Line number of CAPTURE macro in this test case file template:
-    static const int LINE_NMB;
-
 };
 
 } // End namespace swTst

@@ -54,7 +54,8 @@ void writeTree (Tst::CRXRCNode *node, const char *indent)
 
 void CRXRCReaderTest::testReadingXRC ()
 {
-    wxString xrcFilename = _T("../../../TestData/xrc/CapturePanel_wdr.xrc");
+    const wxString xrcDir(_T(XRCDIR));
+    wxString xrcFilename = xrcDir + _T("/CapturePanel_wdr.xrc");
     swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcFilename);
 
     swTst::CRXRCResource *xrcResource = reader->GetResource ();

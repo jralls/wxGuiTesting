@@ -32,7 +32,7 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRWindowHierarchyHandlerTest, "WxGuiTest"
 
 void CRWindowHierarchyHandlerTest::setUp ()
 {
-    wxString xrcDir = _T("../../../TestData/xrc/");
+    const wxString xrcDir = _T(XRCDIR);
     sw::Config *config = new sw::Config ();
     config->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (config);

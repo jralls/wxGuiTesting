@@ -35,6 +35,11 @@
 #include "swTreeCtrl.h"
 
 using sw::SpinCtrlDouble;
+namespace {
+    const wxString testDir(_T(TESTDIR));
+    const wxString FILENAME(testDir + _T("/OnlyCapture.cpp"));
+    const wxString xrcDir(_T(XRCDIR));
+    const int LINE_NMB = 1;
 
 
 namespace swTst {
@@ -45,8 +50,6 @@ namespace swTst {
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CapturePlusEmittingTest, "WxGuiTest" );
 
 
-const wxString CapturePlusEmittingTest::FILENAME = _T("../../../TestData/OnlyCapture.cpp");
-const int CapturePlusEmittingTest::LINE_NMB = 1;
 
 // Macros for easier asserting/self-testing of reproducing capture plus emitting:
 #define START int start = __LINE__;
@@ -58,7 +61,7 @@ void CapturePlusEmittingTest::setUp ()
 {
     // 1. Setup test application:
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 
     wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
@@ -98,7 +101,6 @@ void CapturePlusEmittingTest::setUp ()
     WxGuiTestHelper::Show (frame, true, false);
     WxGuiTestHelper::FlushEventQueue ();
 
-    wxString xrcDir = _T("../../../TestData/xrc/CaptureTest/");
     sw::Config *configInit = new sw::Config ();
     configInit->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (configInit);

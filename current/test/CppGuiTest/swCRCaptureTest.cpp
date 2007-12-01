@@ -43,8 +43,9 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRCaptureTest, "WxGuiTest" );
 
 void CRCaptureTest::setUp ()
 {
+    const wxString xrcDir = _T("XRCDIR");
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 
     wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
@@ -85,7 +86,6 @@ void CRCaptureTest::setUp ()
     WxGuiTestHelper::Show (frame, true, false);
     WxGuiTestHelper::FlushEventQueue ();
 
-    wxString xrcDir = _T("../../../TestData/xrc/CaptureTest/");
     sw::Config *configInit = new sw::Config ();
     configInit->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (configInit);

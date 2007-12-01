@@ -41,9 +41,9 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( WxGuiTestEventSimulationHelperTest, "WxGu
 WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
 {
     sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
-
+    const wxString xrcDir(_T(XRCDIR));
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (_T("../../../TestData/xrc/CaptureTest/EvtSimHlpTest_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 
     m_miniFrame = NULL;
 
