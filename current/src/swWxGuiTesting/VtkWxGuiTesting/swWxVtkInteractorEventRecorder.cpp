@@ -32,7 +32,7 @@
 namespace swTst {
 
 
-vtkCxxRevisionMacro(WxVtkInteractorEventRecorder, "$Revision: 1.3 $");
+vtkCxxRevisionMacro(WxVtkInteractorEventRecorder, "$Revision: 1.5 $");
 vtkStandardNewMacro(WxVtkInteractorEventRecorder);
 
 float WxVtkInteractorEventRecorder::StreamVersion = 2.0;
@@ -203,11 +203,11 @@ void WxVtkInteractorEventRecorder::Record()
             vtkRenderWindow *renderWdw = (*it).second->wxVtkRwi->GetRenderWindow ();
             vtkRendererCollection *renderers = renderWdw->GetRenderers ();
             wxASSERT_MSG (renderers->GetNumberOfItems () > 0,
-			  _T("At least one renderer must exist in each render window; and only the first one is fully supported."));
+                    _T("At least one renderer must exist in each render window; and only the first one is fully supported."));
 			if (renderers->GetNumberOfItems () != 1) {
 
-			    ::wxLogTrace (_T("VtkWxGuiTesting"),
-					  _T("Currently only one renderer per render window interactor is supported"));
+                ::wxLogTrace (_T("VtkWxGuiTesting"),
+                        _T("Currently only one renderer per render window interactor is supported"));
 			}
             vtkRenderer *renderer = renderers->GetFirstRenderer ();
             vtkCamera *activeCamera = renderer->GetActiveCamera ();
@@ -258,11 +258,11 @@ void WxVtkInteractorEventRecorder::RestoreWxVtkSettings ()
         vtkRenderWindow *renderWdw = (*it).second->wxVtkRwi->GetRenderWindow ();
         vtkRendererCollection *renderers = renderWdw->GetRenderers ();
         wxASSERT_MSG (renderers->GetNumberOfItems () > 0,
-		      _T("At least one renderer must exist in each render window; and only the first one is fully supported."));
+                _T("At least one renderer must exist in each render window; and only the first one is fully supported."));
 		if (renderers->GetNumberOfItems () != 1) {
 
-		    ::wxLogTrace (_T("VtkWxGuiTesting"),
-				  _T("Currently only one renderer per render window interactor is supported"));
+            ::wxLogTrace (_T("VtkWxGuiTesting"),
+                    _T("Currently only one renderer per render window interactor is supported"));
 		}
         vtkRenderer *renderer = renderers->GetFirstRenderer ();
         vtkCamera *activeCamera = renderer->GetActiveCamera ();

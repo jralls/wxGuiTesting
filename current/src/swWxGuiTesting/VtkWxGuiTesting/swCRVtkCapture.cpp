@@ -34,7 +34,7 @@ CRVtkCapture::~CRVtkCapture ()
 }
 
 
-wxEvtHandler * CRVtkCapture::CreateEvtHandler () const
+CRCaptureControl * CRVtkCapture::CreateEvtHandler () const
 {
     return new CRVtkCaptureControl (m_dialog);
 }

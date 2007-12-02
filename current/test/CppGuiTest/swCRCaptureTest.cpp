@@ -43,7 +43,7 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRCaptureTest, "WxGuiTest" );
 
 void CRCaptureTest::setUp ()
 {
-    const wxString xrcDir = _T("XRCDIR");
+    const wxString xrcDir = _T(XRCDIR);
     wxXmlResource::Get()->InitAllHandlers();
     wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 

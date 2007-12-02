@@ -30,6 +30,10 @@
 
 using sw::SpinCtrlDouble;
 
+namespace {
+    const wxString xrcDir(_T(XRCDIR));
+}
+
 
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
@@ -39,7 +43,7 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( SimpleCRTest, "WxGuiTest" );
 void SimpleCRTest::setUp ()
 {
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (_T("../Cxx/EvtSimHlpTest_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + wxString(_T("/EvtSimHlpTest_wdr.xrc")));
 
     wxFrame *frame = new wxFrame (NULL, -1, _T("EvtSimHlpFrame"));
 
@@ -79,7 +83,6 @@ void SimpleCRTest::setUp ()
     swTst::WxGuiTestHelper::FlushEventQueue ();
 
     // For C&R:
-    wxString xrcDir = _T("../../Testing/TestData/xrc/CaptureTest/");
     sw::Config *configInit = new sw::Config ();
     configInit->SetResourceDir (xrcDir);
     sw::ConfigManager::SetInstance (configInit);

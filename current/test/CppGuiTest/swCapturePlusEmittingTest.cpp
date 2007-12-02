@@ -40,7 +40,7 @@ namespace {
     const wxString FILENAME(testDir + _T("/OnlyCapture.cpp"));
     const wxString xrcDir(_T(XRCDIR));
     const int LINE_NMB = 1;
-
+}
 
 namespace swTst {
 

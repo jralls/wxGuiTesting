@@ -43,8 +43,7 @@
 #include "wxVTKRenderWindowInteractor.h"
 
 namespace {
-    wxString srcDir (_T(SRCDIR));
-    wxString xrcDir (srcDir + wxString(_T("/test/TestData/xrc/CaptureTest/")));
+    const wxString xrcDir(_T(XRCDIR));
 };
 
 namespace swTst {
@@ -64,10 +63,9 @@ CRVtkCaptureTest::CRVtkCaptureTest ()
 
 void CRVtkCaptureTest::setUp ()
 {
-    wxString vtkPath(srcDir + wxString(_T("")));
-    wxString xrcPath (xrcDir + wxString(_T("EvtSimHlpTest_wdr.xrc")));
-    std::string vtkFilename(SRCDIR);
-    vtkFilename += "/test/TestData/vtk/hipStl.vtp";
+    wxString xrcPath (xrcDir + wxString(_T("/EvtSimHlpTest_wdr.xrc")));
+    std::string vtkFilename(VTKDIR);
+    vtkFilename += "/hipStl.vtp";
 
     wxXmlResource::Get()->InitAllHandlers();
     wxXmlResource::Get()->Load (xrcPath);

@@ -203,6 +203,15 @@
     test/CppGuiTest/swModalDialogTest.h
   </set>
 
+  <set var='CPPGUITESTCAPTURE_EMIT_SOURCES'>
+    test/CppGuiTest/CppTextTestApp.cpp
+    test/CppGuiTest/swCapturePlusEmittingTest.cpp
+  </set>
+
+  <set var='CPPGUITESTCAPTURE_EMIT_HDRS'>
+    test/CppGuiTest/swCapturePlusEmittingTest.h
+  </set>
+
   <set var='VTKTEST_SOURCES'>
     test/VtkTest/CppTextTestApp.cpp
     test/VtkTest/swCRVtkCaptureTest.cpp

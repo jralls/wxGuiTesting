@@ -30,6 +30,11 @@
 
 using sw::SpinCtrlDouble;
 
+namespace {
+    const wxString testDir(_T(TESTDIR));
+    const wxString xrcDir(_T(XRCDIR));
+}
+
 namespace swTst {
 
 
@@ -41,7 +46,6 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( WxGuiTestEventSimulationHelperTest, "WxGu
 WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
 {
     sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
-    const wxString xrcDir(_T(XRCDIR));
     wxXmlResource::Get()->InitAllHandlers();
     wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 
@@ -76,8 +80,8 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
     sw::ToolBar *toolBar = sw::FrameFactory::GetInstance ()->CreateNamedToolBar (
             _T("ToolBar"), wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL);
     const unsigned int NMB_TOOLS = 2;
-    wxBitmap *icon1 = new wxBitmap (wxImage (_T("../../../Cxx/swWxGuiTesting/CppGuiTest/icon1.bmp")));
-    wxBitmap *icon2 = new wxBitmap (wxImage (_T("../../../Cxx/swWxGuiTesting/CppGuiTest/icon2.bmp")));
+    wxBitmap *icon1 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon1.bmp"))));
+    wxBitmap *icon2 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon2.bmp"))));
     toolBar->AddTool (XRCID ("Tool"), _T(""), *icon1, _T("Tool"));
     toolBar->AddTool (XRCID ("ToggleTool"), _T(""), *icon2, _T("ToggleTool"), true);
     delete icon1;

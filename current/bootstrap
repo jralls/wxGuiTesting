@@ -1,6 +1,6 @@
 rm -f config.cache.
 rm -f acconfig.h
-bakefilize -f
+bakefilize -f -c
 WXPREFIX=`wx-config --prefix`
 WXVER=`wx-config --version`
 CPPUNIT_PREFIX=`cppunit-config --prefix`

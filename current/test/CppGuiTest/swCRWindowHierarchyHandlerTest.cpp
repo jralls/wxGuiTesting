@@ -38,8 +38,8 @@ void CRWindowHierarchyHandlerTest::setUp ()
     sw::ConfigManager::SetInstance (config);
 
     wxXmlResource::Get()->InitAllHandlers ();
-    wxXmlResource::Get()->Load (xrcDir + _T("CapturePanel_wdr.xrc"));
-    wxXmlResource::Get()->Load (xrcDir + _T("xrc_two_object_nodes.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("/CapturePanel_wdr.xrc"));
+    wxXmlResource::Get()->Load (xrcDir + _T("/xrc_two_object_nodes.xrc"));
 }
 
 

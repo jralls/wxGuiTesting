@@ -23,6 +23,11 @@
     <include file='presets/osx_bundle.bkl'/>
   </if>
 
+  <set var='testdir' overwrite='0'>test/TestData</set>
+  <set var='xrcdir' overwrite='0'>test/TestData/xrc</set>
+  <set var='TESTDIR' overwrite='0'>$(srcdir)/$(testdir)</set>
+  <set var='XRCDIR' overwrite='0'>$(srcdir)/$(xrcdir)</set>
+  <set var='VTKDIR' overwrite='0'>$(srcdir)/$(testdir)/vtk</set>
 
   <set var="WX_DIR_DEFAULT" overwrite="0">$(DOLLAR)($(ENV_VAR)WXWIN)</set>
   <set var="WX_SHARED_DEFAULT" overwrite="0">0</set>
@@ -151,30 +156,30 @@
 
   <set var='__CFLAGS'>
     <if cond="FORMAT=='autoconf' and USE_VTK=='FALSE'">
-      $(OPT_FLAGS) $(CPPUNIT_CFLAGS) $(WX_CFLAGS)
+      $(OPT_FLAGS) $(CPPUNIT_CFLAGS)
     </if>
     <if cond="FORMAT=='autoconf' and USE_VTK=='TRUE'">
-      $(OPT_FLAGS) -I$(srcdir)/$(WXVTK) $(VTK_CFLAGS) $(CPPUNIT_CFLAGS) $(WX_CFLAGS)
+      $(OPT_FLAGS) -I$(srcdir)/$(WXVTK) $(VTK_CFLAGS) $(CPPUNIT_CFLAGS) 
     </if>
     <if cond="FORMAT!='autoconf'"> $(OPT_FLAGS)</if>
   </set>
 
   <set var='__CXXFLAGS'>
     <if cond="FORMAT=='autoconf' and USE_VTK=='FALSE'">
-      $(OPT_FLAGS) $(CPPUNIT_CFLAGS) $(WX_CXXFLAGS)
+      $(OPT_FLAGS) $(CPPUNIT_CFLAGS)
     </if>
     <if cond="FORMAT=='autoconf' and USE_VTK=='TRUE'">
-      $(OPT_FLAGS) -I$(srcdir)/$(WXVTK) $(VTK_CXXFLAGS) $(CPPUNIT_CFLAGS) $(WX_CXXFLAGS)
+      $(OPT_FLAGS) -I$(srcdir)/$(WXVTK) $(VTK_CXXFLAGS) $(CPPUNIT_CFLAGS)
     </if>
     <if cond="FORMAT!='autoconf'"> $(OPT_FLAGS)</if>
   </set>
 
   <set var='__LDFLAGS'>
     <if cond="FORMAT=='autoconf' and USE_VTK=='FALSE'">
-      $(CPPUNIT_LIBS) $(WX_LIBS)
+      $(CPPUNIT_LIBS)
     </if>
     <if cond="FORMAT=='autoconf' and USE_VTK=='TRUE'">
-      $(VTK_LDFLAGS) $(CPPUNIT_LIBS) $(WX_LIBS)
+      $(VTK_LDFLAGS) $(CPPUNIT_LIBS)
     </if>
   </set>
 
@@ -185,36 +190,36 @@
   </set>
 
   <set var='capturePanel_cpp'>
-    $(srcdir)$(nativePaths('/src/CapturePanel.cpp'))
+    $(testdir)$(nativePaths('/CapturePanel.cpp'))
   </set>
 
    <set var='capturePanel_xrc'>
-    $(srcdir)$(nativePaths('/src/swWxGuiTesting/CapturePanel_wdr.xrc'))
+    $(xrcdir)$(nativePaths('/CapturePanel2_wdr.xrc'))
   </set>
 
-  <action id='$(capturePanel_cpp)'>
+  <action id='$(srcdir)/$(capturePanel_cpp)'>
     <command>
-      $(WXRC) -v -c -n InitCapturePanelXRC -o $(capturePanel_cpp) $(capturePanel_xrc)
+      $(WXRC) -v -c -n InitCapturePanelXRC -o $(srcdir)/$(capturePanel_cpp) $(srcdir)/$(capturePanel_xrc)
     </command>
     <if cond="FORMAT=='autoconf'">
-      <clean-files>$(capturePanel_cpp)</clean-files>
+      <clean-files>$(srcdir)/$(capturePanel_cpp)</clean-files>
     </if>
   </action>
 
   <set var='VTKcapturePanel_cpp'>
-    $(srcdir)$(nativePaths('/src/VtkCapturePanel.cpp'))
+    $(testdir)$(nativePaths('/VtkCapturePanel.cpp'))
   </set>
 
    <set var='VTKcapturePanel_xrc'>
-    $(srcdir)$(nativePaths('/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel_wdr.xrc'))
+    $(xrcdir)$(nativePaths('/VtkCapturePanel_wdr.xrc'))
   </set>
 
-  <action id='$(VTKcapturePanel_cpp)' cond="USE_VTK=='TRUE'">
+  <action id='$(srcdir)/$(VTKcapturePanel_cpp)' cond="USE_VTK=='TRUE'">
     <command>
-      $(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(VTKcapturePanel_cpp) $(VTKcapturePanel_xrc)
+      $(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(srcdir)/$(VTKcapturePanel_cpp) $(srcdir)/$(VTKcapturePanel_xrc)
     </command>
     <if cond="FORMAT=='autoconf'">
-      <clean-files>$(VTKcapturePanel_cpp)</clean-files>
+      <clean-files>$(srcdir)/$(VTKcapturePanel_cpp)</clean-files>
     </if>
   </action>
 
@@ -229,7 +234,8 @@
 
   <template id='wgtInclude'>
     <include>$(srcdir)/$(WGT)</include>
-  </template>
+     <include>$(srcdir)/$(WGT)/CapturedEvents</include>
+ </template>
   
   <template id='optimize'>
     <if cond="FORMAT!='autoconf'">
@@ -249,7 +255,7 @@
    </if>
   </template>
 
-<template id='vtk-libraries'>
+  <template id='vtk-libraries'>
     <if cond="FORMAT!='autoconf'">
 	<lib-path>$(VTK_LIBS)</lib-path>
 	<sys-lib>vtkCommon</sys-lib>
@@ -278,7 +284,8 @@
 	  <osx-bundle />
 	</if>
 
-    <define>SRCDIR="$(srcdir)"</define>
+    <define>TESTDIR="$(TESTDIR)"</define>
+    <define>XRCDIR="$(XRCDIR)"</define>
     <library>swWxGuiTesting</library>
 	<if cond="FORMAT=='autoconf'">
 	  <ldflags >$(__LDFLAGS)</ldflags>
@@ -302,6 +309,10 @@
     <if cond="FORMAT!='autoconf'">
       <cxxflags>$(VTK_INCL_FLAG)</cxxflags>
     </if>
+    <if cond="FORMAT=='autoconf' or FORMAT=='gnu'">
+      <install-to>$(PREFIX)/lib</install-to>
+      <install-headers-to> $(PREFIX)/include/wx </install-headers-to>
+    </if>
   </lib>
 
   <exe id='CppUnitTest' template='testApp'>
@@ -315,7 +326,10 @@
   </exe>
 
   <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
-    <sources>$(CPPGUITESTCAPTUREREPLAY_SOURCES) src/CapturePanel.cpp </sources>
+    <sources>
+      $(CPPGUITESTCAPTUREREPLAY_SOURCES) 
+      $(capturePanel_cpp)
+    </sources>
     <headers>$(CPPGUITESTCAPTUREREPLAY_HDRS)</headers>
   </exe>
 
@@ -324,12 +338,24 @@
     <headers>$(CPPGUITESTMODALDIALOG_HDRS)</headers>
   </exe>
 
+  <exe id='CppGuiUnitCapturePlusEmit' template='testApp'>
+    <sources>
+      $(CPPGUITESTCAPTURE_EMIT_SOURCES)
+<!--  $(testdir)/OnlyCapture.cpp -->
+    </sources>
+    <headers>$(CPPGUITESTCAPTURE_EMIT_HDRS)</headers>
+  </exe>
   
   <exe id='VTKUnitTest' cond="USE_VTK=='TRUE'" 
     template='swWxGuiTesting,optimize,wx,vtk-libraries'>
     <app-type>console</app-type>
     <depends>swWxGuiTesting</depends>
-    <sources>$(VTKTEST_SOURCES) src/VtkCapturePanel.cpp src/CapturePanel.cpp </sources>
+    <precomp-headers>off</precomp-headers>
+    <sources>
+      $(VTKTEST_SOURCES) 
+      $(VTKcapturePanel_cpp )
+      $(capturePanel_cpp) 
+    </sources>
     <headers>$(VTKTEST_HDRS)</headers>
     <cxxflags>$(VTK_INCL_FLAG)</cxxflags>
     <include>$(srcdir)/$(WGT)/VtkWxGuiTesting</include>
@@ -337,7 +363,8 @@
       <osx-bundle/>
     </if>
 
-    <define>SRCDIR="$(srcdir)"</define>
+    <define>VTKDIR="$(VTKDIR)"</define>
+    <define>XRCDIR="$(XRCDIR)"</define>
     <library>swWxGuiTesting</library>
     <if cond="FORMAT=='autoconf'">
       <ldflags >$(__LDFLAGS)</ldflags>
@@ -360,7 +387,7 @@
   </exe>
 
   <exe id='UsingSwWxGuiTesting' template='testApp'>
-    <sources>$(SAMPLE_SOURCES) src/CapturePanel.cpp </sources>
+    <sources>$(SAMPLE_SOURCES) $(capturePanel_cpp) </sources>
     <headers>$(SAMPLE_HDRS)</headers>
   </exe>
 
