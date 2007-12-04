@@ -245,14 +245,13 @@
   </template>
 
   <template id='swWxGuiTesting' template='fwInclude,wgtInclude'>
-   <if cond="FORMAT!='autoconf'">
-     <include >$(CPPUNIT_INCL)</include>
-   </if>
-   <if cond="FORMAT=='autoconf'">
-     <cflags>$(__CFLAGS)</cflags>
-     <cxxflags>$(__CXXFLAGS)</cxxflags>
-     <ldflags>$(__LDFLAGS)</ldflags>
-   </if>
+    <if cond="FORMAT!='autoconf'">
+      <include >$(CPPUNIT_INCL)</include>
+    </if>
+    <if cond="FORMAT=='autoconf'">
+      <cflags>$(__CFLAGS)</cflags>
+      <cxxflags>$(__CXXFLAGS)</cxxflags>
+    </if>
   </template>
 
   <template id='vtk-libraries'>
@@ -286,10 +285,16 @@
 
     <define>TESTDIR="$(TESTDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
+    <define>SRCDIR="$(srcdir)"</define>
     <library>swWxGuiTesting</library>
-	<if cond="FORMAT=='autoconf'">
-	  <ldflags >$(__LDFLAGS)</ldflags>
-	</if>
+    <if cond="FORMAT=='autoconf'">
+      <ldflags >$(__LDFLAGS)</ldflags>
+    </if>
+    <if cond="FORMAT!='autoconf'">
+      <lib-path >$(CPPUNIT_LIBDIR)</lib-path>
+      <sys-lib >$(CPPUNIT_LIB)</sys-lib>
+    </if>
+
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
     <wx-lib>adv</wx-lib>
@@ -365,6 +370,7 @@
 
     <define>VTKDIR="$(VTKDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
+    <define>SRCDIR="$(srcdir)"</define>
     <library>swWxGuiTesting</library>
     <if cond="FORMAT=='autoconf'">
       <ldflags >$(__LDFLAGS)</ldflags>

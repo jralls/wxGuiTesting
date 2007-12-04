@@ -18,6 +18,7 @@
 
 #include "swCRXRCReader.h"
 
+
 namespace swTst {
 
 
@@ -88,7 +89,7 @@ void CRXRCReaderTest::testReadingXRC ()
 
 void CRXRCReaderTest::testResPathReadingXRC ()
 {
-    wxString xrcPath = _T("../../../TestData/xrc");
+    wxString xrcPath = _T(XRCDIR);
     swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcPath);
 
     swTst::CRXRCResource *xrcResource = reader->GetResource ();

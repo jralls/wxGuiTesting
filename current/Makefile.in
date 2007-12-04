@@ -59,8 +59,8 @@ CPPUNITTEST_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	CppUnitTest_CppTextTestApp.o \
 	CppUnitTest_swCRCppEmitterTest.o \
@@ -76,8 +76,8 @@ CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	CppGuiUnitTestEventSimulation_CppTextTestApp.o \
 	CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.o \
@@ -91,8 +91,8 @@ CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	CppGuiUnitTestCaptureReplay_CppTextTestApp.o \
 	CppGuiUnitTestCaptureReplay_swCRCaptureTest.o \
@@ -107,8 +107,8 @@ CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	CppGuiUnitTestModalDialog_CppTextTestApp.o \
 	CppGuiUnitTestModalDialog_swDirDialogManipulator.o \
@@ -123,8 +123,8 @@ CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	CppGuiUnitCapturePlusEmit_CppTextTestApp.o \
 	CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.o
@@ -138,8 +138,8 @@ VTKUNITTEST_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-I$(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting \
 	-DVTKDIR=\"$(srcdir)/test/TestData/vtk\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 VTKUNITTEST_OBJECTS =  \
 	VTKUnitTest_CppTextTestApp.o \
 	VTKUnitTest_swCRVtkCaptureTest.o \
@@ -154,8 +154,8 @@ USINGSWWXGUITESTING_CXXFLAGS = -I$(srcdir)/src/swFrameworkDependent \
 	-I$(srcdir)/src/swWxGuiTesting \
 	-I$(srcdir)/src/swWxGuiTesting/CapturedEvents \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" $(__CXXFLAGS) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 USINGSWWXGUITESTING_OBJECTS =  \
 	UsingSwWxGuiTesting_CppTextTestApp.o \
 	UsingSwWxGuiTesting_SimpleCRTest.o \
@@ -521,7 +521,7 @@ uninstall_swWxGuiTesting_headers:
 	done
 
 CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__CppUnitTest___mac_setfilecmd)
 
@@ -545,7 +545,7 @@ CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPA
 CppUnitTest_bundle: $(____CppUnitTest_app_Contents_PkgInfo___depname)
 
 CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__CppGuiUnitTestEventSimulation___mac_setfilecmd)
 
@@ -569,7 +569,7 @@ CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS)
 CppGuiUnitTestEventSimulation_bundle: $(____CppGuiUnitTestEventSimulation_app_Contents_PkgInfo___depname)
 
 CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__CppGuiUnitTestCaptureReplay___mac_setfilecmd)
 
@@ -593,7 +593,7 @@ CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) $(L
 CppGuiUnitTestCaptureReplay_bundle: $(____CppGuiUnitTestCaptureReplay_app_Contents_PkgInfo___depname)
 
 CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__CppGuiUnitTestModalDialog___mac_setfilecmd)
 
@@ -617,7 +617,7 @@ CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) $(LIBPR
 CppGuiUnitTestModalDialog_bundle: $(____CppGuiUnitTestModalDialog_app_Contents_PkgInfo___depname)
 
 CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__CppGuiUnitCapturePlusEmit___mac_setfilecmd)
 
@@ -641,7 +641,7 @@ CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) $(LIBPR
 CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_PkgInfo___depname)
 
 @COND_USE_VTK_TRUE@VTKUnitTest$(EXEEXT): $(VTKUNITTEST_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-@COND_USE_VTK_TRUE@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+@COND_USE_VTK_TRUE@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 @COND_USE_VTK_TRUE@	
 @COND_USE_VTK_TRUE@	$(__VTKUnitTest___mac_setfilecmd)
 
@@ -665,7 +665,7 @@ CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_P
 VTKUnitTest_bundle: $(____VTKUnitTest_app_Contents_PkgInfo___depname)
 
 UsingSwWxGuiTesting$(EXEEXT): $(USINGSWWXGUITESTING_OBJECTS) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) $(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
-	$(CXX) -o $@ $(USINGSWWXGUITESTING_OBJECTS) -L. $(LDFLAGS) $(__LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
+	$(CXX) -o $@ $(USINGSWWXGUITESTING_OBJECTS) -L. $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
 	
 	$(__UsingSwWxGuiTesting___mac_setfilecmd)
 

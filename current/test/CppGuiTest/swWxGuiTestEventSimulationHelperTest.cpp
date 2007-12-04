@@ -32,7 +32,6 @@ using sw::SpinCtrlDouble;
 
 namespace {
     const wxString testDir(_T(TESTDIR));
-    const wxString xrcDir(_T(XRCDIR));
 }
 
 namespace swTst {
@@ -47,7 +46,6 @@ WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
 {
     sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
     wxXmlResource::Get()->InitAllHandlers();
-    wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
 
     m_miniFrame = NULL;
 
@@ -63,6 +61,8 @@ WxGuiTestEventSimulationHelperTest::~WxGuiTestEventSimulationHelperTest ()
 
 void WxGuiTestEventSimulationHelperTest::setUp ()
 {
+    const wxString xrcDir = _T(XRCDIR);
+    wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
     sw::MainFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ();
     mainFrame->SetTitle (_T("EvtSimHlpFrame"));    
     m_testFrame = mainFrame->GetFrame ();
