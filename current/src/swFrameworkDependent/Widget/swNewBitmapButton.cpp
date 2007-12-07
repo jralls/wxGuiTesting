@@ -10,9 +10,9 @@
     #pragma implementation "swNewBitmapButton.h"
 #endif
 
-#include "swNewBitmapButton.h"
+#include <wxGuiTest/Widget/swNewBitmapButton.h>
 
-#include "wx/utils.h" // import wxMax macro
+#include <wx/utils.h> // import wxMax macro
 
 namespace sw {
 

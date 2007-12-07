@@ -13,7 +13,7 @@
     #pragma interface "swWxLogicErrorException.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <exception>
 

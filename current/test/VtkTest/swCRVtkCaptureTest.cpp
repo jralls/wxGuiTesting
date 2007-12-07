@@ -15,32 +15,32 @@
 #include <stack>
 #include <string>
 
-#include "wx/xrc/xmlres.h"
-#include "wx/frame.h"
-#include "wx/treectrl.h"
-#include "wx/statline.h"
+#include <wx/xrc/xmlres.h>
+#include <wx/frame.h>
+#include <wx/treectrl.h>
+#include <wx/statline.h>
 
-#include "vtkXMLPolyDataReader.h"
-#include "vtkPolyDataMapper.h"
-#include "vtkActor.h"
-#include "vtkRenderer.h"
-#include "vtkRendererCollection.h"
-#include "vtkCamera.h"
+#include <vtkXMLPolyDataReader.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkActor.h>
+#include <vtkRenderer.h>
+#include <vtkRendererCollection.h>
+#include <vtkCamera.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestEventSimulationHelper.h"
-#include "swWxGuiTestTimedDialogEnder.h"
-#include "swWxGuiTestTempInteractive.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include "swCRVtkCapture.h"
-#include "swVtkWxGuiTestHelper.h"
-#include "swWxVtkInteractorEventRecorder.h"
+#include <wxGuiTest/VtkGuiTest/swCRVtkCapture.h>
+#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTest/swWxVtkInteractorEventRecorder.h>
 
-#include "swConfigManager.h"
-#include "swConfig.h"
-#include "swSpinCtrlDouble.h"
+#include <wxGuiTest/Config/swConfigManager.h>
+#include <wxGuiTest/Config/swConfig.h>
+#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 
-#include "wxVTKRenderWindowInteractor.h"
+#include <wxVTKRenderWindowInteractor.h>
 
 namespace {
     const wxString xrcDir(_T(XRCDIR));

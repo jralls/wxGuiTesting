@@ -13,7 +13,7 @@
     #pragma interface "swCRXRCReader.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include "swCRXRCResource.h"
 

@@ -9,6 +9,21 @@
     <set-srcdir>../..</set-srcdir>
   </if>
 
+  <set var='BUILDDIR'>
+    <if cond="FORMAT=='autoconf'">objects</if>
+    <if cond="PLATFORM_WIN32=='1'">../objects</if>
+  </set>
+
+  <set var='bindir'>
+    <if cond="FORMAT not in ['autoconf', 'gnu']">$(srcdir)$(DIRSEP)bin</if>
+    <if cond="FORMAT in ['autoconf', 'gnu']">bin</if>
+  </set>
+
+  <set var='libdir'>
+    <if cond="FORMAT not in ['autoconf', 'gnu']">$(srcdir)$(DIRSEP)lib</if>
+    <if cond="FORMAT in ['autoconf', 'gnu']">lib</if>
+  </set>
+
   <option name='TOOLKIT' force='1'>
 	<default-value>GTK</default-value>
 	<values>GTK,MAC</values>
@@ -118,6 +133,9 @@
   </if>
 
   <option name='WXRC' category="path">
+    <default-value>
+      $(DOLLAR)(WXWIN)$(DIRSEP)utils$(DIRSEP)wxrc$(DIRSEP)vc_mswuddll$(DIRSEP)wxrc.exe
+    </default-value>
     <description>
       Path to find the wxrc executable, needed for parsing XRC files
     </description>
@@ -149,8 +167,8 @@
   </set>
 
   <set var='LIB_HDRS'>
-    <if cond="USE_VTK=='FALSE'">$(FD_HDRS) $(WGT_HDRS)</if>
-    <if cond="USE_VTK=='TRUE'">$(FD_HDRS) $(WGT_HDRS) $(WXVTK_HDRS) $(VTK_HDRS)</if>
+    <if cond="USE_VTK=='FALSE'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS)</if>
+    <if cond="USE_VTK=='TRUE'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS) $(WXVTK_HDRS) $(VTK_HDRS)</if>
   </set>
 
 
@@ -223,20 +241,15 @@
     </if>
   </action>
 
-  <template id='fwInclude'>
-    <include>$(srcdir)/$(FD)</include>
-    <include>$(srcdir)/$(FD)/Config</include>
-    <include>$(srcdir)/$(FD)/Exception</include>
-    <include>$(srcdir)/$(FD)/FrameFactory</include>
-    <include>$(srcdir)/$(FD)/GUI</include>
-    <include>$(srcdir)/$(FD)/Widget</include>
-  </template>
-
   <template id='wgtInclude'>
-    <include>$(srcdir)/$(WGT)</include>
-     <include>$(srcdir)/$(WGT)/CapturedEvents</include>
+    <include>$(srcdir)/include</include>
  </template>
   
+  <template id='libInclude' template='wgtInclude'>
+    <include>$(srcdir)/$(FDS)</include>
+    <include>$(srcdir)/$(WGTS)</include>
+  </template>
+
   <template id='optimize'>
     <if cond="FORMAT!='autoconf'">
       <optimize>$(OPT)</optimize>
@@ -244,7 +257,7 @@
     </if>
   </template>
 
-  <template id='swWxGuiTesting' template='fwInclude,wgtInclude'>
+  <template id='swWxGuiTesting'>
     <if cond="FORMAT!='autoconf'">
       <include >$(CPPUNIT_INCL)</include>
     </if>
@@ -278,6 +291,7 @@
 
   <template id='testApp' template='swWxGuiTesting,optimize,wx'>
     <app-type>console</app-type>
+    <dirname>$(bindir)</dirname>
     <depends>swWxGuiTesting</depends>
 	<if cond="FORMAT=='autoconf'">
 	  <osx-bundle />
@@ -307,8 +321,9 @@
     <if cond="FORMAT!='autoconf' and USE_VTK=='TRUE'">-I$(VTK_INCL) -I$(WXVTK)</if>
   </set>
 
-  <lib id='swWxGuiTesting' template='swWxGuiTesting,optimize,wx-lib'>
+  <lib id='swWxGuiTesting' template='libInclude,swWxGuiTesting,optimize,wx-lib'>
     <libname>swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_$(VERSION)</libname>
+    <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
     <headers>$(LIB_HDRS)</headers>
     <if cond="FORMAT!='autoconf'">
@@ -320,17 +335,17 @@
     </if>
   </lib>
 
-  <exe id='CppUnitTest' template='testApp'>
+  <exe id='CppUnitTest' template='wgtInclude,testApp'>
     <sources>$(CPPTEST_SOURCES)</sources>
     <headers>$(CPPTEST_HDRS)</headers>
   </exe>
 
-  <exe id='CppGuiUnitTestEventSimulation' template='testApp'>
+  <exe id='CppGuiUnitTestEventSimulation' template='libInclude,testApp'>
     <sources>$(CPPGUITESTEVENTSIMULATION_SOURCES)</sources>
     <headers>$(CPPGUITESTEVENTSIMULATION_HDRS)</headers>
   </exe>
 
-  <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
+  <exe id='CppGuiUnitTestCaptureReplay' template='libInclude,testApp'>
     <sources>
       $(CPPGUITESTCAPTUREREPLAY_SOURCES) 
       $(capturePanel_cpp)
@@ -338,22 +353,22 @@
     <headers>$(CPPGUITESTCAPTUREREPLAY_HDRS)</headers>
   </exe>
 
-  <exe id='CppGuiUnitTestModalDialog' template='testApp'>
+  <exe id='CppGuiUnitTestModalDialog' template='libInclude,testApp'>
     <sources>$(CPPGUITESTMODALDIALOG_SOURCES)</sources>
     <headers>$(CPPGUITESTMODALDIALOG_HDRS)</headers>
   </exe>
 
-  <exe id='CppGuiUnitCapturePlusEmit' template='testApp'>
+  <exe id='CppGuiUnitCapturePlusEmit' template='libInclude,testApp'>
     <sources>
       $(CPPGUITESTCAPTURE_EMIT_SOURCES)
-<!--  $(testdir)/OnlyCapture.cpp -->
     </sources>
     <headers>$(CPPGUITESTCAPTURE_EMIT_HDRS)</headers>
   </exe>
   
   <exe id='VTKUnitTest' cond="USE_VTK=='TRUE'" 
-    template='swWxGuiTesting,optimize,wx,vtk-libraries'>
+    template='wgtInclude,swWxGuiTesting,optimize,wx,vtk-libraries'>
     <app-type>console</app-type>
+    <dirname>$(bindir)</dirname>
     <depends>swWxGuiTesting</depends>
     <precomp-headers>off</precomp-headers>
     <sources>
@@ -363,7 +378,7 @@
     </sources>
     <headers>$(VTKTEST_HDRS)</headers>
     <cxxflags>$(VTK_INCL_FLAG)</cxxflags>
-    <include>$(srcdir)/$(WGT)/VtkWxGuiTesting</include>
+    <include>$(srcdir)/$(WGTI)/VtkWxGuiTesting</include>
     <if cond="FORMAT=='autoconf'">
       <osx-bundle/>
     </if>
@@ -392,7 +407,8 @@
     <wx-lib>base</wx-lib>
   </exe>
 
-  <exe id='UsingSwWxGuiTesting' template='testApp'>
+  <exe id='UsingSwWxGuiTesting' template='wgtInclude,testApp'>
+    <dirname>$(bindir)</dirname>
     <sources>$(SAMPLE_SOURCES) $(capturePanel_cpp) </sources>
     <headers>$(SAMPLE_HDRS)</headers>
   </exe>

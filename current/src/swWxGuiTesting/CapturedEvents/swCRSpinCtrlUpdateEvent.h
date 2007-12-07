@@ -13,7 +13,7 @@
     #pragma interface "swCRSpinCtrlUpdateEvent.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include "swCRCapturedEvent.h"
 

@@ -13,11 +13,11 @@
     #pragma interface "swCRXRCResource.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <list>
 
-#include "swCRXRCNode.h"
+#include <wxGuiTest/swCRXRCNode.h>
 
 namespace swTst {
 

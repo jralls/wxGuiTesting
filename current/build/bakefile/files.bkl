@@ -1,154 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <makefile>
-  <set var='FD'>src/swFrameworkDependent</set>
+  <set var='FDS'>src/swFrameworkDependent</set>
 
-  <set var='WGT'>src/swWxGuiTesting</set>
+  <set var='WGTS'>src/swWxGuiTesting</set>
+  <set var='WGTI'>include/wxGuiTest</set>
 
   <set var='FD_SOURCES'>
-    $(FD)/Config/swConfig.cpp
-    $(FD)/Config/swConfigInterface.cpp
-    $(FD)/Config/swConfigManager.cpp
-    $(FD)/Exception/swWxLogicErrorException.cpp
-    $(FD)/FrameFactory/swDefaultDialog.cpp
-    $(FD)/FrameFactory/swFrameFactory.cpp
-    $(FD)/FrameFactory/swMainFrame.cpp
-    $(FD)/FrameFactory/swMdiDefaultDialog.cpp
-    $(FD)/FrameFactory/swMdiFrameFactory.cpp
-    $(FD)/FrameFactory/swMdiMainFrame.cpp
-    $(FD)/FrameFactory/swMdiToolBar.cpp
-    $(FD)/FrameFactory/swToolBar.cpp
-    $(FD)/FrameFactory/swToolBarRegistry.cpp
-    $(FD)/FrameFactory/swWindow.cpp
-    $(FD)/GUI/swGuiObjectManager.cpp
-    $(FD)/GUI/swToolGuiObjectManager.cpp
-    $(FD)/swApp.cpp
-    $(FD)/swPseudoApp.cpp
-    $(FD)/Widget/swNewBitmapButton.cpp
-    $(FD)/Widget/swSpinCtrlDouble.cpp
-    $(FD)/Widget/swTreeCtrl.cpp
+    $(FDS)/Config/swConfig.cpp
+    $(FDS)/Config/swConfigInterface.cpp
+    $(FDS)/Config/swConfigManager.cpp
+    $(FDS)/Exception/swWxLogicErrorException.cpp
+    $(FDS)/FrameFactory/swDefaultDialog.cpp
+    $(FDS)/FrameFactory/swFrameFactory.cpp
+    $(FDS)/FrameFactory/swMainFrame.cpp
+    $(FDS)/FrameFactory/swMdiDefaultDialog.cpp
+    $(FDS)/FrameFactory/swMdiFrameFactory.cpp
+    $(FDS)/FrameFactory/swMdiMainFrame.cpp
+    $(FDS)/FrameFactory/swMdiToolBar.cpp
+    $(FDS)/FrameFactory/swToolBar.cpp
+    $(FDS)/FrameFactory/swToolBarRegistry.cpp
+    $(FDS)/FrameFactory/swWindow.cpp
+    $(FDS)/GUI/swGuiObjectManager.cpp
+    $(FDS)/GUI/swToolGuiObjectManager.cpp
+    $(FDS)/swApp.cpp
+    $(FDS)/swPseudoApp.cpp
+    $(FDS)/Widget/swNewBitmapButton.cpp
+    $(FDS)/Widget/swSpinCtrlDouble.cpp
+    $(FDS)/Widget/swTreeCtrl.cpp
   </set>
 
   <set var='FD_HDRS'>
-    $(FD)/Common.h
-    $(FD)/Config/swConfig.h
-    $(FD)/Config/swConfigInterface.h
-    $(FD)/Config/swConfigManager.h
-    $(FD)/Exception/swWxLogicErrorException.h
-    $(FD)/FrameFactory/swDefaultDialog.h
-    $(FD)/FrameFactory/swFrameFactory.h
-    $(FD)/FrameFactory/swMainFrame.h
-    $(FD)/FrameFactory/swMdiDefaultDialog.h
-    $(FD)/FrameFactory/swMdiFrameFactory.h
-    $(FD)/FrameFactory/swMdiMainFrame.h
-    $(FD)/FrameFactory/swMdiToolBar.h
-    $(FD)/FrameFactory/swToolBar.h
-    $(FD)/FrameFactory/swToolBarRegistry.h
-    $(FD)/FrameFactory/swWindow.h
-    $(FD)/GUI/swGuiObject.h
-    $(FD)/GUI/swGuiObjectManager.h
-    $(FD)/GUI/swToolGuiObject.h
-    $(FD)/GUI/swToolGuiObjectManager.h
-    $(FD)/swApp.h
-    $(FD)/swPseudoApp.h
-    $(FD)/Widget/swNewBitmapButton.h
-    $(FD)/Widget/swSpinCtrlDouble.h
-    $(FD)/Widget/swTreeCtrl.h
+    $(FDS)/Exception/swWxLogicErrorException.h
+    $(FDS)/FrameFactory/swDefaultDialog.h
+    $(FDS)/FrameFactory/swFrameFactory.h
+    $(FDS)/FrameFactory/swMainFrame.h
+    $(FDS)/FrameFactory/swMdiDefaultDialog.h
+    $(FDS)/FrameFactory/swMdiFrameFactory.h
+    $(FDS)/FrameFactory/swMdiMainFrame.h
+    $(FDS)/FrameFactory/swMdiToolBar.h
+    $(FDS)/FrameFactory/swToolBar.h
+    $(FDS)/FrameFactory/swToolBarRegistry.h
+    $(FDS)/FrameFactory/swWindow.h
+    $(FDS)/GUI/swGuiObject.h
+    $(FDS)/GUI/swGuiObjectManager.h
+    $(FDS)/GUI/swToolGuiObject.h
+    $(FDS)/GUI/swToolGuiObjectManager.h
+  </set>
+
+  <set var='FD_INSTALL_HDRS'>
+    $(WGTI)/Common.h
+    $(WGTI)/swApp.h
+    $(WGTI)/swPseudoApp.h
+    $(WGTI)/Config/swConfig.h
+    $(WGTI)/Config/swConfigInterface.h
+    $(WGTI)/Config/swConfigManager.h
+    $(WGTI)/Widget/swNewBitmapButton.h
+    $(WGTI)/Widget/swSpinCtrlDouble.h
+    $(WGTI)/Widget/swTreeCtrl.h
   </set>
 
   <set var='WGT_SOURCES'>
-    $(WGT)/CapturedEvents/swCRAbstractTreeEvent.cpp
-    $(WGT)/CapturedEvents/swCRButtonClickEvent.cpp
-    $(WGT)/CapturedEvents/swCRCapturedEvent.cpp
-    $(WGT)/CapturedEvents/swCRCheckBoxClickEvent.cpp
-    $(WGT)/CapturedEvents/swCRChoiceSelectionEvent.cpp
-    $(WGT)/CapturedEvents/swCRMenuSelectionEvent.cpp
-    $(WGT)/CapturedEvents/swCRNotebookPageChangeEvent.cpp
-    $(WGT)/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
-    $(WGT)/CapturedEvents/swCRSliderUpdateEvent.cpp
-    $(WGT)/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
-    $(WGT)/CapturedEvents/swCRTextUpdateEvent.cpp
-    $(WGT)/CapturedEvents/swCRTreeItemRightClickEvent.cpp
-    $(WGT)/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
-    $(WGT)/swCRCapture.cpp
-    $(WGT)/swCRCaptureControl.cpp
-    $(WGT)/swCRCppEmitter.cpp
-    $(WGT)/swCREventCaptureManager.cpp
-    $(WGT)/swCREventFactory.cpp
-    $(WGT)/swCRWindowHierarchyHandler.cpp
-    $(WGT)/swCRXRCNode.cpp
-    $(WGT)/swCRXRCObject.cpp
-    $(WGT)/swCRXRCReader.cpp
-    $(WGT)/swCRXRCResource.cpp
-    $(WGT)/swInitWxGuiTest.cpp
-    $(WGT)/swInitWxGuiTestSetUp.cpp
-    $(WGT)/swModalDialogTimer.cpp
-    $(WGT)/swWxGuiTestApp.cpp
-    $(WGT)/swWxGuiTestCppUnitWarningAsserter.cpp
-    $(WGT)/swWxGuiTestEventSimulationHelper.cpp
-    $(WGT)/swWxGuiTestHelper.cpp
-    $(WGT)/swWxGuiTestProvokedWarning.cpp
-    $(WGT)/swWxGuiTestProvokedWarningRegistry.cpp
-    $(WGT)/swWxGuiTestTempInteractive.cpp
-    $(WGT)/swWxGuiTestTempInteractiveControl.cpp
-    $(WGT)/swWxGuiTestTimedDialogEnder.cpp
+    $(WGTS)/CapturedEvents/swCRAbstractTreeEvent.cpp
+    $(WGTS)/CapturedEvents/swCRButtonClickEvent.cpp
+    $(WGTS)/CapturedEvents/swCRCapturedEvent.cpp
+    $(WGTS)/CapturedEvents/swCRCheckBoxClickEvent.cpp
+    $(WGTS)/CapturedEvents/swCRChoiceSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/swCRMenuSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/swCRNotebookPageChangeEvent.cpp
+    $(WGTS)/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/swCRSliderUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/swCRTextUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/swCRTreeItemRightClickEvent.cpp
+    $(WGTS)/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
+    $(WGTS)/swCRCapture.cpp
+    $(WGTS)/swCRCaptureControl.cpp
+    $(WGTS)/swCRCppEmitter.cpp
+    $(WGTS)/swCREventCaptureManager.cpp
+    $(WGTS)/swCREventFactory.cpp
+    $(WGTS)/swCRWindowHierarchyHandler.cpp
+    $(WGTS)/swCRXRCNode.cpp
+    $(WGTS)/swCRXRCObject.cpp
+    $(WGTS)/swCRXRCReader.cpp
+    $(WGTS)/swCRXRCResource.cpp
+    $(WGTS)/swInitWxGuiTest.cpp
+    $(WGTS)/swInitWxGuiTestSetUp.cpp
+    $(WGTS)/swModalDialogTimer.cpp
+    $(WGTS)/swWxGuiTestApp.cpp
+    $(WGTS)/swWxGuiTestCppUnitWarningAsserter.cpp
+    $(WGTS)/swWxGuiTestEventSimulationHelper.cpp
+    $(WGTS)/swWxGuiTestHelper.cpp
+    $(WGTS)/swWxGuiTestProvokedWarning.cpp
+    $(WGTS)/swWxGuiTestProvokedWarningRegistry.cpp
+    $(WGTS)/swWxGuiTestTempInteractive.cpp
+    $(WGTS)/swWxGuiTestTempInteractiveControl.cpp
+    $(WGTS)/swWxGuiTestTimedDialogEnder.cpp
   </set>
   <set var='VTK_SOURCES' >
-    $(WGT)/VtkWxGuiTesting/swCRVtkCapture.cpp
-    $(WGT)/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
-    $(WGT)/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
-    $(WGT)/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
+    $(WGTS)/VtkWxGuiTesting/swCRVtkCapture.cpp
+    $(WGTS)/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
+    $(WGTS)/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
+    $(WGTS)/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
   </set>
 
   <set var='WXVTK_SOURCES'>
     $(WXVTK)/wxVTKRenderWindowInteractor.cpp
   </set>
 
-  <set var='WGT_HDRS'>
-    $(WGT)/CapturedEvents/swCRAbstractTreeEvent.h
-    $(WGT)/CapturedEvents/swCRButtonClickEvent.h
-    $(WGT)/CapturedEvents/swCRCapturedEvent.h
-    $(WGT)/CapturedEvents/swCRCheckBoxClickEvent.h
-    $(WGT)/CapturedEvents/swCRChoiceSelectionEvent.h
-    $(WGT)/CapturedEvents/swCRMenuSelectionEvent.h
-    $(WGT)/CapturedEvents/swCRNotebookPageChangeEvent.h
-    $(WGT)/CapturedEvents/swCRRadioBoxSelectionEvent.h
-    $(WGT)/CapturedEvents/swCRSliderUpdateEvent.h
-    $(WGT)/CapturedEvents/swCRSpinCtrlUpdateEvent.h
-    $(WGT)/CapturedEvents/swCRTextUpdateEvent.h
-    $(WGT)/CapturedEvents/swCRTreeItemRightClickEvent.h
-    $(WGT)/CapturedEvents/swCRTreeSelectionChangingEvent.h
-    $(WGT)/swCRCapture.h
-    $(WGT)/swCRCaptureControl.h
-    $(WGT)/swCRCppEmitter.h
-    $(WGT)/swCREventCaptureManager.h
-    $(WGT)/swCREventFactory.h
-    $(WGT)/swCREventFilterInterface.h
-    $(WGT)/swCRLogInterface.h
-    $(WGT)/swCRWindowHierarchyHandler.h
-    $(WGT)/swCRXRCNode.h
-    $(WGT)/swCRXRCObject.h
-    $(WGT)/swCRXRCReader.h
-    $(WGT)/swCRXRCResource.h
-    $(WGT)/swInitWxGuiTest.h
-    $(WGT)/swInitWxGuiTestSetUp.h
-    $(WGT)/swModalDialogInteractionInterface.h
-    $(WGT)/swModalDialogTimer.h
-    $(WGT)/swWxGuiTestApp.h
-    $(WGT)/swWxGuiTestCppUnitWarningAsserter.h
-    $(WGT)/swWxGuiTestEventSimulationHelper.h
-    $(WGT)/swWxGuiTestHelper.h
-    $(WGT)/swWxGuiTestProvokedWarning.h
-    $(WGT)/swWxGuiTestProvokedWarningRegistry.h
-    $(WGT)/swWxGuiTestTempInteractive.h
-    $(WGT)/swWxGuiTestTempInteractiveControl.h
-    $(WGT)/swWxGuiTestTimedDialogEnder.h
-    $(WGT)/swWxGuiTestWarningAsserterInterface.h
+  <set var='WGTS_HDRS'>
+    $(WGTS)/CapturedEvents/swCRAbstractTreeEvent.h
+    $(WGTS)/CapturedEvents/swCRButtonClickEvent.h
+    $(WGTS)/CapturedEvents/swCRCapturedEvent.h
+    $(WGTS)/CapturedEvents/swCRCheckBoxClickEvent.h
+    $(WGTS)/CapturedEvents/swCRChoiceSelectionEvent.h
+    $(WGTS)/CapturedEvents/swCRMenuSelectionEvent.h
+    $(WGTS)/CapturedEvents/swCRNotebookPageChangeEvent.h
+    $(WGTS)/CapturedEvents/swCRRadioBoxSelectionEvent.h
+    $(WGTS)/CapturedEvents/swCRSliderUpdateEvent.h
+    $(WGTS)/CapturedEvents/swCRSpinCtrlUpdateEvent.h
+    $(WGTS)/CapturedEvents/swCRTextUpdateEvent.h
+    $(WGTS)/CapturedEvents/swCRTreeItemRightClickEvent.h
+    $(WGTS)/CapturedEvents/swCRTreeSelectionChangingEvent.h
+    $(WGTS)/swCRCaptureControl.h
+    $(WGTS)/swCREventFactory.h
+    $(WGTS)/swCRXRCObject.h
+    $(WGTS)/swCRXRCReader.h
+    $(WGTS)/swCRXRCResource.h
+    $(WGTS)/swInitWxGuiTestSetUp.h
+    $(WGTS)/swWxGuiTestTempInteractiveControl.h
   </set>
+
+  <set var='WGT_INSTALL_HDRS'>
+    $(WGTI)/swCRCapture.h
+    $(WGTI)/swCRCppEmitter.h
+    $(WGTI)/swCREventCaptureManager.h
+    $(WGTI)/swCREventFilterInterface.h
+    $(WGTI)/swCRWindowHierarchyHandler.h
+    $(WGTI)/swCRLogInterface.h
+    $(WGTI)/swCRXRCNode.h
+    $(WGTI)/swInitWxGuiTest.h
+    $(WGTI)/swModalDialogInteractionInterface.h
+    $(WGTI)/swModalDialogTimer.h
+    $(WGTI)/swWxGuiTestApp.h
+    $(WGTI)/swWxGuiTestCppUnitWarningAsserter.h
+    $(WGTI)/swWxGuiTestEventSimulationHelper.h
+    $(WGTI)/swWxGuiTestHelper.h
+    $(WGTI)/swWxGuiTestProvokedWarning.h
+    $(WGTI)/swWxGuiTestProvokedWarningRegistry.h
+    $(WGTI)/swWxGuiTestTempInteractive.h
+    $(WGTI)/swWxGuiTestTimedDialogEnder.h
+    $(WGTI)/swWxGuiTestWarningAsserterInterface.h
+  </set>
+
   <set var='VTK_HDRS' >
-    $(WGT)/VtkWxGuiTesting/swCRVtkCapture.h
-    $(WGT)/VtkWxGuiTesting/swCRVtkCaptureControl.h
-    $(WGT)/VtkWxGuiTesting/swVtkWxGuiTestHelper.h
-    $(WGT)/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.h
+    $(WGTI)/VtkGuiTesting/swCRVtkCapture.h
+    $(WGTI)/VtkGuiTesting/swCRVtkCaptureControl.h
+    $(WGTI)/VtkGuiTesting/swVtkWxGuiTestHelper.h
+    $(WGTI)/VtkGuiTesting/swWxVtkInteractorEventRecorder.h
   </set>
 
   <set var='WXVTK_HDRS'>

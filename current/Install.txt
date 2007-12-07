@@ -1,0 +1,128 @@
+Building and installing directions for swWxGuiTesting.
+
+Prerequisites:
+
+1. wxWidgets, http://www.wxwidgets.org, a cross-platform programming
+   framework in  C++. swWxGuiTesting is all about unit and regression testing
+   wxWidgets programs. swWxGuiTesting is tested against versiont 2.8.6
+   on Microsoft Windows XP®, Linux Debian Etch, and Macintosh OSX®
+   versions 4 and 5. Mandatory.
+
+2. CppUnit, http://cppunit.sourceforge.net, a C++ unit testing
+   framework. swWxGuiTesting has been tested against version 1.12.0. Mandatory.
+
+3. VTK, http://www.vtk.org, is a graphics toolkit which works on top
+   of opengl. swWxGuiTesting is capable of capturing and replaying events
+   via vtk. Optional.
+
+4. wxVTK, http://wxvtk.sourceforge.net, a wx control for VTK. There's
+   an older version in the sources, but you may want to get the
+   latest. Optional.
+
+5. wxCRP, http://www.xs4all.nl/~jorgb/wxcrp, a template generator for 
+   Microsoft Windows®. Some templates are provided for automatically 
+   generating swWxGuiTesting test suites with wxCRP. Optional.
+
+6. Bakefile, http://www.bakefile.org, a cross-platform builder of
+   native build chains. Build chains are provided for Microsoft Visual
+   C® nmake, Microsoft Visual Studio 6® project files, and GNU
+   autoconf. If you need to create other build chains for your
+   toolset, you'll need bakefile to do so.
+
+7. DOxygen, http://www.doxygen.org, a source-code documentation
+   system. You'll need this to build the class documentation into a
+   nice set of html pages with pretty inheritance graphs. Optional.
+
+Building:
+
+Microsoft NMake:
+
+It is important to install wxWidgets, CppUnit, and (if used) VTK on
+paths with no spaces in them.
+
+Navigate to build/msw. You'll find there two files, config.vc and
+makefile.vc. Edit config.vc to define the various variables. You'll
+need to set the WX_SHARED, WX_DEBUG, WX_UNICODE, WX_MONOLITHIC, and
+WX_VERSION to match a wxWidgets library which you have installed
+already. SHARED, UNICODE, and BUILD set the parameters for the
+swWxGuiTesting library and test applications. CPPUNIT_INCL must point
+at your CppUnit header directory, CPPUNIT_LIBDIR at the directory
+containing the cppunit library you intend to use, and CPPUNIT_LIB must
+be the name of the binding library you want (Normally this would be
+one of cppunit.lib, cppunitd.lib, cppunit_dll.lib, or
+cppunitd_dll.lib). If you're using VTK, set USE_VTK to TRUE and set
+the VTK variables as you did for the cppunit ones. WXRC is the path to
+the WXRC program, usually in $WXWIN/utils/wxrc/vc_mswxxx/wxrc.ex,
+where vc_mswxxx depends on which option you picked when you built
+wxWidgets. For example, a shared unicode debug version would be
+vc_mswuddll.
+
+Now run nmake -f makefile.vc. The library and executables will be
+build in the present directory.
+
+GNU Autoconf (UNIX and Macintosh OSX):
+
+Make a new directory at the top level (I like to call it build_osx or
+build_unix), change to that directory and run 
+
+../configure
+make
+make install
+
+If you don't specify otherwise (via the --prefix option to configure)
+your library and headers will wind up in /usr/local/lib and
+/usr/local/include.
+
+If you want VTK support, specify --with-vtk=/path/to/VTK. If you're
+using a version of VTK other than 5.0, specify --with-vtk-version=#.#
+(replacing #.# with the actual version number, of course).
+
+The test and sample apps will stay in your build directory. MacOSX
+will build application bundles for you. 
+
+By default, configure will set SHARED, UNICODE, and DEBUG to match the
+primary library found by wx-config. If you want otherwise, tell
+configure (e.g., `../configure DEBUG=0 to build a library without
+symbols against a debug version of wxWidgets).
+
+Microsoft Visual Studio 6®:
+
+You'll find the solution and project files in build/msw; open MSVS and
+load swWxGuiTesting.sln.
+
+Now comes the fun part, because there's no automatic way to configure
+MSVS.
+
+First select from the huge list of builds the one which matches your
+wxWidgets installation and build intentions (For example, Debug Shared
+Unicode Debug Unicode USE_VTK=FALSE).
+
+Next, if VTK is false, you'll want to open the solution's options and
+turn off building VtkTest.
+
+Next, highlight all of the projects and open the preferences
+dialog. Add the path to wxWidgets, CppUnit, and (if used) VTK includes
+to the "include directories" on the C/C++ page. Press "Apply" and
+unhighlight the swWxGuiTesting project and navigate to the linker
+tab. Find the additional library directories item and add the needed
+paths. Navigate to the additional libraries item and add the cppunit
+library (one of cppunit.lib, cppunitd.lib, cppunit_dll.lib, or
+cppunitd_dll.lib) to the list. Press "OK".
+
+You will also have to run (either by hand or by creating a new build
+step in the project properties for swWxGuiTesting) 
+
+wxrc -v -c -n InitCapturePanelXRC -o test/CapturePanel.cpp test/TestData/xrc/CapturePanel2_wdr.xrc 
+
+and (if using Vtk)
+
+wxrc -v -c -n InitCapturePanelXRC -o test/VtkCapturePanel.cpp test/TestData/xrc/VtkCapturePanel_wdr.xrc 
+
+Build the solution (either from the Build Menu or by pressing F7 on
+the keyboard). 
+
+Using swWxGuiTest:
+
+That's next...
+
+

@@ -12,17 +12,17 @@
 
 #include "swModalDialogTest.h"
 
-#include "wx/dialog.h"
-#include "wx/textctrl.h"
-#include "wx/sizer.h"
+#include <wx/dialog.h>
+#include <wx/textctrl.h>
+#include <wx/sizer.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestEventSimulationHelper.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 
-#include "swFrameFactory.h"
-#include "swMdiFrameFactory.h"
+#include <FrameFactory/swFrameFactory.h>
+#include <FrameFactory/swMdiFrameFactory.h>
 
-#include "swModalDialogTimer.h"
+#include <wxGuiTest/swModalDialogTimer.h>
 
 #include "swModalDialogManipulator.h"
 #include "swDirDialogManipulator.h"

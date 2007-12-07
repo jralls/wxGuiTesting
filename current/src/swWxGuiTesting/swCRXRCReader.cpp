@@ -12,10 +12,10 @@
 
 #include "swCRXRCReader.h"
 
-#include "wx/filename.h"
-#include "wx/xml/xml.h"
+#include <wx/filename.h>
+#include <wx/xml/xml.h>
 
-#include "swWxLogicErrorException.h"
+#include <Exception/swWxLogicErrorException.h>
 
 #include "swCRXRCObject.h"
 

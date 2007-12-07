@@ -13,7 +13,7 @@
     #pragma interface "swModalDialogManipulator.h"
 #endif
 
-#include "swModalDialogInteractionInterface.h"
+#include <wxGuiTest/swModalDialogInteractionInterface.h>
 
 #include <wx/textctrl.h>
 

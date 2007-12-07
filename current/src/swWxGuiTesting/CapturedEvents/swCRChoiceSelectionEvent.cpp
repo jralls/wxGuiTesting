@@ -12,8 +12,8 @@
 
 #include "swCRChoiceSelectionEvent.h"
 
-#include "swCRWindowHierarchyHandler.h"
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
+#include <wxGuiTest/swCRCppEmitter.h>
 
 namespace swTst {
 

@@ -13,7 +13,7 @@
     #pragma interface "swMdiMainFrame.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <wx/docview.h>
 #include <wx/docmdi.h>

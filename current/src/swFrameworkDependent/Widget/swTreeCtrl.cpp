@@ -10,9 +10,9 @@
     #pragma implementation "swTreeCtrl.h"
 #endif
 
-#include "swTreeCtrl.h"
+#include <wxGuiTest/Widget/swTreeCtrl.h>
 
-#include "wx/imaglist.h"
+#include <wx/imaglist.h>
 
 namespace sw {
 

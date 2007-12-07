@@ -10,12 +10,12 @@
     #pragma implementation "swCRWindowHierarchyHandler.h"
 #endif
 
-#include "swCRWindowHierarchyHandler.h"
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "swWxLogicErrorException.h"
-#include "swConfigManager.h"
+#include <Exception/swWxLogicErrorException.h>
+#include <Config/swConfigManager.h>
 
 #include "swCRXRCResource.h"
 #include "swCRXRCReader.h"

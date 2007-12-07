@@ -13,7 +13,7 @@
 //    #pragma interface "swToolGuiObject.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include "swGuiObject.h"
 #include "swToolBar.h"

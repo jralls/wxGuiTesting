@@ -10,9 +10,9 @@
     #pragma implementation "swWxGuiTestCppUnitWarningAsserter.h"
 #endif
 
-#include "swWxGuiTestCppUnitWarningAsserter.h"
+#include <wxGuiTest/swWxGuiTestCppUnitWarningAsserter.h>
 
-#include "cppunit/Asserter.h"
+#include <cppunit/Asserter.h>
 
 namespace swTst {
 

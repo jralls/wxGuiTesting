@@ -13,7 +13,7 @@
     #pragma interface "swDirDialogManipulator.h"
 #endif
 
-#include "swModalDialogInteractionInterface.h"
+#include <wxGuiTest/swModalDialogInteractionInterface.h>
 
 class wxDirDialog;
 

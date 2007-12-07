@@ -10,11 +10,11 @@
     #pragma implementation "swWxGuiTestApp.h"
 #endif
 
-#include "swWxGuiTestApp.h"
+#include <wxGuiTest/swWxGuiTestApp.h>
 
 #include "swInitWxGuiTestSetUp.h"
-#include "swWxGuiTestHelper.h"
-#include "swCREventFilterInterface.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swCREventFilterInterface.h>
 
 IMPLEMENT_APP_NO_MAIN(swTst::WxGuiTestApp)
 

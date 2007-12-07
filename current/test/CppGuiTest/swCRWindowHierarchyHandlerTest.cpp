@@ -12,15 +12,15 @@
 
 #include "swCRWindowHierarchyHandlerTest.h"
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestTempInteractive.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include "swConfigManager.h"
-#include "swConfig.h"
-#include "swCRWindowHierarchyHandler.h"
-#include "swCRXRCNode.h"
+#include <wxGuiTest/Config/swConfigManager.h>
+#include <wxGuiTest/Config/swConfig.h>
+#include <wxGuiTest/Config/swCRWindowHierarchyHandler.h>
+#include <wxGuiTest/swCRXRCNode.h>
 
 namespace swTst {
 

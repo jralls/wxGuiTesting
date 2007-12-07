@@ -12,23 +12,23 @@
 
 #include "SimpleTest.h"
 
-#include "wx/xrc/xmlres.h"
-#include "wx/frame.h"
-#include "wx/treectrl.h"
+#include <wx/xrc/xmlres.h>
+#include <wx/frame.h>
+#include <wx/treectrl.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestEventSimulationHelper.h"
-#include "swWxGuiTestTimedDialogEnder.h"
-#include "swWxGuiTestTempInteractive.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include "swCRCapture.h"
+#include <wxGuiTest/swCRCapture.h>
 
-#include "swConfigManager.h"
-#include "swConfig.h"
+#include <wxGuiTest/Config/swConfigManager.h>
+#include <wxGuiTest/swConfig.h>
 
-#include "wx/notebook.h"
-#include "swSpinCtrlDouble.h"
-#include "swTreeCtrl.h"
+#include <wx/notebook.h>
+#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+#include <wxGuiTest/Widget/swTreeCtrl.h>
 
 using sw::SpinCtrlDouble;
 

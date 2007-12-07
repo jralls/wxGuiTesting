@@ -10,7 +10,7 @@
     #pragma implementation "swCRXRCNode.h"
 #endif
 
-#include "swCRXRCNode.h"
+#include <wxGuiTest/swCRXRCNode.h>
 
 namespace swTst {
 

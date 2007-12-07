@@ -13,7 +13,7 @@
     #pragma interface "swMdiDefaultDialog.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <wx/docview.h>
 #include <wx/dialog.h>

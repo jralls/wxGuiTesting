@@ -10,7 +10,7 @@
     #pragma implementation "swPseudoApp.h"
 #endif
 
-#include "swPseudoApp.h"
+#include <wxGuiTest/swPseudoApp.h>
 
 #include <iostream>
 

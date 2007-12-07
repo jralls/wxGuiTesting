@@ -12,7 +12,7 @@
 
 #include "swCRCppEmitterTest.h"
 
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swCRCppEmitter.h>
 
 namespace {
   const wxString srcDir(_T(SRCDIR));

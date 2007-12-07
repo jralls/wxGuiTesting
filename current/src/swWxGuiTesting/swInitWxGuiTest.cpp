@@ -10,7 +10,7 @@
     #pragma implementation "swInitWxGuiTest.h"
 #endif
 
-#include "swInitWxGuiTest.h"
+#include <wxGuiTest/swInitWxGuiTest.h>
 
 #include "swInitWxGuiTestSetUp.h"
 

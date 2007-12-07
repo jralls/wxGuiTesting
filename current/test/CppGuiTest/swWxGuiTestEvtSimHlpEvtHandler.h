@@ -13,9 +13,9 @@
     #pragma interface "swWxGuiTestEvtSimHlpEvtHandler.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
-#include "wx/treectrl.h"
+#include <wx/treectrl.h>
 
 class wxSpinEvent;
 class wxNotebookEvent;

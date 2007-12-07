@@ -12,7 +12,7 @@
 
 #include "swWxGuiTestProvokedWarningRegistryTest.h"
 
-#include "swWxGuiTestProvokedWarningRegistry.h"
+#include <wxGuiTest/swWxGuiTestProvokedWarningRegistry.h>
 
 namespace swTst {
 

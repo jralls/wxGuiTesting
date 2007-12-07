@@ -12,11 +12,11 @@
 
 #include "swCRTextUpdateEvent.h"
 
-#include "swSpinCtrlDouble.h"
+#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 
-#include "swCRWindowHierarchyHandler.h"
-#include "swCRCppEmitter.h"
-#include "swWxGuiTestEventSimulationHelper.h"
+#include <wxGuiTest/swCRWindowHierarchyHandler.h
+#include <wxGuiTest/swCRCppEmitter.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 
 using sw::SpinCtrlDouble;
 

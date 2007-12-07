@@ -10,7 +10,7 @@
     #pragma implementation "swWxGuiTestTimedDialogEnder.h"
 #endif
 
-#include "swWxGuiTestTimedDialogEnder.h"
+#include <wxGuiTest/wWxGuiTestTimedDialogEnder.h>
 
 namespace swTst {
 

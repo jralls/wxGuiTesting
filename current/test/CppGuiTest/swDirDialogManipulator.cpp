@@ -12,7 +12,7 @@
 
 #include "swDirDialogManipulator.h"
 
-#include "wx/dirdlg.h"
+#include <wx/dirdlg.h>
 
 namespace swTst {
 

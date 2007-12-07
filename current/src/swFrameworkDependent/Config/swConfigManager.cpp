@@ -10,7 +10,7 @@
     #pragma implementation "swConfigManager.h"
 #endif
 
-#include "swConfigManager.h"
+#include <wxGuiTest/Config/swConfigManager.h>
 
 namespace sw {
 

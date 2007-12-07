@@ -10,21 +10,21 @@
     #pragma implementation "swCREventCaptureManager.h"
 #endif
 
-#include "swCREventCaptureManager.h"
+#include <wxGuiTest/swCREventCaptureManager.h>
 
 #include <fstream>
 
-#include "wx/xrc/xmlres.h"
-#include "wx/notebook.h"
-#include "wx/listbase.h"
-#include "wx/splitter.h"
-#include "wx/treebase.h"
-#include "wx/tglbtn.h"
+#include <wx/xrc/xmlres.h>
+#include <wx/notebook.h>
+#include <wx/listbase.h>
+#include <wx/splitter.h>
+#include <wx/treebase.h>
+#include <wx/tglbtn.h>
 
-#include "swCRLogInterface.h"
+#include <wxGuiTest/swCRLogInterface.h>
 #include "swCRCapturedEvent.h"
 #include "swCREventFactory.h"
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swCRCppEmitter.h>
 
 namespace swTst {
 

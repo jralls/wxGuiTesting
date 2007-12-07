@@ -10,15 +10,15 @@
     #pragma implementation "swWxGuiTestEventSimulationHelper.h"
 #endif
 
-#include "swWxGuiTestEventSimulationHelper.h"
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 
-#include "cppunit/TestAssert.h"
+#include <cppunit/TestAssert.h>
 
-#include "wx/treectrl.h"
-#include "wx/notebook.h"
+#include <wx/treectrl.h>
+#include <wx/notebook.h>
 
-#include "swSpinCtrlDouble.h"
-#include "swToolBar.h"
+#include <Widget/swSpinCtrlDouble.h>
+#include <FrameFactory/swToolBar.h>
 
 namespace swTst {
 

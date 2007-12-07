@@ -15,7 +15,7 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "wx/arrstr.h"
+#include <wx/arrstr.h>
 
 namespace swTst {
 

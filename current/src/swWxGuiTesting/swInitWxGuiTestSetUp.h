@@ -13,7 +13,7 @@
     #pragma interface "swInitWxGuiTestSetUp.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <cppunit/extensions/TestSetUp.h>
 

@@ -10,14 +10,14 @@
     #pragma implementation "swWxGuiTestTempInteractive.h"
 #endif
 
-#include "swWxGuiTestTempInteractive.h"
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include "wx/dialog.h"
+#include <wx/dialog.h>
 
-#include "swWxGuiTestHelper.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
 #include "swWxGuiTestTempInteractiveControl.h"
 
-#include "swWxLogicErrorException.h"
+#include <Exception/swWxLogicErrorException.h>
 
 namespace swTst {
 

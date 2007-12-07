@@ -12,21 +12,21 @@
 
 #include "swWxGuiTestEventSimulationHelperTest.h"
 
-#include "wx/xrc/xmlres.h"
-#include "wx/minifram.h"
-#include "wx/image.h"
-#include "wx/notebook.h"
+#include <wx/xrc/xmlres.h>
+#include <wx/minifram.h>
+#include <wx/image.h>
+#include <wx/notebook.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestEventSimulationHelper.h"
-#include "swWxGuiTestTimedDialogEnder.h"
-#include "swWxGuiTestTempInteractive.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include "swApp.h"
-#include "swFrameFactory.h"
-#include "swMdiFrameFactory.h"
-#include "swToolBarRegistry.h"
-#include "swSpinCtrlDouble.h"
+#include <wxGuiTest/swApp.h>
+#include <FrameFactory/swFrameFactory.h>
+#include <FrameFactory/swMdiFrameFactory.h>
+#include <FrameFactory/swToolBarRegistry.h>
+#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 
 using sw::SpinCtrlDouble;
 

@@ -10,16 +10,16 @@
     #pragma implementation "swCRVtkCaptureControl.h"
 #endif
 
-#include "swCRVtkCaptureControl.h"
+#include <wxGuiTest/swCRVtkCaptureControl.h>
 
-#include "vtkCamera.h"
+#include <vtkCamera.h>
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swVtkWxGuiTestHelper.h"
-#include "swWxVtkInteractorEventRecorder.h"
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTest/swWxVtkInteractorEventRecorder.h>
+#include <wxGuiTest/swCRCppEmitter.h>
 
 BEGIN_EVENT_TABLE(swTst::CRVtkCaptureControl, CRCaptureControl)
     EVT_BUTTON( XRCID("ResetRecordingButton"), CRVtkCaptureControl::OnResetWxVtkRecording )

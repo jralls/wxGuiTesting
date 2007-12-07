@@ -12,7 +12,7 @@
 
 #include "swCRAbstractTreeEvent.h"
 
-#include "wx/treectrl.h"
+#include <wx/treectrl.h>
 
 namespace swTst {
 

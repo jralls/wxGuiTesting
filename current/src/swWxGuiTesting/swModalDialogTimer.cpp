@@ -10,13 +10,13 @@
     #pragma implementation "swModalDialogTimer.h"
 #endif
 
-#include "swModalDialogTimer.h"
+#include <wxGuiTest/swModalDialogTimer.h>
 
 #include <wx/dialog.h>
 
-#include "swModalDialogInteractionInterface.h"
+#include <wxGuiTest/swModalDialogInteractionInterface.h>
 
-#include "swWxLogicErrorException.h"
+#include <Exception/swWxLogicErrorException.h>
 
 
 namespace swTst {

@@ -10,9 +10,9 @@
     #pragma implementation "swVtkWxGuiTestHelper.h"
 #endif
 
-#include "swVtkWxGuiTestHelper.h"
+#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
 
-#include "swWxVtkInteractorEventRecorder.h"
+#include <wxGuiTest/VtkGuiTest/swWxVtkInteractorEventRecorder.h>
 
 namespace swTst {
 

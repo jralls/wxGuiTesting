@@ -10,13 +10,13 @@
     #pragma implementation "swWxGuiTestHelper.h"
 #endif
 
-#include "swWxGuiTestHelper.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
 
-#include "swWxGuiTestWarningAsserterInterface.h"
-#include "swWxGuiTestProvokedWarningRegistry.h"
+#include <wxGuiTest/swWxGuiTestWarningAsserterInterface.h>
+#include <wxGuiTest/swWxGuiTestProvokedWarningRegistry.h>
 
-#include "swDefaultDialog.h"
-#include "swFrameFactory.h"
+#include <FrameFactory/swDefaultDialog.h>
+#include <FrameFactory/swFrameFactory.h>
 
 namespace swTst {
 

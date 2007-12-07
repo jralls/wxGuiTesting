@@ -10,7 +10,7 @@
     #pragma implementation "swWxGuiTestProvokedWarning.h"
 #endif
 
-#include "swWxGuiTestProvokedWarning.h"
+#include <wxGuiTest/swWxGuiTestProvokedWarning.h>
 
 namespace swTst {
 

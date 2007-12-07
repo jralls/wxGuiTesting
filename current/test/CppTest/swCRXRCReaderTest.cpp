@@ -14,9 +14,9 @@
 
 #include <iostream>
 
-#include "swWxLogicErrorException.h"
+#include <Exception/swWxLogicErrorException.h>
 
-#include "swCRXRCReader.h"
+#include <swCRXRCReader.h>
 
 
 namespace swTst {

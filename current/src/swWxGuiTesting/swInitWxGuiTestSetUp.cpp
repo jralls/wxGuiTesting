@@ -10,7 +10,7 @@
     #pragma implementation "swInitWxGuiTestSetUp.h"
 #endif
 
-#include "swInitWxGuiTestSetUp.h"
+#include <wxGuiTest/swInitWxGuiTestSetUp.h>
 #include "swWxGuiTestApp.h"
 
 // Declaration for wxWidgets GUI initialisation:

@@ -17,7 +17,7 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "swWxGuiTestApp.h"
+#include <wxGuiTest/swWxGuiTestApp.h>
 
 namespace swTst {
 

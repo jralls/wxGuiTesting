@@ -77,5 +77,5 @@ VTK_INCL =
 VTK_LIBS = 
 
 # Path to find the wxrc executable, needed for parsing XRC files 
-WXRC = 
+WXRC = $(WXWIN)\utils\wxrc\vc_mswuddll\wxrc.exe
 

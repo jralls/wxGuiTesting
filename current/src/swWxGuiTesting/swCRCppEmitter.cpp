@@ -7,12 +7,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCRCppEmitter.h"
+    #pragma implementation <wxGuiTest/swCRCppEmitter.h>
 #endif
 
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swCRCppEmitter.h>
 
-#include "swWxLogicErrorException.h"
+#include <Exception/swWxLogicErrorException.h>
 
 namespace swTst {
 

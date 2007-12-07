@@ -13,7 +13,7 @@
     #pragma interface "swToolBar.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 class cbDimInfo;
 

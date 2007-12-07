@@ -13,7 +13,7 @@
     #pragma interface "swCRCapturedEvent.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 namespace swTst {
 

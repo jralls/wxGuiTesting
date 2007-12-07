@@ -13,7 +13,7 @@
     #pragma interface "swMainFrame.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include "swWindow.h"
 

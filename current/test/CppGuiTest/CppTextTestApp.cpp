@@ -13,9 +13,9 @@
 // For checking wxGuiTestCallTrace, see below:
 //#include "wx/log.h"
 
-#include "swWxGuiTestHelper.h"
-#include "swWxGuiTestCppUnitWarningAsserter.h"
-#include "swInitWxGuiTest.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestCppUnitWarningAsserter.h>
+#include <wxGuiTest/swInitWxGuiTest.h>
 
 int main (int argc, char* argv[])
 {

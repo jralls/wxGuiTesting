@@ -12,12 +12,12 @@
 
 #include "swCRMenuSelectionEvent.h"
 
-#include "swFrameFactory.h"
-#include "swGuiObjectManager.h"
-#include "swToolBarRegistry.h"
-#include "swWxGuiTestHelper.h"
-#include "swCRWindowHierarchyHandler.h"
-#include "swCRCppEmitter.h"
+#include <FrameFactory/swFrameFactory.h>
+#include <GUI/swGuiObjectManager.h>
+#include <FrameFactory/swToolBarRegistry.h>
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
+#include <wxGuiTest/swCRCppEmitter.h>
 
 namespace swTst {
 

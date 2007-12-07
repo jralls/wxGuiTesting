@@ -12,11 +12,11 @@
 
 #include "swCRCaptureControl.h"
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swCREventCaptureManager.h"
-#include "swCRCppEmitter.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swCREventCaptureManager.h>
+#include <wxGuiTest/swCRCppEmitter.h>
 
 BEGIN_EVENT_TABLE(swTst::CRCaptureControl, wxEvtHandler)
     EVT_BUTTON( XRCID("StartButton"), CRCaptureControl::OnStart )

@@ -13,7 +13,7 @@
     #pragma interface "swMdiToolBar.h"
 #endif
 
-#include "Common.h"
+#include <wxGuiTest/Common.h>
 
 #include <vector>
 

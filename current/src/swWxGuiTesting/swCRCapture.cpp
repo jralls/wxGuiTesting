@@ -10,14 +10,14 @@
     #pragma implementation "swCRCapture.h"
 #endif
 
-#include "swCRCapture.h"
+#include <wxGuiTest/swCRCapture.h>
 
 #include <iostream>
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swCREventCaptureManager.h"
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swCREventCaptureManager.h>
 
 // Capture panel XRC file is compiled into a c++ file with embedded resources:
 extern void InitCapturePanelXRC ();

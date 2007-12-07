@@ -12,17 +12,17 @@
 
 #include "swWxGuiTestEvtSimHlpEvtHandler.h"
 
-#include "cppunit/TestAssert.h"
+#include <cppunit/TestAssert.h>
 
-#include "wx/xrc/xmlres.h"
+#include <wx/xrc/xmlres.h>
 
-#include "wx/spinctrl.h"
-#include "wx/notebook.h"
+#include <wx/spinctrl.h>
+#include <wx/notebook.h>
 
-#include "swWxGuiTestHelper.h"
-#include "swFrameFactory.h"
-#include "swMdiFrameFactory.h"
-#include "swToolBarRegistry.h"
+#include <swWxGuiTestHelper.h>
+#include <FrameFactory/swFrameFactory.h>
+#include <FrameFactory/swMdiFrameFactory.h>
+#include <FrameFactory/swToolBarRegistry.h>
 
 BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_MENU( XRCID("MenuItem"), WxGuiTestEvtSimHlpEvtHandler::OnMenuItem )
