@@ -17,7 +17,7 @@
 #include <wx/treectrl.h>
 #include <wx/notebook.h>
 
-#include <Widget/swSpinCtrlDouble.h>
+#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 #include <FrameFactory/swToolBar.h>
 
 namespace swTst {

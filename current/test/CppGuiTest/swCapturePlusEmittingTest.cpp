@@ -21,12 +21,12 @@
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 #include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
 #include <wxGuiTest/Config/swConfigManager.h>
 #include <wxGuiTest/Config/swConfig.h>
 
-#include <wxGuiTest/swCREventCaptureManager.h?
+#include <wxGuiTest/swCREventCaptureManager.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
 // Only to make C&R demonstrations easier:

@@ -3,13 +3,15 @@
 
 <makefile>
 
+  <using module='datafiles'/>
+
   <set var="VERSION">1.4.0</set>
   <if cond="FORMAT=='msvc' or FORMAT=='msvs2005prj'">
     <set var='srcdir'>../..</set>
     <set-srcdir>../..</set-srcdir>
   </if>
 
-  <set var='BUILDDIR'>
+  <set var='BUILDDIR' >
     <if cond="FORMAT=='autoconf'">objects</if>
     <if cond="PLATFORM_WIN32=='1'">../objects</if>
   </set>
@@ -331,11 +333,31 @@
     </if>
     <if cond="FORMAT=='autoconf' or FORMAT=='gnu'">
       <install-to>$(PREFIX)/lib</install-to>
-      <install-headers-to> $(PREFIX)/include/wx </install-headers-to>
+      <install-headers-to> $(PREFIX)</install-headers-to>
     </if>
   </lib>
 
-  <exe id='CppUnitTest' template='wgtInclude,testApp'>
+  <mkdir id='object_dir' 
+	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	       and BUILDDIR!='.'">
+    <dependency-of>swWxGuiTesting</dependency-of>
+    <dir>$(BUILDDIR)</dir>
+  </mkdir>
+  <mkdir id='lib_dir' 
+	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	       and libdir not in ['', '.']">
+    <dependency-of>swWxGuiTesting</dependency-of>
+    <dir>$(libdir)</dir>
+  </mkdir>
+  <mkdir id='bin_dir' 
+	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	       and bindir not in ['', '.']">
+    <dependency-of>swWxGuiTesting</dependency-of>
+    <dir>$(bindir)</dir>
+  </mkdir>
+
+
+  <exe id='CppUnitTest' template='libInclude,testApp'>
     <sources>$(CPPTEST_SOURCES)</sources>
     <headers>$(CPPTEST_HDRS)</headers>
   </exe>

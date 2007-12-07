@@ -10,15 +10,15 @@
     #pragma implementation "swCRVtkCaptureControl.h"
 #endif
 
-#include <wxGuiTest/swCRVtkCaptureControl.h>
+#include <wxGuiTest/VtkGuiTesting/swCRVtkCaptureControl.h>
 
 #include <vtkCamera.h>
 
 #include <wx/xrc/xmlres.h>
 
 #include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
-#include <wxGuiTest/VtkGuiTest/swWxVtkInteractorEventRecorder.h>
+#include <wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
 BEGIN_EVENT_TABLE(swTst::CRVtkCaptureControl, CRCaptureControl)

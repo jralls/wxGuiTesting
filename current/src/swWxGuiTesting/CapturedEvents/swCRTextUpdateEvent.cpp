@@ -14,7 +14,7 @@
 
 #include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 
-#include <wxGuiTest/swCRWindowHierarchyHandler.h
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 

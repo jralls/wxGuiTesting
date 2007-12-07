@@ -10,7 +10,7 @@
     #pragma implementation "swCRCaptureControl.h"
 #endif
 
-#include "swCRCaptureControl.h"
+#include <wxGuiTest/swCRCaptureControl.h>
 
 #include <wx/xrc/xmlres.h>
 

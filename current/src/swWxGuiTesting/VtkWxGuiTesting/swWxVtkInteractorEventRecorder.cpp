@@ -10,24 +10,24 @@
     #pragma implementation "swWxVtkInteractorEventRecorder.h"
 #endif
 
-#include "swWxVtkInteractorEventRecorder.h"
+#include <wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h>
 
-#include "vtkCallbackCommand.h"
-#include "vtkObjectFactory.h"
-#include "vtkRenderWindowInteractor.h"
+#include <vtkCallbackCommand.h>
+#include <vtkObjectFactory.h>
+#include <vtkRenderWindowInteractor.h>
 
-#include "vtkCamera.h"
-#include "vtkRenderWindow.h"
-#include "vtkRendererCollection.h"
+#include <vtkCamera.h>
+#include <vtkRenderWindow.h>
+#include <vtkRendererCollection.h>
 
 #include <stack>
 #include <string>
 #include <sstream>
 #include <cstdio>
 
-#include "wx/window.h"
+#include <wx/window.h>
 
-#include "wxVTKRenderWindowInteractor.h"
+#include <wxVTKRenderWindowInteractor.h>
 
 namespace swTst {
 

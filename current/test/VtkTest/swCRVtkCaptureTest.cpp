@@ -32,9 +32,9 @@
 #include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include <wxGuiTest/VtkGuiTest/swCRVtkCapture.h>
-#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
-#include <wxGuiTest/VtkGuiTest/swWxVtkInteractorEventRecorder.h>
+#include <wxGuiTest/VtkGuiTesting/swCRVtkCapture.h>
+#include <wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h>
 
 #include <wxGuiTest/Config/swConfigManager.h>
 #include <wxGuiTest/Config/swConfig.h>

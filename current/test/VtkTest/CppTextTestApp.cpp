@@ -17,7 +17,7 @@
 #include <wxGuiTest/swWxGuiTestCppUnitWarningAsserter.h>
 #include <wxGuiTest/swInitWxGuiTest.h>
 
-#include <wxGuiTest/VtkGuiTest/swVtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h>
 
 int main (int argc, char* argv[])
 {

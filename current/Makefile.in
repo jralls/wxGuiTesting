@@ -45,6 +45,7 @@ SWWXGUITESTING_OBJECTS =  \
 SWWXGUITESTING_HEADERS =  \
 	$(LIB_HDRS)
 CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include \
+	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
 	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
@@ -374,7 +375,7 @@ $(srcdir)/test/TestData/CapturePanel.cpp:
 @COND_USE_VTK_TRUE@$(srcdir)/test/TestData/VtkCapturePanel.cpp: 
 @COND_USE_VTK_TRUE@	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(srcdir)/test/TestData/VtkCapturePanel.cpp $(srcdir)/test/TestData/xrc/VtkCapturePanel_wdr.xrc
 
-lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT): $(SWWXGUITESTING_OBJECTS)
+lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT): $(SWWXGUITESTING_OBJECTS) objects lib bin
 	rm -f $@
 	$(AR) $(AROPTIONS) $@ $(SWWXGUITESTING_OBJECTS)
 	$(RANLIB) $@
@@ -387,18 +388,27 @@ uninstall_swWxGuiTesting:
 	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
 
 install_swWxGuiTesting_headers: 
-	$(INSTALL_DIR) $(DESTDIR)$(prefix)/include/wx
+	$(INSTALL_DIR) $(DESTDIR)$(prefix)
 	for f in $(SWWXGUITESTING_HEADERS); do \
-	if test ! -d $(DESTDIR)$(prefix)/include/wx/`dirname $$f` ; then \
-	$(INSTALL_DIR) $(DESTDIR)$(prefix)/include/wx/`dirname $$f`; \
+	if test ! -d $(DESTDIR)$(prefix)/`dirname $$f` ; then \
+	$(INSTALL_DIR) $(DESTDIR)$(prefix)/`dirname $$f`; \
 	fi; \
-	$(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(prefix)/include/wx/$$f; \
+	$(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(prefix)/$$f; \
 	done
 
 uninstall_swWxGuiTesting_headers: 
 	for f in $(SWWXGUITESTING_HEADERS); do \
-	rm -f $(DESTDIR)$(prefix)/include/wx/$$f; \
+	rm -f $(DESTDIR)$(prefix)/$$f; \
 	done
+
+objects: 
+	@mkdir -p objects
+
+lib: 
+	@mkdir -p lib
+
+bin: 
+	@mkdir -p bin
 
 bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
 	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)

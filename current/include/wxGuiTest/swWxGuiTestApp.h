@@ -15,7 +15,7 @@
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTestswPseudoApp.h>
+#include <wxGuiTest/swPseudoApp.h>
 
 namespace swTst {
 

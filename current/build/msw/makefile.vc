@@ -21,9 +21,10 @@ SWWXGUITESTING_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
 	$(VTK_INCL_FLAG) $(CPPFLAGS) $(CXXFLAGS)
 SWWXGUITESTING_OBJECTS =  \
 	$(____LIB_SOURCES_FILENAMES_OBJECTS)
-CPPUNITTEST_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include /I$(CPPUNIT_INCL) \
-	$(__OPT) $(__DBG) $(____DBG) /Fd..\..\bin\CppUnitTest.pdb $(____WX_SHARED) \
-	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
+CPPUNITTEST_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
+	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) /Fd..\..\bin\CppUnitTest.pdb \
+	$(____WX_SHARED) $(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../test/TestData/xrc\" \
 	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
@@ -462,11 +463,20 @@ test_for_selected_wxbuild:
 	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o ../../test/TestData\VtkCapturePanel.cpp ../../test/TestData/xrc\VtkCapturePanel_wdr.xrc
 !endif
 
-..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0.lib: $(SWWXGUITESTING_OBJECTS)
+..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0.lib: $(SWWXGUITESTING_OBJECTS) ..\objects ..\..\lib ..\..\bin
 	if exist $@ del $@
 	link /LIB /NOLOGO /OUT:$@ @<<
 	$(SWWXGUITESTING_OBJECTS)
 <<
+
+..\objects: 
+	if not exist ..\objects mkdir ..\objects
+
+..\..\lib: 
+	if not exist ..\..\lib mkdir ..\..\lib
+
+..\..\bin: 
+	if not exist ..\..\bin mkdir ..\..\bin
 
 ..\..\bin\CppUnitTest.exe: $(CPPUNITTEST_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0.lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0.lib
 	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<

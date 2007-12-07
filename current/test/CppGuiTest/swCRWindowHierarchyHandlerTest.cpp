@@ -19,8 +19,8 @@
 
 #include <wxGuiTest/Config/swConfigManager.h>
 #include <wxGuiTest/Config/swConfig.h>
-#include <wxGuiTest/Config/swCRWindowHierarchyHandler.h>
-#include <wxGuiTest/swCRXRCNode.h>
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
+#include <swCRXRCNode.h>
 
 namespace swTst {
 

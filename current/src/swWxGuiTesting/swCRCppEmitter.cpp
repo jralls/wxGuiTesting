@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation <wxGuiTest/swCRCppEmitter.h>
+    #pragma implementation "swCRCppEmitter.h"
 #endif
 
 #include <wxGuiTest/swCRCppEmitter.h>

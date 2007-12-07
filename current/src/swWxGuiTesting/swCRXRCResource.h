@@ -17,7 +17,7 @@
 
 #include <list>
 
-#include <wxGuiTest/swCRXRCNode.h>
+#include "swCRXRCNode.h"
 
 namespace swTst {
 

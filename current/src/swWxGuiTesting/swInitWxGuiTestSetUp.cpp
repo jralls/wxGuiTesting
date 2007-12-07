@@ -10,8 +10,8 @@
     #pragma implementation "swInitWxGuiTestSetUp.h"
 #endif
 
-#include <wxGuiTest/swInitWxGuiTestSetUp.h>
-#include "swWxGuiTestApp.h"
+#include "swInitWxGuiTestSetUp.h"
+#include <wxGuiTest/swWxGuiTestApp.h>
 
 // Declaration for wxWidgets GUI initialisation:
 #ifdef WIN32

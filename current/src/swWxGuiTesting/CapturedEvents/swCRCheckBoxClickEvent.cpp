@@ -12,7 +12,7 @@
 
 #include "swCRCheckBoxClickEvent.h"
 
-#include "swCRWindowHierarchyHandler.h"
+#include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
 namespace swTst {

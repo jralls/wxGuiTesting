@@ -15,17 +15,17 @@
 #include <wx/notebook.h>
 #include <wx/treectrl.h>
 
-#include "CapturedEvent/swCRButtonClickEvent.h"
-#include "CapturedEvent/swCRMenuSelectionEvent.h"
-#include "CapturedEvent/swCRTextUpdateEvent.h"
-#include "CapturedEvent/swCRNotebookPageChangeEvent.h"
-#include "CapturedEvent/swCRChoiceSelectionEvent.h"
-#include "CapturedEvent/swCRRadioBoxSelectionEvent.h"
-#include "CapturedEvent/swCRCheckBoxClickEvent.h"
-#include "CapturedEvent/swCRSliderUpdateEvent.h"
-#include "CapturedEvent/swCRSpinCtrlUpdateEvent.h"
-#include "CapturedEvent/swCRTreeSelectionChangingEvent.h"
-#include "CapturedEvent/swCRTreeItemRightClickEvent.h"
+#include "CapturedEvents/swCRButtonClickEvent.h"
+#include "CapturedEvents/swCRMenuSelectionEvent.h"
+#include "CapturedEvents/swCRTextUpdateEvent.h"
+#include "CapturedEvents/swCRNotebookPageChangeEvent.h"
+#include "CapturedEvents/swCRChoiceSelectionEvent.h"
+#include "CapturedEvents/swCRRadioBoxSelectionEvent.h"
+#include "CapturedEvents/swCRCheckBoxClickEvent.h"
+#include "CapturedEvents/swCRSliderUpdateEvent.h"
+#include "CapturedEvents/swCRSpinCtrlUpdateEvent.h"
+#include "CapturedEvents/swCRTreeSelectionChangingEvent.h"
+#include "CapturedEvents/swCRTreeItemRightClickEvent.h"
 
 namespace swTst {
 

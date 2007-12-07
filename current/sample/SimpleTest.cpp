@@ -24,7 +24,7 @@
 #include <wxGuiTest/swCRCapture.h>
 
 #include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/swConfig.h>
+#include <wxGuiTest/Config/swConfig.h>
 
 #include <wx/notebook.h>
 #include <wxGuiTest/Widget/swSpinCtrlDouble.h>

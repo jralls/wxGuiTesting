@@ -14,7 +14,7 @@
 
 #include <wx/config.h> 
 
-#include "swApp.h"
+#include <wxGuiTest/swApp.h>
 
 namespace sw {
 

@@ -16,7 +16,7 @@
 #include <wxGuiTest/Common.h>
 
 #include "swGuiObject.h"
-#include "swToolBar.h"
+#include <FrameFactory/swToolBar.h>
 
 namespace sw {
 

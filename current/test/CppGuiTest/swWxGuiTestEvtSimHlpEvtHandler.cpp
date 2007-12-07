@@ -19,7 +19,7 @@
 #include <wx/spinctrl.h>
 #include <wx/notebook.h>
 
-#include <swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestHelper.h>
 #include <FrameFactory/swFrameFactory.h>
 #include <FrameFactory/swMdiFrameFactory.h>
 #include <FrameFactory/swToolBarRegistry.h>

@@ -22,7 +22,7 @@
 #include <wx/tglbtn.h>
 
 #include <wxGuiTest/swCRLogInterface.h>
-#include "swCRCapturedEvent.h"
+#include "CapturedEvents/swCRCapturedEvent.h"
 #include "swCREventFactory.h"
 #include <wxGuiTest/swCRCppEmitter.h>
 

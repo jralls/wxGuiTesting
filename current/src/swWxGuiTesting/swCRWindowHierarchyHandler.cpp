@@ -15,7 +15,7 @@
 #include <wx/xrc/xmlres.h>
 
 #include <Exception/swWxLogicErrorException.h>
-#include <Config/swConfigManager.h>
+#include <wxGuiTest/Config/swConfigManager.h>
 
 #include "swCRXRCResource.h"
 #include "swCRXRCReader.h"

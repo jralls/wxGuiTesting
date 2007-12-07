@@ -13,7 +13,7 @@
 #include "swToolGuiObjectManager.h"
 
 #include "swToolGuiObject.h"
-#include "swToolBar.h"
+#include <FrameFactory/swToolBar.h>
 
 namespace sw {
 
