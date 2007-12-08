@@ -337,7 +337,7 @@ COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS =  \
 
 ### Targets: ###
 
-all: lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle bin/UsingSwWxGuiTesting$(EXEEXT) UsingSwWxGuiTesting_bundle
+all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle bin/UsingSwWxGuiTesting$(EXEEXT) UsingSwWxGuiTesting_bundle
 
 install: all install_swWxGuiTesting install_swWxGuiTesting_headers
 
@@ -369,13 +369,22 @@ clean:
 distclean: clean
 	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
 
+objects: 
+	@mkdir -p objects
+
+lib: 
+	@mkdir -p lib
+
+bin: 
+	@mkdir -p bin
+
 $(srcdir)/test/TestData/CapturePanel.cpp: 
 	$(WXRC) -v -c -n InitCapturePanelXRC -o $(srcdir)/test/TestData/CapturePanel.cpp $(srcdir)/test/TestData/xrc/CapturePanel2_wdr.xrc
 
 @COND_USE_VTK_TRUE@$(srcdir)/test/TestData/VtkCapturePanel.cpp: 
 @COND_USE_VTK_TRUE@	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(srcdir)/test/TestData/VtkCapturePanel.cpp $(srcdir)/test/TestData/xrc/VtkCapturePanel_wdr.xrc
 
-lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT): $(SWWXGUITESTING_OBJECTS) objects lib bin
+lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT): $(SWWXGUITESTING_OBJECTS)
 	rm -f $@
 	$(AR) $(AROPTIONS) $@ $(SWWXGUITESTING_OBJECTS)
 	$(RANLIB) $@
@@ -400,15 +409,6 @@ uninstall_swWxGuiTesting_headers:
 	for f in $(SWWXGUITESTING_HEADERS); do \
 	rm -f $(DESTDIR)$(prefix)/$$f; \
 	done
-
-objects: 
-	@mkdir -p objects
-
-lib: 
-	@mkdir -p lib
-
-bin: 
-	@mkdir -p bin
 
 bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0$(LIBEXT)
 	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX)_1.4.0 $(WX_LIBS)
