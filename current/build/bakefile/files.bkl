@@ -95,12 +95,14 @@
     $(WGTS)/swWxGuiTestTempInteractive.cpp
     $(WGTS)/swWxGuiTestTempInteractiveControl.cpp
     $(WGTS)/swWxGuiTestTimedDialogEnder.cpp
+    $(WGTS)/CapturePanel.cpp
   </set>
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkWxGuiTesting/swCRVtkCapture.cpp
     $(WGTS)/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
     $(WGTS)/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
     $(WGTS)/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
+    $(WGTS)/VtkWxGuiTesting/VtkCapturePanel.cpp
   </set>
 
   <set var='WXVTK_SOURCES'>
@@ -121,8 +123,8 @@
     $(WGTS)/CapturedEvents/swCRTextUpdateEvent.h
     $(WGTS)/CapturedEvents/swCRTreeItemRightClickEvent.h
     $(WGTS)/CapturedEvents/swCRTreeSelectionChangingEvent.h
-    $(WGTS)/swCRCaptureControl.h
     $(WGTS)/swCREventFactory.h
+    $(WGTS)/swCRXRCNode.h
     $(WGTS)/swCRXRCObject.h
     $(WGTS)/swCRXRCReader.h
     $(WGTS)/swCRXRCResource.h
@@ -132,12 +134,12 @@
 
   <set var='WGT_INSTALL_HDRS'>
     $(WGTI)/swCRCapture.h
+    $(WGTI)/swCRCaptureControl.h
     $(WGTI)/swCRCppEmitter.h
     $(WGTI)/swCREventCaptureManager.h
     $(WGTI)/swCREventFilterInterface.h
     $(WGTI)/swCRWindowHierarchyHandler.h
     $(WGTI)/swCRLogInterface.h
-    $(WGTI)/swCRXRCNode.h
     $(WGTI)/swInitWxGuiTest.h
     $(WGTI)/swModalDialogInteractionInterface.h
     $(WGTI)/swModalDialogTimer.h

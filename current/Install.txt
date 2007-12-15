@@ -123,6 +123,42 @@ the keyboard).
 
 Using swWxGuiTest:
 
-That's next...
+In the sample directory you'll find a working example. To test your
+own code, copy CppTestTextApp.cpp to your code's source tree
+somewhere. Write some test classes. The classes should be derived from
+CppUnit::TestFixture. The class signature should look something like:
 
+class TestSuite : public CppUnit::TestFixture {
+    CPPUNIT_TEST_SUITE( TestSuite );
+    CPPUNIT_TEST( testCase1 );
+    CPPUNIT_TEST( testCase2 );
+    //And so on for every test case member function
+    CPPUNIT_TEST_SUITE_END();
+
+public:
+    virtual void setUp();
+    virtual void tearDown();
+    void testCase1();
+    void testCase2();
+};
+
+The classes and test case functions can be named anything you like,
+and you can have as many test cases as you need. setUp() and
+tearDown() are mandatory member functions which are called before and
+after each test case respectively to prepare the fixture for testing
+and to clean it up afterwards. 
+
+After you've declared the class, call the following macro:
+
+CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( TestSuite, "WxGuiTest" );
+
+Note that "WxGuiTest" is hardcoded into the swWxGuiTesting function
+which intercepts the registration.
+
+Define all of your test class member functions.
+
+Create a target in your build environment for your test and you're
+ready to go!
+
+     
 
