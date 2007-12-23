@@ -41,7 +41,7 @@ public:
     /*! \fn WxGuiTestTempInteractive ()
         \brief Constructor
     */
-    WxGuiTestTempInteractive ();
+    WxGuiTestTempInteractive () {}
 
 
     /*! \fn virtual ~WxGuiTestTempInteractive ()
@@ -49,7 +49,7 @@ public:
 
         Pop + delete event handler and destroy used dialog.
     */
-    virtual ~WxGuiTestTempInteractive ();
+    virtual ~WxGuiTestTempInteractive () {}
 
 
     /*! \file swWxGuiTestTempInteractive.h
@@ -61,24 +61,14 @@ public:
         \brief Macro allowing easy temporary test interactivity with precise
         file and line number output.
         
-        Using "{...}" notation the macro can be used several times in the same
-        scope.
+	WARNING! This macro can be used only once in a scope because it
+	declares the interactive variable.
     */
     #define TEMP_INTERACTIVE_GUI_TEST                                         \
     {                                                                         \
         swTst::WxGuiTestTempInteractive interactive;                          \
-        interactive.ShowCurrentGui (__FILE__, __LINE__);                      \
+        interactive.ShowCurrentGui (_T(__FILE__), __LINE__);		\
     };
-
-
-    /*! \fn virtual void ShowCurrentGui ()
-        \brief Show current GUI and query user for continuation.
-
-        May be called more than once during lifetime of
-        WxGuiTestTempInteractive instance. In order to prevent side effects
-        on the main loop running flags are preserved and restored.
-    */
-    virtual void ShowCurrentGui ();
 
 
     /*! \fn virtual void ShowCurrentGui (const char *file, int line)
@@ -87,19 +77,16 @@ public:
         \param file name of affected GUI test case file
         \param line line number of affected GUI test case file
     */
-    virtual void ShowCurrentGui (const char *file, int line);
+    virtual void ShowCurrentGui (const wxString& file = _T(""), int line = -1);
 
 protected:
     /*! \fn virtual void CreateDialog ()
         \brief Create the simplest dialog ever.
     */
-    virtual void CreateDialog ();
+    virtual wxDialog* CreateDialog (const wxString& file, int line);
 
 private:
-    wxDialog *m_dialog;
 
-    char *m_file;
-    int m_line;
 };
 
 } // End namespace swTst

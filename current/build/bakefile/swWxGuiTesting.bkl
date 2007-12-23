@@ -229,11 +229,11 @@
   </set>
 
   <set var='capturePanel_cpp'>
-    $9srcdir)$(DIRSEP)$(WGTS)$(DIRSEP)CapturePanel.cpp
+    $(srcdir)$(DIRSEP)$(WGTS)$(DIRSEP)CapturePanel.cpp
   </set>
 
    <set var='capturePanel_xrc'>
-    $srcdir)$(DIRSEP)$(xrcdir)$(DIRSEP)CapturePanel2_wdr.xrc
+    $(srcdir)$(DIRSEP)$(xrcdir)$(DIRSEP)CapturePanel2_wdr.xrc
   </set>
 
   <action id='$(capturePanel_cpp)' cond="FORMAT_SUPPORTS_ACTIONS=='1'">

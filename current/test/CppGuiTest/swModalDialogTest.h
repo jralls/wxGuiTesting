@@ -33,7 +33,7 @@ class ModalDialogTest : public CPPUNIT_NS::TestFixture
         // Possible solutions: (a) ignore modal standard dialogs, (b) look in
         // all implementations and potentially modify the behaviour if being in
         // test mode to do what?
-        //CPPUNIT_TEST( testStdModalDialog );
+        CPPUNIT_TEST( testStdModalDialog );
 
     CPPUNIT_TEST_SUITE_END();
 

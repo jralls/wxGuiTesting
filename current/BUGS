@@ -1,0 +1,10 @@
+WxGuiTestTimedDialogEnder works only in M$Win (if there).
+
+Modal Dialog problems: 
+
+      Emitted capture code may not be able to find
+      the dialog, particularly if it is a "standard" dialog.  
+
+      Some standard dialogs don't respond to EndModal() or Hide() on
+      some platforms (OSX).
+

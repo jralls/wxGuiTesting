@@ -338,7 +338,7 @@ install-strip: install
 clean: 
 	rm -rf objects/.deps objects/.pch
 	rm -f objects/*.o
-	rm -f $9srcdir)/src/swWxGuiTesting/CapturePanel.cpp
+	rm -f $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
 	rm -f $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 	rm -f lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
 	rm -f bin/CppUnitTest$(EXEEXT)
@@ -368,8 +368,8 @@ lib:
 bin: 
 	@mkdir -p bin
 
-$9srcdir)/src/swWxGuiTesting/CapturePanel.cpp: 
-	$(WXRC) -v -c -n InitCapturePanelXRC -o $9srcdir)/src/swWxGuiTesting/CapturePanel.cpp $srcdir)/src/xrc/CapturePanel2_wdr.xrc
+$(srcdir)/src/swWxGuiTesting/CapturePanel.cpp: 
+	$(WXRC) -v -c -n InitCapturePanelXRC -o $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp $(srcdir)/src/xrc/CapturePanel2_wdr.xrc
 
 @COND_USE_VTK_TRUE@$(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp: 
 @COND_USE_VTK_TRUE@	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp $(srcdir)/src/xrc/VtkCapturePanel_wdr.xrc

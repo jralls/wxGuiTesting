@@ -460,8 +460,8 @@ test_for_selected_wxbuild:
 	@if not exist $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX)\wx\setup.h \
 	exit 1
 
-$9srcdir)\src/swWxGuiTesting\CapturePanel.cpp: 
-	$(WXRC) -v -c -n InitCapturePanelXRC -o $9srcdir)\src/swWxGuiTesting\CapturePanel.cpp $srcdir)\src/xrc\CapturePanel2_wdr.xrc
+../..\src/swWxGuiTesting\CapturePanel.cpp: 
+	$(WXRC) -v -c -n InitCapturePanelXRC -o ../..\src/swWxGuiTesting\CapturePanel.cpp ../..\src/xrc\CapturePanel2_wdr.xrc
 
 !if "$(USE_VTK)" == "TRUE"
 ../..\src/swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp: 

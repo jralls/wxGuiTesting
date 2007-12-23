@@ -1,0 +1,16 @@
+2007-12-20  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* swWxGuiTestTempInteractive.cpp
+	(WxGuiTestTempInteractive::ShowCurrentGui): New unicode fix.
+
+2007-12-23  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* swWxGuiTestTempInteractive.cpp: Rewritten to create a new dialog
+	on every call to ShowCurrentGui. The original created a dialog on
+	the first invocation and used it until the interactive object was 
+	destroyed, which ignored subsequent calls with filename and line #
+	so the original filename and line number were produced every time.
+
+	* swWxGuiTestTempInteractive.h: Added the warning notice for the
+	TEMP_INTERACTIVE_GUI_TEST macro.
+

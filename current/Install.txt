@@ -123,10 +123,32 @@ the keyboard).
 
 Using swWxGuiTest:
 
-In the sample directory you'll find a working example. To test your
+In the sample directory you'll find two working examples. To test your
 own code, copy CppTestTextApp.cpp to your code's source tree
-somewhere. Write some test classes. The classes should be derived from
-CppUnit::TestFixture. The class signature should look something like:
+somewhere. Comment out/uncomment the various lines depending on what
+you're going to test. 
+
+In order for capture to work, your project MUST USE XML XRC FILES. 
+
+In order to test a whole application, your wxApp class (the one with
+OnInit()) must be derived from swTst::WxGuiTestApp, so its header must 
+
+#include <wxGuiTest/swWxGuiTestApp.h>
+
+then, in your wxApp implementation, 
+
+#include <wxGuiTest/swWxGuiTestHelper.h>
+
+after including the declaration header and before the IMPLEMENT_APP
+macro.
+Define SW_USE_WX_APP_GUI_TESTING in the compiler command line (add it
+to CXXFLAGS or something similar in your Makefile. This prevents your
+app from being registered directly with wxWidgets, which would fail to compile.
+
+Write some test classes. Each test header file will need
+#include <cppunit/extensions/HelperMacros.h>
+
+and each class will have the following signature:
 
 class TestSuite : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE( TestSuite );
@@ -142,23 +164,88 @@ public:
     void testCase2();
 };
 
+The class implementations will need the following includes as noted:
+
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+
+If you're automatically killing off modal dialog boxes, you'll need
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+
+For capturing, you need
+#include <wxGuiTest/swCRCapture.h>
+
+#include <wxGuiTest/Config/swConfigManager.h>
+#include <wxGuiTest/Config/swConfig.h>
+
+The implementation (.cpp) file for the test classes needs a line like
+
+CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( TestSuite, "WxGuiTest" );
+
+for each test class. Substitute the class name for TestSuite; note
+that WxGuiTest is HARD-CODED into The library; if you use any other
+string, the test suite won't execute.
+
 The classes and test case functions can be named anything you like,
 and you can have as many test cases as you need. setUp() and
 tearDown() are mandatory member functions which are called before and
 after each test case respectively to prepare the fixture for testing
-and to clean it up afterwards. 
+and to clean it up afterwards. If you're testing a whole app, they
+needn't do anything... and may cause trouble if they do.
 
-After you've declared the class, call the following macro:
+If you're capturing, the testcase needs only invoke 
 
-CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( TestSuite, "WxGuiTest" );
+CAPTURE
 
-Note that "WxGuiTest" is hardcoded into the swWxGuiTesting function
-which intercepts the registration.
-
-Define all of your test class member functions.
+the library will take care of the rest.
 
 Create a target in your build environment for your test and you're
 ready to go!
+
+After capturing, your capture test case file foo.cpp will have a new
+version, foo.cpp.cr1 (the number increments every time you run
+capture). You can rename the foo.cpp to something else (you'll want to
+name it back before running capture again!) and rename foo.cpp.cr1 (or
+whichever) to foo.cpp and recompile. That's now a regression test
+replaying your capture. Cool, huh?
+
+Every time you visit the menu (again, at least on OSX), capture
+redeclares topFrame and menuBar, so recompiling will produce a bunch
+of errors. This is actually good, because it makes it easier to start
+a new test case (see the next item).
+
+CppUnit is designed to abort the test case when an assert fails. This means
+that you want to write test cases where each of the tests is dependent
+on the ones before it. Independent tests should be separated into
+multiple test cases. The problem here is that Capture isn't smart
+enough to do that, so you have to break up the single test case after
+you've completed a capture.
+
+Writing your program to be testable:
+
+Programs have to be written in such a way that they're
+testable. For example, if an event handling function creates a frame
+on the stack, the details of that frame will get recorded during
+capture, but the test case will never be able to see it because the
+frame will be destroyed when the handler returns. This will cause the
+test case to fail.
+
+Note very well the discussion about blocking in Reinhold's Thesis,
+section 1.5.4. In order for certain blocking items to be tested, you
+will want to show them using swTst::WxGuiTestHelper. This class can
+be used in release versions, but you may prefer to guard calls to it
+with #ifdef SW_USE_WX_APP_GUI_TESTING.
+
+Known problems:
+
+Toolbar events will produce a bogus menuevent, at least on OSX:
+
+    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );
+
+
+
+
 
      
 
