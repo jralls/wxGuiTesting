@@ -150,6 +150,8 @@ define it anyway:
 
 \section problems Known problems:
 
+There are a large number of controls which don't have capture event handlers.
+
 Toolbar events will produce a bogus menu event, at least on OSX:
 \code
     swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );

@@ -17,9 +17,11 @@
 #include <wxGuiTest/swWxGuiTestCppUnitWarningAsserter.h>
 #include <wxGuiTest/swInitWxGuiTest.h>
 
+#include "xrcdemo.h"
+
 int main (int argc, char* argv[])
 {
-    //wxLogAddTraceMask (_T("wxGuiTestCallTrace"));
+    //wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 
     // Configure unit testing:
     swTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
@@ -34,6 +36,12 @@ int main (int argc, char* argv[])
     swTst::WxGuiTestHelper::SetWarningAsserter (
             new swTst::WxGuiTestCppUnitWarningAsserter ());
 
+    // Record wxVtk interaction:
+    //swTst::VtkWxGuiTestHelper::SetUseWxVtkInteractionRecording (true);
+
+    // Create Application Under Test (AUT) when testing a whole app:
+    //MyApp* myApp = new MyApp ();
+    
     // swTst::InitWxGuiTest, which "packs" all registered wxWidgets GUI tests
     // into decorated shape, must not use CPPUNIT_TEST_SUITE_REGISTRATION macro
     // when WxGuiTesting is built as an independent and reusable library.
