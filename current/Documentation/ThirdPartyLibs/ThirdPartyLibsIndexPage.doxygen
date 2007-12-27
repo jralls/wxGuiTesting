@@ -1,4 +1,4 @@
-/*! \mainpage ThirdPartyLibs
+/*! \page ThirdPartyLibs
 
     ThirdPartyLibs aims at easing the inclusion of third party libraries
     required to build and run the swWxGuiTesting framework.

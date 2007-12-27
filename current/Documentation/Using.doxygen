@@ -1,0 +1,172 @@
+/*!
+\page Using Using WxGuiTest
+
+In the sample directory you'll find two working examples. To test your
+own code, copy CppTestTextApp.cpp to your code's source tree
+somewhere. Comment out/uncomment the various lines depending on what
+you're going to test. 
+
+In order for capture to work, your project <b><I>must use xml XRC files</I></b>. 
+
+\section prepring Preparing for Testing
+
+Define <tt>SW_USE_WX_APP_GUI_TESTING</tt> in the compiler command line (add it
+to \c CXXFLAGS or something similar in your Makefile. This macro is used to redefine <tt>IMPLEMENT_APP()</tt> so that the test runner is in control for testing a whole application. You can use it to toggle other test features in your code, as we'll see.
+
+For testing a whole application, your wxApp class (the one with
+\c OnInit()) must be derived from <tt>swTst::WxGuiTestApp</tt>, like this:
+\code
+#ifdef SW_USE_WX_APP_GUI_TESTING
+#include <wxGuiTest/swWxGuiTestApp.h>
+class MyApp : public swTst::WxGuiTestApp
+#else
+#include <wx/app.h>
+class MyApp : public wxApp
+#endif
+\endcode
+then, in your wxApp implementation, 
+\code
+#include <wx/wx.h>
+#ifdef SW_USE_WX_APP_GUI_TESTING
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#endif
+IMPLEMENT_APP(MyApp)
+\endcode
+
+
+Write some test classes. Each test header file will need
+\code
+#include <cppunit/extensions/HelperMacros.h>
+\endcode
+and each class will have the following signature:
+\code
+class TestSuite : public CppUnit::TestFixture {
+    CPPUNIT_TEST_SUITE( TestSuite );
+    CPPUNIT_TEST( testCase1 );
+    CPPUNIT_TEST( testCase2 );
+    //And so on for every test case member function
+    CPPUNIT_TEST_SUITE_END();
+
+public:
+    virtual void setUp();
+    virtual void tearDown();
+    void testCase1();
+    void testCase2();
+};
+\endcode
+The class implementations will need the following includes as noted:
+\code
+#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+\endcode
+If you're automatically killing off modal dialog boxes, you'll need
+\code 
+#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+\endcode
+For capturing, you need
+\code
+#include <wxGuiTest/swCRCapture.h>
+
+#include <wxGuiTest/Config/swConfigManager.h>
+#include <wxGuiTest/Config/swConfig.h>
+\endcode
+The implementation (.cpp) file for the test classes needs a line like
+\code
+CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( TestSuite, "WxGuiTest" );
+\endcode
+for each test class. Substitute the class name for TestSuite; note
+that \b WxGuiTest is \em hard-coded into the library; if you use any other
+string, the test suite won't execute.
+
+The classes and test case functions can be named anything you like,
+and you can have as many test cases as you need. \c setUp() and
+\c tearDown() are mandatory member functions which are called before and
+after each test case respectively to prepare the fixture for testing
+and to clean it up afterwards. If you're testing a whole app, they
+needn't do anything... and may cause trouble if they do.
+
+If you're capturing, the testcase needs only invoke 
+\code
+CAPTURE
+\endcode
+the library will take care of the rest.
+
+Create a target in your build environment for your test and you're
+ready to go!
+
+After capturing, your capture test case file <tt>foo.cpp</tt> will have a new
+version, <tt>foo.cpp.cr1</tt> (the number increments every time you run
+capture). You can rename the <tt>foo.cpp</tt> to something else (you'll want to
+name it back before running capture again!) and rename <tt>foo.cpp.cr1</tt> (or
+whichever) to <tt>foo.cpp</tt> and recompile. (Alternatively, you could just rename <tt>foo.cpp.cr1</tt> to something else, like <tt>replay.cpp</tt> and create a new build target for \e that.) That's now a regression test
+replaying your capture. Cool, huh?
+
+Every time you visit the menu (at least on OSX), capture
+redeclares topFrame and menuBar, so recompiling will produce a bunch
+of errors. This is actually good, because it makes it easier to start
+a new test case (see the next item).
+
+CppUnit is designed to abort the test case when an assert fails. This means
+that you want to write test cases where each of the tests is dependent
+on the ones before it. Independent tests should be separated into
+multiple test cases. The problem here is that Capture isn't smart
+enough to do that, so you have to break up the single test case after
+you've completed a capture.
+
+\section writing Writing your program to be testable:
+
+Programs have to be written in such a way that they're
+testable. For example, if an event handling function creates a frame
+on the stack, the details of that frame will get recorded during
+capture, but the test case will never be able to see it because the
+frame will be destroyed when the handler returns. This will cause the
+test case to fail. To be testable, GUI elements must be created on the
+heap and must be available to the test functions.
+
+Capture uses XML XRC files to discover resource names, and at present
+is able to scan only one directory for resource files. This directory
+is set in your test program with sw::Config::SetResourceDir().
+
+\subsection blocking Blocking GUI Elements (Modal Dialogs and Popup Menus):
+
+Note very well the discussion about blocking in Reinhold's Thesis,
+section 1.5.4. He's not quite right about the internals here: They're
+implemented in the platform-dependent code (that is, there's an
+implementation for each platform, and generally use the appropriate
+platform features to implement them. The problem is that that makes it
+impossible for wxGuiTesting, being separate from the wxWidgets
+library, to reach inside those implementations and manipulate the GUI
+elements. In short, the use of modal dialogs and popup menus requires
+user intervention during the test. For fully automatic testing, your
+code will have to disable blocking elements during testing. The
+<tt>SW_USE_WX_APP_GUI_TESTING</tt> macro is a useful test since you have to
+define it anyway:
+\code
+#ifndef  SW_USE_WX_APP_GUI_TESTING
+    msgDlg.ShowModal();
+#endif
+\endcode
+
+\section problems Known problems:
+
+Toolbar events will produce a bogus menu event, at least on OSX:
+\code
+    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );
+\endcode
+If you don't disable dialog boxes and popups, the capture function
+will record events for them... but the resulting test won't be able to
+see them, so it will fail.
+
+A side effect of the fact that the application is created by the test
+framework which in turn runs your application under test runner
+control is that the application name defaults to "bla" (hard-coded in
+<tt>swInitWxGuiTestSetUp.cpp, line 104</tt>. If this matters to you, set it in
+your app's \c OnInit() function, perhaps guarded by  
+\code
+     #ifdef SW_USE_WX_APP_GUI_TESTING. 
+\endcode
+
+When you have a bunch of dialog boxes with similar controls on them, Capture seems always to use the first one it finds. You'll have to figure out what is the right one in each case in the capture file and hand-correct it.
+
+*/

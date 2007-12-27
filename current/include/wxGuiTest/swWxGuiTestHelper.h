@@ -5,7 +5,7 @@
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
-
+//! \file
 #ifndef SWWXGUITESTHELPER_H
 #define SWWXGUITESTHELPER_H
 
@@ -21,12 +21,13 @@ namespace sw {
     class DefaultDialog;
 }
 
-
-// If the special symbol SW_USE_WX_APP_GUI_TESTING is defined in the sources
-// CMakeLists.txt, for instance by:
-//   ADD_DEFINITIONS (-DSW_USE_WX_APP_GUI_TESTING)
-// the sources application won't be recognised as such, but can be used for
-// wxAppGuiTesting:
+/*! \def IMPLEMENT_APP(appname)
+If the special symbol SW_USE_WX_APP_GUI_TESTING is defined in the sources
+CMakeLists.txt, for instance by:
+  ADD_DEFINITIONS (-DSW_USE_WX_APP_GUI_TESTING)
+the sources application won't be recognised as such, but can be used for
+wxAppGuiTesting:
+*/
 #ifdef SW_USE_WX_APP_GUI_TESTING
     #ifdef IMPLEMENT_APP
         #undef IMPLEMENT_APP

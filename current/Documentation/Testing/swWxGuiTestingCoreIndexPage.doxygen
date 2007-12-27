@@ -1,4 +1,4 @@
-/*! \mainpage swWxGuiTesting
+/*! \page swWxGuiTesting
 
     swWxGuiTesting is a framework allowing unit testing of wxWidgets based GUIs
     and whole applications; it's core motivation is to some extent based on
