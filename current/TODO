@@ -1,8 +1,6 @@
 * Thorough unit testing of existing code
 
-* incorporate the necessary bits of swFramework (swApp, swPsuedoApp, Get/SetResourceDir) into WxGuiTesting and jettison the rest
-
-* Dump the existing sample and replace with xrcdemo example.
+* incorporate the necessary bits of swFramework (swApp, swPsuedoApp, Get/SetResourceDir) into WxGuiTesting and jettison the rest, rewriting the tests so that they don't need the extra bits of swFramework
 
 * Add more event simulations and handlers:
     // Unsupported event wxEVT_COMMAND_TREE_SEL_CHANGED id -593, EvtObj
