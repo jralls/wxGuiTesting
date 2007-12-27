@@ -428,10 +428,5 @@
     <wx-lib>base</wx-lib>
   </exe>
 
-  <exe id='UsingSwWxGuiTesting' template='wgtInclude,testApp'>
-    <dirname>$(bindir)</dirname>
-    <sources>$(SAMPLE_SOURCES) </sources>
-    <headers>$(SAMPLE_HDRS)</headers>
-  </exe>
 
 </makefile>

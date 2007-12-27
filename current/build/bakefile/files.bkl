@@ -231,15 +231,4 @@
     test/VtkTest/swCRVtkCaptureTest.h
   </set>
 
-  <set var='SAMPLE_SOURCES'>
-    sample/CppTextTestApp.cpp
-    sample/SimpleCRTest.cpp
-    sample/SimpleTest.cpp
-  </set>
-
-  <set var='SAMPLE_HDRS'>
-    sample/SimpleCRTest.h
-    sample/SimpleTest.h
-  </set>
-
 </makefile>

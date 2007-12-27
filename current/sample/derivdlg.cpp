@@ -35,20 +35,6 @@
 //-----------------------------------------------------------------------------
 
 #include "wx/xrc/xmlres.h"              // XRC XML resouces
-#include <wxGuiTest/swModalDialogTimer.h>
-#include <wxGuiTest/swModalDialogInteractionInterface.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-class OKButtonClicker : public swTst::ModalDialogInteractionInterface {
-public:
-    OKButtonClicker(wxWindow* win) : m_win(win) {}
-    void Execute() {
-	swTst::WxGuiTestEventSimulationHelper::ClickButton(wxID_OK, m_win);
-    }
-private:
-    wxWindow* m_win;
-};
-
-
     
 //-----------------------------------------------------------------------------
 // Event table: connect the events to the handler functions to process them
@@ -79,10 +65,8 @@ void PreferencesDialog::OnMyButtonClicked( wxCommandEvent &WXUNUSED(event) )
     // Construct a message dialog.
     wxMessageDialog msgDlg(this, _("You clicked on My Button"));
 
-#ifndef SW_USE_WX_APP_GUI_TESTING
     // Show it modally.
     msgDlg.ShowModal();
-#endif;
 }
 
 

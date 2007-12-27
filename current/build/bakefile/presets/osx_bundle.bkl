@@ -4,13 +4,12 @@
 	
 	<define-tag name="osx-bundle" rules="exe">
 	  
-	  <set var="BUNDLE_IDENTIFIER">$(id)</set>
+	  <set var="BUNDLE_IDENTIFIER">$(BUILDER_URL).$(id)</set>
 	  
-	  <set var="WXDIR">../../../wxWidgets</set>
+	  <set var="WXDIR">$(WXSRCPATH)</set>
 	  
-	  <set var="MAC_VERSION">1.0</set>
-	  <set var="BUNDLE_PLIST">$(srcdir)/build/macosx/Info.plist</set>
-	  <set var="BUNDLE_ICONS">$(srcdir)/build/macosx/wxmac.icns</set>
+	  <set var="BUNDLE_PLIST">$(WXDIR)/src/mac/carbon/Info.plist.in</set>
+	  <set var="BUNDLE_ICONS">$(WXDIR)/src/mac/carbon/wxmac.icns</set>
 	  
 	  <!-- bundle directory: -->
 	  <set var="BINDIR">.</set>
@@ -37,7 +36,7 @@
 		  <!-- Info.plist: -->
 		  sed -e "s/IDENTIFIER/$(BUNDLE_IDENTIFIER)/" \
 		  -e "s/EXECUTABLE/$(id)/" \
-		  -e "s/VERSION/$(MAC_VERSION)/" \
+		  -e "s/VERSION/$(VERSION)/" \
 		  $(BUNDLE_PLIST) >$(BUNDLE)/Info.plist
 		  
 		  <!-- PkgInfo: -->
