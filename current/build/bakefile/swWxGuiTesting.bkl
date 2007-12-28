@@ -9,6 +9,13 @@
 
   <set var="BUILDER_URL">com.ceridwen</set>
 
+  <option name='WXSRCPATH' force='1' cond="FORMAT in ['autoconf', 'gnu']" category='path'>
+    <default-value>/usr/local/src/wxMac-2.8.6</default-value>
+    <description> 
+      Path to the wx sources for retrieving the Info.plist and wxmac.icns templates
+    </description>
+  </option>
+
   <if cond="FORMAT=='msvc' or FORMAT=='msvs2005prj'">
     <set var='srcdir'>../..</set>
     <set-srcdir>../..</set-srcdir>

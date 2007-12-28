@@ -26,6 +26,7 @@ CXX = @CXX@
 CXXFLAGS = @CXXFLAGS@
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
+WXSRCPATH = @WXSRCPATH@
 WX_CXXFLAGS = @WX_CXXFLAGS@
 WX_LIBS = @WX_LIBS@
 CPPUNIT_CFLAGS = @CPPUNIT_CFLAGS@
@@ -46,8 +47,9 @@ SWWXGUITESTING_HEADERS =  \
 	$(LIB_HDRS)
 CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DTESTDIR=\"$(srcdir)/test/TestData\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_CppTextTestApp.o \
 	objects/CppUnitTest_swCRCppEmitterTest.o \
@@ -55,24 +57,27 @@ CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_swWxGuiTestProvokedWarningRegistryTest.o
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DTESTDIR=\"$(srcdir)/test/TestData\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	objects/CppGuiUnitTestEventSimulation_CppTextTestApp.o \
 	objects/CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.o \
 	objects/CppGuiUnitTestEventSimulation_swWxGuiTestEvtSimHlpEvtHandler.o
 CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DTESTDIR=\"$(srcdir)/test/TestData\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	objects/CppGuiUnitTestCaptureReplay_CppTextTestApp.o \
 	objects/CppGuiUnitTestCaptureReplay_swCRCaptureTest.o \
 	objects/CppGuiUnitTestCaptureReplay_swCRWindowHierarchyHandlerTest.o
 CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DTESTDIR=\"$(srcdir)/test/TestData\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects/CppGuiUnitTestModalDialog_CppTextTestApp.o \
 	objects/CppGuiUnitTestModalDialog_swDirDialogManipulator.o \
@@ -80,25 +85,20 @@ CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects/CppGuiUnitTestModalDialog_swModalDialogTest.o
 CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DTESTDIR=\"$(srcdir)/test/TestData\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	objects/CppGuiUnitCapturePlusEmit_CppTextTestApp.o \
 	objects/CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.o
 VTKUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/include/wxGuiTest/VtkWxGuiTesting \
-	-DVTKDIR=\"$(srcdir)/test/TestData/vtk\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DVTKDIR=\"$(srcdir)/test/TestData/vtk\" \
+	-DXRCDIR=\"$(srcdir)/test/TestData/xrc\" -DSRCDIR=\"$(srcdir)\" \
+	$(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 VTKUNITTEST_OBJECTS =  \
 	objects/VTKUnitTest_CppTextTestApp.o \
 	objects/VTKUnitTest_swCRVtkCaptureTest.o
-USINGSWWXGUITESTING_CXXFLAGS = -I$(srcdir)/include \
-	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(srcdir)/src/xrc\" \
-	-DSRCDIR=\"$(srcdir)\" $(__CXXFLAGS) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
-USINGSWWXGUITESTING_OBJECTS =  \
-	objects/UsingSwWxGuiTesting_CppTextTestApp.o \
-	objects/UsingSwWxGuiTesting_SimpleCRTest.o \
-	objects/UsingSwWxGuiTesting_SimpleTest.o
 
 ### Conditionally set variables: ###
 
@@ -320,14 +320,10 @@ COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS =  \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/VTKUnitTest$(EXEEXT)
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@____VTKUnitTest_app_Contents_PkgInfo___depname \
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	= ./VTKUnitTest.app/Contents/PkgInfo
-@COND_PLATFORM_MAC_1@__UsingSwWxGuiTesting___mac_setfilecmd \
-@COND_PLATFORM_MAC_1@	= $(SETFILE) -t APPL bin/UsingSwWxGuiTesting$(EXEEXT)
-@COND_TOOLKIT_MAC@____UsingSwWxGuiTesting_app_Contents_PkgInfo___depname \
-@COND_TOOLKIT_MAC@	= ./UsingSwWxGuiTesting.app/Contents/PkgInfo
 
 ### Targets: ###
 
-all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle bin/UsingSwWxGuiTesting$(EXEEXT) UsingSwWxGuiTesting_bundle
+all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
 
 install: all install_swWxGuiTesting install_swWxGuiTesting_headers
 
@@ -353,8 +349,6 @@ clean:
 	rm -rf CppGuiUnitCapturePlusEmit.app
 	rm -f bin/VTKUnitTest$(EXEEXT)
 	rm -rf VTKUnitTest.app
-	rm -f bin/UsingSwWxGuiTesting$(EXEEXT)
-	rm -rf UsingSwWxGuiTesting.app
 
 distclean: clean
 	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
@@ -410,10 +404,10 @@ bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$
 @COND_TOOLKIT_MAC@	mkdir -p ./CppUnitTest.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/CppUnitTest/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppUnitTest/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppUnitTest/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./CppUnitTest.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppUnitTest.app/Contents/Info.plist
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	echo -n "APPL????" >./CppUnitTest.app/Contents/PkgInfo
@@ -434,10 +428,10 @@ bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJE
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestEventSimulation.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/CppGuiUnitTestEventSimulation/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestEventSimulation/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestEventSimulation/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./CppGuiUnitTestEventSimulation.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestEventSimulation.app/Contents/Info.plist
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	echo -n "APPL????" >./CppGuiUnitTestEventSimulation.app/Contents/PkgInfo
@@ -458,10 +452,10 @@ bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS)
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestCaptureReplay.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/CppGuiUnitTestCaptureReplay/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestCaptureReplay/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestCaptureReplay/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./CppGuiUnitTestCaptureReplay.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestCaptureReplay.app/Contents/Info.plist
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	echo -n "APPL????" >./CppGuiUnitTestCaptureReplay.app/Contents/PkgInfo
@@ -482,10 +476,10 @@ bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestModalDialog.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/CppGuiUnitTestModalDialog/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestModalDialog/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestModalDialog/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./CppGuiUnitTestModalDialog.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestModalDialog.app/Contents/Info.plist
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	echo -n "APPL????" >./CppGuiUnitTestModalDialog.app/Contents/PkgInfo
@@ -506,10 +500,10 @@ bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitCapturePlusEmit.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/CppGuiUnitCapturePlusEmit/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitCapturePlusEmit/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitCapturePlusEmit/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./CppGuiUnitCapturePlusEmit.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitCapturePlusEmit.app/Contents/Info.plist
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	echo -n "APPL????" >./CppGuiUnitCapturePlusEmit.app/Contents/PkgInfo
@@ -530,10 +524,10 @@ CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_P
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	mkdir -p ./VTKUnitTest.app/Contents/Resources
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	sed -e "s/IDENTIFIER/VTKUnitTest/" \
+@COND_TOOLKIT_MAC_USE_VTK_TRUE@	sed -e "s/IDENTIFIER/com.ceridwen.VTKUnitTest/" \
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	-e "s/EXECUTABLE/VTKUnitTest/" \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	$(srcdir)/build/macosx/Info.plist >./VTKUnitTest.app/Contents/Info.plist
+@COND_TOOLKIT_MAC_USE_VTK_TRUE@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC_USE_VTK_TRUE@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./VTKUnitTest.app/Contents/Info.plist
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	echo -n "APPL????" >./VTKUnitTest.app/Contents/PkgInfo
@@ -543,30 +537,6 @@ CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_P
 @COND_TOOLKIT_MAC_USE_VTK_TRUE@	./VTKUnitTest.app/Contents/MacOS/VTKUnitTest
 
 VTKUnitTest_bundle: $(____VTKUnitTest_app_Contents_PkgInfo___depname)
-
-bin/UsingSwWxGuiTesting$(EXEEXT): $(USINGSWWXGUITESTING_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(USINGSWWXGUITESTING_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
-	
-	$(__UsingSwWxGuiTesting___mac_setfilecmd)
-
-@COND_TOOLKIT_MAC@./UsingSwWxGuiTesting.app/Contents/PkgInfo: bin/UsingSwWxGuiTesting$(EXEEXT)
-@COND_TOOLKIT_MAC@	mkdir -p ./UsingSwWxGuiTesting.app/Contents/MacOS
-@COND_TOOLKIT_MAC@	mkdir -p ./UsingSwWxGuiTesting.app/Contents/Resources
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/UsingSwWxGuiTesting/" \
-@COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/UsingSwWxGuiTesting/" \
-@COND_TOOLKIT_MAC@	-e "s/VERSION/1.0/" \
-@COND_TOOLKIT_MAC@	$(srcdir)/build/macosx/Info.plist >./UsingSwWxGuiTesting.app/Contents/Info.plist
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	echo -n "APPL????" >./UsingSwWxGuiTesting.app/Contents/PkgInfo
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	ln -f bin/UsingSwWxGuiTesting$(EXEEXT) \
-@COND_TOOLKIT_MAC@	./UsingSwWxGuiTesting.app/Contents/MacOS/UsingSwWxGuiTesting
-
-UsingSwWxGuiTesting_bundle: $(____UsingSwWxGuiTesting_app_Contents_PkgInfo___depname)
 
 objects/swWxGuiTesting_wxVTKRenderWindowInteractor.o: $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
 	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
@@ -811,17 +781,8 @@ objects/VTKUnitTest_CppTextTestApp.o: $(srcdir)/test/VtkTest/CppTextTestApp.cpp
 objects/VTKUnitTest_swCRVtkCaptureTest.o: $(srcdir)/test/VtkTest/swCRVtkCaptureTest.cpp
 	$(CXXC) -c -o $@ $(VTKUNITTEST_CXXFLAGS) $(srcdir)/test/VtkTest/swCRVtkCaptureTest.cpp
 
-objects/UsingSwWxGuiTesting_CppTextTestApp.o: $(srcdir)/sample/CppTextTestApp.cpp
-	$(CXXC) -c -o $@ $(USINGSWWXGUITESTING_CXXFLAGS) $(srcdir)/sample/CppTextTestApp.cpp
-
-objects/UsingSwWxGuiTesting_SimpleCRTest.o: $(srcdir)/sample/SimpleCRTest.cpp
-	$(CXXC) -c -o $@ $(USINGSWWXGUITESTING_CXXFLAGS) $(srcdir)/sample/SimpleCRTest.cpp
-
-objects/UsingSwWxGuiTesting_SimpleTest.o: $(srcdir)/sample/SimpleTest.cpp
-	$(CXXC) -c -o $@ $(USINGSWWXGUITESTING_CXXFLAGS) $(srcdir)/sample/SimpleTest.cpp
-
 
 # Include dependency info, if present:
 @IF_GNU_MAKE@-include .deps/*.d
 
-.PHONY: all install uninstall clean distclean install_swWxGuiTesting uninstall_swWxGuiTesting install_swWxGuiTesting_headers uninstall_swWxGuiTesting_headers CppUnitTest_bundle CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle VTKUnitTest_bundle UsingSwWxGuiTesting_bundle
+.PHONY: all install uninstall clean distclean install_swWxGuiTesting uninstall_swWxGuiTesting install_swWxGuiTesting_headers uninstall_swWxGuiTesting_headers CppUnitTest_bundle CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle VTKUnitTest_bundle
