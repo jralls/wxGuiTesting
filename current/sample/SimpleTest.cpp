@@ -12,7 +12,6 @@
 
 #include "SimpleTest.h"
 
-#include <unistd.h>
 #include <wx/xrc/xmlres.h>
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>

@@ -35,16 +35,16 @@ TOOLKIT = GTK
 WXSRCPATH = 
 
 # Use DLL build of wx library? [0,1]
-WX_SHARED = 0
+WX_SHARED = 1
 
 # Use Unicode build of wxWidgets? [0,1]
-WX_UNICODE = 0
+WX_UNICODE = 1
 
 # Use debug build of wxWidgets (define __WXDEBUG__)? [0,1]
 WX_DEBUG = 1
 
 # Version of the wx library to build against. 
-WX_VERSION = 29
+WX_VERSION = 28
 
 # Use monolithic build of wxWidgets? [0,1]
 WX_MONOLITHIC = 0
@@ -53,14 +53,14 @@ WX_MONOLITHIC = 0
 WX_DIR = $(WXWIN)
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL = \cppunit-1.12/include
+CPPUNIT_INCL = \cppunit-1.12.0\include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR = \cppunit-1.12/lib
+CPPUNIT_LIBDIR = \cppunit-1.12.0\lib
 
 # Library names needed for CppUnit to link 
-CPPUNIT_LIB = cppunit
+CPPUNIT_LIB = cppunitd_dll
 
 # Location of the swWxGuiTesting library and headers 
-wxGuiTestPath = \wxGuiTesting
+wxGuiTestPath = ..
 

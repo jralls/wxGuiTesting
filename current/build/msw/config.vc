@@ -28,6 +28,9 @@ CPPFLAGS =
 # Standard linker flags 
 LDFLAGS = 
 
+# Path to the wx sources for retrieving the Info.plist and wxmac.icns templates 
+WXSRCPATH = /usr/local/src/wxMac-2.8.6
+
 # Used to turn on bundling for MACOSX [GTK,MAC]
 TOOLKIT = GTK
 
@@ -59,10 +62,10 @@ UNICODE = 1
 BUILD = debug
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL = \cppunit-1.12.0\include
+CPPUNIT_INCL = c:\cppunit-1.12.0\include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR = \cppunit-1.12.0\lib
+CPPUNIT_LIBDIR =c:\cppunit-1.12.0\lib 
 
 # Library names needed for CppUnit to link 
 CPPUNIT_LIB = cppunitd_dll

@@ -100,7 +100,11 @@ void PreferencesDialog::OnOK( wxCommandEvent& WXUNUSED(event) )
     if (msgDlg2.ShowModal() == wxID_OK)
     {
         // ...then end this Preferences dialog.
-        EndModal( wxID_OK );
+ #ifdef SW_USE_WX_APP_GUI_TESTING
+      Hide();
+#else
+       EndModal( wxID_OK );
+#endif
         // You could also have used event.Skip() which would then skip up
         // to the wxDialog's event table and see if there was a EVT_BUTTON
         // handler for wxID_OK and if there was, then execute that code.

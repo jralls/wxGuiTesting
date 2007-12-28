@@ -43,7 +43,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -136,7 +136,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -154,7 +154,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -230,7 +230,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -248,7 +248,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -323,7 +323,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -341,7 +341,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -417,7 +417,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -435,7 +435,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -510,7 +510,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -528,7 +528,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -604,7 +604,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -622,7 +622,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -697,7 +697,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -715,7 +715,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -791,7 +791,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -809,7 +809,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -884,7 +884,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -902,7 +902,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -978,7 +978,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -996,7 +996,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1071,7 +1071,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -1089,7 +1089,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1165,7 +1165,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1183,7 +1183,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1258,7 +1258,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -1276,7 +1276,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1352,7 +1352,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1370,7 +1370,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1445,7 +1445,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -1463,7 +1463,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1539,7 +1539,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1557,7 +1557,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1632,7 +1632,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -1650,7 +1650,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1726,7 +1726,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1744,7 +1744,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1819,7 +1819,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -1837,7 +1837,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -1913,7 +1913,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1931,7 +1931,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2006,7 +2006,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2024,7 +2024,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2100,7 +2100,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -2118,7 +2118,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2193,7 +2193,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2211,7 +2211,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2287,7 +2287,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -2305,7 +2305,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2380,7 +2380,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2398,7 +2398,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2474,7 +2474,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -2492,7 +2492,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2567,7 +2567,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2585,7 +2585,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2661,7 +2661,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -2679,7 +2679,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2754,7 +2754,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2772,7 +2772,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2848,7 +2848,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -2866,7 +2866,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -2941,7 +2941,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -2959,7 +2959,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_dll\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3035,7 +3035,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3053,7 +3053,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3128,7 +3128,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -3146,7 +3146,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3222,7 +3222,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3240,7 +3240,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3315,7 +3315,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -3333,7 +3333,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3409,7 +3409,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3427,7 +3427,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3502,7 +3502,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -3520,7 +3520,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3596,7 +3596,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3614,7 +3614,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3689,7 +3689,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -3707,7 +3707,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3783,7 +3783,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3801,7 +3801,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3876,7 +3876,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -3894,7 +3894,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -3970,7 +3970,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -3988,7 +3988,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4063,7 +4063,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -4081,7 +4081,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4157,7 +4157,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4175,7 +4175,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4250,7 +4250,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -4268,7 +4268,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4344,7 +4344,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4362,7 +4362,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4437,7 +4437,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -4455,7 +4455,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4531,7 +4531,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4549,7 +4549,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4624,7 +4624,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -4642,7 +4642,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4718,7 +4718,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4736,7 +4736,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4811,7 +4811,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -4829,7 +4829,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4905,7 +4905,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4923,7 +4923,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -4998,7 +4998,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5016,7 +5016,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5092,7 +5092,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -5110,7 +5110,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5185,7 +5185,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5203,7 +5203,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5279,7 +5279,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -5297,7 +5297,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5372,7 +5372,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5390,7 +5390,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5466,7 +5466,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -5484,7 +5484,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5559,7 +5559,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5577,7 +5577,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5653,7 +5653,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -5671,7 +5671,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswu,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5746,7 +5746,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5764,7 +5764,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswud,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5840,7 +5840,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -5858,7 +5858,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\msw,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>
@@ -5933,7 +5933,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -5951,7 +5951,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../src/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include,$(WXWIN)\lib\vc_lib\mswd,$(WXWIN)\include,..\..\include\wxGuiTest\VtkWxGuiTesting"
 			/>

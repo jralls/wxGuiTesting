@@ -127,7 +127,6 @@
   </template>
 
   <template id='App' template='optimize,wx'>
-    <app-type>console</app-type>
     <if cond="FORMAT in ['autoconf', 'gnu']">
       <osx-bundle />
     </if>
@@ -142,6 +141,7 @@
   </template>
 
   <template id='testApp' template='wxGuiTest' template_append='App'>
+    <app-type>console</app-type>
     <if cond="FORMAT!='autoconf'">
       <include >$(CPPUNIT_INCL)</include>
     </if>
@@ -184,6 +184,7 @@
 <!-- Now the actual targets. The first one builds the standard program -->
 
   <exe id='xrcdemo' template='App'>
+    <app-type>gui</app-type>
     <sources>$(progSource) </sources>
   </exe>
 
