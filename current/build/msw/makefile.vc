@@ -12,7 +12,7 @@
 
 ### Variables: ###
 
-SWWXGUITESTING_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+SWWXGUITESTING_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
 	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
 	/Fd..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).pdb $(____WX_SHARED) \
@@ -21,87 +21,82 @@ SWWXGUITESTING_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
 	$(VTK_INCL_FLAG) $(CPPFLAGS) $(CXXFLAGS)
 SWWXGUITESTING_OBJECTS =  \
 	$(____LIB_SOURCES_FILENAMES_OBJECTS)
-CPPUNITTEST_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+CPPUNITTEST_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
 	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) /Fd..\..\bin\CppUnitTest.pdb \
 	$(____WX_SHARED) $(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTDIR=\"..\..\test\TestData\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects\CppUnitTest_CppTextTestApp.obj \
 	objects\CppUnitTest_swCRCppEmitterTest.obj \
 	objects\CppUnitTest_swCRXRCReaderTest.obj \
 	objects\CppUnitTest_swWxGuiTestProvokedWarningRegistryTest.obj
-CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = /MD$(__DBG_16) /DWIN32 \
+CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = /MD$(__DBG_13) /DWIN32 \
 	/I..\..\include /I..\..\src\swFrameworkDependent \
 	/I..\..\src\swWxGuiTesting /I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
 	/Fd..\..\bin\CppGuiUnitTestEventSimulation.pdb $(____WX_SHARED) \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTDIR=\"..\..\test\TestData\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	objects\CppGuiUnitTestEventSimulation_CppTextTestApp.obj \
 	objects\CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.obj \
 	objects\CppGuiUnitTestEventSimulation_swWxGuiTestEvtSimHlpEvtHandler.obj
-CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
 	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
 	/Fd..\..\bin\CppGuiUnitTestCaptureReplay.pdb $(____WX_SHARED) \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTDIR=\"..\..\test\TestData\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	objects\CppGuiUnitTestCaptureReplay_CppTextTestApp.obj \
 	objects\CppGuiUnitTestCaptureReplay_swCRCaptureTest.obj \
 	objects\CppGuiUnitTestCaptureReplay_swCRWindowHierarchyHandlerTest.obj
-CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
 	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
 	/Fd..\..\bin\CppGuiUnitTestModalDialog.pdb $(____WX_SHARED) \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTDIR=\"..\..\test\TestData\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects\CppGuiUnitTestModalDialog_CppTextTestApp.obj \
 	objects\CppGuiUnitTestModalDialog_swDirDialogManipulator.obj \
 	objects\CppGuiUnitTestModalDialog_swModalDialogManipulator.obj \
 	objects\CppGuiUnitTestModalDialog_swModalDialogTest.obj
-CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
+CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	/I..\..\src\swFrameworkDependent /I..\..\src\swWxGuiTesting \
 	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
 	/Fd..\..\bin\CppGuiUnitCapturePlusEmit.pdb $(____WX_SHARED) \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTDIR=\"..\..\test\TestData\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	objects\CppGuiUnitCapturePlusEmit_CppTextTestApp.obj \
 	objects\CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.obj
-VTKUNITTEST_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include /I$(CPPUNIT_INCL) \
+VTKUNITTEST_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include /I$(CPPUNIT_INCL) \
 	$(__OPT) $(__DBG) $(____DBG) /Fd..\..\bin\VTKUnitTest.pdb $(____WX_SHARED) \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/I..\..\include\wxGuiTest\VtkWxGuiTesting \
-	/DVTKDIR=\"../../test/TestData/vtk\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(VTK_INCL_FLAG) $(CPPFLAGS) $(CXXFLAGS)
+	/DVTKDIR=\"..\..\test\TestData\vtk\" \
+	/DXRCDIR=\"..\..$DIRSEP)test\TestData\xrc\" /DSRCDIR=\"..\..\" /GR /EHsc \
+	$(VTK_INCL_FLAG) $(CPPFLAGS) $(CXXFLAGS)
 VTKUNITTEST_OBJECTS =  \
 	objects\VTKUnitTest_CppTextTestApp.obj \
 	objects\VTKUnitTest_swCRVtkCaptureTest.obj
-USINGSWWXGUITESTING_CXXFLAGS = /MD$(__DBG_16) /DWIN32 /I..\..\include \
-	/I$(CPPUNIT_INCL) $(__OPT) $(__DBG) $(____DBG) \
-	/Fd..\..\bin\UsingSwWxGuiTesting.pdb $(____WX_SHARED) \
-	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
-	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
-	/DTESTDIR=\"../../test/TestData\" /DXRCDIR=\"../../src/xrc\" \
-	/DSRCDIR=\"../..\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
-USINGSWWXGUITESTING_OBJECTS =  \
-	objects\UsingSwWxGuiTesting_CppTextTestApp.obj \
-	objects\UsingSwWxGuiTesting_SimpleCRTest.obj \
-	objects\UsingSwWxGuiTesting_SimpleTest.obj
 
 ### Conditionally set variables: ###
 
@@ -268,10 +263,10 @@ __DBG = /Zi
 __DBG = 
 !endif
 !if "$(BUILD)" == "debug"
-__DBG_15 = /DEBUG
+__DBG_10 = /DEBUG
 !endif
 !if "$(BUILD)" == "release"
-__DBG_15 = 
+__DBG_10 = 
 !endif
 !if "$(BUILD)" == "debug"
 ____DBG = /D_DEBUG
@@ -280,10 +275,10 @@ ____DBG = /D_DEBUG
 ____DBG = 
 !endif
 !if "$(BUILD)" == "debug"
-__DBG_16 = d
+__DBG_13 = d
 !endif
 !if "$(BUILD)" == "release"
-__DBG_16 = 
+__DBG_13 = 
 !endif
 !if "$(WX_SHARED)" == "0"
 ____WX_SHARED = 
@@ -413,7 +408,7 @@ objects:
 
 ### Targets: ###
 
-all: ..\..\lib ..\..\bin test_for_selected_wxbuild ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\bin\CppUnitTest.exe ..\..\bin\CppGuiUnitTestEventSimulation.exe ..\..\bin\CppGuiUnitTestCaptureReplay.exe ..\..\bin\CppGuiUnitTestModalDialog.exe ..\..\bin\CppGuiUnitCapturePlusEmit.exe $(__VTKUnitTest___depname) ..\..\bin\UsingSwWxGuiTesting.exe
+all: ..\..\lib ..\..\bin test_for_selected_wxbuild ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\bin\CppUnitTest.exe ..\..\bin\CppGuiUnitTestEventSimulation.exe ..\..\bin\CppGuiUnitTestCaptureReplay.exe ..\..\bin\CppGuiUnitTestModalDialog.exe ..\..\bin\CppGuiUnitCapturePlusEmit.exe $(__VTKUnitTest___depname)
 
 clean: 
 	-if exist objects\*.obj del objects\*.obj
@@ -438,9 +433,6 @@ clean:
 	-if exist ..\..\bin\VTKUnitTest.exe del ..\..\bin\VTKUnitTest.exe
 	-if exist ..\..\bin\VTKUnitTest.ilk del ..\..\bin\VTKUnitTest.ilk
 	-if exist ..\..\bin\VTKUnitTest.pdb del ..\..\bin\VTKUnitTest.pdb
-	-if exist ..\..\bin\UsingSwWxGuiTesting.exe del ..\..\bin\UsingSwWxGuiTesting.exe
-	-if exist ..\..\bin\UsingSwWxGuiTesting.ilk del ..\..\bin\UsingSwWxGuiTesting.ilk
-	-if exist ..\..\bin\UsingSwWxGuiTesting.pdb del ..\..\bin\UsingSwWxGuiTesting.pdb
 
 ..\..\lib: 
 	if not exist ..\..\lib mkdir ..\..\lib
@@ -460,12 +452,12 @@ test_for_selected_wxbuild:
 	@if not exist $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX)\wx\setup.h \
 	exit 1
 
-../..\src/swWxGuiTesting\CapturePanel.cpp: 
-	$(WXRC) -v -c -n InitCapturePanelXRC -o ../..\src/swWxGuiTesting\CapturePanel.cpp ../..\src/xrc\CapturePanel2_wdr.xrc
+..\..\src/swWxGuiTesting\CapturePanel.cpp: 
+	$(WXRC) -v -c -n InitCapturePanelXRC -o ..\..\src/swWxGuiTesting\CapturePanel.cpp ..\..\src\xrc\CapturePanel2_wdr.xrc
 
 !if "$(USE_VTK)" == "TRUE"
-../..\src/swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp: 
-	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o ../..\src/swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp ../..\src/xrc\VtkCapturePanel_wdr.xrc
+..\..\src/swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp: 
+	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o ..\..\src/swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp ..\..\src\xrc\VtkCapturePanel_wdr.xrc
 !endif
 
 ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib: $(SWWXGUITESTING_OBJECTS)
@@ -475,41 +467,36 @@ test_for_selected_wxbuild:
 <<
 
 ..\..\bin\CppUnitTest.exe: $(CPPUNITTEST_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(CPPUNITTEST_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 ..\..\bin\CppGuiUnitTestEventSimulation.exe: $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 ..\..\bin\CppGuiUnitTestCaptureReplay.exe: $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 ..\..\bin\CppGuiUnitTestModalDialog.exe: $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(CPPGUIUNITTESTMODALDIALOG_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 ..\..\bin\CppGuiUnitCapturePlusEmit.exe: $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 !if "$(USE_VTK)" == "TRUE"
 ..\..\bin\VTKUnitTest.exe: $(VTKUNITTEST_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /LIBPATH:$(VTK_LIBS) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
+	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_10) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /LIBPATH:$(VTK_LIBS) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
 	$(VTKUNITTEST_OBJECTS)  vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib opengl32.lib glu32.lib $(__WXLIB_GL_NAME_p) $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 !endif
-
-..\..\bin\UsingSwWxGuiTesting.exe: $(USINGSWWXGUITESTING_OBJECTS) ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib
-	link /NOLOGO /OUT:$@ $(LDFLAGS) $(__DBG_15) /LIBPATH:$(WX_DIR)$(WXLIBPATH) /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) @<<
-	$(USINGSWWXGUITESTING_OBJECTS)  ..\..\lib\swWxGuiTesting$(WX3RDPARTLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
-<<
 
 objects\swWxGuiTesting_wxVTKRenderWindowInteractor.obj: ..\..\src\wxVTK\wxVTKRenderWindowInteractor.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(SWWXGUITESTING_CXXFLAGS) $**
@@ -753,13 +740,4 @@ objects\VTKUnitTest_CppTextTestApp.obj: ..\..\test\VtkTest\CppTextTestApp.cpp
 
 objects\VTKUnitTest_swCRVtkCaptureTest.obj: ..\..\test\VtkTest\swCRVtkCaptureTest.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(VTKUNITTEST_CXXFLAGS) $**
-
-objects\UsingSwWxGuiTesting_CppTextTestApp.obj: ..\..\sample\CppTextTestApp.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(USINGSWWXGUITESTING_CXXFLAGS) $**
-
-objects\UsingSwWxGuiTesting_SimpleCRTest.obj: ..\..\sample\SimpleCRTest.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(USINGSWWXGUITESTING_CXXFLAGS) $**
-
-objects\UsingSwWxGuiTesting_SimpleTest.obj: ..\..\sample\SimpleTest.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(USINGSWWXGUITESTING_CXXFLAGS) $**
 

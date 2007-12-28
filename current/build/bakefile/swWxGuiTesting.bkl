@@ -6,6 +6,9 @@
   <using module='datafiles'/>
 
   <set var="VERSION">1.6.0</set>
+
+  <set var="BUILDER_URL">com.ceridwen</set>
+
   <if cond="FORMAT=='msvc' or FORMAT=='msvs2005prj'">
     <set var='srcdir'>../..</set>
     <set-srcdir>../..</set-srcdir>
@@ -60,9 +63,11 @@
   </if>
 
   <set var='testdir' overwrite='0'>test/TestData</set>
+<!-- Note: This one is for compiling the control dialogs -->
   <set var='xrcdir' overwrite='0'>src/xrc</set>
   <set var='TESTDIR' overwrite='0'>$(srcdir)/$(testdir)</set>
-  <set var='XRCDIR' overwrite='0'>$(srcdir)/$(xrcdir)</set>
+<!-- Note: This one is for feeding to the test programs -->
+  <set var='XRCDIR' overwrite='0'>$(srcdir)/$(testdir)/xrc</set>
   <set var='VTKDIR' overwrite='0'>$(srcdir)/$(testdir)/vtk</set>
 
   <set var="WX_DIR_DEFAULT" overwrite="0">$(DOLLAR)($(ENV_VAR)WXWIN)</set>
