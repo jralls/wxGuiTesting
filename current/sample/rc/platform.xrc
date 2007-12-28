@@ -2,7 +2,7 @@
 
 <resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.3.0.1">
 
-<object class="wxFrame" subclass="wxMDIChildFrame" name="platform_child">
+<object class="wxMDIChildFrame" name="platform_child">
     <title>Platform Property Example</title>
     <centered>1</centered>
     <object class="wxFlexGridSizer">

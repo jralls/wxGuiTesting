@@ -2,7 +2,7 @@
 
 <resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.3.0.1">
 
-<object class="wxFrame" subclass="CustClassFrame" name="custom_class_child">
+<object class="wxMDIChildFrame" subclass="CustClassFrame" name="custom_class_child">
     <title>Custom Class Example</title>
     <centered>1</centered>
     <style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER</style>

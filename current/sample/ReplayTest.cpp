@@ -7,10 +7,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "Replaytest.h"
+    #pragma implementation "ReplayTest.h"
 #endif
 
-#include "Replaytest.h"
+#include "ReplayTest.h"
 
 #include <wx/notebook.h>
 #include <wx/xrc/xmlres.h>

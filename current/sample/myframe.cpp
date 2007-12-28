@@ -26,7 +26,7 @@
 
 #include "wx/sysopt.h"
 #ifdef SW_USE_WX_APP_GUI_TESTING
-#include <WxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/swWxGuiTestHelper.h>
 #endif
 //-----------------------------------------------------------------------------
 // Header of this .cpp file

@@ -16,7 +16,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 
-/*! \class Replaytest
+/*! \class ReplayTest
     \brief Test capturing of GUI interaction.
 */
 class ReplayTest : public CPPUNIT_NS::TestFixture
