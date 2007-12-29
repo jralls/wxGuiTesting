@@ -1,8 +1,15 @@
+2007-12-28    <Owner@WIDGET-2>
+
+	* sample/myframe.cpp (MyFrame, OnCustomClassToolOrMenuCommand):
+	(OnPlatformPropertyToolOrMenuCommand): Changed LoadFrame to
+	LoadObject, which is what's needed for MDI-frames.
+	
 2007-12-20  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* swWxGuiTestTempInteractive.cpp
 	(WxGuiTestTempInteractive::ShowCurrentGui): New unicode fix.
 
+	
 2007-12-23  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* swWxGuiTestTempInteractive.cpp: Rewritten to create a new dialog

@@ -107,7 +107,8 @@ MyFrame::MyFrame(wxWindow* parent)
     // since this frame will always be the top window, and thus parentless.
     // However, the current approach has source code that can be recycled
     // for other frames that aren't the top level window.]
-    wxXmlResource::Get()->LoadFrame(this, parent, wxT("main_frame"));
+    bool success= wxXmlResource::Get()->LoadObject(this, parent, wxT("main_frame"), _T("wxMDIParentFrame"));
+	wxASSERT_MSG(success, _T("Load of Frame main_frame failed"));
 
     // Set the icon for the frame.
     SetIcon(wxICON(appicon));
@@ -279,7 +280,7 @@ void MyFrame::OnUncenteredToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 void MyFrame::OnCustomClassToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     CustClassFrame* child = new CustClassFrame;
-    wxXmlResource::Get()->LoadFrame(child, this, wxT("custom_class_child"));
+    wxXmlResource::Get()->LoadObject(child, this, wxT("custom_class_child"), _T("wxMDIChildFrame"));
 
     // Make an instance of our new custom class.
     MyResizableListCtrl* a_myResizableListCtrl = new MyResizableListCtrl(child,
@@ -300,7 +301,7 @@ void MyFrame::OnCustomClassToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 void MyFrame::OnPlatformPropertyToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxMDIChildFrame* child = new wxMDIChildFrame;
-    wxXmlResource::Get()->LoadFrame(child, this, wxT("platform_child"));
+    wxXmlResource::Get()->LoadObject(child, this, wxT("platform_child"), wxT("wxMDIChildFrame"));
     child->Show();
 }
 
