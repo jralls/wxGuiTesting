@@ -1,3 +1,13 @@
+2007-12-28  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* sample/rc/custclass.xrc:
+	* sample/rc/frame.xrc:
+	* sample/rc/platform.xrc: Corrected class of MDIframes.
+	
+	* sample/myframe.cpp:
+	* sample/ReplayTest.cpp: Fixed capitalization errors exposed in Linux. 
+
+
 2007-12-28    <Owner@WIDGET-2>
 
 	* sample/myframe.cpp (MyFrame, OnCustomClassToolOrMenuCommand):
