@@ -4,6 +4,7 @@
 
   <set var='WGTS'>src/swWxGuiTesting</set>
   <set var='WGTI'>include/wxGuiTest</set>
+  <set var='WXVTK'>src/wxVTK</set>
 
   <set var='FD_SOURCES'>
     $(FDS)/Config/swConfig.cpp

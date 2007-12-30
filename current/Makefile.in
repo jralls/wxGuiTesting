@@ -26,14 +26,13 @@ CXX = @CXX@
 CXXFLAGS = @CXXFLAGS@
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
-WXSRCPATH = @WXSRCPATH@
 WX_CXXFLAGS = @WX_CXXFLAGS@
 WX_LIBS = @WX_LIBS@
+WXSRCPATH = @WXSRCPATH@
 CPPUNIT_CFLAGS = @CPPUNIT_CFLAGS@
 CPPUNIT_LIBS = @CPPUNIT_LIBS@
 VTK_CXXFLAGS = @VTK_CXXFLAGS@
 VTK_LDFLAGS = @VTK_LDFLAGS@
-WXRC = @WXRC@
 
 ### Variables: ###
 
@@ -104,12 +103,12 @@ VTKUNITTEST_OBJECTS =  \
 
 @COND_DEPS_TRACKING_0@CXXC = $(CXX)
 @COND_DEPS_TRACKING_1@CXXC = $(BK_DEPS) $(CXX)
-@COND_BUILD_DEBUG@WX3RDPARTLIBPOSTFIX = d
-@COND_BUILD_DEBUG@OPT = -O0
-@COND_BUILD_RELEASE@OPT = -02
-@COND_BUILD_DEBUG@DBG = -ggdb
-@COND_BUILD_RELEASE@DBG = 
-COND_USE_VTK_FALSE_LIB_HDRS = include/wxGuiTest/Common.h \
+@COND_WX_DEBUG_1@WX3RDPARTYLIBPOSTFIX = d
+@COND_WX_DEBUG_0@OPT = -02
+@COND_WX_DEBUG_1@OPT = -O0
+@COND_WX_DEBUG_0@DBG = 
+@COND_WX_DEBUG_1@DBG = -ggdb
+COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
 	include/wxGuiTest/Config/swConfig.h \
 	include/wxGuiTest/Config/swConfigInterface.h \
@@ -132,8 +131,8 @@ COND_USE_VTK_FALSE_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swWxGuiTestTempInteractive.h \
 	include/wxGuiTest/swWxGuiTestTimedDialogEnder.h \
 	include/wxGuiTest/swWxGuiTestWarningAsserterInterface.h
-@COND_USE_VTK_FALSE@LIB_HDRS = $(COND_USE_VTK_FALSE_LIB_HDRS)
-COND_USE_VTK_TRUE_LIB_HDRS = include/wxGuiTest/Common.h \
+@COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
+COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
 	include/wxGuiTest/Config/swConfig.h \
 	include/wxGuiTest/Config/swConfigInterface.h \
@@ -161,13 +160,13 @@ COND_USE_VTK_TRUE_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/VtkGuiTesting/swCRVtkCaptureControl.h \
 	include/wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h \
 	include/wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h
-@COND_USE_VTK_TRUE@LIB_HDRS = $(COND_USE_VTK_TRUE_LIB_HDRS)
-@COND_USE_VTK_FALSE@__CXXFLAGS = $(OPT) $(DBG) $(CPPUNIT_CFLAGS)
-@COND_USE_VTK_TRUE@__CXXFLAGS = $(OPT) $(DBG) \
-@COND_USE_VTK_TRUE@	-I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) $(CPPUNIT_CFLAGS)
-@COND_USE_VTK_FALSE@__LDFLAGS = $(CPPUNIT_LIBS)
-@COND_USE_VTK_TRUE@__LDFLAGS = $(VTK_LDFLAGS) $(CPPUNIT_LIBS)
-COND_USE_VTK_FALSE___LIB_SOURCES_OBJECTS =  \
+@COND_USE_VTK_1@LIB_HDRS = $(COND_USE_VTK_1_LIB_HDRS)
+@COND_USE_VTK_0@__CXXFLAGS = $(OPT) $(DBG) $(CPPUNIT_CFLAGS)
+@COND_USE_VTK_1@__CXXFLAGS = $(OPT) $(DBG) $(VTK_CXXFLAGS) \
+@COND_USE_VTK_1@	$(CPPUNIT_CFLAGS)
+@COND_USE_VTK_0@__LDFLAGS = $(CPPUNIT_LIBS)
+@COND_USE_VTK_1@__LDFLAGS = $(VTK_LDFLAGS) $(CPPUNIT_LIBS)
+COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/swWxGuiTesting_swConfig.o \
 	objects/swWxGuiTesting_swConfigInterface.o \
 	objects/swWxGuiTesting_swConfigManager.o \
@@ -225,8 +224,8 @@ COND_USE_VTK_FALSE___LIB_SOURCES_OBJECTS =  \
 	objects/swWxGuiTesting_swWxGuiTestTempInteractiveControl.o \
 	objects/swWxGuiTesting_swWxGuiTestTimedDialogEnder.o \
 	objects/swWxGuiTesting_CapturePanel.o
-@COND_USE_VTK_FALSE@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_FALSE___LIB_SOURCES_OBJECTS)
-COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS =  \
+@COND_USE_VTK_0@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_0___LIB_SOURCES_OBJECTS)
+COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 	objects/swWxGuiTesting_swConfig.o \
 	objects/swWxGuiTesting_swConfigInterface.o \
 	objects/swWxGuiTesting_swConfigManager.o \
@@ -290,7 +289,7 @@ COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS =  \
 	objects/swWxGuiTesting_swVtkWxGuiTestHelper.o \
 	objects/swWxGuiTesting_swWxVtkInteractorEventRecorder.o \
 	objects/swWxGuiTesting_VtkCapturePanel.o
-@COND_USE_VTK_TRUE@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS)
+@COND_USE_VTK_1@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_1___LIB_SOURCES_OBJECTS)
 @COND_PLATFORM_MAC_1@__CppUnitTest___mac_setfilecmd = \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/CppUnitTest$(EXEEXT)
 @COND_TOOLKIT_MAC@____CppUnitTest_app_Contents_PkgInfo___depname \
@@ -315,15 +314,15 @@ COND_USE_VTK_TRUE___LIB_SOURCES_OBJECTS =  \
 @COND_PLATFORM_MAC_1@	bin/CppGuiUnitCapturePlusEmit$(EXEEXT)
 @COND_TOOLKIT_MAC@____CppGuiUnitCapturePlusEmit_app_Contents_PkgInfo___depname \
 @COND_TOOLKIT_MAC@	= ./CppGuiUnitCapturePlusEmit.app/Contents/PkgInfo
-@COND_USE_VTK_TRUE@__VTKUnitTest___depname = bin/VTKUnitTest$(EXEEXT)
+@COND_USE_VTK_1@__VTKUnitTest___depname = bin/VTKUnitTest$(EXEEXT)
 @COND_PLATFORM_MAC_1@__VTKUnitTest___mac_setfilecmd = \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/VTKUnitTest$(EXEEXT)
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@____VTKUnitTest_app_Contents_PkgInfo___depname \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	= ./VTKUnitTest.app/Contents/PkgInfo
+@COND_TOOLKIT_MAC_USE_VTK_1@____VTKUnitTest_app_Contents_PkgInfo___depname \
+@COND_TOOLKIT_MAC_USE_VTK_1@	= ./VTKUnitTest.app/Contents/PkgInfo
 
 ### Targets: ###
 
-all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
+all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
 
 install: all install_swWxGuiTesting install_swWxGuiTesting_headers
 
@@ -334,9 +333,7 @@ install-strip: install
 clean: 
 	rm -rf objects/.deps objects/.pch
 	rm -f objects/*.o
-	rm -f $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
-	rm -f $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
-	rm -f lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
+	rm -f lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 	rm -f bin/CppUnitTest$(EXEEXT)
 	rm -rf CppUnitTest.app
 	rm -f bin/CppGuiUnitTestEventSimulation$(EXEEXT)
@@ -362,23 +359,17 @@ lib:
 bin: 
 	@mkdir -p bin
 
-$(srcdir)/src/swWxGuiTesting/CapturePanel.cpp: 
-	$(WXRC) -v -c -n InitCapturePanelXRC -o $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp $(srcdir)/src/xrc/CapturePanel2_wdr.xrc
-
-@COND_USE_VTK_TRUE@$(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp: 
-@COND_USE_VTK_TRUE@	$(WXRC) -v -c -n InitVtkCapturePanelXRC -o $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp $(srcdir)/src/xrc/VtkCapturePanel_wdr.xrc
-
-lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT): $(SWWXGUITESTING_OBJECTS)
+lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT): $(SWWXGUITESTING_OBJECTS)
 	rm -f $@
 	$(AR) $(AROPTIONS) $@ $(SWWXGUITESTING_OBJECTS)
 	$(RANLIB) $@
 
 install_swWxGuiTesting: 
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)/lib
-	$(INSTALL_DATA) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) $(DESTDIR)$(prefix)/lib
+	$(INSTALL_DATA) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) $(DESTDIR)$(prefix)/lib
 
 uninstall_swWxGuiTesting: 
-	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
+	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 
 install_swWxGuiTesting_headers: 
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)
@@ -394,8 +385,8 @@ uninstall_swWxGuiTesting_headers:
 	rm -f $(DESTDIR)$(prefix)/$$f; \
 	done
 
-bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
+bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppUnitTest___mac_setfilecmd)
 
@@ -404,7 +395,7 @@ bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$
 @COND_TOOLKIT_MAC@	mkdir -p ./CppUnitTest.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppUnitTest/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.CppUnitTest/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppUnitTest/" \
 @COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
 @COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppUnitTest.app/Contents/Info.plist
@@ -418,8 +409,8 @@ bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$
 
 CppUnitTest_bundle: $(____CppUnitTest_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestEventSimulation___mac_setfilecmd)
 
@@ -428,7 +419,7 @@ bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJE
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestEventSimulation.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestEventSimulation/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.CppGuiUnitTestEventSimulation/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestEventSimulation/" \
 @COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
 @COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestEventSimulation.app/Contents/Info.plist
@@ -442,8 +433,8 @@ bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJE
 
 CppGuiUnitTestEventSimulation_bundle: $(____CppGuiUnitTestEventSimulation_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestCaptureReplay___mac_setfilecmd)
 
@@ -452,7 +443,7 @@ bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS)
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestCaptureReplay.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestCaptureReplay/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.CppGuiUnitTestCaptureReplay/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestCaptureReplay/" \
 @COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
 @COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestCaptureReplay.app/Contents/Info.plist
@@ -466,8 +457,8 @@ bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS)
 
 CppGuiUnitTestCaptureReplay_bundle: $(____CppGuiUnitTestCaptureReplay_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestModalDialog___mac_setfilecmd)
 
@@ -476,7 +467,7 @@ bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitTestModalDialog.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitTestModalDialog/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.CppGuiUnitTestModalDialog/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitTestModalDialog/" \
 @COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
 @COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitTestModalDialog.app/Contents/Info.plist
@@ -490,8 +481,8 @@ bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib
 
 CppGuiUnitTestModalDialog_bundle: $(____CppGuiUnitTestModalDialog_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitCapturePlusEmit___mac_setfilecmd)
 
@@ -500,7 +491,7 @@ bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib
 @COND_TOOLKIT_MAC@	mkdir -p ./CppGuiUnitCapturePlusEmit.app/Contents/Resources
 @COND_TOOLKIT_MAC@	
 @COND_TOOLKIT_MAC@	
-@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/com.ceridwen.CppGuiUnitCapturePlusEmit/" \
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.CppGuiUnitCapturePlusEmit/" \
 @COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/CppGuiUnitCapturePlusEmit/" \
 @COND_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
 @COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./CppGuiUnitCapturePlusEmit.app/Contents/Info.plist
@@ -514,27 +505,27 @@ bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib
 
 CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_PkgInfo___depname)
 
-@COND_USE_VTK_TRUE@bin/VTKUnitTest$(EXEEXT): $(VTKUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)$(LIBEXT)
-@COND_USE_VTK_TRUE@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTLIBPOSTFIX) $(WX_LIBS)
-@COND_USE_VTK_TRUE@	
-@COND_USE_VTK_TRUE@	$(__VTKUnitTest___mac_setfilecmd)
+@COND_USE_VTK_1@bin/VTKUnitTest$(EXEEXT): $(VTKUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+@COND_USE_VTK_1@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -Llib $(LDFLAGS)  $(__LDFLAGS)  $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+@COND_USE_VTK_1@	
+@COND_USE_VTK_1@	$(__VTKUnitTest___mac_setfilecmd)
 
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest___depname)
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	mkdir -p ./VTKUnitTest.app/Contents/MacOS
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	mkdir -p ./VTKUnitTest.app/Contents/Resources
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	sed -e "s/IDENTIFIER/com.ceridwen.VTKUnitTest/" \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	-e "s/EXECUTABLE/VTKUnitTest/" \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	-e "s/VERSION/1.6.0/" \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./VTKUnitTest.app/Contents/Info.plist
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	echo -n "APPL????" >./VTKUnitTest.app/Contents/PkgInfo
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	ln -f bin/VTKUnitTest$(EXEEXT) \
-@COND_TOOLKIT_MAC_USE_VTK_TRUE@	./VTKUnitTest.app/Contents/MacOS/VTKUnitTest
+@COND_TOOLKIT_MAC_USE_VTK_1@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest___depname)
+@COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/MacOS
+@COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/Resources
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	sed -e "s/IDENTIFIER/org.wxwidgets.VTKUnitTest/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	-e "s/EXECUTABLE/VTKUnitTest/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./VTKUnitTest.app/Contents/Info.plist
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	echo -n "APPL????" >./VTKUnitTest.app/Contents/PkgInfo
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	ln -f bin/VTKUnitTest$(EXEEXT) \
+@COND_TOOLKIT_MAC_USE_VTK_1@	./VTKUnitTest.app/Contents/MacOS/VTKUnitTest
 
 VTKUnitTest_bundle: $(____VTKUnitTest_app_Contents_PkgInfo___depname)
 

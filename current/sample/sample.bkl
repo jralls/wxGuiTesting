@@ -20,7 +20,7 @@
     </description>
   </option>
 
-  <set var='BUILDER_URL'>us.ceridwen</set>
+  <set var='BUILDER_URL'>org.wxwidgets</set>
 
 <!-- Include some templates from the main build directory. This presets were lifted whole from either the wxWidgets distribution or from the wxWidgets Wiki; The wx.bkl has substantial magic which takes care of wx for us even without autoconf -->
   <include file='../build/bakefile/presets/wx.bkl'/>
@@ -31,12 +31,7 @@
 
   <set var='XRCDIR' overwrite='0'>rc</set>
 
-  <set var="WXLIBPOSTFIX">
-    <if cond="WX_DEBUG=='1' and WX_UNICODE=='1'">ud</if>
-    <if cond="WX_DEBUG=='1' and WX_UNICODE=='0'">d</if>
-    <if cond="WX_DEBUG=='Release' and WX_UNICODE=='1'">u</if>
-  </set>
-  <set var="WX3RDPARTLIBPOSTFIX">
+  <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
   </set>
 
@@ -64,7 +59,7 @@
 
     <if cond="FORMAT_SUPPORTS_CONDITIONS==0">
       <set var="CPPUNIT_INCL" make_var='1'>$(cppunitDefaultPath)/include</set>
-      <set var="CPPUNIT_LIBDIRL" make_var='1'>$(cppunitDefaultPath)/include</set>
+      <set var="CPPUNIT_LIBDIR" make_var='1'>$(cppunitDefaultPath)/bin</set>
       <set var="CPPUNIT_INCL" make_var='1'>cppunit</set>
     </if>
   </if>
@@ -116,7 +111,7 @@
   <template id='wxGuiTest'>
     <include>$(wxGuiTestPath)/include</include>
     <lib-path>$(wxGuiTestPath)/lib</lib-path>
-    <sys-lib>swWxGuiTesting$(WX3RDPARTLIBPOSTFIX)</sys-lib>
+    <sys-lib>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
  </template>
   
   <template id='optimize'>

@@ -35,7 +35,21 @@
 
 \section build Building:
 
-\subsection msw Microsoft NMake:
+\subsection Micrsoft Windows
+\subsubsection Enivronment Variables:
+Set the following environment variables. If you're going to use nmake
+from the command prompt, you can just do it from the command line
+first; otherwise, use the Control Panel.
+
+WXWIN=[DRIVE:]\Path\to\wxWidgets\install\directory
+CPPUNIT=[DRIVE:]\Path\to\CppUnit\install\directory
+VTK_DIR=[DRIVE:]\Path\to\VTK\install\directory 
+     (if you're going to use VTK)
+
+If the DLLs for wxWidgets, CppUnit and VTK aren't already on your
+path, fix that too while you're at it.
+
+\subsubsection msw Microsoft NMake:
 
 It is important to install wxWidgets, CppUnit, and (if used) VTK on
 paths with no spaces in them.
@@ -45,20 +59,32 @@ makefile.vc. Edit config.vc to define the various variables. You'll
 need to set the WX_SHARED, WX_DEBUG, WX_UNICODE, WX_MONOLITHIC, and
 WX_VERSION to match a wxWidgets library which you have installed
 already. SHARED, UNICODE, and BUILD set the parameters for the
-swWxGuiTesting library and test applications. CPPUNIT_INCL must point
-at your CppUnit header directory, CPPUNIT_LIBDIR at the directory
-containing the cppunit library you intend to use, and CPPUNIT_LIB must
-be the name of the binding library you want (Normally this would be
-one of cppunit.lib, cppunitd.lib, cppunit_dll.lib, or
-cppunitd_dll.lib). If you're using VTK, set USE_VTK to TRUE and set
-the VTK variables as you did for the cppunit ones. WXRC is the path to
-the WXRC program, usually in $WXWIN/utils/wxrc/vc_mswxxx/wxrc.ex,
-where vc_mswxxx depends on which option you picked when you built
-wxWidgets. For example, a shared unicode debug version would be
-vc_mswuddll.
+swWxGuiTesting library and test applications.  If you're using VTK,
+set USE_VTK to TRUE.
 
 Now run nmake -f makefile.vc. The library and executables will be
 build in the present directory.
+
+\subsection msvs  Microsoft Visual Studio 6®:
+
+You'll find the solution and project files in build/msw; open MSVS and
+load swWxGuiTesting.sln.
+
+Now comes the fun part, because there's no automatic way to configure
+MSVS.
+
+First select from the list of builds the one which matches your
+wxWidgets installation and build intentions (For example, DLL Unicode
+Debug Multilib  USE_VTK=0).
+
+If you're using a build with USE_VTK=0, it's prudent to open
+Configuration Manager (select the solution, then right-click: It's on
+the context menu. It's also available from the property pages) and
+make sure that the VTKUnitTest project isn't selected for building.
+
+If you set up the environment variables correctly, you're ready to go.
+Build the solution (either from the Build Menu or by pressing F7 on
+the keyboard). 
 
 \subsection autoconf GNU Autoconf (UNIX and Macintosh OSX):
 
@@ -85,41 +111,7 @@ primary library found by wx-config. If you want otherwise, tell
 configure (e.g., `../configure DEBUG=0 to build a library without
 symbols against a debug version of wxWidgets).
 
-\subsection msvs  Microsoft Visual Studio 6®:
 
-You'll find the solution and project files in build/msw; open MSVS and
-load swWxGuiTesting.sln.
-
-Now comes the fun part, because there's no automatic way to configure
-MSVS.
-
-First select from the huge list of builds the one which matches your
-wxWidgets installation and build intentions (For example, Debug Shared
-Unicode Debug Unicode USE_VTK=FALSE).
-
-Next, if VTK is false, you'll want to open the solution's options and
-turn off building VtkTest.
-
-Next, highlight all of the projects and open the preferences
-dialog. Add the path to wxWidgets, CppUnit, and (if used) VTK includes
-to the "include directories" on the C/C++ page. Press "Apply" and
-unhighlight the swWxGuiTesting project and navigate to the linker
-tab. Find the additional library directories item and add the needed
-paths. Navigate to the additional libraries item and add the cppunit
-library (one of cppunit.lib, cppunitd.lib, cppunit_dll.lib, or
-cppunitd_dll.lib) to the list. Press "OK".
-
-You will also have to run (either by hand or by creating a new build
-step in the project properties for swWxGuiTesting) 
-\code
-wxrc -v -c -n InitCapturePanelXRC -o test/CapturePanel.cpp test/TestData/xrc/CapturePanel2_wdr.xrc 
-\endcode
-and (if using Vtk)
-\code
-wxrc -v -c -n InitCapturePanelXRC -o test/VtkCapturePanel.cpp test/TestData/xrc/VtkCapturePanel_wdr.xrc 
-\endcode
-Build the solution (either from the Build Menu or by pressing F7 on
-the keyboard). 
 
 */
 

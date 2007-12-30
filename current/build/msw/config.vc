@@ -28,17 +28,11 @@ CPPFLAGS =
 # Standard linker flags 
 LDFLAGS = 
 
-# Path to the wx sources for retrieving the Info.plist and wxmac.icns templates 
-WXSRCPATH = /usr/local/src/wxMac-2.8.6
-
-# Used to turn on bundling for MACOSX [GTK,MAC]
-TOOLKIT = GTK
-
 # Use DLL build of wx library? [0,1]
-WX_SHARED = 1
+WX_SHARED = 0
 
 # Use Unicode build of wxWidgets? [0,1]
-WX_UNICODE = 1
+WX_UNICODE = 0
 
 # Use debug build of wxWidgets (define __WXDEBUG__)? [0,1]
 WX_DEBUG = 1
@@ -52,33 +46,21 @@ WX_MONOLITHIC = 0
 # The directory where wxWidgets library is installed 
 WX_DIR = $(WXWIN)
 
-# What type of library to build ? [0,1]
-SHARED = 0
-
-# Should UNICODE be enabled ? [0,1]
-UNICODE = 1
-
-# Type of compiled binaries [debug,release]
-BUILD = debug
-
 # Path to CppUnit Headers 
-CPPUNIT_INCL = c:\cppunit-1.12.0\include
+CPPUNIT_INCL = $(CPPUNIT)\include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR =c:\cppunit-1.12.0\lib 
+CPPUNIT_LIBDIR = $(CPPUNIT)\lib
 
 # Library names needed for CppUnit to link 
-CPPUNIT_LIB = cppunitd_dll
+CPPUNIT_LIB = cppunit$(WX3RDPARTYLIBPOSTFIX)_dll
 
-#  [TRUE,FALSE]
-USE_VTK = FALSE
+#  [0,1]
+USE_VTK = 0
 
 # Path to VTK headers 
-VTK_INCL = 
+VTK_INCL = $(VTK)\include
 
 # Path to VTK libraries 
-VTK_LIBS = 
-
-# Path to find the wxrc executable, needed for parsing XRC files 
-WXRC = $(WXWIN)\utils\wxrc\vc_mswuddll\wxrc.exe
+VTK_LIBDIR = $(VTK)\lib
 

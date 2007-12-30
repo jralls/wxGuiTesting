@@ -6,36 +6,6 @@ dnl Do not modify, all changes will be overwritten!
 
 BAKEFILE_AUTOCONF_INC_M4_VERSION="0.2.2"
 
-dnl ### begin block 20_COND_BUILD_DEBUG[swWxGuiTesting.bkl] ###
-    COND_BUILD_DEBUG="#"
-    if test "x$BUILD" = "xdebug" ; then
-        COND_BUILD_DEBUG=""
-    fi
-    AC_SUBST(COND_BUILD_DEBUG)
-dnl ### begin block 20_COND_BUILD_DEBUG_UNICODE_0[swWxGuiTesting.bkl] ###
-    COND_BUILD_DEBUG_UNICODE_0="#"
-    if test "x$BUILD" = "xdebug" -a "x$UNICODE" = "x0" ; then
-        COND_BUILD_DEBUG_UNICODE_0=""
-    fi
-    AC_SUBST(COND_BUILD_DEBUG_UNICODE_0)
-dnl ### begin block 20_COND_BUILD_DEBUG_UNICODE_1[swWxGuiTesting.bkl] ###
-    COND_BUILD_DEBUG_UNICODE_1="#"
-    if test "x$BUILD" = "xdebug" -a "x$UNICODE" = "x1" ; then
-        COND_BUILD_DEBUG_UNICODE_1=""
-    fi
-    AC_SUBST(COND_BUILD_DEBUG_UNICODE_1)
-dnl ### begin block 20_COND_BUILD_RELEASE[swWxGuiTesting.bkl] ###
-    COND_BUILD_RELEASE="#"
-    if test "x$BUILD" = "xrelease" ; then
-        COND_BUILD_RELEASE=""
-    fi
-    AC_SUBST(COND_BUILD_RELEASE)
-dnl ### begin block 20_COND_BUILD_RELEASE_UNICODE_1[swWxGuiTesting.bkl] ###
-    COND_BUILD_RELEASE_UNICODE_1="#"
-    if test "x$BUILD" = "xrelease" -a "x$UNICODE" = "x1" ; then
-        COND_BUILD_RELEASE_UNICODE_1=""
-    fi
-    AC_SUBST(COND_BUILD_RELEASE_UNICODE_1)
 dnl ### begin block 20_COND_DEPS_TRACKING_0[swWxGuiTesting.bkl] ###
     COND_DEPS_TRACKING_0="#"
     if test "x$DEPS_TRACKING" = "x0" ; then
@@ -60,30 +30,42 @@ dnl ### begin block 20_COND_TOOLKIT_MAC[swWxGuiTesting.bkl] ###
         COND_TOOLKIT_MAC=""
     fi
     AC_SUBST(COND_TOOLKIT_MAC)
-dnl ### begin block 20_COND_TOOLKIT_MAC_USE_VTK_TRUE[swWxGuiTesting.bkl] ###
-    COND_TOOLKIT_MAC_USE_VTK_TRUE="#"
-    if test "x$TOOLKIT" = "xMAC" -a "x$USE_VTK" = "xTRUE" ; then
-        COND_TOOLKIT_MAC_USE_VTK_TRUE=""
+dnl ### begin block 20_COND_TOOLKIT_MAC_USE_VTK_1[swWxGuiTesting.bkl] ###
+    COND_TOOLKIT_MAC_USE_VTK_1="#"
+    if test "x$TOOLKIT" = "xMAC" -a "x$USE_VTK" = "x1" ; then
+        COND_TOOLKIT_MAC_USE_VTK_1=""
     fi
-    AC_SUBST(COND_TOOLKIT_MAC_USE_VTK_TRUE)
-dnl ### begin block 20_COND_USE_VTK_FALSE[swWxGuiTesting.bkl] ###
-    COND_USE_VTK_FALSE="#"
-    if test "x$USE_VTK" = "xFALSE" ; then
-        COND_USE_VTK_FALSE=""
+    AC_SUBST(COND_TOOLKIT_MAC_USE_VTK_1)
+dnl ### begin block 20_COND_USE_VTK_0[swWxGuiTesting.bkl] ###
+    COND_USE_VTK_0="#"
+    if test "x$USE_VTK" = "x0" ; then
+        COND_USE_VTK_0=""
     fi
-    AC_SUBST(COND_USE_VTK_FALSE)
-dnl ### begin block 20_COND_USE_VTK_TRUE[swWxGuiTesting.bkl] ###
-    COND_USE_VTK_TRUE="#"
-    if test "x$USE_VTK" = "xTRUE" ; then
-        COND_USE_VTK_TRUE=""
+    AC_SUBST(COND_USE_VTK_0)
+dnl ### begin block 20_COND_USE_VTK_1[swWxGuiTesting.bkl] ###
+    COND_USE_VTK_1="#"
+    if test "x$USE_VTK" = "x1" ; then
+        COND_USE_VTK_1=""
     fi
-    AC_SUBST(COND_USE_VTK_TRUE)
+    AC_SUBST(COND_USE_VTK_1)
+dnl ### begin block 20_COND_WX_DEBUG_0[swWxGuiTesting.bkl] ###
+    COND_WX_DEBUG_0="#"
+    if test "x$WX_DEBUG" = "x0" ; then
+        COND_WX_DEBUG_0=""
+    fi
+    AC_SUBST(COND_WX_DEBUG_0)
 dnl ### begin block 20_COND_WX_DEBUG_0_WX_UNICODE_1[swWxGuiTesting.bkl] ###
     COND_WX_DEBUG_0_WX_UNICODE_1="#"
     if test "x$WX_DEBUG" = "x0" -a "x$WX_UNICODE" = "x1" ; then
         COND_WX_DEBUG_0_WX_UNICODE_1=""
     fi
     AC_SUBST(COND_WX_DEBUG_0_WX_UNICODE_1)
+dnl ### begin block 20_COND_WX_DEBUG_1[swWxGuiTesting.bkl] ###
+    COND_WX_DEBUG_1="#"
+    if test "x$WX_DEBUG" = "x1" ; then
+        COND_WX_DEBUG_1=""
+    fi
+    AC_SUBST(COND_WX_DEBUG_1)
 dnl ### begin block 20_COND_WX_DEBUG_1_WX_UNICODE_0[swWxGuiTesting.bkl] ###
     COND_WX_DEBUG_1_WX_UNICODE_0="#"
     if test "x$WX_DEBUG" = "x1" -a "x$WX_UNICODE" = "x0" ; then
