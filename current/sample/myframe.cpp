@@ -97,7 +97,7 @@ END_EVENT_TABLE()
 //-----------------------------------------------------------------------------
 
 // Constructor
-MyFrame::MyFrame(wxWindow* parent)
+bool MyFrame::Create(wxWindow* parent)
 {
     // Load up this frame from XRC. [Note, instead of making a class's
     // constructor take a wxWindow* parent with a default value of NULL,
@@ -130,6 +130,7 @@ MyFrame::MyFrame(wxWindow* parent)
     // here.
     CreateStatusBar( 1 );
 #endif // wxUSE_STATUSBAR
+	return success;
 }
 
 //-----------------------------------------------------------------------------
@@ -280,8 +281,8 @@ void MyFrame::OnUncenteredToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 void MyFrame::OnCustomClassToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     CustClassFrame* child = new CustClassFrame;
-    wxXmlResource::Get()->LoadObject(child, this, wxT("custom_class_child"), _T("wxMDIChildFrame"));
-
+    bool success = wxXmlResource::Get()->LoadObject(child, this, wxT("custom_class_child"), _T("wxMDIChildFrame"));
+	wxASSERT_MSG(success, _T("Failed to load Custom Class Frame"));
     // Make an instance of our new custom class.
     MyResizableListCtrl* a_myResizableListCtrl = new MyResizableListCtrl(child,
                                                 wxID_ANY,
@@ -301,8 +302,9 @@ void MyFrame::OnCustomClassToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 void MyFrame::OnPlatformPropertyToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxMDIChildFrame* child = new wxMDIChildFrame;
-    wxXmlResource::Get()->LoadObject(child, this, wxT("platform_child"), wxT("wxMDIChildFrame"));
-    child->Show();
+    bool success = wxXmlResource::Get()->LoadObject(child, this, wxT("platform_child"), wxT("wxMDIChildFrame"));
+	wxASSERT_MSG(success, _T("Failed to load Platform Property Frame"));
+	child->Show();
 }
 
 

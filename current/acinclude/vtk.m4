@@ -62,7 +62,7 @@ AC_DEFUN([AM_PATH_VTK],
       dnl set VTK c,cpp,ld flags
       VTK_CFLAGS="-I$VTK_PREFIX/include/vtk$vtk_suffix"
       VTK_LDFLAGS="-L$VTK_PREFIX/lib $VTK_LIBS"
-      USE_VTK="TRUE"
+      USE_VTK="1"
 
                     OLD_CFLAGS=$CFLAGS
                     OLD_CXXFLAGS=$CXXFLAGS
@@ -107,7 +107,7 @@ AC_DEFUN([AM_PATH_VTK],
           AC_MSG_RESULT([no])
           VTK_CFLAGS=""
           VTK_LDFLAGS=""
-	  USE_VTK="FALSE"
+	  USE_VTK="0"
 	  $3
         fi #$vtkVersion="OK"
       else # -n $1

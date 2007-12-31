@@ -31,7 +31,7 @@ class MyFrame : public wxMDIParentFrame
 public:
 
     // Constructor.
-    MyFrame( wxWindow* parent=(wxWindow *)NULL);
+    bool Create( wxWindow* parent=(wxWindow *)NULL);
 
 private:
 

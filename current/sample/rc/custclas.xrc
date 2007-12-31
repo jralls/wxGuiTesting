@@ -5,7 +5,7 @@
 <object class="wxMDIChildFrame" subclass="CustClassFrame" name="custom_class_child">
     <title>Custom Class Example</title>
     <centered>1</centered>
-    <style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER</style>
+<!--    <style>wxCAPTION|wxSYSTEM_MENU|wxRESIZE_BORDER</style>-->
     <object class="wxFlexGridSizer">
         <cols>1</cols>
         <rows>0</rows>

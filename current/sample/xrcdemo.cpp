@@ -135,11 +135,11 @@ bool MyApp::OnInit()
     // Make an instance of your derived frame. Passing NULL (the default value
     // of MyFrame's constructor is NULL) as the frame doesn't have a parent
     // since it is the main application window.
-    MyFrame *frame = new MyFrame();
-
+    MyFrame *frame = new MyFrame;
+	frame->Create();
     // Show the frame as it's created initially hidden.
     frame->Show(true);
-
+	SetTopWindow(frame);
     // Return true to tell program to continue (false would terminate).
     return true;
 }

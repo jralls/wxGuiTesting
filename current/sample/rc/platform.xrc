@@ -4,7 +4,7 @@
 
 <object class="wxMDIChildFrame" name="platform_child">
     <title>Platform Property Example</title>
-    <centered>1</centered>
+<!--    <centered>1</centered> -->
     <object class="wxFlexGridSizer">
         <cols>1</cols>
         <rows>0</rows>
