@@ -647,7 +647,6 @@ WX_LIBS
 WX_LIBS_STATIC
 WX_VERSION
 WX_RESCOMP
-WXRC
 CPPUNIT_CONFIG
 CPPUNIT_CFLAGS
 CPPUNIT_LIBS
@@ -729,7 +728,6 @@ CFLAGS
 LDFLAGS
 LIBS
 CPPFLAGS
-WXRC
 CXX
 CXXFLAGS
 CCC'
@@ -1337,7 +1335,6 @@ Some influential environment variables:
   LIBS        libraries to pass to the linker, e.g. -l<library>
   CPPFLAGS    C/C++/Objective C preprocessor flags, e.g. -I<include dir> if
               you have headers in a nonstandard directory <include dir>
-  WXRC        Path to wxWidget's wxrc resource compiler
   CXX         C++ compiler command
   CXXFLAGS    C++ compiler flags
 
@@ -2921,7 +2918,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 #AM_PATH_VTK
   VTK_CFLAGS=""
   VTK_LDFLAGS=""
-  USE_VTK="FALSE"
+  USE_VTK="0"
     if [ $with_vtk = "yes" ]; then
         with_vtk="/usr/local"
   fi
@@ -3317,57 +3314,6 @@ else
       wx_prefix=`wx-config --prefix`;
       echo "wx_prefix set to $wx_prefix by wx-config";
 fi
-
-
-
-  if test "x$WX_CONFIG_NAME" = x; then
-    { { echo "$as_me:$LINENO: error: The wxrc tests must run after wxWidgets test." >&5
-echo "$as_me: error: The wxrc tests must run after wxWidgets test." >&2;}
-   { (exit 1); exit 1; }; }
-  else
-
-    { echo "$as_me:$LINENO: checking for wxrc" >&5
-echo $ECHO_N "checking for wxrc... $ECHO_C" >&6; }
-
-    if test "x$WXRC" = x ; then
-
-    wx_ver_ok=""
-    if test "x$WX_VERSION" != x ; then
-      if test $wx_config_major_version -gt 2; then
-        wx_ver_ok=yes
-      else
-        if test $wx_config_major_version -eq 2; then
-           if test $wx_config_minor_version -gt 5; then
-              wx_ver_ok=yes
-           else
-              if test $wx_config_minor_version -eq 5; then
-                 if test $wx_config_micro_version -ge 3; then
-                    wx_ver_ok=yes
-                 fi
-              fi
-           fi
-        fi
-      fi
-    fi
-
-      if test -n "$wx_ver_ok"; then
-        WXRC=`$WX_CONFIG_WITH_ARGS --utility=wxrc`
-      fi
-    fi
-
-    if test "x$WXRC" = x ; then
-      { echo "$as_me:$LINENO: result: not found" >&5
-echo "${ECHO_T}not found" >&6; }
-      :
-    else
-      { echo "$as_me:$LINENO: result: $WXRC" >&5
-echo "${ECHO_T}$WXRC" >&6; }
-      :
-    fi
-
-
-  fi
-
 
 
 
@@ -6952,7 +6898,6 @@ WX_LIBS!$WX_LIBS$ac_delim
 WX_LIBS_STATIC!$WX_LIBS_STATIC$ac_delim
 WX_VERSION!$WX_VERSION$ac_delim
 WX_RESCOMP!$WX_RESCOMP$ac_delim
-WXRC!$WXRC$ac_delim
 CPPUNIT_CONFIG!$CPPUNIT_CONFIG$ac_delim
 CPPUNIT_CFLAGS!$CPPUNIT_CFLAGS$ac_delim
 CPPUNIT_LIBS!$CPPUNIT_LIBS$ac_delim
@@ -6979,6 +6924,7 @@ IF_GNU_MAKE!$IF_GNU_MAKE$ac_delim
 PLATFORM_UNIX!$PLATFORM_UNIX$ac_delim
 PLATFORM_WIN32!$PLATFORM_WIN32$ac_delim
 PLATFORM_MSDOS!$PLATFORM_MSDOS$ac_delim
+PLATFORM_MAC!$PLATFORM_MAC$ac_delim
 _ACEOF
 
   if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
@@ -7020,7 +6966,6 @@ _ACEOF
 ac_delim='%!_!# '
 for ac_last_try in false false false false false :; do
   cat >conf$$subs.sed <<_ACEOF
-PLATFORM_MAC!$PLATFORM_MAC$ac_delim
 PLATFORM_MACOS!$PLATFORM_MACOS$ac_delim
 PLATFORM_MACOSX!$PLATFORM_MACOSX$ac_delim
 PLATFORM_OS2!$PLATFORM_OS2$ac_delim
@@ -7068,7 +7013,7 @@ LIBOBJS!$LIBOBJS$ac_delim
 LTLIBOBJS!$LTLIBOBJS$ac_delim
 _ACEOF
 
-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 46; then
+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 45; then
     break
   elif $ac_last_try; then
     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

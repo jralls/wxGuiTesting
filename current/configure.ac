@@ -34,7 +34,6 @@ else
       wx_prefix=`wx-config --prefix`;
       echo "wx_prefix set to $wx_prefix by wx-config";
 fi
-AM_PATH_WXRC
 
 AM_PATH_CPPUNIT([1.10.0], cppunit=1, cppunit=0)
 if test "$cppunit" != 1; then

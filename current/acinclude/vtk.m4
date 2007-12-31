@@ -37,7 +37,7 @@ AC_DEFUN([AM_PATH_VTK],
 #AM_PATH_VTK
   VTK_CFLAGS=""
   VTK_LDFLAGS=""
-  USE_VTK="FALSE"
+  USE_VTK="0"
   dnl do we want to check for VTK ?
   if [[ $with_vtk = "yes" ]]; then
     dnl in case user wrote --with-vtk=yes
