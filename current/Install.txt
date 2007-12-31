@@ -97,14 +97,25 @@ make install
 \endcode
 If you don't specify otherwise (via the --prefix option to configure)
 your library and headers will wind up in /usr/local/lib and
-/usr/local/include.
+/usr/local/include, respectively.
 
 If you want VTK support, specify --with-vtk=/path/to/VTK. If you're
 using a version of VTK other than 5.0, specify --with-vtk-version=#.#
 (replacing #.# with the actual version number, of course).
 
-The test and sample apps will stay in your build directory. MacOSX
-will build application bundles for you. 
+The test and sample apps will stay in your build directory (in the bin
+subdirectory). 
+
+MacOSX note: The Makefile can build app bundles for you, but you need
+to tell it where your wxWidgets sources are, e.g. 
+\code
+../configure WXSRCPATH=/usr/local/src/wxMac-2.8.6
+\endcode
+so that it can find the Info.plist.in file. If you don't have sources
+(OSX Tiger and Leopard both include wxWidgets), there's one from
+wxWidgets 2.8.4 in build/macosx/src/mac/carbon. Just set WXSRCPATH to
+../build/macosx (assuming that you're building in a subdirectory of
+this one).
 
 By default, configure will set SHARED, UNICODE, and DEBUG to match the
 primary library found by wx-config. If you want otherwise, tell
