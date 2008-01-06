@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bakefile-gen>
+<bakefile-gen xmlns="http://www.bakefile.org/schema/bakefile-gen"
+	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:schemaLocation="file:///usr/local/bakefile-svn/share/bakefile/schema/bakefile-gen.xsd">
 
   <input>
     swWxGuiTesting.bkl
   </input>
 
   <add-formats>
-    autoconf,msvs2005prj,msvc
+    autoconf,msvs2005prj,msvc,msvc6prj,xcode2
   </add-formats>
 
  <!-- Directories where the files go: -->
@@ -22,8 +24,17 @@
     -o../msw/makefile.vc
   </add-flags>
 
+  <add-flags files="swWxGuiTesting.bkl" formats="msvc6prj">
+    -o../msw/swWxGuiTesting.dsw
+  </add-flags>
+
   <add-flags files="swWxGuiTesting.bkl" formats="msvc">
     -DOPTIONS_FILE=config.vc
+  </add-flags>
+
+  <add-flags files="swWxGuiTesting.bkl" formats="xcode2">
+    -o../macosx/swWxGuiTesting.xcodeproj
+
   </add-flags>
 
 

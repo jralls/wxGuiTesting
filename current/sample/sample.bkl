@@ -5,22 +5,6 @@
 
   <set var='VERSION'>1.0.0</set>
 
-  <option name='TOOLKIT' force='1' cond="FORMAT in ['autoconf', 'gnu']">
-	<default-value>GTK</default-value>
-	<values>GTK,MAC</values>
-	<description>
-	  Used to turn on bundling for MACOSX
-	</description>
-  </option>	
-
-  <option name='WXSRCPATH' force='1' cond="FORMAT in ['autoconf', 'gnu']" category='path'>
-    <default-value></default-value>
-    <description> 
-      Path to the wx sources for retrieving the Info.plist and wxmac.icns templates
-    </description>
-  </option>
-
-  <set var='BUILDER_URL'>org.wxwidgets</set>
 
 <!-- Include some templates from the main build directory. This presets were lifted whole from either the wxWidgets distribution or from the wxWidgets Wiki; The wx.bkl has substantial magic which takes care of wx for us even without autoconf -->
   <include file='../build/bakefile/presets/wx.bkl'/>
@@ -29,40 +13,14 @@
     <include file='../build/bakefile/presets/osx_bundle.bkl'/>
   </if>
 
-  <set var='XRCDIR' overwrite='0'>rc</set>
+
+  <set var='XRCDIR' make_var=1 overwrite='0'>rc</set>
 
   <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
   </set>
 
-<!-- Set up path for CppUnit includes and library for non-autoconf systems -->
-  <if cond="FORMAT!='autoconf'">
-
-    <set var="cppunitDefaultPath">
-      <if cond="PLATFORM_UNIX=='1'">/usr/local/cppunit-1.12</if>
-      <if cond="PLATFORM_WIN32=='1'">\cppunit-1.12</if>
-    </set>
-
-    <option name="CPPUNIT_INCL" cond="FORMAT_SUPPORTS_CONDITIONS==1" category="path">
-      <default-value>$(cppunitDefaultPath)/include</default-value>
-      <description>Path to CppUnit Headers</description>
-    </option>
-    <option name="CPPUNIT_LIBDIR" cond="FORMAT_SUPPORTS_CONDITIONS==1" category="path">
-      <default-value>$(cppunitDefaultPath)/lib</default-value>
-      <description>Path to CppUnit Libraries</description>
-    </option>
-
-    <option name="CPPUNIT_LIB" cond="FORMAT_SUPPORTS_CONDITIONS==1" category="path">
-      <default-value>cppunit</default-value>
-      <description>Library names needed for CppUnit to link</description>
-    </option>
-
-    <if cond="FORMAT_SUPPORTS_CONDITIONS==0">
-      <set var="CPPUNIT_INCL" make_var='1'>$(cppunitDefaultPath)/include</set>
-      <set var="CPPUNIT_LIBDIR" make_var='1'>$(cppunitDefaultPath)/bin</set>
-      <set var="CPPUNIT_INCL" make_var='1'>cppunit</set>
-    </if>
-  </if>
+  <include file="presets/cppunit.bkl"/>
 
 <!-- And the path to the wxGuiTesting library and includes -->
 
@@ -79,12 +37,6 @@
   <if cond="FORMAT_SUPPORTS_CONDITIONS==0">
     <set var='wxGuiTestPathDefault'  make_var='1'>$(wxGuiTestPathDefault)</set>
    </if>
-
-<!-- For autoconf, we just need to pull in the flags that configure discovers for us -->
-  <if  cond="FORMAT=='autoconf'">
-    <option name="CPPUNIT_CFLAGS" category="path"/>
-    <option name="CPPUNIT_LIBS" category="path"/>
-  </if>
 
 <!-- Set up the build flags for autoconf -->
   <set var='OPT'>
@@ -108,7 +60,7 @@
 <!-- Now we begin defining the build -->
 
 <!-- The location of the build path. This trick prevents things getting too ugly in IDE project files -->
-  <template id='wxGuiTest'>
+  <template id='wxGuiTest' template="cppunit">
     <include>$(wxGuiTestPath)/include</include>
     <lib-path>$(wxGuiTestPath)/lib</lib-path>
     <sys-lib>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
@@ -137,21 +89,6 @@
 
   <template id='testApp' template='wxGuiTest' template_append='App'>
     <app-type>console</app-type>
-    <if cond="FORMAT!='autoconf'">
-      <include >$(CPPUNIT_INCL)</include>
-    </if>
-    <if cond="FORMAT=='autoconf'">
-      <cflags>$(__CFLAGS)</cflags>
-      <cxxflags>$(__CXXFLAGS)</cxxflags>
-    </if>
-    <if cond="FORMAT=='autoconf'">
-      <ldflags >$(__LDFLAGS)</ldflags>
-    </if>
-    <if cond="FORMAT!='autoconf'">
-      <lib-path >$(CPPUNIT_LIBDIR)</lib-path>
-      <sys-lib >$(CPPUNIT_LIB)</sys-lib>
-    </if>
-
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SW_USE_WX_APP_GUI_TESTING</define>
     <if cond="FORMAT!='autoconf'">
@@ -204,7 +141,7 @@
 -->
 
 <!-- Demonstrating the data-files feature, we ensure that the required resource files are moved after an out-of-source build -->
-  <copy-files id="data">
+  <copy-files id="data" cond="FORMAT_SUPPORTS_ACTIONS='1'">
     <dstdir>$(BUILDDIR)/rc</dstdir>
     <srcdir>$(SRCDIR)/rc</srcdir>
     <files>

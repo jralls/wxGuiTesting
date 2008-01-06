@@ -50,7 +50,7 @@ TOOLKIT := MAC
 WXSRCPATH := /usr/local/src/wxMac-2.8.4
 
 # Use monolithic build of wxWidgets? [0,1]
-WX_MONOLITHIC := 0
+WX_MONOLITHIC := 1
 
 # The directory where wxWidgets library is installed 
 WX_DIR := $(WXWIN)
@@ -74,10 +74,10 @@ WX_DEBUG := $(shell $(WX_CONFIG) --selected-config | cut -d '-' -f 3 | sed 's/de
 WX_VERSION := $(shell $(WX_CONFIG) --selected-config | sed -e 's/.*-\([0-9]*\)\.\([0-9]*\)$$/\1\2/')
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL := /usr/local/cppunit-1.12.0/include
+CPPUNIT_INCL := /usr/local/cppunit-1.12/include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR := /usr/local/cppunit-1.12.0/lib
+CPPUNIT_LIBDIR := /usr/local/cppunit-1.12/lib
 
 # Library names needed for CppUnit to link 
 CPPUNIT_LIB := cppunit

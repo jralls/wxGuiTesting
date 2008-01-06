@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Add paths to includes and libraries for CppUnit testing framework. -->
+<makefile>
+  <if cond="FORMAT!='autoconf'">
+
+    <set var="CPPUNIT_DIR" overwrite='0' >$(DOLLAR)($(ENV_VAR)CPPUNIT)</set>
+
+    <set var="cppunit_libname">
+      <if cond="PLATFORM_WIN32=='0'">cppunit$(WX3RDPARTYLIBPOSTFIX)</if>
+      <if cond="PLATFORM_WIN32=='1'">cppunit$(WX3RDPARTYLIBPOSTFIX)_dll</if>
+    </set>
+
+    <option name="CPPUNIT_INCL" category="path">
+      <default-value>$(CPPUNIT_DIR)$(DIRSEP)include</default-value>
+      <description>Path to CppUnit Headers</description>
+    </option>
+    <option name="CPPUNIT_LIBDIR" category="path">
+      <default-value>$(CPPUNIT_DIR)$(DIRSEP)lib</default-value>
+      <description>Path to CppUnit Libraries</description>
+    </option>
+
+    <option name="CPPUNIT_LIB" category="path">
+      <default-value>$(cppunit_libname)</default-value>
+      <description>Library names needed for CppUnit to link</description>
+    </option>
+
+    <template id='CppUnit'>
+      <include>$(CPPUNIT_INCL)</include>
+      <lib-path>$(CPPUNIT_LIBDIR)</lib-path>
+      <sys-lib>$(CPPUNIT_LIB)</sys-lib>
+    </template>
+
+  </if>
+
+  <if  cond="FORMAT=='autoconf'">
+    <option name="CPPUNIT_CFLAGS" category="path"/>
+    <option name="CPPUNIT_LIBS" category="path"/>
+
+    <template id="CppUnit">
+      <cflags>$(CPPUNIT_CFLAGS)</cflags>
+      <cxxflags>$(CPPUNIT_CFLAGS)</cxxflags>
+      <ldflags>$(CPPUNIT_LIBS)</ldflags>
+    </template>
+  </if>
+
+</makefile>

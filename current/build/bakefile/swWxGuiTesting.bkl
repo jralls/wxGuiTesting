@@ -10,9 +10,23 @@
   <if cond="FORMAT in ['autoconf', 'gnu']" >
   </if>
 
-  <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
-    <set var='srcdir'>..$(DIRSEP)..</set>
-    <set-srcdir>..$(DIRSEP)..</set-srcdir>
+  <!-- 
+     Don't use DIRSEP in srcdir: It gets passed in to source files and
+     the Win32 compilers (correctly) think "\" is an escape. -->
+
+  <set var='defaultSrcDir'>
+    <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj', 'xcode2']">../..</if>
+    <if cond="FORMAT not in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">..</if>
+  </set>
+  <if cond="FORMAT!='autoconf'">
+    <option name='srcdir' category='path' >
+      <default-value>$(defaultSrcDir)</default-value>
+    </option>
+  </if>
+
+
+   <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
+   <set-srcdir>..$(DIRSEP)..</set-srcdir>
   </if>
 
   <set var='BUILDDIR' >
@@ -52,64 +66,21 @@
   <include file='presets/wx.bkl'/>
   <include file='presets/utils.bkl'/>
   <if cond="FORMAT in ['autoconf', 'gnu']"> <!-- For MacOSX Bundles -->
-    <set var="BUILDER_URL">org.wxwidgets</set>
-    <option name='WXSRCPATH' force='1' category='path'>
-      <default-value>/usr/local/src/wxMac-2.8.6</default-value>
-      <description> 
-	Path to the wx sources for retrieving the Info.plist and
-	wxmac.icns templates
-      </description>
-    </option>
-    <option name='TOOLKIT' force='1'>
-      <default-value>GTK</default-value>
-      <values>GTK,MAC</values>
-      <description>
-	Used to turn on bundling for MACOSX
-      </description>
-    </option>	
     <include file='presets/osx_bundle.bkl'/>
   </if>
 
   <set var='testdir' overwrite='0'>test/TestData</set>
   <set var='TESTDIR' overwrite='0'>$(srcdir)/$(testdir)</set>
-  <set var='XRCDIR' overwrite='0'>$(srcdir)/$(testdir)/xrc</set>
+  <set var='XRCDIR' make_var='1' overwrite='0'>$(srcdir)/$(testdir)/xrc</set>
   <set var='VTKDIR' overwrite='0'>$(srcdir)/$(testdir)/vtk</set>
 
  <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
   </set>
 
-<!-- Set up path for CppUnit includes and library for non-autoconf systems -->
-  <if cond="FORMAT!='autoconf'">
+  <include file="presets/cppunit.bkl"/>
 
-    <set var="CPPUNIT_DIR" overwrite='0' >$(DOLLAR)($(ENV_VAR)CPPUNIT)</set>
-
-    <set var="cppunit_libname">
-      <if cond="PLATFORM_WIN32=='0'">cppunit$(WX3RDPARTYLIBPOSTFIX)</if>
-      <if cond="PLATFORM_WIN32=='1'">cppunit$(WX3RDPARTYLIBPOSTFIX)_dll</if>
-    </set>
-
-    <option name="CPPUNIT_INCL" category="path">
-      <default-value>$(CPPUNIT_DIR)$(DIRSEP)include</default-value>
-      <description>Path to CppUnit Headers</description>
-    </option>
-    <option name="CPPUNIT_LIBDIR" category="path">
-      <default-value>$(CPPUNIT_DIR)$(DIRSEP)lib</default-value>
-      <description>Path to CppUnit Libraries</description>
-    </option>
-
-    <option name="CPPUNIT_LIB" category="path">
-      <default-value>$(cppunit_libname)</default-value>
-      <description>Library names needed for CppUnit to link</description>
-    </option>
-
-  </if>
-
-  <if  cond="FORMAT=='autoconf'">
-    <option name="CPPUNIT_CFLAGS" category="path"/>
-    <option name="CPPUNIT_LIBS" category="path"/>
-  </if>
-  
+<!-- Set up VTK -->  
   <option name='USE_VTK'>
     <default-value>0</default-value>
     <values>0,1</values>
@@ -129,14 +100,47 @@
       <default-value>$(VTK_DIR)$(DIRSEP)lib</default-value>
       <description>Path to VTK libraries</description>
     </option>
+
+    <template id='vtk'>
+      <if cond="FORMAT!='autoconf'">
+	<include>$(VTK_INCL)</include>
+	<include>$(SRCDIR)$(DIRSEP)$(WXVTK)</include>
+	<lib-path>$(VTK_LIBDIR)</lib-path>
+	<sys-lib>vtkCommon</sys-lib>
+	<sys-lib>vtkDICOMParser</sys-lib>
+	<sys-lib>vtkexpat</sys-lib>
+	<sys-lib>vtkFiltering</sys-lib>
+	<sys-lib>vtkfreetype</sys-lib>
+	<sys-lib>vtkftgl</sys-lib>
+	<sys-lib>vtkGraphics</sys-lib>
+	<sys-lib>vtkHybrid</sys-lib>
+	<sys-lib>vtkImaging</sys-lib>
+	<sys-lib>vtkIO</sys-lib>
+	<sys-lib>vtkjpeg</sys-lib>
+	<sys-lib>vtkpng</sys-lib>
+	<sys-lib>vtkRendering</sys-lib>
+	<sys-lib>vtktiff</sys-lib>
+	<sys-lib>vtkzlib</sys-lib>
+      </if>
+    </template>
+
   </if>
 
   <if cond="FORMAT=='autoconf'">
+
     <option name="VTK_CFLAGS" category="path"/>
     <option name="VTK_CXXFLAGS" category="path"/>
     <option name="VTK_LDFLAGS" category="path"/>
+
+    <template id="vtk">
+      <cflags>-I$(srcdir)/$(WXVTK) $(VTK_CFLAGS)</cflags>
+      <cxxflags>-I$(srcdir)/$(WXVTK) $(VTK_CXXFLAGS)</cxxflags>
+      <ldflags>$(VTK_LDFLAGS)</ldflags>
+    </template>
+
   </if>
 
+<!-- End of VTK Setup -->
 
   <include file='files.bkl'/>
 
@@ -155,10 +159,6 @@
     <if cond="FORMAT=='autoconf' and WX_DEBUG=='0'"></if>
   </set>
 
-  <set var='OPT_FLAGS'>
-    <if  cond="FORMAT=='autoconf'">$(OPT) $(DBG)</if>
-  </set>
-
   <set var='LIB_SOURCES'>
     <if cond="USE_VTK=='0'">$(FD_SOURCES) $(WGT_SOURCES)</if>
     <if cond="USE_VTK=='1'">$(FD_SOURCES) $(WGT_SOURCES) $(WXVTK_SOURCES) $(VTK_SOURCES)</if>
@@ -168,36 +168,6 @@
     <if cond="USE_VTK=='0'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS)</if>
     <if cond="USE_VTK=='1'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS) $(WXVTK_HDRS) $(VTK_HDRS)</if>
   </set>
-
-
-  <set var='__CFLAGS'>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='0'">
-      $(OPT_FLAGS) $(CPPUNIT_CFLAGS)
-    </if>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='1'">
-      $(OPT_FLAGS) $(VTK_CFLAGS) $(CPPUNIT_CFLAGS) 
-    </if>
-  </set>
-
-  <set var='__CXXFLAGS'>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='0'">
-      $(OPT_FLAGS) $(CPPUNIT_CFLAGS)
-    </if>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='1'">
-      $(OPT_FLAGS) $(VTK_CXXFLAGS) $(CPPUNIT_CFLAGS)
-    </if>
-  </set>
-
-  <set var='__LDFLAGS'>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='0'">
-      $(CPPUNIT_LIBS)
-    </if>
-    <if cond="FORMAT=='autoconf' and USE_VTK=='1'">
-      $(VTK_LDFLAGS) $(CPPUNIT_LIBS)
-    </if>
-  </set>
-
-
 
 
   <template id='wgtInclude'>
@@ -214,43 +184,16 @@
       <optimize>$(OPT)</optimize>
       <debug-info>$(DBG)</debug-info>
     </if>
-  </template>
-
-  <template id='swWxGuiTesting'>
-    <if cond="FORMAT!='autoconf'">
-      <include >$(CPPUNIT_INCL)</include>
-    </if>
     <if cond="FORMAT=='autoconf'">
-      <cflags>$(__CFLAGS)</cflags>
-      <cxxflags>$(__CXXFLAGS)</cxxflags>
-    </if>
-  </template>
-
-  <template id='vtk'>
-    <if cond="FORMAT!='autoconf'">
-      <include>$(VTK_INCL)</include>
-      <include>$(SRCDIR)$(DIRSEP)$(WXVTK)</include>
-      <lib-path>$(VTK_LIBDIR)</lib-path>
-      <sys-lib>vtkCommon</sys-lib>
-      <sys-lib>vtkDICOMParser</sys-lib>
-      <sys-lib>vtkexpat</sys-lib>
-      <sys-lib>vtkFiltering</sys-lib>
-      <sys-lib>vtkfreetype</sys-lib>
-      <sys-lib>vtkftgl</sys-lib>
-      <sys-lib>vtkGraphics</sys-lib>
-      <sys-lib>vtkHybrid</sys-lib>
-      <sys-lib>vtkImaging</sys-lib>
-      <sys-lib>vtkIO</sys-lib>
-      <sys-lib>vtkjpeg</sys-lib>
-      <sys-lib>vtkpng</sys-lib>
-      <sys-lib>vtkRendering</sys-lib>
-      <sys-lib>vtktiff</sys-lib>
-      <sys-lib>vtkzlib</sys-lib>
+      <cflags>$(OPT) $(DBG)</cflags>
+      <cxxflags>$(OPT) $(DBG)</cxxflags>
     </if>
   </template>
 
 
-  <template id='testApp' template='swWxGuiTesting,optimize,wx'>
+
+
+  <template id='testApp' template='libInclude,CppUnit,optimize,wx'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>swWxGuiTesting</depends>
@@ -261,14 +204,8 @@
     <define>TESTDIR="$(TESTDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SRCDIR="$(srcdir)"</define>
+
     <library>swWxGuiTesting</library>
-    <if cond="FORMAT=='autoconf'">
-      <ldflags >$(__LDFLAGS)</ldflags>
-    </if>
-    <if cond="FORMAT!='autoconf'">
-      <lib-path >$(CPPUNIT_LIBDIR)</lib-path>
-      <sys-lib >$(CPPUNIT_LIB)</sys-lib>
-    </if>
 
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
@@ -278,7 +215,7 @@
     <wx-lib>base</wx-lib>
   </template>
 
-  <lib id='swWxGuiTesting' template='libInclude,swWxGuiTesting,optimize,wx-lib'>
+  <lib id='swWxGuiTesting' template='libInclude,CppUnit,optimize,wx-lib'>
     <libname>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
@@ -295,15 +232,15 @@
 
 
 
-  <exe id='CppUnitTest' template='libInclude,testApp'>
+  <exe id='CppUnitTest' template='testApp'>
     <sources>$(CPPTEST_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitTestEventSimulation' template='libInclude,testApp'>
+  <exe id='CppGuiUnitTestEventSimulation' template='testApp'>
     <sources>$(CPPGUITESTEVENTSIMULATION_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitTestCaptureReplay' template='libInclude,testApp'>
+  <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
     <sources>
       $(CPPGUITESTCAPTUREREPLAY_SOURCES) 
     </sources>
@@ -320,7 +257,7 @@
   </exe>
   
   <exe id='VTKUnitTest' cond="USE_VTK=='1'" 
-    template='wgtInclude,swWxGuiTesting,optimize,wx,vtk'>
+    template='wgtInclude,CppUnit,optimize,wx,vtk'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>swWxGuiTesting</depends>
@@ -337,13 +274,6 @@
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SRCDIR="$(srcdir)"</define>
     <library>swWxGuiTesting</library>
-    <if cond="FORMAT=='autoconf'">
-      <ldflags >$(__LDFLAGS)</ldflags>
-    </if>
-    <if cond="FORMAT!='autoconf'">
-      <lib-path >$(CPPUNIT_LIBDIR)</lib-path>
-      <sys-lib >$(CPPUNIT_LIB)</sys-lib>
-    </if>
     <if cond="FORMAT!='autoconf' and PLATFORM_WIN32=='1'">
       <sys-lib>opengl32</sys-lib>
       <sys-lib>glu32</sys-lib>

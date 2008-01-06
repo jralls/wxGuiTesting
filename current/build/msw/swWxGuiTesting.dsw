@@ -1,0 +1,124 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+Project: "swWxGuiTesting"=swWxGuiTesting_swWxGuiTesting.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CppUnitTest"=swWxGuiTesting_CppUnitTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CppGuiUnitTestEventSimulation"=swWxGuiTesting_CppGuiUnitTestEventSimulation.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CppGuiUnitTestCaptureReplay"=swWxGuiTesting_CppGuiUnitTestCaptureReplay.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CppGuiUnitTestModalDialog"=swWxGuiTesting_CppGuiUnitTestModalDialog.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CppGuiUnitCapturePlusEmit"=swWxGuiTesting_CppGuiUnitCapturePlusEmit.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VTKUnitTest"=swWxGuiTesting_VTKUnitTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+Begin Project Dependency
+Project_Dep_Name swWxGuiTesting
+End Project Dependency
+}}}
+
+###############################################################################
+
