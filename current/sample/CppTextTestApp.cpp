@@ -17,6 +17,12 @@
 #include <wxGuiTest/swWxGuiTestCppUnitWarningAsserter.h>
 #include <wxGuiTest/swInitWxGuiTest.h>
 
+#ifdef __WXGTK__
+#define OUTPUT std::cout
+#else
+#define OUTPUT std::cerr
+#endif
+
 #include "xrcdemo.h"
 
 int main (int argc, char* argv[])
@@ -57,8 +63,8 @@ int main (int argc, char* argv[])
     runner.addTest (suite);
 
     // Change the default outputter to a compiler error format outputter
-    runner.setOutputter (new CPPUNIT_NS::CompilerOutputter (&runner.result (),
-            std::cerr));
+     runner.setOutputter (new CPPUNIT_NS::CompilerOutputter (&runner.result (),
+             OUTPUT));
 
     // Run the test - don't close window in debug mode at the end
     bool wasSucessful = runner.run ();

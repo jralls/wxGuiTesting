@@ -6,7 +6,7 @@
     <title>XML Resources Demo</title>
 	<size>750,500</size>
     <centered>1</centered>
-<!--    <object class="wxFlexGridSizer">
+<!--   <object class="wxFlexGridSizer">
         <cols>1</cols>
         <rows>0</rows>
         <vgap>0</vgap>
@@ -17,12 +17,12 @@
             <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
             <border>5</border> -->
             <object class="wxTextCtrl" name="message_textctrl">
-                <size>500,280</size>
+                <size>200,280</size>
                 <style>wxTE_MULTILINE|wxSUNKEN_BORDER</style>
                 <value>Welcome to the wxWidgets XmlResource (XRC) sample! Using wxWidgets XML resources makes your GUI C++ programming much faster and easier.\n\nView the examples under the "Basic" menu to learn how to get up and running with XRC quickly, and later have a look at the examples under the "Advanced" menu for advanced techniques.\n\nThe XML file that described this frame is the sample's frame.xrc file, with the menu in menu.xrc, and the toolbar in toolbar.xrc. The frame XRC file structure is exactly the same as the XRC files for the dialogs, except that the top level node is a wxFrame, not a wxDialog. Each of the other dialog in this example is a separate XRC file, each of which can be examined for how they work.</value>
             </object>
-<!--        </object>
-    </object>-->
+<!--     </object>
+    </object> -->
 </object>
 
 </resource>

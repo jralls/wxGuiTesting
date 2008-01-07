@@ -1,20 +1,29 @@
 WxGuiTesting Sample
 
-This is a slightly modified version of the XRC demo from
-wxWidgets. The modification makes the main frame into an MDI parent
-and converts a couple of the dialogs into MDI children. Using frames
-in this way makes testing work better because of the problems with
-modal dialogs.
+This is a slightly modified version of the XRC demo from wxWidgets. The
+modification makes the main frame into an MDI parent and converts a couple
+of the dialogs into MDI children. Using frames in this way makes testing
+work better because of the problems with modal dialogs.
 
 You'll find here makefiles for msvc nmake and gnumake, along with
-configuration files. Edit the appropriate configuration file to get
-the right paths and library names, run make, and try the test and
-capture apps that result.
+configuration files. Edit the appropriate configuration file to get the
+right paths and library names, run make, and try the test and capture apps
+that result.
 
-There are a couple of flakey behaviors:
-In Microsoft Windows, the MDI Client Window doesn't draw unless you
-minimize and restore the window... and after you do that, the toolbar
-doesn't work any more. I'm pretty sure that's a wxWidgets problem.
+There are a couple of flakey behaviors: In Microsoft Windows, the MDI Client
+Window doesn't draw unless you minimize and restore the window... and after
+you do that, the toolbar doesn't work any more. I'm pretty sure that's a
+wxWidgets problem.
 
-Running under Debian Etch, the test reports failures but doesn't
-report what they are. That's probably a logging issue in the library.
+Running under Debian Etch, the CompilerOutputter won't write to
+std::cerr. This is kludged with a cpp macro.
+
+Notice that the last testcase fails on all platforms except MacOSX. That's
+because it's for a window demonstrating platform-specific XRC features, and
+only the MacOSX one is coded.
+
+If you want to see what events are supported (or not!), run xrcdemo_capture,
+start capturing, and open the controls dialog. Then play with every control
+and note the log window. The unsupported event messages are also written to
+SimpleCRTest.cpp.crx.
+

@@ -162,7 +162,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectCheckableMenuItem ()
     CPPUNIT_ASSERT_MESSAGE ("CheckableMenuItem menu item ID not found",
             checkableMenuItemId != wxNOT_FOUND);
     wxMenu* menu = menuBar->GetMenu (0);
-    CPPUNIT_ASSERT_MESSAGE ("Menu menu not found", menu != NULL);
+    CPPUNIT_ASSERT_MESSAGE ("Menu menu not found", menu == NULL);
     wxMenuItem *item = menuBar->FindItem (checkableMenuItemId, &menu);
     CPPUNIT_ASSERT_MESSAGE ("MenuItem menu item not found", item != NULL);
 

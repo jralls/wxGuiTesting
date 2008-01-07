@@ -32,6 +32,7 @@ public:
 
     // Constructor.
     bool Create( wxWindow* parent=(wxWindow *)NULL);
+    void OnSize(wxSizeEvent& event);
 
 private:
 
@@ -52,6 +53,8 @@ private:
 
     // Any class wishing to process wxWidgets events must use this macro
     DECLARE_EVENT_TABLE()
+/*     wxTextCtrl *textWindow; */
+
 
 };
 

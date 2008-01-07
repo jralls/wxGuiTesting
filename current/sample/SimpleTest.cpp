@@ -18,6 +18,13 @@
 #include <wxGuiTest/swModalDialogTimer.h>
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
+#ifdef __WXGTK__
+#define MC "_"
+#else
+#define MC "&"
+#endif
+
+
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( SimpleTest, "WxGuiTest" );
@@ -81,7 +88,7 @@ void SimpleTest::testTrivial() {
 
     // *** Check menu item ***
     int platformMenuItemId = menuBar->FindMenuItem (_("Advanced"), _(
-            "&Platform Specific Example"));
+            MC"Platform Specific Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'platformMenuItem' not found",
             platformMenuItemId != wxNOT_FOUND);
     wxMenuItem *platformMenuItem = menuBar->FindItem (
@@ -113,7 +120,7 @@ void SimpleTest::testTrivial() {
     child2->Close();
 
     int derived_toolMenuItemId = menuBar->FindMenuItem (_("Advanced"), _(
-            "&Custom Class Example"));
+            MC"Custom Class Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'derived_toolMenuItem' not found",
             derived_toolMenuItemId != wxNOT_FOUND);
     wxMenuItem *derived_toolMenuItem = menuBar->FindItem (

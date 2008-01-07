@@ -201,4 +201,9 @@ your app's \c OnInit() function, perhaps guarded by
 
 When you have a bunch of dialog boxes with similar controls on them, Capture seems always to use the first one it finds. You'll have to figure out what is the right one in each case in the capture file and hand-correct it.
 
+Note that capture results may not be portable. For example, in wxMac and wxWin32, menu names may include a '&' to indicate which letter-key is used to select the item from the keyboard, while in wxGTK a '_' is used for the same purpose. You can see one way to get around this in the sample. 
+
+There's an interesting side effect on wxGTK when testing a whole application: The CppUnit CompilerOutputter won't write to std::cerr. Use std::cout instead. This doesn't appear to affect unit testing.
+
+
 */

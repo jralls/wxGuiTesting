@@ -90,6 +90,7 @@ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_MENU(XRCID("art_provider_tool_or_menuitem"), MyFrame::OnArtProviderToolOrMenuCommand)
     EVT_MENU(XRCID("variable_expansion_tool_or_menuitem"), MyFrame::OnVariableExpansionToolOrMenuCommand)
     EVT_MENU(wxID_ABOUT, MyFrame::OnAboutToolOrMenuCommand)
+   EVT_SIZE(MyFrame::OnSize)
 END_EVENT_TABLE()
 
 //-----------------------------------------------------------------------------
@@ -108,6 +109,12 @@ bool MyFrame::Create(wxWindow* parent)
     // However, the current approach has source code that can be recycled
     // for other frames that aren't the top level window.]
     bool success= wxXmlResource::Get()->LoadObject(this, parent, wxT("main_frame"), _T("wxMDIParentFrame"));
+// 	wxString message(_T("Welcome to the wxWidgets XmlResource (XRC) sample! Using wxWidgets XML resources makes your GUI C++ programming much faster and easier.\n\nView the examples under the \"Basic\" menu to learn how to get up and running with XRC quickly, and later have a look at the examples under the \"Advanced\" menu for advanced techniques.\n\nThe XML file that described this frame is the sample's frame.xrc file, with the menu in menu.xrc, and the toolbar in toolbar.xrc. The frame XRC file structure is exactly the same as the XRC files for the dialogs, except that the top level node is a wxFrame, not a wxDialog. Each of the other dialog in this example is a separate XRC file, each of which can be examined for how they work."));
+
+//   textWindow = new wxTextCtrl(this, wxID_ANY, message,
+//                                 wxDefaultPosition, wxDefaultSize,
+//                                 wxTE_MULTILINE | wxSUNKEN_BORDER);
+ 
 	wxASSERT_MSG(success, _T("Load of Frame main_frame failed"));
 
     // Set the icon for the frame.
@@ -131,6 +138,32 @@ bool MyFrame::Create(wxWindow* parent)
     CreateStatusBar( 1 );
 #endif // wxUSE_STATUSBAR
 	return success;
+}
+
+void MyFrame::OnSize(wxSizeEvent&
+                                  #ifdef __WXUNIVERSAL__
+                                  event
+                                  #else
+                                  WXUNUSED(event)
+                                  #endif
+                                  )
+{
+    int w, h;
+    GetClientSize(&w, &h);
+	wxWindow* textWindow = FindWindow(_T("message_textctrl"));
+	if (textWindow) {
+		textWindow->SetSize(0, 0, 200, h);
+		GetClientWindow()->SetSize(200, 0, w - 200, h);
+	}
+	else
+		wxLogDebug(_T("MyFrame::OnSize: Didn't find the text window"));
+
+    // FIXME: On wxX11, we need the MDI frame to process this
+    // event, but on other platforms this should not
+    // be done.
+#ifdef __WXUNIVERSAL__
+    event.Skip();
+#endif
 }
 
 //-----------------------------------------------------------------------------
