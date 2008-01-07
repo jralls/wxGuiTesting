@@ -21,7 +21,7 @@
 #ifdef __WXGTK__
 #define MC "_"
 #else
-#define MC "&"
+#define MC _T("&")
 #endif
 
 
@@ -87,8 +87,8 @@ void SimpleTest::testTrivial() {
 //    interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
 
     // *** Check menu item ***
-    int platformMenuItemId = menuBar->FindMenuItem (_("Advanced"), _(
-            MC"Platform Specific Example"));
+    int platformMenuItemId = menuBar->FindMenuItem (_("Advanced"), 
+            MC _T("Platform Specific Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'platformMenuItem' not found",
             platformMenuItemId != wxNOT_FOUND);
     wxMenuItem *platformMenuItem = menuBar->FindItem (
@@ -119,8 +119,8 @@ void SimpleTest::testTrivial() {
 
     child2->Close();
 
-    int derived_toolMenuItemId = menuBar->FindMenuItem (_("Advanced"), _(
-            MC"Custom Class Example"));
+    int derived_toolMenuItemId = menuBar->FindMenuItem (_("Advanced"),
+            MC _T("Custom Class Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'derived_toolMenuItem' not found",
             derived_toolMenuItemId != wxNOT_FOUND);
     wxMenuItem *derived_toolMenuItem = menuBar->FindItem (

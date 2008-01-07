@@ -34,7 +34,7 @@ namespace {
 #ifdef __WXGTK__
 #define MC "_"
 #else
-#define MC "&"
+#define MC _T("&")
 #endif
 
 
@@ -81,8 +81,8 @@ void ReplayTest::testDialog ()
     CPPUNIT_ASSERT_MESSAGE ("Top window is not a frame", topFrame != NULL);
     wxMenuBar *menuBar = topFrame->GetMenuBar ();
     CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
-    int derivedDialogExampleMenuItemId = menuBar->FindMenuItem (_("Basic"), _(
-            MC"Derived Dialog Example"));
+    int derivedDialogExampleMenuItemId = menuBar->FindMenuItem (_("Basic"), 
+            MC _T("Derived Dialog Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Derived Dialog Example' not found", 
             derivedDialogExampleMenuItemId != wxNOT_FOUND);
     swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
@@ -144,8 +144,8 @@ void ReplayTest::testUncentered() {
     CPPUNIT_ASSERT_MESSAGE ("Top window is not a frame", topFrame != NULL);
     wxMenuBar *menuBar = topFrame->GetMenuBar ();
     CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
-    int uncenteredExampleMenuItemId = menuBar->FindMenuItem (_("Basic"), _(
-            MC"Uncentered Example"));
+    int uncenteredExampleMenuItemId = menuBar->FindMenuItem (_("Basic"), 
+            MC _T("Uncentered Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Uncentered Example' not found", 
             uncenteredExampleMenuItemId != wxNOT_FOUND);
     swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
@@ -175,7 +175,7 @@ void ReplayTest::testArtProvider() {
     wxMenuBar *menuBar = topFrame->GetMenuBar ();
     CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
     int wxArtProviderExampleMenuItemId = menuBar->FindMenuItem (_("Advanced"), 
-            _("wx"MC"ArtProvider Example"));
+            _T("wx") MC _T("ArtProvider Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'wx&ArtProvider Example' not found", 
             wxArtProviderExampleMenuItemId != wxNOT_FOUND);
     swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
@@ -219,7 +219,7 @@ void ReplayTest::testPlatformSpecific() {
     wxMenuBar *menuBar = topFrame->GetMenuBar ();
     CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
     int platformSpecificExampleMenuItemId = menuBar->FindMenuItem (_(
-            "Advanced"), _(MC"Platform Specific Example"));
+            "Advanced"), MC _T("Platform Specific Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Platform Specific Example' not "
             "found", platformSpecificExampleMenuItemId != wxNOT_FOUND);
     swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (

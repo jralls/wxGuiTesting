@@ -14,13 +14,20 @@
      Don't use DIRSEP in srcdir: It gets passed in to source files and
      the Win32 compilers (correctly) think "\" is an escape. -->
 
-  <set var='defaultSrcDir'>
+  <set var='defaultBaseDir'>
     <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj', 'xcode2']">../..</if>
     <if cond="FORMAT not in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">..</if>
   </set>
   <if cond="FORMAT!='autoconf'">
-    <option name='srcdir' category='path' >
-      <default-value>$(defaultSrcDir)</default-value>
+    <option name='baseDir' category='path' >
+      <default-value>$(defaultBaseDir)</default-value>
+      <description>
+	Path to pass in as base directory for filenames in the test
+	programs. Use forward slashes and "short filenames" if the
+	path has spaces.  For example,
+	/DOCUME~1/OWNER/MYDOCU~1/swWxGuiTesting An absolute path may
+	help the test programs to execute from more than one folder
+      </description>
     </option>
   </if>
 
@@ -35,12 +42,12 @@
   </set>
 
   <set var='bindir'>
-    <if cond="FORMAT not in ['autoconf', 'gnu']">$(srcdir)$(DIRSEP)bin</if>
+    <if cond="FORMAT not in ['autoconf', 'gnu']">$(SRCDIR)$(DIRSEP)bin</if>
     <if cond="FORMAT in ['autoconf', 'gnu']">bin</if>
   </set>
 
   <set var='libdir'>
-    <if cond="FORMAT not in ['autoconf', 'gnu']">$(srcdir)$(DIRSEP)lib</if>
+    <if cond="FORMAT not in ['autoconf', 'gnu']">$(SRCDIR)$(DIRSEP)lib</if>
     <if cond="FORMAT in ['autoconf', 'gnu']">lib</if>
   </set>
 
@@ -70,9 +77,9 @@
   </if>
 
   <set var='testdir' overwrite='0'>test/TestData</set>
-  <set var='TESTDIR' overwrite='0'>$(srcdir)/$(testdir)</set>
-  <set var='XRCDIR' make_var='1' overwrite='0'>$(srcdir)/$(testdir)/xrc</set>
-  <set var='VTKDIR' overwrite='0'>$(srcdir)/$(testdir)/vtk</set>
+  <set var='TESTDIR' overwrite='0'>$(baseDir)/$(testdir)</set>
+  <set var='XRCDIR' make_var='1' overwrite='0'>$(baseDir)/$(testdir)/xrc</set>
+  <set var='VTKDIR' overwrite='0'>$(baseDir)/$(testdir)/vtk</set>
 
  <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
@@ -133,8 +140,8 @@
     <option name="VTK_LDFLAGS" category="path"/>
 
     <template id="vtk">
-      <cflags>-I$(srcdir)/$(WXVTK) $(VTK_CFLAGS)</cflags>
-      <cxxflags>-I$(srcdir)/$(WXVTK) $(VTK_CXXFLAGS)</cxxflags>
+      <cflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CFLAGS)</cflags>
+      <cxxflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CXXFLAGS)</cxxflags>
       <ldflags>$(VTK_LDFLAGS)</ldflags>
     </template>
 
@@ -171,12 +178,12 @@
 
 
   <template id='wgtInclude'>
-    <include>$(srcdir)/include</include>
+    <include>$(SRCDIR)$(DIRSEP)include</include>
  </template>
   
   <template id='libInclude' template='wgtInclude'>
-    <include>$(srcdir)/$(FDS)</include>
-    <include>$(srcdir)/$(WGTS)</include>
+    <include>$(SRCDIR)$(DIRSEP)$(FDS)</include>
+    <include>$(SRCDIR)$(DIRSEP)$(WGTS)</include>
   </template>
 
   <template id='optimize'>
@@ -203,7 +210,7 @@
 
     <define>TESTDIR="$(TESTDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
-    <define>SRCDIR="$(srcdir)"</define>
+    <define>SRCDIR="$(baseDir)"</define>
 
     <library>swWxGuiTesting</library>
 
@@ -265,14 +272,14 @@
     <sources>
       $(VTKTEST_SOURCES) 
     </sources>
-    <include>$(srcdir)/$(WGTI)/VtkWxGuiTesting</include>
+    <include>$(SRCDIR)$(DIRSEP)$(WGTI)/VtkWxGuiTesting</include>
     <if cond="FORMAT=='autoconf'">
       <osx-bundle/>
     </if>
 
     <define>VTKDIR="$(VTKDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
-    <define>SRCDIR="$(srcdir)"</define>
+    <define>SRCDIR="$(baseDir)"</define>
     <library>swWxGuiTesting</library>
     <if cond="FORMAT!='autoconf' and PLATFORM_WIN32=='1'">
       <sys-lib>opengl32</sys-lib>

@@ -14,13 +14,13 @@
   </if>
 
 
-  <set var='XRCDIR' make_var=1 overwrite='0'>rc</set>
+  <set var='XRCDIR' make_var='1' overwrite='0'>rc</set>
 
   <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
   </set>
 
-  <include file="presets/cppunit.bkl"/>
+  <include file="../build/bakefile/presets/cppunit.bkl"/>
 
 <!-- And the path to the wxGuiTesting library and includes -->
 
@@ -60,7 +60,7 @@
 <!-- Now we begin defining the build -->
 
 <!-- The location of the build path. This trick prevents things getting too ugly in IDE project files -->
-  <template id='wxGuiTest' template="cppunit">
+  <template id='wxGuiTest' template="CppUnit">
     <include>$(wxGuiTestPath)/include</include>
     <lib-path>$(wxGuiTestPath)/lib</lib-path>
     <sys-lib>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
@@ -141,7 +141,7 @@
 -->
 
 <!-- Demonstrating the data-files feature, we ensure that the required resource files are moved after an out-of-source build -->
-  <copy-files id="data" cond="FORMAT_SUPPORTS_ACTIONS='1'">
+  <copy-files id="data" cond="FORMAT_SUPPORTS_ACTIONS=='1'">
     <dstdir>$(BUILDDIR)/rc</dstdir>
     <srcdir>$(SRCDIR)/rc</srcdir>
     <files>

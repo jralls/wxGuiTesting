@@ -10,11 +10,6 @@ configuration files. Edit the appropriate configuration file to get the
 right paths and library names, run make, and try the test and capture apps
 that result.
 
-There are a couple of flakey behaviors: In Microsoft Windows, the MDI Client
-Window doesn't draw unless you minimize and restore the window... and after
-you do that, the toolbar doesn't work any more. I'm pretty sure that's a
-wxWidgets problem.
-
 Running under Debian Etch, the CompilerOutputter won't write to
 std::cerr. This is kludged with a cpp macro.
 
