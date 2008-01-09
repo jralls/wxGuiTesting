@@ -141,13 +141,15 @@ bool MyFrame::Create(wxWindow* parent)
 }
 
 void MyFrame::OnSize(wxSizeEvent&
-                                  #ifdef __WXUNIVERSAL__
+                                  #if defined __WXUNIVERSAL__ || __WXMAC__
                                   event
                                   #else
                                   WXUNUSED(event)
                                   #endif
                                   )
 {
+#ifndef __WXMAC__
+
     int w, h;
     GetClientSize(&w, &h);
 	wxWindow* textWindow = FindWindow(_T("message_textctrl"));
@@ -161,9 +163,10 @@ void MyFrame::OnSize(wxSizeEvent&
     // FIXME: On wxX11, we need the MDI frame to process this
     // event, but on other platforms this should not
     // be done.
-#ifdef __WXUNIVERSAL__
-    event.Skip();
 #endif
+#if defined __WXUNIVERSAL__ || __WXMAC__
+    event.Skip();
+#endif 
 }
 
 //-----------------------------------------------------------------------------

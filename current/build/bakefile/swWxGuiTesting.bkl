@@ -30,6 +30,9 @@
       </description>
     </option>
   </if>
+  <if cond="FORMAT=='autoconf'">
+    <set var='baseDir'>$(srcdir)</set>
+  </if>
 
 
    <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
@@ -222,15 +225,11 @@
     <wx-lib>base</wx-lib>
   </template>
 
-  <lib id='swWxGuiTesting' template='libInclude,CppUnit,optimize,wx-lib'>
+  <lib id='swWxGuiTesting' template='libInclude,CppUnit,vtk,optimize,wx-lib'>
     <libname>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
     <headers>$(LIB_HDRS)</headers>
-    <if cond="FORMAT!='autoconf'"> <!-- Does no harm even if USE_VTK==0 -->
-      <include>$(VTK_INCL)</include>
-      <include>$(SRCDIR)$(DIRSEP)$(WXVTK)</include>
-    </if>
     <if cond="FORMAT in ['autoconf', 'gnu']">
       <install-to>$(PREFIX)/lib</install-to>
       <install-headers-to> $(PREFIX)</install-headers-to>
