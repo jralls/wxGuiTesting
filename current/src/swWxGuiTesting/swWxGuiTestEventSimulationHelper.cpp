@@ -16,9 +16,10 @@
 
 #include <wx/treectrl.h>
 #include <wx/notebook.h>
+#include <wx/spinctrl.h>
 
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-#include <FrameFactory/swToolBar.h>
+//#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+//#include <FrameFactory/swToolBar.h>
 
 namespace swTst {
 
@@ -131,25 +132,25 @@ void WxGuiTestEventSimulationHelper::SetTextCtrlValue (
 }
 
 
-void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (
-        sw::SpinCtrlDouble *spinCtrl, double value)
-{
-    // 1. GUI control state:
-    spinCtrl->SetValue (value);
-    // 2. Event:
-    wxCommandEvent evt (wxEVT_COMMAND_SPINCTRL_UPDATED, spinCtrl->GetId ());
-    evt.SetEventObject (spinCtrl);
-    evt.SetString (wxString::Format (_T("%f"), value));
-    evt.SetInt ((int) value); // Useless, just for the sake of simulation
-    ::wxPostEvent (spinCtrl->GetEventHandler (), evt);
-}
+// void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (
+//         sw::SpinCtrlDouble *spinCtrl, double value)
+// {
+//     // 1. GUI control state:
+//     spinCtrl->SetValue (value);
+//     // 2. Event:
+//     wxCommandEvent evt (wxEVT_COMMAND_SPINCTRL_UPDATED, spinCtrl->GetId ());
+//     evt.SetEventObject (spinCtrl);
+//     evt.SetString (wxString::Format (_T("%f"), value));
+//     evt.SetInt ((int) value); // Useless, just for the sake of simulation
+//     ::wxPostEvent (spinCtrl->GetEventHandler (), evt);
+// }
 
 
-void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
-        sw::SpinCtrlDouble *spinCtrl, double value)
-{
-    spinCtrl->SetValue (value);
-}
+// void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
+//         sw::SpinCtrlDouble *spinCtrl, double value)
+// {
+//     spinCtrl->SetValue (value);
+// }
 
 
 void WxGuiTestEventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
@@ -291,7 +292,7 @@ void WxGuiTestEventSimulationHelper::ToggleToolOnlyEvent (int id,
 
 
 void WxGuiTestEventSimulationHelper::ToggleTool (int id, bool enabled,
-        sw::ToolBar *toolbar, wxWindow *parent)
+        wxToolBar *toolbar, wxWindow *parent)
 {
     // 1. GUI control state:
     toolbar->ToggleTool (id, enabled);

@@ -31,7 +31,7 @@
 
   <option name='wxGuiTestPath'  cond="FORMAT_SUPPORTS_CONDITIONS==1" category='path'>
     <default-value>$(wxGuiTestPathDefault)</default-value>
-    <description>Location of the swWxGuiTesting library and headers</description>
+    <description>Location of the wxGuiTesting library and headers</description>
   </option>
 
   <if cond="FORMAT_SUPPORTS_CONDITIONS==0">
@@ -63,7 +63,7 @@
   <template id='wxGuiTest' template="CppUnit">
     <include>$(wxGuiTestPath)/include</include>
     <lib-path>$(wxGuiTestPath)/lib</lib-path>
-    <sys-lib>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
+    <sys-lib>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
  </template>
   
   <template id='optimize'>

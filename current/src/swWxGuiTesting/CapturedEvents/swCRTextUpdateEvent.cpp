@@ -12,13 +12,14 @@
 
 #include "swCRTextUpdateEvent.h"
 
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+//#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+#include <wx/spinctrl.h>
 
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 
-using sw::SpinCtrlDouble;
+//using sw::SpinCtrlDouble;
 
 namespace swTst {
 
@@ -57,12 +58,13 @@ void CRTextUpdateEvent::Process (CRCapturedEvent **pendingEvt)
     // Text updates of double typed spin controls are irrelevant:
     if (wdwEvtObject->GetParent () != NULL) {
 
-        if (wdwEvtObject->GetParent ()->IsKindOf (CLASSINFO(SpinCtrlDouble))) {
+ //        if (wdwEvtObject->GetParent ()->IsKindOf (CLASSINFO(SpinCtrlDouble))) {
 
-            m_isIrrelevant = true;
-            return;
+//             m_isIrrelevant = true;
+//             return;
 
-        } else if (wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl))) {
+//         } else
+	if (wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl))) {
         
             if (!WxGuiTestEventSimulationHelper::IsSettingSpinCtrlValue ()) {
 

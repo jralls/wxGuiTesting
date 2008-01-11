@@ -36,6 +36,12 @@ dnl ### begin block 20_COND_TOOLKIT_MAC[swWxGuiTesting.bkl] ###
         COND_TOOLKIT_MAC=""
     fi
     AC_SUBST(COND_TOOLKIT_MAC)
+dnl ### begin block 20_COND_TOOLKIT_MAC_USE_VTK_1[swWxGuiTesting.bkl] ###
+    COND_TOOLKIT_MAC_USE_VTK_1="#"
+    if test "x$TOOLKIT" = "xMAC" -a "x$USE_VTK" = "x1" ; then
+        COND_TOOLKIT_MAC_USE_VTK_1=""
+    fi
+    AC_SUBST(COND_TOOLKIT_MAC_USE_VTK_1)
 dnl ### begin block 20_COND_USE_VTK_0[swWxGuiTesting.bkl] ###
     COND_USE_VTK_0="#"
     if test "x$USE_VTK" = "x0" ; then
@@ -48,39 +54,33 @@ dnl ### begin block 20_COND_USE_VTK_1[swWxGuiTesting.bkl] ###
         COND_USE_VTK_1=""
     fi
     AC_SUBST(COND_USE_VTK_1)
-dnl ### begin block 20_COND_USE_VTK_1_TOOLKIT_MAC[swWxGuiTesting.bkl] ###
-    COND_USE_VTK_1_TOOLKIT_MAC="#"
-    if test "x$USE_VTK" = "x1" -a "x$TOOLKIT" = "xMAC" ; then
-        COND_USE_VTK_1_TOOLKIT_MAC=""
-    fi
-    AC_SUBST(COND_USE_VTK_1_TOOLKIT_MAC)
 dnl ### begin block 20_COND_WX_DEBUG_0[swWxGuiTesting.bkl] ###
     COND_WX_DEBUG_0="#"
     if test "x$WX_DEBUG" = "x0" ; then
         COND_WX_DEBUG_0=""
     fi
     AC_SUBST(COND_WX_DEBUG_0)
+dnl ### begin block 20_COND_WX_DEBUG_0_WX_UNICODE_1[swWxGuiTesting.bkl] ###
+    COND_WX_DEBUG_0_WX_UNICODE_1="#"
+    if test "x$WX_DEBUG" = "x0" -a "x$WX_UNICODE" = "x1" ; then
+        COND_WX_DEBUG_0_WX_UNICODE_1=""
+    fi
+    AC_SUBST(COND_WX_DEBUG_0_WX_UNICODE_1)
 dnl ### begin block 20_COND_WX_DEBUG_1[swWxGuiTesting.bkl] ###
     COND_WX_DEBUG_1="#"
     if test "x$WX_DEBUG" = "x1" ; then
         COND_WX_DEBUG_1=""
     fi
     AC_SUBST(COND_WX_DEBUG_1)
-dnl ### begin block 20_COND_WX_UNICODE_0_WX_DEBUG_1[swWxGuiTesting.bkl] ###
-    COND_WX_UNICODE_0_WX_DEBUG_1="#"
-    if test "x$WX_UNICODE" = "x0" -a "x$WX_DEBUG" = "x1" ; then
-        COND_WX_UNICODE_0_WX_DEBUG_1=""
+dnl ### begin block 20_COND_WX_DEBUG_1_WX_UNICODE_0[swWxGuiTesting.bkl] ###
+    COND_WX_DEBUG_1_WX_UNICODE_0="#"
+    if test "x$WX_DEBUG" = "x1" -a "x$WX_UNICODE" = "x0" ; then
+        COND_WX_DEBUG_1_WX_UNICODE_0=""
     fi
-    AC_SUBST(COND_WX_UNICODE_0_WX_DEBUG_1)
-dnl ### begin block 20_COND_WX_UNICODE_1_WX_DEBUG_0[swWxGuiTesting.bkl] ###
-    COND_WX_UNICODE_1_WX_DEBUG_0="#"
-    if test "x$WX_UNICODE" = "x1" -a "x$WX_DEBUG" = "x0" ; then
-        COND_WX_UNICODE_1_WX_DEBUG_0=""
+    AC_SUBST(COND_WX_DEBUG_1_WX_UNICODE_0)
+dnl ### begin block 20_COND_WX_DEBUG_1_WX_UNICODE_1[swWxGuiTesting.bkl] ###
+    COND_WX_DEBUG_1_WX_UNICODE_1="#"
+    if test "x$WX_DEBUG" = "x1" -a "x$WX_UNICODE" = "x1" ; then
+        COND_WX_DEBUG_1_WX_UNICODE_1=""
     fi
-    AC_SUBST(COND_WX_UNICODE_1_WX_DEBUG_0)
-dnl ### begin block 20_COND_WX_UNICODE_1_WX_DEBUG_1[swWxGuiTesting.bkl] ###
-    COND_WX_UNICODE_1_WX_DEBUG_1="#"
-    if test "x$WX_UNICODE" = "x1" -a "x$WX_DEBUG" = "x1" ; then
-        COND_WX_UNICODE_1_WX_DEBUG_1=""
-    fi
-    AC_SUBST(COND_WX_UNICODE_1_WX_DEBUG_1)
+    AC_SUBST(COND_WX_DEBUG_1_WX_UNICODE_1)

@@ -14,23 +14,22 @@
 
 #include <wx/spinctrl.h>
 
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+// #include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 #include "swCRTextUpdateEvent.h"
 
-using sw::SpinCtrlDouble;
+//using sw::SpinCtrlDouble;
 
 namespace swTst {
 
 
 CRSpinCtrlUpdateEvent::CRSpinCtrlUpdateEvent (wxEvent *event) :
-CRCapturedEvent (event)
-{
-    m_isDblType = false;
-    m_isXRC = false;
-}
+    CRCapturedEvent (event),
+//    m_isDblType(false),
+    m_isXRC(false)
+{}
 
 
 CRSpinCtrlUpdateEvent::~CRSpinCtrlUpdateEvent ()
@@ -45,15 +44,15 @@ void CRSpinCtrlUpdateEvent::Process (CRCapturedEvent **pendingEvt)
     wxASSERT (wdwEvtObject != NULL);
 
     // SpinCtrlDouble and wxSpinCtrl are very different internally:
-    if (wdwEvtObject->IsKindOf (CLASSINFO(SpinCtrlDouble))) {
+//     if (wdwEvtObject->IsKindOf (CLASSINFO(SpinCtrlDouble))) {
 
-        m_isDblType = true;
+//         m_isDblType = true;
 
-    } else {
+//     } else {
 
-        wxASSERT (wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl)));
-        m_isDblType = false;
-    }
+//         wxASSERT (wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl)));
+//         m_isDblType = false;
+//     }
 
     // If pending event is a text update event on the same (!) control, then
     // destroy it to prevent undesirable code emitting:
@@ -63,22 +62,22 @@ void CRSpinCtrlUpdateEvent::Process (CRCapturedEvent **pendingEvt)
                 dynamic_cast< CRTextUpdateEvent * >(*pendingEvt);
         if (pendingTextUpdateEvt != NULL) {
 
-            if (m_isDblType) {
+//             if (m_isDblType) {
 
-                // The event object is not the spin control itself, but the
-                // text control child:
-                wxObject *textCtrlObj = pendingTextUpdateEvt->GetEvent ()->
-                        GetEventObject ();
-                wxASSERT (textCtrlObj != NULL);
-                wxWindow *textCtrlWdw = wxDynamicCast (textCtrlObj, wxWindow);
-                wxASSERT (textCtrlWdw != NULL);
-                if (m_event->GetEventObject () == textCtrlWdw->GetParent ()) {
+//                 // The event object is not the spin control itself, but the
+//                 // text control child:
+//                 wxObject *textCtrlObj = pendingTextUpdateEvt->GetEvent ()->
+//                         GetEventObject ();
+//                 wxASSERT (textCtrlObj != NULL);
+//                 wxWindow *textCtrlWdw = wxDynamicCast (textCtrlObj, wxWindow);
+//                 wxASSERT (textCtrlWdw != NULL);
+//                 if (m_event->GetEventObject () == textCtrlWdw->GetParent ()) {
 
-                    delete *pendingEvt;
-                    *pendingEvt = NULL;
-                }
+//                     delete *pendingEvt;
+//                     *pendingEvt = NULL;
+//                 }
 
-            } else {
+//             } else {
 
                 if (m_event->GetEventObject () ==
                         pendingTextUpdateEvt->GetEvent ()->GetEventObject ()) {
@@ -86,33 +85,35 @@ void CRSpinCtrlUpdateEvent::Process (CRCapturedEvent **pendingEvt)
                     delete *pendingEvt;
                     *pendingEvt = NULL;
                 }
-            }
+//            }
         }
     }
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
 
-    if (hierarchy->FindXRCNode (wdwEvtObject, m_isDblType) != NULL) {
+//    if (hierarchy->FindXRCNode (wdwEvtObject, m_isDblType) != NULL) {
+    if (hierarchy->FindXRCNode (wdwEvtObject, false) != NULL) {
 
         m_isXRC = true;
     }
     m_spinCtrlName = wdwEvtObject->GetName ();
-    m_containerName = hierarchy->FindContainerName (wdwEvtObject, m_isDblType);
+//   m_containerName = hierarchy->FindContainerName (wdwEvtObject, m_isDblType);
+    m_containerName = hierarchy->FindContainerName (wdwEvtObject, false);
     wxASSERT (!m_containerName.IsEmpty ());
 
     wxASSERT (m_event->IsCommandEvent ());
     wxCommandEvent *cmdEvt = wxDynamicCast (m_event, wxCommandEvent);
     wxASSERT (cmdEvt != NULL);
-    if (m_isDblType) {
+//     if (m_isDblType) {
 
-        bool isOk = cmdEvt->GetString ().ToDouble (&m_spinCtrlDblValue);
-        wxASSERT (isOk);
+//         bool isOk = cmdEvt->GetString ().ToDouble (&m_spinCtrlDblValue);
+//         wxASSERT (isOk);
 
-    } else {
+//     } else {
 
         m_spinCtrlValue = cmdEvt->GetInt ();
-    }
+//    }
 }
 
 
@@ -173,22 +174,22 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
 
     wxString spinCtrlVarName = emitter->MakeVarName (m_spinCtrlName);
 
-    if (m_isDblType) {
+//     if (m_isDblType) {
 
-        str.Clear ();
-        str << _T("sw::SpinCtrlDouble *") << spinCtrlVarName << 
-                _T(" = wxDynamicCast (") << spinCtrlWdwVarName << 
-                _T(", SpinCtrlDouble);");
-        emitter->AddCode (str);
+//         str.Clear ();
+//         str << _T("sw::SpinCtrlDouble *") << spinCtrlVarName << 
+//                 _T(" = wxDynamicCast (") << spinCtrlWdwVarName << 
+//                 _T(", SpinCtrlDouble);");
+//         emitter->AddCode (str);
 
-    } else {
+//     } else {
 
         str.Clear ();
         str << _T("wxSpinCtrl *") << spinCtrlVarName << 
                 _T(" = wxDynamicCast (") << spinCtrlWdwVarName << 
                 _T(", wxSpinCtrl);");
         emitter->AddCode (str);
-    }
+//    }
 
     str.Clear ();
     str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for spin control '") <<
@@ -196,20 +197,20 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
             _T(" != NULL);");
     emitter->AddCode (str);
 
-    if (m_isDblType) {
+//     if (m_isDblType) {
 
-        str.Clear ();
-        str << _T("swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (")
-                << spinCtrlVarName << _T(", ") << m_spinCtrlDblValue << _T(");");
-        emitter->AddCode (str);
+//         str.Clear ();
+//         str << _T("swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (")
+//                 << spinCtrlVarName << _T(", ") << m_spinCtrlDblValue << _T(");");
+//         emitter->AddCode (str);
 
-    } else {
+//     } else {
 
         str.Clear ();
         str << _T("swTst::WxGuiTestEventSimulationHelper::SetSpinCtrlValue (") <<
                 spinCtrlVarName << _T(", ") << m_spinCtrlValue << _T(");");
         emitter->AddCode (str);
-    }
+//    }
 
     str.Clear ();
     str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");

@@ -6,11 +6,16 @@
   <set var='WGTI'>include/wxGuiTest</set>
   <set var='WXVTK'>src/wxVTK</set>
 
-  <set var='FD_SOURCES'>
+  <set var='FD_LIB_SOURCES'>
     $(FDS)/Config/swConfig.cpp
     $(FDS)/Config/swConfigInterface.cpp
     $(FDS)/Config/swConfigManager.cpp
     $(FDS)/Exception/swWxLogicErrorException.cpp
+    $(FDS)/swApp.cpp
+    $(FDS)/swPseudoApp.cpp
+  </set>
+
+  <set var='FD_TEST_SOURCES'>
     $(FDS)/FrameFactory/swDefaultDialog.cpp
     $(FDS)/FrameFactory/swFrameFactory.cpp
     $(FDS)/FrameFactory/swMainFrame.cpp
@@ -23,8 +28,6 @@
     $(FDS)/FrameFactory/swWindow.cpp
     $(FDS)/GUI/swGuiObjectManager.cpp
     $(FDS)/GUI/swToolGuiObjectManager.cpp
-    $(FDS)/swApp.cpp
-    $(FDS)/swPseudoApp.cpp
     $(FDS)/Widget/swNewBitmapButton.cpp
     $(FDS)/Widget/swSpinCtrlDouble.cpp
     $(FDS)/Widget/swTreeCtrl.cpp

@@ -89,7 +89,7 @@ void CRXRCReaderTest::testReadingXRC ()
 
 void CRXRCReaderTest::testResPathReadingXRC ()
 {
-    wxString xrcPath = _T(XRCDIR);
+    wxString xrcPath = _T(XRCDIR) _T("/EvtSimHlpTest_wdr.xrc");
     swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcPath);
 
     swTst::CRXRCResource *xrcResource = reader->GetResource ();

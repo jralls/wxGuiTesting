@@ -1,3 +1,25 @@
+2008-01-11  John Ralls  <john@manjusri.local>
+
+	* build/bakefile/swWxGuiTesting.bkl: Created new library target
+	swFramework to hold code needed by the test programs but not by
+	the library. 
+
+	* build/bakefile/files.bkl: Separated swFramework files into
+	controls, which are now in group FD_TEST_SOURCES and those needed
+	for the library, in FD_LIB_SOURCES
+
+	* include/wxGuiTest/swWxGuiTestEventSimulationHelper.h
+	* src/swWxGuiTesting/swWxGuiTestHelper.cpp
+	* src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
+	* src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.h
+	* src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.h: 
+	Removed all references to swFramework
+
+	* src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.cpp
+	(CRMenuSelectionEvent::Process): Refactored Process() with
+	"Extract Method".
+
+
 2007-12-28  John Ralls  <john@ceridwen.fremont.ca.us>
 
 	* sample/rc/custclass.xrc:

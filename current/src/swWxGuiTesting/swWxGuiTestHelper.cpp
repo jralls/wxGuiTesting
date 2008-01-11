@@ -15,8 +15,8 @@
 #include <wxGuiTest/swWxGuiTestWarningAsserterInterface.h>
 #include <wxGuiTest/swWxGuiTestProvokedWarningRegistry.h>
 
-#include <FrameFactory/swDefaultDialog.h>
-#include <FrameFactory/swFrameFactory.h>
+// #include <FrameFactory/swDefaultDialog.h>
+// #include <FrameFactory/swFrameFactory.h>
 
 namespace swTst {
 

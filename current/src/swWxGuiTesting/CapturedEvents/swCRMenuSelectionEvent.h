@@ -14,6 +14,7 @@
 #endif
 
 #include <wxGuiTest/Common.h>
+#include <wx/frame.h>
 
 #include "swCRCapturedEvent.h"
 
@@ -62,7 +63,7 @@ protected:
 private:
     bool m_isTool;
     
-    bool m_isFromMainFrameMenuBar;
+/*     bool m_isFromMainFrameMenuBar; */
     bool m_isFromTopWindow;
     bool m_eventObjectIsMenu;
     bool m_isFromPopupMenu;
@@ -74,13 +75,20 @@ private:
     wxString m_popupMenuContainerName;
 
     bool m_isStdId;
-    wxString m_toolbarName;
-    wxString m_guiObjName;
+/*     wxString m_toolbarName; */
+/*     wxString m_guiObjName; */
 
 private:
     // No copy and assignment constructor:
     CRMenuSelectionEvent (const CRMenuSelectionEvent &rhs);
     CRMenuSelectionEvent & operator= (const CRMenuSelectionEvent &rhs);
+    void processCheckable();
+    void processMainMenu(wxMenuBar* menuBar);
+    bool processPopUp (wxMenu* menu);
+    bool processToolBar(wxWindow *wdwEvtObject);
+    bool processTopMenu(wxMenu* menu);
+    bool processTopFrame(wxFrame* topFrame);
+    bool processMainFrame();
 };
 
 } // End namespace swTst

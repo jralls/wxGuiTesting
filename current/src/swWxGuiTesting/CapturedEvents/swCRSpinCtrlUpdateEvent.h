@@ -61,7 +61,7 @@ private:
     wxString m_spinCtrlName;
     double m_spinCtrlDblValue;
     int m_spinCtrlValue;
-    bool m_isDblType;
+/*     bool m_isDblType; */
     bool m_isXRC;
 
 private:

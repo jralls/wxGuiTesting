@@ -20,10 +20,10 @@ class wxTreeCtrl;
 class wxSpinCtrl;
 class wxNotebook;
 
-namespace sw {
-    class ToolBar;
-    class SpinCtrlDouble;
-}
+// namespace sw {
+//     class ToolBar;
+//     class SpinCtrlDouble;
+// }
 
 namespace swTst {
 
@@ -107,23 +107,23 @@ public:
             const wxString &value);
 
 
-    /*! \fn static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value)
-        \brief Set double typed spin control value.
+//     /*! \fn static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value)
+//         \brief Set double typed spin control value.
 
-        \param spinCtrl double typed spin control to manipulate
-        \param value new value for spin control
-    */
-    static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value);
+//         \param spinCtrl double typed spin control to manipulate
+//         \param value new value for spin control
+//     */
+//     static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value);
 
             
-    /*! \fn static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl, double value)
-        \brief Set double typed spin control value without generating event.
+//     /*! \fn static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl, double value)
+//         \brief Set double typed spin control value without generating event.
 
-        \param spinCtrl double typed spin control to manipulate
-        \param value new value for spin control
-    */
-    static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl,
-            double value);
+//         \param spinCtrl double typed spin control to manipulate
+//         \param value new value for spin control
+//     */
+//     static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl,
+//             double value);
     
 
     /*! \fn static void SelectTreeItem (const wxTreeItemId &id, wxTreeCtrl *treeCtrl)
@@ -237,7 +237,7 @@ public:
         \param toolbar toolbar owning the tool with the given id
         \param parent parent window owning the tool or toolbar
     */
-    static void ToggleTool (int id, bool enabled, sw::ToolBar *toolbar, wxWindow *parent);
+    static void ToggleTool (int id, bool enabled, wxToolBar *toolbar, wxWindow *parent);
 
 protected:
 

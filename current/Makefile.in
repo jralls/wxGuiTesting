@@ -39,14 +39,33 @@ VTK_LDFLAGS = @VTK_LDFLAGS@
 
 DESTDIR = 
 XRCDIR = $(srcdir)/test/TestData/xrc
-SWWXGUITESTING_CXXFLAGS = -I$(srcdir)/include \
+WXGUITESTING_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
 	$(CPPUNIT_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) $(OPT) $(DBG) \
 	$(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
-SWWXGUITESTING_OBJECTS =  \
+WXGUITESTING_OBJECTS =  \
 	$(__LIB_SOURCES_OBJECTS)
-SWWXGUITESTING_HEADERS =  \
+WXGUITESTING_HEADERS =  \
 	$(LIB_HDRS)
+SWFRAMEWORK_CXXFLAGS = -I$(srcdir)/include \
+	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting $(OPT) \
+	$(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+SWFRAMEWORK_OBJECTS =  \
+	objects/swFramework_swDefaultDialog.o \
+	objects/swFramework_swFrameFactory.o \
+	objects/swFramework_swMainFrame.o \
+	objects/swFramework_swMdiDefaultDialog.o \
+	objects/swFramework_swMdiFrameFactory.o \
+	objects/swFramework_swMdiMainFrame.o \
+	objects/swFramework_swMdiToolBar.o \
+	objects/swFramework_swToolBar.o \
+	objects/swFramework_swToolBarRegistry.o \
+	objects/swFramework_swWindow.o \
+	objects/swFramework_swGuiObjectManager.o \
+	objects/swFramework_swToolGuiObjectManager.o \
+	objects/swFramework_swNewBitmapButton.o \
+	objects/swFramework_swSpinCtrlDouble.o \
+	objects/swFramework_swTreeCtrl.o
 CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(XRCDIR)\" \
@@ -167,128 +186,98 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h
 @COND_USE_VTK_1@LIB_HDRS = $(COND_USE_VTK_1_LIB_HDRS)
 COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
-	objects/swWxGuiTesting_swConfig.o \
-	objects/swWxGuiTesting_swConfigInterface.o \
-	objects/swWxGuiTesting_swConfigManager.o \
-	objects/swWxGuiTesting_swWxLogicErrorException.o \
-	objects/swWxGuiTesting_swDefaultDialog.o \
-	objects/swWxGuiTesting_swFrameFactory.o \
-	objects/swWxGuiTesting_swMainFrame.o \
-	objects/swWxGuiTesting_swMdiDefaultDialog.o \
-	objects/swWxGuiTesting_swMdiFrameFactory.o \
-	objects/swWxGuiTesting_swMdiMainFrame.o \
-	objects/swWxGuiTesting_swMdiToolBar.o \
-	objects/swWxGuiTesting_swToolBar.o \
-	objects/swWxGuiTesting_swToolBarRegistry.o \
-	objects/swWxGuiTesting_swWindow.o \
-	objects/swWxGuiTesting_swGuiObjectManager.o \
-	objects/swWxGuiTesting_swToolGuiObjectManager.o \
-	objects/swWxGuiTesting_swApp.o \
-	objects/swWxGuiTesting_swPseudoApp.o \
-	objects/swWxGuiTesting_swNewBitmapButton.o \
-	objects/swWxGuiTesting_swSpinCtrlDouble.o \
-	objects/swWxGuiTesting_swTreeCtrl.o \
-	objects/swWxGuiTesting_swCRAbstractTreeEvent.o \
-	objects/swWxGuiTesting_swCRButtonClickEvent.o \
-	objects/swWxGuiTesting_swCRCapturedEvent.o \
-	objects/swWxGuiTesting_swCRCheckBoxClickEvent.o \
-	objects/swWxGuiTesting_swCRChoiceSelectionEvent.o \
-	objects/swWxGuiTesting_swCRMenuSelectionEvent.o \
-	objects/swWxGuiTesting_swCRNotebookPageChangeEvent.o \
-	objects/swWxGuiTesting_swCRRadioBoxSelectionEvent.o \
-	objects/swWxGuiTesting_swCRSliderUpdateEvent.o \
-	objects/swWxGuiTesting_swCRSpinCtrlUpdateEvent.o \
-	objects/swWxGuiTesting_swCRTextUpdateEvent.o \
-	objects/swWxGuiTesting_swCRTreeItemRightClickEvent.o \
-	objects/swWxGuiTesting_swCRTreeSelectionChangingEvent.o \
-	objects/swWxGuiTesting_swCRCapture.o \
-	objects/swWxGuiTesting_swCRCaptureControl.o \
-	objects/swWxGuiTesting_swCRCppEmitter.o \
-	objects/swWxGuiTesting_swCREventCaptureManager.o \
-	objects/swWxGuiTesting_swCREventFactory.o \
-	objects/swWxGuiTesting_swCRWindowHierarchyHandler.o \
-	objects/swWxGuiTesting_swCRXRCNode.o \
-	objects/swWxGuiTesting_swCRXRCObject.o \
-	objects/swWxGuiTesting_swCRXRCReader.o \
-	objects/swWxGuiTesting_swCRXRCResource.o \
-	objects/swWxGuiTesting_swInitWxGuiTest.o \
-	objects/swWxGuiTesting_swInitWxGuiTestSetUp.o \
-	objects/swWxGuiTesting_swModalDialogTimer.o \
-	objects/swWxGuiTesting_swWxGuiTestApp.o \
-	objects/swWxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o \
-	objects/swWxGuiTesting_swWxGuiTestEventSimulationHelper.o \
-	objects/swWxGuiTesting_swWxGuiTestHelper.o \
-	objects/swWxGuiTesting_swWxGuiTestProvokedWarning.o \
-	objects/swWxGuiTesting_swWxGuiTestProvokedWarningRegistry.o \
-	objects/swWxGuiTesting_swWxGuiTestTempInteractive.o \
-	objects/swWxGuiTesting_swWxGuiTestTempInteractiveControl.o \
-	objects/swWxGuiTesting_swWxGuiTestTimedDialogEnder.o \
-	objects/swWxGuiTesting_CapturePanel.o
+	objects/wxGuiTesting_swConfig.o \
+	objects/wxGuiTesting_swConfigInterface.o \
+	objects/wxGuiTesting_swConfigManager.o \
+	objects/wxGuiTesting_swWxLogicErrorException.o \
+	objects/wxGuiTesting_swApp.o \
+	objects/wxGuiTesting_swPseudoApp.o \
+	objects/wxGuiTesting_swCRAbstractTreeEvent.o \
+	objects/wxGuiTesting_swCRButtonClickEvent.o \
+	objects/wxGuiTesting_swCRCapturedEvent.o \
+	objects/wxGuiTesting_swCRCheckBoxClickEvent.o \
+	objects/wxGuiTesting_swCRChoiceSelectionEvent.o \
+	objects/wxGuiTesting_swCRMenuSelectionEvent.o \
+	objects/wxGuiTesting_swCRNotebookPageChangeEvent.o \
+	objects/wxGuiTesting_swCRRadioBoxSelectionEvent.o \
+	objects/wxGuiTesting_swCRSliderUpdateEvent.o \
+	objects/wxGuiTesting_swCRSpinCtrlUpdateEvent.o \
+	objects/wxGuiTesting_swCRTextUpdateEvent.o \
+	objects/wxGuiTesting_swCRTreeItemRightClickEvent.o \
+	objects/wxGuiTesting_swCRTreeSelectionChangingEvent.o \
+	objects/wxGuiTesting_swCRCapture.o \
+	objects/wxGuiTesting_swCRCaptureControl.o \
+	objects/wxGuiTesting_swCRCppEmitter.o \
+	objects/wxGuiTesting_swCREventCaptureManager.o \
+	objects/wxGuiTesting_swCREventFactory.o \
+	objects/wxGuiTesting_swCRWindowHierarchyHandler.o \
+	objects/wxGuiTesting_swCRXRCNode.o \
+	objects/wxGuiTesting_swCRXRCObject.o \
+	objects/wxGuiTesting_swCRXRCReader.o \
+	objects/wxGuiTesting_swCRXRCResource.o \
+	objects/wxGuiTesting_swInitWxGuiTest.o \
+	objects/wxGuiTesting_swInitWxGuiTestSetUp.o \
+	objects/wxGuiTesting_swModalDialogTimer.o \
+	objects/wxGuiTesting_swWxGuiTestApp.o \
+	objects/wxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o \
+	objects/wxGuiTesting_swWxGuiTestEventSimulationHelper.o \
+	objects/wxGuiTesting_swWxGuiTestHelper.o \
+	objects/wxGuiTesting_swWxGuiTestProvokedWarning.o \
+	objects/wxGuiTesting_swWxGuiTestProvokedWarningRegistry.o \
+	objects/wxGuiTesting_swWxGuiTestTempInteractive.o \
+	objects/wxGuiTesting_swWxGuiTestTempInteractiveControl.o \
+	objects/wxGuiTesting_swWxGuiTestTimedDialogEnder.o \
+	objects/wxGuiTesting_CapturePanel.o
 @COND_USE_VTK_0@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_0___LIB_SOURCES_OBJECTS)
 COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
-	objects/swWxGuiTesting_swConfig.o \
-	objects/swWxGuiTesting_swConfigInterface.o \
-	objects/swWxGuiTesting_swConfigManager.o \
-	objects/swWxGuiTesting_swWxLogicErrorException.o \
-	objects/swWxGuiTesting_swDefaultDialog.o \
-	objects/swWxGuiTesting_swFrameFactory.o \
-	objects/swWxGuiTesting_swMainFrame.o \
-	objects/swWxGuiTesting_swMdiDefaultDialog.o \
-	objects/swWxGuiTesting_swMdiFrameFactory.o \
-	objects/swWxGuiTesting_swMdiMainFrame.o \
-	objects/swWxGuiTesting_swMdiToolBar.o \
-	objects/swWxGuiTesting_swToolBar.o \
-	objects/swWxGuiTesting_swToolBarRegistry.o \
-	objects/swWxGuiTesting_swWindow.o \
-	objects/swWxGuiTesting_swGuiObjectManager.o \
-	objects/swWxGuiTesting_swToolGuiObjectManager.o \
-	objects/swWxGuiTesting_swApp.o \
-	objects/swWxGuiTesting_swPseudoApp.o \
-	objects/swWxGuiTesting_swNewBitmapButton.o \
-	objects/swWxGuiTesting_swSpinCtrlDouble.o \
-	objects/swWxGuiTesting_swTreeCtrl.o \
-	objects/swWxGuiTesting_swCRAbstractTreeEvent.o \
-	objects/swWxGuiTesting_swCRButtonClickEvent.o \
-	objects/swWxGuiTesting_swCRCapturedEvent.o \
-	objects/swWxGuiTesting_swCRCheckBoxClickEvent.o \
-	objects/swWxGuiTesting_swCRChoiceSelectionEvent.o \
-	objects/swWxGuiTesting_swCRMenuSelectionEvent.o \
-	objects/swWxGuiTesting_swCRNotebookPageChangeEvent.o \
-	objects/swWxGuiTesting_swCRRadioBoxSelectionEvent.o \
-	objects/swWxGuiTesting_swCRSliderUpdateEvent.o \
-	objects/swWxGuiTesting_swCRSpinCtrlUpdateEvent.o \
-	objects/swWxGuiTesting_swCRTextUpdateEvent.o \
-	objects/swWxGuiTesting_swCRTreeItemRightClickEvent.o \
-	objects/swWxGuiTesting_swCRTreeSelectionChangingEvent.o \
-	objects/swWxGuiTesting_swCRCapture.o \
-	objects/swWxGuiTesting_swCRCaptureControl.o \
-	objects/swWxGuiTesting_swCRCppEmitter.o \
-	objects/swWxGuiTesting_swCREventCaptureManager.o \
-	objects/swWxGuiTesting_swCREventFactory.o \
-	objects/swWxGuiTesting_swCRWindowHierarchyHandler.o \
-	objects/swWxGuiTesting_swCRXRCNode.o \
-	objects/swWxGuiTesting_swCRXRCObject.o \
-	objects/swWxGuiTesting_swCRXRCReader.o \
-	objects/swWxGuiTesting_swCRXRCResource.o \
-	objects/swWxGuiTesting_swInitWxGuiTest.o \
-	objects/swWxGuiTesting_swInitWxGuiTestSetUp.o \
-	objects/swWxGuiTesting_swModalDialogTimer.o \
-	objects/swWxGuiTesting_swWxGuiTestApp.o \
-	objects/swWxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o \
-	objects/swWxGuiTesting_swWxGuiTestEventSimulationHelper.o \
-	objects/swWxGuiTesting_swWxGuiTestHelper.o \
-	objects/swWxGuiTesting_swWxGuiTestProvokedWarning.o \
-	objects/swWxGuiTesting_swWxGuiTestProvokedWarningRegistry.o \
-	objects/swWxGuiTesting_swWxGuiTestTempInteractive.o \
-	objects/swWxGuiTesting_swWxGuiTestTempInteractiveControl.o \
-	objects/swWxGuiTesting_swWxGuiTestTimedDialogEnder.o \
-	objects/swWxGuiTesting_CapturePanel.o \
-	objects/swWxGuiTesting_wxVTKRenderWindowInteractor.o \
-	objects/swWxGuiTesting_swCRVtkCapture.o \
-	objects/swWxGuiTesting_swCRVtkCaptureControl.o \
-	objects/swWxGuiTesting_swVtkWxGuiTestHelper.o \
-	objects/swWxGuiTesting_swWxVtkInteractorEventRecorder.o \
-	objects/swWxGuiTesting_VtkCapturePanel.o
+	objects/wxGuiTesting_swConfig.o \
+	objects/wxGuiTesting_swConfigInterface.o \
+	objects/wxGuiTesting_swConfigManager.o \
+	objects/wxGuiTesting_swWxLogicErrorException.o \
+	objects/wxGuiTesting_swApp.o \
+	objects/wxGuiTesting_swPseudoApp.o \
+	objects/wxGuiTesting_swCRAbstractTreeEvent.o \
+	objects/wxGuiTesting_swCRButtonClickEvent.o \
+	objects/wxGuiTesting_swCRCapturedEvent.o \
+	objects/wxGuiTesting_swCRCheckBoxClickEvent.o \
+	objects/wxGuiTesting_swCRChoiceSelectionEvent.o \
+	objects/wxGuiTesting_swCRMenuSelectionEvent.o \
+	objects/wxGuiTesting_swCRNotebookPageChangeEvent.o \
+	objects/wxGuiTesting_swCRRadioBoxSelectionEvent.o \
+	objects/wxGuiTesting_swCRSliderUpdateEvent.o \
+	objects/wxGuiTesting_swCRSpinCtrlUpdateEvent.o \
+	objects/wxGuiTesting_swCRTextUpdateEvent.o \
+	objects/wxGuiTesting_swCRTreeItemRightClickEvent.o \
+	objects/wxGuiTesting_swCRTreeSelectionChangingEvent.o \
+	objects/wxGuiTesting_swCRCapture.o \
+	objects/wxGuiTesting_swCRCaptureControl.o \
+	objects/wxGuiTesting_swCRCppEmitter.o \
+	objects/wxGuiTesting_swCREventCaptureManager.o \
+	objects/wxGuiTesting_swCREventFactory.o \
+	objects/wxGuiTesting_swCRWindowHierarchyHandler.o \
+	objects/wxGuiTesting_swCRXRCNode.o \
+	objects/wxGuiTesting_swCRXRCObject.o \
+	objects/wxGuiTesting_swCRXRCReader.o \
+	objects/wxGuiTesting_swCRXRCResource.o \
+	objects/wxGuiTesting_swInitWxGuiTest.o \
+	objects/wxGuiTesting_swInitWxGuiTestSetUp.o \
+	objects/wxGuiTesting_swModalDialogTimer.o \
+	objects/wxGuiTesting_swWxGuiTestApp.o \
+	objects/wxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o \
+	objects/wxGuiTesting_swWxGuiTestEventSimulationHelper.o \
+	objects/wxGuiTesting_swWxGuiTestHelper.o \
+	objects/wxGuiTesting_swWxGuiTestProvokedWarning.o \
+	objects/wxGuiTesting_swWxGuiTestProvokedWarningRegistry.o \
+	objects/wxGuiTesting_swWxGuiTestTempInteractive.o \
+	objects/wxGuiTesting_swWxGuiTestTempInteractiveControl.o \
+	objects/wxGuiTesting_swWxGuiTestTimedDialogEnder.o \
+	objects/wxGuiTesting_CapturePanel.o \
+	objects/wxGuiTesting_wxVTKRenderWindowInteractor.o \
+	objects/wxGuiTesting_swCRVtkCapture.o \
+	objects/wxGuiTesting_swCRVtkCaptureControl.o \
+	objects/wxGuiTesting_swVtkWxGuiTestHelper.o \
+	objects/wxGuiTesting_swWxVtkInteractorEventRecorder.o \
+	objects/wxGuiTesting_VtkCapturePanel.o
 @COND_USE_VTK_1@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_1___LIB_SOURCES_OBJECTS)
 @COND_PLATFORM_MAC_0@__CppUnitTest___mac_setfilecmd = @true
 @COND_PLATFORM_MAC_1@__CppUnitTest___mac_setfilecmd = \
@@ -324,23 +313,24 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 @COND_PLATFORM_MAC_0@__VTKUnitTest___mac_setfilecmd = @true
 @COND_PLATFORM_MAC_1@__VTKUnitTest___mac_setfilecmd = \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/VTKUnitTest$(EXEEXT)
-@COND_USE_VTK_1_TOOLKIT_MAC@____VTKUnitTest_app_Contents_PkgInfo___depname \
-@COND_USE_VTK_1_TOOLKIT_MAC@	= ./VTKUnitTest.app/Contents/PkgInfo
+@COND_TOOLKIT_MAC_USE_VTK_1@____VTKUnitTest_app_Contents_PkgInfo___depname \
+@COND_TOOLKIT_MAC_USE_VTK_1@	= ./VTKUnitTest.app/Contents/PkgInfo
 
 ### Targets: ###
 
-all: objects lib bin lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
+all: objects lib bin lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
 
-install: all install_swWxGuiTesting install_swWxGuiTesting_headers
+install: all install_wxGuiTesting install_wxGuiTesting_headers
 
-uninstall: uninstall_swWxGuiTesting uninstall_swWxGuiTesting_headers
+uninstall: uninstall_wxGuiTesting uninstall_wxGuiTesting_headers
 
 install-strip: install
 
 clean: 
 	rm -rf objects/.deps objects/.pch
 	rm -f objects/*.o
-	rm -f lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	rm -f lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	rm -f lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 	rm -f bin/CppUnitTest$(EXEEXT)
 	rm -rf CppUnitTest.app
 	rm -f bin/CppGuiUnitTestEventSimulation$(EXEEXT)
@@ -366,34 +356,39 @@ lib:
 bin: 
 	@mkdir -p bin
 
-lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT): $(SWWXGUITESTING_OBJECTS)
+lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT): $(WXGUITESTING_OBJECTS)
 	rm -f $@
-	$(AR) $(AROPTIONS) $@ $(SWWXGUITESTING_OBJECTS)
+	$(AR) $(AROPTIONS) $@ $(WXGUITESTING_OBJECTS)
 	$(RANLIB) $@
 
-install_swWxGuiTesting: 
+install_wxGuiTesting: 
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)/lib
-	$(INSTALL_DATA) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) $(DESTDIR)$(prefix)/lib
+	$(INSTALL_DATA) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) $(DESTDIR)$(prefix)/lib
 
-uninstall_swWxGuiTesting: 
-	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+uninstall_wxGuiTesting: 
+	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 
-install_swWxGuiTesting_headers: 
+install_wxGuiTesting_headers: 
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)
-	for f in $(SWWXGUITESTING_HEADERS); do \
+	for f in $(WXGUITESTING_HEADERS); do \
 	if test ! -d $(DESTDIR)$(prefix)/`dirname $$f` ; then \
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)/`dirname $$f`; \
 	fi; \
 	$(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(prefix)/$$f; \
 	done
 
-uninstall_swWxGuiTesting_headers: 
-	for f in $(SWWXGUITESTING_HEADERS); do \
+uninstall_wxGuiTesting_headers: 
+	for f in $(WXGUITESTING_HEADERS); do \
 	rm -f $(DESTDIR)$(prefix)/$$f; \
 	done
 
-bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT): $(SWFRAMEWORK_OBJECTS)
+	rm -f $@
+	$(AR) $(AROPTIONS) $@ $(SWFRAMEWORK_OBJECTS)
+	$(RANLIB) $@
+
+bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPUNITTEST_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppUnitTest___mac_setfilecmd)
 
@@ -416,8 +411,8 @@ bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$
 
 CppUnitTest_bundle: $(____CppUnitTest_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestEventSimulation___mac_setfilecmd)
 
@@ -440,8 +435,8 @@ bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJE
 
 CppGuiUnitTestEventSimulation_bundle: $(____CppGuiUnitTestEventSimulation_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestCaptureReplay___mac_setfilecmd)
 
@@ -464,8 +459,8 @@ bin/CppGuiUnitTestCaptureReplay$(EXEEXT): $(CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS)
 
 CppGuiUnitTestCaptureReplay_bundle: $(____CppGuiUnitTestCaptureReplay_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitTestModalDialog___mac_setfilecmd)
 
@@ -488,8 +483,8 @@ bin/CppGuiUnitTestModalDialog$(EXEEXT): $(CPPGUIUNITTESTMODALDIALOG_OBJECTS) lib
 
 CppGuiUnitTestModalDialog_bundle: $(____CppGuiUnitTestModalDialog_app_Contents_PkgInfo___depname)
 
-bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 	
 	$(__CppGuiUnitCapturePlusEmit___mac_setfilecmd)
 
@@ -512,218 +507,218 @@ bin/CppGuiUnitCapturePlusEmit$(EXEEXT): $(CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS) lib
 
 CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_PkgInfo___depname)
 
-@COND_USE_VTK_1@bin/VTKUnitTest$(EXEEXT): $(VTKUNITTEST_OBJECTS) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
-@COND_USE_VTK_1@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -Llib $(LDFLAGS) $(CPPUNIT_LIBS) $(VTK_LDFLAGS)   $(LIBS) -lswWxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
+@COND_USE_VTK_1@bin/VTKUnitTest$(EXEEXT): $(VTKUNITTEST_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)swFramework$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+@COND_USE_VTK_1@	$(CXX) -o $@ $(VTKUNITTEST_OBJECTS) -Llib -Llib $(LDFLAGS) $(CPPUNIT_LIBS) $(VTK_LDFLAGS)   $(LIBS) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -lswFramework$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS)
 @COND_USE_VTK_1@	
 @COND_USE_VTK_1@	$(__VTKUnitTest___mac_setfilecmd)
 
-@COND_USE_VTK_1_TOOLKIT_MAC@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest___depname)
-@COND_USE_VTK_1_TOOLKIT_MAC@	mkdir -p ./VTKUnitTest.app/Contents/MacOS
-@COND_USE_VTK_1_TOOLKIT_MAC@	mkdir -p ./VTKUnitTest.app/Contents/Resources
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.VTKUnitTest/" \
-@COND_USE_VTK_1_TOOLKIT_MAC@	-e "s/EXECUTABLE/VTKUnitTest/" \
-@COND_USE_VTK_1_TOOLKIT_MAC@	-e "s/VERSION/1.6.0/" \
-@COND_USE_VTK_1_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./VTKUnitTest.app/Contents/Info.plist
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	echo -n "APPL????" >./VTKUnitTest.app/Contents/PkgInfo
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	
-@COND_USE_VTK_1_TOOLKIT_MAC@	ln -f bin/VTKUnitTest$(EXEEXT) \
-@COND_USE_VTK_1_TOOLKIT_MAC@	./VTKUnitTest.app/Contents/MacOS/VTKUnitTest
+@COND_TOOLKIT_MAC_USE_VTK_1@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest___depname)
+@COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/MacOS
+@COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/Resources
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	sed -e "s/IDENTIFIER/org.wxwidgets.VTKUnitTest/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	-e "s/EXECUTABLE/VTKUnitTest/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	-e "s/VERSION/1.6.0/" \
+@COND_TOOLKIT_MAC_USE_VTK_1@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./VTKUnitTest.app/Contents/Info.plist
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	echo -n "APPL????" >./VTKUnitTest.app/Contents/PkgInfo
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	
+@COND_TOOLKIT_MAC_USE_VTK_1@	ln -f bin/VTKUnitTest$(EXEEXT) \
+@COND_TOOLKIT_MAC_USE_VTK_1@	./VTKUnitTest.app/Contents/MacOS/VTKUnitTest
 
 VTKUnitTest_bundle: $(____VTKUnitTest_app_Contents_PkgInfo___depname)
 
-objects/swWxGuiTesting_wxVTKRenderWindowInteractor.o: $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
+objects/wxGuiTesting_wxVTKRenderWindowInteractor.o: $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxVTK/wxVTKRenderWindowInteractor.cpp
 
-objects/swWxGuiTesting_swCRVtkCapture.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.cpp
+objects/wxGuiTesting_swCRVtkCapture.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.cpp
 
-objects/swWxGuiTesting_swCRVtkCaptureControl.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
+objects/wxGuiTesting_swCRVtkCaptureControl.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
 
-objects/swWxGuiTesting_swVtkWxGuiTestHelper.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
+objects/wxGuiTesting_swVtkWxGuiTestHelper.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.cpp
 
-objects/swWxGuiTesting_swWxVtkInteractorEventRecorder.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
+objects/wxGuiTesting_swWxVtkInteractorEventRecorder.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.cpp
 
-objects/swWxGuiTesting_VtkCapturePanel.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
+objects/wxGuiTesting_VtkCapturePanel.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 
-objects/swWxGuiTesting_swConfig.o: $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
+objects/wxGuiTesting_swConfig.o: $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
 
-objects/swWxGuiTesting_swConfigInterface.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
+objects/wxGuiTesting_swConfigInterface.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
 
-objects/swWxGuiTesting_swConfigManager.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
+objects/wxGuiTesting_swConfigManager.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
 
-objects/swWxGuiTesting_swWxLogicErrorException.o: $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
+objects/wxGuiTesting_swWxLogicErrorException.o: $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
 
-objects/swWxGuiTesting_swDefaultDialog.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swDefaultDialog.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swDefaultDialog.cpp
+objects/wxGuiTesting_swApp.o: $(srcdir)/src/swFrameworkDependent/swApp.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swApp.cpp
 
-objects/swWxGuiTesting_swFrameFactory.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swFrameFactory.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swFrameFactory.cpp
+objects/wxGuiTesting_swPseudoApp.o: $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
 
-objects/swWxGuiTesting_swMainFrame.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMainFrame.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMainFrame.cpp
+objects/wxGuiTesting_swCRAbstractTreeEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
 
-objects/swWxGuiTesting_swMdiDefaultDialog.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiDefaultDialog.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiDefaultDialog.cpp
+objects/wxGuiTesting_swCRButtonClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRButtonClickEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRButtonClickEvent.cpp
 
-objects/swWxGuiTesting_swMdiFrameFactory.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiFrameFactory.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiFrameFactory.cpp
+objects/wxGuiTesting_swCRCapturedEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCapturedEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCapturedEvent.cpp
 
-objects/swWxGuiTesting_swMdiMainFrame.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiMainFrame.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiMainFrame.cpp
+objects/wxGuiTesting_swCRCheckBoxClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCheckBoxClickEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCheckBoxClickEvent.cpp
 
-objects/swWxGuiTesting_swMdiToolBar.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiToolBar.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiToolBar.cpp
+objects/wxGuiTesting_swCRChoiceSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRChoiceSelectionEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRChoiceSelectionEvent.cpp
 
-objects/swWxGuiTesting_swToolBar.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBar.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBar.cpp
+objects/wxGuiTesting_swCRMenuSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.cpp
 
-objects/swWxGuiTesting_swToolBarRegistry.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBarRegistry.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBarRegistry.cpp
+objects/wxGuiTesting_swCRNotebookPageChangeEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRNotebookPageChangeEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRNotebookPageChangeEvent.cpp
 
-objects/swWxGuiTesting_swWindow.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swWindow.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swWindow.cpp
+objects/wxGuiTesting_swCRRadioBoxSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
 
-objects/swWxGuiTesting_swGuiObjectManager.o: $(srcdir)/src/swFrameworkDependent/GUI/swGuiObjectManager.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/GUI/swGuiObjectManager.cpp
+objects/wxGuiTesting_swCRSliderUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSliderUpdateEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSliderUpdateEvent.cpp
 
-objects/swWxGuiTesting_swToolGuiObjectManager.o: $(srcdir)/src/swFrameworkDependent/GUI/swToolGuiObjectManager.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/GUI/swToolGuiObjectManager.cpp
+objects/wxGuiTesting_swCRSpinCtrlUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
 
-objects/swWxGuiTesting_swApp.o: $(srcdir)/src/swFrameworkDependent/swApp.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swApp.cpp
+objects/wxGuiTesting_swCRTextUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
 
-objects/swWxGuiTesting_swPseudoApp.o: $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
+objects/wxGuiTesting_swCRTreeItemRightClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeItemRightClickEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeItemRightClickEvent.cpp
 
-objects/swWxGuiTesting_swNewBitmapButton.o: $(srcdir)/src/swFrameworkDependent/Widget/swNewBitmapButton.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swNewBitmapButton.cpp
+objects/wxGuiTesting_swCRTreeSelectionChangingEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
 
-objects/swWxGuiTesting_swSpinCtrlDouble.o: $(srcdir)/src/swFrameworkDependent/Widget/swSpinCtrlDouble.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swSpinCtrlDouble.cpp
+objects/wxGuiTesting_swCRCapture.o: $(srcdir)/src/swWxGuiTesting/swCRCapture.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCapture.cpp
 
-objects/swWxGuiTesting_swTreeCtrl.o: $(srcdir)/src/swFrameworkDependent/Widget/swTreeCtrl.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swTreeCtrl.cpp
+objects/wxGuiTesting_swCRCaptureControl.o: $(srcdir)/src/swWxGuiTesting/swCRCaptureControl.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCaptureControl.cpp
 
-objects/swWxGuiTesting_swCRAbstractTreeEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
+objects/wxGuiTesting_swCRCppEmitter.o: $(srcdir)/src/swWxGuiTesting/swCRCppEmitter.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCppEmitter.cpp
 
-objects/swWxGuiTesting_swCRButtonClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRButtonClickEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRButtonClickEvent.cpp
+objects/wxGuiTesting_swCREventCaptureManager.o: $(srcdir)/src/swWxGuiTesting/swCREventCaptureManager.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCREventCaptureManager.cpp
 
-objects/swWxGuiTesting_swCRCapturedEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCapturedEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCapturedEvent.cpp
+objects/wxGuiTesting_swCREventFactory.o: $(srcdir)/src/swWxGuiTesting/swCREventFactory.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCREventFactory.cpp
 
-objects/swWxGuiTesting_swCRCheckBoxClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCheckBoxClickEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRCheckBoxClickEvent.cpp
+objects/wxGuiTesting_swCRWindowHierarchyHandler.o: $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
 
-objects/swWxGuiTesting_swCRChoiceSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRChoiceSelectionEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRChoiceSelectionEvent.cpp
+objects/wxGuiTesting_swCRXRCNode.o: $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
 
-objects/swWxGuiTesting_swCRMenuSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRMenuSelectionEvent.cpp
+objects/wxGuiTesting_swCRXRCObject.o: $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
 
-objects/swWxGuiTesting_swCRNotebookPageChangeEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRNotebookPageChangeEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRNotebookPageChangeEvent.cpp
+objects/wxGuiTesting_swCRXRCReader.o: $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
 
-objects/swWxGuiTesting_swCRRadioBoxSelectionEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
+objects/wxGuiTesting_swCRXRCResource.o: $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
 
-objects/swWxGuiTesting_swCRSliderUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSliderUpdateEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSliderUpdateEvent.cpp
+objects/wxGuiTesting_swInitWxGuiTest.o: $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
 
-objects/swWxGuiTesting_swCRSpinCtrlUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
+objects/wxGuiTesting_swInitWxGuiTestSetUp.o: $(srcdir)/src/swWxGuiTesting/swInitWxGuiTestSetUp.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swInitWxGuiTestSetUp.cpp
 
-objects/swWxGuiTesting_swCRTextUpdateEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
+objects/wxGuiTesting_swModalDialogTimer.o: $(srcdir)/src/swWxGuiTesting/swModalDialogTimer.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swModalDialogTimer.cpp
 
-objects/swWxGuiTesting_swCRTreeItemRightClickEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeItemRightClickEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeItemRightClickEvent.cpp
+objects/wxGuiTesting_swWxGuiTestApp.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestApp.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestApp.cpp
 
-objects/swWxGuiTesting_swCRTreeSelectionChangingEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
+objects/wxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.cpp
 
-objects/swWxGuiTesting_swCRCapture.o: $(srcdir)/src/swWxGuiTesting/swCRCapture.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCapture.cpp
+objects/wxGuiTesting_swWxGuiTestEventSimulationHelper.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
 
-objects/swWxGuiTesting_swCRCaptureControl.o: $(srcdir)/src/swWxGuiTesting/swCRCaptureControl.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCaptureControl.cpp
+objects/wxGuiTesting_swWxGuiTestHelper.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestHelper.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestHelper.cpp
 
-objects/swWxGuiTesting_swCRCppEmitter.o: $(srcdir)/src/swWxGuiTesting/swCRCppEmitter.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRCppEmitter.cpp
+objects/wxGuiTesting_swWxGuiTestProvokedWarning.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarning.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarning.cpp
 
-objects/swWxGuiTesting_swCREventCaptureManager.o: $(srcdir)/src/swWxGuiTesting/swCREventCaptureManager.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCREventCaptureManager.cpp
+objects/wxGuiTesting_swWxGuiTestProvokedWarningRegistry.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp
 
-objects/swWxGuiTesting_swCREventFactory.o: $(srcdir)/src/swWxGuiTesting/swCREventFactory.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCREventFactory.cpp
+objects/wxGuiTesting_swWxGuiTestTempInteractive.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractive.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractive.cpp
 
-objects/swWxGuiTesting_swCRWindowHierarchyHandler.o: $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
+objects/wxGuiTesting_swWxGuiTestTempInteractiveControl.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractiveControl.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractiveControl.cpp
 
-objects/swWxGuiTesting_swCRXRCNode.o: $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
+objects/wxGuiTesting_swWxGuiTestTimedDialogEnder.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTimedDialogEnder.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTimedDialogEnder.cpp
 
-objects/swWxGuiTesting_swCRXRCObject.o: $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
+objects/wxGuiTesting_CapturePanel.o: $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
 
-objects/swWxGuiTesting_swCRXRCReader.o: $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
+objects/swFramework_swDefaultDialog.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swDefaultDialog.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swDefaultDialog.cpp
 
-objects/swWxGuiTesting_swCRXRCResource.o: $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
+objects/swFramework_swFrameFactory.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swFrameFactory.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swFrameFactory.cpp
 
-objects/swWxGuiTesting_swInitWxGuiTest.o: $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
+objects/swFramework_swMainFrame.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMainFrame.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMainFrame.cpp
 
-objects/swWxGuiTesting_swInitWxGuiTestSetUp.o: $(srcdir)/src/swWxGuiTesting/swInitWxGuiTestSetUp.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swInitWxGuiTestSetUp.cpp
+objects/swFramework_swMdiDefaultDialog.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiDefaultDialog.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiDefaultDialog.cpp
 
-objects/swWxGuiTesting_swModalDialogTimer.o: $(srcdir)/src/swWxGuiTesting/swModalDialogTimer.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swModalDialogTimer.cpp
+objects/swFramework_swMdiFrameFactory.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiFrameFactory.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiFrameFactory.cpp
 
-objects/swWxGuiTesting_swWxGuiTestApp.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestApp.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestApp.cpp
+objects/swFramework_swMdiMainFrame.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiMainFrame.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiMainFrame.cpp
 
-objects/swWxGuiTesting_swWxGuiTestCppUnitWarningAsserter.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.cpp
+objects/swFramework_swMdiToolBar.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiToolBar.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swMdiToolBar.cpp
 
-objects/swWxGuiTesting_swWxGuiTestEventSimulationHelper.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
+objects/swFramework_swToolBar.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBar.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBar.cpp
 
-objects/swWxGuiTesting_swWxGuiTestHelper.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestHelper.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestHelper.cpp
+objects/swFramework_swToolBarRegistry.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBarRegistry.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swToolBarRegistry.cpp
 
-objects/swWxGuiTesting_swWxGuiTestProvokedWarning.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarning.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarning.cpp
+objects/swFramework_swWindow.o: $(srcdir)/src/swFrameworkDependent/FrameFactory/swWindow.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/FrameFactory/swWindow.cpp
 
-objects/swWxGuiTesting_swWxGuiTestProvokedWarningRegistry.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp
+objects/swFramework_swGuiObjectManager.o: $(srcdir)/src/swFrameworkDependent/GUI/swGuiObjectManager.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/GUI/swGuiObjectManager.cpp
 
-objects/swWxGuiTesting_swWxGuiTestTempInteractive.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractive.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractive.cpp
+objects/swFramework_swToolGuiObjectManager.o: $(srcdir)/src/swFrameworkDependent/GUI/swToolGuiObjectManager.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/GUI/swToolGuiObjectManager.cpp
 
-objects/swWxGuiTesting_swWxGuiTestTempInteractiveControl.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractiveControl.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTempInteractiveControl.cpp
+objects/swFramework_swNewBitmapButton.o: $(srcdir)/src/swFrameworkDependent/Widget/swNewBitmapButton.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swNewBitmapButton.cpp
 
-objects/swWxGuiTesting_swWxGuiTestTimedDialogEnder.o: $(srcdir)/src/swWxGuiTesting/swWxGuiTestTimedDialogEnder.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swWxGuiTestTimedDialogEnder.cpp
+objects/swFramework_swSpinCtrlDouble.o: $(srcdir)/src/swFrameworkDependent/Widget/swSpinCtrlDouble.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swSpinCtrlDouble.cpp
 
-objects/swWxGuiTesting_CapturePanel.o: $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
-	$(CXXC) -c -o $@ $(SWWXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturePanel.cpp
+objects/swFramework_swTreeCtrl.o: $(srcdir)/src/swFrameworkDependent/Widget/swTreeCtrl.cpp
+	$(CXXC) -c -o $@ $(SWFRAMEWORK_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Widget/swTreeCtrl.cpp
 
 objects/CppUnitTest_CppTextTestApp.o: $(srcdir)/test/CppTest/CppTextTestApp.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/CppTextTestApp.cpp
@@ -783,4 +778,4 @@ objects/VTKUnitTest_swCRVtkCaptureTest.o: $(srcdir)/test/VtkTest/swCRVtkCaptureT
 # Include dependency info, if present:
 @IF_GNU_MAKE@-include .deps/*.d
 
-.PHONY: all install uninstall clean distclean install_swWxGuiTesting uninstall_swWxGuiTesting install_swWxGuiTesting_headers uninstall_swWxGuiTesting_headers CppUnitTest_bundle CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle VTKUnitTest_bundle
+.PHONY: all install uninstall clean distclean install_wxGuiTesting uninstall_wxGuiTesting install_wxGuiTesting_headers uninstall_wxGuiTesting_headers CppUnitTest_bundle CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle VTKUnitTest_bundle

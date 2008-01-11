@@ -170,8 +170,8 @@
   </set>
 
   <set var='LIB_SOURCES'>
-    <if cond="USE_VTK=='0'">$(FD_SOURCES) $(WGT_SOURCES)</if>
-    <if cond="USE_VTK=='1'">$(FD_SOURCES) $(WGT_SOURCES) $(WXVTK_SOURCES) $(VTK_SOURCES)</if>
+    <if cond="USE_VTK=='0'">$(FD_LIB_SOURCES) $(WGT_SOURCES)</if>
+    <if cond="USE_VTK=='1'">$(FD_LIB_SOURCES) $(WGT_SOURCES) $(WXVTK_SOURCES) $(VTK_SOURCES)</if>
   </set>
 
   <set var='LIB_HDRS'>
@@ -206,16 +206,18 @@
   <template id='testApp' template='libInclude,CppUnit,optimize,wx'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
-    <depends>swWxGuiTesting</depends>
-	<if cond="FORMAT=='autoconf'">
-	  <osx-bundle />
-	</if>
+    <depends>wxGuiTesting</depends>
+    <depends>swFramework</depends>
+    <if cond="FORMAT=='autoconf'">
+      <osx-bundle />
+    </if>
 
     <define>TESTDIR="$(TESTDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SRCDIR="$(baseDir)"</define>
 
-    <library>swWxGuiTesting</library>
+    <library>wxGuiTesting</library>
+    <library>swFramework</library>
 
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
@@ -225,8 +227,8 @@
     <wx-lib>base</wx-lib>
   </template>
 
-  <lib id='swWxGuiTesting' template='libInclude,CppUnit,vtk,optimize,wx-lib'>
-    <libname>swWxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
+  <lib id='wxGuiTesting' template='libInclude,CppUnit,vtk,optimize,wx-lib'>
+    <libname>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
     <headers>$(LIB_HDRS)</headers>
@@ -236,7 +238,11 @@
     </if>
   </lib>
 
-
+  <lib id='swFramework' template='libInclude,optimize,wx-lib'>
+    <libname>swFramework$(WX3RDPARTYLIBPOSTFIX)</libname>
+    <dirname>$(libdir)</dirname>
+    <sources>$(FD_TEST_SOURCES)</sources>
+  </lib>
 
   <exe id='CppUnitTest' template='testApp'>
     <sources>$(CPPTEST_SOURCES)</sources>
@@ -266,7 +272,8 @@
     template='wgtInclude,CppUnit,optimize,wx,vtk'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
-    <depends>swWxGuiTesting</depends>
+    <depends>wxGuiTesting</depends>
+    <depends>swFramework</depends>
     <precomp-headers>off</precomp-headers>
     <sources>
       $(VTKTEST_SOURCES) 
@@ -279,7 +286,8 @@
     <define>VTKDIR="$(VTKDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SRCDIR="$(baseDir)"</define>
-    <library>swWxGuiTesting</library>
+    <library>wxGuiTesting</library>
+    <library>swFramework</library>
     <if cond="FORMAT!='autoconf' and PLATFORM_WIN32=='1'">
       <sys-lib>opengl32</sys-lib>
       <sys-lib>glu32</sys-lib>

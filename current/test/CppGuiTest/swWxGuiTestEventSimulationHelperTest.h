@@ -36,8 +36,8 @@ class WxGuiTestEventSimulationHelperTest : public CPPUNIT_NS::TestFixture
         CPPUNIT_TEST( testClickButton );
         CPPUNIT_TEST( testSetTextCtrlValue );
         // First call test without event generation to prevente side effects:
-        CPPUNIT_TEST( testSetSpinCtrlDblValueWithoutEvent );
-        CPPUNIT_TEST( testSetSpinCtrlDblValue );
+//         CPPUNIT_TEST( testSetSpinCtrlDblValueWithoutEvent );
+//         CPPUNIT_TEST( testSetSpinCtrlDblValue );
         CPPUNIT_TEST( testSelectTreeItem );
         CPPUNIT_TEST( testRightClickTreeItem );
         CPPUNIT_TEST( testSelectNotebookPage );
@@ -100,16 +100,16 @@ public:
     virtual void testSetTextCtrlValue ();
 
 
-    /*! \fn virtual void testSetSpinCtrlDblValue ()
-        \brief Test setting a double typed spin control value.
-    */
-    virtual void testSetSpinCtrlDblValue ();
+//     /*! \fn virtual void testSetSpinCtrlDblValue ()
+//         \brief Test setting a double typed spin control value.
+//     */
+//     virtual void testSetSpinCtrlDblValue ();
     
 
-    /*! \fn virtual void testSetSpinCtrlDblValueWithoutEvent ()
-        \brief Test setting a double typed spin control value without generating an event.
-    */
-    virtual void testSetSpinCtrlDblValueWithoutEvent ();
+//     /*! \fn virtual void testSetSpinCtrlDblValueWithoutEvent ()
+//         \brief Test setting a double typed spin control value without generating an event.
+//     */
+//     virtual void testSetSpinCtrlDblValueWithoutEvent ();
     
 
     /*! \fn virtual void testSelectTreeItem ()
