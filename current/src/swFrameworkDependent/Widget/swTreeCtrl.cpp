@@ -10,7 +10,7 @@
     #pragma implementation "swTreeCtrl.h"
 #endif
 
-#include <wxGuiTest/Widget/swTreeCtrl.h>
+#include "swTreeCtrl.h"
 
 #include <wx/imaglist.h>
 

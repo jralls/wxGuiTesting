@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -12,23 +14,20 @@
 
 #include "swCRTextUpdateEvent.h"
 
-//#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
 #include <wx/spinctrl.h>
 
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 
-//using sw::SpinCtrlDouble;
 
-namespace swTst {
+using namespace swTst;
 
 
 CRTextUpdateEvent::CRTextUpdateEvent (wxEvent *event) :
-CRCapturedEvent (event)
+    CRCapturedEvent (event),  m_isIrrelevant(false)
 {
-    m_isIrrelevant = false;
-    m_isXRC = false;
+//    Nothing to do
 }
 
 
@@ -56,30 +55,23 @@ void CRTextUpdateEvent::Process (CRCapturedEvent **pendingEvt)
     wxASSERT (wdwEvtObject != NULL);
 
     // Text updates of double typed spin controls are irrelevant:
-    if (wdwEvtObject->GetParent () != NULL) {
-
- //        if (wdwEvtObject->GetParent ()->IsKindOf (CLASSINFO(SpinCtrlDouble))) {
-
-//             m_isIrrelevant = true;
-//             return;
-
-//         } else
-	if (wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl))) {
+    if (wdwEvtObject->GetParent () != NULL
+	&& wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl))) {
         
-            if (!WxGuiTestEventSimulationHelper::IsSettingSpinCtrlValue ()) {
+	if (!WxGuiTestEventSimulationHelper::IsSettingSpinCtrlValue ()) {
 
-                m_isIrrelevant = true;
-                // Standard wxSpinCtrl do NOT trigger a spin control event when
-                // text, i.e. the integer value, is entered -> simulate spin
-                // control update event:
-                wxSpinCtrl *spinCtrl = wxDynamicCast (wdwEvtObject, wxSpinCtrl);
-                wxASSERT (spinCtrl != NULL);
-                WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl,
-                        spinCtrl->GetValue ());
-            }
-            return;
-        }
+	    m_isIrrelevant = true;
+	    // Standard wxSpinCtrl do NOT trigger a spin control event when
+	    // text, i.e. the integer value, is entered -> simulate spin
+	    // control update event:
+	    wxSpinCtrl *spinCtrl = wxDynamicCast (wdwEvtObject, wxSpinCtrl);
+	    wxASSERT (spinCtrl != NULL);
+	    WxGuiTestEventSimulationHelper::SetSpinCtrlValue(spinCtrl,
+						     spinCtrl->GetValue());
+	}
+	return;
     }
+
 
     // If pending event is another text update event on the same (!) control,
     // then destroy it to prevent undesirable code emitting:
@@ -101,10 +93,6 @@ void CRTextUpdateEvent::Process (CRCapturedEvent **pendingEvt)
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
 
-    if (hierarchy->FindXRCNode (wdwEvtObject) != NULL) {
-
-        m_isXRC = true;
-    }
     m_textCtrlName = wdwEvtObject->GetName ();
     m_containerName = hierarchy->FindContainerName (wdwEvtObject);
     wxASSERT (!m_containerName.IsEmpty ());
@@ -153,14 +141,7 @@ void CRTextUpdateEvent::EmitCpp ()
     wxString str;
     str << _T("wxWindow *") << textCtrlWdwVarName << _T(" = ") << 
             containerVarName << _T("->FindWindow (");
-    if (m_isXRC) {
-        
-        str << _T("XRCID(\"") << m_textCtrlName << _T("\"));");
-
-    } else {
-
-        str << _T("_T(\"") << m_textCtrlName << _T("\"));");
-    }
+    str << _T("_T(\"") << m_textCtrlName << _T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();
@@ -172,20 +153,20 @@ void CRTextUpdateEvent::EmitCpp ()
     wxString textCtrlVarName = emitter->MakeVarName (m_textCtrlName);
 
     str.Clear ();
-    str << _T("wxTextCtrl *") << textCtrlVarName << _T(" = wxDynamicCast (") <<
-            textCtrlWdwVarName << _T(", wxTextCtrl);");
+    str << _T("wxTextCtrl *") << textCtrlVarName << _T(" = wxDynamicCast (")
+	<< textCtrlWdwVarName << _T(", wxTextCtrl);");
     emitter->AddCode (str);
 
     str.Clear ();
     str <<  _T("CPPUNIT_ASSERT_MESSAGE (\"Converting window for text control '")
-            << m_textCtrlName <<  _T("' failed\", ") << textCtrlVarName 
-            << _T(" != NULL);");
+	<< m_textCtrlName <<  _T("' failed\", ") << textCtrlVarName 
+	<< _T(" != NULL);");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") <<
-            textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue) <<
-            _T("\"));");
+    str << _T("swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") 
+	<< textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue)
+	<< _T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();
@@ -212,6 +193,3 @@ wxString CRTextUpdateEvent::GetEscaped (const wxString &str) const
 
     return escaped;
 }
-
-} // End namespace swTst
-

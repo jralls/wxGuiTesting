@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -16,16 +18,11 @@
 #include <wxGuiTest/Common.h>
 
 #include <map>
+#include <vector>
 
-namespace sw {
-    class ConfigInterface;
-}
+
 
 namespace swTst {
-
-class CRXRCNode;
-class CRXRCResource;
-
 
 /*! \class CRWindowHierarchyHandler
     \brief Handles queries about window hierarchy allowing to uniquely
@@ -56,32 +53,7 @@ public:
             controls
         \return name of first container being holding given window
     */
-    virtual wxString FindContainerName (wxWindow *window,
-            bool isUnknownCtrl = false);
-
-
-    /*! \fn virtual CRXRCNode * FindXRCNode (wxWindow *window, bool isUnknownCtrl = false)
-        \brief Find window specific XRC node in read-in XRC files.
-
-        \param window window to find XRC node for
-        \param isUnknownCtrl must be set to true for handling unknown/foreign
-            controls
-        \return XRC node in read-in XRC files
-    */
-    virtual CRXRCNode * FindXRCNode (wxWindow *window,
-            bool isUnknownCtrl = false);
-
-
-    /*! \fn virtual CRXRCNode * FindContainerXRCNode (wxWindow *window, bool isUnknownCtrl = false)
-        \brief Find XRC node of container holding given window.
-
-        \param window window to find container XRC node for
-        \param isUnknownCtrl must be set to true for handling unknown/foreign
-            controls
-        \return container XRC node in read-in XRC files
-    */
-    virtual CRXRCNode * FindContainerXRCNode (wxWindow *window,
-            bool isUnknownCtrl = false);
+    virtual wxString FindContainerName (wxWindow *window);
 
 protected:
     /*! \fn CRWindowHierarchyHandler ()
@@ -94,35 +66,16 @@ protected:
         \brief Destructor
     */
     virtual ~CRWindowHierarchyHandler ();
-
-
-    /*! \fn virtual void ParseXRC ()
-        \brief Read-in XRC files from resource directory identified with global Config.
-    */
-    virtual void ParseXRC ();
-
-
-    /*! \fn virtual CRXRCNode * FindXRCNode (CRXRCNode *parent, wxWindow *window, bool isUnknownCtrl = false)
-        \brief Find window specific XRC node as child of given parent.
-
-        \param parent parent XRC node to start search
-        \param window window to find XRC node for
-        \param isUnknownCtrl must be set to true for handling unknown/foreign
-            controls
-        \return XRC node in read-in XRC files
-    */
-    virtual CRXRCNode * FindXRCNode (CRXRCNode *parent, wxWindow *window,
-            bool isUnknownCtrl = false);
-
 private:
     static CRWindowHierarchyHandler *ms_instance;
+    struct WxStrSort {
+	bool operator() (const wxString left, const wxString right) const {
+	    return (left.Cmp(right) < 0);
+	}
+    };
 
-    CRXRCResource *m_xrcResource;
-    sw::ConfigInterface *m_configCached;
-    wxString m_resDirCached;
-
-    typedef std::map< wxString, wxString > ContainerMap;
-    ContainerMap m_contMap;
+    typedef std::map< wxString, wxString, WxStrSort > ContainerMap;
+    static ContainerMap m_contMap;
 
 private:
     // No copy and assignment constructor:

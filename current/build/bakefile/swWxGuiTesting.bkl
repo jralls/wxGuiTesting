@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id: -->
+<!-- Name:        build/bakefile/swWxGuiTesting.bkl
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     Licence:     wxWindows licence
+-->
+
 
 <makefile>
 
@@ -143,8 +149,8 @@
     <option name="VTK_LDFLAGS" category="path"/>
 
     <template id="vtk">
-      <cflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CFLAGS)</cflags>
-      <cxxflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CXXFLAGS)</cxxflags>
+      <cflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CFLAGS) -Wno-deprecated</cflags>
+      <cxxflags>-I$(SRCDIR)/$(WXVTK) $(VTK_CXXFLAGS) -Wno-deprecated</cxxflags>
       <ldflags>$(VTK_LDFLAGS)</ldflags>
     </template>
 
@@ -235,6 +241,7 @@
     <if cond="FORMAT in ['autoconf', 'gnu']">
       <install-to>$(PREFIX)/lib</install-to>
       <install-headers-to> $(PREFIX)</install-headers-to>
+      <osx-ranlib/>
     </if>
   </lib>
 

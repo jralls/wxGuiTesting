@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -15,13 +17,13 @@
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 CRButtonClickEvent::CRButtonClickEvent (wxEvent *event) :
 CRCapturedEvent (event)
 {
-    m_isXRC = false;
+//    Nothing to do
 }
 
 
@@ -36,13 +38,8 @@ void CRButtonClickEvent::Process (CRCapturedEvent **pendingEvt)
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);
 
-    CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
+    CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance();
     wxASSERT (hierarchy != NULL);
-
-    if (hierarchy->FindXRCNode (wdwEvtObject) != NULL) {
-
-        m_isXRC = true;
-    }
     m_buttonName = wdwEvtObject->GetName ();
     m_containerName = hierarchy->FindContainerName (wdwEvtObject);
     wxASSERT (!m_containerName.IsEmpty ());
@@ -81,14 +78,7 @@ void CRButtonClickEvent::EmitCpp ()
     wxString str;
     str << _T("wxWindow *") << buttonWdwVarName << _T(" = ") << containerVarName <<
             _T("->FindWindow (");
-    if (m_isXRC) {
-        
-        str << _T("XRCID(\"") << m_buttonName << _T("\"));");
-
-    } else {
-
-        str << _T("\"") << m_buttonName << _T("\");");
-    }
+    str << _T("_T(\"") << m_buttonName << _T("\"));");
     emitter->AddCode (str);
     
     str.Clear ();
@@ -105,6 +95,4 @@ void CRButtonClickEvent::EmitCpp ()
     str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
-
-} // End namespace swTst
 

@@ -128,9 +128,6 @@ WX3RDPARTYLIBPOSTFIX = d
 !endif
 !if "$(USE_VTK)" == "0"
 ____LIB_SOURCES_FILENAMES_OBJECTS =  \
-	objects\wxGuiTesting_swConfig.obj \
-	objects\wxGuiTesting_swConfigInterface.obj \
-	objects\wxGuiTesting_swConfigManager.obj \
 	objects\wxGuiTesting_swWxLogicErrorException.obj \
 	objects\wxGuiTesting_swApp.obj \
 	objects\wxGuiTesting_swPseudoApp.obj \
@@ -173,9 +170,6 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 !endif
 !if "$(USE_VTK)" == "1"
 ____LIB_SOURCES_FILENAMES_OBJECTS =  \
-	objects\wxGuiTesting_swConfig.obj \
-	objects\wxGuiTesting_swConfigInterface.obj \
-	objects\wxGuiTesting_swConfigManager.obj \
 	objects\wxGuiTesting_swWxLogicErrorException.obj \
 	objects\wxGuiTesting_swApp.obj \
 	objects\wxGuiTesting_swPseudoApp.obj \
@@ -492,15 +486,6 @@ objects\wxGuiTesting_swWxVtkInteractorEventRecorder.obj: ..\..\src\swWxGuiTestin
 
 objects\wxGuiTesting_VtkCapturePanel.obj: ..\..\src\swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp
-
-objects\wxGuiTesting_swConfig.obj: ..\..\src\swFrameworkDependent\Config\swConfig.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\Config\swConfig.cpp
-
-objects\wxGuiTesting_swConfigInterface.obj: ..\..\src\swFrameworkDependent\Config\swConfigInterface.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\Config\swConfigInterface.cpp
-
-objects\wxGuiTesting_swConfigManager.obj: ..\..\src\swFrameworkDependent\Config\swConfigManager.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\Config\swConfigManager.cpp
 
 objects\wxGuiTesting_swWxLogicErrorException.obj: ..\..\src\swFrameworkDependent\Exception\swWxLogicErrorException.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\Exception\swWxLogicErrorException.cpp

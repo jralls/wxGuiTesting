@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -35,9 +37,6 @@ class WxGuiTestEventSimulationHelperTest : public CPPUNIT_NS::TestFixture
         CPPUNIT_TEST( testSelectCheckableMenuItem );
         CPPUNIT_TEST( testClickButton );
         CPPUNIT_TEST( testSetTextCtrlValue );
-        // First call test without event generation to prevente side effects:
-//         CPPUNIT_TEST( testSetSpinCtrlDblValueWithoutEvent );
-//         CPPUNIT_TEST( testSetSpinCtrlDblValue );
         CPPUNIT_TEST( testSelectTreeItem );
         CPPUNIT_TEST( testRightClickTreeItem );
         CPPUNIT_TEST( testSelectNotebookPage );
@@ -99,18 +98,6 @@ public:
     */
     virtual void testSetTextCtrlValue ();
 
-
-//     /*! \fn virtual void testSetSpinCtrlDblValue ()
-//         \brief Test setting a double typed spin control value.
-//     */
-//     virtual void testSetSpinCtrlDblValue ();
-    
-
-//     /*! \fn virtual void testSetSpinCtrlDblValueWithoutEvent ()
-//         \brief Test setting a double typed spin control value without generating an event.
-//     */
-//     virtual void testSetSpinCtrlDblValueWithoutEvent ();
-    
 
     /*! \fn virtual void testSelectTreeItem ()
         \brief Test selecting a tree item.

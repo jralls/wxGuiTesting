@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -19,6 +21,7 @@
 #include <wx/frame.h>
 #include <wx/treectrl.h>
 #include <wx/statline.h>
+#include <wx/spinctrl.h>
 
 #include <vtkXMLPolyDataReader.h>
 #include <vtkPolyDataMapper.h>
@@ -36,18 +39,13 @@
 #include <wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h>
 #include <wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h>
 
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-
 #include <wxVTKRenderWindowInteractor.h>
 
 namespace {
     const wxString xrcDir(_T(XRCDIR));
 };
 
-namespace swTst {
-
+using namespace swTst;
 
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
@@ -79,19 +77,6 @@ void CRVtkCaptureTest::setUp ()
     wxBoxSizer *topsizer = new wxBoxSizer (wxHORIZONTAL);
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-    // Include the unknown double spin control:
-    sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (frame,
-            -1,
-            _T(""),
-            wxDefaultPosition,
-            wxSize (80, 21),
-            wxNO_BORDER,
-            0.00000,
-            9999.99999,
-            0.5,
-            0.1);
-    spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
@@ -156,8 +141,6 @@ void CRVtkCaptureTest::tearDown ()
     topWdw->Hide ();
 
     swTst::VtkWxGuiTestHelper::Destroy ();
-    sw::ConfigManager::Destroy ();
-
     m_iren1->Delete ();
     m_iren2->Delete ();
 }
@@ -165,13 +148,6 @@ void CRVtkCaptureTest::tearDown ()
 
 void CRVtkCaptureTest::testVtkCapture ()
 {
-    sw::Config *configInit = new sw::Config ();
-    configInit->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (configInit);
-    sw::ConfigInterface *config = sw::ConfigManager::GetInstance ();
-    wxASSERT (config != NULL);
-    wxString resDir;
-    bool ret = config->GetResourceDir (resDir);
 
     // Testing event capturing Cpp code emitting:
 #define TESTCREMITTING
@@ -796,7 +772,4 @@ void CRVtkCaptureTest::testVtkCapture ()
     // Using the {...} notation we can have several VTK_CAPTUREs in one method:
     //VTK_CAPTURE
 
-    sw::ConfigManager::SetInstance (NULL);
 }
-
-} // End namespace swTst

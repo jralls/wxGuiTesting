@@ -41,8 +41,8 @@ DESTDIR =
 XRCDIR = $(srcdir)/test/TestData/xrc
 WXGUITESTING_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
-	$(CPPUNIT_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) $(OPT) $(DBG) \
-	$(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(CPPUNIT_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated \
+	$(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 WXGUITESTING_OBJECTS =  \
 	$(__LIB_SOURCES_OBJECTS)
 WXGUITESTING_HEADERS =  \
@@ -74,7 +74,6 @@ CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_CppTextTestApp.o \
 	objects/CppUnitTest_swCRCppEmitterTest.o \
-	objects/CppUnitTest_swCRXRCReaderTest.o \
 	objects/CppUnitTest_swWxGuiTestProvokedWarningRegistryTest.o
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swFrameworkDependent -I$(srcdir)/src/swWxGuiTesting \
@@ -118,7 +117,8 @@ VTKUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/include/wxGuiTest/VtkWxGuiTesting \
 	-DVTKDIR=\"$(srcdir)/test/TestData/vtk\" -DXRCDIR=\"$(XRCDIR)\" \
 	-DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) \
-	-I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated $(CPPFLAGS) \
+	$(CXXFLAGS)
 VTKUNITTEST_OBJECTS =  \
 	objects/VTKUnitTest_CppTextTestApp.o \
 	objects/VTKUnitTest_swCRVtkCaptureTest.o
@@ -134,13 +134,8 @@ VTKUNITTEST_OBJECTS =  \
 @COND_WX_DEBUG_1@DBG = -ggdb
 COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
-	include/wxGuiTest/Config/swConfig.h \
-	include/wxGuiTest/Config/swConfigInterface.h \
-	include/wxGuiTest/Config/swConfigManager.h \
-	include/wxGuiTest/Widget/swNewBitmapButton.h \
-	include/wxGuiTest/Widget/swSpinCtrlDouble.h \
-	include/wxGuiTest/Widget/swTreeCtrl.h include/wxGuiTest/swCRCapture.h \
-	include/wxGuiTest/swCRCaptureControl.h include/wxGuiTest/swCRCppEmitter.h \
+	include/wxGuiTest/swCRCapture.h include/wxGuiTest/swCRCaptureControl.h \
+	include/wxGuiTest/swCRCppEmitter.h \
 	include/wxGuiTest/swCREventCaptureManager.h \
 	include/wxGuiTest/swCREventFilterInterface.h \
 	include/wxGuiTest/swCRWindowHierarchyHandler.h \
@@ -158,13 +153,8 @@ COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 @COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
 COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
-	include/wxGuiTest/Config/swConfig.h \
-	include/wxGuiTest/Config/swConfigInterface.h \
-	include/wxGuiTest/Config/swConfigManager.h \
-	include/wxGuiTest/Widget/swNewBitmapButton.h \
-	include/wxGuiTest/Widget/swSpinCtrlDouble.h \
-	include/wxGuiTest/Widget/swTreeCtrl.h include/wxGuiTest/swCRCapture.h \
-	include/wxGuiTest/swCRCaptureControl.h include/wxGuiTest/swCRCppEmitter.h \
+	include/wxGuiTest/swCRCapture.h include/wxGuiTest/swCRCaptureControl.h \
+	include/wxGuiTest/swCRCppEmitter.h \
 	include/wxGuiTest/swCREventCaptureManager.h \
 	include/wxGuiTest/swCREventFilterInterface.h \
 	include/wxGuiTest/swCRWindowHierarchyHandler.h \
@@ -186,9 +176,6 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h
 @COND_USE_VTK_1@LIB_HDRS = $(COND_USE_VTK_1_LIB_HDRS)
 COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
-	objects/wxGuiTesting_swConfig.o \
-	objects/wxGuiTesting_swConfigInterface.o \
-	objects/wxGuiTesting_swConfigManager.o \
 	objects/wxGuiTesting_swWxLogicErrorException.o \
 	objects/wxGuiTesting_swApp.o \
 	objects/wxGuiTesting_swPseudoApp.o \
@@ -211,10 +198,6 @@ COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_swCREventCaptureManager.o \
 	objects/wxGuiTesting_swCREventFactory.o \
 	objects/wxGuiTesting_swCRWindowHierarchyHandler.o \
-	objects/wxGuiTesting_swCRXRCNode.o \
-	objects/wxGuiTesting_swCRXRCObject.o \
-	objects/wxGuiTesting_swCRXRCReader.o \
-	objects/wxGuiTesting_swCRXRCResource.o \
 	objects/wxGuiTesting_swInitWxGuiTest.o \
 	objects/wxGuiTesting_swInitWxGuiTestSetUp.o \
 	objects/wxGuiTesting_swModalDialogTimer.o \
@@ -230,9 +213,6 @@ COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_CapturePanel.o
 @COND_USE_VTK_0@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_0___LIB_SOURCES_OBJECTS)
 COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
-	objects/wxGuiTesting_swConfig.o \
-	objects/wxGuiTesting_swConfigInterface.o \
-	objects/wxGuiTesting_swConfigManager.o \
 	objects/wxGuiTesting_swWxLogicErrorException.o \
 	objects/wxGuiTesting_swApp.o \
 	objects/wxGuiTesting_swPseudoApp.o \
@@ -255,10 +235,6 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_swCREventCaptureManager.o \
 	objects/wxGuiTesting_swCREventFactory.o \
 	objects/wxGuiTesting_swCRWindowHierarchyHandler.o \
-	objects/wxGuiTesting_swCRXRCNode.o \
-	objects/wxGuiTesting_swCRXRCObject.o \
-	objects/wxGuiTesting_swCRXRCReader.o \
-	objects/wxGuiTesting_swCRXRCResource.o \
 	objects/wxGuiTesting_swInitWxGuiTest.o \
 	objects/wxGuiTesting_swInitWxGuiTestSetUp.o \
 	objects/wxGuiTesting_swModalDialogTimer.o \
@@ -364,6 +340,7 @@ lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT): $(WXGUITESTING_OBJ
 install_wxGuiTesting: 
 	$(INSTALL_DIR) $(DESTDIR)$(prefix)/lib
 	$(INSTALL_DATA) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) $(DESTDIR)$(prefix)/lib
+	$(RANLIB) $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 
 uninstall_wxGuiTesting: 
 	rm -f $(DESTDIR)$(prefix)/lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
@@ -549,15 +526,6 @@ objects/wxGuiTesting_swWxVtkInteractorEventRecorder.o: $(srcdir)/src/swWxGuiTest
 objects/wxGuiTesting_VtkCapturePanel.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 
-objects/wxGuiTesting_swConfig.o: $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfig.cpp
-
-objects/wxGuiTesting_swConfigInterface.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigInterface.cpp
-
-objects/wxGuiTesting_swConfigManager.o: $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Config/swConfigManager.cpp
-
 objects/wxGuiTesting_swWxLogicErrorException.o: $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/Exception/swWxLogicErrorException.cpp
 
@@ -623,18 +591,6 @@ objects/wxGuiTesting_swCREventFactory.o: $(srcdir)/src/swWxGuiTesting/swCREventF
 
 objects/wxGuiTesting_swCRWindowHierarchyHandler.o: $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
-
-objects/wxGuiTesting_swCRXRCNode.o: $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCNode.cpp
-
-objects/wxGuiTesting_swCRXRCObject.o: $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCObject.cpp
-
-objects/wxGuiTesting_swCRXRCReader.o: $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCReader.cpp
-
-objects/wxGuiTesting_swCRXRCResource.o: $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swCRXRCResource.cpp
 
 objects/wxGuiTesting_swInitWxGuiTest.o: $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/swInitWxGuiTest.cpp
@@ -725,9 +681,6 @@ objects/CppUnitTest_CppTextTestApp.o: $(srcdir)/test/CppTest/CppTextTestApp.cpp
 
 objects/CppUnitTest_swCRCppEmitterTest.o: $(srcdir)/test/CppTest/swCRCppEmitterTest.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/swCRCppEmitterTest.cpp
-
-objects/CppUnitTest_swCRXRCReaderTest.o: $(srcdir)/test/CppTest/swCRXRCReaderTest.cpp
-	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/swCRXRCReaderTest.cpp
 
 objects/CppUnitTest_swWxGuiTestProvokedWarningRegistryTest.o: $(srcdir)/test/CppTest/swWxGuiTestProvokedWarningRegistryTest.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/swWxGuiTestProvokedWarningRegistryTest.cpp

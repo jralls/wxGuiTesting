@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +28,6 @@ class CRWindowHierarchyHandlerTest : public CPPUNIT_NS::TestFixture
 {
     CPPUNIT_TEST_SUITE( CRWindowHierarchyHandlerTest );
 
-        CPPUNIT_TEST( testFindXRCNode );
         CPPUNIT_TEST( testFindWindowContainer );
         CPPUNIT_TEST( testFindWindowContainerName );
 
@@ -43,12 +44,6 @@ public:
         \brief Clean up after the test run.
     */
     virtual void tearDown ();
-
-
-    /*! \fn virtual void testFindXRCNode ()
-        \brief Example test finding a (control's) XRC node.
-    */
-    virtual void testFindXRCNode ();
 
 
     /*! \fn virtual void testFindWindowContainer ()

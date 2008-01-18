@@ -126,6 +126,17 @@ public:
 //             double value);
     
 
+    /*! \fn static wxTreeItemId GetNthTreeChild( wxTreeCtrl *treeCtrl, unsigned int idx, const wxTreeItemId &id)
+
+      \brief Find the idx'th child of a particular tree item
+
+      \param treeCtrl The wxTreeCtrl to be searched
+      \param idx The index of the child item
+      \param id The id of the parental tree item.
+    */
+    static wxTreeItemId GetNthTreeChild( wxTreeCtrl *treeCtrl, unsigned int idx, 
+				  const wxTreeItemId &id);
+
     /*! \fn static void SelectTreeItem (const wxTreeItemId &id, wxTreeCtrl *treeCtrl)
         \brief Select a tree item.
 

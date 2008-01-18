@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -62,7 +64,6 @@ public:
     bool HasCheckableMenuItemProcessed () const;
     bool HasButtonClickProcessed () const;
     bool HasTextCtrlValChgProcessed () const;
-    bool HasSpinCtrlDblValChgWithoutEvtProcessed () const;
     bool HasTreeItemSelProcessed () const;
     bool HasTreeItemRightClickProcessed () const;
     bool HasNotebookPageSelProcessed () const;
@@ -97,12 +98,6 @@ protected:
     */
     void OnTextCtrlChange (wxCommandEvent& event);
     
-
-    /*! \fn void OnSpinCtrlDblChange (wxSpinEvent& event)
-        \brief Handle double typed spin control value change.
-    */
-    void OnSpinCtrlDblChange (wxSpinEvent& event);
-
 
     /*! \fn void OnTreeSelChange (wxTreeEvent &event)
         \brief Handle tree item selection change.
@@ -172,7 +167,6 @@ private:
     bool m_chkMenuItemSelProcessed;
     bool m_buttonClickProcessed;
     bool m_textCtrlValChangeEvent;
-    bool m_spinCtrlDblValChangeEvent;
     bool m_treeSelProcessed;
     bool m_treeItemRightClickProcessed;
     bool m_notebookPageSelProcessed;

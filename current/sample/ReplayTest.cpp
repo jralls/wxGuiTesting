@@ -22,9 +22,6 @@
 
 #include <wxGuiTest/swCRCapture.h>
 
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
-
 #include "xrcdemo.h"
 #include "myframe.h"
 namespace {
@@ -52,16 +49,11 @@ void ReplayTest::setUp ()
 //     swTst::WxGuiTestHelper::Show (myFrame, true, false);
 //     swTst::WxGuiTestHelper::FlushEventQueue ();
 
-//     // For C&R:
-    sw::Config *configInit = new sw::Config ();
-    configInit->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (configInit);
 }
 
 
 void ReplayTest::tearDown ()
 {
-     sw::ConfigManager::SetInstance (NULL);
 
 //     wxWindow *topWdw = wxTheApp->GetTopWindow ();
 //     wxTheApp->SetTopWindow (NULL);

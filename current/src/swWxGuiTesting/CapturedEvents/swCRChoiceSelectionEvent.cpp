@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -15,13 +17,13 @@
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 CRChoiceSelectionEvent::CRChoiceSelectionEvent (wxEvent *event) :
 CRCapturedEvent (event)
 {
-    m_isXRC = false;
+//    m_isXRC = false;
 }
 
 
@@ -39,10 +41,6 @@ void CRChoiceSelectionEvent::Process (CRCapturedEvent **pendingEvt)
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
 
-    if (hierarchy->FindXRCNode (wdwEvtObject) != NULL) {
-
-        m_isXRC = true;
-    }
     m_choiceName = wdwEvtObject->GetName ();
     m_containerName = hierarchy->FindContainerName (wdwEvtObject);
     wxASSERT (!m_containerName.IsEmpty ());
@@ -95,14 +93,7 @@ void CRChoiceSelectionEvent::EmitCpp ()
     wxString str;
     str << _T("wxWindow *") << choiceWdwVarName << _T(" = ") << 
             containerVarName << _T("->FindWindow (");
-    if (m_isXRC) {
-        
-        str << _T("XRCID(\"") << m_choiceName << _T("\"));");
-
-    } else {
-
-        str << _T("\"") << m_choiceName << _T("\");");
-    }
+    str << _T("_T(\"") << m_choiceName << _T("\"));");
     emitter->AddCode (str);
     
     str.Clear ();
@@ -148,5 +139,5 @@ void CRChoiceSelectionEvent::EmitCpp ()
     emitter->AddCode (str);
 }
 
-} // End namespace swTst
+
 

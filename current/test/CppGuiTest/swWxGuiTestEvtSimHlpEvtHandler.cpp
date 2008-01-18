@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -29,7 +31,6 @@ BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_MENU( XRCID("CheckableMenuItem"), WxGuiTestEvtSimHlpEvtHandler::OnCheckableMenuItem )
     EVT_BUTTON( XRCID("Button"), WxGuiTestEvtSimHlpEvtHandler::OnButtonClick )
     EVT_TEXT( XRCID("TextCtrl"), WxGuiTestEvtSimHlpEvtHandler::OnTextCtrlChange )
-    EVT_SPINCTRL( XRCID("SpinCtrlDbl"), WxGuiTestEvtSimHlpEvtHandler::OnSpinCtrlDblChange )
     EVT_TREE_SEL_CHANGED( XRCID("TreeCtrl"), WxGuiTestEvtSimHlpEvtHandler::OnTreeSelChange )
     EVT_TREE_ITEM_RIGHT_CLICK( XRCID("TreeCtrl"), WxGuiTestEvtSimHlpEvtHandler::OnTreeItemRightClick )
     EVT_NOTEBOOK_PAGE_CHANGED( XRCID("Notebook"), WxGuiTestEvtSimHlpEvtHandler::OnNotebookPageChange )
@@ -42,13 +43,12 @@ BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_TOOL( XRCID("ToggleTool"), WxGuiTestEvtSimHlpEvtHandler::OnToggleCheckableTool )
 END_EVENT_TABLE()
 
-namespace swTst {
+using namespace swTst;
 
 
-WxGuiTestEvtSimHlpEvtHandler::WxGuiTestEvtSimHlpEvtHandler (wxFrame *frame)
+WxGuiTestEvtSimHlpEvtHandler::WxGuiTestEvtSimHlpEvtHandler (wxFrame *frame) :
+    m_frame(frame)
 {
-    m_frame = frame;
-
     this->Init ();
 }
 
@@ -65,7 +65,6 @@ void WxGuiTestEvtSimHlpEvtHandler::Init ()
     m_chkMenuItemSelProcessed = false;
     m_buttonClickProcessed = false;
     m_textCtrlValChangeEvent = false;
-    m_spinCtrlDblValChangeEvent = false;
     m_treeSelProcessed = false;
     m_treeItemRightClickProcessed = false;
     m_notebookPageSelProcessed = false;
@@ -100,12 +99,6 @@ bool WxGuiTestEvtSimHlpEvtHandler::HasButtonClickProcessed () const
 bool WxGuiTestEvtSimHlpEvtHandler::HasTextCtrlValChgProcessed () const
 {
     return m_textCtrlValChangeEvent;
-}
-
-
-bool WxGuiTestEvtSimHlpEvtHandler::HasSpinCtrlDblValChgWithoutEvtProcessed () const
-{
-    return m_spinCtrlDblValChangeEvent;
 }
 
 
@@ -204,13 +197,6 @@ void WxGuiTestEvtSimHlpEvtHandler::OnTextCtrlChange (wxCommandEvent& event)
 }
 
 
-void WxGuiTestEvtSimHlpEvtHandler::OnSpinCtrlDblChange (wxSpinEvent& event)
-{
-    wxASSERT_MSG (m_spinCtrlDblValChangeEvent == false,
-            _T("Double typed spin control event handler has already been processed"));
-
-    m_spinCtrlDblValChangeEvent = true;
-}
 
 
 void WxGuiTestEvtSimHlpEvtHandler::OnTreeSelChange (wxTreeEvent &event)
@@ -307,5 +293,3 @@ void WxGuiTestEvtSimHlpEvtHandler::OnToggleCheckableTool (wxCommandEvent& event)
 
     m_checkableToolTogglingProcessed = true;
 }
-
-} // End namespace swTst

@@ -91,10 +91,6 @@
     <app-type>console</app-type>
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SW_USE_WX_APP_GUI_TESTING</define>
-    <if cond="FORMAT!='autoconf'">
-      <lib-path >$(CPPUNIT_LIBDIR)</lib-path>
-      <sys-lib >$(CPPUNIT_LIB)</sys-lib>
-    </if>
   </template>
 
   <set var='progSource'>

@@ -1,4 +1,85 @@
+2008-01-17  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/swFrameworkDependent/Widget/swTreeCtrl.cpp: 
+	* src/swFrameworkDependent/Widget/swSpinCtrlDouble.cpp: 
+	* src/swFrameworkDependent/Widget/swNewBitmapButton.cpp: 
+	Updated to reflect move of headers back to sourcedir.
+	
+	* src/swWxGuiTesting/CapturedEvents/swCRSpinCtrlUpdateEvent.cpp
+	(CRSpinCtrlUpdateEvent::Process):  
+	* src/swWxGuiTesting/CapturedEvents/swCRTreeItemRightClickEvent.cpp
+	(CRTreeItemRightClickEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRRadioBoxSelectionEvent.cpp
+	(CRRadioBoxSelectionEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRTreeSelectionChangingEvent.cpp
+	(CRTreeSelectionChangingEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRTextUpdateEvent.cpp
+	(CRTextUpdateEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRSliderUpdateEvent.cpp
+	(CRSliderUpdateEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRChoiceSelectionEvent.cpp
+	(CRChoiceSelectionEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRCheckBoxClickEvent.cpp
+	(CRCheckBoxClickEvent::EmitCpp):  
+	* src/swWxGuiTesting/CapturedEvents/swCRButtonClickEvent.cpp
+	(CRButtonClickEvent::Process):  Commented out XRC checks, use of
+	m_isXRC, fixed missing _T() in emitted string, corrected member
+	initialization where required.
+
+2008-01-15  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/swWxGuiTesting/swWxGuiTestEventSimulationHelper.cpp
+	(WxGuiTestEventSimulationHelper::GetNthTreeChild): Copied this
+	from swTreeCtrl, needed by CRTreeSelectionChangingEvent.
+
+	* include/wxGuiTest/swCRWindowHierarchyHandler.h
+	(FindContainerName): Deleted no-longer-needed parameter
+	isUnknownCtrl. 
+
+2008-01-13  John Ralls  <john@manjusri.local>
+
+	* test/VtkTest/swCRVtkCaptureTest.cpp:
+	* test/CppGuiTest/swCRWindowHierarchyHandlerTest.cpp:
+	* test/CppGuiTest/swCRCaptureTest.cpp: 
+	* test/CppGuiTest/swCapturePlusEmittingTest.cpp:
+	Removed (well, commented out) all references to swSpinCtrlDbl and
+	swConfig*. 
+	
+	* test/CppGuiTest/swCRWindowHierarchyHandlerTest.cpp:
+	Commented out FindXRCNode().
+	
+	* src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
+	(CRWindowHierarchyHandler::CRWindowHierarchyHandler): Added
+	wxMDIParentFrame and wxMDIChildFrame to m_contMap.
+
+2008-01-12  John Ralls  <john@manjusri.local>
+
+	* src/swWxGuiTesting/swCRWindowHierarchyHandler.cpp
+	(CRWindowHierarchyHandler::FindContainerName): Or maybe we'll just
+	dump this whole XRC parsing thing altogether as a waste of time.
+
+	* src/swWxGuiTesting/swCRXRCResource.h: Changed nodelist to a
+	vector, since it used vector, not list, semantics.
+
+	* src/swWxGuiTesting/swCRXRCReader.cpp (CRXRCReader::GetResource): 
+	Removed working with directories: This has been moved up to
+	CRWindowHierarchyHandler. 
+
+	* src/swWxGuiTesting/swCRXRCObject.h: 
+	* src/swWxGuiTesting/swCRXRCReader.h: 
+	* src/swWxGuiTesting/swCRXRCResource.h: 
+	* src/swWxGuiTesting/swCRXRCNode.h: 
+	* include/wxGuiTest/swCRWindowHierarchyHandler.h: 
+	Replaced CRXRCObject*, CRXRCNode* and CRXRCResource* with their
+	respective wxSharedPtr<> typedefs.
+
 2008-01-11  John Ralls  <john@manjusri.local>
+
+	* include/wxGuiTest/swCRWindowHierarchyHandler.h: Replaced the use
+	of sw::Config with an internal vector of resource sets. The
+	resources are parsed at the time of registration using the new
+	function registerResDir. HierarchHandler is now able to handle
+	multiple files in multiple directories. 
 
 	* build/bakefile/swWxGuiTesting.bkl: Created new library target
 	swFramework to hold code needed by the test programs but not by

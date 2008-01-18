@@ -12,7 +12,11 @@
 
 #include "SimpleCRTest.h"
 
-#include <wx/xrc/xmlres.h>
+#include <wx/wx.h>
+#include <wx/treectrl.h>
+#include <wx/notebook.h>
+
+//#include <wx/xrc/xmlres.h>
 
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
@@ -21,8 +25,6 @@
 
 #include <wxGuiTest/swCRCapture.h>
 
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
 
 #include "xrcdemo.h"
 #include "myframe.h"
@@ -45,16 +47,11 @@ void SimpleCRTest::setUp ()
 //     swTst::WxGuiTestHelper::Show (myFrame, true, false);
 //     swTst::WxGuiTestHelper::FlushEventQueue ();
 
-//     // For C&R:
-    sw::Config *configInit = new sw::Config ();
-    configInit->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (configInit);
 }
 
 
 void SimpleCRTest::tearDown ()
 {
-     sw::ConfigManager::SetInstance (NULL);
 
 //     wxWindow *topWdw = wxTheApp->GetTopWindow ();
 //     wxTheApp->SetTopWindow (NULL);
@@ -62,10 +59,38 @@ void SimpleCRTest::tearDown ()
 }
 
 
+// void SimpleCRTest::testCapture ()
+// {
+//     swTst::WxGuiTestTempInteractive interactive;
+
+//     // Do bootstrap capturing:
+//     CAPTURE
+// }
 void SimpleCRTest::testCapture ()
 {
     swTst::WxGuiTestTempInteractive interactive;
 
     // Do bootstrap capturing:
-    CAPTURE
+
+        wxApp *app = wxTheApp;                                                
+        wxASSERT (app != NULL);                                               
+        swTst::WxGuiTestApp *guiTestApp = dynamic_cast< swTst::WxGuiTestApp * >(app); 
+        wxASSERT (guiTestApp != NULL);                                        
+        guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); 
+                                                                              
+        std::string excMsg;						                              
+        swTst::CRCapture *capture = new swTst::CRCapture ();                  
+        try {                                                                 
+            capture->Capture (__FILE__, __LINE__);                            
+        } catch (std::exception &e) {                                         
+            excMsg = e.what ();                                               
+        } catch (...) {                                                       
+            excMsg = "Unexpected capturing exception";                        
+        }                                                                     
+        guiTestApp->SetEventFilter (NULL);                                    
+        delete capture;                                                       
+        swTst::CRCppEmitter::Destroy ();                                      
+        if (!excMsg.empty ()) {                                               
+            CPPUNIT_FAIL (excMsg.c_str ());                                   
+        }                                                                     
 }

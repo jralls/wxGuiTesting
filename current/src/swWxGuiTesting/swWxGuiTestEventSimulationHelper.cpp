@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,10 +20,7 @@
 #include <wx/notebook.h>
 #include <wx/spinctrl.h>
 
-//#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-//#include <FrameFactory/swToolBar.h>
-
-namespace swTst {
+using namespace swTst;
 
 
 bool WxGuiTestEventSimulationHelper::s_isSettingSpinCtrlValue = false;
@@ -132,25 +131,20 @@ void WxGuiTestEventSimulationHelper::SetTextCtrlValue (
 }
 
 
-// void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (
-//         sw::SpinCtrlDouble *spinCtrl, double value)
-// {
-//     // 1. GUI control state:
-//     spinCtrl->SetValue (value);
-//     // 2. Event:
-//     wxCommandEvent evt (wxEVT_COMMAND_SPINCTRL_UPDATED, spinCtrl->GetId ());
-//     evt.SetEventObject (spinCtrl);
-//     evt.SetString (wxString::Format (_T("%f"), value));
-//     evt.SetInt ((int) value); // Useless, just for the sake of simulation
-//     ::wxPostEvent (spinCtrl->GetEventHandler (), evt);
-// }
+wxTreeItemId WxGuiTestEventSimulationHelper::GetNthTreeChild (wxTreeCtrl *treeCtrl, unsigned int idx, const wxTreeItemId &id)
+{
+    wxASSERT (idx > 0);
 
+    wxTreeItemId cur;
+    wxTreeItemIdValue cookie;
+    cur = treeCtrl->GetFirstChild (id, cookie);
+    for (int i = 1; i < idx; i++) {
 
-// void WxGuiTestEventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
-//         sw::SpinCtrlDouble *spinCtrl, double value)
-// {
-//     spinCtrl->SetValue (value);
-// }
+        cur = treeCtrl->GetNextChild (id, cookie);
+    }
+    
+    return cur;
+}
 
 
 void WxGuiTestEventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
@@ -302,6 +296,3 @@ void WxGuiTestEventSimulationHelper::ToggleTool (int id, bool enabled,
     evt.SetInt (enabled);//TODO: or 1?
     ::wxPostEvent (parent->GetEventHandler (), evt);
 }
-
-} // End namespace swTst
-

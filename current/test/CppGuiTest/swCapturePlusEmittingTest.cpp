@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////
-// $RCSfile: swCapturePlusEmittingTest.cpp,v $
-// Original Author/Owner: reinhold
-//
-// $Revision: 1.5 $ $Name:  $ $State: Exp $
-//
-// $Date: 2007/11/21 19:53:04 $ $Author: reinhold $
-//
+// Name:        test/CppGuiTest/swCapturePlusEmittingTest.cpp
+// Author:      Reinhold Fuereder
+// Created:     2007
+// Copyright:   (c) 2007 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
+// Licence:     wxWindows licence
 /////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -22,19 +22,13 @@
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
 #include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
-
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
-
 #include <wxGuiTest/swCREventCaptureManager.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
-// Only to make C&R demonstrations easier:
 #include <wx/notebook.h>
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-#include <wxGuiTest/Widget/swTreeCtrl.h>
+#include <wx/spinctrl.h>
+#include <wx/treectrl.h>
 
-using sw::SpinCtrlDouble;
 namespace {
     const wxString testDir(_T(TESTDIR));
     const wxString FILENAME(testDir + _T("/OnlyCapture.cpp"));
@@ -42,7 +36,7 @@ namespace {
     const int LINE_NMB = 1;
 }
 
-namespace swTst {
+using namespace swTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -73,19 +67,6 @@ void CapturePlusEmittingTest::setUp ()
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, 
             _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-    sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (
-            frame,
-            -1,
-            _T(""),
-            wxDefaultPosition,
-            wxSize (80, 21),
-            wxNO_BORDER,
-            0.00000,
-            9999.99999,
-            0.5,
-            0.1);
-    spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
 
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
@@ -100,10 +81,6 @@ void CapturePlusEmittingTest::setUp ()
     wxTheApp->SetTopWindow (frame);
     WxGuiTestHelper::Show (frame, true, false);
     WxGuiTestHelper::FlushEventQueue ();
-
-    sw::Config *configInit = new sw::Config ();
-    configInit->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (configInit);
 
     // 2. Setup capturing mode:
     getGuiTestApp ()->SetEventFilter (CREventCaptureManager::GetInstance ());
@@ -121,7 +98,6 @@ void CapturePlusEmittingTest::tearDown ()
     CRCppEmitter::Destroy ();
 
     // 2. Tear down test application:
-    sw::ConfigManager::SetInstance (NULL);
 
     wxWindow *topWdw = wxTheApp->GetTopWindow ();
     wxTheApp->SetTopWindow (NULL);
@@ -226,4 +202,3 @@ void CapturePlusEmittingTest::checkEmittedCode(const wxString &expectedFilename,
     }
 }
 
-} // End namespace swTst

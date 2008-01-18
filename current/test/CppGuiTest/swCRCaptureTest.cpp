@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -23,17 +25,11 @@
 
 #include <wxGuiTest/swCRCapture.h>
 
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
-
-// Only to make C&R demonstrations easier:
 #include <wx/notebook.h>
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-#include <wxGuiTest/Widget/swTreeCtrl.h>
+#include <wx/spinctrl.h>
+#include <wx/treectrl.h>
 
-using sw::SpinCtrlDouble;
-
-namespace swTst {
+using namespace swTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -57,21 +53,6 @@ void CRCaptureTest::setUp ()
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, 
             _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-    // Include the unknown double spin control:
-    sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (
-            frame,
-            -1,
-            _T(""),
-            wxDefaultPosition,
-            wxSize (80, 21),
-            wxNO_BORDER,
-            0.00000,
-            9999.99999,
-            0.5,
-            0.1);
-    spinCtrl->SetDigits (5, false);
-    wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, frame);
-
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
     wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
@@ -86,16 +67,11 @@ void CRCaptureTest::setUp ()
     WxGuiTestHelper::Show (frame, true, false);
     WxGuiTestHelper::FlushEventQueue ();
 
-    sw::Config *configInit = new sw::Config ();
-    configInit->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (configInit);
 }
 
 
 void CRCaptureTest::tearDown ()
 {
-    sw::ConfigManager::SetInstance (NULL);
-
     wxWindow *topWdw = wxTheApp->GetTopWindow ();
     wxTheApp->SetTopWindow (NULL);
     topWdw->Hide ();
@@ -317,8 +293,6 @@ void CRCaptureTest::testCapture ()
     // Using the {...} notation we can have several CAPTUREs in one method:
     //CAPTURE
 }
-
-} // End namespace swTst
 
 
 

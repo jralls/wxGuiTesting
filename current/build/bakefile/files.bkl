@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Name:        build/bakefile/files.bkl
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     Licence:     wxWindows licence
+-->
 <makefile>
   <set var='FDS'>src/swFrameworkDependent</set>
 
@@ -7,9 +13,6 @@
   <set var='WXVTK'>src/wxVTK</set>
 
   <set var='FD_LIB_SOURCES'>
-    $(FDS)/Config/swConfig.cpp
-    $(FDS)/Config/swConfigInterface.cpp
-    $(FDS)/Config/swConfigManager.cpp
     $(FDS)/Exception/swWxLogicErrorException.cpp
     $(FDS)/swApp.cpp
     $(FDS)/swPseudoApp.cpp
@@ -49,18 +52,15 @@
     $(FDS)/GUI/swGuiObjectManager.h
     $(FDS)/GUI/swToolGuiObject.h
     $(FDS)/GUI/swToolGuiObjectManager.h
+    $(FDS)/Widget/swNewBitmapButton.h
+    $(FDS)/Widget/swSpinCtrlDouble.h
+    $(FDS)/Widget/swTreeCtrl.h
   </set>
 
   <set var='FD_INSTALL_HDRS'>
     $(WGTI)/Common.h
     $(WGTI)/swApp.h
     $(WGTI)/swPseudoApp.h
-    $(WGTI)/Config/swConfig.h
-    $(WGTI)/Config/swConfigInterface.h
-    $(WGTI)/Config/swConfigManager.h
-    $(WGTI)/Widget/swNewBitmapButton.h
-    $(WGTI)/Widget/swSpinCtrlDouble.h
-    $(WGTI)/Widget/swTreeCtrl.h
   </set>
 
   <set var='WGT_SOURCES'>
@@ -83,10 +83,6 @@
     $(WGTS)/swCREventCaptureManager.cpp
     $(WGTS)/swCREventFactory.cpp
     $(WGTS)/swCRWindowHierarchyHandler.cpp
-    $(WGTS)/swCRXRCNode.cpp
-    $(WGTS)/swCRXRCObject.cpp
-    $(WGTS)/swCRXRCReader.cpp
-    $(WGTS)/swCRXRCResource.cpp
     $(WGTS)/swInitWxGuiTest.cpp
     $(WGTS)/swInitWxGuiTestSetUp.cpp
     $(WGTS)/swModalDialogTimer.cpp
@@ -101,6 +97,14 @@
     $(WGTS)/swWxGuiTestTimedDialogEnder.cpp
     $(WGTS)/CapturePanel.cpp
   </set>
+
+  <set var='WGT_UNUSED_SOURCES'>
+    $(WGTS)/swCRXRCNode.cpp
+    $(WGTS)/swCRXRCObject.cpp
+    $(WGTS)/swCRXRCReader.cpp
+    $(WGTS)/swCRXRCResource.cpp
+  </set>
+
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkWxGuiTesting/swCRVtkCapture.cpp
     $(WGTS)/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
@@ -128,12 +132,15 @@
     $(WGTS)/CapturedEvents/swCRTreeItemRightClickEvent.h
     $(WGTS)/CapturedEvents/swCRTreeSelectionChangingEvent.h
     $(WGTS)/swCREventFactory.h
+    $(WGTS)/swInitWxGuiTestSetUp.h
+    $(WGTS)/swWxGuiTestTempInteractiveControl.h
+  </set>
+
+  <set var='WGTS_UNUSED_HDRS'>
     $(WGTS)/swCRXRCNode.h
     $(WGTS)/swCRXRCObject.h
     $(WGTS)/swCRXRCReader.h
     $(WGTS)/swCRXRCResource.h
-    $(WGTS)/swInitWxGuiTestSetUp.h
-    $(WGTS)/swWxGuiTestTempInteractiveControl.h
   </set>
 
   <set var='WGT_INSTALL_HDRS'>
@@ -172,13 +179,16 @@
   <set var='CPPTEST_SOURCES'>
     test/CppTest/CppTextTestApp.cpp
     test/CppTest/swCRCppEmitterTest.cpp
-    test/CppTest/swCRXRCReaderTest.cpp
     test/CppTest/swWxGuiTestProvokedWarningRegistryTest.cpp
+  </set>
+
+  <set var='CPPTEST_UNUSED_SOURCES'>
+    test/CppTest/swCRXRCReaderTest.cpp
+    test/CppTest/swCRXRCReaderTest.h
   </set>
 
   <set var='CPPTEST_HDRS'>
     test/CppTest/swCRCppEmitterTest.h
-    test/CppTest/swCRXRCReaderTest.h
     test/CppTest/swWxGuiTestProvokedWarningRegistryTest.h
   </set>
 

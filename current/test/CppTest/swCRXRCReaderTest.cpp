@@ -57,9 +57,17 @@ void CRXRCReaderTest::testReadingXRC ()
 {
     const wxString xrcDir(_T(XRCDIR));
     wxString xrcFilename = xrcDir + _T("/CapturePanel_wdr.xrc");
-    swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcFilename);
-
-    swTst::CRXRCResource *xrcResource = reader->GetResource ();
+    swTst::CRXRCReader *reader;
+    try {
+	reader = new swTst::CRXRCReader (xrcFilename);
+    }
+    catch(sw::WxLogicErrorException& e) {
+	std::string message("testReadingXRC: Constructor threw ");
+	message += e.what();
+	message += std::string(xrcFilename.char_str());
+	CPPUNIT_FAIL(message);
+    } 
+    swTst::CRXRCNodePtr xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
@@ -67,7 +75,7 @@ void CRXRCReaderTest::testReadingXRC ()
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have one child", 1 == xrcResource->GetNmbChildren ());
     // wxPanel
-    swTst::CRXRCNode *node = xrcResource->GetChild (0);
+    swTst::CRXRCNodePtr node = xrcResource->GetChild (0);
     CPPUNIT_ASSERT_MESSAGE ("Node is NULL", node != NULL);
     CPPUNIT_ASSERT_MESSAGE ("Node must have one child", 1 == node->GetNmbChildren ());
     // wxBoxSizer
@@ -90,9 +98,18 @@ void CRXRCReaderTest::testReadingXRC ()
 void CRXRCReaderTest::testResPathReadingXRC ()
 {
     wxString xrcPath = _T(XRCDIR) _T("/EvtSimHlpTest_wdr.xrc");
-    swTst::CRXRCReader *reader = new swTst::CRXRCReader (xrcPath);
+    swTst::CRXRCReader *reader;
+    try {
+	reader = new swTst::CRXRCReader (xrcPath);
+    }
+    catch(sw::WxLogicErrorException& e) {
+	std::string message("testReadingXRC: Constructor threw ");
+	message += e.what();
+	message += std::string(xrcPath.char_str());
+	CPPUNIT_FAIL(message);
+    } 
 
-    swTst::CRXRCResource *xrcResource = reader->GetResource ();
+    swTst::CRXRCNodePtr xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 

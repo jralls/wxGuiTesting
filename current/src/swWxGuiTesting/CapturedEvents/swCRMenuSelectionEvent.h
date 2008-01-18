@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -63,7 +65,6 @@ protected:
 private:
     bool m_isTool;
     
-/*     bool m_isFromMainFrameMenuBar; */
     bool m_isFromTopWindow;
     bool m_eventObjectIsMenu;
     bool m_isFromPopupMenu;
@@ -72,11 +73,11 @@ private:
     wxString m_menuLabel;
     wxString m_menuItemLabel;
     wxString m_popupMenuKey;
-    wxString m_popupMenuContainerName;
+    wxString m_parentContainerName;
 
-    bool m_isStdId;
-/*     wxString m_toolbarName; */
-/*     wxString m_guiObjName; */
+    wxString m_toolbarName;
+    bool m_isControl;
+    wxString m_controlName;
 
 private:
     // No copy and assignment constructor:
@@ -85,10 +86,9 @@ private:
     void processCheckable();
     void processMainMenu(wxMenuBar* menuBar);
     bool processPopUp (wxMenu* menu);
-    bool processToolBar(wxWindow *wdwEvtObject);
+    bool processToolBar(wxToolBar *toolBar);
     bool processTopMenu(wxMenu* menu);
     bool processTopFrame(wxFrame* topFrame);
-    bool processMainFrame();
 };
 
 } // End namespace swTst

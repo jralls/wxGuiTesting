@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -59,9 +61,7 @@ protected:
 private:
     wxString m_containerName;
     wxString m_treeCtrlName;
-    bool m_isXRC;
 
-private:
     // No copy and assignment constructor:
     CRTreeItemRightClickEvent (const CRTreeItemRightClickEvent &rhs);
     CRTreeItemRightClickEvent & operator= (const CRTreeItemRightClickEvent &rhs);

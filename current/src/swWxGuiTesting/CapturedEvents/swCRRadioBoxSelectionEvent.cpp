@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -15,13 +17,13 @@
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 CRRadioBoxSelectionEvent::CRRadioBoxSelectionEvent (wxEvent *event) :
 CRCapturedEvent (event)
 {
-    m_isXRC = false;
+//    Nothing to do
 }
 
 
@@ -39,10 +41,6 @@ void CRRadioBoxSelectionEvent::Process (CRCapturedEvent **pendingEvt)
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
 
-    if (hierarchy->FindXRCNode (wdwEvtObject) != NULL) {
-
-        m_isXRC = true;
-    }
     m_radioBoxName = wdwEvtObject->GetName ();
     m_containerName = hierarchy->FindContainerName (wdwEvtObject);
     wxASSERT (!m_containerName.IsEmpty ());
@@ -95,14 +93,7 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     wxString str;
     str << _T("wxWindow *") << radioBoxWdwVarName << _T(" = ") << 
             containerVarName << _T("->FindWindow (");
-    if (m_isXRC) {
-        
-        str << _T("XRCID(\"") << m_radioBoxName << _T("\"));");
-
-    } else {
-
-        str << _T("\"") << m_radioBoxName << _T("\");");
-    }
+    str << _T("_T(\"") << m_radioBoxName << _T("\"));");
     emitter->AddCode (str);
     
     str.Clear ();
@@ -149,6 +140,4 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
-
-} // End namespace swTst
 

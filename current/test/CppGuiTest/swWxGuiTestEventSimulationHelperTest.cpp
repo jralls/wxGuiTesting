@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -27,15 +29,12 @@
 #include <FrameFactory/swFrameFactory.h>
 #include <FrameFactory/swMdiFrameFactory.h>
 #include <FrameFactory/swToolBarRegistry.h>
-//#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
-
-//using sw::SpinCtrlDouble;
 
 namespace {
     const wxString testDir(_T(TESTDIR));
 }
 
-namespace swTst {
+using namespace swTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -93,19 +92,6 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (m_miniFrame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-//     // Include the unknown double spin control:
-//     sw::SpinCtrlDouble *spinCtrl = new sw::SpinCtrlDouble (m_testFrame, 
-//             -1,
-//             _T(""),
-//             wxDefaultPosition,
-//             wxSize (80, 21),
-//             wxNO_BORDER,
-//             0.00000,
-//             9999.99999,
-//             0.5,
-//             0.1);
-//     spinCtrl->SetDigits (5, false);
-//     wxXmlResource::Get ()->AttachUnknownControl (_T("SpinCtrlDbl"), spinCtrl, m_testFrame);
 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (m_miniFrame);
@@ -219,52 +205,6 @@ void WxGuiTestEventSimulationHelperTest::testSetTextCtrlValue ()
 }
 
 
-// void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlDblValue ()
-// {
-//     // Make sure that testSetSpinCtrlDblValue is called AFTER
-//     // testSetSpinCtrlDblValueWithoutEvent test:
-//     CPPUNIT_ASSERT_MESSAGE ("Wrong order of test calls?",
-//             !m_testEvtHandler->HasSpinCtrlDblValChgWithoutEvtProcessed ());
-
-//     const double value = 2.3456;
-
-//     SpinCtrlDouble *spinCtrl = XRCCTRL (*m_testFrame, "SpinCtrlDbl", SpinCtrlDouble);
-//     CPPUNIT_ASSERT_MESSAGE ("Double typed control not found", spinCtrl != NULL);
-//     CPPUNIT_ASSERT_MESSAGE ("Double typed spin control value already correctly set",
-//             spinCtrl->GetValue () != value);
-
-//     WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (spinCtrl, value);
-//     WxGuiTestHelper::FlushEventQueue ();
-
-//     CPPUNIT_ASSERT_MESSAGE ("Event simulation of setting double typed spin control must generate an event",
-//             m_testEvtHandler->HasSpinCtrlDblValChgWithoutEvtProcessed ());
-//     CPPUNIT_ASSERT_MESSAGE ("Event simulation of double typed spin control value changing without event generation failed",
-//             spinCtrl->GetValue () == value);
-// }
-
-
-// void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlDblValueWithoutEvent ()
-// {
-//     // Make sure that testSetSpinCtrlDblValue is called AFTER
-//     // testSetSpinCtrlDblValueWithoutEvent test:
-//     CPPUNIT_ASSERT_MESSAGE ("Wrong order of test calls?",
-//             !m_testEvtHandler->HasSpinCtrlDblValChgWithoutEvtProcessed ());
-
-//     const double value = 1.2345;
-
-//     SpinCtrlDouble *spinCtrl = XRCCTRL (*m_testFrame, "SpinCtrlDbl", SpinCtrlDouble);
-//     CPPUNIT_ASSERT_MESSAGE ("Double typed control not found", spinCtrl != NULL);
-//     CPPUNIT_ASSERT_MESSAGE ("Double typed spin control value already correctly set",
-//             spinCtrl->GetValue () != value);
-
-//     WxGuiTestEventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (spinCtrl, value);
-//     WxGuiTestHelper::FlushEventQueue ();
-
-//     CPPUNIT_ASSERT_MESSAGE ("Event simulation of setting double typed spin control must not generate an event",
-//             !m_testEvtHandler->HasSpinCtrlDblValChgWithoutEvtProcessed ());
-//     CPPUNIT_ASSERT_MESSAGE ("Event simulation of double typed spin control value changing without event generation failed",
-//             spinCtrl->GetValue () == value);
-// }
 
 
 void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
@@ -490,21 +430,16 @@ void WxGuiTestEventSimulationHelperTest::testToggleTool ()
 
 void WxGuiTestEventSimulationHelperTest::testToggleCheckableTool ()
 {
-/*  int id = XRCID ("ToggleTool"); // WORKS
-    wxWindow *wdw = wxWindow::FindWindowById (id); // FAILS
-    wxWindow *wdw = wxWindow::FindWindowByName (_T("ToggleTool")); // FAILS
-    CPPUNIT_ASSERT_MESSAGE ("Tool window not found", wdw != NULL); // FAILS
-    wxToolBarToolBase *toggleTool = dynamic_cast< wxToolBarToolBase * >(wdw);
-    CPPUNIT_ASSERT_MESSAGE ("No checkable toggle tool to test!", toggleTool != NULL);
-*/
-    sw::ToolBar *toolbar = sw::ToolBarRegistry::GetInstance ()->FindToolBarByName (_T("ToolBar"));
-    wxToolBar* wxtoolbar = dynamic_cast<wxToolBar*>(toolbar);
-    CPPUNIT_ASSERT_MESSAGE ("Toolbar not found", wxtoolbar != NULL);
-    WxGuiTestEventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), true, wxtoolbar, m_testFrame);
+    wxFrame *topFrame = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());
+    CPPUNIT_ASSERT_MESSAGE ("Top window is not a frame", topFrame != NULL);
+    wxToolBar* wxtoolbar = topFrame->GetToolBar();
+    CPPUNIT_ASSERT_MESSAGE ("Toolbar 'wxtoolbar' not found", wxtoolbar != 
+            NULL);
+    WxGuiTestEventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), true, wxtoolbar, topFrame);
     WxGuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Checkable tool should be toggled on",
-            toolbar->IsToggledOn (XRCID ("ToggleTool")));
+            wxtoolbar->GetToolState(XRCID ("ToggleTool")));
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of checkable tool toggling failed",
             m_testEvtHandler->HasCheckableToolTogglingProcessed ());
 
@@ -514,8 +449,7 @@ void WxGuiTestEventSimulationHelperTest::testToggleCheckableTool ()
     WxGuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Checkable tool should be toggled off",
-            !toolbar->IsToggledOn (XRCID ("ToggleTool")));
+            !wxtoolbar->GetToolState(XRCID ("ToggleTool")));
 }
 
-} // End namespace swTst
 

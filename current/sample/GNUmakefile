@@ -249,7 +249,7 @@ xrcdemo_test_CppTextTestApp.o: ./CppTextTestApp.cpp
 xrcdemo_test_SimpleTest.o: ./SimpleTest.cpp
 	$(CXX) -c -o $@ $(XRCDEMO_TEST_CXXFLAGS) $(CPPDEPS) $<
 
-xrcdemo_test_ReplayTest.o: ./ReplayTest.cpp
+xrcdemo_test_ReplayTest.o: ./ReplayTest2.cpp
 	$(CXX) -c -o $@ $(XRCDEMO_TEST_CXXFLAGS) $(CPPDEPS) $<
 
 .PHONY: all install uninstall clean xrcdemo_bundle xrcdemo_capture_bundle xrcdemo_test_bundle data

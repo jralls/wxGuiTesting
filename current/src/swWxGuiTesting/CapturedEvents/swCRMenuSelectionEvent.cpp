@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -12,9 +14,6 @@
 
 #include "swCRMenuSelectionEvent.h"
 
-// #include <FrameFactory/swFrameFactory.h>
-// #include <GUI/swGuiObjectManager.h>
-// #include <FrameFactory/swToolBarRegistry.h>
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
@@ -30,7 +29,7 @@ CRMenuSelectionEvent::CRMenuSelectionEvent (wxEvent *event) :
     m_eventObjectIsMenu(false),
     m_isFromPopupMenu (false),
     m_isChecked(false),
-    m_isStdId(false)
+    m_isControl(false)
 {}
 
 
@@ -39,21 +38,6 @@ CRMenuSelectionEvent::~CRMenuSelectionEvent ()
     // Nothing to do
 }
 
-bool CRMenuSelectionEvent::processMainFrame() {
-//     wxFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ()->
-// 	GetFrame ();
-//     wxASSERT (mainFrame != NULL);
-//     wxMenuBar* menuBar = mainFrame->GetMenuBar ();
-//     wxASSERT (menuBar != NULL);
-
-//     if (m_event->GetEventObject () == mainFrame) {
-
-// 	m_isFromMainFrameMenuBar = true;
-// 	processMainMenu(menuBar);
-// 	return true;
-//     }
-    return false;
-}
 
 bool CRMenuSelectionEvent::processTopFrame(wxFrame* topFrame) {
     wxMenuBar* menuBar = topFrame->GetMenuBar ();
@@ -123,7 +107,9 @@ void CRMenuSelectionEvent::processMainMenu (wxMenuBar* menuBar) {
     m_menuLabel = menuBar->GetLabelTop (menuIdx);
 
     m_menuItemLabel = menuBar->GetLabel (m_event->GetId ());
-    if (isCheckable)
+     // (A) Find out if it is a checkable menu item; and if so, if it is checked
+    // or unchecked:
+   if (isCheckable)
 	processCheckable();
 }
 
@@ -157,50 +143,48 @@ bool CRMenuSelectionEvent::processPopUp (wxMenu* menu) {
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
-    m_popupMenuContainerName = hierarchy->FindContainerName (evtHandlerWdw);
-    wxASSERT (!m_popupMenuContainerName.IsEmpty ());
+    m_parentContainerName = hierarchy->FindContainerName (evtHandlerWdw);
+    wxASSERT (!m_parentContainerName.IsEmpty ());
+    // (A) Find out if it is a checkable menu item; and if so, if it is checked
+    // or unchecked:
 
     if (isCheckable)
 	processCheckable();
     return true;
 }
+bool CRMenuSelectionEvent::processToolBar(wxToolBar *toolBar) {
 
-bool CRMenuSelectionEvent::processToolBar(wxWindow *wdwEvtObject) {
+// We're here because Process detected a toolbar via ClassInfo
+    int id = m_event->GetId();
+    if (id == wxID_SEPARATOR)
+	return true; //It's a separator and we're not interested.
+    wxToolBarToolBase* tool = toolBar->FindById(id);
+    if (tool == NULL) {
+	wxLogDebug(_T("Tool %d not found"), id);
+	return true;
+    }
+    if (tool->IsSeparator()) 
+	return true;
 
-    wxLogDebug(_T("CRMenuSelectionEvent::processToolBar"));
-    return false;
-    // One way to find out if it is a tool; works only for dynamic toolbars:
-//     sw::NewBitmapButton *newTool = dynamic_cast< sw::NewBitmapButton * >(wdwEvtObject);
-//     if (newTool != NULL) {
+    m_isTool = true;
 
-// 	// Better (not tested for non-dynamic toolbars yet):
-// 	m_toolbarName = sw::ToolBarRegistry::GetInstance ()->
-// 	    FindToolBarNameByWdwPtr (wdwEvtObject);
-// 	if ((m_toolbarName.IsEmpty ()) && (wdwEvtObject->GetParent () != NULL)) {
+    m_toolbarName = toolBar->GetName();
+    CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
+    wxASSERT (hierarchy != NULL);
+    m_parentContainerName = hierarchy->FindContainerName (toolBar);
+    wxASSERT (!m_parentContainerName.IsEmpty ());
 
-// 	    m_toolbarName = sw::ToolBarRegistry::GetInstance ()->
-// 		FindToolBarNameByWdwPtr (wdwEvtObject->GetParent ());
-// 	}
-// 	if (!m_toolbarName.IsEmpty ()) {
+    if (tool->IsControl()) {
+	m_isControl = true;
+	wxControl* control = tool->GetControl();
+	m_controlName = control->GetClassInfo()->GetClassName();
+	wxLogDebug(_T("Tool %d is a %s"), id, m_controlName.c_str());
+//At this point, we hope that the control's own events will fire the
+//appropriate handler. We may, therefore, be able to get rid of this section.
+    }
+    if (tool->CanBeToggled() && tool->IsToggled())
+	    m_isChecked = true;
 
-// 	    m_isTool = true;
-// 	    // Standard tool IDs (wxID_LOWEST < stdID < wxID_HIGHEST) don't
-// 	    // need to be looked up; others must be registered in
-// 	    // GuiObjectManager:
-// 	    if ((wxID_LOWEST < m_event->GetId ()) &&
-// 		(m_event->GetId () < wxID_HIGHEST)) {
-
-// 		m_isStdId = true;
-
-// 	    } else {
-
-// 		m_guiObjName = sw::GuiObjectManager::GetInstance ()->
-// 		    FindName (m_event->GetId ());
-// 		wxASSERT (!m_guiObjName.IsEmpty ());
-// 	    }
-// //TODO: set isCheckable flag according to ToolGuiObject::IsToggle() method
-// 	}
-//     }
 }
 
 
@@ -217,54 +201,34 @@ void CRMenuSelectionEvent::processCheckable() {
 
 void CRMenuSelectionEvent::Process (CRCapturedEvent **pendingEvt)
 {
-    // (1) Find out if the affected menu item is in the main frame's menubar:
-//     if (sw::FrameFactory::GetInstance () && processMainFrame())
-// 	   return;
-    // (2) Or if it is part of top level window:
+    // (1) Or if it is part of top level window:
     wxWindow *topWdw = wxTheApp->GetTopWindow ();
     wxFrame *topFrame = dynamic_cast< wxFrame * >(topWdw);
     if (topFrame != NULL && processTopFrame(topFrame))
 	return;
-    // (2b) Or is it from wxGTK <= v2.8.6 or wxMac (event object is wxMenu):
+    // (2) Or is it from wxGTK <= v2.8.6 or wxMac (event object is wxMenu):
     // Menu and menu item label for all menu bar menus; NOT pop-up menus:
     // (3) Or a pop-up menu:
     wxMenu *menu = wxDynamicCast (m_event->GetEventObject (), wxMenu);
-    if (menu != NULL && processTopMenu(menu) || processPopUp(menu))
+    if (menu != NULL && (processTopMenu(menu) || processPopUp(menu)))
 	return;
     // (4) Or another menubar: TODO
 
     // (5) Or a tool from a toolbar?
-    wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (),
-                wxWindow);
+    wxToolBar *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (),
+                wxToolBar);
     if (wdwEvtObject != NULL && processToolBar(wdwEvtObject))
 	return;
     // Finally, if still not processed emit comment with infos about event, and
     // make the event irrelevant??? TODO
 
-    // (A) Find out if it is a checkable menu item; and if so, if it is checked
-    // or unchecked:
 }
 
 
 void CRMenuSelectionEvent::EmitCpp ()
 {
     // (I) Expected emitting for menu items:
-    // (1) Menu item is part of main frame menubar:
-    /*
-    wxFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ()->
-            GetFrame ();
-    wxMenuBar *menuBar = mainFrame->GetMenuBar ();
-    CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
-
-    int importMenuItemId = menuBar->FindMenuItem (_("File"), _("STL File..."));
-    CPPUNIT_ASSERT_MESSAGE ("STL import menu item not found",
-            importMenuItemId != wxNOT_FOUND);
-
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (importMenuItemId, mainFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
-    */
-
-    // (2) Menu item is part of top level window menu:
+    // (1) Menu item is part of top level window menu:
     /*
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", wxTheApp->GetTopWindow () != NULL);
     wxFrame *topFrame = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());
@@ -275,7 +239,7 @@ void CRMenuSelectionEvent::EmitCpp ()
     ...
     */
 
-    // (2b) Event object is menu, and menu item is part of top level window menu:
+    // (2) Event object is menu, and menu item is part of top level window menu:
     /*
     wxMenu *menuMenu;
     wxMenuItem *checkableMenuItemMenuItem = menuBar->FindItem (
@@ -357,16 +321,7 @@ void CRMenuSelectionEvent::EmitCpp ()
         //  - menuItemContVarName (menubar; pop-up: menu)
         wxString eventHdlVarName, menuItemContVarName, menuItemIdVarName;
 
-//         if (m_isFromMainFrameMenuBar) {
-
-//             eventHdlVarName = _T("mainFrame");
-//             str.Clear ();
-//             str << _T("wxFrame *") << eventHdlVarName <<
-//                     _T(" = sw::FrameFactory::GetInstance ()->GetMainFrame ()->GetFrame ();");
-//             emitter->AddCode (str);
-
-//         } else
-	    if (m_isFromTopWindow) {
+	if (m_isFromTopWindow) {
 
             str.Clear ();
             str << _T("CPPUNIT_ASSERT_MESSAGE (\"Application top window invalid\", wxTheApp->GetTopWindow () != NULL);");
@@ -375,7 +330,7 @@ void CRMenuSelectionEvent::EmitCpp ()
             eventHdlVarName = _T("topFrame");
             str.Clear ();
             str << _T("wxFrame *") << eventHdlVarName <<
-                    _T(" = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());");
+		_T(" = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());");
             emitter->AddCode (str);
     
             str.Clear ();
@@ -383,7 +338,8 @@ void CRMenuSelectionEvent::EmitCpp ()
                     << eventHdlVarName << _T(" != NULL);");
             emitter->AddCode (str);
         
-        } else if (m_isFromPopupMenu) {
+        } 
+	else if (m_isFromPopupMenu) {
         
             menuItemContVarName = emitter->MakeVarName (m_menuLabel, 
                     _T("PopupMenu"));
@@ -414,10 +370,10 @@ void CRMenuSelectionEvent::EmitCpp ()
             emitter->AddCode (str);
 
             eventHdlVarName = emitter->AddContainerLookupCode (
-                    m_popupMenuContainerName,
+                    m_parentContainerName,
                     wxString::Format (_T("pop-up menu '%s'"), 
                     m_menuLabel.c_str ()));
-        }
+	}// m_isFromPopupMenu, m_isFromTopWindow
     
         if (// m_isFromMainFrameMenuBar ||
 	    m_isFromTopWindow) {
@@ -506,14 +462,14 @@ void CRMenuSelectionEvent::EmitCpp ()
                 str << _T("swTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (") <<
                         menuItemIdVarName << _T(", ") << eventHdlVarName << _T(");");
 
-            } else {
+            } else { //!m_eventObjectIsMenu
 
                 str << _T("swTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (") <<
                         menuItemIdVarName << _T(", ") << menuVarName << _T(");");
             }
             emitter->AddCode (str);
 
-        } else {
+        } else { //m_isChecked
 
             str.Clear ();
             str << _T("swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (") 
@@ -521,82 +477,57 @@ void CRMenuSelectionEvent::EmitCpp ()
             emitter->AddCode (str);
         }
 
-    } else {
-	wxLogDebug(_T("CRMenuSelectionEvent::EmitCpp Trying to emit toolbar code"));
-//         wxString toolBarVarName = emitter->MakeVarName (m_toolbarName);
+    } else { //!m_isTool
+        wxString toolBarVarName = emitter->MakeVarName (m_toolbarName);
+	wxString containerVarName = emitter->MakeVarName(m_parentContainerName);
+	wxString containerWdwVarName = emitter->MakeVarName(m_parentContainerName,
+							    _T("Wdw"));
 
-//         str.Clear ();
-//         str << _T("sw::ToolBar *") << toolBarVarName <<
-//                 _T(" = sw::ToolBarRegistry::GetInstance ()->FindToolBarByName (\"") 
-//                 << m_toolbarName << _T("\");");
-//         emitter->AddCode (str);
+        str.Clear ();
+	str << _T("wxWindow* ") << containerWdwVarName 
+	    << _T(" = wxWindow::FindWindowByName( _T(\"") 
+	    << m_parentContainerName << _T("\"));");
+        emitter->AddCode (str);
 
-//         str.Clear ();
-//         str << _T("CPPUNIT_ASSERT_MESSAGE (\"Toolbar '") << m_toolbarName <<
-//                 _T("' not found\", ") << toolBarVarName << _T(" != NULL);");
-//         emitter->AddCode (str);
+        str.Clear ();
+        str << _T("CPPUNIT_ASSERT_MESSAGE (\"Parent Window '") 
+	    << m_parentContainerName << _T("' not found\", ") 
+	    << containerWdwVarName << _T(" != NULL);");
+        emitter->AddCode (str);
 
-//         if (m_isStdId) {
+        str.Clear ();
+	str << _T("wxFrame* ") << containerVarName << _T(" = wxDynamicCast(") 
+	    << containerWdwVarName << _T(", wxFrame);");
+        emitter->AddCode (str);
 
-//             wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");
+        str.Clear ();
+        str << _T("CPPUNIT_ASSERT_MESSAGE (\"Converting Window for frame '") 
+	    << m_parentContainerName << _T("' not found\", ") 
+	    << containerVarName << _T(" != NULL);");
+        emitter->AddCode (str);
 
-//             str.Clear ();
-//             str << _T("swTst::WxGuiTestEventSimulationHelper::ToggleTool (") <<
-//                     m_event->GetId () << _T(", ") << isCheckedBoolStr << _T(", ") <<
-//                     toolBarVarName << _T(", ") << toolBarVarName << 
-//                     _T("->GetWindow ());");
-//             emitter->AddCode (str);
+        str.Clear ();
+        str << _T("wxToolBar* ") << toolBarVarName 
+	    << _T(" = ") << containerVarName << _T("->GetToolBar();");
+        emitter->AddCode (str);
 
-//         } else {
+        str.Clear ();
+        str << _T("CPPUNIT_ASSERT_MESSAGE (\"Toolbar '") << m_toolbarName 
+	    << _T("' not found\", ") << toolBarVarName << _T(" != NULL);");
+        emitter->AddCode (str);
 
-//             wxString guiObjVarName = emitter->MakeVarName (m_guiObjName, 
-//                     _T("GuiObj"));
+	wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");
 
-//             str.Clear ();
-//             str << _T("sw::GuiObject *") << guiObjVarName <<
-//                     _T(" = sw::GuiObjectManager::GetInstance ()->FindGuiObject (\"") 
-//                     << m_guiObjName << _T("\");");
-//             emitter->AddCode (str);
+	str.Clear ();
+	if (!m_isControl) {
+	    str << _T("swTst::WxGuiTestEventSimulationHelper::ToggleTool(") 
+		<< m_event->GetId () << _T(", ") << isCheckedBoolStr 
+		<< _T(", ") << toolBarVarName << _T(", ") << containerVarName 
+		<< _T(");");
+	    emitter->AddCode (str);
+	}
 
-//             str.Clear ();
-//             str << _T("CPPUNIT_ASSERT_MESSAGE (\"GuiObject '") << m_guiObjName <<
-//                     _T("' not found\", ") << guiObjVarName << _T(" != NULL);");
-//             emitter->AddCode (str);
-
-//             wxString toolGuiObjVarName = emitter->MakeVarName (m_guiObjName,
-//                     _T("ToolGuiObj"));
-
-//             str.Clear ();
-//             str << _T("sw::ToolGuiObject *") << toolGuiObjVarName <<
-//                     _T(" = dynamic_cast < sw::ToolGuiObject * >(") <<
-//                     guiObjVarName << _T(");");
-//             emitter->AddCode (str);
-
-//             str.Clear ();
-//             str << _T("CPPUNIT_ASSERT_MESSAGE (\")GuiObject '") << m_guiObjName <<
-//                     _T("' is not a ToolGuiObject\", ") << toolGuiObjVarName <<
-//                     _T(" != NULL);");
-//             emitter->AddCode (str);
-
-//             wxString toolIdVarName = emitter->MakeVarName (_T("toolId"));
-
-//             str.Clear ();
-//             str << _T("int ") << toolIdVarName <<
-//                     _T(" = sw::GuiObjectManager::GetInstance ()->FindId (") <<
-//                     toolGuiObjVarName << _T(");");
-//             emitter->AddCode (str);
-
-//             wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");
-
-//             str.Clear ();
-//             str << _T("swTst::WxGuiTestEventSimulationHelper::ToggleTool (") <<
-//                     toolIdVarName << _T(", ") << isCheckedBoolStr << _T(", ") <<
-//                     toolBarVarName << _T(", ") << toolBarVarName << 
-//                     _T("->GetWindow ());");
-//             emitter->AddCode (str);
-//         }
     }
-
     str.Clear ();
     str << _T("swTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);

@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -15,13 +17,13 @@
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
 #include <wxGuiTest/swCRCppEmitter.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 CRTreeSelectionChangingEvent::CRTreeSelectionChangingEvent (wxEvent *event) :
 CRAbstractTreeEvent (event)
 {
-    m_isXRC = false;
+//    Nothing to do
 }
 
 
@@ -38,11 +40,6 @@ void CRTreeSelectionChangingEvent::Process (CRCapturedEvent **pendingEvt)
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
     wxASSERT (hierarchy != NULL);
-
-    if (hierarchy->FindXRCNode (wdwEvtObject) != NULL) {
-
-        m_isXRC = true;
-    }
     m_treeCtrlName = wdwEvtObject->GetName ();
     m_containerName = hierarchy->FindContainerName (wdwEvtObject);
     wxASSERT (!m_containerName.IsEmpty ());
@@ -94,14 +91,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     wxString str;
     str << _T("wxWindow *") << treeCtrlWdwVarName << _T(" = ") << 
             containerVarName << _T("->FindWindow (");
-    if (m_isXRC) {
-        
-        str << _T("XRCID(\"") << m_treeCtrlName << _T("\"));");
-
-    } else {
-
-        str << _T("\"") << m_treeCtrlName << _T("\");");
-    }
+        str << _T("_T(\"") << m_treeCtrlName << _T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();
@@ -146,9 +136,10 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
                 wxString::Format (_T("treeItemId%d"), cnt));
 
         str.Clear ();
-        str << _T("wxTreeItemId ") << curTreeItemIdVarName <<
-                _T(" = sw::TreeCtrl::GetNthChild (") << treeCtrlVarName << _T(", ") <<
-                (*it) << _T(", ") << parentItemIdVarName << _T(");");
+        str << _T("wxTreeItemId ") << curTreeItemIdVarName 
+	    << _T(" = swTst::WxGuiTestEventSimulationHelper::GetNthTreeChild (") 
+	    << treeCtrlVarName << _T(", ") << (*it) << _T(", ") 
+	    << parentItemIdVarName << _T(");");
         emitter->AddCode (str);
 
         str.Clear ();
@@ -169,5 +160,5 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     emitter->AddCode (str);
 }
 
-} // End namespace swTst
+
 

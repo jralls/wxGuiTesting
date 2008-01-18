@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -16,13 +18,9 @@
 
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
-
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
 #include <wxGuiTest/swCRWindowHierarchyHandler.h>
-#include <swCRXRCNode.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -33,10 +31,6 @@ CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRWindowHierarchyHandlerTest, "WxGuiTest"
 void CRWindowHierarchyHandlerTest::setUp ()
 {
     const wxString xrcDir = _T(XRCDIR);
-    sw::Config *config = new sw::Config ();
-    config->SetResourceDir (xrcDir);
-    sw::ConfigManager::SetInstance (config);
-
     wxXmlResource::Get()->InitAllHandlers ();
     wxXmlResource::Get()->Load (xrcDir + _T("/CapturePanel_wdr.xrc"));
     wxXmlResource::Get()->Load (xrcDir + _T("/xrc_two_object_nodes.xrc"));
@@ -45,31 +39,7 @@ void CRWindowHierarchyHandlerTest::setUp ()
 
 void CRWindowHierarchyHandlerTest::tearDown ()
 {
-    sw::ConfigManager::SetInstance (NULL);
-}
-
-
-void CRWindowHierarchyHandlerTest::testFindXRCNode ()
-{
-    wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
-            wxDefaultPosition);
-#ifndef __WXGTK__
-    WxGuiTestHelper::FlushEventQueue ();
-#endif
-
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, _T("CapturePanel"));
-    CPPUNIT_ASSERT_MESSAGE ("Loading test panel failed", panel != NULL);
-    wxButton *button = XRCCTRL (*panel, "ExitButton", wxButton);
-    CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
-
-    CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
-    CRXRCNode *btnNode = hierarchy->FindXRCNode (button);
-    CPPUNIT_ASSERT_MESSAGE ("Find button window failed", btnNode != NULL);
-
-    CPPUNIT_ASSERT_MESSAGE ("Find button window failed (name)",
-            button->GetName () == btnNode->GetName ());
-    CPPUNIT_ASSERT_MESSAGE ("Find button window failed (class)",
-            _T("wxButton") == btnNode->GetClass ());
+//    Nothing to do
 }
 
 
@@ -87,13 +57,6 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainer ()
     CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
-    CRXRCNode *btnContNode = hierarchy->FindContainerXRCNode (button);
-    CPPUNIT_ASSERT_MESSAGE ("Find button window container failed", btnContNode != NULL);
-
-    CPPUNIT_ASSERT_MESSAGE ("Find button window container failed (name)",
-            panel->GetName () == btnContNode->GetName ());
-    CPPUNIT_ASSERT_MESSAGE ("Find button window container failed (class)",
-            _T("wxPanel") == btnContNode->GetClass ());
 }
 
 
@@ -144,6 +107,4 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
     CPPUNIT_ASSERT_MESSAGE ("Find button window container returned wrong name (non XRC)",
             panel2->GetName () == btnContName2);
 }
-
-} // End namespace swTst
 

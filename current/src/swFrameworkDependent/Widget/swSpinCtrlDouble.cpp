@@ -18,7 +18,7 @@
     #pragma hdrstop
 #endif
 
-#include <wxGuiTest/Widget/swSpinCtrlDouble.h>
+#include "swSpinCtrlDouble.h"
 #include <wx/valtext.h>     // for wxTextValidator
 
 namespace sw {

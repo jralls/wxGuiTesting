@@ -79,8 +79,16 @@
       <modify-target target="clean">
 	<command>rm -rf $(id).app</command>
       </modify-target>
-      
+
     </define-tag>
-    
+   
+    <define-tag name='osx-ranlib' rules='lib'>
+      <modify-target target="install_$(id)" cond="target and TOOLKIT=='MAC'">
+	<command>
+	  $(RANLIB) $(DESTDIR)$(PREFIX)$(DIRSEP)$(LIBDIR)$(DIRSEP)$(ref('__targetname',id))
+	</command>
+      </modify-target>
+    </define-tag>
+ 
   </if>
 </makefile>
