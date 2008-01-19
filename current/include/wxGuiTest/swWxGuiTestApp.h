@@ -14,8 +14,8 @@
 #endif
 
 #include <wxGuiTest/Common.h>
+#include <wx/app.h>
 
-#include <wxGuiTest/swPseudoApp.h>
 
 namespace swTst {
 
@@ -48,7 +48,7 @@ class CREventFilterInterface;
         influence if the application is shut down when the last of its top
         level windows is closed.
 */
-class WxGuiTestApp : public sw::PseudoApp
+class WxGuiTestApp : public wxApp
 {
     DECLARE_EVENT_TABLE()
 
@@ -58,13 +58,41 @@ public:
 
         \param app actual application under test (AUT)
     */
-    WxGuiTestApp (sw::App *app = NULL);
+    WxGuiTestApp (wxApp* app = NULL);
 
 
     /*! \fn virtual ~WxGuiTestApp ()
         \brief Destructor
     */
     virtual ~WxGuiTestApp ();
+
+
+    /*! \fn static App * GetInstance ()
+        \brief Get single instance of application (Singleton pattern).
+
+      	\return application instance
+    */
+    static wxApp* GetInstance ();
+
+
+    /*! \fn static void SetInstance (App *app)
+      	\brief [TEST] Set single instance of application (Singleton pattern).
+
+      	Only required for testing!
+
+      	\param app application instance to set
+    */
+    static void SetInstance (wxApp* app);
+
+
+    /*! \fn static void Nullify ()
+      	\brief [TEST] Pseudo destruction of application.
+
+      	Only required for testing!
+
+	In fact only sets ms_instance to NULL.
+    */
+    static void Nullify ();
 
 
     /*! \fn virtual int FilterEvent (wxEvent& event)
@@ -147,11 +175,10 @@ public:
     virtual int OnExit ();
 
 private:
-    InitWxGuiTestSetUp *m_testRunnerProxy;
-
-    sw::App *m_appUnderTest;
-
-    CREventFilterInterface *m_eventFilter;
+    InitWxGuiTestSetUp* m_testRunnerProxy;
+    wxApp* m_appUnderTest;
+    CREventFilterInterface* m_eventFilter;
+    static wxApp* ms_instance;
 
 };
 

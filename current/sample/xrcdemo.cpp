@@ -123,7 +123,9 @@ bool MyApp::OnInit()
     // Variable expansion example
     if (!wxXmlResource::Get()->Load(wxT("rc/variable.xrc")))
         return false;
+
 #ifdef  SW_USE_WX_APP_GUI_TESTING
+//Override the appname set in swInitWxGuiTestSetUp.cpp ("bla")
     wxTheApp->SetAppName(_T("xrcdemo_test"));
 #endif
 

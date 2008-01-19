@@ -48,24 +48,24 @@ WXGUITESTING_HEADERS =  \
 	$(LIB_HDRS)
 CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/swWxGuiTesting \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(XRCDIR)\" \
-	-DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) \
-	$(CPPFLAGS) $(CXXFLAGS)
+	-DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) \
+	$(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_CppTextTestApp.o \
 	objects/CppUnitTest_swCRCppEmitterTest.o \
 	objects/CppUnitTest_swWxGuiTestProvokedWarningRegistryTest.o
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(XRCDIR)\" -DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) \
-	$(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	objects/CppGuiUnitTestEventSimulation_CppTextTestApp.o \
 	objects/CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.o \
 	objects/CppGuiUnitTestEventSimulation_swWxGuiTestEvtSimHlpEvtHandler.o
 CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(XRCDIR)\" -DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) \
-	$(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	objects/CppGuiUnitTestCaptureReplay_CppTextTestApp.o \
 	objects/CppGuiUnitTestCaptureReplay_swCRCaptureTest.o \
@@ -73,8 +73,8 @@ CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(XRCDIR)\" -DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) \
-	$(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects/CppGuiUnitTestModalDialog_CppTextTestApp.o \
 	objects/CppGuiUnitTestModalDialog_swDirDialogManipulator.o \
@@ -83,8 +83,8 @@ CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
-	-DXRCDIR=\"$(XRCDIR)\" -DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) \
-	$(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	objects/CppGuiUnitCapturePlusEmit_CppTextTestApp.o \
 	objects/CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.o

@@ -28,7 +28,8 @@ CPPUNITTEST_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	$(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"$(baseDir)/test/TestData\" /DXRCDIR=\"$(XRCDIR)\" \
-	/DSRCDIR=\"$(baseDir)\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTSRCDIR=\"$(baseDir)/test/CppGuiTest\" /GR /EHsc $(CPPFLAGS) \
+	$(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects\CppUnitTest_CppTextTestApp.obj \
 	objects\CppUnitTest_swCRCppEmitterTest.obj \
@@ -39,7 +40,8 @@ CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = /MD$(__DBG_13) /DWIN32 \
 	$(____WX_SHARED) $(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"$(baseDir)/test/TestData\" /DXRCDIR=\"$(XRCDIR)\" \
-	/DSRCDIR=\"$(baseDir)\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTSRCDIR=\"$(baseDir)/test/CppGuiTest\" /GR /EHsc $(CPPFLAGS) \
+	$(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	objects\CppGuiUnitTestEventSimulation_CppTextTestApp.obj \
 	objects\CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.obj \
@@ -50,7 +52,8 @@ CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"$(baseDir)/test/TestData\" /DXRCDIR=\"$(XRCDIR)\" \
-	/DSRCDIR=\"$(baseDir)\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTSRCDIR=\"$(baseDir)/test/CppGuiTest\" /GR /EHsc $(CPPFLAGS) \
+	$(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	objects\CppGuiUnitTestCaptureReplay_CppTextTestApp.obj \
 	objects\CppGuiUnitTestCaptureReplay_swCRCaptureTest.obj \
@@ -62,7 +65,8 @@ CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"$(baseDir)/test/TestData\" /DXRCDIR=\"$(XRCDIR)\" \
-	/DSRCDIR=\"$(baseDir)\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTSRCDIR=\"$(baseDir)/test/CppGuiTest\" /GR /EHsc $(CPPFLAGS) \
+	$(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects\CppGuiUnitTestModalDialog_CppTextTestApp.obj \
 	objects\CppGuiUnitTestModalDialog_swDirDialogManipulator.obj \
@@ -75,7 +79,8 @@ CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	$(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /D_CONSOLE \
 	/DTESTDIR=\"$(baseDir)/test/TestData\" /DXRCDIR=\"$(XRCDIR)\" \
-	/DSRCDIR=\"$(baseDir)\" /GR /EHsc $(CPPFLAGS) $(CXXFLAGS)
+	/DTESTSRCDIR=\"$(baseDir)/test/CppGuiTest\" /GR /EHsc $(CPPFLAGS) \
+	$(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	objects\CppGuiUnitCapturePlusEmit_CppTextTestApp.obj \
 	objects\CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.obj

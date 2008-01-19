@@ -54,7 +54,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -72,7 +72,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -148,7 +148,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -166,7 +166,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -242,7 +242,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -260,7 +260,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -336,7 +336,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -354,7 +354,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -430,7 +430,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -448,7 +448,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -523,7 +523,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -541,7 +541,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -616,7 +616,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -634,7 +634,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -709,7 +709,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -727,7 +727,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -801,7 +801,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -819,7 +819,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -894,7 +894,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -912,7 +912,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -987,7 +987,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1005,7 +1005,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1080,7 +1080,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1098,7 +1098,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1173,7 +1173,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -1191,7 +1191,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1265,7 +1265,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -1283,7 +1283,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1357,7 +1357,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -1375,7 +1375,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1449,7 +1449,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -1467,7 +1467,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1542,7 +1542,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1560,7 +1560,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1636,7 +1636,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1654,7 +1654,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1730,7 +1730,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1748,7 +1748,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1824,7 +1824,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -1842,7 +1842,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -1918,7 +1918,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -1936,7 +1936,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2011,7 +2011,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2029,7 +2029,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2104,7 +2104,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2122,7 +2122,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2197,7 +2197,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2215,7 +2215,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
-				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2289,7 +2289,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -2307,7 +2307,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2382,7 +2382,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -2400,7 +2400,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2475,7 +2475,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -2493,7 +2493,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2568,7 +2568,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="3"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="3"
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
@@ -2586,7 +2586,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2661,7 +2661,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2679,7 +2679,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2753,7 +2753,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2771,7 +2771,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2845,7 +2845,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2863,7 +2863,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -2937,7 +2937,7 @@
 				ExceptionHandling="1"
 				AdditionalOptions=""
 				RuntimeLibrary="2"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 				BasicRuntimeChecks="0"
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
@@ -2955,7 +2955,7 @@
 				Name="VCResourceCompilerTool"
 				Culture="1033"
 				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
-				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
+				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"

@@ -254,7 +254,7 @@ void ReplayTest::testPlatformSpecific() {
     swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (shared_checkbox, 
             true);
     swTst::WxGuiTestHelper::FlushEventQueue ();
-
+#ifdef __WXMAC
     wxNotebook *platform_notebook1 = wxDynamicCast (platform_notebookWdw, 
             wxNotebook);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for notebook 'platform_notebook' "
@@ -286,20 +286,7 @@ void ReplayTest::testPlatformSpecific() {
     swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (mac_checkbox, 
             true);
     swTst::WxGuiTestHelper::FlushEventQueue ();
-
- //     wxWindow *platform_property_dialog = 
-//  	wxWindow::FindWindowByName (_T("platform_child"));
-//      CPPUNIT_ASSERT_MESSAGE ("Container window for button 'wxID_OK' not found", 
-//  			    platform_property_dialog != NULL);
-// //    interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
-//     wxWindow *wxID_OKWdw4 = platform_property_dialog->FindWindow (XRCID("wxID_OK"));
-//     CPPUNIT_ASSERT_MESSAGE ("Window for button 'wxID_OK' not found", 
-//             wxID_OKWdw4 != NULL);
-//     swTst::WxGuiTestEventSimulationHelper::ClickButton (wxID_OKWdw4->GetId (), 
-//             wxID_OKWdw4);
-//     swTst::WxGuiTestHelper::FlushEventQueue ();
-//     CPPUNIT_ASSERT_MESSAGE("OK Button didn't hide Mac Specific Dialog",
-// 			   platform_property_dialog->IsShown() == false);
+#endif
 
 }
 

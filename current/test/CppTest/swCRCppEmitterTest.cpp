@@ -15,7 +15,7 @@
 #include <wxGuiTest/swCRCppEmitter.h>
 
 namespace {
-  const wxString srcDir(_T(SRCDIR));
+  const wxString testSrcDir(_T(TESTSRCDIR));
 }
 
 namespace swTst {
@@ -39,7 +39,7 @@ void CRCppEmitterTest::tearDown ()
 
 void CRCppEmitterTest::testExample ()
 {
-  wxString filename(srcDir + wxString(_T("/test/CppGuiTest/swCRCaptureTest.cpp")));
+  wxString filename(testSrcDir + wxString(_T("/swCRCaptureTest.cpp")));
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
     CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);
@@ -86,7 +86,7 @@ void CRCppEmitterTest::testExample ()
 
 void CRCppEmitterTest::testMakeVarName()
 {
-  wxString filename(srcDir+ wxString(_T("/test/CppGuiTest/swCRCaptureTest.cpp")));
+  wxString filename(testSrcDir+ wxString(_T("/swCRCaptureTest.cpp")));
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
     CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);

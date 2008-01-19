@@ -74,10 +74,10 @@ void InitWxGuiTestSetUp::setUp ()
     //   There is already an App instance which is supposed to be the real
     // application under test (AUT). Otherwise "only" wxGuiTesting should
     // carried out:
-    sw::App *app = sw::App::GetInstance ();
+    wxApp *app = WxGuiTestApp::GetInstance ();
     if (app != NULL) {
 
-        sw::App::Nullify ();
+        WxGuiTestApp::Nullify ();
     }
 
     WxGuiTestApp *wxGuiTestApp = new WxGuiTestApp (app);
@@ -87,7 +87,7 @@ void InitWxGuiTestSetUp::setUp ()
     // And re-establish AUT as single App instance (if it is not just a GUI test):
     if (app != NULL) {
 
-        sw::App::SetInstance (app);
+        WxGuiTestApp::SetInstance (app);
     }
 
     // Store this instance for running tests from WxGuiTestApp::OnRun():

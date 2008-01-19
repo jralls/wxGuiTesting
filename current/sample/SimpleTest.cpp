@@ -61,7 +61,7 @@ void SimpleTest::tearDown () {
 
 void SimpleTest::testExample ()
 {
-    sw::App *app = sw::App::GetInstance ();
+    wxApp *app = swTst::WxGuiTestApp::GetInstance ();
 
     wxLogDebug(_T("Application Name is %s"), wxTheApp->GetAppName().c_str());
     CPPUNIT_ASSERT_MESSAGE ("Application name is wrong",

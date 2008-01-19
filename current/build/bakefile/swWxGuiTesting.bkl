@@ -89,6 +89,7 @@
   <set var='TESTDIR' overwrite='0'>$(baseDir)/$(testdir)</set>
   <set var='XRCDIR' make_var='1' overwrite='0'>$(baseDir)/$(testdir)/xrc</set>
   <set var='VTKDIR' overwrite='0'>$(baseDir)/$(testdir)/vtk</set>
+  <set var='TESTSRCDIR' overwrite='0'>$(baseDir)/test/CppGuiTest</set>
 
  <set var="WX3RDPARTYLIBPOSTFIX">
     <if cond="WX_DEBUG=='1'">d</if>
@@ -218,7 +219,7 @@
 
     <define>TESTDIR="$(TESTDIR)"</define>
     <define>XRCDIR="$(XRCDIR)"</define>
-    <define>SRCDIR="$(baseDir)"</define>
+    <define>TESTSRCDIR="$(TESTSRCDIR)"</define>
 
     <library>wxGuiTesting</library>
 

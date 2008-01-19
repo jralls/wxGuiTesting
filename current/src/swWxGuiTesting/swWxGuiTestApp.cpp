@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,18 +20,21 @@
 
 IMPLEMENT_APP_NO_MAIN(swTst::WxGuiTestApp)
 
-BEGIN_EVENT_TABLE(swTst::WxGuiTestApp, sw::PseudoApp)
+BEGIN_EVENT_TABLE(swTst::WxGuiTestApp, wxApp)
     EVT_IDLE(swTst::WxGuiTestApp::OnIdle)
 END_EVENT_TABLE()
 
-namespace swTst {
+using namespace swTst;
 
+wxApp* WxGuiTestApp::ms_instance = NULL;
 
-WxGuiTestApp::WxGuiTestApp (sw::App *appUnderTest)
+WxGuiTestApp::WxGuiTestApp (wxApp *appUnderTest) :
+    m_testRunnerProxy(NULL),
+    m_appUnderTest(appUnderTest),
+    m_eventFilter(NULL)
 {
-    m_testRunnerProxy = NULL;
-    m_appUnderTest = appUnderTest;
-    m_eventFilter = NULL;
+    wxASSERT (ms_instance == NULL);
+    ms_instance = this;
 }
 
 
@@ -44,6 +49,31 @@ WxGuiTestApp::~WxGuiTestApp ()
     }
 }
 
+
+wxApp *WxGuiTestApp::GetInstance ()
+{
+	return ms_instance;
+}
+
+
+void WxGuiTestApp::SetInstance (wxApp *app)
+{
+    wxASSERT (app != NULL);
+
+    WxGuiTestApp::Nullify ();
+    ms_instance = app;
+}
+
+
+void WxGuiTestApp::Nullify ()
+{
+    if (ms_instance != NULL) {
+
+        // This causes an exception:
+        //delete ms_instance;
+        ms_instance = NULL;
+    }
+}
 
 int WxGuiTestApp::FilterEvent (wxEvent& event)
 {
@@ -98,7 +128,7 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
     ::wxLogTrace (_T("wxGuiTestCallTrace"), 
             _T("void WxGuiTestApp::OnIdle (wxIdleEvent &event)"));
 
-    PseudoApp::OnIdle (event);
+    wxApp::OnIdle (event);
 
     if (WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag () &&
             WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()) {
@@ -181,7 +211,7 @@ bool WxGuiTestApp::OnInit ()
 
     } else {
 
-        return PseudoApp::OnInit ();
+        return wxApp::OnInit ();
     }
 }
 
@@ -193,9 +223,8 @@ int WxGuiTestApp::OnExit ()
 
     } else {
 
-        return PseudoApp::OnExit ();
+        return wxApp::OnExit ();
     }
 }
 
-} // End namespace swTst
 
