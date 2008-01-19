@@ -14,18 +14,6 @@ Package=<4>
 
 ###############################################################################
 
-Project: "swFramework"=swWxGuiTesting_swFramework.dsp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-}}}
-
-###############################################################################
-
 Project: "CppUnitTest"=swWxGuiTesting_CppUnitTest.dsp - Package Owner=<4>
 
 Package=<5>
@@ -38,13 +26,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 
@@ -62,13 +44,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 
@@ -86,13 +62,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 
@@ -110,13 +80,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 
@@ -134,13 +98,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 
@@ -158,13 +116,7 @@ Begin Project Dependency
 Project_Dep_Name wxGuiTesting
 End Project Dependency
 Begin Project Dependency
-Project_Dep_Name swFramework
-End Project Dependency
-Begin Project Dependency
 Project_Dep_Name wxGuiTesting
-End Project Dependency
-Begin Project Dependency
-Project_Dep_Name swFramework
 End Project Dependency
 }}}
 

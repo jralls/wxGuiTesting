@@ -17,8 +17,6 @@
 #include <wx/xrc/xmlres.h>
 #include <wx/dir.h>
 
-#include <Exception/swWxLogicErrorException.h>
-
 
 using namespace swTst;
 

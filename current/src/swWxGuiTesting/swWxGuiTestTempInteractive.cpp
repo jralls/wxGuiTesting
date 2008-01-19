@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -17,9 +19,7 @@
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include "swWxGuiTestTempInteractiveControl.h"
 
-#include <Exception/swWxLogicErrorException.h>
-
-namespace swTst {
+using namespace swTst;
 
 void WxGuiTestTempInteractive::ShowCurrentGui (const wxString& file, int line)
 {
@@ -92,6 +92,4 @@ WxGuiTestTempInteractive::CreateDialog (const wxString& file, int line)
     dialog->Layout ();
     return dialog;
 }
-
-} // End namespace swTst
 

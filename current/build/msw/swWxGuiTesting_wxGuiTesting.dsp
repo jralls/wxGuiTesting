@@ -70,8 +70,8 @@ RSC=rc.exe
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -93,8 +93,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -116,8 +116,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -139,8 +139,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -162,8 +162,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -185,8 +185,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -208,8 +208,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -231,8 +231,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -254,8 +254,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -277,8 +277,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -300,8 +300,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -323,8 +323,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_dll\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -346,8 +346,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -369,8 +369,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -392,8 +392,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -415,8 +415,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_dll\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "WXUSINGDLL" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -438,8 +438,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -461,8 +461,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -484,8 +484,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -507,8 +507,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswud" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -530,8 +530,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -553,8 +553,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -576,8 +576,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -599,8 +599,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\mswu" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "_UNICODE" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -622,8 +622,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -645,8 +645,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -668,8 +668,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -691,8 +691,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
-# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD BASE CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
+# ADD CPP /nologo /FD /MDd /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /Od /Gm /I "$(WXWIN)\lib\vc_lib\mswd" /I "$(WXWIN)\include" /Zi /Fd..\..\lib\wxGuiTestingd.pdb /D "WIN32" /D "_LIB" /D "__WXDEBUG__" /D "__WXMSW__" /D "_DEBUG" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -714,8 +714,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -737,8 +737,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -760,8 +760,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -783,8 +783,8 @@ LIB32=link.exe -lib
 # PROP Output_Dir "..\..\lib"
 # PROP Intermediate_Dir "objects\wxGuiTesting"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
-# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swFrameworkDependent" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD BASE CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
+# ADD CPP /nologo /FD /MD /W1 /GR /EHsc /I "..\..\include" /I "..\..\src\swWxGuiTesting" /I "$(CPPUNIT)\include" /I "$(VTK)\include" /I "..\..\src\wxVTK" /O2 /I "$(WXWIN)\lib\vc_lib\msw" /I "$(WXWIN)\include" /Fd..\..\lib\wxGuiTesting.pdb /D "WIN32" /D "_LIB" /D "__WXMSW__" /c
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
 BSC32=bscmake.exe
@@ -1276,22 +1276,6 @@ SOURCE=..\..\src\swWxGuiTesting\swCRWindowHierarchyHandler.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\src\swWxGuiTesting\swCRXRCNode.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\src\swWxGuiTesting\swCRXRCObject.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\src\swWxGuiTesting\swCRXRCReader.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\src\swWxGuiTesting\swCRXRCResource.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=..\..\src\swWxGuiTesting\swInitWxGuiTest.cpp
 # End Source File
 # Begin Source File
@@ -1460,10 +1444,6 @@ SOURCE=..\..\src\swWxGuiTesting\swWxGuiTestTempInteractiveControl.cpp
 # Begin Source File
 
 SOURCE=..\..\src\swWxGuiTesting\swWxGuiTestTimedDialogEnder.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\src\swFrameworkDependent\Exception\swWxLogicErrorException.cpp
 # End Source File
 # Begin Source File
 

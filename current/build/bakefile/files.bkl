@@ -13,48 +13,8 @@
   <set var='WXVTK'>src/wxVTK</set>
 
   <set var='FD_LIB_SOURCES'>
-    $(FDS)/Exception/swWxLogicErrorException.cpp
     $(FDS)/swApp.cpp
     $(FDS)/swPseudoApp.cpp
-  </set>
-
-  <set var='FD_TEST_SOURCES'>
-    $(FDS)/FrameFactory/swDefaultDialog.cpp
-    $(FDS)/FrameFactory/swFrameFactory.cpp
-    $(FDS)/FrameFactory/swMainFrame.cpp
-    $(FDS)/FrameFactory/swMdiDefaultDialog.cpp
-    $(FDS)/FrameFactory/swMdiFrameFactory.cpp
-    $(FDS)/FrameFactory/swMdiMainFrame.cpp
-    $(FDS)/FrameFactory/swMdiToolBar.cpp
-    $(FDS)/FrameFactory/swToolBar.cpp
-    $(FDS)/FrameFactory/swToolBarRegistry.cpp
-    $(FDS)/FrameFactory/swWindow.cpp
-    $(FDS)/GUI/swGuiObjectManager.cpp
-    $(FDS)/GUI/swToolGuiObjectManager.cpp
-    $(FDS)/Widget/swNewBitmapButton.cpp
-    $(FDS)/Widget/swSpinCtrlDouble.cpp
-    $(FDS)/Widget/swTreeCtrl.cpp
-  </set>
-
-  <set var='FD_HDRS'>
-    $(FDS)/Exception/swWxLogicErrorException.h
-    $(FDS)/FrameFactory/swDefaultDialog.h
-    $(FDS)/FrameFactory/swFrameFactory.h
-    $(FDS)/FrameFactory/swMainFrame.h
-    $(FDS)/FrameFactory/swMdiDefaultDialog.h
-    $(FDS)/FrameFactory/swMdiFrameFactory.h
-    $(FDS)/FrameFactory/swMdiMainFrame.h
-    $(FDS)/FrameFactory/swMdiToolBar.h
-    $(FDS)/FrameFactory/swToolBar.h
-    $(FDS)/FrameFactory/swToolBarRegistry.h
-    $(FDS)/FrameFactory/swWindow.h
-    $(FDS)/GUI/swGuiObject.h
-    $(FDS)/GUI/swGuiObjectManager.h
-    $(FDS)/GUI/swToolGuiObject.h
-    $(FDS)/GUI/swToolGuiObjectManager.h
-    $(FDS)/Widget/swNewBitmapButton.h
-    $(FDS)/Widget/swSpinCtrlDouble.h
-    $(FDS)/Widget/swTreeCtrl.h
   </set>
 
   <set var='FD_INSTALL_HDRS'>
@@ -98,12 +58,6 @@
     $(WGTS)/CapturePanel.cpp
   </set>
 
-  <set var='WGT_UNUSED_SOURCES'>
-    $(WGTS)/swCRXRCNode.cpp
-    $(WGTS)/swCRXRCObject.cpp
-    $(WGTS)/swCRXRCReader.cpp
-    $(WGTS)/swCRXRCResource.cpp
-  </set>
 
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkWxGuiTesting/swCRVtkCapture.cpp
@@ -136,12 +90,6 @@
     $(WGTS)/swWxGuiTestTempInteractiveControl.h
   </set>
 
-  <set var='WGTS_UNUSED_HDRS'>
-    $(WGTS)/swCRXRCNode.h
-    $(WGTS)/swCRXRCObject.h
-    $(WGTS)/swCRXRCReader.h
-    $(WGTS)/swCRXRCResource.h
-  </set>
 
   <set var='WGT_INSTALL_HDRS'>
     $(WGTI)/swCRCapture.h

@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -18,17 +20,13 @@
 
 #include <wxGuiTest/swWxGuiTestHelper.h>
 #include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-
-#include <FrameFactory/swFrameFactory.h>
-#include <FrameFactory/swMdiFrameFactory.h>
-
 #include <wxGuiTest/swModalDialogTimer.h>
 
 #include "swModalDialogManipulator.h"
 #include "swDirDialogManipulator.h"
 
 
-namespace swTst {
+using namespace swTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -105,4 +103,3 @@ void ModalDialogTest::testStdModalDialog ()
     }
 }
 
-} // End namespace swTst

@@ -22,9 +22,6 @@
 #include <wx/notebook.h>
 
 #include <wxGuiTest/swWxGuiTestHelper.h>
-#include <FrameFactory/swFrameFactory.h>
-#include <FrameFactory/swMdiFrameFactory.h>
-#include <FrameFactory/swToolBarRegistry.h>
 
 BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_MENU( XRCID("MenuItem"), WxGuiTestEvtSimHlpEvtHandler::OnMenuItem )

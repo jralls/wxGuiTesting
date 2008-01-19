@@ -12,7 +12,7 @@
 
 #include <wxGuiTest/swCRCppEmitter.h>
 
-#include <Exception/swWxLogicErrorException.h>
+#include <stdexcept>
 
 namespace swTst {
 
@@ -89,9 +89,9 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
     wxASSERT_MSG (::wxFileExists (filename), _T("File does not exist"));
     wxASSERT (lineNmb != 0);
     if (!m_origFile.Open (filename)) {
-
-        throw new sw::WxLogicErrorException (wxString::Format (
-        		_T("Could not open test case file: %s"), filename.c_str ()));
+	std::string error("Could not open test case file: ");
+	error += filename.char_str();
+        throw std::invalid_argument(error);
     }
     // Find unique filename with prefix of current test case filename in order
     // to prevent file overwritting and create "backup" files, plus allow
@@ -106,11 +106,9 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
 
     } while (::wxFileExists (newFilename));
     if (!m_newFile.Create (newFilename)) {
-
-        throw new sw::WxLogicErrorException (
-        wxString::Format (_T("%s: %s"),
-                _("Could not create bootstrap test case file"), 
-                filename.c_str ()));
+	std::string error("Could not open test case file: ");
+	error += filename.char_str();
+        throw new std::invalid_argument (error);
     }
     // Copy old file until line number or first occurence of capture keyword:
     const wxString CAPTURE_KEYWORD = _T("CAPTURE");

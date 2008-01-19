@@ -16,8 +16,7 @@
 
 #include <wxGuiTest/swModalDialogInteractionInterface.h>
 
-#include <Exception/swWxLogicErrorException.h>
-
+#include <stdexcept>
 
 namespace swTst {
 
@@ -54,7 +53,7 @@ bool ModalDialogTimer::Start (int milliseconds, bool oneShot)
 {
     if (oneShot == false) {
 
-        throw sw::WxLogicErrorException (_T("Only one-shot timer is allowed"));
+        throw std::invalid_argument("Only one-shot timer is allowed");
     }
     return wxTimer::Start (milliseconds, oneShot);
 }
@@ -65,7 +64,7 @@ void ModalDialogTimer::Notify ()
     // GUI interaction is only allowed if the timer is actually fired in the
     // main thread:
     if (!wxThread::IsMain()) {
-        throw sw::WxLogicErrorException (_T("not main thread"));
+        throw std::logic_error("not main thread");
     }
 
     if (m_interactor) {

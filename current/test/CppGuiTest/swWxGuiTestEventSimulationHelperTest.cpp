@@ -13,7 +13,7 @@
 #endif
 
 #include "swWxGuiTestEventSimulationHelperTest.h"
-
+#include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/minifram.h>
 #include <wx/image.h>
@@ -26,9 +26,6 @@
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
 #include <wxGuiTest/swApp.h>
-#include <FrameFactory/swFrameFactory.h>
-#include <FrameFactory/swMdiFrameFactory.h>
-#include <FrameFactory/swToolBarRegistry.h>
 
 namespace {
     const wxString testDir(_T(TESTDIR));
@@ -42,12 +39,10 @@ using namespace swTst;
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( WxGuiTestEventSimulationHelperTest, "WxGuiTest" );
 
 
-WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest ()
+WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest () :
+    m_testFrame(NULL), m_testEvtHandler(NULL), m_miniFrame(NULL)
 {
-    sw::FrameFactory::SetInstance (new sw::MdiFrameFactory (new wxDocManager ()));
     wxXmlResource::Get()->InitAllHandlers();
-
-    m_miniFrame = NULL;
 
     //wxLog::AddTraceMask (_T("wxGuiTestIdle"));
 }
@@ -63,10 +58,8 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
 {
     const wxString xrcDir = _T(XRCDIR);
     wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
-    sw::MainFrame *mainFrame = sw::FrameFactory::GetInstance ()->GetMainFrame ();
-    mainFrame->SetTitle (_T("EvtSimHlpFrame"));    
-    m_testFrame = mainFrame->GetFrame ();
-    m_testFrame->SetSize (250, 700);
+    m_testFrame = new wxFrame(NULL, wxID_ANY, _T("Event Simulation Test"),
+			      wxDefaultPosition, wxSize(250, 700));
 
     m_testEvtHandler = new WxGuiTestEvtSimHlpEvtHandler (m_testFrame);
     m_testFrame->PushEventHandler (m_testEvtHandler);
@@ -77,16 +70,19 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
 
     // Because generic toolbars are only creatable by the frame factory for
     // registration only abuse symbolic IDs from XRC test file:
-    sw::ToolBar *toolBar = sw::FrameFactory::GetInstance ()->CreateNamedToolBar (
-            _T("ToolBar"), wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL);
+    wxToolBar* toolBar = new wxToolBar(m_testFrame, wxID_ANY,
+				       wxDefaultPosition, wxDefaultSize,
+				       wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL,
+				       _T("ToolBar"));
     const unsigned int NMB_TOOLS = 2;
     wxBitmap *icon1 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon1.bmp"))));
     wxBitmap *icon2 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon2.bmp"))));
     toolBar->AddTool (XRCID ("Tool"), _T(""), *icon1, _T("Tool"));
-    toolBar->AddTool (XRCID ("ToggleTool"), _T(""), *icon2, _T("ToggleTool"), true);
+    toolBar->AddCheckTool (XRCID ("ToggleTool"), _T(""), *icon2, wxNullBitmap,_T("ToggleTool"));
     delete icon1;
     delete icon2;
     toolBar->Realize ();
+    m_testFrame->SetToolBar(toolBar);
 
     m_miniFrame = new wxMiniFrame (m_testFrame, -1, _T("EvtSimHlpMiniFrame"));
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
@@ -118,12 +114,9 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
 void WxGuiTestEventSimulationHelperTest::tearDown ()
 {
     m_miniFrame->Close ();
-    sw::ToolBarRegistry::GetInstance ()->Unregister (_T("ToolBar"));
-    m_testFrame->SetMenuBar (NULL);
-    m_testFrame->SetToolBar (NULL);
-    m_testFrame->SetSizer (NULL);
     m_testFrame->PopEventHandler ();
-    sw::FrameFactory::GetInstance ()->DestroyMainFrame ();
+    m_testFrame->Destroy();
+    m_testFrame = NULL;
     WxGuiTestHelper::FlushEventQueue ();
 }
 

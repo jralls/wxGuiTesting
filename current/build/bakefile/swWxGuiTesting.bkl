@@ -191,7 +191,6 @@
  </template>
   
   <template id='libInclude' template='wgtInclude'>
-    <include>$(SRCDIR)$(DIRSEP)$(FDS)</include>
     <include>$(SRCDIR)$(DIRSEP)$(WGTS)</include>
   </template>
 
@@ -213,7 +212,6 @@
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>wxGuiTesting</depends>
-    <depends>swFramework</depends>
     <if cond="FORMAT=='autoconf'">
       <osx-bundle />
     </if>
@@ -223,7 +221,6 @@
     <define>SRCDIR="$(baseDir)"</define>
 
     <library>wxGuiTesting</library>
-    <library>swFramework</library>
 
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
@@ -243,12 +240,6 @@
       <install-headers-to> $(PREFIX)</install-headers-to>
       <osx-ranlib/>
     </if>
-  </lib>
-
-  <lib id='swFramework' template='libInclude,optimize,wx-lib'>
-    <libname>swFramework$(WX3RDPARTYLIBPOSTFIX)</libname>
-    <dirname>$(libdir)</dirname>
-    <sources>$(FD_TEST_SOURCES)</sources>
   </lib>
 
   <exe id='CppUnitTest' template='testApp'>
@@ -280,7 +271,6 @@
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>wxGuiTesting</depends>
-    <depends>swFramework</depends>
     <precomp-headers>off</precomp-headers>
     <sources>
       $(VTKTEST_SOURCES) 
@@ -294,7 +284,6 @@
     <define>XRCDIR="$(XRCDIR)"</define>
     <define>SRCDIR="$(baseDir)"</define>
     <library>wxGuiTesting</library>
-    <library>swFramework</library>
     <if cond="FORMAT!='autoconf' and PLATFORM_WIN32=='1'">
       <sys-lib>opengl32</sys-lib>
       <sys-lib>glu32</sys-lib>
