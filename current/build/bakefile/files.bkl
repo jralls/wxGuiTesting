@@ -40,7 +40,7 @@
     $(WGTS)/GuiTestHelper.cpp
     $(WGTS)/ProvokedWarning.cpp
     $(WGTS)/ProvokedWarningRegistry.cpp
-    $(WGTS)/GuiTestTempInteractive.cpp
+    $(WGTS)/TempInteractive.cpp
     $(WGTS)/TempInteractiveControl.cpp
     $(WGTS)/TimedDialogEnder.cpp
     $(WGTS)/CapturePanel.cpp
@@ -97,7 +97,7 @@
     $(WGTI)/GuiTestHelper.h
     $(WGTI)/ProvokedWarning.h
     $(WGTI)/ProvokedWarningRegistry.h
-    $(WGTI)/GuiTestTempInteractive.h
+    $(WGTI)/TempInteractive.h
     $(WGTI)/TimedDialogEnder.h
     $(WGTI)/WarningAsserterInterface.h
   </set>
