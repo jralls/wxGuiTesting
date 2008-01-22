@@ -180,7 +180,7 @@ WxGuiTestApp * CapturePlusEmittingTest::getGuiTestApp ()
 
 
 void CapturePlusEmittingTest::checkEmittedCode(const wxString &expectedFilename,
-        int startLineNmb, int endLineNmb) const
+        size_t startLineNmb, size_t endLineNmb) const
 {
     wxTextFile expFile, newFile;
     CPPUNIT_ASSERT_MESSAGE ("Could not open expected (test case) file",
@@ -189,7 +189,7 @@ void CapturePlusEmittingTest::checkEmittedCode(const wxString &expectedFilename,
             newFile.Open (CRCppEmitter::GetInstance()->GetCaptureFilename()));
 
     // Note: There may be empty lines at end of emitted code!
-    int i = 0;
+    size_t i = 0;
     while ((startLineNmb + i) < expFile.GetLineCount () &&
             i < (endLineNmb - 1 - startLineNmb) &&
             i < newFile.GetLineCount ()) {

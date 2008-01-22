@@ -179,7 +179,7 @@ wxString CRTextUpdateEvent::GetEscaped (const wxString &str) const
 {
     wxString escaped;
 
-    for (int i = 0; i < str.Length (); i++) {
+    for (size_t i = 0; i < str.Length (); i++) {
 
         if (str[i] == 92) { // '\'
 

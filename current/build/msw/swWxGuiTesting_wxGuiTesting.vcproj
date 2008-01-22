@@ -49,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -71,7 +71,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -128,7 +128,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -150,7 +150,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -207,7 +207,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -229,7 +229,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -286,7 +286,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -308,7 +308,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -365,7 +365,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -387,7 +387,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -444,7 +444,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -466,7 +466,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -523,7 +523,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -545,7 +545,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -602,7 +602,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -624,7 +624,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -680,7 +680,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -702,7 +702,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -758,7 +758,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -780,7 +780,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -836,7 +836,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -858,7 +858,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -914,7 +914,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -936,7 +936,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -992,7 +992,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1014,7 +1014,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__"
 			/>
 			<Tool
@@ -1070,7 +1070,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1092,7 +1092,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__"
 			/>
 			<Tool
@@ -1148,7 +1148,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1170,7 +1170,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__"
 			/>
 			<Tool
@@ -1226,7 +1226,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1248,7 +1248,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__"
 			/>
 			<Tool
@@ -1305,7 +1305,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1327,7 +1327,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -1384,7 +1384,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1406,7 +1406,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -1463,7 +1463,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1485,7 +1485,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -1542,7 +1542,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1564,7 +1564,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -1621,7 +1621,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1643,7 +1643,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -1700,7 +1700,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1722,7 +1722,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -1779,7 +1779,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1801,7 +1801,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -1858,7 +1858,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1880,7 +1880,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__"
 			/>
 			<Tool
@@ -1936,7 +1936,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1958,7 +1958,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -2014,7 +2014,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2036,7 +2036,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -2092,7 +2092,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2114,7 +2114,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -2170,7 +2170,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2192,7 +2192,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_DEBUG"
 			/>
 			<Tool
@@ -2248,7 +2248,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2270,7 +2270,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__"
 			/>
 			<Tool
@@ -2326,7 +2326,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2348,7 +2348,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__"
 			/>
 			<Tool
@@ -2404,7 +2404,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2426,7 +2426,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__"
 			/>
 			<Tool
@@ -2482,7 +2482,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2504,7 +2504,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(VTK)\include;..\..\src\wxVTK;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__"
 			/>
 			<Tool
@@ -2614,9 +2614,6 @@
 					ExcludedFromBuild="true"
 				/>
 			</File>
-			<File
-				RelativePath="..\..\src\swFrameworkDependent\swApp.cpp"
-			/>
 			<File
 				RelativePath="..\..\src\swWxGuiTesting\CapturedEvents\swCRAbstractTreeEvent.cpp"
 			/>
@@ -2818,9 +2815,6 @@
 			/>
 			<File
 				RelativePath="..\..\src\swWxGuiTesting\swModalDialogTimer.cpp"
-			/>
-			<File
-				RelativePath="..\..\src\swFrameworkDependent\swPseudoApp.cpp"
 			/>
 			<File
 				RelativePath="..\..\src\swWxGuiTesting\VtkWxGuiTesting\swVtkWxGuiTestHelper.cpp"
@@ -3060,12 +3054,6 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			>
 			<File
-				RelativePath="..\..\include\wxGuiTest\Common.h"
-			/>
-			<File
-				RelativePath="..\..\include\wxGuiTest\swApp.h"
-			/>
-			<File
 				RelativePath="..\..\include\wxGuiTest\swCRCapture.h"
 			/>
 			<File
@@ -3100,9 +3088,6 @@
 			/>
 			<File
 				RelativePath="..\..\include\wxGuiTest\swModalDialogTimer.h"
-			/>
-			<File
-				RelativePath="..\..\include\wxGuiTest\swPseudoApp.h"
 			/>
 			<File
 				RelativePath="..\..\include\wxGuiTest\VtkGuiTesting\swVtkWxGuiTestHelper.h"

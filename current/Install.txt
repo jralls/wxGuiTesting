@@ -1,4 +1,4 @@
-/*! \page Installing Building and installing directions for WxGuiTesting
+/*! \page Installing How to Build and Install WxGuiTesting
 
 \section prereqs Prerequisites:
 

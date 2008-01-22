@@ -138,7 +138,7 @@ wxTreeItemId WxGuiTestEventSimulationHelper::GetNthTreeChild (wxTreeCtrl *treeCt
     wxTreeItemId cur;
     wxTreeItemIdValue cookie;
     cur = treeCtrl->GetFirstChild (id, cookie);
-    for (int i = 1; i < idx; i++) {
+    for (unsigned int i = 1; i < idx; i++) {
 
         cur = treeCtrl->GetNextChild (id, cookie);
     }

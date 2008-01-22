@@ -36,7 +36,7 @@ void WxGuiTestProvokedWarningRegistryTest::tearDown ()
 void WxGuiTestProvokedWarningRegistryTest::testUnRegister ()
 {
     swTst::WxGuiTestProvokedWarning warning (
-            _("Direct CAD Voxelisation Warning"), NULL, 2);
+	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
     swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
             swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
@@ -58,7 +58,7 @@ void WxGuiTestProvokedWarningRegistryTest::testUnRegister ()
 void WxGuiTestProvokedWarningRegistryTest::testTimeout ()
 {
     swTst::WxGuiTestProvokedWarning warning (
-            _("Direct CAD Voxelisation Warning"), NULL, 2);
+	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
     swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
             swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
@@ -81,7 +81,7 @@ void WxGuiTestProvokedWarningRegistryTest::testTimeout ()
 void WxGuiTestProvokedWarningRegistryTest::testDetection ()
 {
     swTst::WxGuiTestProvokedWarning warning (
-            _("Direct CAD Voxelisation Warning"), NULL, 2);
+	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
     swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
             swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
@@ -104,7 +104,7 @@ void WxGuiTestProvokedWarningRegistryTest::testDetection ()
 void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 {
     swTst::WxGuiTestProvokedWarning warning (
-            _("Direct CAD Voxelisation Warning"), NULL, 2);
+            _("Direct CAD Voxelisation Warning"), _T("bla"), 2);
     swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
             swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);

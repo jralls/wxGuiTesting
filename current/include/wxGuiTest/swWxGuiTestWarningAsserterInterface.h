@@ -24,6 +24,7 @@ namespace swTst {
 class WxGuiTestWarningAsserterInterface
 {
 public:
+    virtual ~WxGuiTestWarningAsserterInterface() {}
     /*! \fn virtual void FailAssert (const wxString &file, const int line, const wxString &shortDescription, const wxString &message) const = 0
         \brief Execute a failing CppUnit framework asserter call.
 

@@ -25,6 +25,7 @@ namespace swTst {
 class ModalDialogInteractionInterface
 {
 public:
+    virtual ~ModalDialogInteractionInterface() {}
     /*! \fn virtual void Execute () = 0
         \brief Manipulate, or interact with modal dialog before dismissing it.
     */

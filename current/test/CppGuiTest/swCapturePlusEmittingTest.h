@@ -83,7 +83,7 @@ protected:
         \param endLineNmb line number of end of emitted code to check
     */
     virtual void checkEmittedCode (const wxString &expectedFilename,
-        int startLineNmb, int endLineNmb) const;
+        size_t startLineNmb, size_t endLineNmb) const;
 
 };
 

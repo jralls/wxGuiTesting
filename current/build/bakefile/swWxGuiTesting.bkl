@@ -40,6 +40,11 @@
     <set var='baseDir'>$(srcdir)</set>
   </if>
 
+  <set var='warnings'>
+    <if cond="FORMAT in ['autoconf', 'gnu']">
+      -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wno-system-headers
+    </if>
+  </set>
 
    <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
    <set-srcdir>..$(DIRSEP)..</set-srcdir>
@@ -177,15 +182,14 @@
   </set>
 
   <set var='LIB_SOURCES'>
-    <if cond="USE_VTK=='0'">$(FD_LIB_SOURCES) $(WGT_SOURCES)</if>
-    <if cond="USE_VTK=='1'">$(FD_LIB_SOURCES) $(WGT_SOURCES) $(WXVTK_SOURCES) $(VTK_SOURCES)</if>
+    <if cond="USE_VTK=='0'">$(WGT_SOURCES)</if>
+    <if cond="USE_VTK=='1'">$(WGT_SOURCES) $(WXVTK_SOURCES) $(VTK_SOURCES)</if>
   </set>
 
   <set var='LIB_HDRS'>
-    <if cond="USE_VTK=='0'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS)</if>
-    <if cond="USE_VTK=='1'">$(FD_INSTALL_HDRS) $(WGT_INSTALL_HDRS) $(WXVTK_HDRS) $(VTK_HDRS)</if>
+    <if cond="USE_VTK=='0'">$(WGT_INSTALL_HDRS)</if>
+    <if cond="USE_VTK=='1'">$(WGT_INSTALL_HDRS) $(WXVTK_HDRS) $(VTK_HDRS)</if>
   </set>
-
 
   <template id='wgtInclude'>
     <include>$(SRCDIR)$(DIRSEP)include</include>
@@ -200,7 +204,7 @@
       <optimize>$(OPT)</optimize>
       <debug-info>$(DBG)</debug-info>
     </if>
-    <if cond="FORMAT=='autoconf'">
+    <if cond="FORMAT in ['gnu', 'autoconf']">
       <cflags>$(OPT) $(DBG)</cflags>
       <cxxflags>$(OPT) $(DBG)</cxxflags>
     </if>
@@ -213,7 +217,8 @@
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>wxGuiTesting</depends>
-    <if cond="FORMAT=='autoconf'">
+    <if cond="FORMAT in ['autoconf', 'gnu']">
+      <cxxflags>$(warnings)</cxxflags>
       <osx-bundle />
     </if>
 
@@ -237,6 +242,7 @@
     <sources>$(LIB_SOURCES)</sources>
     <headers>$(LIB_HDRS)</headers>
     <if cond="FORMAT in ['autoconf', 'gnu']">
+      <cxxflags>$(warnings)</cxxflags>
       <install-to>$(PREFIX)/lib</install-to>
       <install-headers-to> $(PREFIX)</install-headers-to>
       <osx-ranlib/>
@@ -277,7 +283,8 @@
       $(VTKTEST_SOURCES) 
     </sources>
     <include>$(SRCDIR)$(DIRSEP)$(WGTI)/VtkWxGuiTesting</include>
-    <if cond="FORMAT=='autoconf'">
+    <if cond="FORMAT in ['autoconf', 'gnu']">
+      <cxxflags>$(warnings)</cxxflags>
       <osx-bundle/>
     </if>
 

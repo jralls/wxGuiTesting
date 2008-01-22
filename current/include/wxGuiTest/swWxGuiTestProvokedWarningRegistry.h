@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -88,16 +90,16 @@ public:
     virtual void SetWarningAsDetected (const WxGuiTestProvokedWarning &warning);
 
 
-    /*! \fn virtual const WxGuiTestProvokedWarning * FindRegisteredWarning (const wxString &caption, const wxString &message) const
+    /*! \fn virtual const WxGuiTestProvokedWarning* FindRegisteredWarning (const wxString &caption, const wxString &message = _T("")) const
         \brief Find first registerd warning fitting the specified caption and message.
 
         \param caption caption of provoked/expected warnings to find
-        \param message message of provoked/expected warnings to find
+        \param message message of provoked/expected warnings to find; leave empty if you don't care what about matching the message.
         \return corresponding registered warning if found, or NULL if there is
             no appropriate one
     */
-    virtual const WxGuiTestProvokedWarning * FindRegisteredWarning (
-            const wxString &caption, const wxString &message) const;
+    virtual const WxGuiTestProvokedWarning* FindRegisteredWarning (
+	const wxString &caption, const wxString &message = _T("")) const;
 
 protected:
     /*! \fn WxGuiTestProvokedWarningRegistry ()

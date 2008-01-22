@@ -91,7 +91,7 @@ void CRMenuSelectionEvent::processMainMenu (wxMenuBar* menuBar) {
     }
 
     bool menuFound = false;
-    int menuIdx = 0;
+    size_t menuIdx = 0;
     while ((!menuFound) && (menuIdx < menuBar->GetMenuCount ())) {
 
 	if (menuBar->GetMenu (menuIdx) == menu) {
@@ -184,6 +184,7 @@ bool CRMenuSelectionEvent::processToolBar(wxToolBar *toolBar) {
     }
     if (tool->CanBeToggled() && tool->IsToggled())
 	    m_isChecked = true;
+    return true;
 
 }
 

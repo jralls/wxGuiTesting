@@ -41,31 +41,29 @@ public:
         \param timeout timeout in seconds starting during object creation
     */
     WxGuiTestProvokedWarning (const wxString &caption,
-            const wxString *message, const unsigned int timeout);
+            const wxString& message, const unsigned int timeout);
 
 
     /*! \fn virtual ~WxGuiTestProvokedWarning ()
         \brief Destructor
     */
-    virtual ~WxGuiTestProvokedWarning ();
+    virtual ~WxGuiTestProvokedWarning () {}
 
 
-    /*! \fn virtual const wxString & GetCaption () const
+    /*! \fn virtual const wxString& GetCaption () const
         \brief Get caption being part of the semi-uniquely identification.
 
         \return caption of expected warning
     */
-    virtual const wxString & GetCaption () const;
+    virtual const wxString& GetCaption () const;
 
 
-    /*! \fn virtual const wxString * GetMessage () const
+    /*! \fn virtual const wxString& GetMessage () const
         \brief Get message being part of the semi-uniquely identification.
 
-        If NULL, only caption should be used for convenience reasons.
-
-        \return message of expected warning, may be NULL
+        \return message of expected warning.
     */
-    virtual const wxString * GetMessage () const;
+    virtual const wxString& GetMessage () const;
 
 
     /*! \fn virtual const wxDateTime & GetTimeout () const
@@ -73,13 +71,13 @@ public:
 
         \return timeout of expected warning
     */
-    virtual const wxDateTime & GetTimeout () const;
+    virtual const wxDateTime& GetTimeout () const;
 
 protected:
 
 private:
     wxString m_caption;
-    const wxString *m_message;
+    wxString m_message;
     wxDateTime m_timeout;
 
 private:

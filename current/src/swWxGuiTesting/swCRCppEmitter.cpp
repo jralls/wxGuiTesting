@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +16,7 @@
 
 #include <stdexcept>
 
-namespace swTst {
+using namespace swTst;
 
 
 // Init single instance:
@@ -84,7 +86,8 @@ wxString CRCppEmitter::GetTab () const
 }
 
 
-void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb)
+void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, 
+					   size_t lineNmb)
 {
     wxASSERT_MSG (::wxFileExists (filename), _T("File does not exist"));
     wxASSERT (lineNmb != 0);
@@ -112,30 +115,15 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename, int lineNmb
     }
     // Copy old file until line number or first occurence of capture keyword:
     const wxString CAPTURE_KEYWORD = _T("CAPTURE");
-    bool isDone = false;
-    wxString line = m_origFile.GetFirstLine ();
-    while ((!isDone) && (!m_origFile.Eof ())) {
+    for (wxString line = m_origFile.GetFirstLine ();
+	 (!m_origFile.Eof() && 
+	  (lineNmb > 0 && (lineNmb - 1) <= m_origFile.GetCurrentLine ()));
+	 line = m_origFile.GetNextLine ()) {
 
-        if (lineNmb >= 0) {
-            
-            if ((lineNmb - 1) <= m_origFile.GetCurrentLine ()) {
-
-                isDone = true;
-            }
-
-        } else {
-
-            wxString stripped = line.Strip (wxString::both);
-            if (CAPTURE_KEYWORD == stripped) {
-
-                isDone = true;
-            }
-        }
-        if (!isDone) {
-
-            m_newFile.AddLine (line);
-            line = m_origFile.GetNextLine ();
-        }
+	wxString stripped = line.Strip (wxString::both);
+	if (CAPTURE_KEYWORD == stripped) 
+	    break;
+	m_newFile.AddLine (line);
     }
     // Write out current file - but is not finished yet:
     m_newFile.Write ();
@@ -302,19 +290,15 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
         // Variable names must start with alphabetical character:
         varName.Append (_T("var"));
     }
-    bool foundTerminator = false;
-    int idx = 1;
-    while ((!foundTerminator) && (idx < varNameToClean.Length ())) {
+    for (size_t idx = 1; (idx < varNameToClean.Length ()); idx++) {
 
-        if ((isalnum (varNameToClean.GetChar (idx))) || (varNameToClean.GetChar (idx) == '_')) {
+        if ((isalnum (varNameToClean.GetChar (idx))) || 
+	    (varNameToClean.GetChar (idx) == '_')) 
 
             varName.Append (varNameToClean.GetChar (idx));
 
-        } else {
-
-            foundTerminator = true;
-        }
-        idx++;
+        else
+	    break;
     }
     // Make first letter lower case:
     varName = MakeFirstCharLowerCase(varName);
@@ -337,7 +321,7 @@ wxString CRCppEmitter::MakeVarName (const wxString &name,
 
 
 wxString CRCppEmitter::BreakString (const wxString &str,
-        const wxArrayString &breakStrs, unsigned int &idx, int minIdx,
+        const wxArrayString &breakStrs, unsigned int &idx, size_t minIdx,
         bool isCode) const
 {
     if (str.Length () > m_maxChars) {
@@ -345,7 +329,7 @@ wxString CRCppEmitter::BreakString (const wxString &str,
         size_t foundIdx = 0;
         size_t maxFoundIdx = 0;
         unsigned int breakStrsIdx = 0;
-        for (int i = 0; i < breakStrs.Count (); i++) {
+        for (size_t i = 0; i < breakStrs.Count (); i++) {
 
             // Blanks at the line ends can be omitted (unless it is code):
             int breakStrLen;
@@ -404,7 +388,8 @@ wxString CRCppEmitter::BreakString (const wxString &str,
             }
         }
         // No breaking string found, break by brute force:
-        if ((maxFoundIdx == 0) || ((minIdx > 0) && (maxFoundIdx < minIdx))) {
+        if ((maxFoundIdx == 0) || ((minIdx != wxString::npos) && 
+				   (maxFoundIdx < minIdx))) {
 
             idx = m_maxChars;
             return str.Left (m_maxChars);
@@ -464,6 +449,3 @@ wxString CRCppEmitter::MakeFirstCharLowerCase (const wxString &str) const
     wxString firstChar = str.Mid(0, 1).Lower();
     return firstChar + str.Mid(1);
 }
-
-} // End namespace swTst
-

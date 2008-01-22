@@ -28,7 +28,6 @@ class CRWindowHierarchyHandlerTest : public CPPUNIT_NS::TestFixture
 {
     CPPUNIT_TEST_SUITE( CRWindowHierarchyHandlerTest );
 
-        CPPUNIT_TEST( testFindWindowContainer );
         CPPUNIT_TEST( testFindWindowContainerName );
 
     CPPUNIT_TEST_SUITE_END();
@@ -44,12 +43,6 @@ public:
         \brief Clean up after the test run.
     */
     virtual void tearDown ();
-
-
-    /*! \fn virtual void testFindWindowContainer ()
-        \brief Example test finding a (control's) window container.
-    */
-    virtual void testFindWindowContainer ();
 
 
     /*! \fn virtual void testFindWindowContainerName ()

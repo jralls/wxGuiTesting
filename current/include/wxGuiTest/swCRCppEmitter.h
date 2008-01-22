@@ -76,7 +76,7 @@ public:
         \param lineNmb line number of current test case capturing (if set to -1
             the first CAPTURE macro occurence is used)
     */
-    virtual void SetTestCaseFileContext (const wxString &filename, int lineNmb = -1);
+    virtual void SetTestCaseFileContext (const wxString &filename, size_t lineNmb = -1);
 
 
     /*! \fn virtual wxString GetCaptureFilename () const
@@ -173,8 +173,10 @@ protected:
         \return first line of correctly broken string
     */
     virtual wxString BreakString (const wxString &str,
-            const wxArrayString &breakStrs, unsigned int &idx,
-            int minIdx = -1, bool isCode = false) const;
+				  const wxArrayString &breakStrs, 
+				  unsigned int &idx,
+				  size_t minIdx = wxString::npos, 
+				  bool isCode = false) const;
 
 
     /*! \fn virtual bool HasBrokenInString (const wxString &line) const

@@ -1,4 +1,32 @@
+2008-01-21  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp 
+	(WxGuiTestProvokedWarningRegistry::FindRegisteredWarning): Now
+	ignores message if it's empty and compares it otherwise. 
+
+	* include/wxGuiTest/swWxGuiTestProvokedWarning.h: Changed
+	m_message from pointer (incredibly dangerous) to a string.
+
+2008-01-20  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* test/CppGuiTest/swCRWindowHierarchyHandlerTest.h: Deleted
+	function testFindWindowContainer() because there is no
+	corresponding function in CRWindowHierarchyHandler.
+
 2008-01-19  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/swWxGuiTesting/swCRCppEmitter.cpp
+	(CRCppEmitter::SetTestCaseFileContext): Tightened up another
+	rambling loop.
+
+	* src/swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.cpp
+	(CRVtkCaptureControl::OnAddWxVtkRecording): Corrected double use
+	of the same iterator.
+
+	* src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp
+	(WxGuiTestProvokedWarningRegistry::FindRegisteredWarning):
+	Collapsed overly complicated loop & fixed failure to test warning
+	message against the parameter.
 
 	* src/swWxGuiTesting/swWxGuiTestApp.cpp: Imported necessary
 	functions from swApp; changed references to sw::App and

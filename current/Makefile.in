@@ -41,7 +41,8 @@ DESTDIR =
 XRCDIR = $(srcdir)/test/TestData/xrc
 WXGUITESTING_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/swWxGuiTesting \
 	$(CPPUNIT_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated \
-	$(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow -Wpointer-arith -Wcast-qual \
+	-Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 WXGUITESTING_OBJECTS =  \
 	$(__LIB_SOURCES_OBJECTS)
 WXGUITESTING_HEADERS =  \
@@ -49,7 +50,8 @@ WXGUITESTING_HEADERS =  \
 CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/swWxGuiTesting \
 	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(XRCDIR)\" \
 	-DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) \
-	$(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(WX_CXXFLAGS) -Wall -W -Wshadow -Wpointer-arith -Wcast-qual \
+	-Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_CppTextTestApp.o \
 	objects/CppUnitTest_swCRCppEmitterTest.o \
@@ -57,7 +59,8 @@ CPPUNITTEST_OBJECTS =  \
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
-	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow \
+	-Wpointer-arith -Wcast-qual -Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 	objects/CppGuiUnitTestEventSimulation_CppTextTestApp.o \
 	objects/CppGuiUnitTestEventSimulation_swWxGuiTestEventSimulationHelperTest.o \
@@ -65,7 +68,8 @@ CPPGUIUNITTESTEVENTSIMULATION_OBJECTS =  \
 CPPGUIUNITTESTCAPTUREREPLAY_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
-	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow \
+	-Wpointer-arith -Wcast-qual -Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTCAPTUREREPLAY_OBJECTS =  \
 	objects/CppGuiUnitTestCaptureReplay_CppTextTestApp.o \
 	objects/CppGuiUnitTestCaptureReplay_swCRCaptureTest.o \
@@ -74,7 +78,8 @@ CPPGUIUNITTESTMODALDIALOG_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
-	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow \
+	-Wpointer-arith -Wcast-qual -Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITTESTMODALDIALOG_OBJECTS =  \
 	objects/CppGuiUnitTestModalDialog_CppTextTestApp.o \
 	objects/CppGuiUnitTestModalDialog_swDirDialogManipulator.o \
@@ -84,7 +89,8 @@ CPPGUIUNITCAPTUREPLUSEMIT_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -I$(srcdir)/include \
 	-I$(srcdir)/src/swWxGuiTesting -DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
-	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) $(CPPFLAGS) $(CXXFLAGS)
+	$(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow \
+	-Wpointer-arith -Wcast-qual -Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 CPPGUIUNITCAPTUREPLUSEMIT_OBJECTS =  \
 	objects/CppGuiUnitCapturePlusEmit_CppTextTestApp.o \
 	objects/CppGuiUnitCapturePlusEmit_swCapturePlusEmittingTest.o
@@ -92,8 +98,8 @@ VTKUNITTEST_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/include/wxGuiTest/VtkWxGuiTesting \
 	-DVTKDIR=\"$(srcdir)/test/TestData/vtk\" -DXRCDIR=\"$(XRCDIR)\" \
 	-DSRCDIR=\"$(srcdir)\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) $(WX_CXXFLAGS) \
-	-I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated $(CPPFLAGS) \
-	$(CXXFLAGS)
+	-I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated -Wall -W -Wshadow \
+	-Wpointer-arith -Wcast-qual -Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 VTKUNITTEST_OBJECTS =  \
 	objects/VTKUnitTest_CppTextTestApp.o \
 	objects/VTKUnitTest_swCRVtkCaptureTest.o
@@ -107,10 +113,8 @@ VTKUNITTEST_OBJECTS =  \
 @COND_WX_DEBUG_1@OPT = -O0
 @COND_WX_DEBUG_0@DBG = 
 @COND_WX_DEBUG_1@DBG = -ggdb
-COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
-	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
-	include/wxGuiTest/swCRCapture.h include/wxGuiTest/swCRCaptureControl.h \
-	include/wxGuiTest/swCRCppEmitter.h \
+COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/swCRCapture.h \
+	include/wxGuiTest/swCRCaptureControl.h include/wxGuiTest/swCRCppEmitter.h \
 	include/wxGuiTest/swCREventCaptureManager.h \
 	include/wxGuiTest/swCREventFilterInterface.h \
 	include/wxGuiTest/swCRWindowHierarchyHandler.h \
@@ -126,10 +130,8 @@ COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/swWxGuiTestTimedDialogEnder.h \
 	include/wxGuiTest/swWxGuiTestWarningAsserterInterface.h
 @COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
-COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
-	include/wxGuiTest/swApp.h include/wxGuiTest/swPseudoApp.h \
-	include/wxGuiTest/swCRCapture.h include/wxGuiTest/swCRCaptureControl.h \
-	include/wxGuiTest/swCRCppEmitter.h \
+COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/swCRCapture.h \
+	include/wxGuiTest/swCRCaptureControl.h include/wxGuiTest/swCRCppEmitter.h \
 	include/wxGuiTest/swCREventCaptureManager.h \
 	include/wxGuiTest/swCREventFilterInterface.h \
 	include/wxGuiTest/swCRWindowHierarchyHandler.h \
@@ -151,8 +153,6 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h
 @COND_USE_VTK_1@LIB_HDRS = $(COND_USE_VTK_1_LIB_HDRS)
 COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
-	objects/wxGuiTesting_swApp.o \
-	objects/wxGuiTesting_swPseudoApp.o \
 	objects/wxGuiTesting_swCRAbstractTreeEvent.o \
 	objects/wxGuiTesting_swCRButtonClickEvent.o \
 	objects/wxGuiTesting_swCRCapturedEvent.o \
@@ -187,8 +187,6 @@ COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_CapturePanel.o
 @COND_USE_VTK_0@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_0___LIB_SOURCES_OBJECTS)
 COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
-	objects/wxGuiTesting_swApp.o \
-	objects/wxGuiTesting_swPseudoApp.o \
 	objects/wxGuiTesting_swCRAbstractTreeEvent.o \
 	objects/wxGuiTesting_swCRButtonClickEvent.o \
 	objects/wxGuiTesting_swCRCapturedEvent.o \
@@ -493,12 +491,6 @@ objects/wxGuiTesting_swWxVtkInteractorEventRecorder.o: $(srcdir)/src/swWxGuiTest
 objects/wxGuiTesting_VtkCapturePanel.o: $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/VtkWxGuiTesting/VtkCapturePanel.cpp
 
-objects/wxGuiTesting_swApp.o: $(srcdir)/src/swFrameworkDependent/swApp.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swApp.cpp
-
-objects/wxGuiTesting_swPseudoApp.o: $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swFrameworkDependent/swPseudoApp.cpp
-
 objects/wxGuiTesting_swCRAbstractTreeEvent.o: $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/swWxGuiTesting/CapturedEvents/swCRAbstractTreeEvent.cpp
 
@@ -648,6 +640,6 @@ objects/VTKUnitTest_swCRVtkCaptureTest.o: $(srcdir)/test/VtkTest/swCRVtkCaptureT
 
 
 # Include dependency info, if present:
-@IF_GNU_MAKE@-include .deps/*.d
+@IF_GNU_MAKE@-include objects/.deps/*.d
 
 .PHONY: all install uninstall clean distclean install_wxGuiTesting uninstall_wxGuiTesting install_wxGuiTesting_headers uninstall_wxGuiTesting_headers CppUnitTest_bundle CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle VTKUnitTest_bundle

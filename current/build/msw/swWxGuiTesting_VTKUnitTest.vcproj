@@ -49,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -71,7 +71,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -79,13 +79,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -143,7 +143,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -165,7 +165,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -173,13 +173,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28ud_gl.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28ud_gl.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -237,7 +237,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -259,7 +259,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -267,13 +267,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -330,7 +330,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -352,7 +352,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -360,13 +360,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28u_gl.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28u_gl.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -422,7 +422,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -444,7 +444,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -452,13 +452,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -515,7 +515,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -537,7 +537,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -545,13 +545,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28d_gl.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28d_gl.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -608,7 +608,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -630,7 +630,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -638,13 +638,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -700,7 +700,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -722,7 +722,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -730,13 +730,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28_gl.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28_gl.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -793,7 +793,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -815,7 +815,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -823,13 +823,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -887,7 +887,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -909,7 +909,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -917,13 +917,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28ud_gl.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28ud_gl.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -981,7 +981,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1003,7 +1003,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1011,13 +1011,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -1074,7 +1074,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1096,7 +1096,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1104,13 +1104,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28u_gl.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28u_gl.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -1166,7 +1166,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1188,7 +1188,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1196,13 +1196,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib       wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -1259,7 +1259,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1281,7 +1281,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1289,13 +1289,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28d_gl.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTestingd.lib opengl32.lib glu32.lib wxmsw28d_gl.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
@@ -1352,7 +1352,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1374,7 +1374,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1382,13 +1382,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib       wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"
@@ -1444,7 +1444,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1466,7 +1466,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
+				AdditionalIncludeDirectories="..\..\include;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include;$(VTK)\include;..\..\src\wxVTK;..\..\include\wxGuiTest\VtkWxGuiTesting"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;VTKDIR=\&quot;../../test/TestData/vtk\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;SRCDIR=\&quot;../..\&quot;"
 			/>
 			<Tool
@@ -1474,13 +1474,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28_gl.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib vtkCommon.lib vtkDICOMParser.lib vtkexpat.lib vtkFiltering.lib vtkfreetype.lib vtkftgl.lib vtkGraphics.lib vtkHybrid.lib vtkImaging.lib vtkIO.lib vtkjpeg.lib vtkpng.lib vtkRendering.lib vtktiff.lib vtkzlib.lib ..\..\lib\wxGuiTesting.lib opengl32.lib glu32.lib wxmsw28_gl.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\VTKUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib;$(VTK)\lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\VTKUnitTest.pdb"
 				TargetMachine="1"

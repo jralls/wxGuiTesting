@@ -266,12 +266,12 @@ void WxVtkInteractorEventRecorder::RestoreWxVtkSettings ()
 		}
         vtkRenderer *renderer = renderers->GetFirstRenderer ();
         vtkCamera *activeCamera = renderer->GetActiveCamera ();
-        renderer->GetActiveCamera ()->SetParallelScale ((*it).second->camera->GetParallelScale ());
-        renderer->GetActiveCamera ()->SetViewAngle ((*it).second->camera->GetViewAngle ());
-        renderer->GetActiveCamera ()->SetClippingRange ((*it).second->camera->GetClippingRange ());
-        renderer->GetActiveCamera ()->SetFocalPoint ((*it).second->camera->GetFocalPoint ());
-        renderer->GetActiveCamera ()->SetPosition ((*it).second->camera->GetPosition ());
-        renderer->GetActiveCamera ()->SetViewUp ((*it).second->camera->GetViewUp ());
+        activeCamera->SetParallelScale ((*it).second->camera->GetParallelScale ());
+        activeCamera->SetViewAngle ((*it).second->camera->GetViewAngle ());
+        activeCamera->SetClippingRange ((*it).second->camera->GetClippingRange ());
+        activeCamera->SetFocalPoint ((*it).second->camera->GetFocalPoint ());
+        activeCamera->SetPosition ((*it).second->camera->GetPosition ());
+        activeCamera->SetViewUp ((*it).second->camera->GetViewUp ());
     }
 }
 
@@ -322,56 +322,7 @@ void WxVtkInteractorEventRecorder::Play ()
         }
 
         // Restore scene settings: size of render window, camera settings, ...
-        //-----------------------------
-/*        WxVtkMap::iterator it;
-        for (it = m_wxVtkMap.begin (); it != m_wxVtkMap.end (); it++) {
-
-            wxASSERT ((*it).second->camera != NULL);
-
-            wxWindow *interactorWdw = (*it).second->wxVtkRwi;
-            // Restoring sizes must happend from top level container to wxVtkRwi:
-            std::stack< wxWindow *, std::list< wxWindow * > > wdwStack;
-
-            wxWindow *wdw = interactorWdw;
-            wdwStack.push (wdw);
-            while (wdw->GetParent () != NULL) {
-    
-                wdw = wdw->GetParent ();
-                wdwStack.push (wdw);
-            }
-            // Position of rootWdw = top level container:
-            wdw->SetPosition ((*it).second->position);
-
-            // Save size of wx containers up to the top level container (first):
-            SizeList::const_iterator sizeIt = (*it).second->sizeList.begin ();
-            while ((!wdwStack.empty ()) &&
-                    (sizeIt != (*it).second->sizeList.end ())) {
-
-                wdwStack.top ()->SetSize (*sizeIt);
-                wdwStack.pop ();
-                sizeIt++;
-            }
-            // And camera:
-            vtkRenderWindow *renderWdw = (*it).second->wxVtkRwi->GetRenderWindow ();
-            vtkRendererCollection *renderers = renderWdw->GetRenderers ();
-            wxASSERT_MSG (renderers->GetNumberOfItems () > 0,
-                    _T("At least one renderer must exist in each render window; and only the first one is fully supported."));
-			if (renderers->GetNumberOfItems () != 1) {
-
-				::wxLogTrace (_T("VtkWxGuiTesting"),
-						_T("Currently only one renderer per render window interactor is supported"));
-			}
-            vtkRenderer *renderer = renderers->GetFirstRenderer ();
-            vtkCamera *activeCamera = renderer->GetActiveCamera ();
-            renderer->GetActiveCamera ()->SetParallelScale ((*it).second->camera->GetParallelScale ());
-            renderer->GetActiveCamera ()->SetViewAngle ((*it).second->camera->GetViewAngle ());
-            renderer->GetActiveCamera ()->SetClippingRange ((*it).second->camera->GetClippingRange ());
-            renderer->GetActiveCamera ()->SetFocalPoint ((*it).second->camera->GetFocalPoint ());
-            renderer->GetActiveCamera ()->SetPosition ((*it).second->camera->GetPosition ());
-            renderer->GetActiveCamera ()->SetViewUp ((*it).second->camera->GetViewUp ());
-        }
-*/
-        //-----------------------------
+	//RestoreWxVtkSettings ();
 
         vtkDebugMacro (<< "Playing");
         this->State = WxVtkInteractorEventRecorder::Playing;

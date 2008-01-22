@@ -49,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -71,7 +71,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -79,13 +79,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -143,7 +143,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -165,7 +165,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -173,13 +173,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -237,7 +237,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -259,7 +259,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -267,13 +267,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -331,7 +331,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -353,7 +353,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -361,13 +361,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -425,7 +425,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -447,7 +447,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -455,13 +455,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -518,7 +518,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -540,7 +540,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -548,13 +548,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -611,7 +611,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -633,7 +633,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -641,13 +641,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -704,7 +704,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -726,7 +726,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -734,13 +734,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -796,7 +796,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -818,7 +818,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -826,13 +826,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -889,7 +889,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -911,7 +911,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -919,13 +919,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -982,7 +982,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1004,7 +1004,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1012,13 +1012,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1075,7 +1075,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1097,7 +1097,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1105,13 +1105,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1168,7 +1168,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1190,7 +1190,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1198,13 +1198,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -1260,7 +1260,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1282,7 +1282,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1290,13 +1290,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -1352,7 +1352,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1374,7 +1374,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1382,13 +1382,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -1444,7 +1444,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1466,7 +1466,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1474,13 +1474,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -1537,7 +1537,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1559,7 +1559,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1567,13 +1567,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1631,7 +1631,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1653,7 +1653,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1661,13 +1661,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1725,7 +1725,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1747,7 +1747,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1755,13 +1755,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1819,7 +1819,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1841,7 +1841,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1849,13 +1849,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -1913,7 +1913,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1935,7 +1935,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1943,13 +1943,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2006,7 +2006,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2028,7 +2028,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2036,13 +2036,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2099,7 +2099,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2121,7 +2121,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2129,13 +2129,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2192,7 +2192,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2214,7 +2214,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2222,13 +2222,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2284,7 +2284,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2306,7 +2306,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2314,13 +2314,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -2377,7 +2377,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2399,7 +2399,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2407,13 +2407,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -2470,7 +2470,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2492,7 +2492,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2500,13 +2500,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -2563,7 +2563,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2585,7 +2585,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2593,13 +2593,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunitd_dll.lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
@@ -2656,7 +2656,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2678,7 +2678,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2686,13 +2686,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2748,7 +2748,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2770,7 +2770,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2778,13 +2778,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2840,7 +2840,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2862,7 +2862,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2870,13 +2870,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"
@@ -2932,7 +2932,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2954,7 +2954,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2962,13 +2962,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cppunit_dll.lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
+				AdditionalDependencies=".lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
 				OutputFile="..\..\bin\CppGuiUnitTestCaptureReplay.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
+				AdditionalLibraryDirectories="\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				ProgramDatabaseFile="..\..\bin\CppGuiUnitTestCaptureReplay.pdb"
 				TargetMachine="1"

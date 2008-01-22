@@ -6,22 +6,9 @@
      Licence:     wxWindows licence
 -->
 <makefile>
-  <set var='FDS'>src/swFrameworkDependent</set>
-
   <set var='WGTS'>src/swWxGuiTesting</set>
   <set var='WGTI'>include/wxGuiTest</set>
   <set var='WXVTK'>src/wxVTK</set>
-
-  <set var='FD_LIB_SOURCES'>
-    $(FDS)/swApp.cpp
-    $(FDS)/swPseudoApp.cpp
-  </set>
-
-  <set var='FD_INSTALL_HDRS'>
-    $(WGTI)/Common.h
-    $(WGTI)/swApp.h
-    $(WGTI)/swPseudoApp.h
-  </set>
 
   <set var='WGT_SOURCES'>
     $(WGTS)/CapturedEvents/swCRAbstractTreeEvent.cpp
@@ -72,6 +59,7 @@
   </set>
 
   <set var='WGTS_HDRS'>
+    $(WGTI)/Common.h
     $(WGTS)/CapturedEvents/swCRAbstractTreeEvent.h
     $(WGTS)/CapturedEvents/swCRButtonClickEvent.h
     $(WGTS)/CapturedEvents/swCRCapturedEvent.h

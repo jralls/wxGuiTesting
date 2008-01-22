@@ -24,12 +24,14 @@ namespace swTst {
 class CRLogInterface
 {
 public:
+    virtual ~CRLogInterface() {}
     /*! \var virtual void Log (const wxString &text) = 0
         \brief Log some text.
 
         \param text text to log
     */
     virtual void Log (const wxString &text) = 0;
+
 
 };
 

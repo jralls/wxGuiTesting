@@ -16,7 +16,7 @@ namespace swTst {
 
 
 WxGuiTestProvokedWarning::WxGuiTestProvokedWarning (const wxString &caption,
-        const wxString *message, const unsigned int timeout) :
+        const wxString& message, const unsigned int timeout) :
 m_caption (caption),
 m_message (message)
 {
@@ -24,30 +24,19 @@ m_message (message)
     m_timeout.Add (wxTimeSpan::Seconds (timeout));
 }
 
-
-WxGuiTestProvokedWarning::~WxGuiTestProvokedWarning ()
-{
-    if (m_message != NULL) {
-
-        delete m_message;
-        m_message = NULL;
-    }
-}
-
-
-const wxString & WxGuiTestProvokedWarning::GetCaption () const
+const wxString& WxGuiTestProvokedWarning::GetCaption () const
 {
     return m_caption;
 }
 
 
-const wxString * WxGuiTestProvokedWarning::GetMessage () const
+const wxString& WxGuiTestProvokedWarning::GetMessage () const
 {
     return m_message;
 }
 
 
-const wxDateTime & WxGuiTestProvokedWarning::GetTimeout () const
+const wxDateTime& WxGuiTestProvokedWarning::GetTimeout () const
 {
     return m_timeout;
 }

@@ -25,7 +25,6 @@
 #include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
 #include <wxGuiTest/swWxGuiTestTempInteractive.h>
 
-#include <wxGuiTest/swApp.h>
 
 namespace {
     const wxString testDir(_T(TESTDIR));
@@ -74,7 +73,6 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
 				       wxDefaultPosition, wxDefaultSize,
 				       wxNO_BORDER | wxTB_FLAT | wxTB_HORIZONTAL,
 				       _T("ToolBar"));
-    const unsigned int NMB_TOOLS = 2;
     wxBitmap *icon1 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon1.bmp"))));
     wxBitmap *icon2 = new wxBitmap (wxImage (testDir + wxString(_T("/res/icon2.bmp"))));
     toolBar->AddTool (XRCID ("Tool"), _T(""), *icon1, _T("Tool"));
@@ -240,7 +238,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectNotebookPage ()
 {
     m_testEvtHandler->Init ();
 
-    const unsigned int page = 1;
+    const int page = 1;
 
     wxNotebook *notebook = XRCCTRL (*m_testFrame, "Notebook", wxNotebook);
 
@@ -259,7 +257,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectNotebookPage ()
 
 void WxGuiTestEventSimulationHelperTest::testSelectChoiceItem ()
 {
-    const unsigned int index = 1;
+    const int index = 1;
 
     wxChoice *choice = XRCCTRL (*m_testFrame, "Choice", wxChoice);
 
@@ -304,7 +302,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectRadioBoxItem ()
 {
     wxRadioBox *radioBox = XRCCTRL (*m_testFrame, "RadioBox", wxRadioBox);
 
-    unsigned int selection = 0;
+    int selection = 0;
     WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
     WxGuiTestHelper::FlushEventQueue ();
 
@@ -338,7 +336,7 @@ void WxGuiTestEventSimulationHelperTest::testSetSliderValue ()
     wxSlider *slider = XRCCTRL (*m_testFrame, "Slider", wxSlider);
     CPPUNIT_ASSERT_MESSAGE ("No slider to test!", slider);
 
-    unsigned int value = 10;
+    int value = 10;
     WxGuiTestEventSimulationHelper::SetSliderValue (slider, value);
     WxGuiTestHelper::FlushEventQueue ();
 
@@ -377,7 +375,7 @@ void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlValue ()
     wxSpinCtrl *spinCtrl = XRCCTRL (*m_testFrame, "SpinCtrl", wxSpinCtrl);
     CPPUNIT_ASSERT_MESSAGE ("No spintCtrl to test!", spinCtrl);
 
-    unsigned int value = 10;
+    int value = 10;
     WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
     WxGuiTestHelper::FlushEventQueue ();
 

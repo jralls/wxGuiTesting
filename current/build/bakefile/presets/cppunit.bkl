@@ -3,11 +3,32 @@
 <makefile>
   <if cond="FORMAT!='autoconf'">
 
-    <set var="CPPUNIT_DIR" overwrite='0' >$(DOLLAR)($(ENV_VAR)CPPUNIT)</set>
+    <set var="CPPUNIT_DIR" overwrite='0' >      
+      <if cond="PLATFORM_WIN32=='0'">/usr/local/cppunit-1.12</if>
+      <if cond="PLATFORM_WIN32=='1'">
+	<if cond="PLATFORM not in ['msevc4prj', 'msvc6prj', 'msvs2003prj', 
+		  'msvs2005prj']">
+	  c:\cppunit-1.12.0
+	</if>
+	<if cond="PLATFORM in ['msevc4prj', 'msvc6prj', 'msvs2003prj', 
+		  'msvs2005prj']">
+	  $(DOLLAR)($(ENV_VAR)CPPUNIT)
+	</if>
+      </if>
+    </set>
 
     <set var="cppunit_libname">
       <if cond="PLATFORM_WIN32=='0'">cppunit$(WX3RDPARTYLIBPOSTFIX)</if>
-      <if cond="PLATFORM_WIN32=='1'">cppunit$(WX3RDPARTYLIBPOSTFIX)_dll</if>
+      <if cond="PLATFORM_WIN32=='1'">
+	<if cond="PLATFORM not in ['msevc4prj', 'msvc6prj', 'msvs2003prj', 
+		  'msvs2005prj']">
+	  cppunit$(WX3RDPARTYLIBPOSTFIX)_dll
+	</if>
+	<if cond="PLATFORM in ['msevc4prj', 'msvc6prj', 'msvs2003prj',
+		  'msvs2005prj']">
+	  $(DOLLAR)($(ENV_VAR)CPPUNIT_LIB)
+	</if>
+      </if>
     </set>
 
     <option name="CPPUNIT_INCL" category="path">

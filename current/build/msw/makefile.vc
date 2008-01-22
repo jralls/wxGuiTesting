@@ -106,8 +106,6 @@ WX3RDPARTYLIBPOSTFIX = d
 !endif
 !if "$(USE_VTK)" == "0"
 ____LIB_SOURCES_FILENAMES_OBJECTS =  \
-	objects\wxGuiTesting_swApp.obj \
-	objects\wxGuiTesting_swPseudoApp.obj \
 	objects\wxGuiTesting_swCRAbstractTreeEvent.obj \
 	objects\wxGuiTesting_swCRButtonClickEvent.obj \
 	objects\wxGuiTesting_swCRCapturedEvent.obj \
@@ -143,8 +141,6 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 !endif
 !if "$(USE_VTK)" == "1"
 ____LIB_SOURCES_FILENAMES_OBJECTS =  \
-	objects\wxGuiTesting_swApp.obj \
-	objects\wxGuiTesting_swPseudoApp.obj \
 	objects\wxGuiTesting_swCRAbstractTreeEvent.obj \
 	objects\wxGuiTesting_swCRButtonClickEvent.obj \
 	objects\wxGuiTesting_swCRCapturedEvent.obj \
@@ -447,12 +443,6 @@ objects\wxGuiTesting_swWxVtkInteractorEventRecorder.obj: ..\..\src\swWxGuiTestin
 
 objects\wxGuiTesting_VtkCapturePanel.obj: ..\..\src\swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swWxGuiTesting\VtkWxGuiTesting\VtkCapturePanel.cpp
-
-objects\wxGuiTesting_swApp.obj: ..\..\src\swFrameworkDependent\swApp.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\swApp.cpp
-
-objects\wxGuiTesting_swPseudoApp.obj: ..\..\src\swFrameworkDependent\swPseudoApp.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swFrameworkDependent\swPseudoApp.cpp
 
 objects\wxGuiTesting_swCRAbstractTreeEvent.obj: ..\..\src\swWxGuiTesting\CapturedEvents\swCRAbstractTreeEvent.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\swWxGuiTesting\CapturedEvents\swCRAbstractTreeEvent.cpp

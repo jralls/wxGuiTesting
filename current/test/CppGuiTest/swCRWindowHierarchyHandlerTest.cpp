@@ -43,21 +43,6 @@ void CRWindowHierarchyHandlerTest::tearDown ()
 }
 
 
-void CRWindowHierarchyHandlerTest::testFindWindowContainer ()
-{
-    wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
-            wxDefaultPosition);
-#ifndef __WXGTK__
-    WxGuiTestHelper::FlushEventQueue ();
-#endif
-
-    wxPanel *panel = wxXmlResource::Get ()->LoadPanel (&dialog, _T("CapturePanel"));
-    CPPUNIT_ASSERT_MESSAGE ("Loading test panel failed", panel != NULL);
-    wxButton *button = XRCCTRL (*panel, "ExitButton", wxButton);
-    CPPUNIT_ASSERT_MESSAGE ("Test button not found", button != NULL);
-
-    CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
-}
 
 
 void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()

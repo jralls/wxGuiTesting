@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -12,7 +14,7 @@
 
 #include <wxGuiTest/swWxGuiTestProvokedWarningRegistry.h>
 
-namespace swTst {
+using namespace swTst;
 
 
 // Init single instance:
@@ -73,7 +75,7 @@ void WxGuiTestProvokedWarningRegistry::UnregisterWarning (
 
 
 bool WxGuiTestProvokedWarningRegistry::IsRegisteredAndInTime (
-        const WxGuiTestProvokedWarning &warning) const
+        const WxGuiTestProvokedWarning& warning) const
 {
     ProvokedWarningMap::const_iterator it;
     it = warnings.find (&warning);
@@ -84,9 +86,9 @@ bool WxGuiTestProvokedWarningRegistry::IsRegisteredAndInTime (
 
     } else {
 
-        const WxGuiTestProvokedWarning *warning = (*it).first;
+        const WxGuiTestProvokedWarning* newwarning = (*it).first;
         wxDateTime now = wxDateTime::Now();
-        if (now.IsLaterThan (warning->GetTimeout ())) {
+        if (now.IsLaterThan (newwarning->GetTimeout ())) {
 
             return false;
 
@@ -126,40 +128,19 @@ void WxGuiTestProvokedWarningRegistry::SetWarningAsDetected (
 
 
 const WxGuiTestProvokedWarning *
-WxGuiTestProvokedWarningRegistry::FindRegisteredWarning (
-        const wxString &caption, const wxString &message) const
+WxGuiTestProvokedWarningRegistry::FindRegisteredWarning (const wxString &caption, 
+							 const wxString &message) 
+    const
 {
-    bool found = false;
-    ProvokedWarningMap::const_iterator it = warnings.begin ();
-    while ((!found) && (it != warnings.end ())) {
+    for (ProvokedWarningMap::const_iterator it = warnings.begin ();
+	 it != warnings.end(); it++) {
 
-        const WxGuiTestProvokedWarning *warning = (*it).first;
-
-        if (warning->GetCaption () == caption) {
-
-            if (warning->GetMessage () != NULL) {
-
-            } else {
-
-                found = true;
-            }
-        }
-
-        if (!found) {
-
-            it++;
-        }
+        const WxGuiTestProvokedWarning *warning = it->first;
+        if (warning->GetCaption () == caption && 
+	    (message.empty() || warning->GetMessage() == message))
+	    return it->first;
     }
-
-    if (found) {
-
-        return (*it).first;
-
-    } else {
-
-        return NULL;
-    }
+    return NULL;
 }
 
-} // End namespace swTst
 
