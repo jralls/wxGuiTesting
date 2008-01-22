@@ -6,6 +6,8 @@
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -19,9 +21,9 @@
 #include <wx/treectrl.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
-#include <wxGuiTest/GuiTestTimedDialogEnder.h>
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TimedDialogEnder.h>
+#include <wxGuiTest/TempInteractive.h>
 
 #include <wxGuiTest/CRCapture.h>
 
@@ -64,8 +66,8 @@ void CRCaptureTest::setUp ()
     frame->Show ();
 
     wxTheApp->SetTopWindow (frame);
-    WxGuiTestHelper::Show (frame, true, false);
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::Show (frame, true, false);
+    GuiTestHelper::FlushEventQueue ();
 
 }
 
@@ -80,7 +82,7 @@ void CRCaptureTest::tearDown ()
 
 void CRCaptureTest::testCapture ()
 {
-    wxTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
 /*
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", wxTheApp->
             GetTopWindow () != NULL);
@@ -101,9 +103,9 @@ void CRCaptureTest::testCapture ()
             checkableMenuItemMenuItem != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, topFrame);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     interactive.ShowCurrentGui ();
 
@@ -117,9 +119,9 @@ void CRCaptureTest::testCapture ()
     wxTextCtrl *textCtrl = wxDynamicCast (textCtrlWdw, wxTextCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for text control 'TextCtrl' "
             "failed", textCtrl != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl, 
+    wxTst::EventSimulationHelper::SetTextCtrlValue (textCtrl, 
             "oh-la-la");
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     interactive.ShowCurrentGui ();
 
@@ -127,12 +129,12 @@ void CRCaptureTest::testCapture ()
             "SpinCtrlDbl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for spin control 'SpinCtrlDbl' not found", 
             spinCtrlDblWdw != NULL);
-    sw::SpinCtrlDouble *spinCtrlDbl = wxDynamicCast (spinCtrlDblWdw, 
+    ::SpinCtrlDouble *spinCtrlDbl = wxDynamicCast (spinCtrlDblWdw, 
             SpinCtrlDouble);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for spin control 'SpinCtrlDbl' "
             "failed", spinCtrlDbl != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValue (spinCtrlDbl, 0.6);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetSpinCtrlDblValue (spinCtrlDbl, 0.6);
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *treeCtrlWdw = evtSimHlpTestPanel->FindWindow (XRCID("TreeCtrl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for tree control 'TreeCtrl' not found", 
@@ -143,8 +145,8 @@ void CRCaptureTest::testCapture ()
     wxTreeItemId rootId = treeCtrl->GetRootItem ();
     CPPUNIT_ASSERT_MESSAGE ("Tree control root item is invalid", rootId.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::SelectTreeItem (rootId, treeCtrl);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SelectTreeItem (rootId, treeCtrl);
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *treeCtrlWdw1 = evtSimHlpTestPanel->FindWindow (XRCID("TreeCtrl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for tree control 'TreeCtrl' not found", 
@@ -152,12 +154,12 @@ void CRCaptureTest::testCapture ()
     wxTreeCtrl *treeCtrl1 = wxDynamicCast (treeCtrlWdw1, wxTreeCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for tree control 'TreeCtrl' "
             "failed", treeCtrl1 != NULL);
-    wxTreeItemId treeItemId1 = sw::TreeCtrl::GetNthChild (treeCtrl1, 1, rootId);
+    wxTreeItemId treeItemId1 = ::TreeCtrl::GetNthChild (treeCtrl1, 1, rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId1.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::SelectTreeItem (treeItemId1, 
+    wxTst::EventSimulationHelper::SelectTreeItem (treeItemId1, 
             treeCtrl1);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *treeCtrlWdw2 = evtSimHlpTestPanel->FindWindow (XRCID("TreeCtrl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for tree control 'TreeCtrl' not found", 
@@ -166,13 +168,13 @@ void CRCaptureTest::testCapture ()
     CPPUNIT_ASSERT_MESSAGE ("Converting window for tree control 'TreeCtrl' "
             "failed", treeCtrl2 != NULL);
     treeCtrl2->Expand (rootId);
-    wxTreeItemId treeItemId11 = sw::TreeCtrl::GetNthChild (treeCtrl2, 1, 
+    wxTreeItemId treeItemId11 = ::TreeCtrl::GetNthChild (treeCtrl2, 1, 
             rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId11.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::RightClickTreeItem (treeItemId11, 
+    wxTst::EventSimulationHelper::RightClickTreeItem (treeItemId11, 
             treeCtrl2);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *treeCtrlWdw3 = evtSimHlpTestPanel->FindWindow (XRCID("TreeCtrl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for tree control 'TreeCtrl' not found", 
@@ -180,13 +182,13 @@ void CRCaptureTest::testCapture ()
     wxTreeCtrl *treeCtrl3 = wxDynamicCast (treeCtrlWdw3, wxTreeCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for tree control 'TreeCtrl' "
             "failed", treeCtrl3 != NULL);
-    wxTreeItemId treeItemId12 = sw::TreeCtrl::GetNthChild (treeCtrl3, 2, 
+    wxTreeItemId treeItemId12 = ::TreeCtrl::GetNthChild (treeCtrl3, 2, 
             rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId12.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::SelectTreeItem (treeItemId12, 
+    wxTst::EventSimulationHelper::SelectTreeItem (treeItemId12, 
             treeCtrl3);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *notebookWdw = wxWindow::FindWindowByName ("Notebook");
     CPPUNIT_ASSERT_MESSAGE ("Container window for notebook 'Notebook' not "
@@ -203,9 +205,9 @@ void CRCaptureTest::testCapture ()
     }
     CPPUNIT_ASSERT_MESSAGE ("Page of notebook 'Notebook' not found", 
             notebookPage < notebook->GetPageCount ());
-    wxTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (notebook, 
+    wxTst::EventSimulationHelper::SelectNotebookPage (notebook, 
             notebookPage);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *choiceWdw = evtSimHlpTestPanel->FindWindow (XRCID("Choice"));
     CPPUNIT_ASSERT_MESSAGE ("Window for choice 'Choice' not found", choiceWdw 
@@ -215,9 +217,9 @@ void CRCaptureTest::testCapture ()
             choice != NULL);
     const wxString choiceSelectionText (_("Item"));
     int choiceSelection = choice->FindString (choiceSelectionText);
-    wxTst::WxGuiTestEventSimulationHelper::SelectChoiceItem (choice, 
+    wxTst::EventSimulationHelper::SelectChoiceItem (choice, 
             choiceSelection);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *checkboxWdw = evtSimHlpTestPanel->FindWindow (XRCID("Checkbox"));
     CPPUNIT_ASSERT_MESSAGE ("Window for check box 'Checkbox' not found", 
@@ -225,8 +227,8 @@ void CRCaptureTest::testCapture ()
     wxCheckBox *checkbox = wxDynamicCast (checkboxWdw, wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'Checkbox' "
             "failed", checkbox != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetCheckboxState (checkbox, true);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetCheckboxState (checkbox, true);
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *radioBoxWdw = evtSimHlpTestPanel->FindWindow (XRCID("RadioBox"));
     CPPUNIT_ASSERT_MESSAGE ("Window for radio box 'RadioBox' not found", 
@@ -236,9 +238,9 @@ void CRCaptureTest::testCapture ()
             "failed", radioBox != NULL);
     const wxString radioBoxSelectionText (_("Radio2"));
     int radioBoxSelection = radioBox->FindString (radioBoxSelectionText);
-    wxTst::WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox, 
+    wxTst::EventSimulationHelper::SelectRadioBoxItem (radioBox, 
             radioBoxSelection);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *sliderWdw = evtSimHlpTestPanel->FindWindow (XRCID("Slider"));
     CPPUNIT_ASSERT_MESSAGE ("Window for slider 'Slider' not found", sliderWdw 
@@ -246,8 +248,8 @@ void CRCaptureTest::testCapture ()
     wxSlider *slider = wxDynamicCast (sliderWdw, wxSlider);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for slider 'Slider' failed", 
             slider != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetSliderValue (slider, 27);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetSliderValue (slider, 27);
+    wxTst::GuiTestHelper::FlushEventQueue ();
 
     wxWindow *spinCtrlWdw = evtSimHlpTestPanel->FindWindow (XRCID("SpinCtrl"));
     CPPUNIT_ASSERT_MESSAGE ("Window for spin control 'SpinCtrl' not found", 
@@ -255,8 +257,8 @@ void CRCaptureTest::testCapture ()
     wxSpinCtrl *spinCtrl = wxDynamicCast (spinCtrlWdw, wxSpinCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for spin control 'SpinCtrl' "
             "failed", spinCtrl != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl, 1);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetSpinCtrlValue (spinCtrl, 1);
+    wxTst::GuiTestHelper::FlushEventQueue ();
 */
 
     // Do bootstrap capturing:

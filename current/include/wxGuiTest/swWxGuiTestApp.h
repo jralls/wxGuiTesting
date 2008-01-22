@@ -32,7 +32,7 @@ class CREventFilterInterface;
     overridding OnRun() and OnIdle(). The latter one serves the purpose of
     exiting the main loop which can be equated to flushing the event queue.
 
-    This class works closely together with WxGuiTestHelper which provides
+    This class works closely together with GuiTestHelper which provides
     some convenience or helper methods to (a) configure the behaviour of this
     class (e.g. showing modal dialogs non-modal), and (b) facilitate the usage
     of some common features (e.g. flushing the event queue, or making the test

@@ -1,37 +1,39 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        test/CppGuiTest/GuiTestEventSimulationHelperTest.h
+// Name:        test/CppGuiTest/EventSimulationHelperTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTEVENTSIMULATIONHELPERTEST_H
-#define WXGUITESTEVENTSIMULATIONHELPERTEST_H
+#ifndef EVENTSIMULATIONHELPERTEST_H
+#define EVENTSIMULATIONHELPERTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestEventSimulationHelperTest.h"
+    #pragma interface "EventSimulationHelperTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "GuiTestEvtSimHlpEvtHandler.h"
+#include "EvtSimHlpEvtHandler.h"
 
 class wxMiniFrame;
 
 namespace wxTst {
 
 
-/*! \class WxGuiTestEventSimulationHelperTest
+/*! \class EventSimulationHelperTest
     \brief Test event simulation helper class in order to detect changes (i.e.
     corrections) of the partly inconsistent behaviour in future wxWidgets
     versions.
 */
-class WxGuiTestEventSimulationHelperTest : public CPPUNIT_NS::TestFixture
+class EventSimulationHelperTest : public CPPUNIT_NS::TestFixture
 {
-    CPPUNIT_TEST_SUITE( WxGuiTestEventSimulationHelperTest );
+    CPPUNIT_TEST_SUITE( EventSimulationHelperTest );
 
         CPPUNIT_TEST( testSelectMenuItem );
         CPPUNIT_TEST( testSelectCheckableMenuItem );
@@ -51,16 +53,16 @@ class WxGuiTestEventSimulationHelperTest : public CPPUNIT_NS::TestFixture
     CPPUNIT_TEST_SUITE_END();
 
 public:
-    /*! \fn WxGuiTestEventSimulationHelperTest ()
+    /*! \fn EventSimulationHelperTest ()
         \brief Constructor.
     */
-    WxGuiTestEventSimulationHelperTest ();
+    EventSimulationHelperTest ();
 
 
-    /*! \fn virtual ~WxGuiTestEventSimulationHelperTest ()
+    /*! \fn virtual ~EventSimulationHelperTest ()
         \brief Destructor.
     */
-    virtual ~WxGuiTestEventSimulationHelperTest ();
+    virtual ~EventSimulationHelperTest ();
 
 
     /*! \fn virtual void setUp ()
@@ -161,12 +163,12 @@ protected:
 
 private:
     wxFrame *m_testFrame;
-    WxGuiTestEvtSimHlpEvtHandler *m_testEvtHandler;
+    EvtSimHlpEvtHandler *m_testEvtHandler;
     wxMiniFrame *m_miniFrame;
 
 };
 
 } // End namespace wxTst
 
-#endif // WXGUITESTEVENTSIMULATIONHELPERTEST_H
+#endif // EVENTSIMULATIONHELPERTEST_H
 

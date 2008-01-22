@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestTimedDialogEnder.h
+// Name:        wxGuiTest/TimedDialogEnder.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTTIMEDDIALOGENDER_H
-#define WXGUITESTTIMEDDIALOGENDER_H
+#ifndef TIMEDDIALOGENDER_H
+#define TIMEDDIALOGENDER_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestTimedDialogEnder.h"
+    #pragma interface "TimedDialogEnder.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -18,7 +18,7 @@
 namespace wxTst {
 
 
-/*! \class WxGuiTestTimedDialogEnder
+/*! \class TimedDialogEnder
     \brief Periodical looking for a certain window (in fact a modal dialog
     identified by caption) to close/end.
 
@@ -29,17 +29,17 @@ namespace wxTst {
     The reason why this works for wxMessageBox is because it is inherited from
     wxMessageDialog class and popped up by calling ShowModal().
 
-    Supports debug logging with trace mask "WxGuiTestTimedDialogEnder".
+    Supports debug logging with trace mask "TimedDialogEnder".
 
     TODO/REMARK: Works currently only under M$ Windows!
 */
-class WxGuiTestTimedDialogEnder : public wxEvtHandler
+class TimedDialogEnder : public wxEvtHandler
 {
-    DECLARE_CLASS(WxGuiTestTimedDialogEnder)
+    DECLARE_CLASS(TimedDialogEnder)
     DECLARE_EVENT_TABLE()
 
 public:
-    /*! \fn WxGuiTestTimedDialogEnder (unsigned int milliseconds, const wxString &windowCaption, int returnCode)
+    /*! \fn TimedDialogEnder (unsigned int milliseconds, const wxString &windowCaption, int returnCode)
         \brief Constructor
 
         \param milliseconds timer intervall
@@ -48,14 +48,14 @@ public:
             Windows SDK functions are used, returnCode must be one of:
             IDCANCEL, IDOK, IDYES, IDNO.
     */
-    WxGuiTestTimedDialogEnder (unsigned int milliseconds,
+    TimedDialogEnder (unsigned int milliseconds,
             const wxString &windowCaption, int returnCode);
 
 
-    /*! \fn virtual ~WxGuiTestTimedDialogEnder ()
+    /*! \fn virtual ~TimedDialogEnder ()
         \brief Destructor
     */
-    virtual ~WxGuiTestTimedDialogEnder ();
+    virtual ~TimedDialogEnder ();
 
 
     /*! \fn virtual bool GetSuccess () const;
@@ -98,5 +98,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // WXGUITESTTIMEDDIALOGENDER_H
+#endif // TIMEDDIALOGENDER_H
 

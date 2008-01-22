@@ -1,18 +1,20 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        test/CppGuiTest/GuiTestEvtSimHlpEvtHandler.h
+// Name:        test/CppGuiTest/EvtSimHlpEvtHandler.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTEVTSIMHLPEVTHANDLER_H
-#define WXGUITESTEVTSIMHLPEVTHANDLER_H
+#ifndef EVTSIMHLPEVTHANDLER_H
+#define EVTSIMHLPEVTHANDLER_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestEvtSimHlpEvtHandler.h"
+    #pragma interface "EvtSimHlpEvtHandler.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -25,29 +27,29 @@ class wxNotebookEvent;
 namespace wxTst {
 
 
-/*! \class WxGuiTestEvtSimHlpEvtHandler
+/*! \class EvtSimHlpEvtHandler
     \brief Test frame event handling.
 
     Ideally each event should be fired and therefore handled exactly once, but
     it seems that this is not the case (e.g. tree item selection).
 */
-class WxGuiTestEvtSimHlpEvtHandler : public wxEvtHandler
+class EvtSimHlpEvtHandler : public wxEvtHandler
 {
     DECLARE_EVENT_TABLE()
 
 public:
-    /*! \fn WxGuiTestEvtSimHlpEvtHandler (wxFrame *frame)
+    /*! \fn EvtSimHlpEvtHandler (wxFrame *frame)
         \brief Constructor
 
         \param frame main frame
     */
-    WxGuiTestEvtSimHlpEvtHandler (wxFrame *frame);
+    EvtSimHlpEvtHandler (wxFrame *frame);
 
 
-    /*! \fn virtual ~WxGuiTestEvtSimHlpEvtHandler ()
+    /*! \fn virtual ~EvtSimHlpEvtHandler ()
         \brief Destructor
     */
-    virtual ~WxGuiTestEvtSimHlpEvtHandler ();
+    virtual ~EvtSimHlpEvtHandler ();
 
 
     /*! \fn virtual void Init ()
@@ -182,5 +184,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // WXGUITESTEVTSIMHLPEVTHANDLER_H
+#endif // EVTSIMHLPEVTHANDLER_H
 

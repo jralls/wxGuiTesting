@@ -1,27 +1,29 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        test/CppGuiTest/swCapturePlusEmittingTest.cpp
+// Name:        test/CppGuiTest/CapturePlusEmittingTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2007
 // Copyright:   (c) 2007 Reinhold Fuereder
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 /////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCapturePlusEmittingTest.h"
+    #pragma implementation "CapturePlusEmittingTest.h"
 #endif
 
-#include "swCapturePlusEmittingTest.h"
+#include "CapturePlusEmittingTest.h"
 
 #include <wx/xrc/xmlres.h>
 #include <wx/frame.h>
 #include <wx/treectrl.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
-#include <wxGuiTest/GuiTestTimedDialogEnder.h>
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TimedDialogEnder.h>
+#include <wxGuiTest/TempInteractive.h>
 #include <wxGuiTest/CREventCaptureManager.h>
 #include <wxGuiTest/CRCppEmitter.h>
 
@@ -79,8 +81,8 @@ void CapturePlusEmittingTest::setUp ()
     frame->Show ();
 
     wxTheApp->SetTopWindow (frame);
-    WxGuiTestHelper::Show (frame, true, false);
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::Show (frame, true, false);
+    GuiTestHelper::FlushEventQueue ();
 
     // 2. Setup capturing mode:
     getGuiTestApp ()->SetEventFilter (CREventCaptureManager::GetInstance ());
@@ -128,9 +130,9 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem ()
             checkableMenuItemMenuItem != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, topFrame);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     END
 }
 
@@ -161,9 +163,9 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem2 (
             menuMenu != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, menuMenu);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     END
 }
 

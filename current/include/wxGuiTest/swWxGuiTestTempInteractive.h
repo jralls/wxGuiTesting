@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestTempInteractive.h
+// Name:        wxGuiTest/TempInteractive.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTTEMPINTERACTIVE_H
-#define WXGUITESTTEMPINTERACTIVE_H
+#ifndef TEMPINTERACTIVE_H
+#define TEMPINTERACTIVE_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestTempInteractive.h"
+    #pragma interface "TempInteractive.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -20,39 +20,39 @@ class wxDialog;
 namespace wxTst {
 
 
-/*! \class WxGuiTestTempInteractive
+/*! \class TempInteractive
     \brief Make the wxWidgets GUI test temporarily interactive.
 
-    In contrast to WxGuiTestHelper::BreakTestToShowCurrentGui() interactivity
+    In contrast to GuiTestHelper::BreakTestToShowCurrentGui() interactivity
     with the current GUI is possible, but it has to be kept in mind that this
     may lead to side effects with the subsequent continuation of test case code!
 
     For the sake of convenience the test can be made interactive several times,
     e.g.:
         // Create some GUI ...
-        WxGuiTestTempInteractive interactive;
+        TempInteractive interactive;
         interactive.ShowCurrentGui ();
         // Manipulate created GUI and inspect result ...
         interactive.ShowCurrentGui ();    
 */
-class WxGuiTestTempInteractive
+class TempInteractive
 {
 public:
-    /*! \fn WxGuiTestTempInteractive ()
+    /*! \fn TempInteractive ()
         \brief Constructor
     */
-    WxGuiTestTempInteractive () {}
+    TempInteractive () {}
 
 
-    /*! \fn virtual ~WxGuiTestTempInteractive ()
+    /*! \fn virtual ~TempInteractive ()
         \brief Destructor
 
         Pop + delete event handler and destroy used dialog.
     */
-    virtual ~WxGuiTestTempInteractive () {}
+    virtual ~TempInteractive () {}
 
 
-    /*! \file GuiTestTempInteractive.h
+    /*! \file TempInteractive.h
         \brief Providing easy to use macro for temporary interactivity.
     
         Doxygen documentation only needed for #define TEMP_INTERACTIVE_GUI_TEST.
@@ -66,7 +66,7 @@ public:
     */
     #define TEMP_INTERACTIVE_GUI_TEST                                         \
     {                                                                         \
-        wxTst::WxGuiTestTempInteractive interactive;                          \
+        wxTst::TempInteractive interactive;                          \
         interactive.ShowCurrentGui (_T(__FILE__), __LINE__);		\
     };
 
@@ -91,5 +91,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // WXGUITESTTEMPINTERACTIVE_H
+#endif // TEMPINTERACTIVE_H
 

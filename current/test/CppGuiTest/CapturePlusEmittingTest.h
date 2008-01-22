@@ -1,18 +1,20 @@
 /////////////////////////////////////////////////////////////////////////////
-// $RCSfile: swCapturePlusEmittingTest.h,v $
-// Original Author/Owner: reinhold
+// Name:        test/CppGuiTest/CapturePlusEmittingTest.h
+// Author:      Reinhold Fuereder
+// Created:     2004
+// Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
+// Licence:     wxWindows licence
 //
-// $Revision: 1.3 $ $Name:  $ $State: Exp $
-//
-// $Date: 2007/11/18 18:02:20 $ $Author: reinhold $
-//
+// $Id$
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef CAPTUREPLUSEMITTINGTEST_H
 #define CAPTUREPLUSEMITTINGTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCapturePlusEmittingTest.h"
+    #pragma interface "CapturePlusEmittingTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>

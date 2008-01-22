@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestProvokedWarning.h
+// Name:        wxGuiTest/ProvokedWarning.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTPROVOKEDWARNING_H
-#define WXGUITESTPROVOKEDWARNING_H
+#ifndef PROVOKEDWARNING_H
+#define PROVOKEDWARNING_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestProvokedWarning.h"
+    #pragma interface "ProvokedWarning.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -20,7 +20,7 @@
 namespace wxTst {
 
 
-/*! \class WxGuiTestProvokedWarning
+/*! \class ProvokedWarning
     \brief Holds information semi-uniquely identifying provoked/expected warnings.
 
     Based on the specified timeout interval provoked warnings must occur, i.e.
@@ -28,10 +28,10 @@ namespace wxTst {
     warnings issued later with overlapping or even equal caption and message
     parameters (=> semi-uniquely identification).
 */
-class WxGuiTestProvokedWarning
+class ProvokedWarning
 {
 public:
-    /*! \fn WxGuiTestProvokedWarning (const wxString &caption, const wxString *message, const unsigned int timeout)
+    /*! \fn ProvokedWarning (const wxString &caption, const wxString *message, const unsigned int timeout)
         \brief Constructor
 
         \param caption caption of provoked/expected warnings
@@ -40,14 +40,14 @@ public:
             in destructor if none-NULL
         \param timeout timeout in seconds starting during object creation
     */
-    WxGuiTestProvokedWarning (const wxString &caption,
+    ProvokedWarning (const wxString &caption,
             const wxString& message, const unsigned int timeout);
 
 
-    /*! \fn virtual ~WxGuiTestProvokedWarning ()
+    /*! \fn virtual ~ProvokedWarning ()
         \brief Destructor
     */
-    virtual ~WxGuiTestProvokedWarning () {}
+    virtual ~ProvokedWarning () {}
 
 
     /*! \fn virtual const wxString& GetCaption () const
@@ -82,11 +82,11 @@ private:
 
 private:
     // No copy and assignment constructor:
-    WxGuiTestProvokedWarning (const WxGuiTestProvokedWarning &rhs);
-    WxGuiTestProvokedWarning & operator= (const WxGuiTestProvokedWarning &rhs);
+    ProvokedWarning (const ProvokedWarning &rhs);
+    ProvokedWarning & operator= (const ProvokedWarning &rhs);
 };
 
 } // End namespace wxTst
 
-#endif // WXGUITESTPROVOKEDWARNING_H
+#endif // PROVOKEDWARNING_H
 

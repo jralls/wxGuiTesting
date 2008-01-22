@@ -4,6 +4,7 @@
      Created:     2007
      Copyright:   (c) 2007-2008 John Ralls
      Licence:     wxWindows licence
+     $Id$
 -->
 <makefile>
   <set var='WGTS'>src/GuiTesting</set>
@@ -34,14 +35,14 @@
     $(WGTS)/InitWxGuiTestSetUp.cpp
     $(WGTS)/ModalDialogTimer.cpp
     $(WGTS)/GuiTestApp.cpp
-    $(WGTS)/GuiTestCppUnitWarningAsserter.cpp
-    $(WGTS)/GuiTestEventSimulationHelper.cpp
+    $(WGTS)/CppUnitWarningAsserter.cpp
+    $(WGTS)/EventSimulationHelper.cpp
     $(WGTS)/GuiTestHelper.cpp
-    $(WGTS)/GuiTestProvokedWarning.cpp
-    $(WGTS)/GuiTestProvokedWarningRegistry.cpp
+    $(WGTS)/ProvokedWarning.cpp
+    $(WGTS)/ProvokedWarningRegistry.cpp
     $(WGTS)/GuiTestTempInteractive.cpp
-    $(WGTS)/GuiTestTempInteractiveControl.cpp
-    $(WGTS)/GuiTestTimedDialogEnder.cpp
+    $(WGTS)/TempInteractiveControl.cpp
+    $(WGTS)/TimedDialogEnder.cpp
     $(WGTS)/CapturePanel.cpp
   </set>
 
@@ -75,7 +76,7 @@
     $(WGTS)/CapturedEvents/CRTreeSelectionChangingEvent.h
     $(WGTS)/CREventFactory.h
     $(WGTS)/InitWxGuiTestSetUp.h
-    $(WGTS)/GuiTestTempInteractiveControl.h
+    $(WGTS)/TempInteractiveControl.h
   </set>
 
 
@@ -91,20 +92,20 @@
     $(WGTI)/ModalDialogInteractionInterface.h
     $(WGTI)/ModalDialogTimer.h
     $(WGTI)/GuiTestApp.h
-    $(WGTI)/GuiTestCppUnitWarningAsserter.h
-    $(WGTI)/GuiTestEventSimulationHelper.h
+    $(WGTI)/CppUnitWarningAsserter.h
+    $(WGTI)/EventSimulationHelper.h
     $(WGTI)/GuiTestHelper.h
-    $(WGTI)/GuiTestProvokedWarning.h
-    $(WGTI)/GuiTestProvokedWarningRegistry.h
+    $(WGTI)/ProvokedWarning.h
+    $(WGTI)/ProvokedWarningRegistry.h
     $(WGTI)/GuiTestTempInteractive.h
-    $(WGTI)/GuiTestTimedDialogEnder.h
-    $(WGTI)/GuiTestWarningAsserterInterface.h
+    $(WGTI)/TimedDialogEnder.h
+    $(WGTI)/WarningAsserterInterface.h
   </set>
 
   <set var='VTK_HDRS' >
     $(WGTI)/VtkGuiTesting/CRVtkCapture.h
     $(WGTI)/VtkGuiTesting/CRVtkCaptureControl.h
-    $(WGTI)/VtkGuiTesting/VtkWxGuiTestHelper.h
+    $(WGTI)/VtkGuiTesting/VtkGuiTestHelper.h
     $(WGTI)/VtkGuiTesting/VtkInteractorEventRecorder.h
   </set>
 
@@ -113,34 +114,29 @@
   </set>
 
   <set var='CPPTEST_SOURCES'>
-    test/CppTest/CppTextTestApp.cpp
+    test/CppTest/CppUnitTextTestApp.cpp
     test/CppTest/CRCppEmitterTest.cpp
-    test/CppTest/GuiTestProvokedWarningRegistryTest.cpp
-  </set>
-
-  <set var='CPPTEST_UNUSED_SOURCES'>
-    test/CppTest/CRXRCReaderTest.cpp
-    test/CppTest/CRXRCReaderTest.h
+    test/CppTest/ProvokedWarningRegistryTest.cpp
   </set>
 
   <set var='CPPTEST_HDRS'>
     test/CppTest/CRCppEmitterTest.h
-    test/CppTest/GuiTestProvokedWarningRegistryTest.h
+    test/CppTest/ProvokedWarningRegistryTest.h
   </set>
 
   <set var='CPPGUITESTEVENTSIMULATION_SOURCES'>
-    test/CppGuiTest/CppTextTestApp.cpp
-    test/CppGuiTest/GuiTestEventSimulationHelperTest.cpp
-    test/CppGuiTest/GuiTestEvtSimHlpEvtHandler.cpp
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/EventSimulationHelperTest.cpp
+    test/CppGuiTest/EvtSimHlpEvtHandler.cpp
   </set>
 
   <set var='CPPGUITESTEVENTSIMULATION_HDRS'>
-     test/CppGuiTest/GuiTestEventSimulationHelperTest.h
-    test/CppGuiTest/GuiTestEvtSimHlpEvtHandler.h
+    test/CppGuiTest/EventSimulationHelperTest.h
+    test/CppGuiTest/EvtSimHlpEvtHandler.h
   </set>
 
   <set var='CPPGUITESTCAPTUREREPLAY_SOURCES'>
-    test/CppGuiTest/CppTextTestApp.cpp
+    test/CppGuiTest/CppUnitTextTestApp.cpp
     test/CppGuiTest/CRCaptureTest.cpp
     test/CppGuiTest/CRWindowHierarchyHandlerTest.cpp
   </set>
@@ -151,7 +147,7 @@
   </set>
 
   <set var='CPPGUITESTMODALDIALOG_SOURCES'>
-    test/CppGuiTest/CppTextTestApp.cpp
+    test/CppGuiTest/CppUnitTextTestApp.cpp
     test/CppGuiTest/DirDialogManipulator.cpp
     test/CppGuiTest/ModalDialogManipulator.cpp
     test/CppGuiTest/ModalDialogTest.cpp
@@ -164,7 +160,7 @@
   </set>
 
   <set var='CPPGUITESTCAPTURE_EMIT_SOURCES'>
-    test/CppGuiTest/CppTextTestApp.cpp
+    test/CppGuiTest/CppUnitTextTestApp.cpp
     test/CppGuiTest/CapturePlusEmittingTest.cpp
   </set>
 
@@ -173,7 +169,7 @@
   </set>
 
   <set var='VTKTEST_SOURCES'>
-    test/VtkTest/CppTextTestApp.cpp
+    test/VtkTest/CppUnitTextTestApp.cpp
     test/VtkTest/CRVtkCaptureTest.cpp
   </set>
 

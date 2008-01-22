@@ -1,18 +1,20 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        test/CppGuiTest/GuiTestEventSimulationHelperTest.cpp
+// Name:        test/CppGuiTest/EventSimulationHelperTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestEventSimulationHelperTest.h"
+    #pragma implementation "EventSimulationHelperTest.h"
 #endif
 
-#include "GuiTestEventSimulationHelperTest.h"
+#include "EventSimulationHelperTest.h"
 #include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/minifram.h>
@@ -21,9 +23,9 @@
 #include <wx/spinctrl.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
-#include <wxGuiTest/GuiTestTimedDialogEnder.h>
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TimedDialogEnder.h>
+#include <wxGuiTest/TempInteractive.h>
 
 
 namespace {
@@ -35,10 +37,10 @@ using namespace wxTst;
 
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
-CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( WxGuiTestEventSimulationHelperTest, "WxGuiTest" );
+CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( EventSimulationHelperTest, "WxGuiTest" );
 
 
-WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest () :
+EventSimulationHelperTest::EventSimulationHelperTest () :
     m_testFrame(NULL), m_testEvtHandler(NULL), m_miniFrame(NULL)
 {
     wxXmlResource::Get()->InitAllHandlers();
@@ -47,20 +49,20 @@ WxGuiTestEventSimulationHelperTest::WxGuiTestEventSimulationHelperTest () :
 }
 
 
-WxGuiTestEventSimulationHelperTest::~WxGuiTestEventSimulationHelperTest ()
+EventSimulationHelperTest::~EventSimulationHelperTest ()
 {
     // Nothing to do? m_testFrame and m_testEvtHandler are deleted automatically
 }
 
 
-void WxGuiTestEventSimulationHelperTest::setUp ()
+void EventSimulationHelperTest::setUp ()
 {
     const wxString xrcDir = _T(XRCDIR);
     wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
     m_testFrame = new wxFrame(NULL, wxID_ANY, _T("Event Simulation Test"),
 			      wxDefaultPosition, wxSize(250, 700));
 
-    m_testEvtHandler = new WxGuiTestEvtSimHlpEvtHandler (m_testFrame);
+    m_testEvtHandler = new EvtSimHlpEvtHandler (m_testFrame);
     m_testFrame->PushEventHandler (m_testEvtHandler);
     
     wxMenuBar *menuBar = wxXmlResource::Get ()->LoadMenuBar (wxT("MenuBar"));
@@ -94,7 +96,7 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
     m_miniFrame->Move (m_testFrame->GetPosition ().x + 30, m_testFrame->GetPosition ().y + 90);
 
     wxTheApp->SetTopWindow (m_testFrame);
-    WxGuiTestHelper::Show (m_testFrame, true, false);
+    GuiTestHelper::Show (m_testFrame, true, false);
 
     // Flushing the event queue here is necessary to avoid confusion because of
     // the next showing of a MyFrame instance, while the old one is - due to no
@@ -105,34 +107,34 @@ void WxGuiTestEventSimulationHelperTest::setUp ()
     // causes a problem at the very end - maybe the last idle event is used in
     // tearDown() method, while it would be expected at the very end of
     // WxGuiTestApp::OnRun() method:
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::FlushEventQueue ();
 }
 
 
-void WxGuiTestEventSimulationHelperTest::tearDown ()
+void EventSimulationHelperTest::tearDown ()
 {
     m_miniFrame->Close ();
     m_testFrame->PopEventHandler ();
     m_testFrame->Destroy();
     m_testFrame = NULL;
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::FlushEventQueue ();
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectMenuItem ()
+void EventSimulationHelperTest::testSelectMenuItem ()
 {
-    WxGuiTestEventSimulationHelper::SelectMenuItem (XRCID("MenuItem"), m_testFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectMenuItem (XRCID("MenuItem"), m_testFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of menu item selection failed",
             m_testEvtHandler->HasMenuItemSelProcessed ());
 
-    wxTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
     interactive.ShowCurrentGui ();
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectCheckableMenuItem ()
+void EventSimulationHelperTest::testSelectCheckableMenuItem ()
 {
     wxMenuBar *menuBar = m_testFrame->GetMenuBar ();
     CPPUNIT_ASSERT_MESSAGE ("Menubar not found", menuBar != NULL);
@@ -144,8 +146,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectCheckableMenuItem ()
     wxMenuItem *item = menuBar->FindItem (checkableMenuItemId, &menu);
     CPPUNIT_ASSERT_MESSAGE ("MenuItem menu item not found", item != NULL);
 
-    WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (XRCID("CheckableMenuItem"), m_testFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectAndCheckMenuItem (XRCID("CheckableMenuItem"), m_testFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of checking menu item selection failed",
             m_testEvtHandler->HasCheckableMenuItemProcessed ());
@@ -154,8 +156,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectCheckableMenuItem ()
 
     m_testEvtHandler->Init ();
 
-    WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (XRCID("CheckableMenuItem"), m_testFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectAndCheckMenuItem (XRCID("CheckableMenuItem"), m_testFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of unchecking menu item selection failed",
             m_testEvtHandler->HasCheckableMenuItemProcessed ());
@@ -164,20 +166,20 @@ void WxGuiTestEventSimulationHelperTest::testSelectCheckableMenuItem ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testClickButton ()
+void EventSimulationHelperTest::testClickButton ()
 {
     wxButton *button = XRCCTRL (*m_testFrame, "Button", wxButton);
     wxString name = button->GetName ();
 
-    WxGuiTestEventSimulationHelper::ClickButton (XRCID("Button"), button);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::ClickButton (XRCID("Button"), button);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of button clicking failed",
             m_testEvtHandler->HasButtonClickProcessed ());
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSetTextCtrlValue ()
+void EventSimulationHelperTest::testSetTextCtrlValue ()
 {
     const wxString value = _T("VaLuE");
 
@@ -186,8 +188,8 @@ void WxGuiTestEventSimulationHelperTest::testSetTextCtrlValue ()
     CPPUNIT_ASSERT_MESSAGE ("Text control value already correctly set",
             textCtrl->GetValue () != value);
 
-    WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetTextCtrlValue (textCtrl, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of setting text control must generate an event",
             m_testEvtHandler->HasTextCtrlValChgProcessed ());
@@ -198,7 +200,7 @@ void WxGuiTestEventSimulationHelperTest::testSetTextCtrlValue ()
 
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
+void EventSimulationHelperTest::testSelectTreeItem ()
 {
     wxTreeCtrl *treeCtrl = XRCCTRL (*m_testFrame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
@@ -207,8 +209,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
     CPPUNIT_ASSERT_MESSAGE ("Tree item already selected",
         treeCtrl->GetSelection () != item);
 
-    WxGuiTestEventSimulationHelper::SelectTreeItem (item, treeCtrl);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectTreeItem (item, treeCtrl);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of tree item selection must generate an event",
             m_testEvtHandler->HasTreeItemSelProcessed ());
@@ -217,7 +219,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectTreeItem ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testRightClickTreeItem ()
+void EventSimulationHelperTest::testRightClickTreeItem ()
 {
     wxTreeCtrl *treeCtrl = XRCCTRL (*m_testFrame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
@@ -226,15 +228,15 @@ void WxGuiTestEventSimulationHelperTest::testRightClickTreeItem ()
     // click event simulation:
     treeCtrl->Expand (root);
 
-    WxGuiTestEventSimulationHelper::RightClickTreeItem (item, treeCtrl);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::RightClickTreeItem (item, treeCtrl);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of right clicking tree item must generate an event",
             m_testEvtHandler->HasTreeItemRightClickProcessed ());
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectNotebookPage ()
+void EventSimulationHelperTest::testSelectNotebookPage ()
 {
     m_testEvtHandler->Init ();
 
@@ -245,8 +247,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectNotebookPage ()
     CPPUNIT_ASSERT_MESSAGE ("Notebook page already selected",
         notebook->GetSelection () != page);
 
-    WxGuiTestEventSimulationHelper::SelectNotebookPage (notebook, page);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectNotebookPage (notebook, page);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of notebook page selection must generate an event",
             m_testEvtHandler->HasNotebookPageSelProcessed ());
@@ -255,7 +257,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectNotebookPage ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectChoiceItem ()
+void EventSimulationHelperTest::testSelectChoiceItem ()
 {
     const int index = 1;
 
@@ -264,8 +266,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectChoiceItem ()
     CPPUNIT_ASSERT_MESSAGE ("Choice item already selected",
         choice->GetSelection () != index);
 
-    WxGuiTestEventSimulationHelper::SelectChoiceItem (choice, index);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectChoiceItem (choice, index);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of choice item selection must generate an event",
             m_testEvtHandler->HasChoiceSelProcessed ());
@@ -274,14 +276,14 @@ void WxGuiTestEventSimulationHelperTest::testSelectChoiceItem ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSetCheckboxState ()
+void EventSimulationHelperTest::testSetCheckboxState ()
 {
     wxCheckBox *checkbox = XRCCTRL (*m_testFrame, "Checkbox", wxCheckBox);
 
     CPPUNIT_ASSERT_MESSAGE ("Checkbox already checked", !checkbox->IsChecked ());
 
-    WxGuiTestEventSimulationHelper::SetCheckboxState (checkbox, true);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetCheckboxState (checkbox, true);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of checkbox checking must generate an event",
             m_testEvtHandler->HasCheckboxCheckingProcessed ());
@@ -290,21 +292,21 @@ void WxGuiTestEventSimulationHelperTest::testSetCheckboxState ()
 
     m_testEvtHandler->Init ();
 
-    WxGuiTestEventSimulationHelper::SetCheckboxState (checkbox, false);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetCheckboxState (checkbox, false);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of checkbox unchecking failed",
             !checkbox->IsChecked ());
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSelectRadioBoxItem ()
+void EventSimulationHelperTest::testSelectRadioBoxItem ()
 {
     wxRadioBox *radioBox = XRCCTRL (*m_testFrame, "RadioBox", wxRadioBox);
 
     int selection = 0;
-    WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of radiobox checking must generate an event",
             m_testEvtHandler->HasRadioBoxSelProcessed ());
@@ -314,8 +316,8 @@ void WxGuiTestEventSimulationHelperTest::testSelectRadioBoxItem ()
     m_testEvtHandler->Init ();
 
     selection = 1;
-    WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of radiobox selection failed",
             radioBox->GetSelection () == selection);
@@ -323,22 +325,22 @@ void WxGuiTestEventSimulationHelperTest::testSelectRadioBoxItem ()
     m_testEvtHandler->Init ();
 
     selection = 2;
-    WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SelectRadioBoxItem (radioBox, selection);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of radiobox selection failed",
             radioBox->GetSelection () == selection);
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSetSliderValue ()
+void EventSimulationHelperTest::testSetSliderValue ()
 {
     wxSlider *slider = XRCCTRL (*m_testFrame, "Slider", wxSlider);
     CPPUNIT_ASSERT_MESSAGE ("No slider to test!", slider);
 
     int value = 10;
-    WxGuiTestEventSimulationHelper::SetSliderValue (slider, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSliderValue (slider, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of slider must generate an event",
             m_testEvtHandler->HasSliderValChgProcessed ());
@@ -348,8 +350,8 @@ void WxGuiTestEventSimulationHelperTest::testSetSliderValue ()
     m_testEvtHandler->Init ();
 
     value = 1;
-    WxGuiTestEventSimulationHelper::SetSliderValue (slider, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSliderValue (slider, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of slider must generate an event",
             m_testEvtHandler->HasSliderValChgProcessed ());
@@ -359,8 +361,8 @@ void WxGuiTestEventSimulationHelperTest::testSetSliderValue ()
     m_testEvtHandler->Init ();
 
     value = 5;
-    WxGuiTestEventSimulationHelper::SetSliderValue (slider, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSliderValue (slider, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of slider must generate an event",
             m_testEvtHandler->HasSliderValChgProcessed ());
@@ -370,14 +372,14 @@ void WxGuiTestEventSimulationHelperTest::testSetSliderValue ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlValue ()
+void EventSimulationHelperTest::testSetSpinCtrlValue ()
 {
     wxSpinCtrl *spinCtrl = XRCCTRL (*m_testFrame, "SpinCtrl", wxSpinCtrl);
     CPPUNIT_ASSERT_MESSAGE ("No spintCtrl to test!", spinCtrl);
 
     int value = 10;
-    WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of spintCtrl must generate an event",
             m_testEvtHandler->HasSpinCtrlValChgProcessed ());
@@ -387,8 +389,8 @@ void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlValue ()
     m_testEvtHandler->Init ();
 
     value = 1;
-    WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of slider checking must generate an event",
             m_testEvtHandler->HasSpinCtrlValChgProcessed ());
@@ -398,8 +400,8 @@ void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlValue ()
     m_testEvtHandler->Init ();
 
     value = 5;
-    WxGuiTestEventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetSpinCtrlValue (spinCtrl, value);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of slider checking must generate an event",
             m_testEvtHandler->HasSpinCtrlValChgProcessed ());
@@ -409,25 +411,25 @@ void WxGuiTestEventSimulationHelperTest::testSetSpinCtrlValue ()
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testToggleTool ()
+void EventSimulationHelperTest::testToggleTool ()
 {
-    WxGuiTestEventSimulationHelper::ToggleToolOnlyEvent (XRCID ("Tool"), true, m_testFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::ToggleToolOnlyEvent (XRCID ("Tool"), true, m_testFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of tool toggling failed",
             m_testEvtHandler->HasToolTogglingProcessed ());
 }
 
 
-void WxGuiTestEventSimulationHelperTest::testToggleCheckableTool ()
+void EventSimulationHelperTest::testToggleCheckableTool ()
 {
     wxFrame *topFrame = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());
     CPPUNIT_ASSERT_MESSAGE ("Top window is not a frame", topFrame != NULL);
     wxToolBar* wxtoolbar = topFrame->GetToolBar();
     CPPUNIT_ASSERT_MESSAGE ("Toolbar 'wxtoolbar' not found", wxtoolbar != 
             NULL);
-    WxGuiTestEventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), true, wxtoolbar, topFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), true, wxtoolbar, topFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Checkable tool should be toggled on",
             wxtoolbar->GetToolState(XRCID ("ToggleTool")));
@@ -436,8 +438,8 @@ void WxGuiTestEventSimulationHelperTest::testToggleCheckableTool ()
 
     m_testEvtHandler->Init ();
 
-    WxGuiTestEventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), false, wxtoolbar, m_testFrame);
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::ToggleTool (XRCID ("ToggleTool"), false, wxtoolbar, m_testFrame);
+    GuiTestHelper::FlushEventQueue ();
 
     CPPUNIT_ASSERT_MESSAGE ("Checkable tool should be toggled off",
             !wxtoolbar->GetToolState(XRCID ("ToggleTool")));

@@ -14,29 +14,29 @@
 //#include "wx/log.h"
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestCppUnitWarningAsserter.h>
+#include <wxGuiTest/CppUnitWarningAsserter.h>
 #include <wxGuiTest/InitWxGuiTest.h>
 
-#include <wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/VtkGuiTestHelper.h>
 
 int main (int argc, char* argv[])
 {
     //wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 
     // Configure unit testing:
-    wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
-    wxTst::WxGuiTestHelper::SetShowPopupMenusFlag (false);
+    wxTst::GuiTestHelper::SetShowModalDialogsNonModalFlag (true);
+    wxTst::GuiTestHelper::SetShowPopupMenusFlag (false);
     // Disable interactivity for really running automatic tests:
-    //wxTst::WxGuiTestHelper::SetDisableTestInteractivity (true);
+    //wxTst::GuiTestHelper::SetDisableTestInteractivity (true);
     // Likewise, prevent pop-up warning message box on failing assertions:
-    //wxTst::WxGuiTestHelper::SetPopupWarningForFailingAssert (false);
+    //wxTst::GuiTestHelper::SetPopupWarningForFailingAssert (false);
     // But do check provoked warnings in testing mode:
-	wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (true);
+	wxTst::GuiTestHelper::SetCheckForProvokedWarnings (true);
     // Which requires the correct CppUnit warning asserter:
-    wxTst::WxGuiTestHelper::SetWarningAsserter (
-            new wxTst::WxGuiTestCppUnitWarningAsserter ());
+    wxTst::GuiTestHelper::SetWarningAsserter (
+            new wxTst::CppUnitWarningAsserter ());
     // Record wxVtk interaction:
-    wxTst::VtkWxGuiTestHelper::SetUseWxVtkInteractionRecording (true);
+    wxTst::VtkGuiTestHelper::SetUseWxVtkInteractionRecording (true);
 
     // wxTst::InitWxGuiTest, which "packs" all registered wxWidgets GUI tests
     // into decorated shape, must not use CPPUNIT_TEST_SUITE_REGISTRATION macro

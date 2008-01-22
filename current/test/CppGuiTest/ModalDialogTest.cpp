@@ -6,6 +6,8 @@
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -19,11 +21,11 @@
 #include <wx/sizer.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
 #include <wxGuiTest/ModalDialogTimer.h>
 
 #include "ModalDialogManipulator.h"
-#include "swDirDialogManipulator.h"
+#include "DirDialogManipulator.h"
 
 
 using namespace wxTst;
@@ -62,8 +64,8 @@ void ModalDialogTest::testModalDialog ()
     timer.SetModalDialog (&dialog);
     timer.Start (1000, true);
 
-    WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl, _T("init"));
-    WxGuiTestHelper::FlushEventQueue ();
+    EventSimulationHelper::SetTextCtrlValue (textCtrl, _T("init"));
+    GuiTestHelper::FlushEventQueue ();
 
     ModalDialogManipulator * manip = new ModalDialogManipulator (textCtrl);
     timer.SetModalDialogInteractor (manip);

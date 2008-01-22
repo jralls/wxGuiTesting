@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestCppUnitWarningAsserter.h
+// Name:        wxGuiTest/CppUnitWarningAsserter.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -10,23 +10,23 @@
 #define WXGUITESTCPPUNITWARNINGASSERTER_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestCppUnitWarningAsserter.h"
+    #pragma interface "CppUnitWarningAsserter.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/GuiTestWarningAsserterInterface.h>
+#include <wxGuiTest/WarningAsserterInterface.h>
 
 namespace wxTst {
 
 
-/*! \class WxGuiTestCppUnitWarningAsserter
+/*! \class CppUnitWarningAsserter
     \brief Prevent the need to link to CppUnit by removing #include dependency.
 */
-class WxGuiTestCppUnitWarningAsserter : public WxGuiTestWarningAsserterInterface
+class CppUnitWarningAsserter : public WarningAsserterInterface
 {
 public:
-    virtual ~WxGuiTestCppUnitWarningAsserter() {}
+    virtual ~CppUnitWarningAsserter() {}
     /*! \fn virtual void FailAssert (const wxString &file, const int line, const wxString &shortDescription, const wxString &message) const
         \brief Execute a failing CppUnit framework asserter call.
 

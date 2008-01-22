@@ -4,6 +4,8 @@
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef MODALDIALOGMANIPULATOR_H

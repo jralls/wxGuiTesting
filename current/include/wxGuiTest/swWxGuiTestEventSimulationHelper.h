@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestEventSimulationHelper.h
+// Name:        wxGuiTest/EventSimulationHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTEVENTSIMULATIONHELPER_H
-#define WXGUITESTEVENTSIMULATIONHELPER_H
+#ifndef EVENTSIMULATIONHELPER_H
+#define EVENTSIMULATIONHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestEventSimulationHelper.h"
+    #pragma interface "EventSimulationHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -28,24 +28,24 @@ class wxNotebook;
 namespace wxTst {
 
 
-/*! \class WxGuiTestEventSimulationHelper
+/*! \class EventSimulationHelper
     \brief Provides methods for simulating control specific events.
 
     Flushing the event queue is not part of the event simulation helper methods!
 */
-class WxGuiTestEventSimulationHelper
+class EventSimulationHelper
 {
 public:
-    /*! \fn WxGuiTestEventSimulationHelper ()
+    /*! \fn EventSimulationHelper ()
         \brief Constructor
     */
-    WxGuiTestEventSimulationHelper ();
+    EventSimulationHelper ();
 
 
-    /*! \fn virtual ~WxGuiTestEventSimulationHelper ()
+    /*! \fn virtual ~EventSimulationHelper ()
         \brief Destructor
     */
-    virtual ~WxGuiTestEventSimulationHelper ();
+    virtual ~EventSimulationHelper ();
 
 
     /*! \fn static void SelectMenuItem (int id, wxWindow *frame)
@@ -259,5 +259,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // WXGUITESTEVENTSIMULATIONHELPER_H
+#endif // EVENTSIMULATIONHELPER_H
 

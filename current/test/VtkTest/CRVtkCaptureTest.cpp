@@ -31,12 +31,12 @@
 #include <vtkCamera.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
-#include <wxGuiTest/GuiTestTimedDialogEnder.h>
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TimedDialogEnder.h>
+#include <wxGuiTest/TempInteractive.h>
 
 #include <wxGuiTest/VtkGuiTesting/CRVtkCapture.h>
-#include <wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/VtkGuiTestHelper.h>
 #include <wxGuiTest/VtkGuiTesting/VtkInteractorEventRecorder.h>
 
 #include <wxVTKRenderWindowInteractor.h>
@@ -95,12 +95,12 @@ void CRVtkCaptureTest::setUp ()
 
     m_iren1 = new wxVTKRenderWindowInteractor (frame, -1);
     m_iren1->UseCaptureMouseOn ();
-    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren1, _T("Multi"),
+    VtkGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren1, _T("Multi"),
             _T("iren1"));
 
     m_iren2 = new wxVTKRenderWindowInteractor (frame, -1);
     m_iren2->UseCaptureMouseOn ();
-    VtkWxGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren2, _T("Multi"),
+    VtkGuiTestHelper::GetInstance ()->RegisterForRecording (m_iren2, _T("Multi"),
             _T("iren2"));
 
 	vtkRenderer *renderer1 = vtkRenderer::New ();
@@ -127,8 +127,8 @@ void CRVtkCaptureTest::setUp ()
     frame->Show ();
 
     wxTheApp->SetTopWindow (frame);
-    WxGuiTestHelper::Show (frame, true, false);
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::Show (frame, true, false);
+    GuiTestHelper::FlushEventQueue ();
 }
 
 
@@ -137,10 +137,10 @@ void CRVtkCaptureTest::tearDown ()
     wxWindow *topWdw = wxTheApp->GetTopWindow ();
     wxTheApp->SetTopWindow (NULL);
     //topWdw->Destroy ();
-    //WxGuiTestHelper::FlushEventQueue ();
+    //GuiTestHelper::FlushEventQueue ();
     topWdw->Hide ();
 
-    wxTst::VtkWxGuiTestHelper::Destroy ();
+    wxTst::VtkGuiTestHelper::Destroy ();
     m_iren1->Delete ();
     m_iren2->Delete ();
 }
@@ -165,7 +165,7 @@ void CRVtkCaptureTest::testVtkCapture ()
         try {
             // Put here the emitted code:
     wxTst::WxVtkInteractorEventRecorder *multiRecorder = wxTst::
-            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T("Multi"));
+            VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T("Multi"));
     std::stack< wxWindow *, std::list< wxWindow * > > wdwStack;
     wxWindow *wdw = NULL;
     wxVTKRenderWindowInteractor * iren1WxVtkRwi = multiRecorder->GetInteractor 
@@ -766,7 +766,7 @@ void CRVtkCaptureTest::testVtkCapture ()
     // Or use easier macro:
     VTK_CAPTURE
 
-    wxTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
     interactive.ShowCurrentGui ();
 
     // Using the {...} notation we can have several VTK_CAPTUREs in one method:

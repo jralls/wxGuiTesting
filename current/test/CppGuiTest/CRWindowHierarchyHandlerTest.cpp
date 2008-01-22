@@ -6,6 +6,8 @@
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -17,7 +19,7 @@
 #include <wx/xrc/xmlres.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/TempInteractive.h>
 #include <wxGuiTest/CRWindowHierarchyHandler.h>
 
 using namespace wxTst;
@@ -50,7 +52,7 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
     wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
             wxDefaultPosition);
 #ifndef __WXGTK__
-    WxGuiTestHelper::FlushEventQueue ();
+    GuiTestHelper::FlushEventQueue ();
 #endif
 
     wxSizer *topSizer = new wxBoxSizer (wxVERTICAL);
@@ -75,7 +77,7 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
     dialog.SetSizer (topSizer);
     topSizer->SetSizeHints (&dialog);
     //dialog.Show ();
-    //Tst::WxGuiTestTempInteractive interactive;
+    //Tst::TempInteractive interactive;
     //interactive.ShowCurrentGui ();
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();

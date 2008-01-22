@@ -38,10 +38,10 @@ wxAppGuiTesting:
 
 namespace wxTst {
 
-class WxGuiTestWarningAsserterInterface;
+class WarningAsserterInterface;
 
 
-/*! \class WxGuiTestHelper
+/*! \class GuiTestHelper
     \brief Provides some convenience or helper methods for wxGui test cases.
     
     Mainly to (a) configure the behaviour of WxGuiTestApp class (e.g. showing
@@ -69,7 +69,7 @@ class WxGuiTestWarningAsserterInterface;
     "Temporary interactive tests" are provided in two different shapes:
         - if inspection is enough and no interaction is desired a standard
         wxMessageBox as used by BreakTestToShowCurrentGui() is enough.
-        - if interaction is necessary, use WxGuiTestTempInteractive though.
+        - if interaction is necessary, use TempInteractive though.
 	This temporary interactivity in (and breaking of) tests can be disabled
 	completely for real test runs by means of s_disableTestInteractivity flag
 	and the corresponding getter/setter method.
@@ -79,29 +79,29 @@ class WxGuiTestWarningAsserterInterface;
 
     Of course, some additonal more complex functionality requires its own
     classes and is therefore not accessible via this class, e.g.:
-        - WxGuiTestTimedDialogEnder to automatically close message boxes (or
+        - TimedDialogEnder to automatically close message boxes (or
             in general modal dialogs)
-        - "Temporary interactive tests" by means of WxGuiTestTempInteractive
+        - "Temporary interactive tests" by means of TempInteractive
 
     Finally, the occurence of unexpected or unprovoked warnings via
     App::DisplayWarning() method calls can be detected based on calling
-    WxGuiTestHelper::IsProvokedWarning() at the beginning of the
+    GuiTestHelper::IsProvokedWarning() at the beginning of the
     aforementioned method in the application under test (AUT): such a warning
     means the test case has failed.
 */
-class WxGuiTestHelper
+class GuiTestHelper
 {
 public:
-    /*! \fn WxGuiTestHelper ()
+    /*! \fn GuiTestHelper ()
         \brief Constructor
     */
-    WxGuiTestHelper ();
+    GuiTestHelper ();
 
 
-    /*! \fn virtual ~WxGuiTestHelper ()
+    /*! \fn virtual ~GuiTestHelper ()
         \brief Destructor
     */
-    virtual ~WxGuiTestHelper ();
+    virtual ~GuiTestHelper ();
 
 
     /*! \fn static int FlushEventQueue ()
@@ -354,7 +354,7 @@ public:
         a warning.
 
         Allow detection of unexpected/unprovoked warnings which means a failing
-        test case. Internally WxGuiTestProvokedWarningRegistry is used.
+        test case. Internally ProvokedWarningRegistry is used.
 
         \param caption caption of occured warning
         \param message message of occured warning
@@ -381,12 +381,12 @@ public:
 	static bool GetCheckForProvokedWarnings ();
 
 
-    /*! \fn static void SetWarningAsserter (WxGuiTestWarningAsserterInterface *warningAsserter)
+    /*! \fn static void SetWarningAsserter (WarningAsserterInterface *warningAsserter)
         \brief Set warning asserter to be used in testing mode.
 
         \param warningAsserter asserter to be used in testing mode
     */
-    static void SetWarningAsserter (WxGuiTestWarningAsserterInterface *warningAsserter);
+    static void SetWarningAsserter (WarningAsserterInterface *warningAsserter);
 
 
     static void AddTestFailure (const wxString &file, const int line,
@@ -411,7 +411,7 @@ private:
 
     static bool s_checkForProvokedWarnings;
 
-    static WxGuiTestWarningAsserterInterface *s_warningAsserter;
+    static WarningAsserterInterface *s_warningAsserter;
 
     // For storing test case failures due to failing assertions and unexpected
     // warnings:

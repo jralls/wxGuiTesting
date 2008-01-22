@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/VtkWxGuiTesting/VtkWxGuiTestHelper.h
+// Name:        wxGuiTest/VtkWxGuiTesting/VtkGuiTestHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -10,7 +10,7 @@
 #define VTKWXGUITESTHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "VtkWxGuiTestHelper.h"
+    #pragma interface "VtkGuiTestHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -24,22 +24,22 @@ namespace wxTst {
 class WxVtkInteractorEventRecorder;
 
 
-/*! \class VtkWxGuiTestHelper
+/*! \class VtkGuiTestHelper
     \brief Helper methods for wxVtk interaction recording (Singleton pattern).
 */
-class VtkWxGuiTestHelper
+class VtkGuiTestHelper
 {
 public:
     typedef std::map < wxString, WxVtkInteractorEventRecorder * > RecorderMap;
     RecorderMap m_recorderMap;
 
 public:
-    /*! \fn static VtkWxGuiTestHelper * GetInstance ()
+    /*! \fn static VtkGuiTestHelper * GetInstance ()
         \brief Get single private instance.
 
         \return single private instance
     */
-    static VtkWxGuiTestHelper * GetInstance ();
+    static VtkGuiTestHelper * GetInstance ();
 
 
     /*! \fn static void Destroy ()
@@ -98,26 +98,26 @@ public:
     virtual RecorderMap & GetWxVtkRecorders ();
 
 protected:
-    /*! \fn VtkWxGuiTestHelper ()
+    /*! \fn VtkGuiTestHelper ()
         \brief Constructor
     */
-    VtkWxGuiTestHelper ();
+    VtkGuiTestHelper ();
 
 
-    /*! \fn virtual ~VtkWxGuiTestHelper ()
+    /*! \fn virtual ~VtkGuiTestHelper ()
         \brief Destructor
     */
-    virtual ~VtkWxGuiTestHelper ();
+    virtual ~VtkGuiTestHelper ();
 
 private:
-    static VtkWxGuiTestHelper *ms_instance;
+    static VtkGuiTestHelper *ms_instance;
 
     static bool ms_useWxVtkInteractionRecording;
 
 private:
     // No copy and assignment constructor:
-    VtkWxGuiTestHelper (const VtkWxGuiTestHelper &rhs);
-    VtkWxGuiTestHelper & operator= (const VtkWxGuiTestHelper &rhs);
+    VtkGuiTestHelper (const VtkGuiTestHelper &rhs);
+    VtkGuiTestHelper & operator= (const VtkGuiTestHelper &rhs);
 };
 
 } // End namespace wxTst
