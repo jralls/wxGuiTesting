@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestWarningAsserterInterface.h
+// Name:        wxGuiTest/GuiTestWarningAsserterInterface.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTWARNINGASSERTERINTERFACE_H
-#define SWWXGUITESTWARNINGASSERTERINTERFACE_H
+#ifndef WXGUITESTWARNINGASSERTERINTERFACE_H
+#define WXGUITESTWARNINGASSERTERINTERFACE_H
 
 #ifdef __GNUG__
-//    #pragma interface "swWxGuiTestWarningAsserterInterface.h"
+//    #pragma interface "GuiTestWarningAsserterInterface.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestWarningAsserterInterface
@@ -38,7 +38,7 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTWARNINGASSERTERINTERFACE_H
+#endif // WXGUITESTWARNINGASSERTERINTERFACE_H
 

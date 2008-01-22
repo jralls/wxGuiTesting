@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swDirDialogManipulator.h
+// Name:        test/CppGuiTest/swDirDialogManipulator.h
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWDIRDIALOGMANIPULATOR_H
-#define SWDIRDIALOGMANIPULATOR_H
+#ifndef DIRDIALOGMANIPULATOR_H
+#define DIRDIALOGMANIPULATOR_H
 
 #ifdef __GNUG__
     #pragma interface "swDirDialogManipulator.h"
 #endif
 
-#include <wxGuiTest/swModalDialogInteractionInterface.h>
+#include <wxGuiTest/ModalDialogInteractionInterface.h>
 
 class wxDirDialog;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class DirDialogManipulator
@@ -41,6 +41,6 @@ private:
     wxDirDialog *m_dialog;
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWDIRDIALOGMANIPULATOR_H
+#endif // DIRDIALOGMANIPULATOR_H

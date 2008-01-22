@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestCppUnitWarningAsserter.h
+// Name:        wxGuiTest/GuiTestCppUnitWarningAsserter.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTCPPUNITWARNINGASSERTER_H
-#define SWWXGUITESTCPPUNITWARNINGASSERTER_H
+#ifndef WXGUITESTCPPUNITWARNINGASSERTER_H
+#define WXGUITESTCPPUNITWARNINGASSERTER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestCppUnitWarningAsserter.h"
+    #pragma interface "GuiTestCppUnitWarningAsserter.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/swWxGuiTestWarningAsserterInterface.h>
+#include <wxGuiTest/GuiTestWarningAsserterInterface.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestCppUnitWarningAsserter
@@ -40,7 +40,7 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTCPPUNITWARNINGASSERTER_H
+#endif // WXGUITESTCPPUNITWARNINGASSERTER_H
 

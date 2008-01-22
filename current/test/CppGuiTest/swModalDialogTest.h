@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swModalDialogTest.h
+// Name:        test/CppGuiTest/ModalDialogTest.h
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWMODALDIALOGTEST_H
-#define SWMODALDIALOGTEST_H
+#ifndef MODALDIALOGTEST_H
+#define MODALDIALOGTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swModalDialogTest.h"
+    #pragma interface "ModalDialogTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
 #include <wx/timer.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class ModalDialogTest
@@ -29,7 +29,7 @@ class ModalDialogTest : public CPPUNIT_NS::TestFixture
 
         CPPUNIT_TEST( testModalDialog );
         // Solution does not necessarily work for modal standard dialogs: e.g.
-        // the wxDirDialog for MSW is based on SHBrowseForFolder function.
+        // the wxDirDialog for M is based on SHBrowseForFolder function.
         // Possible solutions: (a) ignore modal standard dialogs, (b) look in
         // all implementations and potentially modify the behaviour if being in
         // test mode to do what?
@@ -67,6 +67,6 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWMODALDIALOGTEST_H
+#endif // MODALDIALOGTEST_H

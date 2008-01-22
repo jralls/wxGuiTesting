@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppTest/swCRCppEmitterTest.h
+// Name:        test/CppTest/CRCppEmitterTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRCPPEMITTERTEST_H
-#define SWCRCPPEMITTERTEST_H
+#ifndef CRCPPEMITTERTEST_H
+#define CRCPPEMITTERTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRCppEmitterTest.h"
+    #pragma interface "CRCppEmitterTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
 #include <wx/arrstr.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRCppEmitterTest
@@ -67,7 +67,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRCPPEMITTERTEST_H
+#endif // CRCPPEMITTERTEST_H
 

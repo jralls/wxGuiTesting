@@ -1,24 +1,24 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/swCRVtkCapture.h
+// Name:        wxGuiTest/VtkWxGuiTesting/CRVtkCapture.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRVTKCAPTURE_H
-#define SWCRVTKCAPTURE_H
+#ifndef CRVTKCAPTURE_H
+#define CRVTKCAPTURE_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRVtkCapture.h"
+    #pragma interface "CRVtkCapture.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/swWxGuiTestApp.h>
-#include <wxGuiTest/swCRCapture.h>
+#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/CRCapture.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRVtkCapture
@@ -39,7 +39,7 @@ public:
     virtual ~CRVtkCapture ();
 
 
-    /*! \file swCRVtkCapture.h
+    /*! \file CRVtkCapture.h
         \brief Providing easy to use macro for bootstrap capturing.
 
         Doxygen documentation only needed for #define VTK_CAPTURE.
@@ -53,12 +53,12 @@ public:
     {                                                                         \
         wxApp *app = wxTheApp;                                                \
         wxASSERT (app != NULL);                                               \
-        swTst::WxGuiTestApp *guiTestApp = dynamic_cast< swTst::WxGuiTestApp * >(app); \
+        wxTst::WxGuiTestApp *guiTestApp = dynamic_cast< wxTst::WxGuiTestApp * >(app); \
         wxASSERT (guiTestApp != NULL);                                        \
-        guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); \
+        guiTestApp->SetEventFilter (wxTst::CREventCaptureManager::GetInstance ()); \
                                                                               \
         std::string excMsg;                                                   \
-        swTst::CRVtkCapture *capture = new swTst::CRVtkCapture ();            \
+        wxTst::CRVtkCapture *capture = new wxTst::CRVtkCapture ();            \
         try {                                                                 \
             capture->Capture (__FILE__, __LINE__);                            \
         } catch (std::exception &e) {                                         \
@@ -68,7 +68,7 @@ public:
         }                                                                     \
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
-        swTst::CRCppEmitter::Destroy ();                                      \
+        wxTst::CRCppEmitter::Destroy ();                                      \
         if (!excMsg.empty ()) {                                               \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
@@ -100,7 +100,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRVTKCAPTURE_H
+#endif // CRVTKCAPTURE_H
 

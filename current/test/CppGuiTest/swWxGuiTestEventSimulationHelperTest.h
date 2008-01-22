@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swWxGuiTestEventSimulationHelperTest.h
+// Name:        test/CppGuiTest/GuiTestEventSimulationHelperTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -8,20 +8,20 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTEVENTSIMULATIONHELPERTEST_H
-#define SWWXGUITESTEVENTSIMULATIONHELPERTEST_H
+#ifndef WXGUITESTEVENTSIMULATIONHELPERTEST_H
+#define WXGUITESTEVENTSIMULATIONHELPERTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestEventSimulationHelperTest.h"
+    #pragma interface "GuiTestEventSimulationHelperTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "swWxGuiTestEvtSimHlpEvtHandler.h"
+#include "GuiTestEvtSimHlpEvtHandler.h"
 
 class wxMiniFrame;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestEventSimulationHelperTest
@@ -166,7 +166,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTEVENTSIMULATIONHELPERTEST_H
+#endif // WXGUITESTEVENTSIMULATIONHELPERTEST_H
 

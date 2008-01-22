@@ -4,7 +4,7 @@
 	      xsi:schemaLocation="file:///usr/local/bakefile-svn/share/bakefile/schema/bakefile-gen.xsd">
 
   <input>
-    swWxGuiTesting.bkl
+    wxGuiTesting.bkl
   </input>
 
   <add-formats>
@@ -12,28 +12,28 @@
   </add-formats>
 
  <!-- Directories where the files go: -->
-  <add-flags files="swWxGuiTesting.bkl" formats="autoconf">
+  <add-flags files="wxGuiTesting.bkl" formats="autoconf">
     -o../../Makefile.in
   </add-flags>
 
-  <add-flags files="swWxGuiTesting.bkl" formats="msvs2005prj">
-    -o../msw/swWxGuiTesting.sln
+  <add-flags files="wxGuiTesting.bkl" formats="msvs2005prj">
+    -o../msw/wxGuiTesting.sln
   </add-flags>
 
-  <add-flags files="swWxGuiTesting.bkl" formats="msvc">
+  <add-flags files="wxGuiTesting.bkl" formats="msvc">
     -o../msw/makefile.vc
   </add-flags>
 
-  <add-flags files="swWxGuiTesting.bkl" formats="msvc6prj">
-    -o../msw/swWxGuiTesting.dsw
+  <add-flags files="wxGuiTesting.bkl" formats="msvc6prj">
+    -o../msw/wxGuiTesting.dsw
   </add-flags>
 
-  <add-flags files="swWxGuiTesting.bkl" formats="msvc">
+  <add-flags files="wxGuiTesting.bkl" formats="msvc">
     -DOPTIONS_FILE=config.vc
   </add-flags>
 
-  <add-flags files="swWxGuiTesting.bkl" formats="xcode2">
-    -o../macosx/swWxGuiTesting.xcodeproj
+  <add-flags files="wxGuiTesting.bkl" formats="xcode2">
+    -o../macosx/wxGuiTesting.xcodeproj
 
   </add-flags>
 

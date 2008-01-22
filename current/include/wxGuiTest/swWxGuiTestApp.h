@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestApp.h
+// Name:        wxGuiTest/GuiTestApp.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTAPP_H
-#define SWWXGUITESTAPP_H
+#ifndef WXGUITESTAPP_H
+#define WXGUITESTAPP_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestApp.h"
+    #pragma interface "GuiTestApp.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 #include <wx/app.h>
 
 
-namespace swTst {
+namespace wxTst {
 
 class InitWxGuiTestSetUp;
 class CREventFilterInterface;
@@ -182,9 +182,9 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-DECLARE_APP(swTst::WxGuiTestApp)
+DECLARE_APP(wxTst::WxGuiTestApp)
 
-#endif // SWWXGUITESTAPP_H
+#endif // WXGUITESTAPP_H
 

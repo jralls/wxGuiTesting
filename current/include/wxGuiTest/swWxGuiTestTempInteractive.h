@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestTempInteractive.h
+// Name:        wxGuiTest/GuiTestTempInteractive.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTTEMPINTERACTIVE_H
-#define SWWXGUITESTTEMPINTERACTIVE_H
+#ifndef WXGUITESTTEMPINTERACTIVE_H
+#define WXGUITESTTEMPINTERACTIVE_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestTempInteractive.h"
+    #pragma interface "GuiTestTempInteractive.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
 class wxDialog;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestTempInteractive
@@ -52,7 +52,7 @@ public:
     virtual ~WxGuiTestTempInteractive () {}
 
 
-    /*! \file swWxGuiTestTempInteractive.h
+    /*! \file GuiTestTempInteractive.h
         \brief Providing easy to use macro for temporary interactivity.
     
         Doxygen documentation only needed for #define TEMP_INTERACTIVE_GUI_TEST.
@@ -66,7 +66,7 @@ public:
     */
     #define TEMP_INTERACTIVE_GUI_TEST                                         \
     {                                                                         \
-        swTst::WxGuiTestTempInteractive interactive;                          \
+        wxTst::WxGuiTestTempInteractive interactive;                          \
         interactive.ShowCurrentGui (_T(__FILE__), __LINE__);		\
     };
 
@@ -89,7 +89,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTTEMPINTERACTIVE_H
+#endif // WXGUITESTTEMPINTERACTIVE_H
 

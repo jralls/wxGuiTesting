@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swWxGuiTestEventSimulationHelperTest.cpp
+// Name:        test/CppGuiTest/GuiTestEventSimulationHelperTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,10 +9,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swWxGuiTestEventSimulationHelperTest.h"
+    #pragma implementation "GuiTestEventSimulationHelperTest.h"
 #endif
 
-#include "swWxGuiTestEventSimulationHelperTest.h"
+#include "GuiTestEventSimulationHelperTest.h"
 #include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/minifram.h>
@@ -20,17 +20,17 @@
 #include <wx/notebook.h>
 #include <wx/spinctrl.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/GuiTestTimedDialogEnder.h>
+#include <wxGuiTest/GuiTestTempInteractive.h>
 
 
 namespace {
     const wxString testDir(_T(TESTDIR));
 }
 
-using namespace swTst;
+using namespace wxTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -127,7 +127,7 @@ void WxGuiTestEventSimulationHelperTest::testSelectMenuItem ()
     CPPUNIT_ASSERT_MESSAGE ("Event simulation of menu item selection failed",
             m_testEvtHandler->HasMenuItemSelProcessed ());
 
-    swTst::WxGuiTestTempInteractive interactive;
+    wxTst::WxGuiTestTempInteractive interactive;
     interactive.ShowCurrentGui ();
 }
 

@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swCRCaptureTest.h
+// Name:        test/CppGuiTest/CRCaptureTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRCAPTURETEST_H
-#define SWCRCAPTURETEST_H
+#ifndef CRCAPTURETEST_H
+#define CRCAPTURETEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRCaptureTest.h"
+    #pragma interface "CRCaptureTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRCaptureTest
@@ -53,7 +53,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRCAPTURETEST_H
+#endif // CRCAPTURETEST_H
 

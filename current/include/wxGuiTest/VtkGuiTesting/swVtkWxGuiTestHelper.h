@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/swVtkWxGuiTestHelper.h
+// Name:        wxGuiTest/VtkWxGuiTesting/VtkWxGuiTestHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWVTKWXGUITESTHELPER_H
-#define SWVTKWXGUITESTHELPER_H
+#ifndef VTKWXGUITESTHELPER_H
+#define VTKWXGUITESTHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "swVtkWxGuiTestHelper.h"
+    #pragma interface "VtkWxGuiTestHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -19,7 +19,7 @@
 
 class wxVTKRenderWindowInteractor;
 
-namespace swTst {
+namespace wxTst {
 
 class WxVtkInteractorEventRecorder;
 
@@ -120,6 +120,6 @@ private:
     VtkWxGuiTestHelper & operator= (const VtkWxGuiTestHelper &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWVTKWXGUITESTHELPER_H
+#endif // VTKWXGUITESTHELPER_H

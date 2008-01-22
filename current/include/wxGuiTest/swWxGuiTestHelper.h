@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestHelper.h
+// Name:        wxGuiTest/GuiTestHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 //! \file
-#ifndef SWWXGUITESTHELPER_H
-#define SWWXGUITESTHELPER_H
+#ifndef WXGUITESTHELPER_H
+#define WXGUITESTHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestHelper.h"
+    #pragma interface "GuiTestHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -22,13 +22,13 @@ namespace sw {
 }
 
 /*! \def IMPLEMENT_APP(appname)
-If the special symbol SW_USE_WX_APP_GUI_TESTING is defined in the sources
+If the special symbol _USE_WX_APP_GUI_TESTING is defined in the sources
 CMakeLists.txt, for instance by:
-  ADD_DEFINITIONS (-DSW_USE_WX_APP_GUI_TESTING)
+  ADD_DEFINITIONS (-D_USE_WX_APP_GUI_TESTING)
 the sources application won't be recognised as such, but can be used for
 wxAppGuiTesting:
 */
-#ifdef SW_USE_WX_APP_GUI_TESTING
+#ifdef _USE_WX_APP_GUI_TESTING
     #ifdef IMPLEMENT_APP
         #undef IMPLEMENT_APP
     #endif
@@ -36,7 +36,7 @@ wxAppGuiTesting:
 #endif
 
 
-namespace swTst {
+namespace wxTst {
 
 class WxGuiTestWarningAsserterInterface;
 
@@ -421,7 +421,7 @@ private:
     static wxString s_accTestFailures;
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTHELPER_H
+#endif // WXGUITESTHELPER_H
 

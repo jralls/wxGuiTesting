@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swModalDialogTimer.h
+// Name:        wxGuiTest/CppGuiTest/ModalDialogTimer.h
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWMODALDIALOGTIMER_H
-#define SWMODALDIALOGTIMER_H
+#ifndef MODALDIALOGTIMER_H
+#define MODALDIALOGTIMER_H
 
 #ifdef __GNUG__
-    #pragma interface "swModalDialogTimer.h"
+    #pragma interface "ModalDialogTimer.h"
 #endif
 
 #include <wx/timer.h>
 
 class wxDialog;
 
-namespace swTst {
+namespace wxTst {
 
 class ModalDialogInteractionInterface;
 
@@ -92,6 +92,6 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWMODALDIALOGTIMER_H
+#endif // MODALDIALOGTIMER_H

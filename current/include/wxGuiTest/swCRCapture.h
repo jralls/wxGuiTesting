@@ -1,29 +1,29 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCRCapture.h
+// Name:        wxGuiTest/CRCapture.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRCAPTURE_H
-#define SWCRCAPTURE_H
+#ifndef CRCAPTURE_H
+#define CRCAPTURE_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRCapture.h"
+    #pragma interface "CRCapture.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/swWxGuiTestApp.h>
-#include <wxGuiTest/swCRLogInterface.h>
-#include <wxGuiTest/swCREventCaptureManager.h>
-#include <wxGuiTest/swCRCppEmitter.h>
-#include <wxGuiTest/swCRCaptureControl.h>
+#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/CRLogInterface.h>
+#include <wxGuiTest/CREventCaptureManager.h>
+#include <wxGuiTest/CRCppEmitter.h>
+#include <wxGuiTest/CRCaptureControl.h>
 
 class wxDialog;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRCapture
@@ -44,7 +44,7 @@ public:
     virtual ~CRCapture ();
 
 
-    /*! \file swCRCapture.h
+    /*! \file CRCapture.h
         \brief Providing easy to use macro for bootstrap capturing.
     
         Doxygen documentation only needed for #define CAPTURE.
@@ -58,12 +58,12 @@ public:
     {                                                                         \
         wxApp *app = wxTheApp;                                                \
         wxASSERT (app != NULL);                                               \
-        swTst::WxGuiTestApp *guiTestApp = dynamic_cast< swTst::WxGuiTestApp * >(app); \
+        wxTst::WxGuiTestApp *guiTestApp = dynamic_cast< wxTst::WxGuiTestApp * >(app); \
         wxASSERT (guiTestApp != NULL);                                        \
-        guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); \
+        guiTestApp->SetEventFilter (wxTst::CREventCaptureManager::GetInstance ()); \
                                                                               \
         std::string excMsg;						                              \
-        swTst::CRCapture *capture = new swTst::CRCapture ();                  \
+        wxTst::CRCapture *capture = new wxTst::CRCapture ();                  \
         try {                                                                 \
             capture->Capture (__FILE__, __LINE__);                            \
         } catch (std::exception &e) {                                         \
@@ -73,7 +73,7 @@ public:
         }                                                                     \
         guiTestApp->SetEventFilter (NULL);                                    \
         delete capture;                                                       \
-        swTst::CRCppEmitter::Destroy ();                                      \
+        wxTst::CRCppEmitter::Destroy ();                                      \
         if (!excMsg.empty ()) {                                               \
             CPPUNIT_FAIL (excMsg.c_str ());                                   \
         }                                                                     \
@@ -134,6 +134,6 @@ private:
     wxTextCtrl *m_logTextCtrl;
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRCAPTURE_H
+#endif // CRCAPTURE_H

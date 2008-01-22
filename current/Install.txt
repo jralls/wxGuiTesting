@@ -3,16 +3,16 @@
 \section prereqs Prerequisites:
 
 1. wxWidgets, http://www.wxwidgets.org, a cross-platform programming
-   framework in  C++. swWxGuiTesting is all about unit and regression testing
-   wxWidgets programs. swWxGuiTesting is tested against versiont 2.8.6
+   framework in  C++. wxGuiTesting is all about unit and regression testing
+   wxWidgets programs. wxGuiTesting is tested against versiont 2.8.6
    on Microsoft Windows XP®, Linux Debian Etch, and Macintosh OSX®
    versions 4 and 5. Mandatory.
 
 2. CppUnit, http://cppunit.sourceforge.net, a C++ unit testing
-   framework. swWxGuiTesting has been tested against version 1.12.0. Mandatory.
+   framework. wxGuiTesting has been tested against version 1.12.0. Mandatory.
 
 3. VTK, http://www.vtk.org, is a graphics toolkit which works on top
-   of opengl. swWxGuiTesting is capable of capturing and replaying events
+   of opengl. wxGuiTesting is capable of capturing and replaying events
    via vtk. Optional.
 
 4. wxVTK, http://wxvtk.sourceforge.net, a wx control for VTK. There's
@@ -21,7 +21,7 @@
 
 5. wxCRP, http://www.xs4all.nl/~jorgb/wxcrp, a template generator for 
    Microsoft Windows®. Some templates are provided for automatically 
-   generating swWxGuiTesting test suites with wxCRP. Optional.
+   generating wxGuiTesting test suites with wxCRP. Optional.
 
 6. Bakefile, http://www.bakefile.org, a cross-platform builder of
    native build chains. Build chains are provided for Microsoft Visual
@@ -42,7 +42,6 @@ from the command prompt, you can just do it from the command line
 first; otherwise, use the Control Panel.
 
 WXWIN=[DRIVE:]\Path\to\wxWidgets\install\directory
-CPPUNIT=[DRIVE:]\Path\to\CppUnit\install\directory
 VTK_DIR=[DRIVE:]\Path\to\VTK\install\directory 
      (if you're going to use VTK)
 
@@ -59,16 +58,21 @@ makefile.vc. Edit config.vc to define the various variables. You'll
 need to set the WX_SHARED, WX_DEBUG, WX_UNICODE, WX_MONOLITHIC, and
 WX_VERSION to match a wxWidgets library which you have installed
 already. SHARED, UNICODE, and BUILD set the parameters for the
-swWxGuiTesting library and test applications.  If you're using VTK,
+wxGuiTesting library and test applications.  If you're using VTK,
 set USE_VTK to TRUE.
 
 Now run nmake -f makefile.vc. The library and executables will be
 build in the present directory.
 
-\subsection msvs  Microsoft Visual Studio 6®:
+\subsection msvs  Microsoft Visual Studio® or Visual C++®:
+
+Setup these additional environment variables:
+
+CPPUNIT=[DRIVE:]\Path\to\CppUnit\install\directory
+CPPUNIT_LIB=cppunit library name without extension, e.g. cppunitd_dll
 
 You'll find the solution and project files in build/msw; open MSVS and
-load swWxGuiTesting.sln.
+load wxGuiTesting.sln or wxGuiTesting.dsw.
 
 Now comes the fun part, because there's no automatic way to configure
 MSVS.
@@ -121,6 +125,15 @@ By default, configure will set SHARED, UNICODE, and DEBUG to match the
 primary library found by wx-config. If you want otherwise, tell
 configure (e.g., `../configure DEBUG=0 to build a library without
 symbols against a debug version of wxWidgets).
+
+On systems other than Macintosh OS-X version 4 (Tiger), you may want
+to modify the WX_CXXFLAGS in the Makefile to replace -I with
+-isystem. This will suppress the amazing quantity of warnings
+emanating from wxWidgets headers. Tiger (and maybe Leopard, not yet
+tested) has problems with -isystem which while it suppresses the
+warnings also interferes with linking, so this isn't a universal
+solution. On the other hand, wxMac seems to be a bit cleaner than
+wxGTK in regards to warnings.
 
 
 

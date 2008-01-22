@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/CppTest/swCRVtkCaptureTest.cpp
+// Name:        test/VtkWxGuiTesting/CppTest/CRVtkCaptureTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,10 +9,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCRVtkCaptureTest.h"
+    #pragma implementation "CRVtkCaptureTest.h"
 #endif
 
-#include "swCRVtkCaptureTest.h"
+#include "CRVtkCaptureTest.h"
 
 #include <stack>
 #include <string>
@@ -30,14 +30,14 @@
 #include <vtkRendererCollection.h>
 #include <vtkCamera.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/GuiTestTimedDialogEnder.h>
+#include <wxGuiTest/GuiTestTempInteractive.h>
 
-#include <wxGuiTest/VtkGuiTesting/swCRVtkCapture.h>
-#include <wxGuiTest/VtkGuiTesting/swVtkWxGuiTestHelper.h>
-#include <wxGuiTest/VtkGuiTesting/swWxVtkInteractorEventRecorder.h>
+#include <wxGuiTest/VtkGuiTesting/CRVtkCapture.h>
+#include <wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/VtkInteractorEventRecorder.h>
 
 #include <wxVTKRenderWindowInteractor.h>
 
@@ -45,7 +45,7 @@ namespace {
     const wxString xrcDir(_T(XRCDIR));
 };
 
-using namespace swTst;
+using namespace wxTst;
 
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
@@ -140,7 +140,7 @@ void CRVtkCaptureTest::tearDown ()
     //WxGuiTestHelper::FlushEventQueue ();
     topWdw->Hide ();
 
-    swTst::VtkWxGuiTestHelper::Destroy ();
+    wxTst::VtkWxGuiTestHelper::Destroy ();
     m_iren1->Delete ();
     m_iren2->Delete ();
 }
@@ -164,7 +164,7 @@ void CRVtkCaptureTest::testVtkCapture ()
 
         try {
             // Put here the emitted code:
-    swTst::WxVtkInteractorEventRecorder *multiRecorder = swTst::
+    wxTst::WxVtkInteractorEventRecorder *multiRecorder = wxTst::
             VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T("Multi"));
     std::stack< wxWindow *, std::list< wxWindow * > > wdwStack;
     wxWindow *wdw = NULL;
@@ -747,11 +747,11 @@ void CRVtkCaptureTest::testVtkCapture ()
     {
         wxApp *app = wxTheApp;
         wxASSERT (app != NULL);
-        swTst::WxGuiTestApp *guiTestApp = dynamic_cast< swTst::WxGuiTestApp * >(app);
+        wxTst::WxGuiTestApp *guiTestApp = dynamic_cast< wxTst::WxGuiTestApp * >(app);
         wxASSERT (guiTestApp != NULL);
-        guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ());
+        guiTestApp->SetEventFilter (wxTst::CREventCaptureManager::GetInstance ());
 
-        swTst::CRCapture *capture = new swTst::CRCapture ();
+        wxTst::CRCapture *capture = new wxTst::CRCapture ();
         try {
             capture->Capture (__FILE__, __LINE__);
         } catch (...) {
@@ -760,13 +760,13 @@ void CRVtkCaptureTest::testVtkCapture ()
         }
         guiTestApp->SetEventFilter (NULL);
         delete capture;
-        swTst::CRCppEmitter::Destroy ();
+        wxTst::CRCppEmitter::Destroy ();
     }
 */
     // Or use easier macro:
     VTK_CAPTURE
 
-    swTst::WxGuiTestTempInteractive interactive;
+    wxTst::WxGuiTestTempInteractive interactive;
     interactive.ShowCurrentGui ();
 
     // Using the {...} notation we can have several VTK_CAPTUREs in one method:

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swModalDialogManipulator.cpp
+// Name:        test/CppGuiTest/ModalDialogManipulator.cpp
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
@@ -7,12 +7,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swModalDialogManipulator.h"
+    #pragma implementation "ModalDialogManipulator.h"
 #endif
 
-#include "swModalDialogManipulator.h"
+#include "ModalDialogManipulator.h"
 
-namespace swTst {
+namespace wxTst {
 
 
 ModalDialogManipulator::ModalDialogManipulator (wxTextCtrl *textCtrl)
@@ -26,4 +26,4 @@ void ModalDialogManipulator::Execute ()
     m_textCtrl->SetValue (_T("hello"));
 }
 
-} // End namespace swTst
+} // End namespace wxTst

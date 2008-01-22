@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/swCRVtkCaptureControl.h
+// Name:        wxGuiTest/VtkWxGuiTesting/CRVtkCaptureControl.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWVTKCRCAPTURECONTROL_H
-#define SWVTKCRCAPTURECONTROL_H
+#ifndef VTKCRCAPTURECONTROL_H
+#define VTKCRCAPTURECONTROL_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRVtkCaptureControl.h"
+    #pragma interface "CRVtkCaptureControl.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/swCRCaptureControl.h>
+#include <wxGuiTest/CRCaptureControl.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRVtkCaptureControl
@@ -70,7 +70,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWVTKCRCAPTURECONTROL_H
+#endif // VTKCRCAPTURECONTROL_H
 

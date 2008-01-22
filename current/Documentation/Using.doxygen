@@ -19,7 +19,7 @@ Note that in order for capture to work, your project <b><I>must use xml XRC file
 
 \section unit Complex Unit Testing
 
-In unit testing, your test suite sets up the component(s) to test in \c setUp() and destroys them in \c tearDown(). Each test-case uses either direct calls on a component's functions (like in the simple unit testing above) or uses swTst::WxGuiTestEventSimulationHelper to send events to it. 
+In unit testing, your test suite sets up the component(s) to test in \c setUp() and destroys them in \c tearDown(). Each test-case uses either direct calls on a component's functions (like in the simple unit testing above) or uses wxTst::WxGuiTestEventSimulationHelper to send events to it. 
 
 Be sure to leave the line 
 \code
@@ -49,20 +49,18 @@ public:
 \endcode
 The class implementations will need the following includes as noted:
 \code
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/wxGuiTestHelper.h>
+#include <wxGuiTest/wxGuiTestEventSimulationHelper.h>
+#include <wxGuiTest/wxGuiTestTempInteractive.h>
 \endcode
 If you're automatically killing off modal dialog boxes, you'll need
 \code 
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/wxGuiTestTempInteractive.h>
 \endcode
 For capturing, you need
 \code
-#include <wxGuiTest/swCRCapture.h>
+#include <wxGuiTest/wxCRCapture.h>
 
-#include <wxGuiTest/Config/swConfigManager.h>
-#include <wxGuiTest/Config/swConfig.h>
 \endcode
 The implementation (.cpp) file for the test classes needs a line like
 \code
@@ -81,15 +79,15 @@ needn't do anything... and may cause trouble if they do.
 
 \section regression Setting Up Application Testing
 
-Define <tt>SW_USE_WX_APP_GUI_TESTING</tt> in the compiler command line (add it
+Define <tt>WX_USE_WX_APP_GUI_TESTING</tt> in the compiler command line (add it
 to \c CXXFLAGS or something similar in your Makefile. This macro is used to redefine <tt>IMPLEMENT_APP()</tt> so that the test runner is in control for testing a whole application. You can use it to toggle other test features in your code, as we'll see.
 
 For testing a whole application, your wxApp class (the one with
-\c OnInit()) must be derived from <tt>swTst::WxGuiTestApp</tt>, like this:
+\c OnInit()) must be derived from <tt>wxTst::WxGuiTestApp</tt>, like this:
 \code
-#ifdef SW_USE_WX_APP_GUI_TESTING
-#include <wxGuiTest/swWxGuiTestApp.h>
-class MyApp : public swTst::WxGuiTestApp
+#ifdef WX_USE_WX_APP_GUI_TESTING
+#include <wxGuiTest/wxGuiTestApp.h>
+class MyApp : public wxTst::WxGuiTestApp
 #else
 #include <wx/app.h>
 class MyApp : public wxApp
@@ -98,8 +96,8 @@ class MyApp : public wxApp
 then, in your wxApp implementation, 
 \code
 #include <wx/wx.h>
-#ifdef SW_USE_WX_APP_GUI_TESTING
-#include <wxGuiTest/swWxGuiTestHelper.h>
+#ifdef WX_USE_WX_APP_GUI_TESTING
+#include <wxGuiTest/wxGuiTestHelper.h>
 #endif
 IMPLEMENT_APP(MyApp)
 \endcode
@@ -149,7 +147,7 @@ heap and must be available to the test functions.
 
 Capture uses XML XRC files to discover resource names, and at present
 is able to scan only one directory for resource files. This directory
-is set in your test program with sw::Config::SetResourceDir().
+is set in your test program with wx::Config::SetResourceDir().
 
 \subsection blocking Blocking GUI Elements (Modal Dialogs and Popup Menus):
 
@@ -163,10 +161,10 @@ library, to reach inside those implementations and manipulate the GUI
 elements. In short, the use of modal dialogs and popup menus requires
 user intervention during the test. For fully automatic testing, your
 code will have to disable blocking elements during testing. The
-<tt>SW_USE_WX_APP_GUI_TESTING</tt> macro is a useful test since you have to
+<tt>WX_USE_WX_APP_GUI_TESTING</tt> macro is a useful test since you have to
 define it anyway:
 \code
-#ifndef  SW_USE_WX_APP_GUI_TESTING
+#ifndef  WX_USE_WX_APP_GUI_TESTING
     msgDlg.ShowModal();
 #endif
 \endcode
@@ -177,7 +175,7 @@ There are a large number of controls which don't have event simulators or captur
 
 Toolbar events will produce a bogus menu event (OSX):
 \code
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );
+    wxTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );
 \endcode
 or are simply unsupported in Microsoft Windows, at least on MDI windows.
 
@@ -193,10 +191,10 @@ see them, so it will fail.
 A side effect of the fact that the application is created by the test
 framework which in turn runs your application under test-runner
 control is that the application name defaults to "bla" (hard-coded in
-<tt>swInitWxGuiTestSetUp.cpp, line 104</tt>. If this matters to you, set it in
+<tt>wxInitWxGuiTestSetUp.cpp, line 104</tt>. If this matters to you, set it in
 your app's \c OnInit() function, perhaps guarded by  
 \code
-     #ifdef SW_USE_WX_APP_GUI_TESTING. 
+     #ifdef USE_WX_APP_GUI_TESTING. 
 \endcode
 
 When you have a bunch of dialog boxes with similar controls on them, Capture seems always to use the first one it finds. You'll have to figure out what is the right one in each case in the capture file and hand-correct it.

@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppTest/swCRXRCReaderTest.h
+// Name:        test/CppTest/CRXRCReaderTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRXRCREADERTEST_H
-#define SWCRXRCREADERTEST_H
+#ifndef CRXRCREADERTEST_H
+#define CRXRCREADERTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRXRCReaderTest.h"
+    #pragma interface "CRXRCReaderTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRXRCReaderTest
@@ -60,7 +60,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRXRCREADERTEST_H
+#endif // CRXRCREADERTEST_H
 

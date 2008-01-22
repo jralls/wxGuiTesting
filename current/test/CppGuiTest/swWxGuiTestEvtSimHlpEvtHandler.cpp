@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swWxGuiTestEvtSimHlpEvtHandler.cpp
+// Name:        test/CppGuiTest/GuiTestEvtSimHlpEvtHandler.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,10 +9,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swWxGuiTestEvtSimHlpEvtHandler.h"
+    #pragma implementation "GuiTestEvtSimHlpEvtHandler.h"
 #endif
 
-#include "swWxGuiTestEvtSimHlpEvtHandler.h"
+#include "GuiTestEvtSimHlpEvtHandler.h"
 
 #include <cppunit/TestAssert.h>
 
@@ -21,9 +21,9 @@
 #include <wx/spinctrl.h>
 #include <wx/notebook.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
+#include <wxGuiTest/GuiTestHelper.h>
 
-BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
+BEGIN_EVENT_TABLE(wxTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_MENU( XRCID("MenuItem"), WxGuiTestEvtSimHlpEvtHandler::OnMenuItem )
     EVT_MENU( XRCID("CheckableMenuItem"), WxGuiTestEvtSimHlpEvtHandler::OnCheckableMenuItem )
     EVT_BUTTON( XRCID("Button"), WxGuiTestEvtSimHlpEvtHandler::OnButtonClick )
@@ -40,7 +40,7 @@ BEGIN_EVENT_TABLE(swTst::WxGuiTestEvtSimHlpEvtHandler, wxEvtHandler)
     EVT_TOOL( XRCID("ToggleTool"), WxGuiTestEvtSimHlpEvtHandler::OnToggleCheckableTool )
 END_EVENT_TABLE()
 
-using namespace swTst;
+using namespace wxTst;
 
 
 WxGuiTestEvtSimHlpEvtHandler::WxGuiTestEvtSimHlpEvtHandler (wxFrame *frame) :

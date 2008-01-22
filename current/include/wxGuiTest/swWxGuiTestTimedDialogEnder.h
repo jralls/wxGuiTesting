@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestTimedDialogEnder.h
+// Name:        wxGuiTest/GuiTestTimedDialogEnder.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTTIMEDDIALOGENDER_H
-#define SWWXGUITESTTIMEDDIALOGENDER_H
+#ifndef WXGUITESTTIMEDDIALOGENDER_H
+#define WXGUITESTTIMEDDIALOGENDER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestTimedDialogEnder.h"
+    #pragma interface "GuiTestTimedDialogEnder.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestTimedDialogEnder
@@ -96,7 +96,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTTIMEDDIALOGENDER_H
+#endif // WXGUITESTTIMEDDIALOGENDER_H
 

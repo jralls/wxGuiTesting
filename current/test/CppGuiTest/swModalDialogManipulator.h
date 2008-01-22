@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swModalDialogManipulator.h
+// Name:        test/CppGuiTest/ModalDialogManipulator.h
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWMODALDIALOGMANIPULATOR_H
-#define SWMODALDIALOGMANIPULATOR_H
+#ifndef MODALDIALOGMANIPULATOR_H
+#define MODALDIALOGMANIPULATOR_H
 
 #ifdef __GNUG__
-    #pragma interface "swModalDialogManipulator.h"
+    #pragma interface "ModalDialogManipulator.h"
 #endif
 
-#include <wxGuiTest/swModalDialogInteractionInterface.h>
+#include <wxGuiTest/ModalDialogInteractionInterface.h>
 
 #include <wx/textctrl.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class ModalDialogManipulator
@@ -42,6 +42,6 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWMODALDIALOGMANIPULATOR_H
+#endif // MODALDIALOGMANIPULATOR_H

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swDirDialogManipulator.cpp
+// Name:        test/CppGuiTest/swDirDialogManipulator.cpp
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
@@ -14,7 +14,7 @@
 
 #include <wx/dirdlg.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 DirDialogManipulator::DirDialogManipulator (wxDirDialog *dialog)
@@ -30,4 +30,4 @@ void DirDialogManipulator::Execute ()
     //m_dialog->SetPath ("z:\\test");
 }
 
-} // End namespace swTst
+} // End namespace wxTst

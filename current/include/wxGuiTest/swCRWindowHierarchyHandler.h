@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCRWindowHierarchyHandler.h
+// Name:        wxGuiTest/CRWindowHierarchyHandler.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -8,11 +8,11 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRWINDOWHIERARCHYHANDLER_H
-#define SWCRWINDOWHIERARCHYHANDLER_H
+#ifndef CRWINDOWHIERARCHYHANDLER_H
+#define CRWINDOWHIERARCHYHANDLER_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRWindowHierarchyHandler.h"
+    #pragma interface "CRWindowHierarchyHandler.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -22,7 +22,7 @@
 
 
 
-namespace swTst {
+namespace wxTst {
 
 /*! \class CRWindowHierarchyHandler
     \brief Handles queries about window hierarchy allowing to uniquely
@@ -83,7 +83,7 @@ private:
     CRWindowHierarchyHandler & operator= (const CRWindowHierarchyHandler &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRWINDOWHIERARCHYHANDLER_H
+#endif // CRWINDOWHIERARCHYHANDLER_H
 

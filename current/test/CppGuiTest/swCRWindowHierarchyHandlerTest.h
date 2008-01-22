@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swCRWindowHierarchyHandlerTest.h
+// Name:        test/CppGuiTest/CRWindowHierarchyHandlerTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -8,16 +8,16 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRWINDOWHIERARCHYHANDLERTEST_H
-#define SWCRWINDOWHIERARCHYHANDLERTEST_H
+#ifndef CRWINDOWHIERARCHYHANDLERTEST_H
+#define CRWINDOWHIERARCHYHANDLERTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRWindowHierarchyHandlerTest.h"
+    #pragma interface "CRWindowHierarchyHandlerTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRWindowHierarchyHandlerTest
@@ -56,7 +56,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRWINDOWHIERARCHYHANDLERTEST_H
+#endif // CRWINDOWHIERARCHYHANDLERTEST_H
 

@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/swWxVtkInteractorEventRecorder.h
+// Name:        wxGuiTest/VtkWxGuiTesting/VtkInteractorEventRecorder.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXVTKINTERACTOREVENTRECORDER_H
-#define SWWXVTKINTERACTOREVENTRECORDER_H
+#ifndef WXVTKINTERACTOREVENTRECORDER_H
+#define WXVTKINTERACTOREVENTRECORDER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxVtkInteractorEventRecorder.h"
+    #pragma interface "VtkInteractorEventRecorder.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -23,7 +23,7 @@
 class wxVTKRenderWindowInteractor;
 class vtkCamera;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxVtkInteractorEventRecorder
@@ -185,6 +185,6 @@ private:
     WxVtkInteractorEventRecorder & operator= (const WxVtkInteractorEventRecorder &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXVTKINTERACTOREVENTRECORDER_H
+#endif // WXVTKINTERACTOREVENTRECORDER_H

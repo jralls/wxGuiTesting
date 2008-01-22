@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swCRWindowHierarchyHandlerTest.cpp
+// Name:        test/CppGuiTest/CRWindowHierarchyHandlerTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,18 +9,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCRWindowHierarchyHandlerTest.h"
+    #pragma implementation "CRWindowHierarchyHandlerTest.h"
 #endif
 
-#include "swCRWindowHierarchyHandlerTest.h"
+#include "CRWindowHierarchyHandlerTest.h"
 
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
-#include <wxGuiTest/swCRWindowHierarchyHandler.h>
+#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/CRWindowHierarchyHandler.h>
 
-using namespace swTst;
+using namespace wxTst;
 
 
 // Register test suite with special name in order to be identifiable as test

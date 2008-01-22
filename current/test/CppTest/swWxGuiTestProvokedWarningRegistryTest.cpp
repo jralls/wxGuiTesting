@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppTest/swWxGuiTestProvokedWarningRegistryTest.cpp
+// Name:        test/CppTest/GuiTestProvokedWarningRegistryTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,14 +7,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swWxGuiTestProvokedWarningRegistryTest.h"
+    #pragma implementation "GuiTestProvokedWarningRegistryTest.h"
 #endif
 
-#include "swWxGuiTestProvokedWarningRegistryTest.h"
+#include "GuiTestProvokedWarningRegistryTest.h"
 
-#include <wxGuiTest/swWxGuiTestProvokedWarningRegistry.h>
+#include <wxGuiTest/GuiTestProvokedWarningRegistry.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 // Register test suite:
@@ -35,10 +35,10 @@ void WxGuiTestProvokedWarningRegistryTest::tearDown ()
 
 void WxGuiTestProvokedWarningRegistryTest::testUnRegister ()
 {
-    swTst::WxGuiTestProvokedWarning warning (
+    wxTst::WxGuiTestProvokedWarning warning (
 	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
-    swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
-            swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
+    wxTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
+            wxTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
 
     CPPUNIT_ASSERT_MESSAGE ("Warning is not registered",
@@ -57,10 +57,10 @@ void WxGuiTestProvokedWarningRegistryTest::testUnRegister ()
 
 void WxGuiTestProvokedWarningRegistryTest::testTimeout ()
 {
-    swTst::WxGuiTestProvokedWarning warning (
+    wxTst::WxGuiTestProvokedWarning warning (
 	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
-    swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
-            swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
+    wxTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
+            wxTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
 
     CPPUNIT_ASSERT_MESSAGE ("Warning is not registered",
@@ -80,10 +80,10 @@ void WxGuiTestProvokedWarningRegistryTest::testTimeout ()
 
 void WxGuiTestProvokedWarningRegistryTest::testDetection ()
 {
-    swTst::WxGuiTestProvokedWarning warning (
+    wxTst::WxGuiTestProvokedWarning warning (
 	_("Direct CAD Voxelisation Warning"), _("bla"), 2);
-    swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
-            swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
+    wxTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
+            wxTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
 
     CPPUNIT_ASSERT_MESSAGE ("Warning is not registered",
@@ -103,13 +103,13 @@ void WxGuiTestProvokedWarningRegistryTest::testDetection ()
 
 void WxGuiTestProvokedWarningRegistryTest::testFinding ()
 {
-    swTst::WxGuiTestProvokedWarning warning (
+    wxTst::WxGuiTestProvokedWarning warning (
             _("Direct CAD Voxelisation Warning"), _T("bla"), 2);
-    swTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
-            swTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
+    wxTst::WxGuiTestProvokedWarningRegistry &provWarningRegistry =
+            wxTst::WxGuiTestProvokedWarningRegistry::GetInstance ();
     provWarningRegistry.RegisterWarning (warning);
 
-    const swTst::WxGuiTestProvokedWarning * knownWarning =
+    const wxTst::WxGuiTestProvokedWarning * knownWarning =
             provWarningRegistry.FindRegisteredWarning (
             _("Direct CAD Voxelisation Warning"), _T("bla"));
 
@@ -120,12 +120,12 @@ void WxGuiTestProvokedWarningRegistryTest::testFinding ()
     CPPUNIT_ASSERT_MESSAGE ("Warning was already detected",
             !provWarningRegistry.WasDetected (*knownWarning));
 
-    const swTst::WxGuiTestProvokedWarning * unknownWarning =
+    const wxTst::WxGuiTestProvokedWarning * unknownWarning =
             provWarningRegistry.FindRegisteredWarning (
             _("Unknown Direct CAD Voxelisation Warning"), _T("bla"));
 
     CPPUNIT_ASSERT_MESSAGE ("Warning was found",
             unknownWarning == NULL);
 }
-} // End namespace swTst
+} // End namespace wxTst
 

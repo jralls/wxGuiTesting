@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestProvokedWarning.h
+// Name:        wxGuiTest/GuiTestProvokedWarning.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTPROVOKEDWARNING_H
-#define SWWXGUITESTPROVOKEDWARNING_H
+#ifndef WXGUITESTPROVOKEDWARNING_H
+#define WXGUITESTPROVOKEDWARNING_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestProvokedWarning.h"
+    #pragma interface "GuiTestProvokedWarning.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
 #include <wx/datetime.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestProvokedWarning
@@ -86,7 +86,7 @@ private:
     WxGuiTestProvokedWarning & operator= (const WxGuiTestProvokedWarning &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTPROVOKEDWARNING_H
+#endif // WXGUITESTPROVOKEDWARNING_H
 

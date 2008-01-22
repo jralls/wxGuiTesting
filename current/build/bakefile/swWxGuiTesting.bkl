@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Name:        build/bakefile/swWxGuiTesting.bkl
+<!-- Name:        build/bakefile/wxGuiTesting.bkl
      Author:      John Ralls
      Created:     2007
      Copyright:   (c) 2007-2008 John Ralls
@@ -11,7 +11,7 @@
 
   <using module='datafiles'/>
 
-  <set var="VERSION">1.6.0</set>
+  <set var="VERSION">0.7.0</set>
 
   <if cond="FORMAT in ['autoconf', 'gnu']" >
   </if>
@@ -31,7 +31,7 @@
 	Path to pass in as base directory for filenames in the test
 	programs. Use forward slashes and "short filenames" if the
 	path has spaces.  For example,
-	/DOCUME~1/OWNER/MYDOCU~1/swWxGuiTesting An absolute path may
+	/DOCUME~1/OWNER/MYDOCU~1/wxGuiTesting An absolute path may
 	help the test programs to execute from more than one folder
       </description>
     </option>

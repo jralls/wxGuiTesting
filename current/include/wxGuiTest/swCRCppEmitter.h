@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCRCppEmitter.h
+// Name:        wxGuiTest/CRCppEmitter.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRCPPEMITTER_H
-#define SWCRCPPEMITTER_H
+#ifndef CRCPPEMITTER_H
+#define CRCPPEMITTER_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRCppEmitter.h"
+    #pragma interface "CRCppEmitter.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -20,7 +20,7 @@
 
 #include <wx/textfile.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRCppEmitter
@@ -232,7 +232,7 @@ private:
     CRCppEmitter & operator= (const CRCppEmitter &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRCPPEMITTER_H
+#endif // CRCPPEMITTER_H
 

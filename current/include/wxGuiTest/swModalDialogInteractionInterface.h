@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// $RCSfile: swModalDialogInteractionInterface.h,v $
+// $RCSfile: ModalDialogInteractionInterface.h,v $
 // Original Author/Owner: reinhold
 //
 // $Revision: 1.1 $ $Name:  $ $State: Exp $
@@ -8,14 +8,14 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWMODALDIALOGINTERACTIONINTERFACE_H
-#define SWMODALDIALOGINTERACTIONINTERFACE_H
+#ifndef MODALDIALOGINTERACTIONINTERFACE_H
+#define MODALDIALOGINTERACTIONINTERFACE_H
 
 #ifdef __GNUG__
-//    #pragma interface "swModalDialogInteractionInterface.h"
+//    #pragma interface "ModalDialogInteractionInterface.h"
 #endif
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class ModalDialogInteractionInterface
@@ -33,6 +33,6 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWMODALDIALOGINTERACTIONINTERFACE_H
+#endif // MODALDIALOGINTERACTIONINTERFACE_H

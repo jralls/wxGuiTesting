@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.h
+// Name:        wxGuiTest/GuiTestProvokedWarningRegistry.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -8,20 +8,20 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTPROVOKEDWARNINGREGISTRY_H
-#define SWWXGUITESTPROVOKEDWARNINGREGISTRY_H
+#ifndef WXGUITESTPROVOKEDWARNINGREGISTRY_H
+#define WXGUITESTPROVOKEDWARNINGREGISTRY_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestProvokedWarningRegistry.h"
+    #pragma interface "GuiTestProvokedWarningRegistry.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
 #include <map>
 
-#include <wxGuiTest/swWxGuiTestProvokedWarning.h>
+#include <wxGuiTest/GuiTestProvokedWarning.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestProvokedWarningRegistry
@@ -125,7 +125,7 @@ private:
     WxGuiTestProvokedWarningRegistry & operator= (const WxGuiTestProvokedWarningRegistry &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTPROVOKEDWARNINGREGISTRY_H
+#endif // WXGUITESTPROVOKEDWARNINGREGISTRY_H
 

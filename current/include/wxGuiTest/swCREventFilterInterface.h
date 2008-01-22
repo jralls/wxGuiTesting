@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCREventFilterInterface.h
+// Name:        wxGuiTest/CREventFilterInterface.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCREVENTFILTERINTERFACE_H
-#define SWCREVENTFILTERINTERFACE_H
+#ifndef CREVENTFILTERINTERFACE_H
+#define CREVENTFILTERINTERFACE_H
 
 #ifdef __GNUG__
-//    #pragma interface "swCREventFilterInterface.h"
+//    #pragma interface "CREventFilterInterface.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CREventFilterInterface
@@ -39,7 +39,7 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCREVENTFILTERINTERFACE_H
+#endif // CREVENTFILTERINTERFACE_H
 

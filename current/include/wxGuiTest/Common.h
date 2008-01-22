@@ -6,7 +6,7 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifdef __WXMSW__
+#ifdef __WXM__
 #pragma warning (disable:4018)
 #pragma warning (disable:4273)
 #pragma warning (disable:4284)

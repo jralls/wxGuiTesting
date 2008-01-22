@@ -18,12 +18,12 @@
 #include <wx/frame.h>
 #include <wx/treectrl.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
-#include <wxGuiTest/swCREventCaptureManager.h>
-#include <wxGuiTest/swCRCppEmitter.h>
+#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/GuiTestTimedDialogEnder.h>
+#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/CREventCaptureManager.h>
+#include <wxGuiTest/CRCppEmitter.h>
 
 #include <wx/notebook.h>
 #include <wx/spinctrl.h>
@@ -36,7 +36,7 @@ namespace {
     const int LINE_NMB = 1;
 }
 
-using namespace swTst;
+using namespace wxTst;
 
 
 // Register test suite with special name in order to be identifiable as test
@@ -128,9 +128,9 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem ()
             checkableMenuItemMenuItem != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    swTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     END
 }
 
@@ -161,9 +161,9 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem2 (
             menuMenu != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    swTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, menuMenu);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     END
 }
 

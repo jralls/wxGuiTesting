@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCRLogInterface.h
+// Name:        wxGuiTest/CRLogInterface.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRLOGINTERFACE_H
-#define SWCRLOGINTERFACE_H
+#ifndef CRLOGINTERFACE_H
+#define CRLOGINTERFACE_H
 
 #ifdef __GNUG__
-//    #pragma interface "swCRLogInterface.h"
+//    #pragma interface "CRLogInterface.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRLogInterface
@@ -35,7 +35,7 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRLOGINTERFACE_H
+#endif // CRLOGINTERFACE_H
 

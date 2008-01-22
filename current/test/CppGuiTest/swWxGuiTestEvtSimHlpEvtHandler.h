@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swWxGuiTestEvtSimHlpEvtHandler.h
+// Name:        test/CppGuiTest/GuiTestEvtSimHlpEvtHandler.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -8,11 +8,11 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTEVTSIMHLPEVTHANDLER_H
-#define SWWXGUITESTEVTSIMHLPEVTHANDLER_H
+#ifndef WXGUITESTEVTSIMHLPEVTHANDLER_H
+#define WXGUITESTEVTSIMHLPEVTHANDLER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestEvtSimHlpEvtHandler.h"
+    #pragma interface "GuiTestEvtSimHlpEvtHandler.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -22,7 +22,7 @@
 class wxSpinEvent;
 class wxNotebookEvent;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestEvtSimHlpEvtHandler
@@ -180,7 +180,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTEVTSIMHLPEVTHANDLER_H
+#endif // WXGUITESTEVTSIMHLPEVTHANDLER_H
 

@@ -1,25 +1,25 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCREventCaptureManager.h
+// Name:        wxGuiTest/CREventCaptureManager.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCREVENTCAPTUREMANAGER_H
-#define SWCREVENTCAPTUREMANAGER_H
+#ifndef CREVENTCAPTUREMANAGER_H
+#define CREVENTCAPTUREMANAGER_H
 
 #ifdef __GNUG__
-    #pragma interface "swCREventCaptureManager.h"
+    #pragma interface "CREventCaptureManager.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
 #include <list>
 
-#include <wxGuiTest/swCREventFilterInterface.h>
+#include <wxGuiTest/CREventFilterInterface.h>
 
-namespace swTst {
+namespace wxTst {
 
 class CRLogInterface;
 class CRCapturedEvent;
@@ -177,7 +177,7 @@ private:
     CREventCaptureManager & operator= (const CREventCaptureManager &rhs);
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCREVENTCAPTUREMANAGER_H
+#endif // CREVENTCAPTUREMANAGER_H
 

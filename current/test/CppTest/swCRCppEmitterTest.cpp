@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppTest/swCRCppEmitterTest.cpp
+// Name:        test/CppTest/CRCppEmitterTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,18 +7,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCRCppEmitterTest.h"
+    #pragma implementation "CRCppEmitterTest.h"
 #endif
 
-#include "swCRCppEmitterTest.h"
+#include "CRCppEmitterTest.h"
 
-#include <wxGuiTest/swCRCppEmitter.h>
+#include <wxGuiTest/CRCppEmitter.h>
 
 namespace {
   const wxString testSrcDir(_T(TESTSRCDIR));
 }
 
-namespace swTst {
+namespace wxTst {
 
 
 // Register test suite:
@@ -39,7 +39,7 @@ void CRCppEmitterTest::tearDown ()
 
 void CRCppEmitterTest::testExample ()
 {
-  wxString filename(testSrcDir + wxString(_T("/swCRCaptureTest.cpp")));
+  wxString filename(testSrcDir + wxString(_T("/CRCaptureTest.cpp")));
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
     CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);
@@ -86,7 +86,7 @@ void CRCppEmitterTest::testExample ()
 
 void CRCppEmitterTest::testMakeVarName()
 {
-  wxString filename(testSrcDir+ wxString(_T("/swCRCaptureTest.cpp")));
+  wxString filename(testSrcDir+ wxString(_T("/CRCaptureTest.cpp")));
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
     CPPUNIT_ASSERT_MESSAGE ("No emitter returned", emitter != NULL);
@@ -115,5 +115,5 @@ void CRCppEmitterTest::checkEmittedCode(const wxString &captureFilename,
 }
 
 
-} // End namespace swTst
+} // End namespace wxTst
 

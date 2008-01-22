@@ -1,23 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/VtkWxGuiTesting/CppTest/swCRVtkCaptureTest.h
+// Name:        test/VtkWxGuiTesting/CppTest/CRVtkCaptureTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRVTKCAPTURETEST_H
-#define SWCRVTKCAPTURETEST_H
+#ifndef CRVTKCAPTURETEST_H
+#define CRVTKCAPTURETEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRVtkCaptureTest.h"
+    #pragma interface "CRVtkCaptureTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
 class wxVTKRenderWindowInteractor;
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRVtkCaptureTest
@@ -61,7 +61,7 @@ private:
     wxVTKRenderWindowInteractor *m_iren1, *m_iren2;
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRVTKCAPTURETEST_H
+#endif // CRVTKCAPTURETEST_H
 

@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swCRCaptureControl.h
+// Name:        wxGuiTest/CRCaptureControl.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCRCAPTURECONTROL_H
-#define SWCRCAPTURECONTROL_H
+#ifndef CRCAPTURECONTROL_H
+#define CRCAPTURECONTROL_H
 
 #ifdef __GNUG__
-    #pragma interface "swCRCaptureControl.h"
+    #pragma interface "CRCaptureControl.h"
 #endif
 
 #include <wxGuiTest/Common.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CRCaptureControl
@@ -99,7 +99,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCRCAPTURECONTROL_H
+#endif // CRCAPTURECONTROL_H
 

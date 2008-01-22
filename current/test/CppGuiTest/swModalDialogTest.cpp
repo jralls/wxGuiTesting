@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/swModalDialogTest.cpp
+// Name:        test/CppGuiTest/ModalDialogTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
@@ -9,24 +9,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swModalDialogTest.h"
+    #pragma implementation "ModalDialogTest.h"
 #endif
 
-#include "swModalDialogTest.h"
+#include "ModalDialogTest.h"
 
 #include <wx/dialog.h>
 #include <wx/textctrl.h>
 #include <wx/sizer.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swModalDialogTimer.h>
+#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/ModalDialogTimer.h>
 
-#include "swModalDialogManipulator.h"
+#include "ModalDialogManipulator.h"
 #include "swDirDialogManipulator.h"
 
 
-using namespace swTst;
+using namespace wxTst;
 
 
 // Register test suite with special name in order to be identifiable as test

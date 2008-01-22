@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swWxGuiTestEventSimulationHelper.h
+// Name:        wxGuiTest/GuiTestEventSimulationHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTEVENTSIMULATIONHELPER_H
-#define SWWXGUITESTEVENTSIMULATIONHELPER_H
+#ifndef WXGUITESTEVENTSIMULATIONHELPER_H
+#define WXGUITESTEVENTSIMULATIONHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "swWxGuiTestEventSimulationHelper.h"
+    #pragma interface "GuiTestEventSimulationHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -25,7 +25,7 @@ class wxNotebook;
 //     class SpinCtrlDouble;
 // }
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class WxGuiTestEventSimulationHelper
@@ -140,7 +140,7 @@ public:
     /*! \fn static void SelectTreeItem (const wxTreeItemId &id, wxTreeCtrl *treeCtrl)
         \brief Select a tree item.
 
-        Note: Under MSW the event is fired twice!
+        Note: Under M the event is fired twice!
 
         \param id id of tree item to select
         \param treeCtrl tree control owning the tree item (= parent of tree item)
@@ -257,7 +257,7 @@ private:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWWXGUITESTEVENTSIMULATIONHELPER_H
+#endif // WXGUITESTEVENTSIMULATIONHELPER_H
 

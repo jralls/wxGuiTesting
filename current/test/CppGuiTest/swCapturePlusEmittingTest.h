@@ -8,8 +8,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWCAPTUREPLUSEMITTINGTEST_H
-#define SWCAPTUREPLUSEMITTINGTEST_H
+#ifndef CAPTUREPLUSEMITTINGTEST_H
+#define CAPTUREPLUSEMITTINGTEST_H
 
 #ifdef __GNUG__
     #pragma interface "swCapturePlusEmittingTest.h"
@@ -17,9 +17,9 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include <wxGuiTest/swWxGuiTestApp.h>
+#include <wxGuiTest/GuiTestApp.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class CapturePlusEmittingTest
@@ -60,7 +60,7 @@ public:
 
     /*! \fn virtual void testSelectAndCheckTopLevelWindowMenuBarMenuItem2 ()
         \brief Test select and check menu item from top level window menu bar,
-        whereas the event object is not the top level frame (like under wxMSW),
+        whereas the event object is not the top level frame (like under wxM),
         but the menu (like under wxGTK until v2.8.6 and wxMac).
     */
     virtual void testSelectAndCheckTopLevelWindowMenuBarMenuItem2 ();
@@ -87,6 +87,6 @@ protected:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWCAPTUREPLUSEMITTINGTEST_H
+#endif // CAPTUREPLUSEMITTINGTEST_H

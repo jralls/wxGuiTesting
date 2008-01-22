@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppTest/swCRXRCReaderTest.cpp
+// Name:        test/CppTest/CRXRCReaderTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,19 +7,19 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "swCRXRCReaderTest.h"
+    #pragma implementation "CRXRCReaderTest.h"
 #endif
 
-#include "swCRXRCReaderTest.h"
+#include "CRXRCReaderTest.h"
 
 #include <iostream>
 
-#include <Exception/swWxLogicErrorException.h>
+#include <Exception/LogicErrorException.h>
 
-#include <swCRXRCReader.h>
+#include <CRXRCReader.h>
 
 
-namespace swTst {
+namespace wxTst {
 
 
 // Register test suite:
@@ -57,9 +57,9 @@ void CRXRCReaderTest::testReadingXRC ()
 {
     const wxString xrcDir(_T(XRCDIR));
     wxString xrcFilename = xrcDir + _T("/CapturePanel_wdr.xrc");
-    swTst::CRXRCReader *reader;
+    wxTst::CRXRCReader *reader;
     try {
-	reader = new swTst::CRXRCReader (xrcFilename);
+	reader = new wxTst::CRXRCReader (xrcFilename);
     }
     catch(sw::WxLogicErrorException& e) {
 	std::string message("testReadingXRC: Constructor threw ");
@@ -67,7 +67,7 @@ void CRXRCReaderTest::testReadingXRC ()
 	message += std::string(xrcFilename.char_str());
 	CPPUNIT_FAIL(message);
     } 
-    swTst::CRXRCNodePtr xrcResource = reader->GetResource ();
+    wxTst::CRXRCNodePtr xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
@@ -75,7 +75,7 @@ void CRXRCReaderTest::testReadingXRC ()
 
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have one child", 1 == xrcResource->GetNmbChildren ());
     // wxPanel
-    swTst::CRXRCNodePtr node = xrcResource->GetChild (0);
+    wxTst::CRXRCNodePtr node = xrcResource->GetChild (0);
     CPPUNIT_ASSERT_MESSAGE ("Node is NULL", node != NULL);
     CPPUNIT_ASSERT_MESSAGE ("Node must have one child", 1 == node->GetNmbChildren ());
     // wxBoxSizer
@@ -98,9 +98,9 @@ void CRXRCReaderTest::testReadingXRC ()
 void CRXRCReaderTest::testResPathReadingXRC ()
 {
     wxString xrcPath = _T(XRCDIR) _T("/EvtSimHlpTest_wdr.xrc");
-    swTst::CRXRCReader *reader;
+    wxTst::CRXRCReader *reader;
     try {
-	reader = new swTst::CRXRCReader (xrcPath);
+	reader = new wxTst::CRXRCReader (xrcPath);
     }
     catch(sw::WxLogicErrorException& e) {
 	std::string message("testReadingXRC: Constructor threw ");
@@ -109,7 +109,7 @@ void CRXRCReaderTest::testResPathReadingXRC ()
 	CPPUNIT_FAIL(message);
     } 
 
-    swTst::CRXRCNodePtr xrcResource = reader->GetResource ();
+    wxTst::CRXRCNodePtr xrcResource = reader->GetResource ();
     CPPUNIT_ASSERT_MESSAGE ("XRC resource is NULL", xrcResource != NULL);
     const wxString resName = xrcResource->GetName ();
     CPPUNIT_ASSERT_MESSAGE ("First element of XRC resource is not <resource>", 
@@ -118,5 +118,5 @@ void CRXRCReaderTest::testResPathReadingXRC ()
     CPPUNIT_ASSERT_MESSAGE ("XRC resource must have three children", 3 == xrcResource->GetNmbChildren ());
 }
 
-} // End namespace swTst
+} // End namespace wxTst
 

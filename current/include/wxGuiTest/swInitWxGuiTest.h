@@ -1,21 +1,21 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/swInitWxGuiTest.h
+// Name:        wxGuiTest/InitWxGuiTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWINITWXGUITEST_H
-#define SWINITWXGUITEST_H
+#ifndef INITWXGUITEST_H
+#define INITWXGUITEST_H
 
 #ifdef __GNUG__
-    #pragma interface "swInitWxGuiTest.h"
+    #pragma interface "InitWxGuiTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
 
-namespace swTst {
+namespace wxTst {
 
 
 /*! \class InitWxGuiTest
@@ -76,7 +76,7 @@ public:
 
 };
 
-} // End namespace swTst
+} // End namespace wxTst
 
-#endif // SWINITWXGUITEST_H
+#endif // INITWXGUITEST_H
 
