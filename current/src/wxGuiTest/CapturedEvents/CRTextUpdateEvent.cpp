@@ -18,7 +18,7 @@
 
 #include <wxGuiTest/CRWindowHierarchyHandler.h>
 #include <wxGuiTest/CRCppEmitter.h>
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
 
 
 using namespace wxTst;
@@ -58,7 +58,7 @@ void CRTextUpdateEvent::Process (CRCapturedEvent **pendingEvt)
     if (wdwEvtObject->GetParent () != NULL
 	&& wdwEvtObject->IsKindOf (CLASSINFO(wxSpinCtrl))) {
         
-	if (!WxGuiTestEventSimulationHelper::IsSettingSpinCtrlValue ()) {
+	if (!EventSimulationHelper::IsSettingSpinCtrlValue ()) {
 
 	    m_isIrrelevant = true;
 	    // Standard wxSpinCtrl do NOT trigger a spin control event when
@@ -66,7 +66,7 @@ void CRTextUpdateEvent::Process (CRCapturedEvent **pendingEvt)
 	    // control update event:
 	    wxSpinCtrl *spinCtrl = wxDynamicCast (wdwEvtObject, wxSpinCtrl);
 	    wxASSERT (spinCtrl != NULL);
-	    WxGuiTestEventSimulationHelper::SetSpinCtrlValue(spinCtrl,
+	    EventSimulationHelper::SetSpinCtrlValue(spinCtrl,
 						     spinCtrl->GetValue());
 	}
 	return;
@@ -118,9 +118,9 @@ void CRTextUpdateEvent::EmitCpp ()
     wxTextCtrl *textCtrl = wxDynamicCast (textCtrlWdw, wxTextCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for text control 'TextCtrl' \
             failed", textCtrl != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (textCtrl,
+    wxTst::EventSimulationHelper::SetTextCtrlValue (textCtrl,
             "abc");
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -164,13 +164,13 @@ void CRTextUpdateEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (") 
+    str << _T("wxTst::EventSimulationHelper::SetTextCtrlValue (") 
 	<< textCtrlVarName << _T(", _T(\"") << this->GetEscaped (m_textCtrlValue)
 	<< _T("\"));");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

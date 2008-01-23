@@ -17,7 +17,7 @@
 #include <wx/xrc/xmlres.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include <wxGuiTest/VtkwxGuiTest/VtkWxGuiTestHelper.h>
+#include <wxGuiTest/VtkwxGuiTest/VtkGuiTestHelper.h>
 #include <wxGuiTest/VtkwxGuiTest/VtkInteractorEventRecorder.h>
 #include <wxGuiTest/CRCppEmitter.h>
 
@@ -45,9 +45,9 @@ CRVtkCaptureControl::~CRVtkCaptureControl ()
 
 void CRVtkCaptureControl::OnResetWxVtkRecording (wxCommandEvent &event)
 {
-    VtkWxGuiTestHelper::RecorderMap::iterator it;
-    VtkWxGuiTestHelper::RecorderMap &recorders =
-            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
+    VtkGuiTestHelper::RecorderMap::iterator it;
+    VtkGuiTestHelper::RecorderMap &recorders =
+            VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
     
     for (it = recorders.begin (); it != recorders.end (); it++) {
 
@@ -58,9 +58,9 @@ void CRVtkCaptureControl::OnResetWxVtkRecording (wxCommandEvent &event)
 
 void CRVtkCaptureControl::OnStartWxVtkRecording (wxCommandEvent &event)
 {
-    VtkWxGuiTestHelper::RecorderMap::iterator it;
-    VtkWxGuiTestHelper::RecorderMap &recorders =
-            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
+    VtkGuiTestHelper::RecorderMap::iterator it;
+    VtkGuiTestHelper::RecorderMap &recorders =
+            VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
     
     for (it = recorders.begin (); it != recorders.end (); it++) {
 
@@ -72,12 +72,12 @@ void CRVtkCaptureControl::OnStartWxVtkRecording (wxCommandEvent &event)
 
 void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
 {
-    VtkWxGuiTestHelper::RecorderMap &recorders =
-            VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
+    VtkGuiTestHelper::RecorderMap &recorders =
+            VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
 
-    VtkWxGuiTestHelper::RecorderMap::iterator it;
+    VtkGuiTestHelper::RecorderMap::iterator it;
     for (it = recorders.begin (); it != recorders.end (); it++) {
 
         WxVtkInteractorEventRecorder *wxVtkRec = (*it).second;
@@ -88,7 +88,7 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
 
             /*
             wxTst::WxVtkInteractorEventRecorder *multiRecorder =
-                    wxTst::VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder ("Multi");
+                    wxTst::VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorder ("Multi");
 
             std::stack< wxWindow *, std::list< wxWindow * > > wdwStack;
             wxWindow *wdw = NULL;
@@ -137,7 +137,7 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
             wxString recorderVarName = emitter->MakeVarName ((*it).first, _T("Recorder"));
 
             str << _T("wxTst::WxVtkInteractorEventRecorder *") << recorderVarName <<
-                    _T(" = wxTst::VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T(\"") <<
+                    _T(" = wxTst::VtkGuiTestHelper::GetInstance ()->GetWxVtkRecorder (_T(\"") <<
                     (*it).first << _T("\"));");
             emitter->AddCode (str);
 

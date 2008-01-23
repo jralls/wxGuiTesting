@@ -68,9 +68,9 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     wxTreeItemId treeItemId1 = sw::TreeCtrl::GetNthChild (treeCtrl, 2, rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId1.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::SelectTreeItem (treeItemId1,
+    wxTst::EventSimulationHelper::SelectTreeItem (treeItemId1,
             treeCtrl);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -137,7 +137,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
 
         str.Clear ();
         str << _T("wxTreeItemId ") << curTreeItemIdVarName 
-	    << _T(" = wxTst::WxGuiTestEventSimulationHelper::GetNthTreeChild (") 
+	    << _T(" = wxTst::EventSimulationHelper::GetNthTreeChild (") 
 	    << treeCtrlVarName << _T(", ") << (*it) << _T(", ") 
 	    << parentItemIdVarName << _T(");");
         emitter->AddCode (str);
@@ -151,12 +151,12 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     }
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectTreeItem (") <<
+    str << _T("wxTst::EventSimulationHelper::SelectTreeItem (") <<
             parentItemIdVarName << _T(", ") << treeCtrlVarName << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

@@ -70,9 +70,9 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
             radioBox != NULL);
     const wxString radioBoxSelectionText (_("Radio2"));
     int radioBoxSelection = radioBox->FindString (radioBoxSelectionText);
-    wxTst::WxGuiTestEventSimulationHelper::SelectRadioBoxItem (radioBox,
+    wxTst::EventSimulationHelper::SelectRadioBoxItem (radioBox,
             radioBoxSelection);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -132,12 +132,12 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectRadioBoxItem (") <<
+    str << _T("wxTst::EventSimulationHelper::SelectRadioBoxItem (") <<
             radioBoxVarName << _T(", ") << radioBoxSelVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

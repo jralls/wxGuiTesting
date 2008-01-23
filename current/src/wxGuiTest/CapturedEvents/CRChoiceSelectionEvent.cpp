@@ -71,9 +71,9 @@ void CRChoiceSelectionEvent::EmitCpp ()
             choice != NULL);
     const wxString choiceSelectionText (_("Item2"));
     int choiceSelection = choice->FindString (choiceSelectionText);
-    wxTst::WxGuiTestEventSimulationHelper::SelectChoiceItem (choice,
+    wxTst::EventSimulationHelper::SelectChoiceItem (choice,
             choiceSelection);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -130,12 +130,12 @@ void CRChoiceSelectionEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectChoiceItem (") <<
+    str << _T("wxTst::EventSimulationHelper::SelectChoiceItem (") <<
             choiceVarName << _T(", ") << choiceSelVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

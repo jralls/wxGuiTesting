@@ -89,9 +89,9 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
             SpinCtrlDouble);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for spin control 'SpinCtrlDbl' \
             failed", spinCtrlDbl != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
+    wxTst::EventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
             spinCtrlDbl, 0.6);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -135,12 +135,12 @@ void CRSpinCtrlUpdateEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SetSpinCtrlValue (") <<
+    str << _T("wxTst::EventSimulationHelper::SetSpinCtrlValue (") <<
 	spinCtrlVarName << _T(", ") << m_spinCtrlValue << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

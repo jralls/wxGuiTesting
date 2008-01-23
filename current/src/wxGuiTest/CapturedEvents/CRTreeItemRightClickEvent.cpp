@@ -69,9 +69,9 @@ void CRTreeItemRightClickEvent::EmitCpp ()
     wxTreeItemId treeItemId1 = sw::TreeCtrl::GetNthChild (treeCtrl, 2, rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId1.IsOk (
             ));
-    wxTst::WxGuiTestEventSimulationHelper::RightClickTreeItem (treeItemId1,
+    wxTst::EventSimulationHelper::RightClickTreeItem (treeItemId1,
             treeCtrl);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -158,12 +158,12 @@ void CRTreeItemRightClickEvent::EmitCpp ()
     }
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::RightClickTreeItem (") <<
+    str << _T("wxTst::EventSimulationHelper::RightClickTreeItem (") <<
             parentItemIdVarName << _T(", ") << treeCtrlVarName << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

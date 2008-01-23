@@ -99,9 +99,9 @@ void CRNotebookPageChangeEvent::EmitCpp ()
     }
     CPPUNIT_ASSERT_MESSAGE ("Page of notebook 'Notebook' not found",
             notebookPage < notebook->GetPageCount ());
-    wxTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (notebook,
+    wxTst::EventSimulationHelper::SelectNotebookPage (notebook,
             notebookPage);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
@@ -160,12 +160,12 @@ void CRNotebookPageChangeEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (") <<
+    str << _T("wxTst::EventSimulationHelper::SelectNotebookPage (") <<
             notebookVarName << _T(", ") << pageVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

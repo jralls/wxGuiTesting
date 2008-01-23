@@ -88,8 +88,8 @@ void CRSliderUpdateEvent::EmitCpp ()
     wxSlider *slider = wxDynamicCast (sliderWdw, wxSlider);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for slider 'Slider' failed",
             slider != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetSliderValue (slider, 30);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetSliderValue (slider, 30);
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -131,11 +131,11 @@ void CRSliderUpdateEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SetSliderValue (") <<
+    str << _T("wxTst::EventSimulationHelper::SetSliderValue (") <<
             sliderVarName << _T(", ") << m_sliderValue << _T(");");
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }

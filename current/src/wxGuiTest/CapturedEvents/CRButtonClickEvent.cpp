@@ -57,9 +57,9 @@ void CRButtonClickEvent::EmitCpp ()
     wxWindow *buttonWdw = evtSimHlpTestPanel->FindWindow (XRCID("Button"));
     CPPUNIT_ASSERT_MESSAGE ("Window for button 'Button' not found", buttonWdw
             != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::ClickButton (buttonWdw->GetId (),
+    wxTst::EventSimulationHelper::ClickButton (buttonWdw->GetId (),
             buttonWdw);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -87,12 +87,12 @@ void CRButtonClickEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::ClickButton (") <<
+    str << _T("wxTst::EventSimulationHelper::ClickButton (") <<
             buttonWdwVarName << _T("->GetId (), ") << buttonWdwVarName << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

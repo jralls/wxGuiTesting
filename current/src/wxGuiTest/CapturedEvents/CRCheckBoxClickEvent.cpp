@@ -66,8 +66,8 @@ void CRCheckBoxClickEvent::EmitCpp ()
     wxCheckBox *checkbox = wxDynamicCast (checkboxWdw, wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'Checkbox' \
             failed", checkbox != NULL);
-    wxTst::WxGuiTestEventSimulationHelper::SetCheckboxState (checkbox, true);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetCheckboxState (checkbox, true);
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -109,12 +109,12 @@ void CRCheckBoxClickEvent::EmitCpp ()
 
     wxString isCheckedBoolStr = m_isChecked ? _T("true") : _T("false");
     str.Clear ();
-    str << _T("wxTst::WxGuiTestEventSimulationHelper::SetCheckboxState (") <<
+    str << _T("wxTst::EventSimulationHelper::SetCheckboxState (") <<
             checkBoxVarName << _T(", ") << isCheckedBoolStr << _T(");");
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

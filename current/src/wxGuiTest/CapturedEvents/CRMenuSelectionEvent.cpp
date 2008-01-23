@@ -126,7 +126,7 @@ bool CRMenuSelectionEvent::processPopUp (wxMenu* menu) {
 //
 //    menu = menu->GetParent ();
 //}
-    m_popupMenuKey = WxGuiTestHelper::FindPopupMenuKey (menu);
+    m_popupMenuKey = GuiTestHelper::FindPopupMenuKey (menu);
     if (m_popupMenuKey.IsEmpty ())
 	return false;
 
@@ -138,7 +138,7 @@ bool CRMenuSelectionEvent::processPopUp (wxMenu* menu) {
 
     // Find container for m_event->GetEventObject() to be used for
     //  event handling parent?
-    wxWindow *evtHandlerWdw = WxGuiTestHelper::FindPopupMenuEvtHandlerWdw (m_popupMenuKey);
+    wxWindow *evtHandlerWdw = GuiTestHelper::FindPopupMenuEvtHandlerWdw (m_popupMenuKey);
     wxASSERT (evtHandlerWdw != NULL);
 
     CRWindowHierarchyHandler *hierarchy = CRWindowHierarchyHandler::GetInstance ();
@@ -251,23 +251,23 @@ void CRMenuSelectionEvent::EmitCpp ()
             menuMenu != NULL);
     // Check if checkable menu item is not already checked?
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
-    wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+    wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, menuMenu);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
 
     // (3) Menu item is part of a pop-up menu:
     /*
-    wxMenu *popupMenu = wxTst::WxGuiTestHelper::FindPopupMenu (
+    wxMenu *popupMenu = wxTst::GuiTestHelper::FindPopupMenu (
             "sccDatasetBrowserPopupMenu");
     CPPUNIT_ASSERT_MESSAGE ("Pop-up menu not found", popupMenu != NULL);    
     int selectMenuItemId = popupMenu->FindItem (_("Select"));
     CPPUNIT_ASSERT_MESSAGE ("Select menu item ID not found",
             selectMenuItemId != wxNOT_FOUND);
 
-    wxTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             selectMenuItemId, dsTreeCtrl);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
 
     // (A) + (1) Checkable menu item is part of main frame menubar:
@@ -281,9 +281,9 @@ void CRMenuSelectionEvent::EmitCpp ()
             dsBrowserMenuItem != NULL);
     if (!dsBrowserMenuItem->IsChecked ()) {
 
-        wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (
+        wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
                 dsBrowserMenuItemId, mainFrame);
-        wxTst::WxGuiTestHelper::FlushEventQueue ();
+        wxTst::GuiTestHelper::FlushEventQueue ();
     }
     */
 
@@ -295,7 +295,7 @@ void CRMenuSelectionEvent::EmitCpp ()
             toolBar != NULL);
     // (a) Standard tool IDs (wxID_LOWEST < stdID < wxID_HIGHEST) don't need to be
     // looked up:
-    wxTst::WxGuiTestEventSimulationHelper::ToggleTool (m_event->GetId (),
+    wxTst::EventSimulationHelper::ToggleTool (m_event->GetId (),
             m_isChecked, toolBar, toolBar);
     // (b) others should be registered in the GuiObjectManager:
     sw::GuiObject *guiObject = sw::GuiObjectManager::GetInstance ()->
@@ -307,9 +307,9 @@ void CRMenuSelectionEvent::EmitCpp ()
     CPPUNIT_ASSERT_MESSAGE ("GuiObject 'GuiObjectName' is not a ToolGuiObject",
             toolGuiObject != NULL);
     int toolId = sw::GuiObjectManager::GetInstance ()->FindId (toolGuiObject);
-    wxTst::WxGuiTestEventSimulationHelper::ToggleTool (toolId, m_isChecked,
+    wxTst::EventSimulationHelper::ToggleTool (toolId, m_isChecked,
             toolBar, toolBar);
-    wxTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::GuiTestHelper::FlushEventQueue ();
     */
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
@@ -346,7 +346,7 @@ void CRMenuSelectionEvent::EmitCpp ()
                     _T("PopupMenu"));
             str.Clear ();
             str << _T("wxMenu *") << menuItemContVarName <<
-                    _T(" = wxTst::WxGuiTestHelper::FindPopupMenu (\"") <<
+                    _T(" = wxTst::GuiTestHelper::FindPopupMenu (\"") <<
                     m_popupMenuKey << _T("\");");
             emitter->AddCode (str);
 
@@ -460,12 +460,12 @@ void CRMenuSelectionEvent::EmitCpp ()
             str.Clear ();
             if (!m_eventObjectIsMenu) {
 
-                str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (") <<
+                str << _T("wxTst::EventSimulationHelper::SelectAndCheckMenuItem (") <<
                         menuItemIdVarName << _T(", ") << eventHdlVarName << _T(");");
 
             } else { //!m_eventObjectIsMenu
 
-                str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (") <<
+                str << _T("wxTst::EventSimulationHelper::SelectAndCheckMenuItem (") <<
                         menuItemIdVarName << _T(", ") << menuVarName << _T(");");
             }
             emitter->AddCode (str);
@@ -473,7 +473,7 @@ void CRMenuSelectionEvent::EmitCpp ()
         } else { //m_isChecked
 
             str.Clear ();
-            str << _T("wxTst::WxGuiTestEventSimulationHelper::SelectMenuItem (") 
+            str << _T("wxTst::EventSimulationHelper::SelectMenuItem (") 
                     << menuItemIdVarName << _T(", ") << eventHdlVarName << _T(");");
             emitter->AddCode (str);
         }
@@ -521,7 +521,7 @@ void CRMenuSelectionEvent::EmitCpp ()
 
 	str.Clear ();
 	if (!m_isControl) {
-	    str << _T("wxTst::WxGuiTestEventSimulationHelper::ToggleTool(") 
+	    str << _T("wxTst::EventSimulationHelper::ToggleTool(") 
 		<< m_event->GetId () << _T(", ") << isCheckedBoolStr 
 		<< _T(", ") << toolBarVarName << _T(", ") << containerVarName 
 		<< _T(");");
@@ -530,7 +530,7 @@ void CRMenuSelectionEvent::EmitCpp ()
 
     }
     str.Clear ();
-    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 
