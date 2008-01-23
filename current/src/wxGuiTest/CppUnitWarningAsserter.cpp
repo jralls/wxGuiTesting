@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestCppUnitWarningAsserter.cpp
+// Name:        wxGuiTest/CppUnitWarningAsserter.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,17 +7,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestCppUnitWarningAsserter.h"
+    #pragma implementation "CppUnitWarningAsserter.h"
 #endif
 
-#include <wxGuiTest/GuiTestCppUnitWarningAsserter.h>
+#include <wxGuiTest/CppUnitWarningAsserter.h>
 
 #include <cppunit/Asserter.h>
 
 namespace wxTst {
 
 
-void WxGuiTestCppUnitWarningAsserter::FailAssert (const wxString &file,
+void CppUnitWarningAsserter::FailAssert (const wxString &file,
         const int line, const wxString &shortDescription,
         const wxString &message) const
 {

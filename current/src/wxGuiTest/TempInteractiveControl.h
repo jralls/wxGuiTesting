@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestTempInteractiveControl.h
+// Name:        wxGuiTest/TempInteractiveControl.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef SWWXGUITESTTEMPINTERACTIVECONTROL_H
-#define SWWXGUITESTTEMPINTERACTIVECONTROL_H
+#ifndef SWTEMPINTERACTIVECONTROL_H
+#define SWTEMPINTERACTIVECONTROL_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestTempInteractiveControl.h"
+    #pragma interface "TempInteractiveControl.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -18,26 +18,26 @@
 namespace wxTst {
 
 
-/*! \class WxGuiTestTempInteractiveControl
+/*! \class TempInteractiveControl
     \brief Handle events of dialog (controller in MVC concept).
 */
-class WxGuiTestTempInteractiveControl : public wxEvtHandler
+class TempInteractiveControl : public wxEvtHandler
 {
     DECLARE_EVENT_TABLE()
 
 public:
-    /*! \fn WxGuiTestTempInteractiveControl (wxDialog *dialog)
+    /*! \fn TempInteractiveControl (wxDialog *dialog)
         \brief Constructor
 
         \param dialog dialog with button to continue unit testing
     */
-    WxGuiTestTempInteractiveControl (wxDialog *dialog);
+    TempInteractiveControl (wxDialog *dialog);
 
 
-    /*! \fn virtual ~WxGuiTestTempInteractiveControl ()
+    /*! \fn virtual ~TempInteractiveControl ()
         \brief Destructor
     */
-    virtual ~WxGuiTestTempInteractiveControl ();
+    virtual ~TempInteractiveControl ();
 
 protected:
     /*! \fn virtual void OnOK (wxCommandEvent &event)
@@ -69,5 +69,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // SWWXGUITESTTEMPINTERACTIVECONTROL_H
+#endif // SWTEMPINTERACTIVECONTROL_H
 

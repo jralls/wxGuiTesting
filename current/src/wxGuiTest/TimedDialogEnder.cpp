@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestTimedDialogEnder.cpp
+// Name:        wxGuiTest/TimedDialogEnder.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,22 +7,22 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestTimedDialogEnder.h"
+    #pragma implementation "TimedDialogEnder.h"
 #endif
 
-#include <wxGuiTest/GuiTestTimedDialogEnder.h>
+#include <wxGuiTest/TimedDialogEnder.h>
 
 namespace wxTst {
 
 
-IMPLEMENT_CLASS(WxGuiTestTimedDialogEnder, wxEvtHandler)
+IMPLEMENT_CLASS(TimedDialogEnder, wxEvtHandler)
 
-BEGIN_EVENT_TABLE(WxGuiTestTimedDialogEnder, wxEvtHandler)
-    EVT_TIMER(-1, WxGuiTestTimedDialogEnder::OnTimer)
+BEGIN_EVENT_TABLE(TimedDialogEnder, wxEvtHandler)
+    EVT_TIMER(-1, TimedDialogEnder::OnTimer)
 END_EVENT_TABLE()
 
 
-WxGuiTestTimedDialogEnder::WxGuiTestTimedDialogEnder (unsigned int milliseconds,
+TimedDialogEnder::TimedDialogEnder (unsigned int milliseconds,
         const wxString &windowCaption, int returnCode)
 {
     m_success = false;
@@ -34,21 +34,21 @@ WxGuiTestTimedDialogEnder::WxGuiTestTimedDialogEnder (unsigned int milliseconds,
 }
 
 
-WxGuiTestTimedDialogEnder::~WxGuiTestTimedDialogEnder ()
+TimedDialogEnder::~TimedDialogEnder ()
 {
-    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), 
-            _T("~WxGuiTestTimedDialogEnder"));
+    ::wxLogTrace (_T("TimedDialogEnder"), 
+            _T("~TimedDialogEnder"));
     this->DestroyTimer ();
 }
 
 
-bool WxGuiTestTimedDialogEnder::GetSuccess () const
+bool TimedDialogEnder::GetSuccess () const
 {
     return m_success;
 }
 
 
-void WxGuiTestTimedDialogEnder::DestroyTimer ()
+void TimedDialogEnder::DestroyTimer ()
 {
     if (m_timer != NULL) {
 
@@ -62,9 +62,9 @@ void WxGuiTestTimedDialogEnder::DestroyTimer ()
 }
 
 
-void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
+void TimedDialogEnder::OnTimer (wxTimerEvent& event)
 {
-    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("OnTimer"));
+    ::wxLogTrace (_T("TimedDialogEnder"), _T("OnTimer"));
 
     if (event.GetId () == m_timerId) {
 
@@ -87,7 +87,7 @@ void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
             if (dlg) {
 
                 dlg->EndModal (m_returnCode);
-                ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("Window killed"));
+                ::wxLogTrace (_T("TimedDialogEnder"), _T("Window killed"));
                 this->DestroyTimer ();
             }
         }*/
@@ -106,7 +106,7 @@ void WxGuiTestTimedDialogEnder::OnTimer (wxTimerEvent& event)
                 // not irregular detected:
                 if (EndDialog (wdw, m_returnCode)) {
 
-                    ::wxLogTrace (_T("WxGuiTestTimedDialogEnder"), _T("Window killed"));
+                    ::wxLogTrace (_T("TimedDialogEnder"), _T("Window killed"));
                     this->DestroyTimer ();
                     m_success = true;
                 }

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestEventSimulationHelper.cpp
+// Name:        wxGuiTest/EventSimulationHelper.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,10 +9,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestEventSimulationHelper.h"
+    #pragma implementation "EventSimulationHelper.h"
 #endif
 
-#include <wxGuiTest/GuiTestEventSimulationHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
 
 #include <cppunit/TestAssert.h>
 
@@ -23,22 +23,22 @@
 using namespace wxTst;
 
 
-bool WxGuiTestEventSimulationHelper::s_isSettingSpinCtrlValue = false;
+bool EventSimulationHelper::s_isSettingSpinCtrlValue = false;
 
 
-WxGuiTestEventSimulationHelper::WxGuiTestEventSimulationHelper ()
+EventSimulationHelper::EventSimulationHelper ()
 {
     // Nothing to do
 }
 
 
-WxGuiTestEventSimulationHelper::~WxGuiTestEventSimulationHelper ()
+EventSimulationHelper::~EventSimulationHelper ()
 {
     // Nothing to do
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectMenuItem (int id, wxWindow *frame)
+void EventSimulationHelper::SelectMenuItem (int id, wxWindow *frame)
 {
     wxCommandEvent evt (wxEVT_COMMAND_MENU_SELECTED, id);
     evt.SetEventObject (frame);
@@ -48,7 +48,7 @@ void WxGuiTestEventSimulationHelper::SelectMenuItem (int id, wxWindow *frame)
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectMenuItem (int id,
+void EventSimulationHelper::SelectMenuItem (int id,
         wxEvtHandler *evtHandler)
 {
     wxCommandEvent evt (wxEVT_COMMAND_MENU_SELECTED, id);
@@ -57,7 +57,7 @@ void WxGuiTestEventSimulationHelper::SelectMenuItem (int id,
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id,
+void EventSimulationHelper::SelectAndCheckMenuItem (int id,
         wxWindow *window, wxMenu **menu)
 {
     // 1. GUI control state:
@@ -89,7 +89,7 @@ void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id,
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id, wxMenu *menu)
+void EventSimulationHelper::SelectAndCheckMenuItem (int id, wxMenu *menu)
 {
     // 1. GUI control state:
     wxMenuItem *menuItem = menu->FindItem (id, &menu);
@@ -104,7 +104,7 @@ void WxGuiTestEventSimulationHelper::SelectAndCheckMenuItem (int id, wxMenu *men
 }
 
 
-void WxGuiTestEventSimulationHelper::ClickButton (int id, wxWindow *parent)
+void EventSimulationHelper::ClickButton (int id, wxWindow *parent)
 {
     wxCommandEvent evt (wxEVT_COMMAND_BUTTON_CLICKED, id);
     evt.SetEventObject (parent);
@@ -112,7 +112,7 @@ void WxGuiTestEventSimulationHelper::ClickButton (int id, wxWindow *parent)
 }
 
 
-void WxGuiTestEventSimulationHelper::SetTextCtrlValue (
+void EventSimulationHelper::SetTextCtrlValue (
         wxTextCtrl *textCtrl, const wxString &value)
 {
     textCtrl->SetValue (value);
@@ -131,7 +131,7 @@ void WxGuiTestEventSimulationHelper::SetTextCtrlValue (
 }
 
 
-wxTreeItemId WxGuiTestEventSimulationHelper::GetNthTreeChild (wxTreeCtrl *treeCtrl, unsigned int idx, const wxTreeItemId &id)
+wxTreeItemId EventSimulationHelper::GetNthTreeChild (wxTreeCtrl *treeCtrl, unsigned int idx, const wxTreeItemId &id)
 {
     wxASSERT (idx > 0);
 
@@ -147,7 +147,7 @@ wxTreeItemId WxGuiTestEventSimulationHelper::GetNthTreeChild (wxTreeCtrl *treeCt
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
+void EventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
         wxTreeCtrl *treeCtrl)
 {
     wxTreeEvent evt (wxEVT_COMMAND_TREE_SEL_CHANGED, treeCtrl->GetId ());
@@ -157,7 +157,7 @@ void WxGuiTestEventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
     // of being posted - otherwise the event's properties are getting invalid.
     // Very strange!
     //::wxPostEvent (treeCtrl->GetEventHandler (), evt);
-    //Tst::WxGuiTestHelper::FlushEventQueue ();
+    //Tst::GuiTestHelper::FlushEventQueue ();
     treeCtrl->GetEventHandler ()->ProcessEvent (evt);
     // Somehow the selection is not really carried out (not WRT GUI state; and
     // retrieval of current selection seems to be via GUI state):
@@ -165,7 +165,7 @@ void WxGuiTestEventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
 }
 
 
-void WxGuiTestEventSimulationHelper::RightClickTreeItem (
+void EventSimulationHelper::RightClickTreeItem (
         const wxTreeItemId &id, wxTreeCtrl *treeCtrl)
 {
     wxRect treeItemRect;
@@ -182,12 +182,12 @@ void WxGuiTestEventSimulationHelper::RightClickTreeItem (
     evt.SetEventObject (treeCtrl);
     // Again, process event immediately:
     //::wxPostEvent (treeCtrl->GetEventHandler (), evt);
-    //Tst::WxGuiTestHelper::FlushEventQueue ();
+    //Tst::GuiTestHelper::FlushEventQueue ();
     treeCtrl->GetEventHandler ()->ProcessEvent (evt);
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectNotebookPage (wxNotebook *notebook,
+void EventSimulationHelper::SelectNotebookPage (wxNotebook *notebook,
         unsigned int page)
 {
     // Event is created automatically!
@@ -195,7 +195,7 @@ void WxGuiTestEventSimulationHelper::SelectNotebookPage (wxNotebook *notebook,
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectChoiceItem (wxChoice *choice,
+void EventSimulationHelper::SelectChoiceItem (wxChoice *choice,
         unsigned int item)
 {
     // 1. GUI control state:
@@ -209,7 +209,7 @@ void WxGuiTestEventSimulationHelper::SelectChoiceItem (wxChoice *choice,
 }
 
 
-void WxGuiTestEventSimulationHelper::SetCheckboxState (wxCheckBox *checkbox,
+void EventSimulationHelper::SetCheckboxState (wxCheckBox *checkbox,
         bool isChecked)
 {
     // 1. GUI control state:
@@ -222,7 +222,7 @@ void WxGuiTestEventSimulationHelper::SetCheckboxState (wxCheckBox *checkbox,
 }
 
 
-void WxGuiTestEventSimulationHelper::SelectRadioBoxItem (wxRadioBox *radioBox,
+void EventSimulationHelper::SelectRadioBoxItem (wxRadioBox *radioBox,
         unsigned int item)
 {
     // 1. GUI control state:
@@ -236,7 +236,7 @@ void WxGuiTestEventSimulationHelper::SelectRadioBoxItem (wxRadioBox *radioBox,
 }
 
 
-void WxGuiTestEventSimulationHelper::SetSliderValue (wxSlider *slider,
+void EventSimulationHelper::SetSliderValue (wxSlider *slider,
         unsigned int value)
 {
     // 1. GUI control state:
@@ -254,13 +254,13 @@ void WxGuiTestEventSimulationHelper::SetSliderValue (wxSlider *slider,
 }
 
 
-void WxGuiTestEventSimulationHelper::SetSpinCtrlValue (wxSpinCtrl *spinCtrl,
+void EventSimulationHelper::SetSpinCtrlValue (wxSpinCtrl *spinCtrl,
         int value)
 {
     // 1. GUI control state:
-    WxGuiTestEventSimulationHelper::s_isSettingSpinCtrlValue = true;
+    EventSimulationHelper::s_isSettingSpinCtrlValue = true;
     spinCtrl->SetValue (value);
-    WxGuiTestEventSimulationHelper::s_isSettingSpinCtrlValue = false;
+    EventSimulationHelper::s_isSettingSpinCtrlValue = false;
     // 2. Event:
     wxCommandEvent evt (wxEVT_COMMAND_SPINCTRL_UPDATED, spinCtrl->GetId ());
     evt.SetEventObject (spinCtrl);
@@ -269,13 +269,13 @@ void WxGuiTestEventSimulationHelper::SetSpinCtrlValue (wxSpinCtrl *spinCtrl,
 }
 
 
-bool WxGuiTestEventSimulationHelper::IsSettingSpinCtrlValue ()
+bool EventSimulationHelper::IsSettingSpinCtrlValue ()
 {
-    return WxGuiTestEventSimulationHelper::s_isSettingSpinCtrlValue;
+    return EventSimulationHelper::s_isSettingSpinCtrlValue;
 }
 
 
-void WxGuiTestEventSimulationHelper::ToggleToolOnlyEvent (int id,
+void EventSimulationHelper::ToggleToolOnlyEvent (int id,
         bool enabled, wxWindow *parent)
 {
     wxCommandEvent evt (wxEVT_COMMAND_TOOL_CLICKED, id);
@@ -285,7 +285,7 @@ void WxGuiTestEventSimulationHelper::ToggleToolOnlyEvent (int id,
 }
 
 
-void WxGuiTestEventSimulationHelper::ToggleTool (int id, bool enabled,
+void EventSimulationHelper::ToggleTool (int id, bool enabled,
         wxToolBar *toolbar, wxWindow *parent)
 {
     // 1. GUI control state:

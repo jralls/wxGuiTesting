@@ -63,14 +63,14 @@ void CRCapture::Log (const wxString &text)
 void CRCapture::Show ()
 {
     // Store old main loop flag and set new one:
-    bool oldUseExitMainLoopOnIdle = WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    bool oldUseExitMainLoopOnIdle = GuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
+    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
     // Likewise, provide normal (= release, in opposition to testing mode)
     // behaviour:
-    bool oldShowModalDialogsNonModal = WxGuiTestHelper::GetShowModalDialogsNonModalFlag ();
-    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (false);
-    bool oldShowPopupMenus = WxGuiTestHelper::GetShowPopupMenusFlag ();
-    WxGuiTestHelper::SetShowPopupMenusFlag (true);
+    bool oldShowModalDialogsNonModal = GuiTestHelper::GetShowModalDialogsNonModalFlag ();
+    GuiTestHelper::SetShowModalDialogsNonModalFlag (false);
+    bool oldShowPopupMenus = GuiTestHelper::GetShowPopupMenusFlag ();
+    GuiTestHelper::SetShowPopupMenusFlag (true);
 
     if (m_dialog == NULL) {
 
@@ -88,10 +88,10 @@ void CRCapture::Show ()
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
+    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
     // Likewise, restore other flags:
-    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
-    WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
+    GuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
+    GuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
 }
 
 

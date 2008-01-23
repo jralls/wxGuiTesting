@@ -12,8 +12,8 @@
 
 #include <wxGuiTest/GuiTestHelper.h>
 
-#include <wxGuiTest/GuiTestWarningAsserterInterface.h>
-#include <wxGuiTest/GuiTestProvokedWarningRegistry.h>
+#include <wxGuiTest/WarningAsserterInterface.h>
+#include <wxGuiTest/ProvokedWarningRegistry.h>
 
 // #include <FrameFactory/swDefaultDialog.h>
 // #include <FrameFactory/swFrameFactory.h>
@@ -22,37 +22,37 @@ namespace wxTst {
 
 // Set default settings for normal application logic:
 // "Single stepping" through unit test case code:
-bool WxGuiTestHelper::s_useExitMainLoopOnIdle = true;
-bool WxGuiTestHelper::s_doExitMainLoopOnIdle = true;
+bool GuiTestHelper::s_useExitMainLoopOnIdle = true;
+bool GuiTestHelper::s_doExitMainLoopOnIdle = true;
 // Allow manual visual checking of GUI (cf. temporary interactive test):
-bool WxGuiTestHelper::s_isGuiLessUnitTest = false;
+bool GuiTestHelper::s_isGuiLessUnitTest = false;
 // Unit testing will be blocked, but by default the app should act normaly:
-bool WxGuiTestHelper::s_showModalDialogsNonModal = false;
-bool WxGuiTestHelper::s_showPopupMenus = true;
+bool GuiTestHelper::s_showModalDialogsNonModal = false;
+bool GuiTestHelper::s_showPopupMenus = true;
 // By default enable test interactivity:
-bool WxGuiTestHelper::s_disableTestInteractivity = false;
+bool GuiTestHelper::s_disableTestInteractivity = false;
 // By default pop-up warning message box on failing assertions:
-bool WxGuiTestHelper::s_popupWarningForFailingAssert = true;
+bool GuiTestHelper::s_popupWarningForFailingAssert = true;
 // By default don't check the occurence of unexpected warnings:
-bool WxGuiTestHelper::s_checkForProvokedWarnings = false;
+bool GuiTestHelper::s_checkForProvokedWarnings = false;
 
-WxGuiTestWarningAsserterInterface *WxGuiTestHelper::s_warningAsserter = NULL;
+WarningAsserterInterface *GuiTestHelper::s_warningAsserter = NULL;
 
-WxGuiTestHelper::PopupMenuMap WxGuiTestHelper::s_popupMenuMap;
+GuiTestHelper::PopupMenuMap GuiTestHelper::s_popupMenuMap;
 
-wxString WxGuiTestHelper::s_fileOfFirstTestFailure;
-int WxGuiTestHelper::s_lineNmbOfFirstTestFailure = -1;
-wxString WxGuiTestHelper::s_shortDescriptionOfFirstTestFailure;
-wxString WxGuiTestHelper::s_accTestFailures;
+wxString GuiTestHelper::s_fileOfFirstTestFailure;
+int GuiTestHelper::s_lineNmbOfFirstTestFailure = -1;
+wxString GuiTestHelper::s_shortDescriptionOfFirstTestFailure;
+wxString GuiTestHelper::s_accTestFailures;
 
 
-WxGuiTestHelper::WxGuiTestHelper ()
+GuiTestHelper::GuiTestHelper ()
 {
     // Nothing to do
 }
 
 
-WxGuiTestHelper::~WxGuiTestHelper ()
+GuiTestHelper::~GuiTestHelper ()
 {
     s_popupMenuMap.clear ();
     if (s_warningAsserter != NULL) {
@@ -63,7 +63,7 @@ WxGuiTestHelper::~WxGuiTestHelper ()
 }
 
 
-int WxGuiTestHelper::FlushEventQueue ()
+int GuiTestHelper::FlushEventQueue ()
 {
     // Reset test case failure occurence store:
     s_fileOfFirstTestFailure.Clear ();
@@ -101,14 +101,14 @@ int WxGuiTestHelper::FlushEventQueue ()
 }
 
 
-int WxGuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal)
+int GuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal)
 {
-    return WxGuiTestHelper::Show (wdw, show, isModal,
-            WxGuiTestHelper::s_isGuiLessUnitTest);
+    return GuiTestHelper::Show (wdw, show, isModal,
+            GuiTestHelper::s_isGuiLessUnitTest);
 }
 
 
-int WxGuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal,
+int GuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal,
         bool isGuiLessUnitTest)
 {
     wxASSERT (wdw != NULL);
@@ -129,7 +129,7 @@ int WxGuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal,
 
             if (show) {
 
-                if (WxGuiTestHelper::s_showModalDialogsNonModal) {
+                if (GuiTestHelper::s_showModalDialogsNonModal) {
 
                     ret = dlg->Show ();
 
@@ -140,7 +140,7 @@ int WxGuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal,
 
             } else {
 
-                if (WxGuiTestHelper::s_showModalDialogsNonModal) {
+                if (GuiTestHelper::s_showModalDialogsNonModal) {
 
                     ret = dlg->Hide ();
 
@@ -170,21 +170,21 @@ int WxGuiTestHelper::Show (wxWindow *wdw, bool show, bool isModal,
 }
 
 
-bool WxGuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
+bool GuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
         const wxPoint &pos, const wxString &cacheMapKey)
 {
-    return WxGuiTestHelper::PopupMenu (wdw, menu, pos, cacheMapKey,
-            WxGuiTestHelper::s_isGuiLessUnitTest);
+    return GuiTestHelper::PopupMenu (wdw, menu, pos, cacheMapKey,
+            GuiTestHelper::s_isGuiLessUnitTest);
 }
 
 
-bool WxGuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
+bool GuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
         const wxPoint &pos, const wxString &cacheMapKey, bool isGuiLessUnitTest)
 {
     bool ret = false;
 
     // Cache wxMenu for subsequent finding in test units:
-    WxGuiTestHelper::s_popupMenuMap[cacheMapKey] = std::make_pair (menu, wdw);
+    GuiTestHelper::s_popupMenuMap[cacheMapKey] = std::make_pair (menu, wdw);
 
     if (isGuiLessUnitTest) {
 
@@ -192,7 +192,7 @@ bool WxGuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
 
     } else {
 
-        if (WxGuiTestHelper::s_showPopupMenus) {
+        if (GuiTestHelper::s_showPopupMenus) {
 
             ret = wdw->PopupMenu (menu, pos);
 
@@ -206,9 +206,9 @@ bool WxGuiTestHelper::PopupMenu (wxWindow *wdw, wxMenu *menu,
 }
 
 
-void WxGuiTestHelper::BreakTestToShowCurrentGui ()
+void GuiTestHelper::BreakTestToShowCurrentGui ()
 {
-	if (WxGuiTestHelper::GetDisableTestInteractivity ()) {
+	if (GuiTestHelper::GetDisableTestInteractivity ()) {
 
 		return;
 	}
@@ -218,91 +218,91 @@ void WxGuiTestHelper::BreakTestToShowCurrentGui ()
 }
 
 
-void WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (bool use)
+void GuiTestHelper::SetUseExitMainLoopOnIdleFlag (bool use)
 {
     s_useExitMainLoopOnIdle = use;
 }
 
     
-bool WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ()
+bool GuiTestHelper::GetUseExitMainLoopOnIdleFlag ()
 {
     return s_useExitMainLoopOnIdle;
 }
 
 
-void WxGuiTestHelper::SetExitMainLoopOnIdleFlag (bool doExit)
+void GuiTestHelper::SetExitMainLoopOnIdleFlag (bool doExit)
 {
     s_doExitMainLoopOnIdle = doExit;
 }
 
     
-bool WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()
+bool GuiTestHelper::GetExitMainLoopOnIdleFlag ()
 {
     return s_doExitMainLoopOnIdle;
 }
 
 
-void WxGuiTestHelper::SetIsGuiLessUnitTestFlag (bool isGuiLess)
+void GuiTestHelper::SetIsGuiLessUnitTestFlag (bool isGuiLess)
 {
     s_isGuiLessUnitTest = isGuiLess;
 }
 
     
-bool WxGuiTestHelper::IsGuiLessUnitTestFlag ()
+bool GuiTestHelper::IsGuiLessUnitTestFlag ()
 {
     return s_isGuiLessUnitTest;
 }
 
 
-void WxGuiTestHelper::SetShowModalDialogsNonModalFlag (bool showNonModal)
+void GuiTestHelper::SetShowModalDialogsNonModalFlag (bool showNonModal)
 {
     s_showModalDialogsNonModal = showNonModal;
 }
 
 
-bool WxGuiTestHelper::GetShowModalDialogsNonModalFlag ()
+bool GuiTestHelper::GetShowModalDialogsNonModalFlag ()
 {
     return s_showModalDialogsNonModal;
 }
 
 
-void WxGuiTestHelper::SetShowPopupMenusFlag (bool showPopupMenus)
+void GuiTestHelper::SetShowPopupMenusFlag (bool showPopupMenus)
 {
     s_showPopupMenus = showPopupMenus;
 }
 
 
-bool WxGuiTestHelper::GetShowPopupMenusFlag ()
+bool GuiTestHelper::GetShowPopupMenusFlag ()
 {
     return s_showPopupMenus;
 }
 
 
-void WxGuiTestHelper::SetDisableTestInteractivity (bool disable)
+void GuiTestHelper::SetDisableTestInteractivity (bool disable)
 {
 	s_disableTestInteractivity = disable;
 }
 
 
-bool WxGuiTestHelper::GetDisableTestInteractivity ()
+bool GuiTestHelper::GetDisableTestInteractivity ()
 {
 	return s_disableTestInteractivity;
 }
 
 
-void WxGuiTestHelper::SetPopupWarningForFailingAssert (bool popup)
+void GuiTestHelper::SetPopupWarningForFailingAssert (bool popup)
 {
     s_popupWarningForFailingAssert = popup;
 }
 
 
-bool WxGuiTestHelper::GetPopupWarningForFailingAssert ()
+bool GuiTestHelper::GetPopupWarningForFailingAssert ()
 {
     return s_popupWarningForFailingAssert;
 }
 
 
-wxMenu *WxGuiTestHelper::FindPopupMenu (const wxString &key)
+wxMenu *GuiTestHelper::FindPopupMenu (const wxString &key)
 {
     PopupMenuMap::const_iterator it;
 
@@ -311,7 +311,7 @@ wxMenu *WxGuiTestHelper::FindPopupMenu (const wxString &key)
 }
 
 
-wxString WxGuiTestHelper::FindPopupMenuKey (wxMenu *menu)
+wxString GuiTestHelper::FindPopupMenuKey (wxMenu *menu)
 {
     bool found = false;
     PopupMenuMap::const_iterator it = s_popupMenuMap.begin ();
@@ -330,7 +330,7 @@ wxString WxGuiTestHelper::FindPopupMenuKey (wxMenu *menu)
 }
 
 
-wxWindow *WxGuiTestHelper::FindPopupMenuEvtHandlerWdw (const wxString &key)
+wxWindow *GuiTestHelper::FindPopupMenuEvtHandlerWdw (const wxString &key)
 {
     PopupMenuMap::const_iterator it;
 
@@ -339,16 +339,16 @@ wxWindow *WxGuiTestHelper::FindPopupMenuEvtHandlerWdw (const wxString &key)
 }
 
 
-bool WxGuiTestHelper::IsProvokedWarning (const wxString &caption,
+bool GuiTestHelper::IsProvokedWarning (const wxString &caption,
         const wxString &message)
 {
     bool isProvoked = false;
 
-    if (WxGuiTestHelper::GetCheckForProvokedWarnings ()) {
+    if (GuiTestHelper::GetCheckForProvokedWarnings ()) {
 
-        WxGuiTestProvokedWarningRegistry &provWarningRegistry =
-                WxGuiTestProvokedWarningRegistry::GetInstance ();
-        const WxGuiTestProvokedWarning *warning =
+        ProvokedWarningRegistry &provWarningRegistry =
+                ProvokedWarningRegistry::GetInstance ();
+        const ProvokedWarning *warning =
                 provWarningRegistry.FindRegisteredWarning (caption, message);
         if ((warning != NULL) && (
                 provWarningRegistry.IsRegisteredAndInTime (*warning))) {
@@ -363,9 +363,9 @@ bool WxGuiTestHelper::IsProvokedWarning (const wxString &caption,
             wxString failMsg = wxString::Format (
                     _T("Caption \"%s\", message \"%s\" occured"), caption.c_str (),
                     message.c_str ());
-            WxGuiTestHelper::AddTestFailure (_T(""), -1,
+            GuiTestHelper::AddTestFailure (_T(""), -1,
                     _T("Unexpected App application warning detected"), failMsg);
-            //WxGuiTestHelper::SetCheckForProvokedWarnings (false);
+            //GuiTestHelper::SetCheckForProvokedWarnings (false);
             wxTheApp->ExitMainLoop ();
         }
     }
@@ -374,20 +374,20 @@ bool WxGuiTestHelper::IsProvokedWarning (const wxString &caption,
 }
 
 
-void WxGuiTestHelper::SetCheckForProvokedWarnings (bool check)
+void GuiTestHelper::SetCheckForProvokedWarnings (bool check)
 {
-    WxGuiTestHelper::s_checkForProvokedWarnings = check;
+    GuiTestHelper::s_checkForProvokedWarnings = check;
 }
 
 
-bool WxGuiTestHelper::GetCheckForProvokedWarnings ()
+bool GuiTestHelper::GetCheckForProvokedWarnings ()
 {
-    return WxGuiTestHelper::s_checkForProvokedWarnings;
+    return GuiTestHelper::s_checkForProvokedWarnings;
 }
 
 
-void WxGuiTestHelper::SetWarningAsserter (
-        WxGuiTestWarningAsserterInterface *warningAsserter)
+void GuiTestHelper::SetWarningAsserter (
+        WarningAsserterInterface *warningAsserter)
 {
     // As a convenience we allow resetting the warning asserter with a NULL
     // pointer:
@@ -396,7 +396,7 @@ void WxGuiTestHelper::SetWarningAsserter (
 }
 
 
-void WxGuiTestHelper::AddTestFailure (const wxString &file, const int line,
+void GuiTestHelper::AddTestFailure (const wxString &file, const int line,
         const wxString &shortDescription, const wxString &message)
 {
     if (s_accTestFailures.IsEmpty ()) {

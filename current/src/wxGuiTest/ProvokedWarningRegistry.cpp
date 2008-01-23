@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestProvokedWarningRegistry.cpp
+// Name:        wxGuiTest/ProvokedWarningRegistry.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,25 +9,25 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestProvokedWarningRegistry.h"
+    #pragma implementation "ProvokedWarningRegistry.h"
 #endif
 
-#include <wxGuiTest/GuiTestProvokedWarningRegistry.h>
+#include <wxGuiTest/ProvokedWarningRegistry.h>
 
 using namespace wxTst;
 
 
 // Init single instance:
-WxGuiTestProvokedWarningRegistry *WxGuiTestProvokedWarningRegistry::ms_instance = NULL;
+ProvokedWarningRegistry *ProvokedWarningRegistry::ms_instance = NULL;
 
 
-WxGuiTestProvokedWarningRegistry::WxGuiTestProvokedWarningRegistry ()
+ProvokedWarningRegistry::ProvokedWarningRegistry ()
 {
     // Nothing to do
 }
 
 
-WxGuiTestProvokedWarningRegistry::~WxGuiTestProvokedWarningRegistry ()
+ProvokedWarningRegistry::~ProvokedWarningRegistry ()
 {
     ProvokedWarningMap::iterator it = warnings.begin ();
     while (it != warnings.end ()) {
@@ -38,17 +38,17 @@ WxGuiTestProvokedWarningRegistry::~WxGuiTestProvokedWarningRegistry ()
 }
 
 
-WxGuiTestProvokedWarningRegistry & WxGuiTestProvokedWarningRegistry::GetInstance ()
+ProvokedWarningRegistry & ProvokedWarningRegistry::GetInstance ()
 {
     if (ms_instance == NULL) {
 
-        ms_instance = new WxGuiTestProvokedWarningRegistry ();
+        ms_instance = new ProvokedWarningRegistry ();
     }
     return *ms_instance;
 }
 
 
-void WxGuiTestProvokedWarningRegistry::Destroy ()
+void ProvokedWarningRegistry::Destroy ()
 {
     if (ms_instance != NULL) {
 
@@ -58,24 +58,24 @@ void WxGuiTestProvokedWarningRegistry::Destroy ()
 }
 
 
-void WxGuiTestProvokedWarningRegistry::RegisterWarning (
-        const WxGuiTestProvokedWarning &warning)
+void ProvokedWarningRegistry::RegisterWarning (
+        const ProvokedWarning &warning)
 {
     wxASSERT (warnings.end () == warnings.find (&warning));
     warnings.insert (std::make_pair (&warning, false));
 }
 
 
-void WxGuiTestProvokedWarningRegistry::UnregisterWarning (
-        const WxGuiTestProvokedWarning &warning)
+void ProvokedWarningRegistry::UnregisterWarning (
+        const ProvokedWarning &warning)
 {
     wxASSERT (warnings.end () != warnings.find (&warning));
     warnings.erase (&warning);
 }
 
 
-bool WxGuiTestProvokedWarningRegistry::IsRegisteredAndInTime (
-        const WxGuiTestProvokedWarning& warning) const
+bool ProvokedWarningRegistry::IsRegisteredAndInTime (
+        const ProvokedWarning& warning) const
 {
     ProvokedWarningMap::const_iterator it;
     it = warnings.find (&warning);
@@ -86,7 +86,7 @@ bool WxGuiTestProvokedWarningRegistry::IsRegisteredAndInTime (
 
     } else {
 
-        const WxGuiTestProvokedWarning* newwarning = (*it).first;
+        const ProvokedWarning* newwarning = (*it).first;
         wxDateTime now = wxDateTime::Now();
         if (now.IsLaterThan (newwarning->GetTimeout ())) {
 
@@ -100,8 +100,8 @@ bool WxGuiTestProvokedWarningRegistry::IsRegisteredAndInTime (
 }
 
 
-bool WxGuiTestProvokedWarningRegistry::WasDetected (
-        const WxGuiTestProvokedWarning &warning) const
+bool ProvokedWarningRegistry::WasDetected (
+        const ProvokedWarning &warning) const
 {
     ProvokedWarningMap::const_iterator it;
     it = warnings.find (&warning);
@@ -117,8 +117,8 @@ bool WxGuiTestProvokedWarningRegistry::WasDetected (
 }
 
 
-void WxGuiTestProvokedWarningRegistry::SetWarningAsDetected (
-        const WxGuiTestProvokedWarning &warning)
+void ProvokedWarningRegistry::SetWarningAsDetected (
+        const ProvokedWarning &warning)
 {
     wxASSERT (warnings.end () != warnings.find (&warning));
     ProvokedWarningMap::iterator it;
@@ -127,15 +127,15 @@ void WxGuiTestProvokedWarningRegistry::SetWarningAsDetected (
 }
 
 
-const WxGuiTestProvokedWarning *
-WxGuiTestProvokedWarningRegistry::FindRegisteredWarning (const wxString &caption, 
+const ProvokedWarning *
+ProvokedWarningRegistry::FindRegisteredWarning (const wxString &caption, 
 							 const wxString &message) 
     const
 {
     for (ProvokedWarningMap::const_iterator it = warnings.begin ();
 	 it != warnings.end(); it++) {
 
-        const WxGuiTestProvokedWarning *warning = it->first;
+        const ProvokedWarning *warning = it->first;
         if (warning->GetCaption () == caption && 
 	    (message.empty() || warning->GetMessage() == message))
 	    return it->first;

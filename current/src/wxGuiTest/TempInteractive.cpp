@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestTempInteractive.cpp
+// Name:        wxGuiTest/TempInteractive.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,49 +9,49 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestTempInteractive.h"
+    #pragma implementation "TempInteractive.h"
 #endif
 
-#include <wxGuiTest/GuiTestTempInteractive.h>
+#include <wxGuiTest/TempInteractive.h>
 
 #include <wx/dialog.h>
 
 #include <wxGuiTest/GuiTestHelper.h>
-#include "GuiTestTempInteractiveControl.h"
+#include "TempInteractiveControl.h"
 
 using namespace wxTst;
 
-void WxGuiTestTempInteractive::ShowCurrentGui (const wxString& file, int line)
+void TempInteractive::ShowCurrentGui (const wxString& file, int line)
 {
-    if (WxGuiTestHelper::GetDisableTestInteractivity ()) {
+    if (GuiTestHelper::GetDisableTestInteractivity ()) {
 
 	return;
     }
 
     // Store old main loop flag and set new one:
-    bool oldUseExitMainLoopOnIdle = WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    bool oldUseExitMainLoopOnIdle = GuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
+    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
     // Likewise, provide normal (= release, in opposition to testing mode)
     // behaviour:
-    bool oldShowModalDialogsNonModal = WxGuiTestHelper::GetShowModalDialogsNonModalFlag ();
-    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (false);
-    bool oldShowPopupMenus = WxGuiTestHelper::GetShowPopupMenusFlag ();
-    WxGuiTestHelper::SetShowPopupMenusFlag (true);
+    bool oldShowModalDialogsNonModal = GuiTestHelper::GetShowModalDialogsNonModalFlag ();
+    GuiTestHelper::SetShowModalDialogsNonModalFlag (false);
+    bool oldShowPopupMenus = GuiTestHelper::GetShowPopupMenusFlag ();
+    GuiTestHelper::SetShowPopupMenusFlag (true);
 
     wxDialog* dialog = CreateDialog (file, line);
-    WxGuiTestTempInteractiveControl* handler = 
-	new WxGuiTestTempInteractiveControl(dialog);
+    TempInteractiveControl* handler = 
+	new TempInteractiveControl(dialog);
     dialog->PushEventHandler (handler);
     dialog->Show ();
 
-    // Main loop will be exited in WxGuiTestTempInteractiveControl::OnOK()
+    // Main loop will be exited in TempInteractiveControl::OnOK()
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
+    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
     // Likewise, restore other flags:
-    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
-    WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
+    GuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
+    GuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
     dialog->PopEventHandler (true);
     dialog->Destroy ();
 }
@@ -60,7 +60,7 @@ void WxGuiTestTempInteractive::ShowCurrentGui (const wxString& file, int line)
 
 
 wxDialog* 
-WxGuiTestTempInteractive::CreateDialog (const wxString& file, int line)
+TempInteractive::CreateDialog (const wxString& file, int line)
 {
     wxDialog* dialog = new wxDialog (wxTheApp->GetTopWindow (), -1,
             _("wxGui CppUnit Testing Suspended"), wxDefaultPosition,
