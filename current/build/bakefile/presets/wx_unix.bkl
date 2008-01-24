@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!-- wx_unix.bkl from svn trunk at 080020071116O -->
-<!-- $Id: wx_unix.bkl,v 1.2 2007-11-17 20:21:57 john Exp $ -->
+<!-- $Id$ -->
 
 <!--
 Presents for building wxWidgets applications using Autoconf or GNU toosets.

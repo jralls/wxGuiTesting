@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!-- Presets from wxtrunk as of 080020071116O -->
-<!-- $Id: wx.bkl,v 1.2 2007-11-17 20:21:57 john Exp $ -->
+<!-- $Id$ -->
 
 <!--
     Presets for building wxWidgets applications.

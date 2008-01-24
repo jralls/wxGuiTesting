@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!-- wx_win32.bkl from svn trunk 080020071116O -->
-<!-- $Id: wx_win32.bkl,v 1.2 2007-11-17 20:21:57 john Exp $ -->
+<!-- $Id$ -->
 
 <!-- Original source: http://wiki.wxwidgets.org/wiki.pl?Bakefile    -->
 <!-- Modified by: Francesco Montorsi <frm@users.sourceforge.net>    -->
@@ -8,7 +8,7 @@
                   into Bakefile's presets                           -->
 <!-- Creation date: 6/9/2004                                        -->
 <!-- Last revision: 22/1/2005 off-CVS                               -->
-<!--                $Id: wx_win32.bkl,v 1.2 2007-11-17 20:21:57 john Exp $ -->
+<!--                $Id$ -->
 
 
 <makefile>

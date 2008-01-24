@@ -2,7 +2,7 @@
 // Name:        myframe.cpp
 // Purpose:     XML resources sample: A derived frame, called MyFrame
 // Author:      Robert O'Connor (rob@medicalmnemonics.com), Vaclav Slavik
-// RCS-ID:      $Id: myframe.cpp 43298 2006-11-11 01:15:42Z VZ $
+// RCS-ID:      $Id$
 // Copyright:   (c) Robert O'Connor and Vaclav Slavik
 // Licence:     wxWindows licence
 //-----------------------------------------------------------------------------
