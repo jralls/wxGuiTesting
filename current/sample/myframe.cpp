@@ -25,8 +25,8 @@
 #endif
 
 #include "wx/sysopt.h"
-#ifdef SW_USE_WX_APP_GUI_TESTING
-#include <wxGuiTest/swWxGuiTestHelper.h>
+#ifdef USE_WXGUITESTING
+#include <wxGuiTest/WxGuiTestHelper.h>
 #endif
 //-----------------------------------------------------------------------------
 // Header of this .cpp file
@@ -214,8 +214,8 @@ void MyFrame::OnDerivedDialogToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
     // to be destructed automatically when the parent is destroyed.
     PreferencesDialog* preferencesDialog = new PreferencesDialog(this);
     // Show the instance of the dialog, modally.
-#ifdef SW_USE_WX_APP_GUI_TESTING
-    swTst::WxGuiTestHelper::Show(preferencesDialog, true, true);
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(preferencesDialog, true, true);
 #else
     preferencesDialog->ShowModal();
     preferencesDialog->Destroy();
@@ -294,8 +294,8 @@ void MyFrame::OnControlsToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 #endif
 
     // All done. Show the dialog.
-#ifdef SW_USE_WX_APP_GUI_TESTING
-    swTst::WxGuiTestHelper::Show(&dlg, true, true);
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(&dlg, true, true);
 #else
     dlg.ShowModal();
 #endif
@@ -306,8 +306,8 @@ void MyFrame::OnUncenteredToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxDialog* dlg = new wxDialog;
     wxXmlResource::Get()->LoadDialog(dlg, this, wxT("uncentered_dialog"));
-#ifdef SW_USE_WX_APP_GUI_TESTING
-    swTst::WxGuiTestHelper::Show(dlg, true, true);
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(dlg, true, true);
 #else
     dlg->ShowModal();
 #endif
@@ -348,8 +348,8 @@ void MyFrame::OnArtProviderToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxDialog* dlg = new wxDialog;
     wxXmlResource::Get()->LoadDialog(dlg, this, wxT("art_provider_dialog"));
-#ifdef SW_USE_WX_APP_GUI_TESTING
-    swTst::WxGuiTestHelper::Show(dlg, true, true);
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(dlg, true, true);
 #else
     dlg->ShowModal();
 #endif

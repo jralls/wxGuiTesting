@@ -31,7 +31,7 @@ LDFLAGS =
 # Path to pass in as base directory for filenames in the test
 # 	programs. Use forward slashes and "short filenames" if the
 # 	path has spaces.  For example,
-# 	/DOCUME~1/OWNER/MYDOCU~1/swWxGuiTesting An absolute path may
+# 	/DOCUME~1/OWNER/MYDOCU~1/wxGuiTesting An absolute path may
 # 	help the test programs to execute from more than one folder 
 baseDir = ../..
 

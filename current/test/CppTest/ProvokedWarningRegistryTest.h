@@ -1,16 +1,18 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        test/CppTest/GuiTestProvokedWarningRegistryTest.h
+// Name:        test/CppTest/ProvokedWarningRegistryTest.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef WXGUITESTPROVOKEDWARNINGREGISTRYTEST_H
-#define WXGUITESTPROVOKEDWARNINGREGISTRYTEST_H
+#ifndef PROVOKEDWARNINGREGISTRYTEST_H
+#define PROVOKEDWARNINGREGISTRYTEST_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestProvokedWarningRegistryTest.h"
+    #pragma interface "ProvokedWarningRegistryTest.h"
 #endif
 
 #include <cppunit/extensions/HelperMacros.h>
@@ -18,12 +20,12 @@
 namespace wxTst {
 
 
-/*! \class WxGuiTestProvokedWarningRegistryTest
-    \brief Test WxGuiTestProvokedWarningRegistry.
+/*! \class ProvokedWarningRegistryTest
+    \brief Test ProvokedWarningRegistry.
 */
-class WxGuiTestProvokedWarningRegistryTest : public CPPUNIT_NS::TestFixture
+class ProvokedWarningRegistryTest : public CPPUNIT_NS::TestFixture
 {
-    CPPUNIT_TEST_SUITE( WxGuiTestProvokedWarningRegistryTest );
+    CPPUNIT_TEST_SUITE( ProvokedWarningRegistryTest );
 
         CPPUNIT_TEST( testUnRegister );
         CPPUNIT_TEST( testTimeout );
@@ -76,5 +78,5 @@ private:
 
 } // End namespace wxTst
 
-#endif // WXGUITESTPROVOKEDWARNINGREGISTRYTEST_H
+#endif // PROVOKEDWARNINGREGISTRYTEST_H
 

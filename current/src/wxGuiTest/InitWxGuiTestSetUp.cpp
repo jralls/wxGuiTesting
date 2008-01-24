@@ -11,7 +11,7 @@
 #endif
 
 #include "InitWxGuiTestSetUp.h"
-#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 
 // Declaration for wxWidgets GUI initialisation:
 #ifdef WIN32

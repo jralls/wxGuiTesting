@@ -20,7 +20,7 @@
 #include <wx/textctrl.h>
 #include <wx/sizer.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/EventSimulationHelper.h>
 #include <wxGuiTest/ModalDialogTimer.h>
 
@@ -65,7 +65,7 @@ void ModalDialogTest::testModalDialog ()
     timer.Start (1000, true);
 
     EventSimulationHelper::SetTextCtrlValue (textCtrl, _T("init"));
-    GuiTestHelper::FlushEventQueue ();
+    WxGuiTestHelper::FlushEventQueue ();
 
     ModalDialogManipulator * manip = new ModalDialogManipulator (textCtrl);
     timer.SetModalDialogInteractor (manip);

@@ -10,7 +10,7 @@
     #pragma implementation "VtkInteractorEventRecorder.h"
 #endif
 
-#include <wxGuiTest/VtkwxGuiTest/VtkInteractorEventRecorder.h>
+#include <wxGuiTest/VtkGuiTesting/VtkInteractorEventRecorder.h>
 
 #include <vtkCallbackCommand.h>
 #include <vtkObjectFactory.h>

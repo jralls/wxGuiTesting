@@ -26,9 +26,8 @@ XRCDEMO_OBJECTS =  \
 	xrcdemo_xrcdemo.obj
 XRCDEMO_CAPTURE_CXXFLAGS = /MD$(__DBG_5) /DWIN32 /I$(CPPUNIT_INCL) \
 	/I$(wxGuiTestPath)\include /D_CONSOLE /DXRCDIR=\"$(XRCDIR)\" \
-	/DSW_USE_WX_APP_GUI_TESTING $(__OPT) $(__DBG) $(____DBG) \
-	/Fdxrcdemo_capture.pdb $(____WX_SHARED) $(__WXUNICODE_DEFINE_p) \
-	$(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
+	/DUSE_WXGUITESTING $(__OPT) $(__DBG) $(____DBG) /Fdxrcdemo_capture.pdb \
+	$(____WX_SHARED) $(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /GR /EHsc \
 	$(CPPFLAGS) $(CXXFLAGS)
 XRCDEMO_CAPTURE_OBJECTS =  \
@@ -41,7 +40,7 @@ XRCDEMO_CAPTURE_OBJECTS =  \
 	xrcdemo_capture_SimpleCRTest.obj
 XRCDEMO_TEST_CXXFLAGS = /MD$(__DBG_5) /DWIN32 /I$(CPPUNIT_INCL) \
 	/I$(wxGuiTestPath)\include /D_CONSOLE /DXRCDIR=\"$(XRCDIR)\" \
-	/DSW_USE_WX_APP_GUI_TESTING $(__OPT) $(__DBG) $(____DBG) /Fdxrcdemo_test.pdb \
+	/DUSE_WXGUITESTING $(__OPT) $(__DBG) $(____DBG) /Fdxrcdemo_test.pdb \
 	$(____WX_SHARED) $(__WXUNICODE_DEFINE_p) $(__WXDEBUG_DEFINE_p) /D__WXMSW__ \
 	/I$(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /I$(WX_DIR)\include /GR /EHsc \
 	$(CPPFLAGS) $(CXXFLAGS)
@@ -260,13 +259,13 @@ xrcdemo.exe: $(XRCDEMO_OBJECTS) xrcdemo_xrcdemo.res
 <<
 
 xrcdemo_capture.exe: $(XRCDEMO_CAPTURE_OBJECTS) xrcdemo_capture_xrcdemo.res
-	link /NOLOGO /OUT:$@ $(LDFLAGS) /LIBPATH:$(CPPUNIT_LIBDIR) /LIBPATH:$(wxGuiTestPath)\lib /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) $(__DBG_2) /pdb:"xrcdemo_capture.pdb" /LIBPATH:$(WX_DIR)$(WXLIBPATH) @<<
-	$(XRCDEMO_CAPTURE_OBJECTS)  $(CPPUNIT_LIB).lib wxGuiTesting$(WX3RDPARTYLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
+	link /NOLOGO /OUT:$@ $(LDFLAGS) /LIBPATH:$(CPPUNIT_LIBDIR) /LIBPATH:$(wxGuiTestPath)\lib /SUBSYSTEM:CONSOLE $(__DBG_2) /pdb:"xrcdemo_capture.pdb" /LIBPATH:$(WX_DIR)$(WXLIBPATH) @<<
+	$(XRCDEMO_CAPTURE_OBJECTS)  $(CPPUNIT_LIB).lib wxGuiTesting$(WX3RDPARTYLIBPOSTFIX).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 xrcdemo_test.exe: $(XRCDEMO_TEST_OBJECTS) xrcdemo_test_xrcdemo.res
-	link /NOLOGO /OUT:$@ $(LDFLAGS) /LIBPATH:$(CPPUNIT_LIBDIR) /LIBPATH:$(wxGuiTestPath)\lib /SUBSYSTEM:CONSOLE /LIBPATH:$(CPPUNIT_LIBDIR) $(__DBG_2) /pdb:"xrcdemo_test.pdb" /LIBPATH:$(WX_DIR)$(WXLIBPATH) @<<
-	$(XRCDEMO_TEST_OBJECTS)  $(CPPUNIT_LIB).lib wxGuiTesting$(WX3RDPARTYLIBPOSTFIX).lib $(CPPUNIT_LIB).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
+	link /NOLOGO /OUT:$@ $(LDFLAGS) /LIBPATH:$(CPPUNIT_LIBDIR) /LIBPATH:$(wxGuiTestPath)\lib /SUBSYSTEM:CONSOLE $(__DBG_2) /pdb:"xrcdemo_test.pdb" /LIBPATH:$(WX_DIR)$(WXLIBPATH) @<<
+	$(XRCDEMO_TEST_OBJECTS)  $(CPPUNIT_LIB).lib wxGuiTesting$(WX3RDPARTYLIBPOSTFIX).lib $(__WXLIB_XRC_NAME_p) $(__WXLIB_HTML_NAME_p) $(__WXLIB_ADV_NAME_p) $(__WXLIB_XML_NAME_p) $(__WXLIB_CORE_NAME_p) $(__WXLIB_BASE_NAME_p) wxtiff$(WX3RDPARTYLIBPOSTFIX).lib wxjpeg$(WX3RDPARTYLIBPOSTFIX).lib wxpng$(WX3RDPARTYLIBPOSTFIX).lib wxzlib$(WX3RDPARTYLIBPOSTFIX).lib wxregex$(WXLIBPOSTFIX).lib wxexpat$(WX3RDPARTYLIBPOSTFIX).lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib oleacc.lib
 <<
 
 data: 
@@ -289,7 +288,7 @@ xrcdemo_xrcdemo.obj: .\xrcdemo.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(XRCDEMO_CXXFLAGS) .\xrcdemo.cpp
 
 xrcdemo_capture_xrcdemo.res: .\xrcdemo.rc
-	rc /fo$@  /d WIN32 /i $(CPPUNIT_INCL) /i $(wxGuiTestPath)\include /d _CONSOLE /d XRCDIR="$(XRCDIR)" /d SW_USE_WX_APP_GUI_TESTING $(____DBG_1) $(____WX_SHARED_1) $(__WXUNICODE_DEFINE_p_6) $(__WXDEBUG_DEFINE_p_6) /d __WXMSW__ /i $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /i $(WX_DIR)\include .\xrcdemo.rc
+	rc /fo$@  /d WIN32 /i $(CPPUNIT_INCL) /i $(wxGuiTestPath)\include /d _CONSOLE /d XRCDIR="$(XRCDIR)" /d USE_WXGUITESTING $(____DBG_1) $(____WX_SHARED_1) $(__WXUNICODE_DEFINE_p_6) $(__WXDEBUG_DEFINE_p_6) /d __WXMSW__ /i $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /i $(WX_DIR)\include .\xrcdemo.rc
 
 xrcdemo_capture_custclas.obj: .\custclas.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(XRCDEMO_CAPTURE_CXXFLAGS) .\custclas.cpp
@@ -310,7 +309,7 @@ xrcdemo_capture_SimpleCRTest.obj: .\SimpleCRTest.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(XRCDEMO_CAPTURE_CXXFLAGS) .\SimpleCRTest.cpp
 
 xrcdemo_test_xrcdemo.res: .\xrcdemo.rc
-	rc /fo$@  /d WIN32 /i $(CPPUNIT_INCL) /i $(wxGuiTestPath)\include /d _CONSOLE /d XRCDIR="$(XRCDIR)" /d SW_USE_WX_APP_GUI_TESTING $(____DBG_1) $(____WX_SHARED_1) $(__WXUNICODE_DEFINE_p_6) $(__WXDEBUG_DEFINE_p_6) /d __WXMSW__ /i $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /i $(WX_DIR)\include .\xrcdemo.rc
+	rc /fo$@  /d WIN32 /i $(CPPUNIT_INCL) /i $(wxGuiTestPath)\include /d _CONSOLE /d XRCDIR="$(XRCDIR)" /d USE_WXGUITESTING $(____DBG_1) $(____WX_SHARED_1) $(__WXUNICODE_DEFINE_p_6) $(__WXDEBUG_DEFINE_p_6) /d __WXMSW__ /i $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) /i $(WX_DIR)\include .\xrcdemo.rc
 
 xrcdemo_test_custclas.obj: .\custclas.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(XRCDEMO_TEST_CXXFLAGS) .\custclas.cpp

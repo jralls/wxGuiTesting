@@ -73,7 +73,7 @@ void CRChoiceSelectionEvent::EmitCpp ()
     int choiceSelection = choice->FindString (choiceSelectionText);
     wxTst::EventSimulationHelper::SelectChoiceItem (choice,
             choiceSelection);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -135,7 +135,7 @@ void CRChoiceSelectionEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

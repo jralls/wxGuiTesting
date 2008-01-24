@@ -23,7 +23,7 @@ namespace wxTst {
 /*! \class TempInteractive
     \brief Make the wxWidgets GUI test temporarily interactive.
 
-    In contrast to GuiTestHelper::BreakTestToShowCurrentGui() interactivity
+    In contrast to WxGuiTestHelper::BreakTestToShowCurrentGui() interactivity
     with the current GUI is possible, but it has to be kept in mind that this
     may lead to side effects with the subsequent continuation of test case code!
 

@@ -16,27 +16,27 @@
 
 #include <wx/dialog.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include "TempInteractiveControl.h"
 
 using namespace wxTst;
 
 void TempInteractive::ShowCurrentGui (const wxString& file, int line)
 {
-    if (GuiTestHelper::GetDisableTestInteractivity ()) {
+    if (WxGuiTestHelper::GetDisableTestInteractivity ()) {
 
 	return;
     }
 
     // Store old main loop flag and set new one:
-    bool oldUseExitMainLoopOnIdle = GuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
-    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    bool oldUseExitMainLoopOnIdle = WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
+    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
     // Likewise, provide normal (= release, in opposition to testing mode)
     // behaviour:
-    bool oldShowModalDialogsNonModal = GuiTestHelper::GetShowModalDialogsNonModalFlag ();
-    GuiTestHelper::SetShowModalDialogsNonModalFlag (false);
-    bool oldShowPopupMenus = GuiTestHelper::GetShowPopupMenusFlag ();
-    GuiTestHelper::SetShowPopupMenusFlag (true);
+    bool oldShowModalDialogsNonModal = WxGuiTestHelper::GetShowModalDialogsNonModalFlag ();
+    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (false);
+    bool oldShowPopupMenus = WxGuiTestHelper::GetShowPopupMenusFlag ();
+    WxGuiTestHelper::SetShowPopupMenusFlag (true);
 
     wxDialog* dialog = CreateDialog (file, line);
     TempInteractiveControl* handler = 
@@ -48,10 +48,10 @@ void TempInteractive::ShowCurrentGui (const wxString& file, int line)
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:
-    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
+    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
     // Likewise, restore other flags:
-    GuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
-    GuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
+    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
+    WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
     dialog->PopEventHandler (true);
     dialog->Destroy ();
 }

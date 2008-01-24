@@ -157,7 +157,7 @@ void EventSimulationHelper::SelectTreeItem (const wxTreeItemId &id,
     // of being posted - otherwise the event's properties are getting invalid.
     // Very strange!
     //::wxPostEvent (treeCtrl->GetEventHandler (), evt);
-    //Tst::GuiTestHelper::FlushEventQueue ();
+    //wxTst::WxGuiTestHelper::FlushEventQueue ();
     treeCtrl->GetEventHandler ()->ProcessEvent (evt);
     // Somehow the selection is not really carried out (not WRT GUI state; and
     // retrieval of current selection seems to be via GUI state):
@@ -182,7 +182,7 @@ void EventSimulationHelper::RightClickTreeItem (
     evt.SetEventObject (treeCtrl);
     // Again, process event immediately:
     //::wxPostEvent (treeCtrl->GetEventHandler (), evt);
-    //Tst::GuiTestHelper::FlushEventQueue ();
+    //wxTst::WxGuiTestHelper::FlushEventQueue ();
     treeCtrl->GetEventHandler ()->ProcessEvent (evt);
 }
 

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestApp.cpp
+// Name:        wxGuiTest/WxGuiTestApp.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -9,13 +9,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "GuiTestApp.h"
+    #pragma implementation "WxGuiTestApp.h"
 #endif
 
-#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 
 #include "InitWxGuiTestSetUp.h"
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventFilterInterface.h>
 
 IMPLEMENT_APP_NO_MAIN(wxTst::WxGuiTestApp)
@@ -99,7 +99,7 @@ void WxGuiTestApp::SetEventFilter (CREventFilterInterface *eventFilter)
 void WxGuiTestApp::OnAssert (const wxChar *file, int line,
         const wxChar *cond, const wxChar *msg)
 {
-    if (GuiTestHelper::GetPopupWarningForFailingAssert ()) {
+    if (WxGuiTestHelper::GetPopupWarningForFailingAssert ()) {
 
 #ifdef __WXDEBUG__
         wxApp::OnAssert (file, line, cond, msg);
@@ -113,9 +113,9 @@ void WxGuiTestApp::OnAssert (const wxChar *file, int line,
             failMsg << _T(": ") << msg;
         }
 
-        GuiTestHelper::AddTestFailure (file, line,
+        WxGuiTestHelper::AddTestFailure (file, line,
                 _T("wxWidgets assert failure"), failMsg);
-        //GuiTestHelper::SetCheckForProvokedWarnings (false);
+        //WxGuiTestHelper::SetCheckForProvokedWarnings (false);
         wxTheApp->ExitMainLoop ();
     }
 }
@@ -130,8 +130,8 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
 
     wxApp::OnIdle (event);
 
-    if (GuiTestHelper::GetUseExitMainLoopOnIdleFlag () &&
-            GuiTestHelper::GetExitMainLoopOnIdleFlag ()) {
+    if (WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag () &&
+            WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()) {
     
         wxTheApp->ExitMainLoop ();
     }
@@ -155,7 +155,7 @@ int WxGuiTestApp::OnRun ()
     ::wxLogTrace (_T("wxGuiTestCallTrace"), _T("int WxGuiTestApp::OnRun ()"));
 
     // TODO: Allow configuration of m_exitOnFrameDelete flag by means of
-    //   GuiTestHelper?
+    //   WxGuiTestHelper?
 
     // see the comment in ctor: if the initial value hasn't been changed, use
     // the default Yes from now on
@@ -182,7 +182,7 @@ int WxGuiTestApp::OnRun ()
     // Final processing of all pending events seems to be no more necessary (at least not for the
     // simple test cases that are part of this framework). Used to be:
     /*
-    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
     return wxTheApp->MainLoop ();
     */
     return 0;

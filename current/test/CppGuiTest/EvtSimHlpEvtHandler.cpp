@@ -23,7 +23,7 @@
 #include <wx/spinctrl.h>
 #include <wx/notebook.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 
 BEGIN_EVENT_TABLE(wxTst::EvtSimHlpEvtHandler, wxEvtHandler)
     EVT_MENU( XRCID("MenuItem"), EvtSimHlpEvtHandler::OnMenuItem )
@@ -217,7 +217,7 @@ void EvtSimHlpEvtHandler::OnTreeItemRightClick (wxTreeEvent &event)
     wxMenu *m = new wxMenu (_T("PopupMenu"));
     m->Append (1234, _T("PopupMenuItem"));
     wxPoint p (0, 0);
-    GuiTestHelper::PopupMenu ((wxTreeCtrl *) event.GetEventObject (), m,
+    WxGuiTestHelper::PopupMenu ((wxTreeCtrl *) event.GetEventObject (), m,
             event.GetPoint (), _T("sccDatasetBrowserPopupMenu"));
 }
 

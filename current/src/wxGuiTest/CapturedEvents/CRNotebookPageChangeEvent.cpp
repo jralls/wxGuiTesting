@@ -101,7 +101,7 @@ void CRNotebookPageChangeEvent::EmitCpp ()
             notebookPage < notebook->GetPageCount ());
     wxTst::EventSimulationHelper::SelectNotebookPage (notebook,
             notebookPage);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
 
     CRCppEmitter *emitter = CRCppEmitter::GetInstance ();
@@ -165,7 +165,7 @@ void CRNotebookPageChangeEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

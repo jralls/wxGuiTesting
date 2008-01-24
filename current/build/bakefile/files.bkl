@@ -7,7 +7,7 @@
      $Id$
 -->
 <makefile>
-  <set var='WGTS'>src/GuiTesting</set>
+  <set var='WGTS'>src/wxGuiTest</set>
   <set var='WGTI'>include/wxGuiTest</set>
   <set var='WXVTK'>src/wxVTK</set>
 
@@ -34,25 +34,25 @@
     $(WGTS)/InitWxGuiTest.cpp
     $(WGTS)/InitWxGuiTestSetUp.cpp
     $(WGTS)/ModalDialogTimer.cpp
-    $(WGTS)/GuiTestApp.cpp
     $(WGTS)/CppUnitWarningAsserter.cpp
     $(WGTS)/EventSimulationHelper.cpp
-    $(WGTS)/GuiTestHelper.cpp
     $(WGTS)/ProvokedWarning.cpp
     $(WGTS)/ProvokedWarningRegistry.cpp
     $(WGTS)/TempInteractive.cpp
     $(WGTS)/TempInteractiveControl.cpp
     $(WGTS)/TimedDialogEnder.cpp
     $(WGTS)/CapturePanel.cpp
+    $(WGTS)/WxGuiTestApp.cpp
+    $(WGTS)/WxGuiTestHelper.cpp
   </set>
 
 
   <set var='VTK_SOURCES' >
-    $(WGTS)/VtkWxGuiTesting/CRVtkCapture.cpp
-    $(WGTS)/VtkWxGuiTesting/CRVtkCaptureControl.cpp
-    $(WGTS)/VtkWxGuiTesting/VtkWxGuiTestHelper.cpp
-    $(WGTS)/VtkWxGuiTesting/VtkInteractorEventRecorder.cpp
-    $(WGTS)/VtkWxGuiTesting/VtkCapturePanel.cpp
+    $(WGTS)/VtkGuiTesting/CRVtkCapture.cpp
+    $(WGTS)/VtkGuiTesting/CRVtkCaptureControl.cpp
+    $(WGTS)/VtkGuiTesting/VtkWxGuiTestHelper.cpp
+    $(WGTS)/VtkGuiTesting/VtkInteractorEventRecorder.cpp
+    $(WGTS)/VtkGuiTesting/VtkCapturePanel.cpp
   </set>
 
   <set var='WXVTK_SOURCES'>
@@ -60,7 +60,6 @@
   </set>
 
   <set var='WGTS_HDRS'>
-    $(WGTI)/Common.h
     $(WGTS)/CapturedEvents/CRAbstractTreeEvent.h
     $(WGTS)/CapturedEvents/CRButtonClickEvent.h
     $(WGTS)/CapturedEvents/CRCapturedEvent.h
@@ -81,6 +80,7 @@
 
 
   <set var='WGT_INSTALL_HDRS'>
+    $(WGTI)/Common.h
     $(WGTI)/CRCapture.h
     $(WGTI)/CRCaptureControl.h
     $(WGTI)/CRCppEmitter.h
@@ -88,24 +88,24 @@
     $(WGTI)/CREventFilterInterface.h
     $(WGTI)/CRWindowHierarchyHandler.h
     $(WGTI)/CRLogInterface.h
+    $(WGTI)/CppUnitWarningAsserter.h
+    $(WGTI)/EventSimulationHelper.h
     $(WGTI)/InitWxGuiTest.h
     $(WGTI)/ModalDialogInteractionInterface.h
     $(WGTI)/ModalDialogTimer.h
-    $(WGTI)/GuiTestApp.h
-    $(WGTI)/CppUnitWarningAsserter.h
-    $(WGTI)/EventSimulationHelper.h
-    $(WGTI)/GuiTestHelper.h
     $(WGTI)/ProvokedWarning.h
     $(WGTI)/ProvokedWarningRegistry.h
     $(WGTI)/TempInteractive.h
     $(WGTI)/TimedDialogEnder.h
     $(WGTI)/WarningAsserterInterface.h
+    $(WGTI)/WxGuiTestApp.h
+    $(WGTI)/WxGuiTestHelper.h
   </set>
 
   <set var='VTK_HDRS' >
     $(WGTI)/VtkGuiTesting/CRVtkCapture.h
     $(WGTI)/VtkGuiTesting/CRVtkCaptureControl.h
-    $(WGTI)/VtkGuiTesting/VtkGuiTestHelper.h
+    $(WGTI)/VtkGuiTesting/VtkWxGuiTestHelper.h
     $(WGTI)/VtkGuiTesting/VtkInteractorEventRecorder.h
   </set>
 

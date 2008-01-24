@@ -10,11 +10,11 @@
     #pragma implementation "CRVtkCapture.h"
 #endif
 
-#include <wxGuiTest/VtkwxGuiTest/CRVtkCapture.h>
+#include <wxGuiTest/VtkGuiTesting/CRVtkCapture.h>
 
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/VtkwxGuiTest/CRVtkCaptureControl.h>
+#include <wxGuiTest/VtkGuiTesting/CRVtkCaptureControl.h>
 
 // VTK capture panel XRC file is compiled into a c++ file with embedded resources:
 extern void InitVtkCapturePanelXRC ();

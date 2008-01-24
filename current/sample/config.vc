@@ -47,10 +47,10 @@ WX_MONOLITHIC = 0
 WX_DIR = $(WXWIN)
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL = $(CPPUNIT)\include
+CPPUNIT_INCL = c:\cppunit-1.12.0\include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR = $(CPPUNIT)\lib
+CPPUNIT_LIBDIR = c:\cppunit-1.12.0\lib
 
 # Library names needed for CppUnit to link 
 CPPUNIT_LIB = cppunit$(WX3RDPARTYLIBPOSTFIX)_dll

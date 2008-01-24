@@ -90,7 +90,7 @@
   <template id='testApp' template='wxGuiTest' template_append='App'>
     <app-type>console</app-type>
     <define>XRCDIR="$(XRCDIR)"</define>
-    <define>SW_USE_WX_APP_GUI_TESTING</define>
+    <define>USE_WXGUITESTING </define>
   </template>
 
   <set var='progSource'>

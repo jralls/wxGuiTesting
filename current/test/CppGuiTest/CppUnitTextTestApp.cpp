@@ -15,7 +15,7 @@
 // For checking wxGuiTestCallTrace, see below:
 //#include "wx/log.h"
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CppUnitWarningAsserter.h>
 #include <wxGuiTest/InitWxGuiTest.h>
 
@@ -24,16 +24,16 @@ int main (int argc, char* argv[])
   //    wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 
     // Configure unit testing:
-    wxTst::GuiTestHelper::SetShowModalDialogsNonModalFlag (true);
-    wxTst::GuiTestHelper::SetShowPopupMenusFlag (false);
+    wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
+    wxTst::WxGuiTestHelper::SetShowPopupMenusFlag (false);
     // Disable interactivity for really running automatic tests:
-    //wxTst::GuiTestHelper::SetDisableTestInteractivity (true);
+    //wxTst::WxGuiTestHelper::SetDisableTestInteractivity (true);
     // Likewise, prevent pop-up warning message box on failing assertions:
-    //wxTst::GuiTestHelper::SetPopupWarningForFailingAssert (false);
+    //wxTst::WxGuiTestHelper::SetPopupWarningForFailingAssert (false);
     // But do check provoked warnings in testing mode:
-	wxTst::GuiTestHelper::SetCheckForProvokedWarnings (true);
+	wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (true);
     // Which requires the correct CppUnit warning asserter:
-    wxTst::GuiTestHelper::SetWarningAsserter (
+    wxTst::WxGuiTestHelper::SetWarningAsserter (
             new wxTst::CppUnitWarningAsserter ());
 
     // wxTst::InitWxGuiTest, which "packs" all registered wxWidgets GUI tests

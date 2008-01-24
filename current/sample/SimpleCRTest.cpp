@@ -1,9 +1,13 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/SimpleCRTest.cpp
+// Name:        sample/SimpleCRTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -18,12 +22,12 @@
 
 //#include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TimedDialogEnder.h>
+#include <wxGuiTest/TempInteractive.h>
 
-#include <wxGuiTest/swCRCapture.h>
+#include <wxGuiTest/CRCapture.h>
 
 
 #include "xrcdemo.h"
@@ -44,8 +48,8 @@ void SimpleCRTest::setUp ()
 //    MyFrame* myFrame = app.init();
 //    wxTheApp->SetTopWindow(myFrame);
 //     wxWindow* myFrame = wxTheApp->GetTopWindow();
-//     swTst::WxGuiTestHelper::Show (myFrame, true, false);
-//     swTst::WxGuiTestHelper::FlushEventQueue ();
+//     wxTst::WxGuiTestHelper::Show (myFrame, true, false);
+//     wxTst::WxGuiTestHelper::FlushEventQueue ();
 
 }
 
@@ -61,25 +65,25 @@ void SimpleCRTest::tearDown ()
 
 // void SimpleCRTest::testCapture ()
 // {
-//     swTst::WxGuiTestTempInteractive interactive;
+//     wxTst::TempInteractive interactive;
 
 //     // Do bootstrap capturing:
 //     CAPTURE
 // }
 void SimpleCRTest::testCapture ()
 {
-    swTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
 
     // Do bootstrap capturing:
 
         wxApp *app = wxTheApp;                                                
         wxASSERT (app != NULL);                                               
-        swTst::WxGuiTestApp *guiTestApp = dynamic_cast< swTst::WxGuiTestApp * >(app); 
+        wxTst::WxGuiTestApp *guiTestApp = dynamic_cast< wxTst::WxGuiTestApp * >(app); 
         wxASSERT (guiTestApp != NULL);                                        
-        guiTestApp->SetEventFilter (swTst::CREventCaptureManager::GetInstance ()); 
+        guiTestApp->SetEventFilter (wxTst::CREventCaptureManager::GetInstance ()); 
                                                                               
         std::string excMsg;						                              
-        swTst::CRCapture *capture = new swTst::CRCapture ();                  
+        wxTst::CRCapture *capture = new wxTst::CRCapture ();                  
         try {                                                                 
             capture->Capture (__FILE__, __LINE__);                            
         } catch (std::exception &e) {                                         
@@ -89,7 +93,7 @@ void SimpleCRTest::testCapture ()
         }                                                                     
         guiTestApp->SetEventFilter (NULL);                                    
         delete capture;                                                       
-        swTst::CRCppEmitter::Destroy ();                                      
+        wxTst::CRCppEmitter::Destroy ();                                      
         if (!excMsg.empty ()) {                                               
             CPPUNIT_FAIL (excMsg.c_str ());                                   
         }                                                                     

@@ -120,7 +120,7 @@ void CRTextUpdateEvent::EmitCpp ()
             failed", textCtrl != NULL);
     wxTst::EventSimulationHelper::SetTextCtrlValue (textCtrl,
             "abc");
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -170,7 +170,7 @@ void CRTextUpdateEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

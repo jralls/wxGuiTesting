@@ -18,7 +18,7 @@
 
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/TempInteractive.h>
 #include <wxGuiTest/CRWindowHierarchyHandler.h>
 
@@ -52,7 +52,7 @@ void CRWindowHierarchyHandlerTest::testFindWindowContainerName ()
     wxDialog dialog (NULL, -1, _T("CRWindowHierarchyHandlerTest Dialog"),
             wxDefaultPosition);
 #ifndef __WXGTK__
-    GuiTestHelper::FlushEventQueue ();
+    WxGuiTestHelper::FlushEventQueue ();
 #endif
 
     wxSizer *topSizer = new wxBoxSizer (wxVERTICAL);

@@ -19,7 +19,7 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 
 namespace wxTst {
 

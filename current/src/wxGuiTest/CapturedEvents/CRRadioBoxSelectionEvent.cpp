@@ -72,7 +72,7 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     int radioBoxSelection = radioBox->FindString (radioBoxSelectionText);
     wxTst::EventSimulationHelper::SelectRadioBoxItem (radioBox,
             radioBoxSelection);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -137,7 +137,7 @@ void CRRadioBoxSelectionEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

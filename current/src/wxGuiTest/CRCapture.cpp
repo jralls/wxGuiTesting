@@ -16,7 +16,7 @@
 
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventCaptureManager.h>
 
 // Capture panel XRC file is compiled into a c++ file with embedded resources:
@@ -63,14 +63,14 @@ void CRCapture::Log (const wxString &text)
 void CRCapture::Show ()
 {
     // Store old main loop flag and set new one:
-    bool oldUseExitMainLoopOnIdle = GuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
-    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    bool oldUseExitMainLoopOnIdle = WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
+    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
     // Likewise, provide normal (= release, in opposition to testing mode)
     // behaviour:
-    bool oldShowModalDialogsNonModal = GuiTestHelper::GetShowModalDialogsNonModalFlag ();
-    GuiTestHelper::SetShowModalDialogsNonModalFlag (false);
-    bool oldShowPopupMenus = GuiTestHelper::GetShowPopupMenusFlag ();
-    GuiTestHelper::SetShowPopupMenusFlag (true);
+    bool oldShowModalDialogsNonModal = WxGuiTestHelper::GetShowModalDialogsNonModalFlag ();
+    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (false);
+    bool oldShowPopupMenus = WxGuiTestHelper::GetShowPopupMenusFlag ();
+    WxGuiTestHelper::SetShowPopupMenusFlag (true);
 
     if (m_dialog == NULL) {
 
@@ -88,10 +88,10 @@ void CRCapture::Show ()
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:
-    GuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
+    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
     // Likewise, restore other flags:
-    GuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
-    GuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
+    WxGuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
+    WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
 }
 
 

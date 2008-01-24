@@ -20,7 +20,7 @@
 #include <wx/frame.h>
 #include <wx/treectrl.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/EventSimulationHelper.h>
 #include <wxGuiTest/TimedDialogEnder.h>
 #include <wxGuiTest/TempInteractive.h>
@@ -81,8 +81,8 @@ void CapturePlusEmittingTest::setUp ()
     frame->Show ();
 
     wxTheApp->SetTopWindow (frame);
-    GuiTestHelper::Show (frame, true, false);
-    GuiTestHelper::FlushEventQueue ();
+    WxGuiTestHelper::Show (frame, true, false);
+    WxGuiTestHelper::FlushEventQueue ();
 
     // 2. Setup capturing mode:
     getGuiTestApp ()->SetEventFilter (CREventCaptureManager::GetInstance ());
@@ -132,7 +132,7 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem ()
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
     wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, topFrame);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     END
 }
 
@@ -165,7 +165,7 @@ void CapturePlusEmittingTest::testSelectAndCheckTopLevelWindowMenuBarMenuItem2 (
     // if (!checkableMenuItemMenuItem->IsChecked ()) { ...
     wxTst::EventSimulationHelper::SelectAndCheckMenuItem (
             checkableMenuItemMenuItemId, menuMenu);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     END
 }
 

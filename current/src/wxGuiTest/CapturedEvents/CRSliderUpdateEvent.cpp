@@ -89,7 +89,7 @@ void CRSliderUpdateEvent::EmitCpp ()
     CPPUNIT_ASSERT_MESSAGE ("Converting window for slider 'Slider' failed",
             slider != NULL);
     wxTst::EventSimulationHelper::SetSliderValue (slider, 30);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -136,6 +136,6 @@ void CRSliderUpdateEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }

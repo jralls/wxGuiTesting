@@ -1,9 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/SimpleTest.cpp
+// Name:        sample/SimpleTest.cpp
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -13,10 +15,10 @@
 #include "SimpleTest.h"
 
 #include <wx/xrc/xmlres.h>
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swModalDialogTimer.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/ModalDialogTimer.h>
+#include <wxGuiTest/TempInteractive.h>
 
 #ifdef __WXGTK__
 #define MC "_"
@@ -42,8 +44,8 @@ void SimpleTest::setUp ()
 //     MyChild* childFrame = new MyChild(frame, _T("Test Child Window"));
 //     childFrame->Activate();
     
-//     swTst::WxGuiTestHelper::Show (frame, true, false);
-//     swTst::WxGuiTestHelper::FlushEventQueue ();
+//     wxTst::WxGuiTestHelper::Show (frame, true, false);
+//     wxTst::WxGuiTestHelper::FlushEventQueue ();
 }
 
 
@@ -55,25 +57,25 @@ void SimpleTest::tearDown () {
 //     childFrame->Destroy();
 //     wxTheApp->SetTopWindow (NULL);
 //     frame->Destroy(); 
-//     swTst::WxGuiTestHelper::FlushEventQueue();
+//     wxTst::WxGuiTestHelper::FlushEventQueue();
 }
 
 
 void SimpleTest::testExample ()
 {
-    wxApp *app = swTst::WxGuiTestApp::GetInstance ();
+    wxApp *app = wxTst::WxGuiTestApp::GetInstance ();
 
     wxLogDebug(_T("Application Name is %s"), wxTheApp->GetAppName().c_str());
     CPPUNIT_ASSERT_MESSAGE ("Application name is wrong",
             wxTheApp->GetAppName () == _("xrcdemo_test"));
 
     // Show current GUI:
-    swTst::WxGuiTestHelper::BreakTestToShowCurrentGui ();
+    wxTst::WxGuiTestHelper::BreakTestToShowCurrentGui ();
 }
 
 void SimpleTest::testTrivial() {
-    swTst::WxGuiTestTempInteractive interactive;
-    swTst::ModalDialogTimer timer(wxID_OK);
+    wxTst::WxGuiTestTempInteractive interactive;
+    wxTst::ModalDialogTimer timer(wxID_OK);
    // *** Loop up top level containers ***
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", 
 			    wxTheApp->GetTopWindow () != NULL);
@@ -95,21 +97,21 @@ void SimpleTest::testTrivial() {
             platformMenuItemId);
     CPPUNIT_ASSERT_MESSAGE ("Menu item 'platformMenuItem' not found",
             platformMenuItem != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             platformMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     wxWindow* wdw = topFrame->FindWindow(_T("platform_child"));
     if (wdw == NULL)
 	wdw = wxWindow::FindWindowByName(_T("platform_child"));
     CPPUNIT_ASSERT_MESSAGE("First Child not found", wdw != NULL);
     wxMDIChildFrame* child1 = dynamic_cast<wxMDIChildFrame*>(wdw);
     CPPUNIT_ASSERT_MESSAGE("Window isn't an MDI Child", child1 != NULL);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
 
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             platformMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
 //    interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
 
@@ -127,9 +129,9 @@ void SimpleTest::testTrivial() {
             derived_toolMenuItemId);
     CPPUNIT_ASSERT_MESSAGE ("Menu item 'derived_toolMenuItem' not found",
             derived_toolMenuItem != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             derived_toolMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
      wxWindow *custom_child = 
 	 wxWindow::FindWindowByName (_T("custom_class_child"));
@@ -139,9 +141,9 @@ void SimpleTest::testTrivial() {
     wxWindow *wxID_OKWdw4 = custom_child->FindWindow (XRCID("wxID_OK"));
     CPPUNIT_ASSERT_MESSAGE ("Window for button 'wxID_OK' not found", 
             wxID_OKWdw4 != NULL);
-    swTst::WxGuiTestEventSimulationHelper::ClickButton (wxID_OKWdw4->GetId (), 
+    wxTst::EventSimulationHelper::ClickButton (wxID_OKWdw4->GetId (), 
             wxID_OKWdw4);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     CPPUNIT_ASSERT_MESSAGE("OK Button didn't hide Mac Specific Dialog",
 			   custom_child->IsShown() == false);
 

@@ -59,7 +59,7 @@ void CRButtonClickEvent::EmitCpp ()
             != NULL);
     wxTst::EventSimulationHelper::ClickButton (buttonWdw->GetId (),
             buttonWdw);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -92,7 +92,7 @@ void CRButtonClickEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

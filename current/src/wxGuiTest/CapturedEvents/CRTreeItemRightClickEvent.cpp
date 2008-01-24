@@ -71,7 +71,7 @@ void CRTreeItemRightClickEvent::EmitCpp ()
             ));
     wxTst::EventSimulationHelper::RightClickTreeItem (treeItemId1,
             treeCtrl);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -163,7 +163,7 @@ void CRTreeItemRightClickEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

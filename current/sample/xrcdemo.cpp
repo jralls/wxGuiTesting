@@ -41,8 +41,8 @@
 #include "wx/cshelp.h"              // wxSimpleHelpProvider for helptext
 
 #include "myframe.h"
-#ifdef SW_USE_WX_APP_GUI_TESTING
-#include <wxGuiTest/swWxGuiTestHelper.h>
+#ifdef USE_WXGUITESTING
+#include <wxGuiTest/WxGuiTestHelper.h>
 #endif
 
 //-----------------------------------------------------------------------------
@@ -124,7 +124,7 @@ bool MyApp::OnInit()
     if (!wxXmlResource::Get()->Load(wxT("rc/variable.xrc")))
         return false;
 
-#ifdef  SW_USE_WX_APP_GUI_TESTING
+#ifdef  USE_WXGUITESTING
 //Override the appname set in swInitWxGuiTestSetUp.cpp ("bla")
     wxTheApp->SetAppName(_T("xrcdemo_test"));
 #endif

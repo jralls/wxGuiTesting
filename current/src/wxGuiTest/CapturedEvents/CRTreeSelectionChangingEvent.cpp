@@ -70,7 +70,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
             ));
     wxTst::EventSimulationHelper::SelectTreeItem (treeItemId1,
             treeCtrl);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -156,7 +156,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     emitter->AddCode (str);
 
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

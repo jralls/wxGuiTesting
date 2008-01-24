@@ -67,7 +67,7 @@ void CRCheckBoxClickEvent::EmitCpp ()
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'Checkbox' \
             failed", checkbox != NULL);
     wxTst::EventSimulationHelper::SetCheckboxState (checkbox, true);
-    wxTst::GuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
@@ -114,7 +114,7 @@ void CRCheckBoxClickEvent::EmitCpp ()
     emitter->AddCode (str);
     
     str.Clear ();
-    str << _T("wxTst::GuiTestHelper::FlushEventQueue ();\n");
+    str << _T("wxTst::WxGuiTestHelper::FlushEventQueue ();\n");
     emitter->AddCode (str);
 }
 

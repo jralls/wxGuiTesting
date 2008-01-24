@@ -27,8 +27,8 @@ XRCDEMO_OBJECTS =  \
 	xrcdemo_myframe.o \
 	xrcdemo_xrcdemo.o
 XRCDEMO_CAPTURE_CXXFLAGS = -I$(CPPUNIT_INCL) -I$(wxGuiTestPath)/include \
-	-DXRCDIR=\"$(XRCDIR)\" -DSW_USE_WX_APP_GUI_TESTING $(__OPT) $(__DBG) \
-	`$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DUSE_WXGUITESTING $(__OPT) $(__DBG) `$(WX_CONFIG) \
+	--cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) $(CXXFLAGS)
 XRCDEMO_CAPTURE_OBJECTS =  \
 	xrcdemo_capture_custclas.o \
 	xrcdemo_capture_derivdlg.o \
@@ -37,8 +37,8 @@ XRCDEMO_CAPTURE_OBJECTS =  \
 	xrcdemo_capture_CppTextTestApp.o \
 	xrcdemo_capture_SimpleCRTest.o
 XRCDEMO_TEST_CXXFLAGS = -I$(CPPUNIT_INCL) -I$(wxGuiTestPath)/include \
-	-DXRCDIR=\"$(XRCDIR)\" -DSW_USE_WX_APP_GUI_TESTING $(__OPT) $(__DBG) \
-	`$(WX_CONFIG) --cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) $(CXXFLAGS)
+	-DXRCDIR=\"$(XRCDIR)\" -DUSE_WXGUITESTING $(__OPT) $(__DBG) `$(WX_CONFIG) \
+	--cxxflags $(WX_CONFIG_FLAGS)` $(CPPFLAGS) $(CXXFLAGS)
 XRCDEMO_TEST_OBJECTS =  \
 	xrcdemo_test_custclas.o \
 	xrcdemo_test_derivdlg.o \
@@ -142,7 +142,7 @@ endif
 xrcdemo_bundle: $(____xrcdemo_app_Contents_PkgInfo___depname)
 
 xrcdemo_capture: $(XRCDEMO_CAPTURE_OBJECTS)
-	$(CXX) -o $@ $(XRCDEMO_CAPTURE_OBJECTS) $(LDFLAGS) -L$(CPPUNIT_LIBDIR) -L$(wxGuiTestPath)/lib  -L$(CPPUNIT_LIBDIR) $(__DBG) `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs xrc,html,adv,xml,core,base`  -l$(CPPUNIT_LIB) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -l$(CPPUNIT_LIB)
+	$(CXX) -o $@ $(XRCDEMO_CAPTURE_OBJECTS) $(LDFLAGS) -L$(CPPUNIT_LIBDIR) -L$(wxGuiTestPath)/lib  $(__DBG) `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs xrc,html,adv,xml,core,base`  -l$(CPPUNIT_LIB) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX)
 
 ifeq ($(TOOLKIT),MAC)
 ./xrcdemo_capture.app/Contents/PkgInfo: xrcdemo_capture
@@ -166,7 +166,7 @@ endif
 xrcdemo_capture_bundle: $(____xrcdemo_capture_app_Contents_PkgInfo___depname)
 
 xrcdemo_test: $(XRCDEMO_TEST_OBJECTS)
-	$(CXX) -o $@ $(XRCDEMO_TEST_OBJECTS) $(LDFLAGS) -L$(CPPUNIT_LIBDIR) -L$(wxGuiTestPath)/lib  -L$(CPPUNIT_LIBDIR) $(__DBG) `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs xrc,html,adv,xml,core,base`  -l$(CPPUNIT_LIB) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) -l$(CPPUNIT_LIB)
+	$(CXX) -o $@ $(XRCDEMO_TEST_OBJECTS) $(LDFLAGS) -L$(CPPUNIT_LIBDIR) -L$(wxGuiTestPath)/lib  $(__DBG) `$(WX_CONFIG) $(WX_CONFIG_FLAGS) --libs xrc,html,adv,xml,core,base`  -l$(CPPUNIT_LIB) -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX)
 
 ifeq ($(TOOLKIT),MAC)
 ./xrcdemo_test.app/Contents/PkgInfo: xrcdemo_test

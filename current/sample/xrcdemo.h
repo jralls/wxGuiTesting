@@ -24,9 +24,9 @@
 //-----------------------------------------------------------------------------
 
 // Define a new application type, each program should derive a class from wxApp
-#ifdef SW_USE_WX_APP_GUI_TESTING
-#include <wxGuiTest/swWxGuiTestApp.h>
-class MyApp : public swTst::WxGuiTestApp
+#ifdef USE_WXGUITESTING
+#include <wxGuiTest/wxGuiTestApp.h>
+class MyApp : public wxTst::wxGuiTestApp
 #else
 #include <wx/app.h>
 class MyApp : public wxApp

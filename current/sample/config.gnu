@@ -77,13 +77,13 @@ WX_VERSION := $(shell $(WX_CONFIG) --selected-config | sed -e 's/.*-\([0-9]*\)\.
 TOOLKIT := MAC
 
 # Path to the wx sources for retrieving the Info.plist and wxmac.icns templates 
-WXSRCPATH := ../build/macosx
+WXSRCPATH := /usr/local/src/wxMac-2.8.6
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL := $(CPPUNIT)/include
+CPPUNIT_INCL := /usr/local/cppunit-1.12/include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR := $(CPPUNIT)/lib
+CPPUNIT_LIBDIR := /usr/local/cppunit-1.12/lib
 
 # Library names needed for CppUnit to link 
 CPPUNIT_LIB := cppunit$(WX3RDPARTYLIBPOSTFIX)

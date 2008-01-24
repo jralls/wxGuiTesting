@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Name:        build/bakefile/Bakefiles.bkgen
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     Licence:     wxWindows licence
+     $Id$
+-->
 <bakefile-gen xmlns="http://www.bakefile.org/schema/bakefile-gen"
 	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	      xsi:schemaLocation="file:///usr/local/bakefile-svn/share/bakefile/schema/bakefile-gen.xsd">

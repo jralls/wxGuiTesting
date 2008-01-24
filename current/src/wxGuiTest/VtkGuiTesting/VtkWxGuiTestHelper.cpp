@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/VtkWxGuiTesting/VtkGuiTestHelper.cpp
+// Name:        wxGuiTest/VtkWxGuiTesting/VtkWxGuiTestHelper.cpp
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -7,30 +7,30 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
-    #pragma implementation "VtkGuiTestHelper.h"
+    #pragma implementation "VtkWxGuiTestHelper.h"
 #endif
 
-#include <wxGuiTest/VtkwxGuiTest/VtkGuiTestHelper.h>
+#include <wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h>
 
-#include <wxGuiTest/VtkwxGuiTest/VtkInteractorEventRecorder.h>
+#include <wxGuiTest/VtkGuiTesting/VtkInteractorEventRecorder.h>
 
 namespace wxTst {
 
 
 // Init single instance:
-VtkGuiTestHelper *VtkGuiTestHelper::ms_instance = NULL;
+VtkWxGuiTestHelper *VtkWxGuiTestHelper::ms_instance = NULL;
 
 // Set default settings for normal application logic:
-bool VtkGuiTestHelper::ms_useWxVtkInteractionRecording = false;
+bool VtkWxGuiTestHelper::ms_useWxVtkInteractionRecording = false;
 
 
-VtkGuiTestHelper::VtkGuiTestHelper ()
+VtkWxGuiTestHelper::VtkWxGuiTestHelper ()
 {
     // Nothing to do
 }
 
 
-VtkGuiTestHelper::~VtkGuiTestHelper ()
+VtkWxGuiTestHelper::~VtkWxGuiTestHelper ()
 {
     RecorderMap::iterator it;
     for (it = m_recorderMap.begin (); it != m_recorderMap.end (); it++) {
@@ -42,17 +42,17 @@ VtkGuiTestHelper::~VtkGuiTestHelper ()
 }
 
 
-VtkGuiTestHelper * VtkGuiTestHelper::GetInstance ()
+VtkWxGuiTestHelper * VtkWxGuiTestHelper::GetInstance ()
 {
     if (ms_instance == NULL) {
 
-        ms_instance = new VtkGuiTestHelper ();
+        ms_instance = new VtkWxGuiTestHelper ();
     }
     return ms_instance;
 }
 
 
-void VtkGuiTestHelper::Destroy ()
+void VtkWxGuiTestHelper::Destroy ()
 {
     if (ms_instance != NULL) {
 
@@ -62,19 +62,19 @@ void VtkGuiTestHelper::Destroy ()
 }
 
 
-void VtkGuiTestHelper::SetUseWxVtkInteractionRecording (bool use)
+void VtkWxGuiTestHelper::SetUseWxVtkInteractionRecording (bool use)
 {
     ms_useWxVtkInteractionRecording = use;
 }
 
     
-bool VtkGuiTestHelper::GetUseWxVtkInteractionRecording ()
+bool VtkWxGuiTestHelper::GetUseWxVtkInteractionRecording ()
 {
     return ms_useWxVtkInteractionRecording;
 }
 
 
-void VtkGuiTestHelper::RegisterForRecording (
+void VtkWxGuiTestHelper::RegisterForRecording (
         wxVTKRenderWindowInteractor *wxVtkRwi, const wxString &recorderId,
         const wxString &wxVtkId)
 {
@@ -97,7 +97,7 @@ void VtkGuiTestHelper::RegisterForRecording (
 }
 
 
-WxVtkInteractorEventRecorder * VtkGuiTestHelper::GetWxVtkRecorder (
+WxVtkInteractorEventRecorder * VtkWxGuiTestHelper::GetWxVtkRecorder (
         const wxString &recorderId) const
 {
     RecorderMap::const_iterator it;
@@ -107,7 +107,7 @@ WxVtkInteractorEventRecorder * VtkGuiTestHelper::GetWxVtkRecorder (
 }
 
 
-VtkGuiTestHelper::RecorderMap & VtkGuiTestHelper::GetWxVtkRecorders ()
+VtkWxGuiTestHelper::RecorderMap & VtkWxGuiTestHelper::GetWxVtkRecorders ()
 {
     return m_recorderMap;
 }

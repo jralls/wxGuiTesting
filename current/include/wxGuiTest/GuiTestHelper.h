@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        wxGuiTest/GuiTestHelper.h
+// Name:        wxGuiTest/WxGuiTestHelper.h
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
@@ -10,7 +10,7 @@
 #define WXGUITESTHELPER_H
 
 #ifdef __GNUG__
-    #pragma interface "GuiTestHelper.h"
+    #pragma interface "WxGuiTestHelper.h"
 #endif
 
 #include <wxGuiTest/Common.h>
@@ -28,7 +28,7 @@ CMakeLists.txt, for instance by:
 the sources application won't be recognised as such, but can be used for
 wxAppGuiTesting:
 */
-#ifdef _USE_WX_APP_GUI_TESTING
+#ifdef USE_WXGUITESTING
     #ifdef IMPLEMENT_APP
         #undef IMPLEMENT_APP
     #endif
@@ -41,7 +41,7 @@ namespace wxTst {
 class WarningAsserterInterface;
 
 
-/*! \class GuiTestHelper
+/*! \class WxGuiTestHelper
     \brief Provides some convenience or helper methods for wxGui test cases.
     
     Mainly to (a) configure the behaviour of WxGuiTestApp class (e.g. showing
@@ -85,23 +85,23 @@ class WarningAsserterInterface;
 
     Finally, the occurence of unexpected or unprovoked warnings via
     App::DisplayWarning() method calls can be detected based on calling
-    GuiTestHelper::IsProvokedWarning() at the beginning of the
+    WxGuiTestHelper::IsProvokedWarning() at the beginning of the
     aforementioned method in the application under test (AUT): such a warning
     means the test case has failed.
 */
-class GuiTestHelper
+class WxGuiTestHelper
 {
 public:
-    /*! \fn GuiTestHelper ()
+    /*! \fn WxGuiTestHelper ()
         \brief Constructor
     */
-    GuiTestHelper ();
+    WxGuiTestHelper ();
 
 
-    /*! \fn virtual ~GuiTestHelper ()
+    /*! \fn virtual ~WxGuiTestHelper ()
         \brief Destructor
     */
-    virtual ~GuiTestHelper ();
+    virtual ~WxGuiTestHelper ();
 
 
     /*! \fn static int FlushEventQueue ()

@@ -100,7 +100,7 @@ void PreferencesDialog::OnOK( wxCommandEvent& WXUNUSED(event) )
     if (msgDlg2.ShowModal() == wxID_OK)
     {
         // ...then end this Preferences dialog.
- #ifdef SW_USE_WX_APP_GUI_TESTING
+ #ifdef USE_WXGUITESTING
       Hide();
 #else
        EndModal( wxID_OK );

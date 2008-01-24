@@ -1,9 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        swWxGuiTesting/CppGuiTest/SimpleCRTest.cpp
-// Author:      Reinhold Fuereder
-// Created:     2006
-// Copyright:   (c) 2006 Reinhold Fuereder
+// Name:        sample/ReplayTest.cpp
+// Author:      John Ralls
+// Created:     2007
+// Copyright:   (c) 2007 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
@@ -15,12 +17,11 @@
 #include <wx/notebook.h>
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/swWxGuiTestHelper.h>
-#include <wxGuiTest/swWxGuiTestEventSimulationHelper.h>
-#include <wxGuiTest/swWxGuiTestTimedDialogEnder.h>
-#include <wxGuiTest/swWxGuiTestTempInteractive.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
+#include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/TempInteractive.h>
 
-#include <wxGuiTest/swCRCapture.h>
+#include <wxGuiTest/CRCapture.h>
 
 #include "xrcdemo.h"
 #include "myframe.h"
@@ -46,8 +47,8 @@ void ReplayTest::setUp ()
 //    MyFrame* myFrame = app.init();
 //    wxTheApp->SetTopWindow(myFrame);
 //     wxWindow* myFrame = wxTheApp->GetTopWindow();
-//     swTst::WxGuiTestHelper::Show (myFrame, true, false);
-//     swTst::WxGuiTestHelper::FlushEventQueue ();
+//     wxTst::WxGuiTestHelper::Show (myFrame, true, false);
+//     wxTst::WxGuiTestHelper::FlushEventQueue ();
 
 }
 
@@ -63,7 +64,7 @@ void ReplayTest::tearDown ()
 
 void ReplayTest::testDialog ()
 {
-    swTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
 
     // Do bootstrap capturing:
     // Dialog
@@ -77,9 +78,9 @@ void ReplayTest::testDialog ()
             MC _T("Derived Dialog Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Derived Dialog Example' not found", 
             derivedDialogExampleMenuItemId != wxNOT_FOUND);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             derivedDialogExampleMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
  //    wxWindow *derived_dialog = wxWindow::FindWindowByName (_T("derived_dialog"));
      wxWindow *derived_dialog = topFrame->FindWindow (_T("derived_dialog"));
@@ -88,9 +89,9 @@ void ReplayTest::testDialog ()
     wxWindow *my_buttonWdw = derived_dialog->FindWindow (XRCID("my_button"));
     CPPUNIT_ASSERT_MESSAGE ("Window for button 'my_button' not found", 
             my_buttonWdw != NULL);
-    swTst::WxGuiTestEventSimulationHelper::ClickButton (my_buttonWdw->GetId (), 
+    wxTst::EventSimulationHelper::ClickButton (my_buttonWdw->GetId (), 
             my_buttonWdw);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *my_checkboxWdw = derived_dialog->FindWindow (XRCID(
             "my_checkbox"));
@@ -99,8 +100,8 @@ void ReplayTest::testDialog ()
     wxCheckBox *my_checkbox = wxDynamicCast (my_checkboxWdw, wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'my_checkbox' "
             "failed", my_checkbox != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (my_checkbox, true);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::EventSimulationHelper::SetCheckboxState (my_checkbox, true);
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *my_textctrlWdw = derived_dialog->FindWindow (XRCID(
             "my_textctrl"));
@@ -109,9 +110,9 @@ void ReplayTest::testDialog ()
     wxTextCtrl *my_textctrl = wxDynamicCast (my_textctrlWdw, wxTextCtrl);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for text control 'my_textctrl' "
             "failed", my_textctrl != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SetTextCtrlValue (my_textctrl, _T(
+    wxTst::EventSimulationHelper::SetTextCtrlValue (my_textctrl, _T(
             "foo"));
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
 //     wxWindow *art_provider_dialog = wxWindow::FindWindowByName (_T(
 //             "art_provider_dialog"));
@@ -120,9 +121,9 @@ void ReplayTest::testDialog ()
      wxWindow *wxID_OKWdw = derived_dialog->FindWindow (XRCID("wxID_OK"));
      CPPUNIT_ASSERT_MESSAGE ("Window for button 'wxID_OK' not found", wxID_OKWdw 
              != NULL);
-     swTst::WxGuiTestEventSimulationHelper::ClickButton (wxID_OKWdw->GetId (), 
+     wxTst::EventSimulationHelper::ClickButton (wxID_OKWdw->GetId (), 
              wxID_OKWdw);
-     swTst::WxGuiTestHelper::FlushEventQueue ();
+     wxTst::WxGuiTestHelper::FlushEventQueue ();
     CPPUNIT_ASSERT_MESSAGE("OK Button didn't hide Derived Dialog",
 			   derived_dialog->IsShown() == false);
 //     derived_dialog->Destroy();
@@ -140,9 +141,9 @@ void ReplayTest::testUncentered() {
             MC _T("Uncentered Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Uncentered Example' not found", 
             uncenteredExampleMenuItemId != wxNOT_FOUND);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             uncenteredExampleMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *uncentered_dialog = wxWindow::FindWindowByName (_T(
             "uncentered_dialog"));
@@ -151,9 +152,9 @@ void ReplayTest::testUncentered() {
     wxWindow *wxID_OKWdw1 = uncentered_dialog->FindWindow (XRCID("wxID_OK"));
     CPPUNIT_ASSERT_MESSAGE ("Window for button 'wxID_OK' not found", 
             wxID_OKWdw1 != NULL);
-    swTst::WxGuiTestEventSimulationHelper::ClickButton (wxID_OKWdw1->GetId (), 
+    wxTst::EventSimulationHelper::ClickButton (wxID_OKWdw1->GetId (), 
             wxID_OKWdw1);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     CPPUNIT_ASSERT_MESSAGE("OK Button didn't hide Uncentered Dialog",
 			   uncentered_dialog->IsShown() == false);
 //     uncentered_dialog->Destroy();
@@ -170,9 +171,9 @@ void ReplayTest::testArtProvider() {
             _T("wx") MC _T("ArtProvider Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID 'wx&ArtProvider Example' not found", 
             wxArtProviderExampleMenuItemId != wxNOT_FOUND);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             wxArtProviderExampleMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *art_provider_dialog = wxWindow::FindWindowByName (_T(
             "art_provider_dialog"));
@@ -186,16 +187,16 @@ void ReplayTest::testArtProvider() {
             wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box "
             "'dont_show_checkbox' failed", dont_show_checkbox != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (dont_show_checkbox,
+    wxTst::EventSimulationHelper::SetCheckboxState (dont_show_checkbox,
              true);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *wxID_OKWdw2 = art_provider_dialog->FindWindow (XRCID("wxID_OK"));
     CPPUNIT_ASSERT_MESSAGE ("Window for button 'wxID_OK' not found", 
             wxID_OKWdw2 != NULL);
-    swTst::WxGuiTestEventSimulationHelper::ClickButton (wxID_OKWdw2->GetId (), 
+    wxTst::EventSimulationHelper::ClickButton (wxID_OKWdw2->GetId (), 
             wxID_OKWdw2);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
     CPPUNIT_ASSERT_MESSAGE("OK Button didn't hide Art Provider Dialog",
 			   art_provider_dialog->IsShown() == false);
 //    art_provider_dialog->Destroy();
@@ -203,7 +204,7 @@ void ReplayTest::testArtProvider() {
 
 // Platform Specific
 void ReplayTest::testPlatformSpecific() {
-    swTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", wxTheApp->
             GetTopWindow () != NULL);
     wxFrame *topFrame = dynamic_cast< wxFrame * >(wxTheApp->GetTopWindow ());
@@ -214,9 +215,9 @@ void ReplayTest::testPlatformSpecific() {
             "Advanced"), MC _T("Platform Specific Example"));
     CPPUNIT_ASSERT_MESSAGE ("Menu item ID '&Platform Specific Example' not "
             "found", platformSpecificExampleMenuItemId != wxNOT_FOUND);
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (
+    wxTst::EventSimulationHelper::SelectMenuItem (
             platformSpecificExampleMenuItemId, topFrame);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *platform_notebookWdw = wxWindow::FindWindowByName (_T(
             "platform_notebook"));
@@ -236,9 +237,9 @@ void ReplayTest::testPlatformSpecific() {
     }
     CPPUNIT_ASSERT_MESSAGE ("Page of notebook 'platform_notebook' not found", 
             platform_notebookPage < platform_notebook->GetPageCount ());
-    swTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (
+    wxTst::EventSimulationHelper::SelectNotebookPage (
             platform_notebook, platform_notebookPage);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *shared_tab = wxWindow::FindWindowByName (_T("shared_tab"));
     CPPUNIT_ASSERT_MESSAGE ("Container window for check box 'shared_checkbox' "
@@ -251,9 +252,9 @@ void ReplayTest::testPlatformSpecific() {
             wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'shared_checkbox' "
             "failed", shared_checkbox != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (shared_checkbox, 
+    wxTst::EventSimulationHelper::SetCheckboxState (shared_checkbox, 
             true);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 #ifdef __WXMAC
     wxNotebook *platform_notebook1 = wxDynamicCast (platform_notebookWdw, 
             wxNotebook);
@@ -269,9 +270,9 @@ void ReplayTest::testPlatformSpecific() {
     }
     CPPUNIT_ASSERT_MESSAGE ("Page of notebook 'platform_notebook' not found", 
             platform_notebook1Page < platform_notebook1->GetPageCount ());
-    swTst::WxGuiTestEventSimulationHelper::SelectNotebookPage (
+    wxTst::EventSimulationHelper::SelectNotebookPage (
             platform_notebook1, platform_notebook1Page);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 
     wxWindow *mac_specific = wxWindow::FindWindowByName (_T("mac_specific"));
     CPPUNIT_ASSERT_MESSAGE ("Container window for check box 'mac_checkbox' not "
@@ -283,9 +284,9 @@ void ReplayTest::testPlatformSpecific() {
     wxCheckBox *mac_checkbox = wxDynamicCast (mac_checkboxWdw, wxCheckBox);
     CPPUNIT_ASSERT_MESSAGE ("Converting window for check box 'mac_checkbox' "
             "failed", mac_checkbox != NULL);
-    swTst::WxGuiTestEventSimulationHelper::SetCheckboxState (mac_checkbox, 
+    wxTst::EventSimulationHelper::SetCheckboxState (mac_checkbox, 
             true);
-    swTst::WxGuiTestHelper::FlushEventQueue ();
+    wxTst::WxGuiTestHelper::FlushEventQueue ();
 #endif
 
 }

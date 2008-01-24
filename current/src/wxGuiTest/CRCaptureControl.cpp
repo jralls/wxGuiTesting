@@ -14,7 +14,7 @@
 
 #include <wx/xrc/xmlres.h>
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventCaptureManager.h>
 #include <wxGuiTest/CRCppEmitter.h>
 

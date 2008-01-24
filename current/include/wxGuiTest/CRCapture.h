@@ -15,7 +15,7 @@
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 #include <wxGuiTest/CRLogInterface.h>
 #include <wxGuiTest/CREventCaptureManager.h>
 #include <wxGuiTest/CRCppEmitter.h>

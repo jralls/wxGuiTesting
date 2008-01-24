@@ -12,7 +12,7 @@
 
 #include "TempInteractiveControl.h"
 
-#include <wxGuiTest/GuiTestHelper.h>
+#include <wxGuiTest/WxGuiTestHelper.h>
 
 BEGIN_EVENT_TABLE(wxTst::TempInteractiveControl, wxEvtHandler)
     EVT_BUTTON( -1, TempInteractiveControl::OnOK )

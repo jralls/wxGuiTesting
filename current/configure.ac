@@ -1,5 +1,5 @@
-AC_INIT(swWxGuiTesting, 1.6)
-AC_CONFIG_SRCDIR([src/swWxGuiTesting/swWxGuiTestApp.cpp])
+AC_INIT(wxGuiTesting, 0.7)
+AC_CONFIG_SRCDIR([src/wxGuiTest/GuiTestApp.cpp])
 AC_CANONICAL_BUILD
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET

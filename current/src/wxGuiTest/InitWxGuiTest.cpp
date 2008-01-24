@@ -16,7 +16,7 @@
 
 // Don't register test suite in WxGuiTesting framework library, but in actual
 // console application running the tests:
-//CPPUNIT_TEST_SUITE_REGISTRATION( Tst::InitWxGuiTest );
+//CPPUNIT_TEST_SUITE_REGISTRATION( wxTst::InitWxGuiTest );
 
 namespace wxTst {
 
