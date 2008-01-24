@@ -9,8 +9,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="CppGuiUnitCapturePlusEmit"
-	ProjectGUID="{706C8C05-C9FC-506D-B16F-E804E2E17661}"
+	Name="CppUnitTest"
+	ProjectGUID="{BB1F420F-5FB2-5BEB-B3F8-1E0B0C9A4F6D}"
 	>
 	<Platforms>
 		<Platform
@@ -24,7 +24,7 @@
 		<Configuration
 			Name="DLL Unicode Debug Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -49,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -59,9 +59,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -71,7 +71,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -81,14 +81,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -99,7 +99,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -118,7 +118,7 @@
 		<Configuration
 			Name="DLL Unicode Debug Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -143,7 +143,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -153,9 +153,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -165,7 +165,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -175,14 +175,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -193,7 +193,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -212,7 +212,7 @@
 		<Configuration
 			Name="DLL Unicode Debug Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -237,7 +237,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -247,9 +247,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -259,7 +259,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -269,14 +269,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -287,7 +287,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -306,7 +306,7 @@
 		<Configuration
 			Name="DLL Unicode Debug Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -331,7 +331,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -341,9 +341,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -353,7 +353,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -363,14 +363,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -381,7 +381,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -400,7 +400,7 @@
 		<Configuration
 			Name="DLL Unicode Release Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -425,7 +425,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -435,9 +435,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -447,7 +447,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -457,13 +457,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -474,7 +474,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -493,7 +493,7 @@
 		<Configuration
 			Name="DLL Unicode Release Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -518,7 +518,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -528,9 +528,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -540,7 +540,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -550,13 +550,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -567,7 +567,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -586,7 +586,7 @@
 		<Configuration
 			Name="DLL Unicode Release Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -611,7 +611,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -621,9 +621,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -633,7 +633,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -643,13 +643,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -660,7 +660,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -679,7 +679,7 @@
 		<Configuration
 			Name="DLL Unicode Release Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -704,7 +704,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -714,9 +714,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -726,7 +726,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -736,13 +736,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -753,7 +753,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -772,7 +772,7 @@
 		<Configuration
 			Name="DLL ANSI Debug Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -796,7 +796,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -806,9 +806,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -818,7 +818,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -828,14 +828,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -846,7 +846,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -865,7 +865,7 @@
 		<Configuration
 			Name="DLL ANSI Debug Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -889,7 +889,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -899,9 +899,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -911,7 +911,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -921,14 +921,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -939,7 +939,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -958,7 +958,7 @@
 		<Configuration
 			Name="DLL ANSI Debug Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -982,7 +982,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -992,9 +992,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1004,7 +1004,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1014,14 +1014,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1032,7 +1032,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1051,7 +1051,7 @@
 		<Configuration
 			Name="DLL ANSI Debug Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1075,7 +1075,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1085,9 +1085,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1097,7 +1097,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1107,14 +1107,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1125,7 +1125,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1144,7 +1144,7 @@
 		<Configuration
 			Name="DLL ANSI Release Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1168,7 +1168,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1178,9 +1178,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1190,7 +1190,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1200,13 +1200,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1217,7 +1217,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1236,7 +1236,7 @@
 		<Configuration
 			Name="DLL ANSI Release Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1260,7 +1260,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1270,9 +1270,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1282,7 +1282,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1292,13 +1292,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1309,7 +1309,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1328,7 +1328,7 @@
 		<Configuration
 			Name="DLL ANSI Release Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1352,7 +1352,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1362,9 +1362,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1374,7 +1374,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1384,13 +1384,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1401,7 +1401,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1420,7 +1420,7 @@
 		<Configuration
 			Name="DLL ANSI Release Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1444,7 +1444,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1454,9 +1454,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1466,7 +1466,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_dll\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="WXUSINGDLL;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1476,13 +1476,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_dll"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1493,7 +1493,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1512,7 +1512,7 @@
 		<Configuration
 			Name="Static Unicode Debug Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1537,7 +1537,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1547,9 +1547,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1559,7 +1559,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1569,14 +1569,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1587,7 +1587,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1606,7 +1606,7 @@
 		<Configuration
 			Name="Static Unicode Debug Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1631,7 +1631,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1641,9 +1641,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1653,7 +1653,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1663,14 +1663,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1681,7 +1681,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1700,7 +1700,7 @@
 		<Configuration
 			Name="Static Unicode Debug Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1725,7 +1725,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1735,9 +1735,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1747,7 +1747,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1757,14 +1757,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1775,7 +1775,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1794,7 +1794,7 @@
 		<Configuration
 			Name="Static Unicode Debug Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1819,7 +1819,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1829,9 +1829,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1841,7 +1841,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswud;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1851,14 +1851,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28ud_xrc.lib wxmsw28ud_html.lib wxmsw28ud_adv.lib wxbase28ud_xml.lib wxmsw28ud_core.lib wxbase28ud.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexud.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1869,7 +1869,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1888,7 +1888,7 @@
 		<Configuration
 			Name="Static Unicode Release Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -1913,7 +1913,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -1923,9 +1923,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -1935,7 +1935,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -1945,13 +1945,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -1962,7 +1962,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1981,7 +1981,7 @@
 		<Configuration
 			Name="Static Unicode Release Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2006,7 +2006,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2016,9 +2016,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2028,7 +2028,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2038,13 +2038,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2055,7 +2055,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2074,7 +2074,7 @@
 		<Configuration
 			Name="Static Unicode Release Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2099,7 +2099,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2109,9 +2109,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2121,7 +2121,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2131,13 +2131,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2148,7 +2148,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2167,7 +2167,7 @@
 		<Configuration
 			Name="Static Unicode Release Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2192,7 +2192,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2202,9 +2202,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2214,7 +2214,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswu;$(WXWIN)\include"
 				PreprocessorDefinitions="_UNICODE;__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2224,13 +2224,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28u_xrc.lib wxmsw28u_html.lib wxmsw28u_adv.lib wxbase28u_xml.lib wxmsw28u_core.lib wxbase28u.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregexu.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2241,7 +2241,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2260,7 +2260,7 @@
 		<Configuration
 			Name="Static ANSI Debug Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2284,7 +2284,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2294,9 +2294,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2306,7 +2306,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2316,14 +2316,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2334,7 +2334,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2353,7 +2353,7 @@
 		<Configuration
 			Name="Static ANSI Debug Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2377,7 +2377,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2387,9 +2387,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2399,7 +2399,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2409,14 +2409,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib      wxmsw28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2427,7 +2427,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2446,7 +2446,7 @@
 		<Configuration
 			Name="Static ANSI Debug Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2470,7 +2470,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2480,9 +2480,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2492,7 +2492,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2502,14 +2502,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2520,7 +2520,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2539,7 +2539,7 @@
 		<Configuration
 			Name="Static ANSI Debug Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2563,7 +2563,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2573,9 +2573,9 @@
 				DebugInformationFormat="3"
 				Detect64BitPortabilityProblems="true"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2585,7 +2585,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\mswd;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXDEBUG__;__WXMSW__;_CONSOLE;_DEBUG;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2595,14 +2595,14 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTestingd.lib wxmsw28d_xrc.lib wxmsw28d_html.lib wxmsw28d_adv.lib wxbase28d_xml.lib wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="2"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2613,7 +2613,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2632,7 +2632,7 @@
 		<Configuration
 			Name="Static ANSI Release Monolithic USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2656,7 +2656,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2666,9 +2666,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2678,7 +2678,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2688,13 +2688,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2705,7 +2705,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2724,7 +2724,7 @@
 		<Configuration
 			Name="Static ANSI Release Monolithic USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2748,7 +2748,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2758,9 +2758,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2770,7 +2770,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2780,13 +2780,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib      wxmsw28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2797,7 +2797,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2816,7 +2816,7 @@
 		<Configuration
 			Name="Static ANSI Release Multilib USE_VTK_1|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2840,7 +2840,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2850,9 +2850,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2862,7 +2862,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2872,13 +2872,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2889,7 +2889,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -2908,7 +2908,7 @@
 		<Configuration
 			Name="Static ANSI Release Multilib USE_VTK_0|Win32"
 			OutputDirectory="..\..\bin"
-			IntermediateDirectory="objects\CppGuiUnitCapturePlusEmit"
+			IntermediateDirectory="objects\CppUnitTest"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -2932,7 +2932,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				MinimalRebuild="false"
 				ExceptionHandling="1"
 				AdditionalOptions=""
@@ -2942,9 +2942,9 @@
 				DebugInformationFormat="0"
 				BufferSecurityCheck="false"
 				RuntimeTypeInfo="true"
-				AssemblerListingLocation="objects\CppGuiUnitCapturePlusEmit\"
-				ObjectFile="objects\CppGuiUnitCapturePlusEmit\"
-				ProgramDataBaseFileName="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				AssemblerListingLocation="objects\CppUnitTest\"
+				ObjectFile="objects\CppUnitTest\"
+				ProgramDataBaseFileName="..\..\bin\CppUnitTest.pdb"
 				WarningLevel="1"
 				SuppressStartupBanner="true"
 			/>
@@ -2954,7 +2954,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="..\..\include;..\..\src\swWxGuiTesting;..\..\include;..\..\src\swWxGuiTesting;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
+				AdditionalIncludeDirectories="..\..\include;..\..\src\wxGuiTest;$(CPPUNIT)\include;$(WXWIN)\lib\vc_lib\msw;$(WXWIN)\include"
 				PreprocessorDefinitions="__WXMSW__;_CONSOLE;TESTDIR=\&quot;../../test/TestData\&quot;;XRCDIR=\&quot;../../test/TestData/xrc\&quot;;TESTSRCDIR=\&quot;../../test/CppGuiTest\&quot;"
 			/>
 			<Tool
@@ -2964,13 +2964,13 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(CPPUNIT_LIB).lib ..\..\lib\wxGuiTesting.lib wxmsw28_xrc.lib wxmsw28_html.lib wxmsw28_adv.lib wxbase28_xml.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib kernel32.lib user32.lib gdi32.lib comdlg32.lib winspool.lib winmm.lib shell32.lib comctl32.lib ole32.lib oleaut32.lib uuid.lib rpcrt4.lib advapi32.lib wsock32.lib"
 				AdditionalOptions=""
-				OutputFile="..\..\bin\CppGuiUnitCapturePlusEmit.exe"
+				OutputFile="..\..\bin\CppUnitTest.exe"
 				LinkIncremental="1"
 				SubSystem="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(CPPUNIT)\lib;$(WXWIN)\lib\vc_lib"
 				GenerateManifest="true"
-				ProgramDatabaseFile="..\..\bin\CppGuiUnitCapturePlusEmit.pdb"
+				ProgramDatabaseFile="..\..\bin\CppUnitTest.pdb"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -2981,7 +2981,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_CppGuiUnitCapturePlusEmit.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_CppUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -3008,10 +3008,13 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			>
 			<File
-				RelativePath="..\..\test\CppGuiTest\CppTextTestApp.cpp"
+				RelativePath="..\..\test\CppTest\CRCppEmitterTest.cpp"
 			/>
 			<File
-				RelativePath="..\..\test\CppGuiTest\swCapturePlusEmittingTest.cpp"
+				RelativePath="..\..\test\CppTest\CppUnitTextTestApp.cpp"
+			/>
+			<File
+				RelativePath="..\..\test\CppTest\ProvokedWarningRegistryTest.cpp"
 			/>
 		</Filter>
 	</Files>

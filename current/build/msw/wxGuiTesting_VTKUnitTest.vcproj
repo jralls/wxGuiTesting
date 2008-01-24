@@ -10,7 +10,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="VTKUnitTest"
-	ProjectGUID="{AF08F8AE-DC27-55B5-9C0B-E73C35C6820F}"
+	ProjectGUID="{9751FF43-BA9C-5951-9E32-9A64552C7CF7}"
 	>
 	<Platforms>
 		<Platform
@@ -99,7 +99,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -193,7 +193,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -286,7 +286,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -379,7 +379,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -472,7 +472,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -565,7 +565,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -657,7 +657,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -749,7 +749,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -843,7 +843,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -937,7 +937,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1030,7 +1030,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1123,7 +1123,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1216,7 +1216,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1309,7 +1309,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1401,7 +1401,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1493,7 +1493,7 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="..\..\bin\swWxGuiTesting_VTKUnitTest.bsc"
+				OutputFile="..\..\bin\wxGuiTesting_VTKUnitTest.bsc"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -1520,10 +1520,10 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			>
 			<File
-				RelativePath="..\..\test\VtkTest\CppTextTestApp.cpp"
+				RelativePath="..\..\test\VtkTest\CRVtkCaptureTest.cpp"
 			/>
 			<File
-				RelativePath="..\..\test\VtkTest\swCRVtkCaptureTest.cpp"
+				RelativePath="..\..\test\VtkTest\CppUnitTextTestApp.cpp"
 			/>
 		</Filter>
 	</Files>

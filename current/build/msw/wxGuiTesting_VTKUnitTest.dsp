@@ -1,4 +1,4 @@
-# Microsoft Developer Studio Project File - Name="swWxGuiTesting_VTKUnitTest" - Package Owner=<4>
+# Microsoft Developer Studio Project File - Name="wxGuiTesting_VTKUnitTest" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
 # ** DO NOT EDIT **
 
@@ -8,12 +8,12 @@ CFG=VTKUnitTest - Win32 Static ANSI Release Multilib USE_VTK_1
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "swWxGuiTesting_VTKUnitTest.mak".
+!MESSAGE NMAKE /f "wxGuiTesting_VTKUnitTest.mak".
 !MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE 
-!MESSAGE NMAKE /f "swWxGuiTesting_VTKUnitTest.mak" CFG="VTKUnitTest - Win32 Static ANSI Release Multilib USE_VTK_1"
+!MESSAGE NMAKE /f "wxGuiTesting_VTKUnitTest.mak" CFG="VTKUnitTest - Win32 Static ANSI Release Multilib USE_VTK_1"
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
@@ -435,11 +435,11 @@ LINK32=link.exe
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=..\..\test\VtkTest\CppTextTestApp.cpp
+SOURCE=..\..\test\VtkTest\CRVtkCaptureTest.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\test\VtkTest\swCRVtkCaptureTest.cpp
+SOURCE=..\..\test\VtkTest\CppUnitTextTestApp.cpp
 # End Source File
 # End Group
 # End Target
