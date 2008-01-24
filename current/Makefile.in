@@ -121,13 +121,14 @@ COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/CRWindowHierarchyHandler.h \
 	include/wxGuiTest/CRLogInterface.h \
 	include/wxGuiTest/CppUnitWarningAsserter.h \
-	include/wxGuiTest/EventSimulationHelper.h include/wxGuiTest/GuiTestApp.h \
-	include/wxGuiTest/GuiTestHelper.h include/wxGuiTest/InitWxGuiTest.h \
+	include/wxGuiTest/EventSimulationHelper.h \
+	include/wxGuiTest/InitWxGuiTest.h \
 	include/wxGuiTest/ModalDialogInteractionInterface.h \
 	include/wxGuiTest/ModalDialogTimer.h include/wxGuiTest/ProvokedWarning.h \
 	include/wxGuiTest/ProvokedWarningRegistry.h \
 	include/wxGuiTest/TempInteractive.h include/wxGuiTest/TimedDialogEnder.h \
-	include/wxGuiTest/WarningAsserterInterface.h
+	include/wxGuiTest/WarningAsserterInterface.h \
+	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h
 @COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
 COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/CRCapture.h include/wxGuiTest/CRCaptureControl.h \
@@ -137,13 +138,14 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/CRWindowHierarchyHandler.h \
 	include/wxGuiTest/CRLogInterface.h \
 	include/wxGuiTest/CppUnitWarningAsserter.h \
-	include/wxGuiTest/EventSimulationHelper.h include/wxGuiTest/GuiTestApp.h \
-	include/wxGuiTest/GuiTestHelper.h include/wxGuiTest/InitWxGuiTest.h \
+	include/wxGuiTest/EventSimulationHelper.h \
+	include/wxGuiTest/InitWxGuiTest.h \
 	include/wxGuiTest/ModalDialogInteractionInterface.h \
 	include/wxGuiTest/ModalDialogTimer.h include/wxGuiTest/ProvokedWarning.h \
 	include/wxGuiTest/ProvokedWarningRegistry.h \
 	include/wxGuiTest/TempInteractive.h include/wxGuiTest/TimedDialogEnder.h \
 	include/wxGuiTest/WarningAsserterInterface.h \
+	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h \
 	src/wxVTK/wxVTKRenderWindowInteractor.h \
 	include/wxGuiTest/VtkGuiTesting/CRVtkCapture.h \
 	include/wxGuiTest/VtkGuiTesting/CRVtkCaptureControl.h \
@@ -173,16 +175,16 @@ COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_InitWxGuiTest.o \
 	objects/wxGuiTesting_InitWxGuiTestSetUp.o \
 	objects/wxGuiTesting_ModalDialogTimer.o \
-	objects/wxGuiTesting_GuiTestApp.o \
 	objects/wxGuiTesting_CppUnitWarningAsserter.o \
 	objects/wxGuiTesting_EventSimulationHelper.o \
-	objects/wxGuiTesting_GuiTestHelper.o \
 	objects/wxGuiTesting_ProvokedWarning.o \
 	objects/wxGuiTesting_ProvokedWarningRegistry.o \
 	objects/wxGuiTesting_TempInteractive.o \
 	objects/wxGuiTesting_TempInteractiveControl.o \
 	objects/wxGuiTesting_TimedDialogEnder.o \
-	objects/wxGuiTesting_CapturePanel.o
+	objects/wxGuiTesting_CapturePanel.o \
+	objects/wxGuiTesting_WxGuiTestApp.o \
+	objects/wxGuiTesting_WxGuiTestHelper.o
 @COND_USE_VTK_0@__LIB_SOURCES_OBJECTS = $(COND_USE_VTK_0___LIB_SOURCES_OBJECTS)
 COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_CRAbstractTreeEvent.o \
@@ -207,16 +209,16 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_InitWxGuiTest.o \
 	objects/wxGuiTesting_InitWxGuiTestSetUp.o \
 	objects/wxGuiTesting_ModalDialogTimer.o \
-	objects/wxGuiTesting_GuiTestApp.o \
 	objects/wxGuiTesting_CppUnitWarningAsserter.o \
 	objects/wxGuiTesting_EventSimulationHelper.o \
-	objects/wxGuiTesting_GuiTestHelper.o \
 	objects/wxGuiTesting_ProvokedWarning.o \
 	objects/wxGuiTesting_ProvokedWarningRegistry.o \
 	objects/wxGuiTesting_TempInteractive.o \
 	objects/wxGuiTesting_TempInteractiveControl.o \
 	objects/wxGuiTesting_TimedDialogEnder.o \
 	objects/wxGuiTesting_CapturePanel.o \
+	objects/wxGuiTesting_WxGuiTestApp.o \
+	objects/wxGuiTesting_WxGuiTestHelper.o \
 	objects/wxGuiTesting_wxVTKRenderWindowInteractor.o \
 	objects/wxGuiTesting_CRVtkCapture.o \
 	objects/wxGuiTesting_CRVtkCaptureControl.o \
@@ -555,17 +557,11 @@ objects/wxGuiTesting_InitWxGuiTestSetUp.o: $(srcdir)/src/wxGuiTest/InitWxGuiTest
 objects/wxGuiTesting_ModalDialogTimer.o: $(srcdir)/src/wxGuiTest/ModalDialogTimer.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/ModalDialogTimer.cpp
 
-objects/wxGuiTesting_GuiTestApp.o: $(srcdir)/src/wxGuiTest/GuiTestApp.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/GuiTestApp.cpp
-
 objects/wxGuiTesting_CppUnitWarningAsserter.o: $(srcdir)/src/wxGuiTest/CppUnitWarningAsserter.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/CppUnitWarningAsserter.cpp
 
 objects/wxGuiTesting_EventSimulationHelper.o: $(srcdir)/src/wxGuiTest/EventSimulationHelper.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/EventSimulationHelper.cpp
-
-objects/wxGuiTesting_GuiTestHelper.o: $(srcdir)/src/wxGuiTest/GuiTestHelper.cpp
-	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/GuiTestHelper.cpp
 
 objects/wxGuiTesting_ProvokedWarning.o: $(srcdir)/src/wxGuiTest/ProvokedWarning.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/ProvokedWarning.cpp
@@ -584,6 +580,12 @@ objects/wxGuiTesting_TimedDialogEnder.o: $(srcdir)/src/wxGuiTest/TimedDialogEnde
 
 objects/wxGuiTesting_CapturePanel.o: $(srcdir)/src/wxGuiTest/CapturePanel.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/CapturePanel.cpp
+
+objects/wxGuiTesting_WxGuiTestApp.o: $(srcdir)/src/wxGuiTest/WxGuiTestApp.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/WxGuiTestApp.cpp
+
+objects/wxGuiTesting_WxGuiTestHelper.o: $(srcdir)/src/wxGuiTest/WxGuiTestHelper.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/WxGuiTestHelper.cpp
 
 objects/CppUnitTest_CppUnitTextTestApp.o: $(srcdir)/test/CppTest/CppUnitTextTestApp.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/CppUnitTextTestApp.cpp

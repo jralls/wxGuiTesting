@@ -74,7 +74,7 @@ void SimpleTest::testExample ()
 }
 
 void SimpleTest::testTrivial() {
-    wxTst::WxGuiTestTempInteractive interactive;
+    wxTst::TempInteractive interactive;
     wxTst::ModalDialogTimer timer(wxID_OK);
    // *** Loop up top level containers ***
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", 

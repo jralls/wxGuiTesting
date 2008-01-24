@@ -6,6 +6,8 @@
 // Modifications: John Ralls, 2007-2008
 // Modifications Copyright: (c) 2008 John Ralls
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef SWCRTREEITEMRIGHTCLICKEVENT_H

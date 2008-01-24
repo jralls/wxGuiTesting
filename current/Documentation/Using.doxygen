@@ -79,13 +79,13 @@ needn't do anything... and may cause trouble if they do.
 
 \section regression Setting Up Application Testing
 
-Define <tt>SW_USE_WX_APP_GUI_TESTING</tt> in the compiler command line (add it
+Define <tt>USE_WXGUITESTING</tt> in the compiler command line (add it
 to \c CXXFLAGS or something similar in your Makefile. This macro is used to redefine <tt>IMPLEMENT_APP()</tt> so that the test runner is in control for testing a whole application. You can use it to toggle other test features in your code, as we'll see.
 
 For testing a whole application, your wxApp class (the one with
 \c OnInit()) must be derived from <tt>swTst::WxGuiTestApp</tt>, like this:
 \code
-#ifdef SW_USE_WX_APP_GUI_TESTING
+#ifdef USE_WXGUITESTING
 #include <wxGuiTest/wxGuiTestApp.h>
 class MyApp : public swTst::WxGuiTestApp
 #else
@@ -96,7 +96,7 @@ class MyApp : public wxApp
 then, in your wxApp implementation, 
 \code
 #include <wx/wx.h>
-#ifdef SW_USE_WX_APP_GUI_TESTING
+#ifdef USE_WXGUITESTING
 #include <wxGuiTest/wxGuiTestHelper.h>
 #endif
 IMPLEMENT_APP(MyApp)
@@ -161,10 +161,10 @@ library, to reach inside those implementations and manipulate the GUI
 elements. In short, the use of modal dialogs and popup menus requires
 user intervention during the test. For fully automatic testing, your
 code will have to disable blocking elements during testing. The
-<tt>SW_USE_WX_APP_GUI_TESTING</tt> macro is a useful test since you have to
+<tt>USE_WXGUITESTING</tt> macro is a useful test since you have to
 define it anyway:
 \code
-#ifndef  SW_USE_WX_APP_GUI_TESTING
+#ifndef  USE_WXGUITESTING
     msgDlg.ShowModal();
 #endif
 \endcode
@@ -172,12 +172,6 @@ define it anyway:
 \section problems Known problems:
 
 There are a large number of controls which don't have event simulators or capture event handlers.
-
-Toolbar events will produce a bogus menu event (OSX):
-\code
-    swTst::WxGuiTestEventSimulationHelper::SelectMenuItem (, );
-\endcode
-or are simply unsupported in Microsoft Windows, at least on MDI windows.
 
 Every time you visit the menu, capture redeclares topFrame and menuBar, so
 recompiling will produce a bunch of errors. This isn't necessarily bad,
@@ -191,10 +185,10 @@ see them, so it will fail.
 A side effect of the fact that the application is created by the test
 framework which in turn runs your application under test-runner
 control is that the application name defaults to "bla" (hard-coded in
-<tt>swInitWxGuiTestSetUp.cpp, line 104</tt>. If this matters to you, set it in
+<tt>InitWxGuiTestSetUp.cpp, line 104</tt>. If this matters to you, set it in
 your app's \c OnInit() function, perhaps guarded by  
 \code
-     #ifdef SW_USE_WX_APP_GUI_TESTING. 
+     #ifdef USE_WXGUITESTING. 
 \endcode
 
 When you have a bunch of dialog boxes with similar controls on them, Capture seems always to use the first one it finds. You'll have to figure out what is the right one in each case in the capture file and hand-correct it.

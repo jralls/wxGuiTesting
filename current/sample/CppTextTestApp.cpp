@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <cppunit/CompilerOutputter.h>
@@ -40,7 +42,7 @@ int main (int argc, char* argv[])
 	wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (true);
     // Which requires the correct CppUnit warning asserter:
     wxTst::WxGuiTestHelper::SetWarningAsserter (
-            new wxTst::WxGuiTestCppUnitWarningAsserter ());
+            new wxTst::CppUnitWarningAsserter ());
 
     // Record wxVtk interaction:
     //wxTst::VtkWxGuiTestHelper::SetUseWxVtkInteractionRecording (true);
@@ -54,7 +56,7 @@ int main (int argc, char* argv[])
     // Thus, in order to use the remaining standard infrastructure, we create a
     // new test suite named equal to the usual top level registry or suite name
     // "All Tests". Then all registered wxGui tests are added to it by means of
-    // directly using swInitWxGuiTest class:
+    // directly using InitWxGuiTest class:
     CPPUNIT_NS::TestSuite *suite = new CPPUNIT_NS::TestSuite ("All Tests");
     suite->addTest (wxTst::InitWxGuiTest::suite ());
 

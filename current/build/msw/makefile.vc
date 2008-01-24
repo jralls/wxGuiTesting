@@ -128,16 +128,16 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 	objects\wxGuiTesting_InitWxGuiTest.obj \
 	objects\wxGuiTesting_InitWxGuiTestSetUp.obj \
 	objects\wxGuiTesting_ModalDialogTimer.obj \
-	objects\wxGuiTesting_GuiTestApp.obj \
 	objects\wxGuiTesting_CppUnitWarningAsserter.obj \
 	objects\wxGuiTesting_EventSimulationHelper.obj \
-	objects\wxGuiTesting_GuiTestHelper.obj \
 	objects\wxGuiTesting_ProvokedWarning.obj \
 	objects\wxGuiTesting_ProvokedWarningRegistry.obj \
 	objects\wxGuiTesting_TempInteractive.obj \
 	objects\wxGuiTesting_TempInteractiveControl.obj \
 	objects\wxGuiTesting_TimedDialogEnder.obj \
-	objects\wxGuiTesting_CapturePanel.obj
+	objects\wxGuiTesting_CapturePanel.obj \
+	objects\wxGuiTesting_WxGuiTestApp.obj \
+	objects\wxGuiTesting_WxGuiTestHelper.obj
 !endif
 !if "$(USE_VTK)" == "1"
 ____LIB_SOURCES_FILENAMES_OBJECTS =  \
@@ -163,16 +163,16 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 	objects\wxGuiTesting_InitWxGuiTest.obj \
 	objects\wxGuiTesting_InitWxGuiTestSetUp.obj \
 	objects\wxGuiTesting_ModalDialogTimer.obj \
-	objects\wxGuiTesting_GuiTestApp.obj \
 	objects\wxGuiTesting_CppUnitWarningAsserter.obj \
 	objects\wxGuiTesting_EventSimulationHelper.obj \
-	objects\wxGuiTesting_GuiTestHelper.obj \
 	objects\wxGuiTesting_ProvokedWarning.obj \
 	objects\wxGuiTesting_ProvokedWarningRegistry.obj \
 	objects\wxGuiTesting_TempInteractive.obj \
 	objects\wxGuiTesting_TempInteractiveControl.obj \
 	objects\wxGuiTesting_TimedDialogEnder.obj \
 	objects\wxGuiTesting_CapturePanel.obj \
+	objects\wxGuiTesting_WxGuiTestApp.obj \
+	objects\wxGuiTesting_WxGuiTestHelper.obj \
 	objects\wxGuiTesting_wxVTKRenderWindowInteractor.obj \
 	objects\wxGuiTesting_CRVtkCapture.obj \
 	objects\wxGuiTesting_CRVtkCaptureControl.obj \
@@ -510,17 +510,11 @@ objects\wxGuiTesting_InitWxGuiTestSetUp.obj: ..\..\src\wxGuiTest\InitWxGuiTestSe
 objects\wxGuiTesting_ModalDialogTimer.obj: ..\..\src\wxGuiTest\ModalDialogTimer.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\ModalDialogTimer.cpp
 
-objects\wxGuiTesting_GuiTestApp.obj: ..\..\src\wxGuiTest\GuiTestApp.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\GuiTestApp.cpp
-
 objects\wxGuiTesting_CppUnitWarningAsserter.obj: ..\..\src\wxGuiTest\CppUnitWarningAsserter.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\CppUnitWarningAsserter.cpp
 
 objects\wxGuiTesting_EventSimulationHelper.obj: ..\..\src\wxGuiTest\EventSimulationHelper.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\EventSimulationHelper.cpp
-
-objects\wxGuiTesting_GuiTestHelper.obj: ..\..\src\wxGuiTest\GuiTestHelper.cpp
-	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\GuiTestHelper.cpp
 
 objects\wxGuiTesting_ProvokedWarning.obj: ..\..\src\wxGuiTest\ProvokedWarning.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\ProvokedWarning.cpp
@@ -539,6 +533,12 @@ objects\wxGuiTesting_TimedDialogEnder.obj: ..\..\src\wxGuiTest\TimedDialogEnder.
 
 objects\wxGuiTesting_CapturePanel.obj: ..\..\src\wxGuiTest\CapturePanel.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\CapturePanel.cpp
+
+objects\wxGuiTesting_WxGuiTestApp.obj: ..\..\src\wxGuiTest\WxGuiTestApp.cpp
+	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\WxGuiTestApp.cpp
+
+objects\wxGuiTesting_WxGuiTestHelper.obj: ..\..\src\wxGuiTest\WxGuiTestHelper.cpp
+	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\WxGuiTestHelper.cpp
 
 objects\CppUnitTest_CppUnitTextTestApp.obj: ..\..\test\CppTest\CppUnitTextTestApp.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(CPPUNITTEST_CXXFLAGS) ..\..\test\CppTest\CppUnitTextTestApp.cpp

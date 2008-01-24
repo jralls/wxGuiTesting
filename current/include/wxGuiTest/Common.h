@@ -4,6 +4,8 @@
 // Created:     2002
 // Copyright:   (c) 2002 Yann Rouillard, Viet Bui Xuan, Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __WXM__

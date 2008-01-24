@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+//
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef CRVTKCAPTURE_H
@@ -15,7 +17,7 @@
 
 #include <wxGuiTest/Common.h>
 
-#include <wxGuiTest/GuiTestApp.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 #include <wxGuiTest/CRCapture.h>
 
 namespace wxTst {

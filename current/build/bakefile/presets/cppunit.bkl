@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Name:        build/bakefile/presets/cppunit.bkl
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     License:     wxWindows license
+     $Id$
+-->
 <!-- Add paths to includes and libraries for CppUnit testing framework. -->
 <makefile>
   <if cond="FORMAT!='autoconf'">
