@@ -1,0 +1,47 @@
+* Thorough unit testing of existing code
+
+* incorporate the necessary bits of swFramework (swApp, swPsuedoApp, Get/SetResourceDir) into WxGuiTesting and jettison the rest, rewriting the tests so that they don't need the extra bits of swFramework
+
+* Add more event simulations and handlers:
+    // Unsupported event wxEVT_COMMAND_TREE_SEL_CHANGED id -593, EvtObj
+    // 'treeCtrl' -> controls_treebook -> controls_notebook
+    // Unsupported event wxEVT_SCROLLWIN_THUMBTRACK id 0, EvtObj 'treeCtrl' ->
+    // controls_treebook -> controls_notebook
+    // Unsupported event wxEVT_SCROLLWIN_THUMBRELEASE id 0, EvtObj 'treeCtrl' ->
+    // controls_treebook -> controls_notebook
+    // Unsupported event wxEVT_COMMAND_COMBOBOX_SELECTED id -597, EvtObj '-1' ->
+    // -1 -> button
+    // Unsupported event wxEVT_SCROLL_LINEUP id -606, EvtObj 'wxSpinButton' ->
+    // wxSpinCtrl -> calendar
+    // Unsupported event wxEVT_SCROLL_THUMBTRACK id -606, EvtObj 'wxSpinButton'
+    // -> wxSpinCtrl -> calendar
+    // Unsupported event wxEVT_COMMAND_CHECKLISTBOX_TOGGLED id 149, EvtObj
+    // 'conrols_checklist' -> checklist -> controls_notebook
+    // Unsupported event wxEVT_COMMAND_LISTBOX_SELECTED id 164, EvtObj
+    // 'controls_listbox' -> listbox -> controls_notebook
+    // Unsupported event wxEVT_COMMAND_SPLITTER_SASH_POS_CHANGED id -618, EvtObj
+    // '-1' -> panel -> controls_notebook
+    // Unsupported event wxEVT_COMMAND_RADIOBUTTON_SELECTED id 172, EvtObj
+    // 'controls_unselected_radiobutton' -> radiobutton -> controls_notebook
+
+* moving some features into core wx facilitating the usage of
+swwxguitesting, i.e. prevent needed changes for normal wx apps to become
+testable, reduce ugly/inconvenient/tedious/unsafe workarounds required
+for testability (cf. PDF and project website?)
+
+* plug-in mechanism for application/user specific capture&replay
+extensions
+
+* C&R improvements:
+   - looked up containers => cache them to prevent duplicate lookups and
+variable declarations
+   - do not emit code directly + fill map of include directories during
+emitting => all include directories (without duplicates) can be actually
+emitted first, before the rest of the code follows
+
+* tutorial/cookbook that is much more developer-friendly than the thesis
+chapter
+
+* becoming testing framework independent -- if there are stakeholders
+for this
+

@@ -1,0 +1,80 @@
+/*! \page swWxGuiTesting
+
+    swWxGuiTesting is a framework allowing unit testing of wxWidgets based GUIs
+    and whole applications; it's core motivation is to some extent based on
+    ideas of TestFirstUserInterface's mailing list, thus, the resulting
+    framework likely to allow TDD of wxWidgets based GUI code.
+
+    It's currently remaining proprietary (non-standard wxWidgets) dependency is
+    the included swFrameworkDependent target:
+
+    - swFrameworkDependent is the attempt to reduce dependencies from
+    swWxGuiTesting to the SimplewareFramework. Without these dependencies
+    swWxGuiTesting would not be able to work, as it (a) provides some addtional
+    structure that a future application under test must implement, and (b)
+    provides means of accessing otherwise not available, but vital information.
+
+
+  \section buildSwWxGuiTesting Building
+
+    Please see separate building notes document, whereas (external) usage from
+    outside the testing framework is demonstrated by the "UsingSwWxGuiTesting"
+    project.
+
+    \subsection wxrcProblem MSVC++ vs. wxrc
+
+    Using CMake custom command's ability the wxrc executable tool is used to
+    produce the capture panel in the shape of an easily includable C++ file
+    with embedded resources, based on the original XRC file. This facilitates
+    the usage of capturing in other targets easier as it prevents the need of
+    specifying or carrying around the concrete directory name containing the
+    capture panel XRC resource.
+
+    Unfortunately, MSVC++ and wxrc.exe do not follow the same return code
+    conventions. Thus, when building it the first time the C++ file is
+    correctly produced, but MSVC++ thinks it has failed due to the return code.
+    Only in a second run the building succeeds.
+
+
+	\section docSwWxGuiTesting Documentation
+
+  	Reinhold's MPhil thesis chapter is the main source of information about this
+    project	in particular with respect to the underlying theory and concepts: see
+    http://reinholdfuereder.portland.co.uk/swWxGuiTesting.pdf
+
+  	Much more than a proof of concept is Simpleware's application ScanCAD -- the
+    main goal of Reinhold's MPhil study -- which is already using and applying
+    swWxGuiTesting.
+
+
+  \section futureSwWxGuiTesting Future Work
+
+    Besides aspects mentioned in the aforementioned thesis chapter (most
+    importantly detecting and dealing with test case failures), the most likely
+    case for enhancements of the testing framework concerns the event
+    simulation helper class (swWxGuiTestEventSimulationHelper) and the closely
+    linked Capturing & Replay (C&R) classes.
+
+    The helper class (a) frees the developer from the need to know the
+    individual control specific event simulation variations, and (b) hides the
+    actual implementation in the optimistic case of corrections in future
+    wxWidgets versions with respect to simulating events.
+
+    For the sake of comprehension each event simulation type adding should be
+    followed by adding the corresponding C&R support. This consists of (1) a new
+    event capturing class (e.g. swCRSpinCtrlUpdateEvent), (2) taking this new
+    event capturing class in the C&R event factory into account
+    (swCREventFactory::CreateEvent() method), and (3) deleting the event type
+    from the check for unsupported events leading to a comment in the "capture
+    script" (swCREventCaptureManager::FilterEvent() method).
+
+    In order to early detect any changes in the event generation by upgrading
+    wxWidgets version, each event simulation helper method must have a
+    corresponding GUI test case in the CppGuiTestWxGuiTesting project. That is:
+      - a test case in swWxGuiTestEventSimulationHelperTest class
+      - using or simulating an event in swWxGuiTestEvtSimHlpFrame class
+
+    VtkWxGuiTesting allows capture & replay of VTK render window interactions,
+    but has admittedly obvious limitations concerning the generation of
+    maintenable test cases.
+*/

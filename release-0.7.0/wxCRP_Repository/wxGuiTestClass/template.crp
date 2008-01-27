@@ -1,0 +1,234 @@
+WIZARD
+{
+    // In this block you define the sequence of how your wizard works
+    // it can hold conditional IF statements. With SUMMARIZE you can
+    // quickly log the value which will be shown in the final wizard sheet
+    // to inform the user about it's entered data.
+
+    SUMMARIZE "The following is going to be generated:\n\n";
+
+    ASK CLASS;
+    SUMMARIZE "  » Class name:    $1\n" CLASS;
+
+    ASK NAMESPACE;
+    SUMMARIZE "  » Namespace name:    $1\n" NAMESPACE;
+
+    ASK METHODS;
+    SUMMARIZE "  » Methods:       $1\n" METHODS;
+             //-------------------
+}
+
+TEMPLATE
+{
+    // The template section is executed after the wizard, and in this section
+    // the files will be written to disk, or the tabbed sheets.
+
+    STRVAR FILENAME;
+    STRVAR CPPNAME;
+    STRVAR HDRNAME;
+
+    // You can use these two variables to redirect output to
+    // just replace the NEWMODULE <filename> with CODEMODULE or INCMODULE
+    FILENAME = NAMESPACE + CLASS;
+    CPPNAME = FILENAME + ".cpp";
+    HDRNAME = FILENAME + ".h";
+
+                NEWMODULE HDRNAME;
+                @#$///////////////////////////////////////////////////////////////////////////////
+                @#$// Name:        @HDRNAME@
+                @#$// Author:      Reinhold Füreder
+                @#$// Modified by:
+                @#$// Created:     2006-02-14
+                @#$// RCS-ID:      $Id: template.crp,v 1.1 2006/02/14 01:12:58 reinhold Exp $
+                @#$// Copyright:   (c) Reinhold Füreder
+                @#$// Licence:     wxWindows licence
+                @#$///////////////////////////////////////////////////////////////////////////////
+                @#$
+                @#$#ifndef @FILENAME^@_H
+                @#$#define @FILENAME^@_H
+                @#$
+                @#$#ifdef __GNUG__
+                @#$    #pragma interface "@HDRNAME@"
+                @#$#endif
+                @#$
+                @#$// Includes:
+                @#$#include <cppunit/extensions/HelperMacros.h>
+                @#$
+IF(NAMESPACE!="")
+{
+                @#$namespace @NAMESPACE@ {
+                @#$
+}
+                @#$
+                @#$/*! \class @CLASS@
+                @#$    \brief ...
+                @#$
+                @#$    ...
+                @#$*/
+                @#$class @CLASS@ : public CPPUNIT_NS::TestFixture
+                @#${
+                @#$    CPPUNIT_TEST_SUITE( @CLASS@ );
+                @#$
+IF(METHODS[5])
+{
+                @#$        CPPUNIT_TEST( testExample );
+                @#$
+}
+                @#$    CPPUNIT_TEST_SUITE_END();
+                @#$
+                @#$// Methods:
+                @#$public:
+IF(METHODS[1])
+{
+                @#$    /*! \fn @CLASS@ ()
+                @#$        \brief Constructor
+                @#$
+                @#$        ...
+                @#$    */
+                @#$    @CLASS@ ();
+                @#$
+                @#$
+}
+IF(METHODS[2])
+{
+                @#$    /*! \fn virtual ~@CLASS@ ()
+                @#$        \brief Destructor
+                @#$
+                @#$        ...
+                @#$    */
+                @#$    virtual ~@CLASS@ ();
+                @#$
+                @#$
+}
+IF(METHODS[3])
+{
+                @#$    /*! \fn virtual void setUp ()
+                @#$        \brief Set up context before running a test.
+                @#$
+                @#$        ...
+                @#$    */
+                @#$    virtual void setUp ();
+                @#$
+                @#$
+}
+IF(METHODS[4])
+{
+                @#$    /*! \fn virtual void tearDown ()
+                @#$        \brief Clean up after the test run.
+                @#$
+                @#$        ...
+                @#$    */
+                @#$    virtual void tearDown ();
+                @#$
+                @#$
+}
+IF(METHODS[5])
+{
+                @#$    /*! \fn virtual void testExample ()
+                @#$        \brief Example test case.
+                @#$
+                @#$        ...
+                @#$    */
+                @#$    virtual void testExample ();
+                @#$
+                @#$
+}
+                @#$protected:
+                @#$
+                @#$private:
+                @#$
+                @#$// Data components:
+                @#$public:
+                @#$
+                @#$protected:
+                @#$
+                @#$private:
+                @#$
+                @#$};
+                @#$
+IF(NAMESPACE!="")
+{
+                @#$} // End namespace @NAMESPACE@
+                @#$
+}
+                @#$#endif // @FILENAME^@_H
+
+
+                NEWMODULE CPPNAME;
+                @#$///////////////////////////////////////////////////////////////////////////////
+                @#$// Name:        @CPPNAME@
+                @#$// Author:      Reinhold Füreder
+                @#$// Modified by:
+                @#$// Created:     2006-02-14
+                @#$// RCS-ID:      $Id: template.crp,v 1.1 2006/02/14 01:12:58 reinhold Exp $
+                @#$// Copyright:   (c) Reinhold Füreder
+                @#$// Licence:     wxWindows licence
+                @#$///////////////////////////////////////////////////////////////////////////////
+                @#$
+                @#$#ifdef __GNUG__
+                @#$    #pragma implementation "@HDRNAME@"
+                @#$#endif
+                @#$
+                @#$#include "@HDRNAME@"
+                @#$
+                @#$#include "swWxGuiTestHelper.h"
+                @#$#include "swWxGuiTestEventSimulationHelper.h"
+                @#$#include "swWxGuiTestTimedDialogEnder.h"
+                @#$#include "swWxGuiTestTempInteractive.h"
+                @#$
+IF(NAMESPACE!="")
+{
+                @#$namespace @NAMESPACE@ {
+                @#$
+}
+                @#$
+                @#$// Register test suite with special name in order to be identifiable as test
+                @#$// which must be run after GUI part of wxWidgets library is initialised:
+                @#$CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( @CLASS@, "WxGuiTest" );
+                @#$
+IF(METHODS[1])
+{
+                @#$
+                @#$@CLASS@::@CLASS@ ()
+                @#${
+                @#$}
+                @#$
+}
+IF(METHODS[2])
+{
+                @#$
+                @#$@CLASS@::~@CLASS@ ()
+                @#${
+                @#$}
+                @#$
+}
+IF(METHODS[3])
+{
+                @#$
+                @#$void @CLASS@::setUp ()
+                @#${
+                @#$}
+                @#$
+}
+IF(METHODS[4])
+{
+                @#$
+                @#$void @CLASS@::tearDown ()
+                @#${
+                @#$}
+                @#$
+}
+IF(METHODS[5])
+{
+                @#$
+                @#$void @CLASS@::testExample ()
+                @#${
+                @#$}
+                @#$
+}
+IF(NAMESPACE!="")
+{
+                @#$} // End namespace @NAMESPACE@
+}
+
+}

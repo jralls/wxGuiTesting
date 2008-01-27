@@ -1,0 +1,17 @@
+WxGuiTestTimedDialogEnder works only in M$Win (if there).
+
+	Blocking elements (modal dialogs, context menus) are generally
+	implemented as native controls, stopping the wx event loop
+	while they're active. WxGuiTesting needs access to the native
+	event loop in order for it to work properly with these controls.
+
+Capture problems:
+
+	XRCParse returns the first dialog box that matches a
+	signature, not necessarily the one that's gotten called. This
+	makes Capture results incorrect; the user must hand-correct
+	the dialog box name/id.
+
+	Capture redeclares variables repeatedly in capture results.
+
+	Capture doesn't handle toolbars correctly in OSX.

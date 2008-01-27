@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Name:        build/bakefile/files.bkl
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     License:     wxWindows license
+     $Id$
+-->
+<makefile>
+  <set var='WGTS'>src/wxGuiTest</set>
+  <set var='WGTI'>include/wxGuiTest</set>
+  <set var='WXVTK'>src/wxVTK</set>
+
+  <set var='WGT_SOURCES'>
+    $(WGTS)/CapturedEvents/CRAbstractTreeEvent.cpp
+    $(WGTS)/CapturedEvents/CRButtonClickEvent.cpp
+    $(WGTS)/CapturedEvents/CRCapturedEvent.cpp
+    $(WGTS)/CapturedEvents/CRCheckBoxClickEvent.cpp
+    $(WGTS)/CapturedEvents/CRChoiceSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/CRMenuSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/CRNotebookPageChangeEvent.cpp
+    $(WGTS)/CapturedEvents/CRRadioBoxSelectionEvent.cpp
+    $(WGTS)/CapturedEvents/CRSliderUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/CRSpinCtrlUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/CRTextUpdateEvent.cpp
+    $(WGTS)/CapturedEvents/CRTreeItemRightClickEvent.cpp
+    $(WGTS)/CapturedEvents/CRTreeSelectionChangingEvent.cpp
+    $(WGTS)/CRCapture.cpp
+    $(WGTS)/CRCaptureControl.cpp
+    $(WGTS)/CRCppEmitter.cpp
+    $(WGTS)/CREventCaptureManager.cpp
+    $(WGTS)/CREventFactory.cpp
+    $(WGTS)/CRWindowHierarchyHandler.cpp
+    $(WGTS)/InitWxGuiTest.cpp
+    $(WGTS)/InitWxGuiTestSetUp.cpp
+    $(WGTS)/ModalDialogTimer.cpp
+    $(WGTS)/CppUnitWarningAsserter.cpp
+    $(WGTS)/EventSimulationHelper.cpp
+    $(WGTS)/ProvokedWarning.cpp
+    $(WGTS)/ProvokedWarningRegistry.cpp
+    $(WGTS)/TempInteractive.cpp
+    $(WGTS)/TempInteractiveControl.cpp
+    $(WGTS)/TimedDialogEnder.cpp
+    $(WGTS)/CapturePanel.cpp
+    $(WGTS)/WxGuiTestApp.cpp
+    $(WGTS)/WxGuiTestHelper.cpp
+  </set>
+
+
+  <set var='VTK_SOURCES' >
+    $(WGTS)/VtkGuiTesting/CRVtkCapture.cpp
+    $(WGTS)/VtkGuiTesting/CRVtkCaptureControl.cpp
+    $(WGTS)/VtkGuiTesting/VtkWxGuiTestHelper.cpp
+    $(WGTS)/VtkGuiTesting/VtkInteractorEventRecorder.cpp
+    $(WGTS)/VtkGuiTesting/VtkCapturePanel.cpp
+  </set>
+
+  <set var='WXVTK_SOURCES'>
+    $(WXVTK)/wxVTKRenderWindowInteractor.cpp
+  </set>
+
+  <set var='WGTS_HDRS'>
+    $(WGTS)/CapturedEvents/CRAbstractTreeEvent.h
+    $(WGTS)/CapturedEvents/CRButtonClickEvent.h
+    $(WGTS)/CapturedEvents/CRCapturedEvent.h
+    $(WGTS)/CapturedEvents/CRCheckBoxClickEvent.h
+    $(WGTS)/CapturedEvents/CRChoiceSelectionEvent.h
+    $(WGTS)/CapturedEvents/CRMenuSelectionEvent.h
+    $(WGTS)/CapturedEvents/CRNotebookPageChangeEvent.h
+    $(WGTS)/CapturedEvents/CRRadioBoxSelectionEvent.h
+    $(WGTS)/CapturedEvents/CRSliderUpdateEvent.h
+    $(WGTS)/CapturedEvents/CRSpinCtrlUpdateEvent.h
+    $(WGTS)/CapturedEvents/CRTextUpdateEvent.h
+    $(WGTS)/CapturedEvents/CRTreeItemRightClickEvent.h
+    $(WGTS)/CapturedEvents/CRTreeSelectionChangingEvent.h
+    $(WGTS)/CREventFactory.h
+    $(WGTS)/InitWxGuiTestSetUp.h
+    $(WGTS)/TempInteractiveControl.h
+  </set>
+
+
+  <set var='WGT_INSTALL_HDRS'>
+    $(WGTI)/Common.h
+    $(WGTI)/CRCapture.h
+    $(WGTI)/CRCaptureControl.h
+    $(WGTI)/CRCppEmitter.h
+    $(WGTI)/CREventCaptureManager.h
+    $(WGTI)/CREventFilterInterface.h
+    $(WGTI)/CRWindowHierarchyHandler.h
+    $(WGTI)/CRLogInterface.h
+    $(WGTI)/CppUnitWarningAsserter.h
+    $(WGTI)/EventSimulationHelper.h
+    $(WGTI)/InitWxGuiTest.h
+    $(WGTI)/ModalDialogInteractionInterface.h
+    $(WGTI)/ModalDialogTimer.h
+    $(WGTI)/ProvokedWarning.h
+    $(WGTI)/ProvokedWarningRegistry.h
+    $(WGTI)/TempInteractive.h
+    $(WGTI)/TimedDialogEnder.h
+    $(WGTI)/WarningAsserterInterface.h
+    $(WGTI)/WxGuiTestApp.h
+    $(WGTI)/WxGuiTestHelper.h
+  </set>
+
+  <set var='VTK_HDRS' >
+    $(WGTI)/VtkGuiTesting/CRVtkCapture.h
+    $(WGTI)/VtkGuiTesting/CRVtkCaptureControl.h
+    $(WGTI)/VtkGuiTesting/VtkWxGuiTestHelper.h
+    $(WGTI)/VtkGuiTesting/VtkInteractorEventRecorder.h
+  </set>
+
+  <set var='WXVTK_HDRS'>
+    $(WXVTK)/wxVTKRenderWindowInteractor.h
+  </set>
+
+  <set var='CPPTEST_SOURCES'>
+    test/CppTest/CppUnitTextTestApp.cpp
+    test/CppTest/CRCppEmitterTest.cpp
+    test/CppTest/ProvokedWarningRegistryTest.cpp
+  </set>
+
+  <set var='CPPTEST_HDRS'>
+    test/CppTest/CRCppEmitterTest.h
+    test/CppTest/ProvokedWarningRegistryTest.h
+  </set>
+
+  <set var='CPPGUITESTEVENTSIMULATION_SOURCES'>
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/EventSimulationHelperTest.cpp
+    test/CppGuiTest/EvtSimHlpEvtHandler.cpp
+  </set>
+
+  <set var='CPPGUITESTEVENTSIMULATION_HDRS'>
+    test/CppGuiTest/EventSimulationHelperTest.h
+    test/CppGuiTest/EvtSimHlpEvtHandler.h
+  </set>
+
+  <set var='CPPGUITESTCAPTUREREPLAY_SOURCES'>
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/CRCaptureTest.cpp
+    test/CppGuiTest/CRWindowHierarchyHandlerTest.cpp
+  </set>
+
+  <set var='CPPGUITESTCAPTUREREPLAY_HDRS'>
+    test/CppGuiTest/CRCaptureTest.h
+    test/CppGuiTest/CRWindowHierarchyHandlerTest.h
+  </set>
+
+  <set var='CPPGUITESTMODALDIALOG_SOURCES'>
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/DirDialogManipulator.cpp
+    test/CppGuiTest/ModalDialogManipulator.cpp
+    test/CppGuiTest/ModalDialogTest.cpp
+  </set>
+
+  <set var='CPPGUITESTMODALDIALOG_HDRS'>
+    test/CppGuiTest/DirDialogManipulator.h
+    test/CppGuiTest/ModalDialogManipulator.h
+    test/CppGuiTest/ModalDialogTest.h
+  </set>
+
+  <set var='CPPGUITESTCAPTURE_EMIT_SOURCES'>
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/CapturePlusEmittingTest.cpp
+  </set>
+
+  <set var='CPPGUITESTCAPTURE_EMIT_HDRS'>
+    test/CppGuiTest/CapturePlusEmittingTest.h
+  </set>
+
+  <set var='VTKTEST_SOURCES'>
+    test/VtkTest/CppUnitTextTestApp.cpp
+    test/VtkTest/CRVtkCaptureTest.cpp
+  </set>
+
+  <set var='VTKTEST_HDRS'>
+    test/VtkTest/CRVtkCaptureTest.h
+  </set>
+
+</makefile>

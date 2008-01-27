@@ -1,0 +1,121 @@
+$ext:h
+///////////////////////////////////////////////////////////////////////////////
+// Name:        swTstMyCppUnitTestClass.h
+// Author:      Reinhold Füreder
+// Modified by:
+// Created:     2006-02-14
+// RCS-ID:      $Id: preview.txt,v 1.1 2006/02/14 01:12:59 reinhold Exp $
+// Copyright:   (c) Reinhold Füreder
+// Licence:     wxWindows licence
+///////////////////////////////////////////////////////////////////////////////
+
+#ifndef SWTSTMYCPPUNITTESTCLASS_H
+#define SWTSTMYCPPUNITTESTCLASS_H
+
+#ifdef __GNUG__
+    #pragma interface "swTstMyCppUnitTestClass.h"
+#endif
+
+// Includes:
+#include <cppunit/extensions/HelperMacros.h>
+
+namespace swTst {
+
+
+/*! \class MyCppUnitTestClass
+    \brief ...
+
+    ...
+*/
+class MyCppUnitTestClass : public CPPUNIT_NS::TestFixture
+{
+    CPPUNIT_TEST_SUITE( MyCppUnitTestClass );
+
+        CPPUNIT_TEST( testExample );
+
+    CPPUNIT_TEST_SUITE_END();
+
+// Methods:
+public:
+    /*! \fn virtual void setUp ()
+        \brief Set up context before running a test.
+
+        ...
+    */
+    virtual void setUp ();
+
+
+    /*! \fn virtual void tearDown ()
+        \brief Clean up after the test run.
+
+        ...
+    */
+    virtual void tearDown ();
+
+
+    /*! \fn virtual void testExample ()
+        \brief Example test case.
+
+        ...
+    */
+    virtual void testExample ();
+
+
+protected:
+
+private:
+
+// Data components:
+public:
+
+protected:
+
+private:
+
+};
+
+} // End namespace swTst
+
+#endif // SWTSTMYCPPUNITTESTCLASS_H
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Name:        swTstMyCppUnitTestClass.cpp
+// Author:      Reinhold Füreder
+// Modified by:
+// Created:     2006-02-14
+// RCS-ID:      $Id: preview.txt,v 1.1 2006/02/14 01:12:59 reinhold Exp $
+// Copyright:   (c) Reinhold Füreder
+// Licence:     wxWindows licence
+///////////////////////////////////////////////////////////////////////////////
+
+#ifdef __GNUG__
+    #pragma implementation "swTstMyCppUnitTestClass.h"
+#endif
+
+#include "swTstMyCppUnitTestClass.h"
+
+namespace swTst {
+
+
+// Register test suite:
+CPPUNIT_TEST_SUITE_REGISTRATION( MyCppUnitTestClass );
+
+
+void MyCppUnitTestClass::setUp ()
+{
+}
+
+
+void MyCppUnitTestClass::tearDown ()
+{
+}
+
+
+void MyCppUnitTestClass::testExample ()
+{
+}
+
+} // End namespace swTst

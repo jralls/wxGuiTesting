@@ -1,0 +1,38 @@
+CODEREPOS
+{
+    DESC "CppUnit Console Application TestRunner";
+
+    VERSION v1.0;
+
+    REPLACER STRING
+    {
+        NAME "FILE";
+        ASK "Enter the file name (without extension)";
+        DESC "The file name with .cpp extension is used for writing to disk or to tabbed output.";
+        SET DENY_EMPTY;
+        DEFAULT "CppTextTestApp";
+    }
+
+    LIST RADIO
+    {
+        NAME "MODE";
+        ASK "Select which test mode should be supported";
+        DESC "The following modes can be selected to get default test runner applications.";
+        CHOICES
+        {
+           1 "Standard CppUnit tests";
+           2 "swWxGuiTesting CppUnit tests";
+           3 "swWxAppGuiTesting CppUnit tests";
+           DEFAULT { 1 }
+        }
+    }
+
+    REPLACER STRING
+    {
+        NAME "AUT";
+        ASK "Enter the application under test (AUT) class name";
+        DESC "In the console application test runner an instance of the AUT class will be created for subsequent testing.";
+        SET DENY_EMPTY;
+        DEFAULT "MyApp";
+    }
+}

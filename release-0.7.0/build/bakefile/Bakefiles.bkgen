@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Name:        build/bakefile/Bakefiles.bkgen
+     Author:      John Ralls
+     Created:     2007
+     Copyright:   (c) 2007-2008 John Ralls
+     Licence:     wxWindows licence
+     $Id$
+-->
+<bakefile-gen xmlns="http://www.bakefile.org/schema/bakefile-gen"
+	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:schemaLocation="file:///usr/local/bakefile-svn/share/bakefile/schema/bakefile-gen.xsd">
+
+  <input>
+    wxGuiTesting.bkl
+  </input>
+
+  <add-formats>
+    autoconf,msvs2005prj,msvc,msvc6prj,xcode2
+  </add-formats>
+
+ <!-- Directories where the files go: -->
+  <add-flags files="wxGuiTesting.bkl" formats="autoconf">
+    -o../../Makefile.in
+  </add-flags>
+
+  <add-flags files="wxGuiTesting.bkl" formats="msvs2005prj">
+    -o../msw/wxGuiTesting.sln
+  </add-flags>
+
+  <add-flags files="wxGuiTesting.bkl" formats="msvc">
+    -o../msw/makefile.vc
+  </add-flags>
+
+  <add-flags files="wxGuiTesting.bkl" formats="msvc6prj">
+    -o../msw/wxGuiTesting.dsw
+  </add-flags>
+
+  <add-flags files="wxGuiTesting.bkl" formats="msvc">
+    -DOPTIONS_FILE=config.vc
+  </add-flags>
+
+  <add-flags files="wxGuiTesting.bkl" formats="xcode2">
+    -o../macosx/wxGuiTesting.xcodeproj
+
+  </add-flags>
+
+
+</bakefile-gen>

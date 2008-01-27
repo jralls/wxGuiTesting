@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<makefile>
+<!-- Turns on some extra features of Bakefile -->
+  <using module='datafiles'/>
+
+  <set var='VERSION'>1.0.0</set>
+
+
+<!-- Include some templates from the main build directory. This presets were lifted whole from either the wxWidgets distribution or from the wxWidgets Wiki; The wx.bkl has substantial magic which takes care of wx for us even without autoconf -->
+  <include file='../build/bakefile/presets/wx.bkl'/>
+  <include file='../build/bakefile/presets/utils.bkl'/>
+  <if cond="FORMAT in ['autoconf', 'gnu']">
+    <include file='../build/bakefile/presets/osx_bundle.bkl'/>
+  </if>
+
+
+  <set var='XRCDIR' make_var='1' overwrite='0'>rc</set>
+
+  <set var="WX3RDPARTYLIBPOSTFIX">
+    <if cond="WX_DEBUG=='1'">d</if>
+  </set>
+
+  <include file="../build/bakefile/presets/cppunit.bkl"/>
+
+<!-- And the path to the wxGuiTesting library and includes -->
+
+  <set var='wxGuiTestPathDefault'>
+    <if cond="PLATFORM_UNIX=='1'">/usr/local/wxGuiTesting</if>
+    <if cond="PLATFORM_WIN32=='1'">\wxGuiTesting</if>
+  </set>
+
+  <option name='wxGuiTestPath'  cond="FORMAT_SUPPORTS_CONDITIONS==1" category='path'>
+    <default-value>$(wxGuiTestPathDefault)</default-value>
+    <description>Location of the wxGuiTesting library and headers</description>
+  </option>
+
+  <if cond="FORMAT_SUPPORTS_CONDITIONS==0">
+    <set var='wxGuiTestPathDefault'  make_var='1'>$(wxGuiTestPathDefault)</set>
+   </if>
+
+<!-- Set up the build flags for autoconf -->
+  <set var='OPT'>
+    <if cond="FORMAT!='autoconf' and WX_DEBUG=='1'">off</if>
+    <if cond="FORMAT!='autoconf' and WX_DEBUG=='0'">speed</if>
+    <if cond="FORMAT=='autoconf' and WX_DEBUG=='1'">-O0</if>
+    <if cond="FORMAT=='autoconf' and WX_DEBUG=='0'">-02</if>
+  </set>
+
+  <set var='DBG'>
+    <if cond="FORMAT!='autoconf' and WX_DEBUG=='1'">on</if>
+    <if cond="FORMAT!='autoconf' and WX_DEBUG=='0'">off</if>
+    <if cond="FORMAT=='autoconf' and WX_DEBUG=='1'">-ggdb</if>
+    <if cond="FORMAT=='autoconf' and WX_DEBUG=='0'"></if>
+  </set>
+
+  <set var='OPT_FLAGS'>
+    <if  cond="FORMAT=='autoconf'">$(OPT) $(DBG)</if>
+  </set>
+
+<!-- Now we begin defining the build -->
+
+<!-- The location of the build path. This trick prevents things getting too ugly in IDE project files -->
+  <template id='wxGuiTest' template="CppUnit">
+    <include>$(wxGuiTestPath)/include</include>
+    <lib-path>$(wxGuiTestPath)/lib</lib-path>
+    <sys-lib>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</sys-lib>
+ </template>
+  
+  <template id='optimize'>
+    <if cond="FORMAT!='autoconf'">
+      <optimize>$(OPT)</optimize>
+      <debug-info>$(DBG)</debug-info>
+    </if>
+  </template>
+
+  <template id='App' template='optimize,wx'>
+    <if cond="FORMAT in ['autoconf', 'gnu']">
+      <osx-bundle />
+    </if>
+
+    <wx-lib>xrc</wx-lib>
+    <wx-lib>html</wx-lib>
+    <wx-lib>adv</wx-lib>
+    <wx-lib>xml</wx-lib>
+    <wx-lib>core</wx-lib>
+    <wx-lib>base</wx-lib>
+    <win32-res>xrcdemo.rc</win32-res>
+  </template>
+
+  <template id='testApp' template='wxGuiTest' template_append='App'>
+    <app-type>console</app-type>
+    <define>XRCDIR="$(XRCDIR)"</define>
+    <define>USE_WXGUITESTING </define>
+  </template>
+
+  <set var='progSource'>
+    custclas.cpp
+    derivdlg.cpp
+    myframe.cpp
+    xrcdemo.cpp
+  </set>
+
+  <set var='testRunnerSource'>CppTextTestApp.cpp</set>
+
+  <set var='captureSource'>SimpleCRTest.cpp</set>
+
+  <set var='testSource'>
+    SimpleTest.cpp
+    ReplayTest.cpp
+  </set>
+
+<!-- Now the actual targets. The first one builds the standard program -->
+
+  <exe id='xrcdemo' template='App'>
+    <app-type>gui</app-type>
+    <sources>$(progSource) </sources>
+  </exe>
+
+<!-- This one builds a capture program: That is, it runs the standard program under the control of the CAPTURE macro -->
+
+  <exe id='xrcdemo_capture' template='testApp'>
+    <sources>$(progSource) $(testRunnerSource) $(captureSource) </sources>
+  </exe>
+
+<!-- This one builds an Application Test: It runs the standard program and feeds it events, testing the results of those events. The events were created with a capture -->
+
+  <exe id='xrcdemo_test' template='testApp'>
+    <sources>$(progSource) $(testRunnerSource) $(testSource) </sources>
+  </exe>
+
+
+<!-- A UnitTest example, not yet written -->
+<!--
+  <exe id='xrcdemo_unit' template='testApp'>
+    <sources>$(progSource) $(unitRunnerSource) $(unitTests) </sources>
+  </exe>
+-->
+
+<!-- Demonstrating the data-files feature, we ensure that the required resource files are moved after an out-of-source build -->
+  <copy-files id="data" cond="FORMAT_SUPPORTS_ACTIONS=='1'">
+    <dstdir>$(BUILDDIR)/rc</dstdir>
+    <srcdir>$(SRCDIR)/rc</srcdir>
+    <files>
+      appicon.ico appicon.xpm artprov.xpm artprov.xrc basicdlg.xpm
+      basicdlg.xrc controls.xpm controls.xrc custclas.xpm custclas.xrc
+      derivdlg.xpm derivdlg.xrc fileopen.gif filesave.gif frame.xrc
+      fuzzy.gif menu.xrc platform.xpm platform.xrc quotes.gif
+      resource.xrc toolbar.xrc uncenter.xpm
+      uncenter.xrc update.gif variable.xpm variable.xrc
+      throbber.gif stop.xpm
+    </files>
+  </copy-files>
+
+
+</makefile>

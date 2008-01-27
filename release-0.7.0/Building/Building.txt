@@ -1,0 +1,293 @@
+CMake version 2.4.5 is strongly recommended and required for wxWidgets 2.8.0
+
+===========================================================
+Microsoft Windows
+===========================================================
+Using CMake 2.4.5
+Build generator: Visual Studio 6.0
+
+Initially build the required third party modules (if non-standard building
+settings are required, these are outlined in parentheses below, and specified
+in some detail in the doxygen documentation):
+    - CppUnit: 1.8 - 1.12.0 (Built according to CppUnit documentation)
+    - wxWidgets: 2.8.0
+        * "Instructions" below assume a static build, but analogue steps for
+          dynamic builds should work as well.
+        * Also required: wxrc executable
+Optional:
+    - VTK: 4.x - 5.0.2 (Built with CMake)
+
+===========================================================
+1. ThirdPartyLibs
+
+a. CMake 2.4.5
+
+    Build generator: -> Visual Studio 6.0
+
+    Source: -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\Cxx
+    Binary: -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\CxxBuild
+
+    -> [Configure] -> Error (CppUnit) -> Cancel
+
+    CPPUNIT_PATH: -> D:\CVS\CppUnit
+
+    -> [Configure]
+
+    Only if you want to test VTK Capture & Replay:
+        USE_VTK_DEPENDENT_PARTS: -> ON
+
+        -> [Configure] -> Error (VTK) -> Cancel
+
+        VTK_DIR: -> D:\CVS\VTKBuild
+
+        -> [Configure] -> under MSW several times: -> Warning (VTK is forcing linker flags...) -> OK
+
+        -> Error (wxWidgets) -> Cancel
+
+		wxWidgets_LIB_DIR:  -> D:\CVS\wxWidgets-2.8.0\lib\vc_lib
+		wxWidgets_ROOT_DIR: -> D:\CVS\wxWidgets-2.8.0
+
+    -> OK
+
+Only in case you want to test VTK Capture & Replay and have therefore set USE_VTK_DEPENDENT_PARTS to ON:
+b. Microsoft Visual C++ 6.0
+    Open workspace: D:\CVS\swWxGuiTesting\ThirdPartyLibs\CxxBuild\ThirdPartyLibs.dsw
+    Build workspace in debug and release configuration (there is only wxVTK project)
+
+
+c. Doxygen 1.3.9.1
+    "1. Load": -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\Documentation\doxygen.cfg
+    "4. Start": -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\Documentation\html\index.html ...
+
+
+
+
+===========================================================
+2. Testing
+
+a. CMake 2.4.5
+
+    Build generator: -> Visual Studio 6.0
+
+    Source: -> D:\CVS\swWxGuiTesting\Testing\Cxx
+    Binary: -> D:\CVS\swWxGuiTesting\Testing\CxxBuild
+
+    -> [Configure] -> Error (wxWidgets) -> Cancel
+
+	wxWidgets_LIB_DIR:  -> D:\CVS\wxWidgets-2.8.0\lib\vc_lib
+	wxWidgets_ROOT_DIR: -> D:\CVS\wxWidgets-2.8.0
+
+    -> [Configure] -> Error (ThirdPartyLibs) -> Cancel
+
+    THIRD_PARTY_LIBS_DIR: -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\CxxBuild
+
+    -> [Configure] -> Error (wxrc) -> Cancel
+
+    WXRC_DIR: -> D:\CVS\wxWidgets-2.8.0\utils\wxrc\vc_mswd (directory that holds wxrc executable -- is used for xrc based capture panel)
+
+    Only in case you want to test VTK Capture & Replay and have therefore set USE_VTK_DEPENDENT_PARTS to ON for ThirdPartyLibs:
+        -> [Configure] -> Error (VTK) -> Cancel
+
+        VTK_DIR: -> D:\CVS\VTKBuild
+
+        -> [Configure] -> under MSW several times: Warning (VTK is forcing linker flags...) -> OK
+
+    -> OK
+
+
+b. Microsoft Visual C++ 6.0
+    Open workspace: D:\CVS\swWxGuiTesting\Testing\CxxBuild\Testing.dsw
+    Build workspace in debug and release configuration
+
+    Run build targets/executables (= test suites):
+      - CppTestSwWxGuiTesting
+      - CppGuiTestEventSimulation
+      - CppGuiTestCaptureReplay
+      - CppGuiTestModalDialog
+      Only in case you want to test VTK Capture & Replay and therefore set USE_VTK_DEPENDENT_PARTS to ON for ThirdPartyLibs:
+          - CppGuiTestVtkCaptureReplay
+
+
+c. Doxygen 1.3.9.1
+    "1. Load": -> D:\CVS\swWxGuiTesting\Testing\Documentation\doxygen.cfg
+    "4. Start": -> D:\CVS\swWxGuiTesting\Testing\Documentation\html\index.html ...
+
+
+
+===========================================================
+3. UsingSwWxGuiTesting (using/applying swWxGuiTesting from/on an external project)
+
+a. CMake 2.4.5
+
+    Build generator: -> Visual Studio 6.0
+
+    Source: -> D:\CVS\swWxGuiTesting\UsingSwWxGuiTesting\Cxx
+    Binary: -> D:\CVS\swWxGuiTesting\UsingSwWxGuiTesting\CxxBuild
+
+    -> [Configure] -> Error (wxWidgets) -> Cancel
+
+	wxWidgets_LIB_DIR:  -> D:\CVS\wxWidgets-2.8.0\lib\vc_lib
+	wxWidgets_ROOT_DIR: -> D:\CVS\wxWidgets-2.8.0
+
+    -> [Configure] -> Error (ThirdPartyLibs) -> Cancel
+
+    THIRD_PARTY_LIBS_DIR: -> D:\CVS\swWxGuiTesting\ThirdPartyLibs\CxxBuild
+
+    -> [Configure] -> Error (swWxGuiTesting Testing) -> Cancel
+
+    TESTING_DIR: -> D:\CVS\swWxGuiTesting\Testing\CxxBuild
+
+    -> [Configure]
+
+    -> OK
+
+b. Microsoft Visual C++ 6.0
+    Open workspace: D:\CVS\swWxGuiTesting\UsingSwWxGuiTesting\CxxBuild\UsingSwWxGuiTesting.dsw
+    Build workspace in debug and release configuration
+
+    Run build targets/executables (= test suites):
+      - CppGuiTestCaptureReplay (almost identical to the one in 2. Testing)
+
+
+
+
+===========================================================
+Ubuntu Dapper Linux
+===========================================================
+Using CMake 2.4.5
+Build generator: Unix Makefiles
+
+Initially build the required third party modules (if non-standard building
+settings are required, these are outlined in parentheses below, and specified
+in some detail in the doxygen documentation):
+    - CppUnit: 1.10.2 (Install lib and dev packages for CppUnit)
+    - wxWidgets: 2.8.0
+        * "Instructions" below assume a static build, but analogue steps for
+          dynamic builds should work as well. My configuration for wxWidgets build:
+            "configure --with-gtk --enable-debug_flag --with-opengl"
+        * Build for GTK2 including OpenGL
+        * Also required: wxrc executable
+Optional:
+    - VTK: 5.0 (Built with CMake)
+
+Potentially optional steps, but necessary on my system:
+    * Install X11 header packages: xlibs-dev
+    * Install mesa-glx (incl. -dev) and/or nvidia-glx (incl. -dev) packages
+    * Potentially adapt LD_CONFIG_PATH to include /usr/local/lib to allow using/running the
+        standard build of wxrc tool
+
+
+
+===========================================================
+1. ThirdPartyLibs
+
+a. CMake 2.4.5
+
+    Build generator: -> Unix Makefiles
+
+    Source: -> /home/reini/swWxGuiTesting/ThirdPartyLibs/Cxx
+    Binary: -> /home/reini/swWxGuiTesting/ThirdPartyLibs/CxxBuild
+    (Out of source build: cd CxxBuild; cmake -i ../Cxx)
+
+    -> cmake -i ../Cxx
+        -> Advanced options -> No (not yet)
+        -> Error (CppUnit)
+
+    CPPUNIT_PATH: -> /usr/lib
+
+    -> cmake ../Cxx
+
+    If you want to test VTK Capture & Replay:
+        USE_VTK_DEPENDENT_PARTS: -> ON
+
+        -> cmake -i ../Cxx -> Error (VTK)
+
+        VTK_DIR: -> /home/reini/VTKBuild
+
+        -> cmake ../Cxx
+
+
+Only in case you want to test VTK Capture & Replay and therefore set USE_VTK_DEPENDENT_PARTS to ON:
+b. Build wxVTK library via "make"
+
+
+c. Doxygen in analogy to before (/home/reini/swWxGuiTesting/ThirdPartyLibs/Documentation/doxygen.cfg)
+
+
+===========================================================
+2. Testing
+
+a. CMake 2.4.5
+
+    Build generator: Unix Makefiles
+
+    Source: -> /home/reini/swWxGuiTesting/Testing/Cxx
+    Binary: -> /home/reini/swWxGuiTesting/Testing/CxxBuild
+    (Out of source build: cd CxxBuild; cmake -i ../Cxx)
+
+    -> cmake -i ../Cxx
+        -> Advanced options -> No (not yet)
+        -> Error (ThirdPartyLibs)
+
+    THIRD_PARTY_LIBS_DIR: -> /home/reini/swWxGuiTesting/ThirdPartyLibs/CxxBuild
+
+    -> cmake -i ../Cxx -> Error (wxrc)
+
+    WXRC_DIR: -> /usr/local/bin (directory that holds wxrc executable -- is used for xrc based capture panel)
+
+    -> cmake ../Cxx
+
+    Only in case you want to test VTK Capture & Replay and therefore set USE_VTK_DEPENDENT_PARTS to ON for ThirdPartyLibs:
+        -> cmake -i ../Cxx -> Error (VTK)
+
+        VTK_DIR: -> /home/reini/VTKBuild
+
+        -> cmake ../Cxx
+
+
+b. Build targets/executables (= test suites) via "make"
+
+    Run build targets/executables (= test suites):
+      - CppTestSwWxGuiTesting
+      - CppGuiTestEventSimulation
+      - CppGuiTestCaptureReplay
+      - CppGuiTestModalDialog
+      Only in case you want to test VTK Capture & Replay and therefore set USE_VTK_DEPENDENT_PARTS to ON for ThirdPartyLibs:
+          - CppGuiTestVtkCaptureReplay
+
+
+c. Doxygen in analogy to before (/home/reini/swWxGuiTesting/Testing/Documentation/doxygen.cfg)
+
+
+
+===========================================================
+3. UsingSwWxGuiTesting (using/applying swWxGuiTesting from/on an external project)
+
+a. CMake 2.4.5
+
+    Build generator: Unix Makefiles
+
+    Source: -> /home/reini/swWxGuiTesting/Testing/Cxx
+    Binary: -> /home/reini/swWxGuiTesting/Testing/CxxBuild
+    (Out of source build: cd CxxBuild; cmake -i ../Cxx)
+
+    -> cmake -i ../Cxx
+        -> Advanced options -> No (not yet)
+        -> Error (ThirdPartyLibs)
+
+    THIRD_PARTY_LIBS_DIR: -> /home/reini/swWxGuiTesting/ThirdPartyLibs/CxxBuild
+
+    -> cmake -i ../Cxx -> Error (Testing)
+
+    TESTING_DIR: -> /home/reini/swWxGuiTesting/Testing/CxxBuild
+
+    -> cmake ../Cxx
+
+
+b. Build executable via "make"
+
+    Run build targets/executables (= test suites):
+      - CppTestSwWxGuiTesting
+      - CppGuiTestEventSimulation
+      - CppGuiTestCaptureReplay
+

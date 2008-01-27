@@ -1,0 +1,39 @@
+CODEREPOS
+{
+    DESC "CppUnit Test Class";
+
+    VERSION v1.0;
+
+    REPLACER STRING
+    {
+        NAME "CLASS";
+        ASK "Enter the class name";
+        DESC "The class name is also the name of the file to be written to disk or to tabbed output.";
+        SET DENY_EMPTY;
+        DEFAULT "MyCppUnitTestClass";
+    }
+
+    REPLACER STRING
+    {
+        NAME "NAMESPACE";
+        ASK "Enter the namespace if required";
+        DESC "The namespace is another means of avoiding name clashes. Leave it empty for no namespace.";
+        DEFAULT "swTst";
+    }
+
+    LIST MULTI
+    {
+        NAME "METHODS";
+        ASK "Select the methods for which to provide default implementations";
+        DESC "The following methods can be selected to get default implementations.";
+        CHOICES
+        {
+           1 "Default constructor";
+           2 "Destructor";
+           3 "setUp";
+           4 "tearDown";
+           5 "testExample";
+           DEFAULT { 3 4 5 }
+        }
+    }
+}
