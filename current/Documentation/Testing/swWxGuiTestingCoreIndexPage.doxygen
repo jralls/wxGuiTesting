@@ -10,7 +10,7 @@
 
     - swFrameworkDependent is the attempt to reduce dependencies from
     swWxGuiTesting to the SimplewareFramework. Without these dependencies
-    swWxGuiTesting would not be able to work, as it (a) provides some addtional
+    swWxGuiTesting would not be able to work, as it (a) provides some additional
     structure that a future application under test must implement, and (b)
     provides means of accessing otherwise not available, but vital information.
 
