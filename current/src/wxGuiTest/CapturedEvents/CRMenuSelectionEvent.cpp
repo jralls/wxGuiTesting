@@ -291,8 +291,7 @@ void CRMenuSelectionEvent::EmitCpp ()
 
     // (II) Expected emitting for toolbar tools:
     /*
-    sw::ToolBar *toolBar = sw::ToolBarRegistry::GetInstance ()->
-            FindToolBarByName ("ToolBarName");
+    wxToolBar *toolBar = ToolBarName = ContainerName->GetToolBar();
     CPPUNIT_ASSERT_MESSAGE ("Toolbar 'ToolBarName' not found",
             toolBar != NULL);
     // (a) Standard tool IDs (wxID_LOWEST < stdID < wxID_HIGHEST) don't need to be
@@ -300,15 +299,6 @@ void CRMenuSelectionEvent::EmitCpp ()
     wxTst::EventSimulationHelper::ToggleTool (m_event->GetId (),
             m_isChecked, toolBar, toolBar);
     // (b) others should be registered in the GuiObjectManager:
-    sw::GuiObject *guiObject = sw::GuiObjectManager::GetInstance ()->
-            FindGuiObject ("GuiObjectName");
-    CPPUNIT_ASSERT_MESSAGE ("GuiObject 'GuiObjectName' not found",
-            guiObject != NULL);
-    sw::ToolGuiObject *toolGuiObject = dynamic_cast < sw::ToolGuiObject * >(
-            guiObject);
-    CPPUNIT_ASSERT_MESSAGE ("GuiObject 'GuiObjectName' is not a ToolGuiObject",
-            toolGuiObject != NULL);
-    int toolId = sw::GuiObjectManager::GetInstance ()->FindId (toolGuiObject);
     wxTst::EventSimulationHelper::ToggleTool (toolId, m_isChecked,
             toolBar, toolBar);
     wxTst::WxGuiTestHelper::FlushEventQueue ();

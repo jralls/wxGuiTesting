@@ -114,11 +114,6 @@ void InitWxGuiTestSetUp::setUp ()
     // Thus, this would case a crash:
     //::wxInitialize ();
 
-    // Setting an PseudoApp instance would work (unless it wants to do the
-    // same re-initialisation as well), but does not really help for the, right
-    // now, single benefit of having a wx logging target:
-    //App::Destroy ();
-    //sw::PseudoApp::SetPseudoAppInstance ();
 }
 
 

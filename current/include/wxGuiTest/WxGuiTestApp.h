@@ -55,7 +55,7 @@ class WxGuiTestApp : public wxApp
     DECLARE_EVENT_TABLE()
 
 public:
-    /*! \fn WxGuiTestApp (sw::App *app = NULL)
+    /*! \fn WxGuiTestApp (wxApp *app = NULL)
         \brief Constructor
 
         \param app actual application under test (AUT)

@@ -67,7 +67,7 @@ void CRTreeSelectionChangingEvent::EmitCpp ()
     wxTreeItemId rootId = treeCtrl->GetRootItem ();
     CPPUNIT_ASSERT_MESSAGE ("Tree control root item is invalid", rootId.IsOk (
             ));
-    wxTreeItemId treeItemId1 = sw::TreeCtrl::GetNthChild (treeCtrl, 2, rootId);
+    wxTreeItemId treeItemId1 = wxTst::EventSimulationHelper::GetNthTreeChild (treeCtrl, 2, rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId1.IsOk (
             ));
     wxTst::EventSimulationHelper::SelectTreeItem (treeItemId1,

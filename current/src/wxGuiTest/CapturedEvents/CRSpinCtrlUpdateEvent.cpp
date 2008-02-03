@@ -77,28 +77,26 @@ void CRSpinCtrlUpdateEvent::Process (CRCapturedEvent **pendingEvt)
 void CRSpinCtrlUpdateEvent::EmitCpp ()
 {
     // Expected emitting (XRC):
-    // Requires: "using sw::SpinCtrlDouble;"
     /*
     wxWindow *evtSimHlpTestPanel = wxWindow::FindWindowByName (
             "EvtSimHlpTestPanel");
-    CPPUNIT_ASSERT_MESSAGE ("Container window for spin control 'SpinCtrlDbl' \
+    CPPUNIT_ASSERT_MESSAGE ("Container window for spin control 'Spinctrl' \
             not found", evtSimHlpTestPanel != NULL);
-    wxWindow *spinCtrlDblWdw = evtSimHlpTestPanel->FindWindow (XRCID(
-            "SpinCtrlDbl"));
-    CPPUNIT_ASSERT_MESSAGE ("Window for spin control 'SpinCtrlDbl' not found",
-            spinCtrlDblWdw != NULL);
-    sw::SpinCtrlDouble *spinCtrlDbl = wxDynamicCast (spinCtrlDblWdw,
-            SpinCtrlDouble);
-    CPPUNIT_ASSERT_MESSAGE ("Converting window for spin control 'SpinCtrlDbl' \
-            failed", spinCtrlDbl != NULL);
-    wxTst::EventSimulationHelper::SetSpinCtrlDblValueWithoutEvent (
-            spinCtrlDbl, 0.6);
+    wxWindow *spinctrlWdw = evtSimHlpTestPanel->FindWindow (XRCID(
+            "Spinctrl"));
+    CPPUNIT_ASSERT_MESSAGE ("Window for spin control 'Spinctrl' not found",
+            spinctrlWdw != NULL);
+    SpinCtrl *spinctrl = wxDynamicCast (spinctrlWdw, SpinCtrl);
+    CPPUNIT_ASSERT_MESSAGE ("Converting window for spin control 'Spinctrl' \
+            failed", spinctrl != NULL);
+    wxTst::EventSimulationHelper::SetSpinctrlValueWithoutEvent (
+            spinctrl, 0.6);
     wxTst::WxGuiTestHelper::FlushEventQueue ();
     */
     // Or non-XRC:
     /*
     ...
-    wxWindow *spinCtrlDblWdw = evtSimHlpTestPanel->FindWindow ("SpinCtrlDbl");
+    wxWindow *spinctrlWdw = evtSimHlpTestPanel->FindWindow ("Spinctrl");
     ...
     */
 

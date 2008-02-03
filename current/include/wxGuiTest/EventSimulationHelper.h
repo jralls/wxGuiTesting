@@ -22,10 +22,6 @@ class wxTreeCtrl;
 class wxSpinCtrl;
 class wxNotebook;
 
-// namespace sw {
-//     class ToolBar;
-//     class SpinCtrlDouble;
-// }
 
 namespace wxTst {
 
@@ -107,26 +103,6 @@ public:
     */
     static void SetTextCtrlValue (wxTextCtrl *textCtrl,
             const wxString &value);
-
-
-//     /*! \fn static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value)
-//         \brief Set double typed spin control value.
-
-//         \param spinCtrl double typed spin control to manipulate
-//         \param value new value for spin control
-//     */
-//     static void SetSpinCtrlDblValue (sw::SpinCtrlDouble *spinCtrl, double value);
-
-            
-//     /*! \fn static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl, double value)
-//         \brief Set double typed spin control value without generating event.
-
-//         \param spinCtrl double typed spin control to manipulate
-//         \param value new value for spin control
-//     */
-//     static void SetSpinCtrlDblValueWithoutEvent (sw::SpinCtrlDouble *spinCtrl,
-//             double value);
-    
 
     /*! \fn static wxTreeItemId GetNthTreeChild( wxTreeCtrl *treeCtrl, unsigned int idx, const wxTreeItemId &id)
 
@@ -240,7 +216,7 @@ public:
     static void ToggleToolOnlyEvent (int id, bool enabled, wxWindow *parent);
 
 
-    /*! \fn static void ToggleTool (int id, bool enabled, sw::ToolBar *toolbar, wxWindow *parent)
+    /*! \fn static void ToggleTool (int id, bool enabled, wxToolBar *toolbar, wxWindow *parent)
         \brief Toggle a tool of a toolbar.
         
         This is almost equivalent to selecting a menu item.

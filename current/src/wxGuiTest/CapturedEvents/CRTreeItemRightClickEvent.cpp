@@ -68,7 +68,7 @@ void CRTreeItemRightClickEvent::EmitCpp ()
     CPPUNIT_ASSERT_MESSAGE ("Tree control root item is invalid", rootId.IsOk (
             ));
     treeCtrl->Expand (rootId);
-    wxTreeItemId treeItemId1 = sw::TreeCtrl::GetNthChild (treeCtrl, 2, rootId);
+    wxTreeItemId treeItemId1 = wxTst::EventSimulationHelper::GetNthTreeChild (treeCtrl, 2, rootId);
     CPPUNIT_ASSERT_MESSAGE ("Tree control item is invalid", treeItemId1.IsOk (
             ));
     wxTst::EventSimulationHelper::RightClickTreeItem (treeItemId1,
@@ -147,7 +147,7 @@ void CRTreeItemRightClickEvent::EmitCpp ()
 
         str.Clear ();
         str << _T("wxTreeItemId ") << curTreeItemIdVarName <<
-                _T(" = sw::TreeCtrl::GetNthChild (") << treeCtrlVarName << 
+                _T(" = wxTst::EventSimulationHelper::GetNthTreeChild (") << treeCtrlVarName << 
                 _T(", ") << (*it) << _T(", ") << parentItemIdVarName << _T(");");
         emitter->AddCode (str);
 

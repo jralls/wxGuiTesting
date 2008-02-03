@@ -19,9 +19,6 @@
 
 #include <map>
 
-namespace sw {
-    class DefaultDialog;
-}
 
 /*! \def IMPLEMENT_APP(appname)
 If the special symbol _USE_WX_APP_GUI_TESTING is defined in the sources
