@@ -175,7 +175,9 @@ public:
         \return exit code
     */
     virtual int OnExit ();
-
+#ifdef __DARWIN__
+    void MacHandleOneEvent(WXEVENTREF evt);
+#endif
 private:
     InitWxGuiTestSetUp* m_testRunnerProxy;
     wxApp* m_appUnderTest;

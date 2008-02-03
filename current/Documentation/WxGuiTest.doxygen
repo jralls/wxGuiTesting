@@ -1,6 +1,6 @@
 /*! \mainpage WxGuiTesting
 
-    WxGuiTesting is a small static library which facilitates testing of <A href=http://www.wxwidgets.org>wxWidgets </A> applications and classes. 
+    WxGuiTesting is a small static library which facilitates testing of <A href=http://www.wxwidgets.org>wxWidgets </A> applications and classes.
 
     WxGuiTesting at present works only with (and requires) <A href="http://www.cppunit.org">CppUnit</A> unit-testing framework.
 
@@ -10,7 +10,7 @@
        - A framework for easily capturing wxWidgets user interaction events as a source file with which to build regression tests.
        - Limited capability to test and capture events for <A href="http://wxvtk.sourceforge.net">wxVTK</A>, a <A href=http://www.wxwidgets.org>wxWidgets </A> wrapper for the <A href="http://www.vtk.org">VTK</A> 3D graphics library.
 
-     WxGuiTesting was originally developed by Reinhold Füreder at the University of Exeter in the UK as part of develping an application for <A href="http://www.simpleware.com">SimpleWare, Ltd.</A>. His <A href="http://swwxguitesting.wefi.net/">swWxGuiTesting webpage</A> has more details along with an excerpt from his thesis explaining in detail how he arrived at the final design.
+     WxGuiTesting was originally developed by Reinhold Füreder at the University of Exeter in the UK as part of develping an application for <A href="http://www.simpleware.com">Simpleware, Ltd.</A>. His <A href="http://swwxguitesting.wefi.net/">swWxGuiTesting webpage</A> has more details along with an excerpt from his thesis explaining in detail how he arrived at the final design.
 
      Reinhold's introduction pages to the Doxygen documentation:
 	- \subpage swWxGuiTesting
@@ -23,14 +23,17 @@
 	 - <A href="http://wxvtk.sourceforge.net">wxVTK</A> \b Optional An old version is included, but you may wish to get a newer one if you're using VTK.
 	 - <A href="http://www.xs4all.nl/~jorgb/wxcrp">wxCRP</A> \b Optional A program for generating source files from templates. Microsoft Windows® only. Templates are provided in the wxCRP directory.
 	 - <A href="http://www.doxygen.org">Doxygen</A> \b Optional but you'll want it if you need to regenerate the HTML documentation or to make docs in some other format.
-	 - The project originally required CMake (and you'll need it to build VTK if you're using it), but it has since been converted to use <A href="http://www.bakefile.org">bakefile</A> just like wxWidgets.  
+	 - The project originally required <a href="http://www.cmake.org">CMake</a> (and you'll need it to build VTK if you're using it), but it has since been converted to use <A href="http://www.bakefile.org">bakefile</A> just like wxWidgets. 
+
+<p><a class="elRef" href="http://sourcceforge.net/projects/wxguitest">wWxGuiTesting Sourceforge ProjectPage</a>
+<p><a class="elRef" href="http://sourceforge.net/project/showfiles.php?group_id=215362">Download WxGuiTesting</a> 
 
       \subpage Installing
       	  
       \subpage Using 
 
       \section License
-      WxGuiTesting is licensed under the wxWidgets License, a liberalized version of the GNU Lesser General Public License, Version 2. Text files containing the licenses may be found in the Documentation directory. 
+      WxGuiTesting is licensed under the <a href="http://www.opensource.org/licenses/wxwindows.php">wxWindows Library License</a>, a liberalized version of the GNU Lesser General Public License, Version 2. Text files containing the licenses may be found in the Documentation directory. 
 
 
 */

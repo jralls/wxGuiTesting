@@ -15,8 +15,6 @@ The other categories require WxGuiTesting to provide a wxWidgets application env
 
 CppUnit is designed to run short test cases which abort immediately on any failed test. This can be a bit limiting, particularly when using a test for diagnosing a problem. It's therefore advisable to write a lot of short test cases instead of a few big ones: More gets tested that way.
 
-Note that in order for capture to work, your project <b><I>must use xml XRC files</I></b>. 
-
 \section unit Complex Unit Testing
 
 In unit testing, your test suite sets up the component(s) to test in \c setUp() and destroys them in \c tearDown(). Each test-case uses either direct calls on a component's functions (like in the simple unit testing above) or uses wxTst::WxGuiTestEventSimulationHelper to send events to it. 
@@ -144,10 +142,6 @@ capture, but the test case will never be able to see it because the
 frame will be destroyed when the handler returns. This will cause the
 test case to fail. To be testable, GUI elements must be created on the
 heap and must be available to the test functions.
-
-Capture uses XML XRC files to discover resource names, and at present
-is able to scan only one directory for resource files. This directory
-is set in your test program with sw::Config::SetResourceDir().
 
 \subsection blocking Blocking GUI Elements (Modal Dialogs and Popup Menus):
 

@@ -80,10 +80,10 @@ TOOLKIT := MAC
 WXSRCPATH := /usr/local/src/wxMac-2.8.6
 
 # Path to CppUnit Headers 
-CPPUNIT_INCL := /usr/local/cppunit-1.12/include
+CPPUNIT_INCL := /usr/local/cppunit-1.12.0/include
 
 # Path to CppUnit Libraries 
-CPPUNIT_LIBDIR := /usr/local/cppunit-1.12/lib
+CPPUNIT_LIBDIR := /usr/local/cppunit-1.12.0/lib
 
 # Library names needed for CppUnit to link 
 CPPUNIT_LIB := cppunit$(WX3RDPARTYLIBPOSTFIX)
