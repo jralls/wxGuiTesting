@@ -21,7 +21,7 @@
 
 #include <wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h>
 
-int main (int argc, char* argv[])
+int main (int WXUNUSED(argc), char** WXUNUSED(argv))
 {
     //wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 

@@ -202,7 +202,7 @@ void CRMenuSelectionEvent::processCheckable() {
 }
 
 
-void CRMenuSelectionEvent::Process (CRCapturedEvent **pendingEvt)
+void CRMenuSelectionEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     // (1) Or if it is part of top level window:
     wxWindow *topWdw = wxTheApp->GetTopWindow ();

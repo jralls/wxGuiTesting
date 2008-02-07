@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 //
 // $Id$
 ///////////////////////////////////////////////////////////////////////////////
@@ -29,7 +31,7 @@ BEGIN_EVENT_TABLE(wxTst::CRVtkCaptureControl, CRCaptureControl)
     EVT_BUTTON( XRCID("AddRecordingButton"), CRVtkCaptureControl::OnAddWxVtkRecording )
 END_EVENT_TABLE()
 
-namespace wxTst {
+using namespace wxTst;
 
 
 CRVtkCaptureControl::CRVtkCaptureControl (wxDialog *dialog) :
@@ -45,7 +47,7 @@ CRVtkCaptureControl::~CRVtkCaptureControl ()
 }
 
 
-void CRVtkCaptureControl::OnResetWxVtkRecording (wxCommandEvent &event)
+void CRVtkCaptureControl::OnResetWxVtkRecording (wxCommandEvent& WXUNUSED(event))
 {
     VtkWxGuiTestHelper::RecorderMap::iterator it;
     VtkWxGuiTestHelper::RecorderMap &recorders =
@@ -58,7 +60,7 @@ void CRVtkCaptureControl::OnResetWxVtkRecording (wxCommandEvent &event)
 }
 
 
-void CRVtkCaptureControl::OnStartWxVtkRecording (wxCommandEvent &event)
+void CRVtkCaptureControl::OnStartWxVtkRecording (wxCommandEvent& WXUNUSED(event))
 {
     VtkWxGuiTestHelper::RecorderMap::iterator it;
     VtkWxGuiTestHelper::RecorderMap &recorders =
@@ -72,7 +74,7 @@ void CRVtkCaptureControl::OnStartWxVtkRecording (wxCommandEvent &event)
 }
 
 
-void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
+void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent& WXUNUSED(event))
 {
     VtkWxGuiTestHelper::RecorderMap &recorders =
             VtkWxGuiTestHelper::GetInstance ()->GetWxVtkRecorders ();
@@ -323,4 +325,4 @@ void CRVtkCaptureControl::OnAddWxVtkRecording (wxCommandEvent &event)
     }
 }
 
-} // End namespace wxTst
+

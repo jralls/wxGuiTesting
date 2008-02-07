@@ -35,7 +35,7 @@ CRTreeSelectionChangingEvent::~CRTreeSelectionChangingEvent ()
 }
 
 
-void CRTreeSelectionChangingEvent::Process (CRCapturedEvent **pendingEvt)
+void CRTreeSelectionChangingEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);

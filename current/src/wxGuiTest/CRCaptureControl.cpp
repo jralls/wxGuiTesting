@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 //
 // $Id$
 ///////////////////////////////////////////////////////////////////////////////
@@ -28,7 +30,7 @@ BEGIN_EVENT_TABLE(wxTst::CRCaptureControl, wxEvtHandler)
     EVT_CLOSE ( CRCaptureControl::OnClose )
 END_EVENT_TABLE()
 
-namespace wxTst {
+using namespace wxTst;
 
 
 CRCaptureControl::CRCaptureControl (wxDialog *dialog)
@@ -43,21 +45,21 @@ CRCaptureControl::~CRCaptureControl ()
 }
 
 
-void CRCaptureControl::OnStart (wxCommandEvent &event)
+    void CRCaptureControl::OnStart (wxCommandEvent& WXUNUSED(event))
 {
     CREventCaptureManager::GetInstance ()->On ();
     this->SetButtonStates (false);
 }
 
 
-void CRCaptureControl::OnStop (wxCommandEvent &event)
+void CRCaptureControl::OnStop (wxCommandEvent& WXUNUSED(event))
 {
     CREventCaptureManager::GetInstance ()->Off ();
     this->SetButtonStates (true);
 }
 
 
-void CRCaptureControl::OnAddComment (wxCommandEvent &event)
+void CRCaptureControl::OnAddComment (wxCommandEvent& WXUNUSED(event))
 {
 	CREventCaptureManager::GetInstance ()->EmitPendingEvent ();
 	
@@ -72,13 +74,13 @@ void CRCaptureControl::OnAddComment (wxCommandEvent &event)
 }
 
 
-void CRCaptureControl::OnOK (wxCommandEvent &event)
+void CRCaptureControl::OnOK (wxCommandEvent& WXUNUSED(event))
 {
     Finish ();
 }
 
 
-void CRCaptureControl::OnClose (wxCloseEvent &event)
+void CRCaptureControl::OnClose (wxCloseEvent& WXUNUSED(event))
 {
     Finish ();
 }
@@ -104,4 +106,4 @@ void CRCaptureControl::SetButtonStates (bool isInit) const
     stopBtn->Enable (!isInit);
 }
 
-} // End namespace wxTst
+

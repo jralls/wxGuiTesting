@@ -229,14 +229,3 @@ int WxGuiTestApp::OnExit ()
     }
 }
 
-#ifdef __DARWIN__
-#include "NativeEvents/CRCarbonEvent.h"
-
-void WxGuiTestApp::MacHandleOneEvent(WXEVENTREF evt) {
-    CRCarbonEvent crEvent(evt);
-    wxLogTrace(_T("MacEvents"), crEvent.ReportEvent());
-    wxApp::MacHandleOneEvent(evt);
-}
-
-#endif
-

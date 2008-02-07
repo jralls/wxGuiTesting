@@ -35,7 +35,7 @@ CRCheckBoxClickEvent::~CRCheckBoxClickEvent ()
 }
 
 
-void CRCheckBoxClickEvent::Process (CRCapturedEvent **pendingEvt)
+void CRCheckBoxClickEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);

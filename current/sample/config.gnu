@@ -77,7 +77,7 @@ WX_VERSION := $(shell $(WX_CONFIG) --selected-config | sed -e 's/.*-\([0-9]*\)\.
 TOOLKIT := MAC
 
 # Path to the wx sources for retrieving the Info.plist and wxmac.icns templates 
-WXSRCPATH := /usr/local/src/wxMac-2.8.6
+WXSRCPATH := /usr/local/src/wxMac-2.8.7
 
 # Path to CppUnit Headers 
 CPPUNIT_INCL := /usr/local/cppunit-1.12.0/include

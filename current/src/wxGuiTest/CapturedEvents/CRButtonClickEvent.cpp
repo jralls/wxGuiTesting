@@ -35,7 +35,7 @@ CRButtonClickEvent::~CRButtonClickEvent ()
 }
 
 
-void CRButtonClickEvent::Process (CRCapturedEvent **pendingEvt)
+void CRButtonClickEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);

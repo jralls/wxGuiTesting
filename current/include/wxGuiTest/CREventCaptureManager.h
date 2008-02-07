@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 //
 // $Id$
 ///////////////////////////////////////////////////////////////////////////////
@@ -98,6 +100,12 @@ public:
     */
     virtual void EmitPendingEvent ();
 
+/*! \fn virtual void LogNativeEvent(const wxString& eventString)
+    \brief Log a native event to the event log
+    \param eventString the serialization string from the NativeEvent class
+*/
+    virtual void LogNativeEvent(const wxString& eventString);
+
 protected:
     /*! \fn CREventCaptureManager ()
         \brief Constructor
@@ -156,6 +164,7 @@ protected:
         \param prefix logging output prefix
     */
     virtual void LogEventDetails (wxEvent& event, const wxString &prefix);
+
 
 private:
     static CREventCaptureManager *ms_instance;

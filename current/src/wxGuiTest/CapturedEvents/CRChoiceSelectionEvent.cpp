@@ -35,7 +35,7 @@ CRChoiceSelectionEvent::~CRChoiceSelectionEvent ()
 }
 
 
-void CRChoiceSelectionEvent::Process (CRCapturedEvent **pendingEvt)
+void CRChoiceSelectionEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);

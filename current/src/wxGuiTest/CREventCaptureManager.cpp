@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 //
 // $Id$
 ///////////////////////////////////////////////////////////////////////////////
@@ -28,7 +30,7 @@
 #include "CREventFactory.h"
 #include <wxGuiTest/CRCppEmitter.h>
 
-namespace wxTst {
+using namespace wxTst;
 
 
 // Init single instance:
@@ -643,5 +645,9 @@ void CREventCaptureManager::LogEventDetails (wxEvent& event,
     }
 }
 
-} // End namespace wxTst
+void CREventCaptureManager::LogNativeEvent (const wxString& eventString) {
+    if (m_log)
+	m_log->Log(_T("Native Event: ") + eventString + _T("\n"));
+}
+
 

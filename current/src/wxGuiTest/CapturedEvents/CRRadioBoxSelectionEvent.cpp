@@ -35,7 +35,7 @@ CRRadioBoxSelectionEvent::~CRRadioBoxSelectionEvent ()
 }
 
 
-void CRRadioBoxSelectionEvent::Process (CRCapturedEvent **pendingEvt)
+void CRRadioBoxSelectionEvent::Process (CRCapturedEvent** WXUNUSED(pendingEvt))
 {
     wxWindow *wdwEvtObject = wxDynamicCast (m_event->GetEventObject (), wxWindow);
     wxASSERT (wdwEvtObject != NULL);

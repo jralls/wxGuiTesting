@@ -4,6 +4,8 @@
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
 // Licence:     wxWindows licence
+// Modifications: John Ralls, 2007-2008
+// Modifications Copyright: (c) 2008 John Ralls
 //
 // $Id$
 ///////////////////////////////////////////////////////////////////////////////
@@ -21,7 +23,7 @@ BEGIN_EVENT_TABLE(wxTst::TempInteractiveControl, wxEvtHandler)
     EVT_CLOSE ( TempInteractiveControl::OnClose )
 END_EVENT_TABLE()
 
-namespace wxTst {
+using namespace wxTst;
 
 
 TempInteractiveControl::TempInteractiveControl (
@@ -37,13 +39,13 @@ TempInteractiveControl::~TempInteractiveControl ()
 }
 
 
-void TempInteractiveControl::OnOK (wxCommandEvent &event)
+void TempInteractiveControl::OnOK (wxCommandEvent& WXUNUSED(event))
 {
     Finish ();
 }
 
 
-void TempInteractiveControl::OnClose (wxCloseEvent &event)
+void TempInteractiveControl::OnClose (wxCloseEvent& WXUNUSED(event))
 {
     Finish ();
 }
@@ -55,4 +57,3 @@ void TempInteractiveControl::Finish ()
     wxTheApp->ExitMainLoop ();
 }
 
-} // End namespace wxTst
