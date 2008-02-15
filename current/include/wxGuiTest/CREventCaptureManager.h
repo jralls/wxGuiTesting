@@ -28,6 +28,8 @@ namespace wxTst {
 class CRLogInterface;
 class CRCapturedEvent;
 
+LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
+LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
 
 /*! \class CREventCaptureManager
     \brief Manages the event filtering for C&R capturing (Singleton pattern).
@@ -35,6 +37,9 @@ class CRCapturedEvent;
 class CREventCaptureManager : public CREventFilterInterface
 {
 public:
+friend LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
+friend LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
+
     /*! \fn static CREventCaptureManager * GetInstance ()
         \brief Get single private instance (Singleton pattern).
 
@@ -105,6 +110,52 @@ public:
     \param eventString the serialization string from the NativeEvent class
 */
     virtual void LogNativeEvent(const wxString& eventString);
+
+#ifdef __WXMSW__
+#include <Windows.h>
+    enum HookType { Modal, GetMsg };
+/*! \fn bool setFilterHook()
+    \brief Sets msgFilterHook as a WH_MSGFILTER hook. 
+*/
+    bool setFilterHook();
+
+/*! \fn bool setMsgHook()
+    \brief Sets getMsgHook as a WH_GETMESSAGE hook. 
+*/
+    bool setMsgHook();
+
+/*! \fn bool clrFilterHook()
+    \brief Unhooks the WH_MSGFILTER hook.
+*/
+    bool clrFilterHook();
+
+/*! \fn bool clrMsgHook()
+    \brief Unhooks the WH_GETMESSAGE hook. 
+*/
+    bool clrMsgHook();
+/*! \fn void LogWindowsMessage(MSG* msg, HookType hook)
+    \brief Get a message pointer from a filter hook and emit a message in the capture log.
+*/
+    void LogWindowsMessage(MSG* msg, HookType hook);
+
+/*! \fn LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp)
+    \brief MSWin callback function for the WH_MSGFILTER hook set in the CAPTURE macro. The signature is dictated by the microsoft documentation for MessageProc. See http://msdn2.microsoft.com/en-is/library/ms644987(VS.85).aspx for details.
+    \param code indicates the event type
+    \param wp not used
+    \param lp pointer to the relevant MSG struct.
+    \return either the value returned by CallNextHookEx or some non-zero int. If code < 0 then it must return CallNextHookEx without further processing.
+*/
+//    LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
+
+/*! \fn LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp)
+    \brief MSWin callback function for the WH_GETMESSAGE hook set in the CAPTURE macro. The signature is dictated by the microsoft documentation for MessageProc. See http://msdn2.microsoft.com/en-is/library/ms644987(VS.85).aspx for details.
+    \param code indicates the event type
+    \param wp specifies whether the message has been removed from the queue
+    \param lp pointer to the relevant MSG struct.
+    \return either the value returned by CallNextHookEx or some non-zero int. If code < 0 then it must return CallNextHookEx without further processing.
+*/
+//    LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
+#endif //__WXMSW__
 
 protected:
     /*! \fn CREventCaptureManager ()
@@ -186,6 +237,10 @@ private:
     // No copy and assignment constructor:
     CREventCaptureManager (const CREventCaptureManager &rhs);
     CREventCaptureManager & operator= (const CREventCaptureManager &rhs);
+#ifdef __WXMSW__
+    HHOOK m_filterHook;
+    HHOOK m_msgHook;
+#endif
 };
 
 } // End namespace wxTst

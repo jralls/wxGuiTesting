@@ -29,6 +29,11 @@
 #include "CapturedEvents/CRCapturedEvent.h"
 #include "CREventFactory.h"
 #include <wxGuiTest/CRCppEmitter.h>
+#include <wxGuiTest/CRWindowHierarchyHandler.h>
+
+#ifdef __WXMSW__
+#include "NativeEvents/CRMSWEvent.h"
+#endif
 
 using namespace wxTst;
 
@@ -37,16 +42,12 @@ using namespace wxTst;
 CREventCaptureManager *CREventCaptureManager::ms_instance = NULL;
 
 
-CREventCaptureManager::CREventCaptureManager ()
+CREventCaptureManager::CREventCaptureManager () :
+    m_ignoreWdw(NULL), m_isOn(false), m_event(NULL), m_log(NULL), 
+    m_logStream(new std::ofstream ()), m_pendingEvent(NULL), 
+    m_filterHook(NULL), m_msgHook(NULL)
 {
-    m_ignoreWdw = NULL;
-    m_isOn = false;
-    m_event = NULL;
-    m_log = NULL;
-    m_logStream = new std::ofstream ();
     m_logStream->open ("CREventCaptureManager.log");
-
-    m_pendingEvent = NULL;
 }
 
 
@@ -101,12 +102,16 @@ void CREventCaptureManager::IgnoreWindow (wxWindow *wdw)
 void CREventCaptureManager::On ()
 {
     m_isOn = true;
+    setFilterHook();
+    setMsgHook();
 }
 
 
 void CREventCaptureManager::Off ()
 {
     m_isOn = false;
+    clrFilterHook();
+    clrMsgHook();
 }
 
 
@@ -192,8 +197,8 @@ if (!m_eventList.empty ())
         wxString evtDesc = this->GetEventDesc (event);
         if (!evtDesc.IsEmpty ()) {
 
-            (*m_logStream) << evtDesc.c_str () << _T(": ") <<
-                    this->GetEventDetails (event).c_str () << std::endl;
+            (*m_logStream) << evtDesc.mb_str () << ": " <<
+                    this->GetEventDetails (event).mb_str () << std::endl;
         }
     }
 }
@@ -253,6 +258,111 @@ void CREventCaptureManager::EmitPendingEvent ()
     }
 }
 
+#ifdef __WXMSW__
+
+bool
+CREventCaptureManager::setFilterHook() {
+    if (m_filterHook == NULL)
+	m_filterHook = SetWindowsHookEx(WH_MSGFILTER, 
+					&msgFilterHook, 
+					NULL, GetCurrentThreadId());
+    return m_filterHook != NULL;
+}
+
+bool
+CREventCaptureManager::clrFilterHook() {
+    if (m_filterHook != NULL) {
+	bool res = UnhookWindowsHookEx(m_filterHook);
+	if (res) m_filterHook = NULL;
+	else
+	    DWORD err = GetLastError();
+	return res;
+    }
+    return false;
+} 
+
+bool
+CREventCaptureManager::setMsgHook() {
+    if (m_msgHook == NULL)
+	m_msgHook = SetWindowsHookEx(WH_GETMESSAGE, 
+				     &getMsgHook, NULL, 
+				     GetCurrentThreadId());
+    return m_msgHook != NULL;
+}
+
+bool
+CREventCaptureManager::clrMsgHook() {
+    if (m_msgHook != NULL) {
+	bool res = UnhookWindowsHookEx(m_msgHook);
+	if (res) m_filterHook = NULL;
+	else
+	    DWORD err = GetLastError();
+	return res;
+    }
+    return false;
+} 
+
+LRESULT CALLBACK 
+wxTst::msgFilterHook(int code, WPARAM wp, LPARAM lp) {
+    CREventCaptureManager* capMgr = CREventCaptureManager::GetInstance();
+    if (code >= 0 && wp != PM_NOREMOVE) {
+	capMgr->LogWindowsMessage(reinterpret_cast<MSG*>(lp), 
+				  CREventCaptureManager::Modal);
+    }
+    return CallNextHookEx(capMgr->m_msgHook, code, wp, lp);
+}
+
+LRESULT CALLBACK 
+wxTst::getMsgHook(int code, WPARAM wp, LPARAM lp) {
+    CREventCaptureManager* capMgr = CREventCaptureManager::GetInstance();
+    if (code >= 0 && wp != PM_NOREMOVE) {
+	capMgr->LogWindowsMessage(reinterpret_cast<MSG*>(lp), 
+				  CREventCaptureManager::GetMsg);
+    }
+    return CallNextHookEx(capMgr->m_msgHook, code, wp, lp);
+}
+
+void
+CREventCaptureManager::LogWindowsMessage(MSG* msg, HookType hook) {
+    if (msg->message == WM_MOUSEMOVE || msg->message == WM_NCMOUSEMOVE ||
+	msg->message == WM_MOUSELEAVE || msg->message == WM_NCMOUSELEAVE ||
+	msg->message == WM_GETTEXT || msg->message == WM_GETTEXTLENGTH)
+	return;
+    wxWindow* wxwin = wxGetWindowFromHWND(static_cast<WXHWND>(msg->hwnd));
+    wxString winName;
+    int len;
+    if (msg->hwnd == NULL)
+	winName = _T("Thread");
+    else if (wxwin == NULL) {
+	if (msg->hwnd == GetDesktopWindow())
+	    winName = _T("Windows Desktop");
+	else if ((len = GetWindowTextLength(msg->hwnd)) > 1) {
+	    wxChar* buf = new wxChar[len + 1];
+		memset(buf, 0, len * sizeof(wxChar));
+	    len = GetWindowText(msg->hwnd, reinterpret_cast<LPTSTR>(buf), len + 1);
+		winName = wxString(buf);
+	    delete buf;
+	}
+	else 
+	    winName = wxString::Format(_T("Unnamed Window %#4X"), msg->hwnd);
+	}
+    else {
+	winName = wxwin->GetName();
+	CRWindowHierarchyHandler* wh = CRWindowHierarchyHandler::GetInstance();
+	winName << _T("->") << wh->FindContainerName(wxwin);
+    }
+    CRMSWEvent evt(*msg);
+    wxString evtString;
+    if (hook == GetMsg)
+	evtString << _T("Message ");
+    else if (hook == Modal) 
+	evtString << _T("Modal Message ");
+    evtString << evt.serialize() << _T(" for ") << winName;
+    
+    LogNativeEvent(evtString);
+}
+
+#endif //__WXMSW__
 
 wxString CREventCaptureManager::GetDescForUnsupportedEvent (
         wxEvent &event) const
@@ -646,8 +756,8 @@ void CREventCaptureManager::LogEventDetails (wxEvent& event,
 }
 
 void CREventCaptureManager::LogNativeEvent (const wxString& eventString) {
-    if (m_log)
-	m_log->Log(_T("Native Event: ") + eventString + _T("\n"));
+    if (m_logStream)
+	*m_logStream << "Native Event: "  << eventString.mb_str() << "\n";
 }
 
 

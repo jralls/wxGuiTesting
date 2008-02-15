@@ -1,3 +1,18 @@
+2008-02-14    John Ralls <Owner@WIDGET-2>
+
+	* src/wxGuiTest/CREventCaptureManager.cpp
+	(CREventCaptureManager::clrFilterHook) 
+	(CREventCaptureManager::setFilterHook)
+	(CREventCaptureManager::setMsgHook)
+	(CREventCaptureManager::LogWindowsMessage)
+	(CREventCaptureManager::clrMsgHook, wxTst::msgFilterHook)
+	(wxTst::getMsgHook, CREventCaptureManager::LogNativeEvent): New
+	functions to support native event capture and logging in MSW.
+
+	* src/wxGuiTest/CREventCaptureManager.cpp
+	(CREventCaptureManager::FilterEvent): Fixed capture log output: It
+	needed ASCII, was getting Unicode in a Unicode build.
+
 2008-01-21  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp 

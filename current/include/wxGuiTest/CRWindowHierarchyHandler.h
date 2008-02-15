@@ -47,12 +47,10 @@ public:
     static void Destroy ();
 
 
-    /*! \fn virtual wxString FindContainerName (wxWindow *window, bool isUnknownCtrl = false)
+    /*! \fn virtual wxString FindContainerName (wxWindow *window)
         \brief Find name of container holding given window.
 
         \param window window to find container name for
-        \param isUnknownCtrl must be set to true for handling unknown/foreign
-            controls
         \return name of first container being holding given window
     */
     virtual wxString FindContainerName (wxWindow *window);
