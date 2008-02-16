@@ -10,7 +10,7 @@
        - A framework for easily capturing wxWidgets user interaction events as a source file with which to build regression tests.
        - Limited capability to test and capture events for <A href="http://wxvtk.sourceforge.net">wxVTK</A>, a <A href=http://www.wxwidgets.org>wxWidgets </A> wrapper for the <A href="http://www.vtk.org">VTK</A> 3D graphics library.
 
-     WxGuiTesting was originally developed by Reinhold Füreder at the University of Exeter in the UK as part of develping an application for <A href="http://www.simpleware.com">Simpleware, Ltd.</A>. His <A href="http://swwxguitesting.wefi.net/">swWxGuiTesting webpage</A> has more details along with an excerpt from his thesis explaining in detail how he arrived at the final design.
+     WxGuiTesting was originally developed by Reinhold Füreder at the University of Exeter in the UK as part of developing an application for <A href="http://www.simpleware.com">Simpleware, Ltd.</A>. His <A href="http://swwxguitesting.wefi.net/">swWxGuiTesting webpage</A> has more details along with an excerpt from his thesis explaining in detail how he arrived at the final design.
 
      Reinhold's introduction pages to the Doxygen documentation:
 	- \subpage swWxGuiTesting
