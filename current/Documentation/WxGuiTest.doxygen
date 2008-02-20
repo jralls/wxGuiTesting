@@ -25,7 +25,7 @@
 	 - <A href="http://www.doxygen.org">Doxygen</A> \b Optional but you'll want it if you need to regenerate the HTML documentation or to make docs in some other format.
 	 - The project originally required <a href="http://www.cmake.org">CMake</a> (and you'll need it to build VTK if you're using it), but it has since been converted to use <A href="http://www.bakefile.org">bakefile</A> just like wxWidgets. 
 
-<p><a class="elRef" href="http://sourcceforge.net/projects/wxguitest">wWxGuiTesting Sourceforge ProjectPage</a>
+<p><a class="elRef" href="http://sourceforge.net/projects/wxguitest">WxGuiTesting Sourceforge ProjectPage</a>
 <p><a class="elRef" href="http://sourceforge.net/project/showfiles.php?group_id=215362">Download WxGuiTesting</a> 
 
       \subpage Installing
