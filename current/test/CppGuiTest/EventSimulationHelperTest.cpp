@@ -54,9 +54,20 @@ EventSimulationHelperTest::~EventSimulationHelperTest ()
     // Nothing to do? m_testFrame and m_testEvtHandler are deleted automatically
 }
 
+struct MyButton : public wxButton {
+void OnButton(wxCommandEvent& event) {
+	wxMessageBox(_T("You pressed the button!"));
+	wxLogTrace(_T("wxGuiTestCallTrace"), _T("On Button Event"));
+
+	event.Skip();
+}
+};
 
 void EventSimulationHelperTest::setUp ()
 {
+    ::wxLogTrace (_T("wxGuiTestCallTrace"), 
+            _T("void EventSimulationHelperTest::SetUp ()"));
+
     const wxString xrcDir = _T(XRCDIR);
     wxXmlResource::Get()->Load (xrcDir + _T("/EvtSimHlpTest_wdr.xrc"));
     m_testFrame = new wxFrame(NULL, wxID_ANY, _T("Event Simulation Test"),
@@ -88,7 +99,11 @@ void EventSimulationHelperTest::setUp ()
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (m_miniFrame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-
+	wxButton* button = dynamic_cast<wxButton*>(panel->FindWindow(_T("Button")));
+	if (button)
+		button->Connect(wxEVT_COMMAND_BUTTON_CLICKED, 
+						wxCommandEventHandler(MyButton::OnButton));
+ 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (m_miniFrame);
     m_miniFrame->SetSizer (topsizer);
@@ -113,7 +128,9 @@ void EventSimulationHelperTest::setUp ()
 
 void EventSimulationHelperTest::tearDown ()
 {
-    m_miniFrame->Close ();
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+				  _T("void EventSimulationHelperTest::tearDown ()"));
+	m_miniFrame->Close ();
     m_testFrame->PopEventHandler ();
     m_testFrame->Destroy();
     m_testFrame = NULL;

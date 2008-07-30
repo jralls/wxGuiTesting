@@ -18,10 +18,17 @@
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CppUnitWarningAsserter.h>
 #include <wxGuiTest/InitWxGuiTest.h>
+#include <wxGuiTest/CREvent.h>
+
+#ifdef __WXGTK__
+#define OUTPUT std::cout
+#else
+#define OUTPUT std::cerr
+#endif
 
 int main (int WXUNUSED(argc), char** WXUNUSED(argv))
 {
-  //    wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
+     wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
 
     // Configure unit testing:
     wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
@@ -52,7 +59,7 @@ int main (int WXUNUSED(argc), char** WXUNUSED(argv))
 
     // Change the default outputter to a compiler error format outputter
     runner.setOutputter (new CPPUNIT_NS::CompilerOutputter (&runner.result (),
-            std::cerr));
+            OUTPUT));
 
     // Run the test - don't close window in debug mode at the end
     bool wasSucessful = runner.run ();

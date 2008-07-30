@@ -29,7 +29,9 @@
 
 int main (int WXUNUSED(argc), char** WXUNUSED(argv))
 {
-    //wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
+    wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
+    //wxLog::AddTraceMask (_T("VtkWxwxGuiTest"));
+    //wxLog::AddTraceMask (_T("TimedDialogEnder"));
 
     // Configure unit testing:
     wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);

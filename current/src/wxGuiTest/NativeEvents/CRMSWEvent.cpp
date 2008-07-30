@@ -5,9 +5,9 @@
 // Copyright:   (c) 2008 John Ralls
 // Licence:     wxWindows licence
 //
-// $Id: CREventCaptureManager.cpp 77 2008-02-07 00:32:52Z jralls $
+// $Id$
 ///////////////////////////////////////////////////////////////////////////////
-
+#ifdef __WXMSW__
 #ifdef __GNUG__
     #pragma implementation "CRMSWEvent.h"
 #endif
@@ -151,3 +151,4 @@ CRMSWEvent::serialize() {
 
 
 
+#endif //__WXMSW__

@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <makefile>
   <if cond="(FORMAT=='autoconf' or FORMAT=='gnu')">
-    
-    <option name='TOOLKIT' force='1' cond="FORMAT in ['autoconf', 'gnu']">
-      <default-value>GTK</default-value>
-      <values>GTK,MAC</values>
-      <description>
-	Used to turn on bundling for MACOSX
-      </description>
-    </option>	
+	
+	<option name='TOOLKIT' force='1' cond="FORMAT in ['autoconf', 'gnu']">
+	  <default-value>GTK</default-value>
+	  <values>GTK,MAC</values>
+	  <description>
+		Used to turn on bundling for MACOSX
+	  </description>
+	</option>	
 
-    <option name='WXSRCPATH' force='1' cond="FORMAT in ['autoconf', 'gnu']" category='path'>
-      <default-value></default-value>
-      <description> 
-	Path to the wx sources for retrieving the Info.plist and wxmac.icns templates
-      </description>
-    </option>
+	<option name='WXSRCPATH' force='1' cond="FORMAT in ['autoconf', 'gnu']" category='path'>
+	  <default-value></default-value>
+	  <description> 
+		Path to the wx sources for retrieving the Info.plist and wxmac.icns templates
+	  </description>
+	</option>
 
-    <set var='BUILDER_URL' overwrite='0'>org.wxwidgets</set>
+	<set var='BUILDER_URL' overwrite='0'>org.wxwidgets</set>
 
-    <define-tag name="osx-bundle" rules="exe">
-      
-      <set var="BUNDLE_IDENTIFIER">$(BUILDER_URL).$(id)</set>
-      
-      <set var="WXDIR">$(WXSRCPATH)</set>
-      
-      <set var="BUNDLE_PLIST">$(WXDIR)/src/mac/carbon/Info.plist.in</set>
-      <set var="BUNDLE_ICONS">$(WXDIR)/src/mac/carbon/wxmac.icns</set>
-      
-      <!-- bundle directory: -->
-      <set var="BINDIR">.</set>
-      <set var="BUNDLE">$(BINDIR)/$(id).app/Contents</set>
-      <set var="BUNDLE_TGT">$(BUNDLE)/PkgInfo</set>
-      <set var="BUNDLE_TGT_REF">$(BUNDLE)/PkgInfo </set>
-      
-      
-      <add-target target="$(BUNDLE_TGT)" type="action" 
-		  cond="target and TOOLKIT=='MAC'"/>
-      <modify-target target="$(BUNDLE_TGT)">
-	<depends>$(id)</depends>
-	<!-- required data: -->
-	<command>
-	  <!-- /Developer/Tools/Rez -d __DARWIN__ -t APPL -d __WXMAC__ -o 
-	       $(BINDIR)$(id) Carbon.r /usr/local/lib/libwx_mac-2.5.4.r 
-	       $(WXDIR)/samples/sample.r
-	       /Developer/Tools/SetFile -a C ../../bin/$(id)
-	  -->
-	  <!-- create the directories: -->
-	  mkdir -p $(BUNDLE)/MacOS
-	  mkdir -p $(BUNDLE)/Resources
+	<define-tag name="osx-bundle" rules="exe">
 	  
-	  <!-- Info.plist: -->
-	  sed -e "s/IDENTIFIER/$(BUNDLE_IDENTIFIER)/" \
-	  -e "s/EXECUTABLE/$(id)/" \
-	  -e "s/VERSION/$(VERSION)/" \
-	  $(BUNDLE_PLIST) >$(BUNDLE)/Info.plist
+	  <set var="BUNDLE_IDENTIFIER">$(BUILDER_URL).$(id)</set>
 	  
-	  <!-- PkgInfo: -->
-	  echo -n "APPL????" >$(BUNDLE)/PkgInfo
+	  <set var="WXDIR">$(WXSRCPATH)</set>
 	  
-	  <!-- make a hardlink to the binary: -->
-	  ln -f $(ref("__targetdir",id))$(ref("__targetname",id)) \ 
-	  $(BUNDLE)/MacOS/$(id)
+	  <set var="BUNDLE_PLIST">$(WXDIR)/src/mac/carbon/Info.plist.in</set>
+	  <set var="BUNDLE_ICONS">$(WXDIR)/src/mac/carbon/wxmac.icns</set>
 	  
-	  <!-- ditto wxWidgets resources and icons: 
-	       cp -f $(BUNDLE_ICONS) $(BUNDLE)/Resources/wxmac.icns-->
-	</command>
-      </modify-target>
-      
-      <!-- add pseudo target id_bundle: -->
-      <add-target target="$(id)_bundle" type="phony"/>
-      <modify-target target="$(id)_bundle">
-	<dependency-of>all</dependency-of>
-	<depends>$(BUNDLE_TGT_REF)</depends>
-      </modify-target>
-      
-      <!-- "make clean" should delete the bundle: -->
-      <modify-target target="clean">
-	<command>rm -rf $(id).app</command>
-      </modify-target>
+	  <!-- bundle directory: -->
+	  <set var="BINDIR">.</set>
+	  <set var="BUNDLE">$(BINDIR)/$(id).app/Contents</set>
+	  <set var="BUNDLE_TGT">$(BUNDLE)/PkgInfo</set>
+	  <set var="BUNDLE_TGT_REF">$(BUNDLE)/PkgInfo </set>
+	  
+	  
+	  <add-target target="$(BUNDLE_TGT)" type="action" 
+				  cond="target and TOOLKIT=='MAC'"/>
+	  <modify-target target="$(BUNDLE_TGT)">
+		<depends>$(id)</depends>
+		<!-- required data: -->
+		<command>
+		  <!-- /Developer/Tools/Rez -d __DARWIN__ -t APPL -d __WXMAC__ -o 
+			   $(BINDIR)$(id) Carbon.r /usr/local/lib/libwx_mac-2.5.4.r 
+			   $(WXDIR)/samples/sample.r
+			   /Developer/Tools/SetFile -a C ../../bin/$(id)
+		  -->
+		  <!-- create the directories: -->
+		  mkdir -p $(BUNDLE)/MacOS
+		  mkdir -p $(BUNDLE)/Resources
+		  
+		  <!-- Info.plist: -->
+		  sed -e "s/IDENTIFIER/$(BUNDLE_IDENTIFIER)/" \
+		  -e "s/EXECUTABLE/$(id)/" \
+		  -e "s/VERSION/$(VERSION)/" \
+		  $(BUNDLE_PLIST) >$(BUNDLE)/Info.plist
+		  
+		  <!-- PkgInfo: -->
+		  echo -n "APPL????" >$(BUNDLE)/PkgInfo
+		  
+		  <!-- make a hardlink to the binary: -->
+		  ln -f $(ref("__targetdir",id))$(ref("__targetname",id)) \ 
+		  $(BUNDLE)/MacOS/$(id)
+		  
+		  <!-- ditto wxWidgets resources and icons: 
+			   cp -f $(BUNDLE_ICONS) $(BUNDLE)/Resources/wxmac.icns-->
+		</command>
+	  </modify-target>
+	  
+	  <!-- add pseudo target id_bundle: -->
+	  <add-target target="$(id)_bundle" type="phony"/>
+	  <modify-target target="$(id)_bundle">
+		<dependency-of>all</dependency-of>
+		<depends>$(BUNDLE_TGT_REF)</depends>
+	  </modify-target>
+	  
+	  <!-- "make clean" should delete the bundle: -->
+	  <modify-target target="clean">
+		<command>rm -rf $(id).app</command>
+	  </modify-target>
 
-    </define-tag>
-   
-    <define-tag name='osx-ranlib' rules='lib'>
-      <modify-target target="install_$(id)" cond="target and TOOLKIT=='MAC'">
-	<command>
-	  $(RANLIB) $(DESTDIR)$(PREFIX)$(DIRSEP)$(LIBDIR)$(DIRSEP)$(ref('__targetname',id))
-	</command>
-      </modify-target>
-    </define-tag>
- 
+	</define-tag>
+	
+	<define-tag name='osx-ranlib' rules='lib'>
+	  <modify-target target="install_$(id)" cond="target and TOOLKIT=='MAC'">
+		<command>
+		  $(RANLIB) $(DESTDIR)$(PREFIX)$(DIRSEP)$(LIBDIR)$(DIRSEP)$(ref('__targetname',id))
+		</command>
+	  </modify-target>
+	</define-tag>
+	
   </if>
 </makefile>

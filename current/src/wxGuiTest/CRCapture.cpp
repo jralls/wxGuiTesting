@@ -86,7 +86,7 @@ void CRCapture::Show ()
     m_control->SetButtonStates ();
     m_dialog->Show ();
 
-    // Main loop will be exited in CRCaptureControl::OnExit()
+    // Main loop will be exited in CRCaptureControl::Finish()
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:

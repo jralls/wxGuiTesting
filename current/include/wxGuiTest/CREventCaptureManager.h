@@ -22,23 +22,27 @@
 #include <list>
 
 #include <wxGuiTest/CREventFilterInterface.h>
+#include <wxGuiTest/CREvent.h>
 
 namespace wxTst {
 
 class CRLogInterface;
 class CRCapturedEvent;
 
+#ifdef __WXMSW__
 LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
 LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
-
+#endif //__WXMSW__
 /*! \class CREventCaptureManager
     \brief Manages the event filtering for C&R capturing (Singleton pattern).
 */
 class CREventCaptureManager : public CREventFilterInterface
 {
 public:
+#ifdef __WXMSW__
 friend LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
 friend LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
+#endif //__WXMSW__
 
     /*! \fn static CREventCaptureManager * GetInstance ()
         \brief Get single private instance (Singleton pattern).
@@ -89,6 +93,12 @@ friend LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
         \param log logging target
     */    
     virtual void SetLogger (CRLogInterface *log);
+/** 
+ * Set the member catMask for selecting what types of CREvents to capture.
+ * 
+ * @param mask A 16-bit unsigned made by oring together CREventCat enums.
+ */
+	void SetCategoryMask(uint16_t mask);
 
 
     // Implement CREventFilterInterface:
@@ -107,55 +117,34 @@ friend LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
 
 /*! \fn virtual void LogNativeEvent(const wxString& eventString)
     \brief Log a native event to the event log
-    \param eventString the serialization string from the NativeEvent class
+    \param evt The CREvent to log.
 */
-    virtual void LogNativeEvent(const wxString& eventString);
+    virtual void LogEvent(CREvent evt);
 
-#ifdef __WXMSW__
-#include <Windows.h>
     enum HookType { Modal, GetMsg };
-/*! \fn bool setFilterHook()
-    \brief Sets msgFilterHook as a WH_MSGFILTER hook. 
+/*!  Sets a function for logging/capturing native events. Supported on WXMSW
+ *   and WXGTK.
 */
     bool setFilterHook();
 
-/*! \fn bool setMsgHook()
-    \brief Sets getMsgHook as a WH_GETMESSAGE hook. 
+/*!  Sets a function for logging WXMSW messages. WXMSW only.
 */
     bool setMsgHook();
 
-/*! \fn bool clrFilterHook()
-    \brief Unhooks the WH_MSGFILTER hook.
+/*! Unhooks the native event hook.
 */
     bool clrFilterHook();
 
-/*! \fn bool clrMsgHook()
-    \brief Unhooks the WH_GETMESSAGE hook. 
+/*!  Unhooks the native message hook.
 */
     bool clrMsgHook();
+
+#ifdef __WXMSW__
 /*! \fn void LogWindowsMessage(MSG* msg, HookType hook)
     \brief Get a message pointer from a filter hook and emit a message in the capture log.
 */
     void LogWindowsMessage(MSG* msg, HookType hook);
-
-/*! \fn LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp)
-    \brief MSWin callback function for the WH_MSGFILTER hook set in the CAPTURE macro. The signature is dictated by the microsoft documentation for MessageProc. See http://msdn2.microsoft.com/en-is/library/ms644987(VS.85).aspx for details.
-    \param code indicates the event type
-    \param wp not used
-    \param lp pointer to the relevant MSG struct.
-    \return either the value returned by CallNextHookEx or some non-zero int. If code < 0 then it must return CallNextHookEx without further processing.
-*/
-//    LRESULT CALLBACK msgFilterHook(int code, WPARAM wp, LPARAM lp);
-
-/*! \fn LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp)
-    \brief MSWin callback function for the WH_GETMESSAGE hook set in the CAPTURE macro. The signature is dictated by the microsoft documentation for MessageProc. See http://msdn2.microsoft.com/en-is/library/ms644987(VS.85).aspx for details.
-    \param code indicates the event type
-    \param wp specifies whether the message has been removed from the queue
-    \param lp pointer to the relevant MSG struct.
-    \return either the value returned by CallNextHookEx or some non-zero int. If code < 0 then it must return CallNextHookEx without further processing.
-*/
-//    LRESULT CALLBACK getMsgHook(int code, WPARAM wp, LPARAM lp);
-#endif //__WXMSW__
+#endif
 
 protected:
     /*! \fn CREventCaptureManager ()
@@ -232,6 +221,7 @@ private:
     //EventList m_eventList;
 
     CRCapturedEvent *m_pendingEvent;
+	uint16_t m_catMask; //A mask of CREventCats.
 
 private:
     // No copy and assignment constructor:
@@ -240,7 +230,15 @@ private:
 #ifdef __WXMSW__
     HHOOK m_filterHook;
     HHOOK m_msgHook;
+#elif __WXGTK__
+	gulong m_filterHook;
+	void* m_msgHook;
+#else
+	void* m_filterHook;
+	void* m_msgHook;
 #endif
+	wxString m_native;
+
 };
 
 } // End namespace wxTst

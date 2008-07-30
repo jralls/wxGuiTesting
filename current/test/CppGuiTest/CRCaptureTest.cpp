@@ -37,7 +37,12 @@ using namespace wxTst;
 // Register test suite with special name in order to be identifiable as test
 // which must be run after GUI part of wxWidgets library is initialised:
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( CRCaptureTest, "WxGuiTest" );
-
+struct MyButton : public wxButton {
+void OnButton(wxCommandEvent& event) {
+	wxMessageBox(_T("You pressed the button!"));
+	event.Skip();
+}
+};
 
 void CRCaptureTest::setUp ()
 {
@@ -55,6 +60,10 @@ void CRCaptureTest::setUp ()
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (frame, 
             _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
+	wxButton* button = dynamic_cast<wxButton*>(panel->FindWindow(_T("Button")));
+	if (button)
+		button->Connect(wxEVT_COMMAND_BUTTON_CLICKED, 
+						wxCommandEventHandler(MyButton::OnButton));
     wxTreeCtrl *treeCtrl = XRCCTRL (*frame, "TreeCtrl", wxTreeCtrl);
     wxTreeItemId root = treeCtrl->AddRoot (_T("Root"));
     wxTreeItemId item = treeCtrl->AppendItem (root, _T("item"));
@@ -83,6 +92,9 @@ void CRCaptureTest::tearDown ()
 void CRCaptureTest::testCapture ()
 {
     wxTst::TempInteractive interactive;
+//Set the mask for capturing (at the moment, native) events
+	CREventCaptureManager::GetInstance()->SetCategoryMask(AllEvents ^ MouseMotionEvents);
+
 /*
     CPPUNIT_ASSERT_MESSAGE ("Application top window invalid", wxTheApp->
             GetTopWindow () != NULL);
@@ -288,6 +300,7 @@ void CRCaptureTest::testCapture ()
     }
 */
     // Or use easier macro:
+
     CAPTURE
 
     interactive.ShowCurrentGui ();

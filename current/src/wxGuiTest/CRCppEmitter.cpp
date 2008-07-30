@@ -119,7 +119,7 @@ void CRCppEmitter::SetTestCaseFileContext (const wxString &filename,
     const wxString CAPTURE_KEYWORD = _T("CAPTURE");
     for (wxString line = m_origFile.GetFirstLine ();
 	 (!m_origFile.Eof() && 
-	  (lineNmb > 0 && (lineNmb - 1) <= m_origFile.GetCurrentLine ()));
+	  (lineNmb > 0 && (lineNmb - 1) >= m_origFile.GetCurrentLine ()));
 	 line = m_origFile.GetNextLine ()) {
 
 	wxString stripped = line.Strip (wxString::both);

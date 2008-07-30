@@ -25,6 +25,8 @@ using namespace wxTst;
 
 void TempInteractive::ShowCurrentGui (const wxString& file, int line)
 {
+   ::wxLogTrace (_T("wxGuiTestCallTrace"), 
+            _T("void TempInteractive::ShowCurrentGui () Start"));
     if (WxGuiTestHelper::GetDisableTestInteractivity ()) {
 
 	return;
@@ -56,6 +58,8 @@ void TempInteractive::ShowCurrentGui (const wxString& file, int line)
     WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);
     dialog->PopEventHandler (true);
     dialog->Destroy ();
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+            _T("void TempInteractive::ShowCurrentGui () End"));
 }
 
 

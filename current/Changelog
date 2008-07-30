@@ -1,4 +1,115 @@
-2008-02-14    John Ralls <Owner@WIDGET-2>
+2008-07-21  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/WxGuiTestApp.h:
+	Added SetMapHandler() and map_handler(GdkEvent*, gpointer) to
+	catch native window creation events in gtk+.
+	
+2008-05-30  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp:
+	* include/wxGuiTest/WxGuiTestApp.h: Added struct
+	NativeWindowRegistryEntry to keep track of native widgets on
+	platforms (gtk+ being the instant motivation) where it's up to the
+	application to keep track of pointers to windows.
+
+2008-05-11  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp: Removed the gtk+ static event
+	loop functions and replaced with a new class wxTestEventLoop. This
+	can be run via MainLoop and thus retain control of the AUT even
+	when a wx dialog box starts a new event loop in
+	ShowModal(). OnIdle is seldom called now (and if it is likely
+	indicates a problem!)
+	
+2008-04-23  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/CRCppEmitter.cpp (CRCppEmitter::SetTestCaseFileContext):
+	Fixed bug introduced 2008-01-19 when converting from
+	"while(!done)" to a for loop.
+
+	* test/CppGuiTest/CRCaptureTest.cpp:
+	* test/CppGuiTest/EventSimulationHelperTest.cpp: Added MyButton
+	struct to provide an event handler which opens a message dialog
+	when the button is pressed to enable testing native dialog
+	interaction. Added member variables m_winreg, m_mapHandlerFlag.
+
+	* build/bakefile/wxGuiTesting.bkl: Commented out extra warnings,
+	added template for including/linking gtk+ for native event
+	handling.
+
+	* configure.ac:
+	* aclocal.m4: Added macros and tests to find gtk+ installation.
+
+2008-04-22  John Ralls  <john@ceridwen.fremont.ca.us>
+	
+	* include/wxGuiTest/WxGuiTestHelper.h: Added
+	SetUseNativeEvents(bool), PusheEvent(wxString), DoNextEvent(),
+	class variables s_useNativeEvents & s_eventQueue
+
+2008-04-18  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* test/CppGuiTest/CppUnitTextTestApp.cpp (main): Copy the GTK
+	OUTPUT hack from the sample.
+
+	* src/wxGuiTest/WxGuiTestHelper.cpp (wxTst): Changed init of
+	s_doExitMainLoopOnIdle to false. WxGuiTestApp::MainLoop() should
+	set it to true and WxGuiTestApp::ExitMainLoop() should set it back
+	to false -- if they need OnIdle handling to escape the main loop.
+
+	* test/CppGuiUnitTest/DirDialogManipulator.cpp
+	(DirDialogManipulator::Execute()): Added a SetPath to "~/" for GTK
+	testing. 
+
+2008-04-04  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop):
+	(WxGuiTestApp::ExitMainLoop): Added (along with GTK static
+	functions) to control AUT event loop execution.
+
+	* src/wxGuiTest/CRCapture.cpp (CRCapture::Show): Corrected comment.
+
+2008-03-29  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/CREventCaptureManager.h (CREventCaptureManager): 
+	Added member m_catMask and setter SetCategoryMask(uint16_t)
+	Renamed LogNativeEvent to LogEvent.
+
+	* src/wxGuiTest/CREventCaptureManager.cpp (CREventCaptureManager::FilterEvent): 
+	Added capture for GTK events.
+
+	* include/wxGuiTest/CRNativeEvents.h: Renamed to CREvent.h
+	* src/wxGuiTest/NativeEvents/CRNativeEvents.cpp: Renamed to
+	CREvent.cpp; separated from implementation for pimpl idiom.
+	* src/wxGuiTest/NativeEvents/CREventImpl.cpp:
+	* src/wxGuiTest/NativeEvents/CREventImpl.h:
+	Added to provide implementation of CREvents. Registers all
+	existing wxEvents as of time of creation. Porvides framework for
+	recording, serializing, and posting of wxEvents.
+	* src/wxGuiTest/NativeEvents/CRGTKEvent.h:
+	* src/wxGuiTest/NativeEvents/CRGTKEvent.cpp:
+	Added, to interpret, serialize, and post gtk+ events.
+	
+
+2008-03-21  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/CRWindowHierarchyHandler.h (FindContainerName): 
+	Changed the parm from wxWindow* to const wxWindow*.
+
+2008-03-16  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* build/bakefile/presets/osx_bundle.bkl: Fixed up rules to work
+	with Leopard.
+
+2008-03-15  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/NativeEvents:
+	Added directory.
+
+	* src/wxGuiTest/NativeEvents/CRMSWEvents.h:
+	* src/wxGuiTest/NativeEvents/CRMSWEvents.h:
+	Added files. CREventImpl specialization for MSW.
+
+2008-02-14    John Ralls <john@ceridwen.fremont.ca.us>
 
 	* src/wxGuiTest/CREventCaptureManager.cpp
 	(CREventCaptureManager::clrFilterHook) 
@@ -160,7 +271,7 @@
 	* sample/ReplayTest.cpp: Fixed capitalization errors exposed in Linux. 
 
 
-2007-12-28    <Owner@WIDGET-2>
+2007-12-28    <john@ceridwen.fremont.ca.us>
 
 	* sample/myframe.cpp (MyFrame, OnCustomClassToolOrMenuCommand):
 	(OnPlatformPropertyToolOrMenuCommand): Changed LoadFrame to
