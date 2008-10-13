@@ -2,7 +2,7 @@
 
     WxGuiTesting is a small static library which facilitates testing of <A href=http://www.wxwidgets.org>wxWidgets </A> applications and classes.
 
-    WxGuiTesting at present works only with (and requires) <A href="http://www.cppunit.org">CppUnit</A> unit-testing framework.
+    WxGuiTesting at present works only with (and requires) <A href="http://cppunit.sourceforge.net">CppUnit</A> unit-testing framework.
 
     It provides 
        - A framework for unit testing individual wxWidgets GUI classes
@@ -18,7 +18,7 @@
 
      \section Dependencies
 	 - <A href=http://www.wxwidgets.org>wxWidgets </A> \b Required
-	 - <A href="http://www.cppunit.org">CppUnit</A> \b Required Unit testing framework 
+	 - <A href="http://cppunit.sourceforge.net">CppUnit</A> \b Required Unit testing framework 
 	 - <A href="http://www.vtk.org">VTK</A> \b Optional 3D Manipulation library
 	 - <A href="http://wxvtk.sourceforge.net">wxVTK</A> \b Optional An old version is included, but you may wish to get a newer one if you're using VTK.
 	 - <A href="http://www.xs4all.nl/~jorgb/wxcrp">wxCRP</A> \b Optional A program for generating source files from templates. Microsoft Windows® only. Templates are provided in the wxCRP directory.
