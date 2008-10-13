@@ -163,7 +163,7 @@ wxTestEventLoop::Run() {
 	m_exitFlag = false;
 	wxEventLoop* oldActive = wxEventLoop::GetActive();
 	wxEventLoop::SetActive(this);
-
+#ifdef __WXGTK__
 	m_loop = g_main_loop_new(NULL, TRUE);
 	GMainContext* context = g_main_context_default();
 	unsigned int events = 0, loop_count = 0;
@@ -177,6 +177,21 @@ wxTestEventLoop::Run() {
 	gdk_flush();
 	g_main_loop_unref(m_loop);
 	m_loop = NULL;
+#elif defined __WXMAC__ || defined __WXOSX__
+#	if defined  __WXCOCOA__
+#		error "Cocoa environment is not supported"
+#	elif defined __WXOSX_IPHONE__
+#		error "iPhone is not supported"
+#	else //__WXCARBON__
+	while (!m_exitFlag && IsModalShowing())
+	    MacDoOneEvent();
+
+#	endif
+#elif  defined __WXMSW__
+
+#else
+#	error	"Current platform is not supported"
+#endif
 	wxLogTrace(_T("wxGuiTestCallTrace"), 
 			   _T("wxTestEventLoop::Run depth %d completed"), s_depth--);
 
