@@ -29,31 +29,24 @@
 #include "CapturedEvents/CRCapturedEvent.h"
 #include "CREventFactory.h"
 #include <wxGuiTest/CRCppEmitter.h>
-#include <wxGuiTest/CRWindowHierarchyHandler.h>
-#include <wxGuiTest/CRCppEmitter.h>
-#include <wxGuiTest/WxGuiTestApp.h>
-
-#ifdef __WXMSW__
-#include "NativeEvents/CRMSWEvent.h"
-#endif
-
-#ifdef __WXGTK__
-#include <gtk/gtk.h>
-#endif
-
 
 using namespace wxTst;
+
 
 // Init single instance:
 CREventCaptureManager *CREventCaptureManager::ms_instance = NULL;
 
 
-CREventCaptureManager::CREventCaptureManager () :
-    m_ignoreWdw(NULL), m_isOn(false), m_event(NULL), m_log(NULL), 
-    m_logStream(new std::ofstream ()), m_pendingEvent(NULL), 
-    m_filterHook(NULL), m_msgHook(NULL), m_native(_T(""))
+CREventCaptureManager::CREventCaptureManager ()
 {
+    m_ignoreWdw = NULL;
+    m_isOn = false;
+    m_event = NULL;
+    m_log = NULL;
+    m_logStream = new std::ofstream ();
     m_logStream->open ("CREventCaptureManager.log");
+
+    m_pendingEvent = NULL;
 }
 
 
@@ -108,16 +101,12 @@ void CREventCaptureManager::IgnoreWindow (wxWindow *wdw)
 void CREventCaptureManager::On ()
 {
     m_isOn = true;
-	setFilterHook();
-	setMsgHook();
 }
 
 
 void CREventCaptureManager::Off ()
 {
     m_isOn = false;
-	clrFilterHook();
-	clrMsgHook();
 }
 
 
@@ -133,22 +122,15 @@ void CREventCaptureManager::SetLogger (CRLogInterface *log)
 }
 
 
-void CREventCaptureManager::SetCategoryMask(uint16_t mask) {
-	m_catMask = mask;
-}
-
 void CREventCaptureManager::FilterEvent (wxEvent &event)
 {
-	CRCppEmitter* emit = CRCppEmitter::GetInstance();
     if (this->IsOn ()) {
-        // Check if event stems from capture dialog:
 
+        // Check if event stems from capture dialog:
         if (this->CanIgnore (event)) {
 
             return;
         }
-
-
         // Check if event has already been processed:
         if ((m_event != NULL) && (&event == m_event)) {
 
@@ -206,18 +188,13 @@ if (!m_eventList.empty ())
                         _T("Unsupported event %s"), evtDesc.c_str ()));
             }
         }
-			CREvent crevent(event);
-			if (crevent.check(CommandEvents | TextEvents | MenuEvents))
-				emit->AddComment(crevent.serialize());
-
         // Log all events to file:
         wxString evtDesc = this->GetEventDesc (event);
         if (!evtDesc.IsEmpty ()) {
 
-            (*m_logStream) << evtDesc.mb_str () << ": " <<
-                    this->GetEventDetails (event).mb_str () << std::endl;
+            (*m_logStream) << evtDesc.c_str () << _T(": ") <<
+                    this->GetEventDetails (event).c_str () << std::endl;
         }
-
     }
 }
 
@@ -275,209 +252,6 @@ void CREventCaptureManager::EmitPendingEvent ()
         m_pendingEvent = NULL;
     }
 }
-
-#ifdef __WXGTK__
-
-static guint s_signal = 0;
-
-extern "C" {
-	static gboolean 
-	event_hook(GSignalInvocationHint*, guint num, 
-			   const GValue* val, gpointer) {
-		wxString EventParms;
-		gint x = 0, y = 0;
-		wxWindow* wxw = NULL;;
-		GdkEvent* event = NULL;
-		bool freeEvent = false;
-		GtkWidget* widget = NULL;
-		const GType eventType = g_type_from_name("GdkEvent");
-		const GType widgetType = g_type_from_name("GtkWidget");
-		for (guint i = 0; i < num; i++) {
-			gchar* parmval = g_strdup_value_contents(val + i);
-			EventParms << wxString((char*)parmval, wxConvLocal, 
-								   strlen(parmval));
-			if ((val + i)->g_type == eventType) {
-				event = (GdkEvent*)g_value_peek_pointer(val + i);
-				EventParms << _T(" Signal Event");
-				gdk_window_get_position(event->any.window, &x, &y);
-				wxw = wxFindWindowAtPoint(wxPoint(x, y));
- 
-			}
-			if (g_type_is_a((val +i)->g_type, widgetType)) {
-				widget = (GtkWidget*)g_value_peek_pointer(val + i);
-				WxGuiTestApp* app = dynamic_cast<WxGuiTestApp*>(wxTheApp);
-				if (app != NULL) {
-					try {
-						NativeWindowRegistryEntry entry(widget);
-						unsigned int index = app->GetNativeWinIndex(entry);
-						EventParms << _T(" Widget Index ") << index;
-					}
-					catch(...) {
-						EventParms << _T(" Widget Index Threw");
-					}
-				}
-				EventParms << _T(" Signal Widget");
-			}
-			EventParms  << _T(" ");
-		}
-
-		if (event == NULL) {
-			event = gtk_get_current_event();
-			freeEvent = true;
-		}
-		if (event == NULL)
-			return TRUE;
-		if (widget == NULL)
-			widget = gtk_get_event_widget(event);
-		guint pathMax = 1024, pathlen = 0;
-		gchar* path = (gchar*)calloc(pathMax, sizeof(gchar));
-		wxASSERT(path != NULL);
-		if (widget != NULL)
-			gtk_widget_path(widget, &pathlen, &path, NULL);
-		wxASSERT(pathlen < pathMax);
-		CREvent crevent(event, wxw);
-		wxString report = crevent.report();
-		report << _T(" From ") 
-			   << wxString((char*)path, wxConvLocal, strlen((char*)path))
-			   << _T(" Parameters ") << EventParms;
- 		CRCppEmitter::GetInstance()->AddComment(report);
-		if (freeEvent)
-			gdk_event_free(event);
-		free(path);
-		return TRUE;		
-	}
-} //extern "C"
-#endif
-bool
-CREventCaptureManager::setFilterHook() {
-#ifdef __WXMSW__
-
-    if (m_filterHook == NULL)
-	m_filterHook = SetWindowsHookEx(WH_MSGFILTER, 
-					&msgFilterHook, 
-					NULL, GetCurrentThreadId());
-    return m_filterHook != NULL;
-#elif __WXGTK__
-	GType widgetType = GTK_TYPE_WIDGET;
-	if (g_type_class_peek(widgetType) != NULL) {
-		s_signal = g_signal_lookup("event", widgetType);
-		m_filterHook = g_signal_add_emission_hook(s_signal, 0, 
-												  event_hook, NULL, NULL);
-		return true;
-	}
-	return false;
-#else
-	return false;
-#endif
-}
-
-bool
-CREventCaptureManager::clrFilterHook() {
-#ifdef __WXMSW__
-    if (m_filterHook != NULL) {
-		bool res = UnhookWindowsHookEx(m_filterHook);
-		if (res) m_filterHook = NULL;
-		else
-			DWORD err = GetLastError();
-		return res;
-    }
-#elif __WXGTK__
-	g_signal_remove_emission_hook(s_signal, m_filterHook);
-	m_filterHook = 0;
-	return true;
-#endif
-    return false;
-} 
-
-bool
-CREventCaptureManager::setMsgHook() {
-#ifdef __WXMSW__
-    if (m_msgHook == NULL)
-		m_msgHook = SetWindowsHookEx(WH_GETMESSAGE, 
-									 &getMsgHook, NULL, 
-									 GetCurrentThreadId());
-    return m_msgHook != NULL;
-#endif
-	return false;
-}
-
-bool
-CREventCaptureManager::clrMsgHook() {
-#ifdef __WXMSW__
-    if (m_msgHook != NULL) {
-	bool res = UnhookWindowsHookEx(m_msgHook);
-	if (res) m_filterHook = NULL;
-	else
-	    DWORD err = GetLastError();
-	return res;
-    }
-#endif
-    return false;
-} 
-
-#ifdef __WXMSW__
-LRESULT CALLBACK 
-wxTst::msgFilterHook(int code, WPARAM wp, LPARAM lp) {
-    CREventCaptureManager* capMgr = CREventCaptureManager::GetInstance();
-    if (code >= 0 && wp != PM_NOREMOVE) {
-	capMgr->LogWindowsMessage(reinterpret_cast<MSG*>(lp), 
-				  CREventCaptureManager::Modal);
-    }
-    return CallNextHookEx(capMgr->m_msgHook, code, wp, lp);
-}
-
-LRESULT CALLBACK 
-wxTst::getMsgHook(int code, WPARAM wp, LPARAM lp) {
-    CREventCaptureManager* capMgr = CREventCaptureManager::GetInstance();
-    if (code >= 0 && wp != PM_NOREMOVE) {
-	capMgr->LogWindowsMessage(reinterpret_cast<MSG*>(lp), 
-				  CREventCaptureManager::GetMsg);
-    }
-    return CallNextHookEx(capMgr->m_msgHook, code, wp, lp);
-}
-
-void
-CREventCaptureManager::LogWindowsMessage(MSG* msg, HookType hook) {
-    if (msg->message == WM_MOUSEMOVE || msg->message == WM_NCMOUSEMOVE ||
-	msg->message == WM_MOUSELEAVE || msg->message == WM_NCMOUSELEAVE ||
-	msg->message == WM_GETTEXT || msg->message == WM_GETTEXTLENGTH)
-	return;
-    wxWindow* wxwin = wxGetWindowFromHWND(static_cast<WXHWND>(msg->hwnd));
-    wxString winName;
-    int len;
-    if (msg->hwnd == NULL)
-		winName = _T("Thread");
-    else if (wxwin == NULL) {
-		if (msg->hwnd == GetDesktopWindow())
-			winName = _T("Windows Desktop");
-		else if ((len = GetWindowTextLength(msg->hwnd)) > 1) {
-			wxChar* buf = new wxChar[len + 1];
-			memset(buf, 0, len * sizeof(wxChar));
-			len = GetWindowText(msg->hwnd, reinterpret_cast<LPTSTR>(buf), 
-								len + 1);
-			winName = wxString(buf);
-			delete buf;
-		}
-		else 
-			winName = wxString::Format(_T("Unnamed Window %#4X"), msg->hwnd);
-	}
-    else {
-		winName = wxwin->GetName();
-		CRWindowHierarchyHandler* wh = CRWindowHierarchyHandler::GetInstance();
-		winName << _T("->") << wh->FindContainerName(wxwin);
-    }
-    CREvent evt(reinterpret_cast<void*>(msg), wxwin);
-//     wxString evtString;
-//     if (hook == GetMsg)
-// 	evtString << _T("Message ");
-//     else if (hook == Modal) 
-// 	evtString << _T("Modal Message ");
-//     evtString << evt.serialize() << _T(" for ") << winName;
-    
-    LogEvent(evt);
-}
-
-#endif //__WXMSW__
 
 
 wxString CREventCaptureManager::GetDescForUnsupportedEvent (
@@ -871,9 +645,9 @@ void CREventCaptureManager::LogEventDetails (wxEvent& event,
     }
 }
 
-void CREventCaptureManager::LogEvent (CREvent evt) {
-    if (m_logStream && evt.check(m_catMask))
-		*m_logStream << evt.report().mb_str() << "\n";
+void CREventCaptureManager::LogNativeEvent (const wxString& eventString) {
+    if (m_log)
+	m_log->Log(_T("Native Event: ") + eventString + _T("\n"));
 }
 
 

@@ -214,12 +214,12 @@ void MyFrame::OnDerivedDialogToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
     // to be destructed automatically when the parent is destroyed.
     PreferencesDialog* preferencesDialog = new PreferencesDialog(this);
     // Show the instance of the dialog, modally.
-// #ifdef USE_WXGUITESTING
-//     wxTst::WxGuiTestHelper::Show(preferencesDialog, true, true);
-// #else
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(preferencesDialog, true, true);
+#else
     preferencesDialog->ShowModal();
     preferencesDialog->Destroy();
-// #endif
+#endif
 }
 
 void MyFrame::OnAnimationCtrlPlay(wxCommandEvent& event)
@@ -294,11 +294,11 @@ void MyFrame::OnControlsToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 #endif
 
     // All done. Show the dialog.
-// #ifdef USE_WXGUITESTING
-//     wxTst::WxGuiTestHelper::Show(&dlg, true, true);
-// #else
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(&dlg, true, true);
+#else
     dlg.ShowModal();
-// #endif
+#endif
 }
 
 
@@ -306,11 +306,11 @@ void MyFrame::OnUncenteredToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxDialog* dlg = new wxDialog;
     wxXmlResource::Get()->LoadDialog(dlg, this, wxT("uncentered_dialog"));
-// #ifdef USE_WXGUITESTING
-//     wxTst::WxGuiTestHelper::Show(dlg, true, true);
-// #else
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(dlg, true, true);
+#else
     dlg->ShowModal();
-// #endif
+#endif
 }
 
 
@@ -348,11 +348,11 @@ void MyFrame::OnArtProviderToolOrMenuCommand(wxCommandEvent& WXUNUSED(event))
 {
     wxDialog* dlg = new wxDialog;
     wxXmlResource::Get()->LoadDialog(dlg, this, wxT("art_provider_dialog"));
-// #ifdef USE_WXGUITESTING
-//     wxTst::WxGuiTestHelper::Show(dlg, true, true);
-// #else
+#ifdef USE_WXGUITESTING
+    wxTst::WxGuiTestHelper::Show(dlg, true, true);
+#else
     dlg->ShowModal();
-// #endif
+#endif
 }
 
 

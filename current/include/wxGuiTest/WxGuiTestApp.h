@@ -17,33 +17,9 @@
 
 #include <wxGuiTest/Common.h>
 #include <wx/app.h>
-#include <vector>
 
 
 namespace wxTst {
-
-struct NativeWindowRegistryEntry;
-
-	bool operator==(const NativeWindowRegistryEntry& left, 
-					const NativeWindowRegistryEntry& right);
-	bool operator!=(const NativeWindowRegistryEntry& left, 
-					const NativeWindowRegistryEntry& right);
-
-struct NativeWindowRegistryEntry {
-	GtkWidget* m_window;
-	bool m_isActive;
-	friend bool operator==(const NativeWindowRegistryEntry& left, 
-						   const NativeWindowRegistryEntry& right);
-
-	friend bool operator!=(const NativeWindowRegistryEntry& left, 
-						   const NativeWindowRegistryEntry& right);
-	NativeWindowRegistryEntry(GtkWidget* window, bool isActive = true) :
-		m_window(window), m_isActive(isActive) {}
-	~NativeWindowRegistryEntry();
-	void deactivate() { m_isActive = false; }
-
-
-};
 
 class InitWxGuiTestSetUp;
 class CREventFilterInterface;
@@ -200,47 +176,11 @@ public:
     */
     virtual int OnExit ();
 
-/** 
- * Override MainLoop() to be a manually executed platform (to catch/insert
- * native events) event loop. This replaces the somewhat fragile EventFilter
- * (for capture) and even more fragile OnIdle (for replay) approaches.
- * 
- * @return  Event Loop's return code
- */	
-	virtual int MainLoop();
-
-/** 
- * Override ExitMainLoop(), since the superclass version is tied to its MainLoop impl.
- * 
- */
-	virtual void ExitMainLoop();
-
-	virtual unsigned int  NewNativeWin(NativeWindowRegistryEntry& win);
-	virtual void InactivateNativeWin(NativeWindowRegistryEntry& win);
-	virtual NativeWindowRegistryEntry& GetNativeWin(unsigned int);
-	virtual unsigned int GetNativeWinIndex(NativeWindowRegistryEntry& win);
-	virtual void SetMapHandler();
-	virtual void UnsetMapHandler() { m_mapHandlerFlag = false; }
-
-
-protected:
-
 private:
-
-	typedef std::vector<NativeWindowRegistryEntry> NativeWindowRegistry;
-
     InitWxGuiTestSetUp* m_testRunnerProxy;
     wxApp* m_appUnderTest;
-
     CREventFilterInterface* m_eventFilter;
     static wxApp* ms_instance;
-//Adds window pointers with references/handles as provided by native events.
-	NativeWindowRegistry m_winReg;
-
-//This flag set to true when OnIdle is in control of the current event loop.
-	bool m_idleCtrlFlag ;
-//This flag set to indicate that the map_event handler is active:
-	bool m_mapHandlerFlag;
 
 };
 

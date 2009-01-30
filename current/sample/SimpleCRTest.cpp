@@ -79,11 +79,8 @@ void SimpleCRTest::testCapture ()
         wxApp *app = wxTheApp;                                                
         wxASSERT (app != NULL);                                               
         wxTst::WxGuiTestApp *guiTestApp = dynamic_cast< wxTst::WxGuiTestApp * >(app); 
-        wxASSERT (guiTestApp != NULL);                    
-		wxTst::CREventCaptureManager* capMgr = 
-			wxTst::CREventCaptureManager::GetInstance ();
-		capMgr->SetCategoryMask(wxTst::AllEvents ^ wxTst::SystemEvents ^ wxTst::MouseMotionEvents ^ wxTst::AppEvents ^ wxTst::WindowEvents);
-        guiTestApp->SetEventFilter (capMgr); 
+        wxASSERT (guiTestApp != NULL);                                        
+        guiTestApp->SetEventFilter (wxTst::CREventCaptureManager::GetInstance ()); 
                                                                               
         std::string excMsg;						                              
         wxTst::CRCapture *capture = new wxTst::CRCapture ();                  

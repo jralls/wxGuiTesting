@@ -4,6 +4,6 @@ bakefilize -f -c
 WXPREFIX=`wx-config --prefix`
 WXVER=`wx-config --version`
 CPPUNIT_PREFIX=`cppunit-config --prefix`
-aclocal -I /usr/local/bakefile-svn/share/aclocal -I $WXPREFIX/share/aclocal -I $CPPUNIT_PREFIX/share/aclocal -I /usr/share/aclocal -I acinclude
+aclocal -I /usr/local/bakefile-svn/share/aclocal -I $WXPREFIX/share/aclocal -I $CPPUNIT_PREFIX/share/aclocal  -I acinclude
 autoconf -f
 

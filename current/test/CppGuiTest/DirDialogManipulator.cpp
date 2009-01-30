@@ -14,7 +14,6 @@
 
 #include "DirDialogManipulator.h"
 
-#include <wx/dialog.h>
 #include <wx/dirdlg.h>
 
 namespace wxTst {
@@ -31,9 +30,6 @@ void DirDialogManipulator::Execute ()
     // C2027 error for wx 2.7.0.1 under M and VS6! But no problem because the
     // concept of testing standard modal dialogs fails in any case :-|
     //m_dialog->SetPath ("z:\\test");
-#ifdef __WXGTK__
-	m_dialog->SetPath(_T("~/"));
-#endif
 }
 
 } // End namespace wxTst

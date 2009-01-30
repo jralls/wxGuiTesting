@@ -88,23 +88,6 @@ class WarningAsserterInterface;
     aforementioned method in the application under test (AUT): such a warning
     means the test case has failed.
 */
-
-/*TODO: Add (but maybe not here) functions to push and pop from a wxObjectArray of Events and associated tests for processing by event loops.
-
-ISSUES:
-How to encapsulate the tests and events (inside a function?)? 
-
-Can't use CPPUNIT asserts, because that screws up the flow of control and if the idle event handler doesn't return, the AUT may stay stuck in a modal loop.
-
-Can't instantiate CREvents until the described window already exists.
-
-Answer: Just store serialized events. Any testing will be done after the modal condition is removed, because we're testing effects at that level anyway.
-During the idle, we can run a new event loop to process any events before returning to the original modal loop.
-
-
- */
-
-
 class WxGuiTestHelper
 {
 public:
@@ -404,43 +387,9 @@ public:
     */
     static void SetWarningAsserter (WarningAsserterInterface *warningAsserter);
 
-/** 
- * Sets the use of native events. If set to false, wxEvents will be posted
- * to event queues.
- * 
- * @param eventFlag 
- */
-	static void SetUseNativeEvents(bool eventFlag) {
-		s_useNativeEvents = eventFlag; 
-	}
 
-	/** 
-	 * Adds a test failure message to the error log for display after the
-	 * test suite summary string
-	 * 
-	 * @param file 
-	 * @param line 
-	 * @param shortDescription 
-	 * @param message 
-	 */   
-	static void AddTestFailure (const wxString &file, const int line,
-								const wxString &shortDescription, 
-								const wxString &message);
-
-/** 
- * Push a new serialized CREvent onto the wxStringArray s_eventStack
- * 
- * @param serialEvent 
- * 
- * @return true unless there was an error
- */
-	static bool PushEvent(wxString serialEvent);
-
-/** 
- * Pop the next serialized event from the stack, instantiate it, and insert it into the appropriate event queue
- * 
- */
-	static bool DoNextEvent();
+    static void AddTestFailure (const wxString &file, const int line,
+            const wxString &shortDescription, const wxString &message);
 
 private:
     static bool s_useExitMainLoopOnIdle;
@@ -462,11 +411,6 @@ private:
     static bool s_checkForProvokedWarnings;
 
     static WarningAsserterInterface *s_warningAsserter;
-
-//Stores CREvents to be posted in idle functions.
-	static wxArrayString s_eventQueue;
-//Selects posting of native (vs. wx) events
-	static bool s_useNativeEvents;
 
     // For storing test case failures due to failing assertions and unexpected
     // warnings:

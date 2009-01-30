@@ -5,9 +5,8 @@
 // Copyright:   (c) 2008 John Ralls
 // Licence:     wxWindows licence
 //
-// $Id$
+// $Id: CREventCaptureManager.cpp 77 2008-02-07 00:32:52Z jralls $
 ///////////////////////////////////////////////////////////////////////////////
-#ifdef __WXMSW__
 #ifndef __CRMSWEVENT_H__
 #define __CRMSWEVENT_H__
 
@@ -60,4 +59,3 @@ namespace wxTst {
 }//namespace wxTst
 
 #endif //__CRMSWEVENT_H__
-#endif //__WXMSW__

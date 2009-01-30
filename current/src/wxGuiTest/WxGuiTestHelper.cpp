@@ -13,12 +13,10 @@
 #endif
 
 #include <wxGuiTest/WxGuiTestHelper.h>
-#include <wxGuiTest/WxGuiTestApp.h>
 
 #include <wxGuiTest/WarningAsserterInterface.h>
 #include <wxGuiTest/ProvokedWarningRegistry.h>
 
-#include <wxGuiTest/CREvent.h>
 // #include <FrameFactory/swDefaultDialog.h>
 // #include <FrameFactory/swFrameFactory.h>
 
@@ -27,7 +25,7 @@ namespace wxTst {
 // Set default settings for normal application logic:
 // "Single stepping" through unit test case code:
 bool WxGuiTestHelper::s_useExitMainLoopOnIdle = true;
-bool WxGuiTestHelper::s_doExitMainLoopOnIdle = false;
+bool WxGuiTestHelper::s_doExitMainLoopOnIdle = true;
 // Allow manual visual checking of GUI (cf. temporary interactive test):
 bool WxGuiTestHelper::s_isGuiLessUnitTest = false;
 // Unit testing will be blocked, but by default the app should act normaly:
@@ -39,8 +37,6 @@ bool WxGuiTestHelper::s_disableTestInteractivity = false;
 bool WxGuiTestHelper::s_popupWarningForFailingAssert = true;
 // By default don't check the occurence of unexpected warnings:
 bool WxGuiTestHelper::s_checkForProvokedWarnings = false;
-// By defualt post wxEvents, not native events
-bool WxGuiTestHelper::s_useNativeEvents = false;
 
 WarningAsserterInterface *WxGuiTestHelper::s_warningAsserter = NULL;
 
@@ -50,7 +46,6 @@ wxString WxGuiTestHelper::s_fileOfFirstTestFailure;
 int WxGuiTestHelper::s_lineNmbOfFirstTestFailure = -1;
 wxString WxGuiTestHelper::s_shortDescriptionOfFirstTestFailure;
 wxString WxGuiTestHelper::s_accTestFailures;
-wxArrayString WxGuiTestHelper::s_eventQueue;
 
 
 WxGuiTestHelper::WxGuiTestHelper ()
@@ -72,9 +67,6 @@ WxGuiTestHelper::~WxGuiTestHelper ()
 
 int WxGuiTestHelper::FlushEventQueue ()
 {
-    ::wxLogTrace (_T("wxGuiTestCallTrace"), 
-            _T("void WxGuiTestHelper::FlushEventQueue ()"));
-
     // Reset test case failure occurence store:
     s_fileOfFirstTestFailure.Clear ();
     s_lineNmbOfFirstTestFailure = -1;
@@ -88,13 +80,12 @@ int WxGuiTestHelper::FlushEventQueue ()
     s_doExitMainLoopOnIdle = true;
 
 	// Check if really all events under GTK do not send an explicit additional idle event (instead of being lazy):
-// #ifdef __WXGTK__
-//     wxIdleEvent *idleEvt = new wxIdleEvent ();
-//     ::wxPostEvent (wxTheApp->GetTopWindow ()->GetEventHandler (), *idleEvt);
-// #endif
+#ifdef __WXGTK__
+    wxIdleEvent *idleEvt = new wxIdleEvent ();
+    ::wxPostEvent (wxTheApp->GetTopWindow ()->GetEventHandler (), *idleEvt);
+#endif
 
-	retCode = wxTheApp->MainLoop ();
-//	retCode = wxGetApp().MainLoop();
+    retCode = wxTheApp->MainLoop ();
 
     s_useExitMainLoopOnIdle = oldUseExitMainLoopOnIdle;
     s_doExitMainLoopOnIdle = oldDoExitMainLoopOnIdle;
@@ -428,25 +419,6 @@ void WxGuiTestHelper::AddTestFailure (const wxString &file, const int line,
     s_accTestFailures += _T("\n");
     s_accTestFailures += message;
 }
-
-bool WxGuiTestHelper::PushEvent(wxString serialEvent) {
-	s_eventQueue.Add(serialEvent);
-	return true;
-}
-
-bool WxGuiTestHelper::DoNextEvent() {
-	if (s_eventQueue.IsEmpty())
-		return false;
-	CREvent event(s_eventQueue.Item(0));
-	s_eventQueue.RemoveAt(0);
-	if (s_useNativeEvents) 
-		event.postNativeEvent();
-	else
-		event.postWxEvent();
-	return true;
-}
-
-
 
 } // End namespace wxTst
 

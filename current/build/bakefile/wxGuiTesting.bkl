@@ -42,8 +42,7 @@
 
   <set var='warnings'>
     <if cond="FORMAT in ['autoconf', 'gnu']">
-	  <!--      -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wno-system-headers -->
-	  -Wall
+      -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wno-system-headers
     </if>
   </set>
 
@@ -165,24 +164,6 @@
 
 <!-- End of VTK Setup -->
 
-<!-- Native Event Handling -->
-
-<if cond="FORMAT in ['autoconf','gnu']">
-  <option name="GTK_CFLAGS" category="path"/>
-  <option name="GTK_LIBS" category="path"/>
-  <template id="native_events">
-	  <cflags>$(GTK_CFLAGS)</cflags>
-	  <cxxflags>$(GTK_CFLAGS)</cxxflags>
-	  <ldflags>$(GTK_LIBS)</ldflags>
-  </template>
-</if>
-<if cond="FORMAT not in ['autoconf', 'gnu']">
-  <template id="native_events"/>
-</if>
-
-
-<!-- End Native Event Handling -->
-
   <include file='files.bkl'/>
 
  <!-- Set up the build flags for autoconf -->
@@ -247,7 +228,6 @@
 
     <library>wxGuiTesting</library>
 
-	<wx-lib>richtext</wx-lib>
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
     <wx-lib>adv</wx-lib>
@@ -256,8 +236,7 @@
     <wx-lib>base</wx-lib>
   </template>
 
-  <lib id='wxGuiTesting' 
-	   template='libInclude,CppUnit,vtk,native_events,optimize,wx-lib'>
+  <lib id='wxGuiTesting' template='libInclude,CppUnit,vtk,optimize,wx-lib'>
     <libname>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>

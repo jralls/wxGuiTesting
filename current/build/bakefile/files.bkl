@@ -25,10 +25,6 @@
     $(WGTS)/CapturedEvents/CRTextUpdateEvent.cpp
     $(WGTS)/CapturedEvents/CRTreeItemRightClickEvent.cpp
     $(WGTS)/CapturedEvents/CRTreeSelectionChangingEvent.cpp
-	$(WGTS)/NativeEvents/CREvent.cpp
-	$(WGTS)/NativeEvents/CREventImpl.cpp
-	$(WGTS)/NativeEvents/CRGTKEvent.cpp
-	$(WGTS)/NativeEvents/CRMSWEvent.cpp
     $(WGTS)/CRCapture.cpp
     $(WGTS)/CRCaptureControl.cpp
     $(WGTS)/CRCppEmitter.cpp
@@ -77,7 +73,6 @@
     $(WGTS)/CapturedEvents/CRTextUpdateEvent.h
     $(WGTS)/CapturedEvents/CRTreeItemRightClickEvent.h
     $(WGTS)/CapturedEvents/CRTreeSelectionChangingEvent.h
-	$(WGTS)/NativeEvents/CREventImpl.h
     $(WGTS)/CREventFactory.h
     $(WGTS)/InitWxGuiTestSetUp.h
     $(WGTS)/TempInteractiveControl.h
@@ -89,7 +84,6 @@
     $(WGTI)/CRCapture.h
     $(WGTI)/CRCaptureControl.h
     $(WGTI)/CRCppEmitter.h
-	$(WGTI)/CREvent.h
     $(WGTI)/CREventCaptureManager.h
     $(WGTI)/CREventFilterInterface.h
     $(WGTI)/CRWindowHierarchyHandler.h

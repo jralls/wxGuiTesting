@@ -40,7 +40,6 @@ if test "$cppunit" != 1; then
    AC_MSG_ERROR([ CPP Unit Not Found. ])
 fi
 
-
 UNICODE_FLAG=$(test ! $($WX_CONFIG_WITH_ARGS --unicode >/dev/null 2>&1))
 DEBUG_FLAG=$(test ! $($WX_CONFIG_WITH_ARGS --debug >/dev/null 2>&1))
 SHARED_FLAG=$($WX_CONFIG_WITH_ARGS --static >/dev/null 2>&1)
@@ -52,7 +51,6 @@ if test "$UNICODE_FLAG" != "0"; then
 else
    AC_MSG_RESULT([no])
    WX_UNICODE=0
-
 fi
      
      
@@ -87,10 +85,6 @@ case "$host" in
      ;;
      *)
          TOOLKIT=GTK
-		 AM_PATH_GTK_2_0([2.0.0], gtk=1, gtk=0)
-		 if test $gtk != 1; then
-		 	AC_MSG_ERROR([GTK headers not available. Native Events will not compile])
-		 fi
      ;;
 esac
 AC_MSG_RESULT("$TOOLKIT")
