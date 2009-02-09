@@ -3,8 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
-// Modifications: John Ralls, 2007-2008
-// Modifications Copyright: (c) 2008 John Ralls
+// Modifications: John Ralls, 2007-2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -31,8 +31,8 @@ void TempInteractive::ShowCurrentGui (const wxString& file, int line)
     }
 
     // Store old main loop flag and set new one:
-    bool oldUseExitMainLoopOnIdle = WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ();
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (false);
+    bool oldInteractive = WxGuiTestHelper::GetInteractive ();
+    WxGuiTestHelper::SetInteractive (true);
     // Likewise, provide normal (= release, in opposition to testing mode)
     // behaviour:
     bool oldShowModalDialogsNonModal = WxGuiTestHelper::GetShowModalDialogsNonModalFlag ();
@@ -50,7 +50,7 @@ void TempInteractive::ShowCurrentGui (const wxString& file, int line)
     wxTheApp->MainLoop ();
 
     // Restore main loop flag:
-    WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (oldUseExitMainLoopOnIdle);
+    WxGuiTestHelper::SetInteractive (oldInteractive);
     // Likewise, restore other flags:
     WxGuiTestHelper::SetShowModalDialogsNonModalFlag (oldShowModalDialogsNonModal);
     WxGuiTestHelper::SetShowPopupMenusFlag (oldShowPopupMenus);

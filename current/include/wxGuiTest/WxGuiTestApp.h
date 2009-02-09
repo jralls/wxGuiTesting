@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -131,15 +133,6 @@ public:
     */
     virtual void OnAssert (const wxChar *file, int line, const wxChar *cond,
             const wxChar *msg);
-
-
-    /*! \fn virtual void OnIdle (wxIdleEvent &event)
-        \brief Configurable exit of main loop => flushing event queue.
-
-        \param event posted idle event
-    */
-    virtual void OnIdle (wxIdleEvent &event);
-
 
     /*! \fn virtual int OnRun ()
         \brief Run the wxWidgets GUI CppUnit tests.

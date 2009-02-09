@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -48,11 +50,16 @@ class WarningAsserterInterface;
     features (e.g. flushing the event queue, or making the test temporary
     interactive for manual visual checks during GUI test implementation).
 
-    Currently "single stepping" is implemented through flushing the event queue
-    whose finishing is detected by an idle event (cf. s_useExitMainLoopOnIdle,
-    s_doExitMainLoopOnIdle flags and their respective getter/setter methods.
-    But is it possible that some standard wxWidgets code is sending idle events
-    in between?
+    GUI events are run by pushing them onto a wxEventHandler's event
+    queue using wxPostEvent and, once the events for a test have been
+    set up in sequence, calling (via wxTestApp::MainLoop, which makes
+    sure that the AUT can't start a real event loop with calls from
+    functions like wxDialog::ShowModal) wxProcessEvents. When
+    s_interactive is true, wxTestApp::MainLoop will call
+    wxApp::MainLoop instead, allowing the AUT to respond to regular
+    events. Note that functions which launch a platform event loop
+    (e.g., wxMessageBox) evade this system, so test dummies are needed
+    for those functions.
 
     The flag s_isGuiLessUnitTest (and getter/setter method) can be used to
     prevent any showing of dialogs -- if the actual call to someDialog->Show()
@@ -168,46 +175,13 @@ public:
     /*! \fn static void BreakTestToShowCurrentGui ()
         \brief Break test and show current GUI and query user for continuation.
 
-        Using a standard wxMessageBox the user can introspect the current GUI
+        Using a standard wxMessageBox the user can inspect the current GUI
         without interaction. Testing is continued when confirming the popup
         message.
         In fact, only windows/dialogs/frames really "shown" (cf.
         s_isGuiLessUnitTest flag) can be shown.
     */
     static void BreakTestToShowCurrentGui ();
-
-
-    /*! \fn static void SetUseExitMainLoopOnIdleFlag (bool use)
-        \brief Set flag indicating usage of exit main loop on idle event flag.
-
-        \param use if true, use exit main loop on idle event flag
-    */
-    static void SetUseExitMainLoopOnIdleFlag (bool use);
-
-    
-    /*! \fn static bool GetUseExitMainLoopOnIdleFlag ()
-        \brief Get flag indicating usage of exit main loop on idle event flag.
-
-        \return true, if exit main loop on idle event flag is taken into account
-    */
-    static bool GetUseExitMainLoopOnIdleFlag ();
-
-
-    /*! \fn static void SetExitMainLoopOnIdleFlag (bool doExit)
-        \brief Set flag indicating to exit main loop on idle event.
-
-        \param doExit if true, set exit main loop on idle event flag
-    */
-    static void SetExitMainLoopOnIdleFlag (bool doExit);
-
-    
-    /*! \fn static bool GetExitMainLoopOnIdleFlag ()
-        \brief Get flag indicating to exit main loop on idle event.
-
-        \return true, if exit main loop on idle event flag is set
-    */
-    static bool GetExitMainLoopOnIdleFlag ();
-
 
     /*! \fn static void SetIsGuiLessUnitTestFlag (bool isGuiLess)
         \brief Set flag indicating if no GUI should be shown at all.
@@ -269,21 +243,36 @@ public:
 
         \return true, if pop-up menus are actually shown
     */
+
     static bool GetShowPopupMenusFlag ();
 
+/// @fn static void SetInteractive
+/// @brief Will the AUT accept and process user interaction events?
+/// 
+/// Will only allow interaction if s_disableTestInteractivity is false
+/// @param interactive true if the AUT is to be interactive. 
+///
+    static void SetInteractive(bool interactive);
+
+/// @fn static bool GetInteractive
+/// @brief Returns the current value of s_interactive.
+///
+/// @return true if the AUT is to accept user interaction.
+///
+    static bool GetInteractive();
     
-    /*! \fn static void SetDisableTestInteractivity (bool disable)
+    /*! \fn static void SetDisabletestinteracticity (bool disable)
         \brief Set flag indicating disable status of interactive tests.
 
         Is used by all methods allowing to either break or temorary making a
 		test interactive.
 
-        \param disable if true, no breaking of, or temporary interactivity in tests is allowed
+        \param enable if true, no breaking of, or temporary interactivity in tests is allowed
     */
 	static void SetDisableTestInteractivity (bool disable);
 
 
-    /*! \fn static bool GetDisableTestInteractivity ()
+    /*! \fn static bool GetDisabletestinteracticity ()
         \brief Get flag indicating disable status of interactive tests.
 
         \return true, if no breaking of, or temporary interactivity in tests is allowed
@@ -392,15 +381,13 @@ public:
             const wxString &shortDescription, const wxString &message);
 
 private:
-    static bool s_useExitMainLoopOnIdle;
-    static bool s_doExitMainLoopOnIdle;
-
     static bool s_isGuiLessUnitTest;
 
     static bool s_showModalDialogsNonModal;
     static bool s_showPopupMenus;
 
-	static bool s_disableTestInteractivity;
+    static bool s_interactive;
+    static bool s_disableTestInteractivity;
 
     static bool s_popupWarningForFailingAssert;
 

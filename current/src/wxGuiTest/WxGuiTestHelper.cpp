@@ -3,6 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2007-2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -24,8 +26,7 @@ namespace wxTst {
 
 // Set default settings for normal application logic:
 // "Single stepping" through unit test case code:
-bool WxGuiTestHelper::s_useExitMainLoopOnIdle = true;
-bool WxGuiTestHelper::s_doExitMainLoopOnIdle = true;
+bool WxGuiTestHelper::s_interactive = false;
 // Allow manual visual checking of GUI (cf. temporary interactive test):
 bool WxGuiTestHelper::s_isGuiLessUnitTest = false;
 // Unit testing will be blocked, but by default the app should act normaly:
@@ -72,21 +73,14 @@ int WxGuiTestHelper::FlushEventQueue ()
     s_lineNmbOfFirstTestFailure = -1;
     s_accTestFailures.Clear ();
 
-    bool oldUseExitMainLoopOnIdle = s_useExitMainLoopOnIdle;
-    bool oldDoExitMainLoopOnIdle = s_doExitMainLoopOnIdle;
+    bool oldInteractive = s_interactive;
     int retCode;
 
-    s_useExitMainLoopOnIdle = true;
-#ifdef __WXGTK__
-    s_doExitMainLoopOnIdle = true;
-#else
-    s_doExitMainLoopOnIdle = true;
-#endif //__WXGTK__
+    s_interactive = false;
 
     retCode = wxTheApp->MainLoop ();
 
-    s_useExitMainLoopOnIdle = oldUseExitMainLoopOnIdle;
-    s_doExitMainLoopOnIdle = oldDoExitMainLoopOnIdle;
+    s_interactive = oldInteractive;
 
     // If a failure has occured, throw exception:
     if (!s_accTestFailures.IsEmpty ()) {
@@ -218,29 +212,16 @@ void WxGuiTestHelper::BreakTestToShowCurrentGui ()
 }
 
 
-void WxGuiTestHelper::SetUseExitMainLoopOnIdleFlag (bool use)
+void WxGuiTestHelper::SetInteractive (bool interactive)
 {
-    s_useExitMainLoopOnIdle = use;
+    s_interactive = interactive;
 }
 
     
-bool WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag ()
+bool WxGuiTestHelper::GetInteractive ()
 {
-    return s_useExitMainLoopOnIdle;
+    return s_interactive;
 }
-
-
-void WxGuiTestHelper::SetExitMainLoopOnIdleFlag (bool doExit)
-{
-    s_doExitMainLoopOnIdle = doExit;
-}
-
-    
-bool WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()
-{
-    return s_doExitMainLoopOnIdle;
-}
-
 
 void WxGuiTestHelper::SetIsGuiLessUnitTestFlag (bool isGuiLess)
 {

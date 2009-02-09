@@ -1,3 +1,19 @@
+2009-02-08  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp 
+	(MainLoop): Replaced GetUseExitMainLoopOnIdle and
+	GetDoExitMainLoopOnIdle with GetInteractive.
+	(OnIdle): Deleted the function. It's no longer used.
+
+	* src/wxGuiTest/TempInteractive.cpp (TempInteractive::ShowCurrentGui): 
+	* src/wxGuiTest/CRCapture.cpp (CRCapture::Show): 
+	* src/wxGuiTest/WxGuiTestHelper.cpp: 
+	* include/wxGuiTest/WxGuiTestHelper.h: Replaced
+	s_useExitMainLoopOnIdle and s_doExitMainLoopOnIdle and associated
+	getter/setter functions with a single s_interaction which better
+	describes what the flag is for. 
+	
+
 2009-02-07  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* test/CppGuiTest/EventSimulationHelperTest.cpp
