@@ -100,11 +100,6 @@ public:
     */
     virtual void EmitPendingEvent ();
 
-/*! \fn virtual void LogNativeEvent(const wxString& eventString)
-    \brief Log a native event to the event log
-    \param eventString the serialization string from the NativeEvent class
-*/
-    virtual void LogNativeEvent(const wxString& eventString);
 
 protected:
     /*! \fn CREventCaptureManager ()

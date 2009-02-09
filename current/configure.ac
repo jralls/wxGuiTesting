@@ -85,6 +85,14 @@ case "$host" in
      ;;
      *)
          TOOLKIT=GTK
+	 AM_PATH_GTK_2_0([2.0.0], gtk=1, gtk=0)
+	 if test $gtk != 1; then
+	    AC_MSG_ERROR([GTK headers not available. Native Events will not compile])
+	 else
+	    AC_SUBST(PLATFORM_CFLAGS, $GTK_CFLAGS)
+	    AC_SUBST(PLATFORM_LIBS, $GTK_LIBS)
+
+	 fi
      ;;
 esac
 AC_MSG_RESULT("$TOOLKIT")
@@ -92,7 +100,7 @@ AC_MSG_RESULT("$TOOLKIT")
 AC_SUBST(CFLAGS, "")
 AC_SUBST(CXXFLAGS, "")
 AC_SUBST(TOOLKIT)
-AC_SUBST(WXSRCPATH, $WXSRCPATH)
+AC_SUBST(WXSRCPATH, "$srcdir/build/macosx")
 AC_PROG_CC_C_O
 AC_PROG_CXX
 AC_PROG_INSTALL

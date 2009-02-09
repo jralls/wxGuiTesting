@@ -1,3 +1,65 @@
+2009-02-07  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* test/CppGuiTest/EventSimulationHelperTest.cpp
+	(EventSimulationHelperTest::setUp): Added a button which launches
+	a wxMessageBox for testing built-in dialog box functions. Added a
+	test of pressing the button.
+
+2009-02-06  John Ralls  <john@ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop): 
+	Realizing that during playback we only have wxEvents to process,
+	we need only run ProcessPendingEvents() and return. Very fast and
+	works on all platforms. No need for OnIdle(), either.
+
+	* include/wxGuiTest/WxGuiTestApp.h (wxTst): Deleted m_mainloop and
+	ExitMainLoop().
+
+2009-02-06  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/CREventCaptureManager.h (LogNativeEvent):
+	* src/wxGuiTest/CREventCaptureManager.cpp (LogNativeEvent):
+	Deleted, no longer used. 
+
+	* src/wxGuiTest/WxGuiTestHelper.cpp
+	(WxGuiTestHelper::FlushEventQueue): Deleted the section of
+	FlushEventQueue() which sent an extra idle event for GTK. No
+	longer necessary as wxGuiTestApp::MainLoop() doesn't rely on idle
+	events to stop anymore.
+	(s_doExitMainLoopOnIdle): Now false for wxGTK, for the same
+	reason.
+
+	* src/NativeEvents/: Deleted. This was created in SVN75 and
+	populated in SVN78, but wasn't properly cleaned up in the rollback.
+
+2009-02-05  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* build/bakefile/wxGuiTesting.bkl: Added logic for compiling
+	platform-specific files.
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop): Fixed
+	misspelling of m_mainLoop, added ASSERT to make sure it isn't NULL.
+
+2009-02-01  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* build/bakefile/files.bkl: Added a new variable,
+	"WGTS_GTK_SOURCES" for source file which will only be compiled
+	with wxGTK.
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp): Added
+	implementations of MainLoop() and ExitMainLoop().
+
+	* include/wxGuiTest/WxGuiTestApp.h (wxGuiTestApp): Added two new
+	member functions, MainLoop() and ExitMainLoop() and a member
+	instance variable wxEventLoop& m_mainloop.
+
+	* src/wxGuiTest/gtk/WxTestEventLoop.cpp: New file. Implements
+	WxTestEventLoop for wxGTK.
+
+	* src/wxGuiTest/WxTestEventLoop.h: New file. Interface for the
+	special event loop which replaces OnIdle loop
+	control. Implementation is per-platform.
+
 2008-01-21  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* src/swWxGuiTesting/swWxGuiTestProvokedWarningRegistry.cpp 

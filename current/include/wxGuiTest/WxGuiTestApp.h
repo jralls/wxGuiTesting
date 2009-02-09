@@ -176,11 +176,23 @@ public:
     */
     virtual int OnExit ();
 
+/** 
+ * Override MainLoop() to be a manually executed platform (to catch/insert
+ * native events) event loop. This replaces the somewhat fragile EventFilter
+ * (for capture) and even more fragile OnIdle (for replay) approaches.
+ * 
+ * @return  Event Loop's return code
+ */	
+	virtual int MainLoop();
+
+
 private:
     InitWxGuiTestSetUp* m_testRunnerProxy;
     wxApp* m_appUnderTest;
     CREventFilterInterface* m_eventFilter;
     static wxApp* ms_instance;
+//This flag set to true when OnIdle is in control of the current event loop.
+    bool m_idleCtrlFlag ;
 
 };
 

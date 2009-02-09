@@ -2,7 +2,7 @@
 <!-- Name:        build/bakefile/wxGuiTesting.bkl
      Author:      John Ralls
      Created:     2007
-     Copyright:   (c) 2007-2008 John Ralls
+     Copyright:   (c) 2007-2009 John Ralls
      Licence:     wxWindows licence
 -->
 
@@ -11,7 +11,7 @@
 
   <using module='datafiles'/>
 
-  <set var="VERSION">0.7.0</set>
+  <set var="VERSION">0.7.1</set>
 
   <if cond="FORMAT in ['autoconf', 'gnu']" >
   </if>
@@ -42,7 +42,8 @@
 
   <set var='warnings'>
     <if cond="FORMAT in ['autoconf', 'gnu']">
-      -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wno-system-headers
+<!--      -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wno-system-headers -->
+      -Wall -W -Wshadow -Wpointer-arith -Wno-system-headers
     </if>
   </set>
 
@@ -166,6 +167,42 @@
 
   <include file='files.bkl'/>
 
+  <!-- Platform Libraries -->
+
+  <if cond="FORMAT in ['autoconf','gnu']">
+    <option name="PLATFORM_CFLAGS" category="path"/>
+    <option name="PLATFORM_LIBS" category="path"/>
+    <template id="platform_flags">
+      <cflags>$(PLATFORM_CFLAGS)</cflags>
+      <cxxflags>$(PLATFORM_CFLAGS)</cxxflags>
+      <ldflags>$(PLATFORM_LIBS)</ldflags>
+    </template>
+  </if>
+  <if cond="FORMAT not in ['autoconf', 'gnu']">
+    <template id="platform_flags"/>
+  </if>
+  <!-- End of Platform Libraries -->
+
+  <!-- Platform-specific source files -->
+  <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
+    <set var='WGT_SOURCES' append='1'>WGT_MSW_SOURCES</set>
+  </if>
+
+  <!-- Autoconf and Gnu have to support both GTK and OSX (and
+       eventually X11 and MOTIF), which has to be sorted out either by
+       configure or by a manual setting in gmake.conf -->
+  <define-tag name='platform-sources' rules='lib'>
+    <modify-target target='$(id)' cond="target and TOOLKIT=='MAC'">
+      <sources>$(WGT_OSX_SOURCES)</sources>
+    </modify-target>
+    <modify-target target='$(id)' cond="target and TOOLKIT=='GTK'">
+      <sources>$(WGT_GTK_SOURCES)</sources>
+    </modify-target>
+  </define-tag>
+
+
+  <!-- End of Platform-specific source files -->
+
  <!-- Set up the build flags for autoconf -->
   <set var='OPT'>
     <if cond="FORMAT!='autoconf' and WX_DEBUG=='1'">off</if>
@@ -210,9 +247,6 @@
     </if>
   </template>
 
-
-
-
   <template id='testApp' template='libInclude,CppUnit,optimize,wx'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
@@ -228,6 +262,7 @@
 
     <library>wxGuiTesting</library>
 
+    <wx-lib>richtext</wx-lib>
     <wx-lib>xrc</wx-lib>
     <wx-lib>html</wx-lib>
     <wx-lib>adv</wx-lib>
@@ -236,7 +271,8 @@
     <wx-lib>base</wx-lib>
   </template>
 
-  <lib id='wxGuiTesting' template='libInclude,CppUnit,vtk,optimize,wx-lib'>
+  <lib id='wxGuiTesting' 
+       template='libInclude,CppUnit,platform_flags,vtk,optimize,wx-lib'>
     <libname>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
@@ -246,6 +282,7 @@
       <install-to>$(PREFIX)/lib</install-to>
       <install-headers-to> $(PREFIX)</install-headers-to>
       <osx-ranlib/>
+      <platform-sources/>
     </if>
   </lib>
 

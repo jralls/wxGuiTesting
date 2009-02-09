@@ -113,7 +113,7 @@ void SimpleTest::testTrivial() {
             platformMenuItemId, topFrame);
     wxTst::WxGuiTestHelper::FlushEventQueue ();
 
-//    interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
+    interactive.ShowCurrentGui (_T(__FILE__), __LINE__);
 
     wxMDIChildFrame* child2 = topFrame->GetActiveChild();
     CPPUNIT_ASSERT_MESSAGE("Second child not found", child2 != NULL);

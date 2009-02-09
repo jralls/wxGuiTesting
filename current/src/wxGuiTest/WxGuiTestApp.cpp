@@ -20,6 +20,7 @@
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventFilterInterface.h>
 
+
 IMPLEMENT_APP_NO_MAIN(wxTst::WxGuiTestApp)
 
 BEGIN_EVENT_TABLE(wxTst::WxGuiTestApp, wxApp)
@@ -33,9 +34,11 @@ wxApp* WxGuiTestApp::ms_instance = NULL;
 WxGuiTestApp::WxGuiTestApp (wxApp *appUnderTest) :
     m_testRunnerProxy(NULL),
     m_appUnderTest(appUnderTest),
-    m_eventFilter(NULL)
+    m_eventFilter(NULL),
+    m_idleCtrlFlag(false)
 {
-    wxASSERT (ms_instance == NULL);
+
+    wxASSERT_MSG(ms_instance == NULL, _T("WxGuiTestApp constructed twice"));
     ms_instance = this;
 }
 
@@ -49,6 +52,35 @@ WxGuiTestApp::~WxGuiTestApp ()
         delete m_eventFilter;
         m_eventFilter = NULL;
     }
+
+}
+
+int
+WxGuiTestApp::MainLoop ()
+{
+    wxLogTrace (_T("wxGuiTestCallTrace"), _T("WxGuiTestApp::MainLoop"));
+    int retval;
+//m_mainLoop is a special loop which processes the events pushed by wxPostEvent and returns. We use this loop to maintain control during test case execution.
+    if (WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag () &&
+	WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()) {
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		      _T("WxGuiTestApp::MainLoop: Running test loop"));
+		retval = 0;
+		ProcessPendingEvents();
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		      _T("WxGuiTestApp::MainLoop: Exiting test loop"));
+    }
+    else {
+//wxApp::MainLoop runs the regular event loop, which we need during capture and interaction.
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		      _T("WxGuiTestApp::MainLoop: Running platform loop"));
+	retval = wxApp::MainLoop();
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		      _T("WxGuiTestApp::MainLoop: Exiting platform loop"));
+    }
+
+    return retval;
+
 }
 
 
@@ -135,8 +167,15 @@ void WxGuiTestApp::OnIdle (wxIdleEvent &event)
     if (WxGuiTestHelper::GetUseExitMainLoopOnIdleFlag () &&
             WxGuiTestHelper::GetExitMainLoopOnIdleFlag ()) {
     
+	::wxLogTrace (_T("wxGuiTestCallTrace"), 
+		      _T("void WxGuiTestApp::OnIdle wxIdleEvent &event)"));
         wxTheApp->ExitMainLoop ();
+	wxApp::OnIdle (event);
+	event.Skip();
     }
+    else
+	wxApp::OnIdle (event);
+
 
     // While it is said in the wxWidgets documentation that "instead of
     // explicitly calling the base class version [of an event handler] as you

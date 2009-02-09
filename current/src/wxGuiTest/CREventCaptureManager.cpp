@@ -645,9 +645,5 @@ void CREventCaptureManager::LogEventDetails (wxEvent& event,
     }
 }
 
-void CREventCaptureManager::LogNativeEvent (const wxString& eventString) {
-    if (m_log)
-	m_log->Log(_T("Native Event: ") + eventString + _T("\n"));
-}
 
 

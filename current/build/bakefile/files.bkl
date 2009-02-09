@@ -2,7 +2,7 @@
 <!-- Name:        build/bakefile/files.bkl
      Author:      John Ralls
      Created:     2007
-     Copyright:   (c) 2007-2008 John Ralls
+     Copyright:   (c) 2007-2009 John Ralls
      License:     wxWindows license
      $Id$
 -->
@@ -46,6 +46,12 @@
     $(WGTS)/WxGuiTestHelper.cpp
   </set>
 
+  <set var='WGT_GTK_SOURCES'>
+  </set>
+  <set var='WGT_OSX_SOURCES'>
+  </set>
+  <set var='WGT_MSW_SOURCES'>
+  </set>
 
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkGuiTesting/CRVtkCapture.cpp

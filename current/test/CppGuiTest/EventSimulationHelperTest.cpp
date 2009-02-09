@@ -3,8 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
-// Modifications: John Ralls, 2007-2008
-// Modifications Copyright: (c) 2008 John Ralls
+// Modifications: John Ralls, 2007-2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -39,13 +39,22 @@ using namespace wxTst;
 // which must be run after GUI part of wxWidgets library is initialised:
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( EventSimulationHelperTest, "WxGuiTest" );
 
+struct MyButton : public wxButton {
+void OnButton(wxCommandEvent& event) {
+	wxMessageBox(_T("You pressed the button!"));
+	wxLogTrace(_T("wxGuiTestCallTrace"), _T("On Button Event"));
+
+	event.Skip();
+}
+};
+
 
 EventSimulationHelperTest::EventSimulationHelperTest () :
     m_testFrame(NULL), m_testEvtHandler(NULL), m_miniFrame(NULL)
 {
     wxXmlResource::Get()->InitAllHandlers();
 
-    //wxLog::AddTraceMask (_T("wxGuiTestIdle"));
+   wxLog::AddTraceMask (_T("wxGuiTestIdle"));
 }
 
 
@@ -88,7 +97,11 @@ void EventSimulationHelperTest::setUp ()
     wxBoxSizer *topsizer = new wxBoxSizer (wxVERTICAL);
     wxPanel *panel = wxXmlResource::Get ()->LoadPanel (m_miniFrame, _T("EvtSimHlpTestPanel"));
     wxASSERT (panel != NULL);
-
+    wxButton* button = dynamic_cast<wxButton*>(panel->FindWindow(_T("Button")));
+    if (button)
+	button->Connect(wxEVT_COMMAND_BUTTON_CLICKED, 
+			wxCommandEventHandler(MyButton::OnButton));
+ 
     topsizer->Add (panel, 1, wxGROW | wxADJUST_MINSIZE, 0);
     topsizer->SetSizeHints (m_miniFrame);
     m_miniFrame->SetSizer (topsizer);

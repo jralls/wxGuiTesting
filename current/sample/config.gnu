@@ -74,10 +74,10 @@ WX_DEBUG := $(shell $(WX_CONFIG) --selected-config | cut -d '-' -f 3 | sed 's/de
 WX_VERSION := $(shell $(WX_CONFIG) --selected-config | sed -e 's/.*-\([0-9]*\)\.\([0-9]*\)$$/\1\2/')
 
 # Used to turn on bundling for MACOSX [GTK,MAC]
-TOOLKIT := MAC
+TOOLKIT := GTK
 
 # Path to the wx sources for retrieving the Info.plist and wxmac.icns templates 
-WXSRCPATH := /usr/local/src/wxMac-2.8.7
+WXSRCPATH := /usr/local/src/wxGTK-2.8.9/
 
 # Path to CppUnit Headers 
 CPPUNIT_INCL := /usr/local/cppunit-1.12.0/include
@@ -89,5 +89,5 @@ CPPUNIT_LIBDIR := /usr/local/cppunit-1.12.0/lib
 CPPUNIT_LIB := cppunit$(WX3RDPARTYLIBPOSTFIX)
 
 # Location of the wxGuiTesting library and headers 
-wxGuiTestPath := /usr/local/wxGuiTesting
+wxGuiTestPath := /usr/local/
 

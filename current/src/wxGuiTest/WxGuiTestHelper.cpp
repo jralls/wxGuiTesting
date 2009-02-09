@@ -77,13 +77,11 @@ int WxGuiTestHelper::FlushEventQueue ()
     int retCode;
 
     s_useExitMainLoopOnIdle = true;
-    s_doExitMainLoopOnIdle = true;
-
-	// Check if really all events under GTK do not send an explicit additional idle event (instead of being lazy):
 #ifdef __WXGTK__
-    wxIdleEvent *idleEvt = new wxIdleEvent ();
-    ::wxPostEvent (wxTheApp->GetTopWindow ()->GetEventHandler (), *idleEvt);
-#endif
+    s_doExitMainLoopOnIdle = true;
+#else
+    s_doExitMainLoopOnIdle = true;
+#endif //__WXGTK__
 
     retCode = wxTheApp->MainLoop ();
 
