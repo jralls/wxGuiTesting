@@ -45,14 +45,14 @@
     $(WGTS)/WxGuiTestApp.cpp
     $(WGTS)/WxGuiTestHelper.cpp
   </set>
-
+<!--
   <set var='WGT_GTK_SOURCES'>
   </set>
   <set var='WGT_OSX_SOURCES'>
   </set>
   <set var='WGT_MSW_SOURCES'>
   </set>
-
+-->
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkGuiTesting/CRVtkCapture.cpp
     $(WGTS)/VtkGuiTesting/CRVtkCaptureControl.cpp

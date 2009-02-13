@@ -14,9 +14,7 @@
     wxGuiTesting.bkl
   </input>
 
-  <add-formats>
-    autoconf,msvs2005prj,msvc,msvc6prj,xcode2
-  </add-formats>
+  <add-formats>autoconf,msvs2005prj,msvc,msvc6prj,xcode2</add-formats>
 
  <!-- Directories where the files go: -->
   <add-flags files="wxGuiTesting.bkl" formats="autoconf">

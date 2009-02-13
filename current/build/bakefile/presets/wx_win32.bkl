@@ -300,8 +300,9 @@
                             (much better than the 'could not find wx/*.h file')
         -->
         <action id="test_for_selected_wxbuild">
+	  <if cond="FORMAT != 'xcode2'">
             <dependency-of>all</dependency-of>
-
+	  </if>
             <!-- the @ is to hide these actions from the user -->
             <command>
                 @if not exist $(WX_DIR)$(WXLIBINCLUDE)$(DIRSEP)wx$(DIRSEP)setup.h \

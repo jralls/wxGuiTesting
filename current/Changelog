@@ -1,3 +1,13 @@
+2009-02-13  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* build/bakefile/wxGuiTesting.bkl: Commented out code for
+	including platform-specific files. Added code to generate a test
+	target similar to (OK, lifted shamelessly from)the one generated
+	by automake.
+
+	* build/bakefile/presets/wx_win32.bkl: Added if Format != xcode2
+	at 305 to remove no-dependency warning.
+
 2009-02-08  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* src/wxGuiTest/WxGuiTestApp.cpp 

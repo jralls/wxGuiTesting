@@ -3020,10 +3020,6 @@
 				/>
 			</File>
 			<File
-				RelativePath="..\..\WGT_MSW_SOURCES"
-				>
-			</File>
-			<File
 				RelativePath="..\..\src\wxGuiTest\WxGuiTestApp.cpp"
 				>
 			</File>

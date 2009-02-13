@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Creates the shell script to execute "make test", running the programs which were created with the "autotest" template. Include this file after all of the test program targets have been defined in your bakefile -->
+
+<makefile>
+
+ <modify-target target='test' cond="FORMAT in ['autoconf', 'gnu', 'msvc']">
+    <set var='XFAIL_TESTS'/>
+    <if cond="FORMAT in ['autoconf', 'gnu']">
+      <command>
+	@failed=0; all=0; xfail=0; xpass=0; skip=0; ws='[	 ]'; \
+	for tst in $(TEST_TARGETS); do \
+	  if $$tst; then \
+           	      all=`expr $$all + 1`; \
+	      case " $(XFAIL_TESTS) " in \
+	      *$$ws$$tst$$ws*) \
+		xpass=`expr $$xpass + 1`; \
+		failed=`expr $$failed + 1`; \
+		echo "XPASS: $$tst"; \
+	      ;; \
+	      *) \
+		echo "PASS: $$tst"; \
+	      ;; \
+	      esac; \
+	    elif test $$? -ne 77; then \
+	      all=`expr $$all + 1`; \
+	      case " $(XFAIL_TESTS) " in \
+	      *$$ws$$tst$$ws*) \
+		xfail=`expr $$xfail + 1`; \
+		echo "XFAIL: $$tst"; \
+	      ;; \
+	      *) \
+		failed=`expr $$failed + 1`; \
+		echo "FAIL: $$tst"; \
+	      ;; \
+	      esac; \
+	    else \
+	      skip=`expr $$skip + 1`; \
+	      echo "SKIP: $$tst"; \
+	    fi; \
+	done ; \
+	  if test "$$failed" -eq 0; then \
+	    if test "$$xfail" -eq 0; then \
+	      banner="All $$all tests passed"; \
+	    else \
+	      banner="All $$all tests behaved as expected ($$xfail expected failures)"; \
+	    fi; \
+	  else \
+	    if test "$$xpass" -eq 0; then \
+	      banner="$$failed of $$all tests failed"; \
+	    else \
+	      banner="$$failed of $$all tests did not behave as expected ($$xpass unexpected passes)"; \
+	    fi; \
+	  fi; \
+	  dashes="$$banner"; \
+	  skipped=""; \
+	  if test "$$skip" -ne 0; then \
+	    skipped="($$skip tests were not run)"; \
+	    test `echo "$$skipped" | wc -c` -le `echo "$$banner" | wc -c` || \
+	      dashes="$$skipped"; \
+	  fi; \
+	  report=""; \
+	  dashes=`echo "$$dashes" | sed s/./=/g`; \
+	  echo "$$dashes"; \
+	  echo "$$banner"; \
+	  test -z "$$skipped" || echo "$$skipped"; \
+	  test -z "$$report" || echo "$$report"; \
+	  echo "$$dashes"; \
+	  test "$$failed" -eq 0;
+	
+      </command>
+    </if>
+    <if cond="FORMAT=='msvc'">
+      <command>
+	@echo off\
+	failed=0; all=0; xfail=0; xpass=0; skip=0; ws='[	 ]'; \
+	for tst in ($(TEST_TARGETS)); do \
+	  if %tst%; then \
+           	      all=`expr %all% + 1`; \
+	      case " $(XFAIL_TESTS) " in \
+	      *%ws$$tst$$ws%*) \
+		xpass=`expr %xpass% + 1`; \
+		failed=`expr %failed% + 1`; \
+		echo "XPASS: %tst%"; \
+	      ;; \
+	      *) \
+		echo "PASS: %tst%"; \
+	      ;; \
+	      esac; \
+	    elif test $$? -ne 77; then \
+	      all=`expr %all% + 1`; \
+	      case " $(XFAIL_TESTS) " in \
+	      *%ws$$tst$$ws%*) \
+		xfail=`expr %xfail% + 1`; \
+		echo "XFAIL: %tst%"; \
+	      ;; \
+	      *) \
+		failed=`expr %failed% + 1`; \
+		echo "FAIL: %tst%"; \
+	      ;; \
+	      esac; \
+	    else \
+	      skip=`expr %skip% + 1`; \
+	      echo "SKIP: %tst%"; \
+	    fi; \
+	done ; \
+	  if test "%failed%" -eq 0; then \
+	    if test "%xfail%" -eq 0; then \
+	      banner="All %all% tests passed"; \
+	    else \
+	      banner="All %all% tests behaved as expected (%xfail% expected failures)"; \
+	    fi; \
+	  else \
+	    if test "%xpass%" -eq 0; then \
+	      banner="%failed% of %all% tests failed"; \
+	    else \
+	      banner="%failed% of %all% tests did not behave as expected (%xpass% unexpected passes)"; \
+	    fi; \
+	  fi; \
+	  dashes="%banner%"; \
+	  skipped=""; \
+	  if test "%skip%" -ne 0; then \
+	    skipped="(%skip% tests were not run)"; \
+	    test `echo "%skipped%" | wc -c` -le `echo "%banner%" | wc -c` || \
+	      dashes="%skipped%"; \
+	  fi; \
+	  report=""; \
+	  dashes=`echo "%dashes%" | sed s/./=/g`; \
+	  echo "%dashes%"; \
+	  echo "%banner%"; \
+	  test -z "%skipped%" || echo "%skipped%"; \
+	  test -z "%report%" || echo "%report%"; \
+	  echo "%dashes%"; \
+	  test "%failed%" -eq 0; 
+      </command>
+    </if>
+  </modify-target>
+</makefile>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Sets up an autotest template to include in targets that you want to run in "make test". Include this file before you define your test program targets, and include "autotest" in the template list for those targets. -->
+<!-- OSX note: This doesn't work for interactive programs because it doesn't call open -W on the app bbundles -->
+<!-- General note: This includes conditionally built programs in the list unconditionally. The only consequence is that unbuilt tests won't be run and will therefore be reported as failed at the end. -->
+
+<makefile>
+  <set var='TEST_TARGETS'/> 
+
+  <template id='autotest'>
+    <if cond="FORMAT in ['autoconf', 'gnu', 'msvc']">
+      <dependency-of>test</dependency-of>
+      <set var='TEST_TARGETS' scope='global' append='1'>$(bindir)/$(id)$(EXEEXT)</set>
+    </if>
+  </template>
+
+  <action id='test' is_phony='1'>
+  </action>
+</makefile>

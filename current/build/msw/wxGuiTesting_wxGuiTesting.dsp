@@ -1550,10 +1550,6 @@ SOURCE=..\..\src\wxGuiTest\VtkGuiTesting\VtkWxGuiTestHelper.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\WGT_MSW_SOURCES
-# End Source File
-# Begin Source File
-
 SOURCE=..\..\src\wxGuiTest\WxGuiTestApp.cpp
 # End Source File
 # Begin Source File

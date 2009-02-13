@@ -67,19 +67,19 @@
   </set>
 
   <mkdir id='object_dir' 
-	 cond="FORMAT not in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	 cond="FORMAT not in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2005prj', 'xcode2'] 
 	       and BUILDDIR!='.'">
     <dependency-of>all</dependency-of>
     <dir>$(BUILDDIR)</dir>
   </mkdir>
   <mkdir id='lib_dir' 
-	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj', 'xcode2'] 
 	       and libdir not in ['', '.']">
     <dependency-of>all</dependency-of>
     <dir>$(libdir)</dir>
   </mkdir>
   <mkdir id='bin_dir' 
-	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj'] 
+	 cond="FORMAT not in ['msvc6prj', 'msevc4prj', 'msvs2005prj', 'xcode2'] 
 	       and bindir not in ['', '.']">
     <dependency-of>all</dependency-of>
     <dir>$(bindir)</dir>
@@ -102,6 +102,7 @@
   </set>
 
   <include file="presets/cppunit.bkl"/>
+  <include file="presets/test_template.bkl"/>
 
 <!-- Set up VTK -->  
   <option name='USE_VTK'>
@@ -183,14 +184,14 @@
   </if>
   <!-- End of Platform Libraries -->
 
-  <!-- Platform-specific source files -->
+  <!-- Platform-specific source files 
   <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
     <set var='WGT_SOURCES' append='1'>WGT_MSW_SOURCES</set>
   </if>
 
-  <!-- Autoconf and Gnu have to support both GTK and OSX (and
+  !- Autoconf and Gnu have to support both GTK and OSX (and
        eventually X11 and MOTIF), which has to be sorted out either by
-       configure or by a manual setting in gmake.conf -->
+       configure or by a manual setting in gmake.conf -
   <define-tag name='platform-sources' rules='lib'>
     <modify-target target='$(id)' cond="target and TOOLKIT=='MAC'">
       <sources>$(WGT_OSX_SOURCES)</sources>
@@ -199,7 +200,7 @@
       <sources>$(WGT_GTK_SOURCES)</sources>
     </modify-target>
   </define-tag>
-
+-->
 
   <!-- End of Platform-specific source files -->
 
@@ -282,16 +283,19 @@
       <install-to>$(PREFIX)/lib</install-to>
       <install-headers-to> $(PREFIX)</install-headers-to>
       <osx-ranlib/>
+<!--
       <platform-sources/>
+-->
     </if>
   </lib>
 
-  <exe id='CppUnitTest' template='testApp'>
-    <sources>$(CPPTEST_SOURCES)</sources>
+   
+  <exe id='CppUnitTest' template='testApp,autotest'>
+   <sources>$(CPPTEST_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitTestEventSimulation' template='testApp'>
-    <sources>$(CPPGUITESTEVENTSIMULATION_SOURCES)</sources>
+  <exe id='CppGuiUnitTestEventSimulation' template='testApp,autotest'>
+   <sources>$(CPPGUITESTEVENTSIMULATION_SOURCES)</sources>
   </exe>
 
   <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
@@ -304,14 +308,14 @@
     <sources>$(CPPGUITESTMODALDIALOG_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitCapturePlusEmit' template='libInclude,testApp'>
-    <sources>
+  <exe id='CppGuiUnitCapturePlusEmit' template='libInclude,testApp,autotest'>
+   <sources>
       $(CPPGUITESTCAPTURE_EMIT_SOURCES)
     </sources>
   </exe>
-  
+
   <exe id='VTKUnitTest' cond="USE_VTK=='1'" 
-    template='wgtInclude,CppUnit,optimize,wx,vtk'>
+    template='wgtInclude,CppUnit,optimize,wx,vtk,autotest'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>wxGuiTesting</depends>
@@ -342,5 +346,5 @@
     <wx-lib>base</wx-lib>
   </exe>
 
-
+  <include file="presets/test.bkl"/>
 </makefile>
