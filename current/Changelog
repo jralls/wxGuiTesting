@@ -1,3 +1,8 @@
+2009-02-15  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/WarningAsserterInterface.h (FailAssert):
+	Reformatted for readability.
+
 2009-02-13  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* build/bakefile/wxGuiTesting.bkl: Commented out code for

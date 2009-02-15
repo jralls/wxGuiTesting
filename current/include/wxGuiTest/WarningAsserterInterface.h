@@ -36,7 +36,8 @@ public:
         \param message message of occured failure
     */
     virtual void FailAssert (const wxString &file, const int line,
-            const wxString &shortDescription, const wxString &message) const = 0;
+			     const wxString &shortDescription, 
+			     const wxString &message) const = 0;
 
 };
 
