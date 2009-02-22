@@ -40,19 +40,20 @@
     $(WGTS)/ProvokedWarningRegistry.cpp
     $(WGTS)/TempInteractive.cpp
     $(WGTS)/TempInteractiveControl.cpp
+    $(WGTS)/TestEventLoop.cpp
     $(WGTS)/TimedDialogEnder.cpp
     $(WGTS)/CapturePanel.cpp
     $(WGTS)/WxGuiTestApp.cpp
     $(WGTS)/WxGuiTestHelper.cpp
   </set>
-<!--
+
   <set var='WGT_GTK_SOURCES'>
   </set>
   <set var='WGT_OSX_SOURCES'>
   </set>
   <set var='WGT_MSW_SOURCES'>
   </set>
--->
+
   <set var='VTK_SOURCES' >
     $(WGTS)/VtkGuiTesting/CRVtkCapture.cpp
     $(WGTS)/VtkGuiTesting/CRVtkCaptureControl.cpp
@@ -102,6 +103,7 @@
     $(WGTI)/ProvokedWarning.h
     $(WGTI)/ProvokedWarningRegistry.h
     $(WGTI)/TempInteractive.h
+    ($WGTI)/TestEventLoop.h
     $(WGTI)/TimedDialogEnder.h
     $(WGTI)/WarningAsserterInterface.h
     $(WGTI)/WxGuiTestApp.h

@@ -134,6 +134,7 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 	objects\wxGuiTesting_ProvokedWarningRegistry.obj \
 	objects\wxGuiTesting_TempInteractive.obj \
 	objects\wxGuiTesting_TempInteractiveControl.obj \
+	objects\wxGuiTesting_TestEventLoop.obj \
 	objects\wxGuiTesting_TimedDialogEnder.obj \
 	objects\wxGuiTesting_CapturePanel.obj \
 	objects\wxGuiTesting_WxGuiTestApp.obj \
@@ -169,6 +170,7 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 	objects\wxGuiTesting_ProvokedWarningRegistry.obj \
 	objects\wxGuiTesting_TempInteractive.obj \
 	objects\wxGuiTesting_TempInteractiveControl.obj \
+	objects\wxGuiTesting_TestEventLoop.obj \
 	objects\wxGuiTesting_TimedDialogEnder.obj \
 	objects\wxGuiTesting_CapturePanel.obj \
 	objects\wxGuiTesting_WxGuiTestApp.obj \
@@ -182,6 +184,9 @@ ____LIB_SOURCES_FILENAMES_OBJECTS =  \
 !endif
 !if "$(USE_VTK)" == "1"
 __VTKUnitTest___depname = ..\..\bin\VTKUnitTest.exe
+!endif
+!if "$(USE_VTK)" == "1"
+__VTKUnitTest_THIS_TARGET = ..\..\bin/VTKUnitTest.exe
 !endif
 !if "$(WX_DEBUG)" == "0" && "$(WX_MONOLITHIC)" == "0" && "$(WX_UNICODE)" == "0"
 __WXLIB_GL_NAME_p = wxmsw$(WX_VERSION)_gl.lib
@@ -400,10 +405,10 @@ test_for_selected_wxbuild:
 	@if not exist $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX)\wx\setup.h \
 	exit 1
 
-test: ..\..\bin\CppUnitTest.exe ..\..\bin\CppGuiUnitTestEventSimulation.exe ..\..\bin\CppGuiUnitCapturePlusEmit.exe $(__VTKUnitTest___depname)
+test: ..\..\bin\CppUnitTest.exe ..\..\bin\CppGuiUnitTestEventSimulation.exe ..\..\bin\CppGuiUnitTestModalDialog.exe ..\..\bin\CppGuiUnitCapturePlusEmit.exe $(__VTKUnitTest___depname)
 	@echo off\
 	failed=0; all=0; xfail=0; xpass=0; skip=0; ws='[	 ]'; \
-	for tst in ( ..\..\bin/CppUnitTest.exe ..\..\bin/CppGuiUnitTestEventSimulation.exe ..\..\bin/CppGuiUnitCapturePlusEmit.exe ..\..\bin/VTKUnitTest.exe); do \
+	for tst in ( ..\..\bin/CppUnitTest.exe ..\..\bin/CppGuiUnitTestEventSimulation.exe ..\..\bin/CppGuiUnitTestModalDialog.exe ..\..\bin/CppGuiUnitCapturePlusEmit.exe $(__VTKUnitTest_THIS_TARGET)); do \
 	if %tst%; then \
 	all=`expr %all% + 1`; \
 	case "  " in \
@@ -601,6 +606,9 @@ objects\wxGuiTesting_TempInteractive.obj: ..\..\src\wxGuiTest\TempInteractive.cp
 
 objects\wxGuiTesting_TempInteractiveControl.obj: ..\..\src\wxGuiTest\TempInteractiveControl.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\TempInteractiveControl.cpp
+
+objects\wxGuiTesting_TestEventLoop.obj: ..\..\src\wxGuiTest\TestEventLoop.cpp
+	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\TestEventLoop.cpp
 
 objects\wxGuiTesting_TimedDialogEnder.obj: ..\..\src\wxGuiTest\TimedDialogEnder.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(WXGUITESTING_CXXFLAGS) ..\..\src\wxGuiTest\TimedDialogEnder.cpp

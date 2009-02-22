@@ -127,7 +127,8 @@ COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/ModalDialogInteractionInterface.h \
 	include/wxGuiTest/ModalDialogTimer.h include/wxGuiTest/ProvokedWarning.h \
 	include/wxGuiTest/ProvokedWarningRegistry.h \
-	include/wxGuiTest/TempInteractive.h include/wxGuiTest/TimedDialogEnder.h \
+	include/wxGuiTest/TempInteractive.h ($WGTI)/TestEventLoop.h \
+	include/wxGuiTest/TimedDialogEnder.h \
 	include/wxGuiTest/WarningAsserterInterface.h \
 	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h
 @COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
@@ -144,7 +145,8 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/ModalDialogInteractionInterface.h \
 	include/wxGuiTest/ModalDialogTimer.h include/wxGuiTest/ProvokedWarning.h \
 	include/wxGuiTest/ProvokedWarningRegistry.h \
-	include/wxGuiTest/TempInteractive.h include/wxGuiTest/TimedDialogEnder.h \
+	include/wxGuiTest/TempInteractive.h ($WGTI)/TestEventLoop.h \
+	include/wxGuiTest/TimedDialogEnder.h \
 	include/wxGuiTest/WarningAsserterInterface.h \
 	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h \
 	src/wxVTK/wxVTKRenderWindowInteractor.h \
@@ -182,6 +184,7 @@ COND_USE_VTK_0___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_ProvokedWarningRegistry.o \
 	objects/wxGuiTesting_TempInteractive.o \
 	objects/wxGuiTesting_TempInteractiveControl.o \
+	objects/wxGuiTesting_TestEventLoop.o \
 	objects/wxGuiTesting_TimedDialogEnder.o \
 	objects/wxGuiTesting_CapturePanel.o \
 	objects/wxGuiTesting_WxGuiTestApp.o \
@@ -216,6 +219,7 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 	objects/wxGuiTesting_ProvokedWarningRegistry.o \
 	objects/wxGuiTesting_TempInteractive.o \
 	objects/wxGuiTesting_TempInteractiveControl.o \
+	objects/wxGuiTesting_TestEventLoop.o \
 	objects/wxGuiTesting_TimedDialogEnder.o \
 	objects/wxGuiTesting_CapturePanel.o \
 	objects/wxGuiTesting_WxGuiTestApp.o \
@@ -257,16 +261,16 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 @COND_PLATFORM_MAC_1@	bin/CppGuiUnitCapturePlusEmit$(EXEEXT)
 @COND_TOOLKIT_MAC@____CppGuiUnitCapturePlusEmit_app_Contents_PkgInfo___depname \
 @COND_TOOLKIT_MAC@	= ./CppGuiUnitCapturePlusEmit.app/Contents/PkgInfo
-@COND_USE_VTK_1@__VTKUnitTest___depname = bin/VTKUnitTest$(EXEEXT)
 @COND_PLATFORM_MAC_0@__VTKUnitTest___mac_setfilecmd = @true
 @COND_PLATFORM_MAC_1@__VTKUnitTest___mac_setfilecmd = \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/VTKUnitTest$(EXEEXT)
 @COND_TOOLKIT_MAC_USE_VTK_1@____VTKUnitTest_app_Contents_PkgInfo___depname \
 @COND_TOOLKIT_MAC_USE_VTK_1@	= ./VTKUnitTest.app/Contents/PkgInfo
+@COND_USE_VTK_1@__VTKUnitTest = bin/VTKUnitTest$(EXEEXT)
 
 ### Targets: ###
 
-all: objects lib bin lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest___depname) VTKUnitTest_bundle
+all: objects lib bin lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest) VTKUnitTest_bundle
 
 install: install_wxGuiTesting install_wxGuiTesting_headers
 
@@ -303,9 +307,9 @@ lib:
 bin: 
 	@mkdir -p bin
 
-test: bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest___depname)
+test: bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest)
 	@failed=0; all=0; xfail=0; xpass=0; skip=0; ws='[	 ]'; \
-	for tst in  bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) bin/VTKUnitTest$(EXEEXT); do \
+	for tst in  bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest); do \
 	if $$tst; then \
 	all=`expr $$all + 1`; \
 	case "  " in \
@@ -516,7 +520,7 @@ CppGuiUnitCapturePlusEmit_bundle: $(____CppGuiUnitCapturePlusEmit_app_Contents_P
 @COND_USE_VTK_1@	
 @COND_USE_VTK_1@	$(__VTKUnitTest___mac_setfilecmd)
 
-@COND_TOOLKIT_MAC_USE_VTK_1@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest___depname)
+@COND_TOOLKIT_MAC_USE_VTK_1@./VTKUnitTest.app/Contents/PkgInfo: $(__VTKUnitTest)
 @COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/MacOS
 @COND_TOOLKIT_MAC_USE_VTK_1@	mkdir -p ./VTKUnitTest.app/Contents/Resources
 @COND_TOOLKIT_MAC_USE_VTK_1@	
@@ -636,6 +640,9 @@ objects/wxGuiTesting_TempInteractive.o: $(srcdir)/src/wxGuiTest/TempInteractive.
 
 objects/wxGuiTesting_TempInteractiveControl.o: $(srcdir)/src/wxGuiTest/TempInteractiveControl.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/TempInteractiveControl.cpp
+
+objects/wxGuiTesting_TestEventLoop.o: $(srcdir)/src/wxGuiTest/TestEventLoop.cpp
+	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/TestEventLoop.cpp
 
 objects/wxGuiTesting_TimedDialogEnder.o: $(srcdir)/src/wxGuiTest/TimedDialogEnder.cpp
 	$(CXXC) -c -o $@ $(WXGUITESTING_CXXFLAGS) $(srcdir)/src/wxGuiTest/TimedDialogEnder.cpp

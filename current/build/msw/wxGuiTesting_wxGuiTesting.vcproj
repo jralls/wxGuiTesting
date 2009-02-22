@@ -2812,6 +2812,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\src\wxGuiTest\TestEventLoop.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\src\wxGuiTest\TimedDialogEnder.cpp"
 				>
 			</File>
@@ -3171,6 +3175,10 @@
 			</File>
 			<File
 				RelativePath="..\..\include\wxGuiTest\TempInteractive.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\($WGTI)\TestEventLoop.h"
 				>
 			</File>
 			<File

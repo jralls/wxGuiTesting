@@ -304,7 +304,7 @@
     </sources>
   </exe>
 
-  <exe id='CppGuiUnitTestModalDialog' template='libInclude,testApp'>
+  <exe id='CppGuiUnitTestModalDialog' template='libInclude,testApp,autotest'>
     <sources>$(CPPGUITESTMODALDIALOG_SOURCES)</sources>
   </exe>
 
@@ -315,10 +315,17 @@
   </exe>
 
   <exe id='VTKUnitTest' cond="USE_VTK=='1'" 
-    template='wgtInclude,CppUnit,optimize,wx,vtk,autotest'>
+    template='wgtInclude,CppUnit,optimize,wx,vtk'>
     <app-type>console</app-type>
     <dirname>$(bindir)</dirname>
     <depends>wxGuiTesting</depends>
+    <if cond="FORMAT in ['autoconf', 'gnu', 'msvc']">
+      <dependency-of>test</dependency-of>
+      <set var='THIS_TARGET'>
+	<if cond="USE_VTK=='1'">$(bindir)/$(id)$(EXEEXT)</if>
+      </set>
+      <set var='TEST_TARGETS' scope='global' append='1'>$(THIS_TARGET)</set>
+    </if>
     <precomp-headers>off</precomp-headers>
     <sources>
       $(VTKTEST_SOURCES) 

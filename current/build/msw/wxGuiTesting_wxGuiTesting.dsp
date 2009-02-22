@@ -1189,6 +1189,10 @@ SOURCE=..\..\src\wxGuiTest\TempInteractiveControl.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=..\..\src\wxGuiTest\TestEventLoop.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=..\..\src\wxGuiTest\TimedDialogEnder.cpp
 # End Source File
 # Begin Source File
@@ -1750,6 +1754,10 @@ SOURCE=..\..\include\wxGuiTest\ProvokedWarningRegistry.h
 # Begin Source File
 
 SOURCE=..\..\include\wxGuiTest\TempInteractive.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\($WGTI)\TestEventLoop.h
 # End Source File
 # Begin Source File
 
