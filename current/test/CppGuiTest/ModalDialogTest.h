@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+//---c++-mode---////////////////////////////////////////////////////////////////
 // Name:        test/CppGuiTest/ModalDialogTest.h
 // Author:      Reinhold Fuereder
 // Created:     2006
@@ -29,14 +29,14 @@ class ModalDialogTest : public CPPUNIT_NS::TestFixture
 {
     CPPUNIT_TEST_SUITE( ModalDialogTest );
 
-        CPPUNIT_TEST( testModalDialog );
+        CPPUNIT_TEST( testModalDialogTimer );
         // Solution does not necessarily work for modal standard dialogs: e.g.
         // the wxDirDialog for M is based on SHBrowseForFolder function.
         // Possible solutions: (a) ignore modal standard dialogs, (b) look in
         // all implementations and potentially modify the behaviour if being in
         // test mode to do what?
-        CPPUNIT_TEST( testStdModalDialog );
-
+        CPPUNIT_TEST( testStdModalDialogTimer );
+	CPPUNIT_TEST( testModalDialogEventLoop );
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -53,15 +53,28 @@ public:
 
 
     /*! \fn virtual void testModalDialog ()
-        \brief Test handling of user-defined modal dialogs during testing.
+        \brief Test handling of locally-defined modal dialogs during testing.
     */
-    virtual void testModalDialog ();
+    virtual void testModalDialogTimer ();
 
 
     /*! \fn virtual void testStdModalDialog ()
-        \brief Test handling of predefined modal dialogs during testing.
+        \brief Test handling of platform modal dialogs during testing.
     */
-    virtual void testStdModalDialog ();
+    virtual void testStdModalDialogTimer ();
+
+    /*! \fn virtual void testModalDialogEventLoop
+        \brief Test handling of a user-defined modal dialog using
+        event-loop injection queues.
+    */
+    virtual void testModalDialogEventLoop();
+
+    /*! \fn virtual void testStdModalDialogEventLoop
+        \brief Test handling of a platform modal dialog during testing.
+    */
+//    virtual void testStdModalDialogEventLoop();
+
+
 
 protected:
 

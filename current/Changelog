@@ -1,3 +1,23 @@
+2009-02-22  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* test/CppGuiTest/ModalDialogTest.cpp
+	(LocalDialog): extracted a new class to use with a new function
+	testModalDialogEventLoop
+	(testModalDialogTimer, testStdModalDialogTimer): renamed from
+	testModalDialog and testStdModalDialog to distinguish from
+	testModalDialogEventLoop. 
+	(testModalDialogEventLoop): New test case to check operation of
+	multi-level event loop handling.
+	
+2009-02-15  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/WxGuiTestApp.h 
+	(m_eventLoop, m_eventStore, newEventQueue, nextEventQueue): 
+	New members and get/set functions for loading event queues for
+	posting and processing.
+
+	* include/wxGuiTest/TestEventLoop.h: New file.
+
 2009-02-13  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* build/bakefile/wxGuiTesting.bkl: Commented out code for

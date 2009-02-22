@@ -3,8 +3,8 @@
 // Author:      Reinhold Fuereder
 // Created:     2006
 // Copyright:   (c) 2006 Reinhold Fuereder
-// Modifications: John Ralls, 2007-2008
-// Modifications Copyright: (c) 2008 John Ralls
+// Modifications: John Ralls, 2007-2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
 //
 // $Id$
@@ -35,6 +35,43 @@ using namespace wxTst;
 // which must be run after GUI part of wxWidgets library is initialised:
 CPPUNIT_TEST_SUITE_NAMED_REGISTRATION( ModalDialogTest, "WxGuiTest" );
 
+namespace {
+    class LocalDialog : public wxDialog {
+    public:
+	LocalDialog();
+	virtual void OnTimer(wxTimerEvent& event);
+    private:
+ 	DECLARE_EVENT_TABLE()
+    };
+
+    const int TimerID = 9999;
+    const int BadEnd = 99;
+    BEGIN_EVENT_TABLE(LocalDialog, wxDialog)
+    EVT_TIMER(TimerID, LocalDialog::OnTimer)
+    END_EVENT_TABLE()
+}
+
+LocalDialog::LocalDialog() : 
+    wxDialog(NULL, -1, _T("Title"), wxDefaultPosition, wxDefaultSize,
+	     wxDEFAULT_DIALOG_STYLE, _T("modalDialog"))
+{
+    wxTextCtrl *textCtrl = 
+	new wxTextCtrl (this, wxID_ANY, _T(""), wxDefaultPosition, 
+			wxDefaultSize, 0, wxDefaultValidator, _T("TestText"));
+
+    wxBoxSizer *sizer = new wxBoxSizer (wxVERTICAL);
+    sizer->Add (textCtrl, 1, wxGROW | wxADJUST_MINSIZE, 0);
+    sizer->SetSizeHints (this);
+    SetSizer (sizer);
+}
+
+void
+LocalDialog::OnTimer(wxTimerEvent& WXUNUSED(event)) {
+    EndDialog(BadEnd);
+}
+
+
+
 
 void ModalDialogTest::setUp ()
 {
@@ -48,18 +85,13 @@ void ModalDialogTest::tearDown ()
 }
 
 
-void ModalDialogTest::testModalDialog ()
+void ModalDialogTest::testModalDialogTimer ()
 {
-    wxDialog dialog (NULL, -1, _T("Title"), wxDefaultPosition, wxDefaultSize,
-            wxDEFAULT_DIALOG_STYLE, _T("modalDialog"));
+    LocalDialog dialog;
+    wxTextCtrl* textCtrl = 
+	dynamic_cast<wxTextCtrl*>(dialog.FindWindow(_T("TestText")));
+    CPPUNIT_ASSERT_MESSAGE("NULL wxTextCtrl*", textCtrl != NULL);
     
-    wxTextCtrl *textCtrl = new wxTextCtrl (&dialog, -1);
-
-    wxBoxSizer *sizer = new wxBoxSizer (wxVERTICAL);
-    sizer->Add (textCtrl, 1, wxGROW | wxADJUST_MINSIZE, 0);
-    sizer->SetSizeHints (&dialog);
-    dialog.SetSizer (sizer);
-
     ModalDialogTimer timer (wxID_OK);
     timer.SetModalDialog (&dialog);
     timer.Start (1000, true);
@@ -83,7 +115,7 @@ void ModalDialogTest::testModalDialog ()
 }
 
 
-void ModalDialogTest::testStdModalDialog ()
+void ModalDialogTest::testStdModalDialogTimer ()
 {
     wxDirDialog dialog (NULL);
 
@@ -105,3 +137,24 @@ void ModalDialogTest::testStdModalDialog ()
     }
 }
 
+void ModalDialogTest::testModalDialogEventLoop() {
+    LocalDialog dialog;
+    wxTimer timer(&dialog, TimerID);
+    wxTextCtrl* textCtrl = 
+	dynamic_cast<wxTextCtrl*>(dialog.FindWindow(_T("TestText")));
+    CPPUNIT_ASSERT_MESSAGE("NULL wxTextCtrl*", textCtrl != NULL);
+    EventSimulationHelper::SetTextCtrlValue (textCtrl, _T("init"));
+    timer.Start(10, true);
+    WxGuiTestHelper::FlushEventQueue ();
+    dialog.ShowModal ();
+
+//Need a timer here to tell dialog to end its modal loop so the test
+//can properly fail.
+
+    CPPUNIT_ASSERT_MESSAGE ("Dialog was not ended correctly",
+            dialog.GetReturnCode () == wxID_OK);
+
+    CPPUNIT_ASSERT_MESSAGE ("Text control value was not set correctly",
+            textCtrl->GetValue () == _T("hello"));
+
+}
