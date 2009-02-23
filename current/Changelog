@@ -1,5 +1,8 @@
 2009-02-22  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
+	* test/CppGuiTest/CppUnitTextTestApp.cpp (main): Make the various
+	test options command-line switches.
+
 	* test/CppGuiTest/ModalDialogTest.cpp
 	(LocalDialog): extracted a new class to use with a new function
 	testModalDialogEventLoop

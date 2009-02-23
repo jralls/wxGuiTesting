@@ -3,9 +3,9 @@
 // Author:      Reinhold Fuereder
 // Created:     2004
 // Copyright:   (c) 2005 Reinhold Fuereder
+// Modifications: John Ralls, 2009
+// Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
-//
-// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <cppunit/CompilerOutputter.h>
@@ -14,6 +14,7 @@
 
 // For checking wxGuiTestCallTrace, see below:
 //#include "wx/log.h"
+#include <wx/cmdline.h>
 
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CppUnitWarningAsserter.h>
@@ -23,23 +24,68 @@
 #else
 #define OUTPUT std::cerr
 #endif
-
-int main (int WXUNUSED(argc), char** WXUNUSED(argv))
+namespace {
+static const wxCmdLineEntryDesc l_cmdLineDesc[] =
 {
-    //  wxLog::AddTraceMask (_T("wxGuiTestCallTrace"));
+    { wxCMD_LINE_SWITCH, _T("i"), _T("interactive"), _T("Allows the test to stop for user interaction") },
+    { wxCMD_LINE_SWITCH, _T("w"), _T("warnings"), _T("Prevent popup warnings for failing wx assertions") },
+    { wxCMD_LINE_SWITCH, _T("r"), _T("provoked"), _T("Check for provoked warnings") },
+    { wxCMD_LINE_SWITCH, _T("m"), _T("dialognonmodal"), _T("Show specially written modal dialogs non modal") },
+    { wxCMD_LINE_SWITCH, _T("p"), _T("popups"), _T("Show popup menus") },
+    { wxCMD_LINE_OPTION, _T("t"), _T("trace"), _T("Log Trace Mask") },
+    { wxCMD_LINE_NONE }
+};
+}
+
+int main (int argc, char** argv)
+{
+    wxCmdLineParser parser(l_cmdLineDesc, argc, argv);
+    int res = parser.Parse(false);
+    if (res > 0) {
+	OUTPUT << "Failed to parse the command line" << std::endl;
+	exit(-1);
+    }
+    wxString mask;
+    while (parser.Found(_T("t"), &mask))
+	if (mask.empty())
+	    wxLog::AddTraceMask(_T("wxGuiTestCallTrace"));
+	else
+	    wxLog::AddTraceMask (mask);
 
     // Configure unit testing:
-    wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
-    wxTst::WxGuiTestHelper::SetShowPopupMenusFlag (false);
+    if (parser.Found(_T("m")))
+	wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
+    else
+	wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (false);
+    if (parser.Found(_T("p")))
+	wxTst::WxGuiTestHelper::SetShowPopupMenusFlag (true);
+    else
+	wxTst::WxGuiTestHelper::SetShowPopupMenusFlag (false);
+
     // Disable interactivity for really running automatic tests:
-//    wxTst::WxGuiTestHelper::SetDisableTestInteractivity (true);
+    if (parser.Found(_T("i")))
+	wxTst::WxGuiTestHelper::SetDisableTestInteractivity (true);
+    else
+	wxTst::WxGuiTestHelper::SetDisableTestInteractivity (false);
+
+
     // Likewise, prevent pop-up warning message box on failing assertions:
-//    wxTst::WxGuiTestHelper::SetPopupWarningForFailingAssert (false);
+    if (parser.Found(_T("w")))
+	wxTst::WxGuiTestHelper::SetPopupWarningForFailingAssert (true);
+    else
+	wxTst::WxGuiTestHelper::SetPopupWarningForFailingAssert (false);
+
     // But do check provoked warnings in testing mode:
-    wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (true);
+    if (parser.Found(_T("r"))) {
+	wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (true);
     // Which requires the correct CppUnit warning asserter:
-    wxTst::WxGuiTestHelper::SetWarningAsserter (
+	wxTst::WxGuiTestHelper::SetWarningAsserter (
             new wxTst::CppUnitWarningAsserter ());
+    }
+    else {
+	wxTst::WxGuiTestHelper::SetCheckForProvokedWarnings (false);
+	wxTst::WxGuiTestHelper::SetWarningAsserter (NULL);
+    }
 
     // wxTst::InitWxGuiTest, which "packs" all registered wxWidgets GUI tests
     // into decorated shape, must not use CPPUNIT_TEST_SUITE_REGISTRATION macro
