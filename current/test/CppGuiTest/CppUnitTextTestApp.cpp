@@ -13,8 +13,9 @@
 #include <cppunit/ui/text/TestRunner.h>
 
 // For checking wxGuiTestCallTrace, see below:
-//#include "wx/log.h"
+#include "wx/log.h"
 #include <wx/cmdline.h>
+#include <wx/msgout.h>
 
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CppUnitWarningAsserter.h>
@@ -24,6 +25,7 @@
 #else
 #define OUTPUT std::cerr
 #endif
+
 namespace {
 static const wxCmdLineEntryDesc l_cmdLineDesc[] =
 {
@@ -32,26 +34,34 @@ static const wxCmdLineEntryDesc l_cmdLineDesc[] =
     { wxCMD_LINE_SWITCH, _T("r"), _T("provoked"), _T("Check for provoked warnings") },
     { wxCMD_LINE_SWITCH, _T("m"), _T("dialognonmodal"), _T("Show specially written modal dialogs non modal") },
     { wxCMD_LINE_SWITCH, _T("p"), _T("popups"), _T("Show popup menus") },
-    { wxCMD_LINE_OPTION, _T("t"), _T("trace"), _T("Log Trace Mask") },
+    { wxCMD_LINE_OPTION, _T("t"), _T("trace"), _T("Log Trace Mask"), 
+      wxCMD_LINE_VAL_STRING, 
+      wxCMD_LINE_PARAM_OPTIONAL | wxCMD_LINE_PARAM_MULTIPLE },
     { wxCMD_LINE_NONE }
 };
 }
 
 int main (int argc, char** argv)
 {
+//Wx isn't initialized at this level, so we need a wxMessageOutput so
+//that wxCmdLineParser can print errors.
+    wxMessageOutput* msgout = new wxMessageOutputStderr;
+    wxMessageOutput::Set(msgout);
+
     wxCmdLineParser parser(l_cmdLineDesc, argc, argv);
-    int res = parser.Parse(false);
+    int res = parser.Parse(true);
     if (res > 0) {
 	OUTPUT << "Failed to parse the command line" << std::endl;
 	exit(-1);
     }
     wxString mask;
-    while (parser.Found(_T("t"), &mask))
-	if (mask.empty())
+    if (parser.Found(_T("t"))) {
+	size_t count = parser.GetParamCount();
+	if (mask.empty() || count == 0)
 	    wxLog::AddTraceMask(_T("wxGuiTestCallTrace"));
-	else
-	    wxLog::AddTraceMask (mask);
-
+	else for (int i = 0; i < count; i++) 
+		 wxLog::AddTraceMask (parser.GetParam(i));
+    }
     // Configure unit testing:
     if (parser.Found(_T("m")))
 	wxTst::WxGuiTestHelper::SetShowModalDialogsNonModalFlag (true);
@@ -110,4 +120,5 @@ int main (int argc, char** argv)
 
     // Return error code 1 if the one of test failed.
     return wasSucessful ? 0 : 1;
+    delete msgout;
 }
