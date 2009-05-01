@@ -6,19 +6,14 @@
 // Modifications: John Ralls, 2007-2009
 // Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
-//
-// $Id$
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-#ifdef __GNUG__
-    #pragma implementation "WxGuiTestApp.h"
-#endif
-
+#include "EventQueue.h"
 #include <wxGuiTest/WxGuiTestApp.h>
-
 #include "InitWxGuiTestSetUp.h"
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventFilterInterface.h>
+#include <wxGuiTest/TestEventLoop.h>
 
 
 IMPLEMENT_APP_NO_MAIN(wxTst::WxGuiTestApp)
@@ -35,7 +30,9 @@ WxGuiTestApp::WxGuiTestApp (wxApp *appUnderTest) :
     m_testRunnerProxy(NULL),
     m_appUnderTest(appUnderTest),
     m_eventFilter(NULL),
-    m_idleCtrlFlag(false)
+    m_idleCtrlFlag(false),
+    m_eventLoop(new wxTestEventLoop),
+    m_eventStore(new EventQStore)
 {
 
     wxASSERT_MSG(ms_instance == NULL, _T("WxGuiTestApp constructed twice"));
@@ -52,7 +49,10 @@ WxGuiTestApp::~WxGuiTestApp ()
         delete m_eventFilter;
         m_eventFilter = NULL;
     }
-
+    if(m_eventLoop != NULL) {
+	delete m_eventLoop;
+	m_eventLoop = NULL;
+    }
 }
 
 int
@@ -76,13 +76,21 @@ WxGuiTestApp::MainLoop ()
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Running test loop"));
 		retval = 0;
-		ProcessPendingEvents();
+		m_eventLoop -> Run();
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Exiting test loop"));
     }
 
     return retval;
 
+}
+
+void WxGuiTestApp::ExitMainLoop() {
+    m_eventLoop->Exit();
+}
+
+bool WxGuiTestApp::Yield(bool onlyIfNeeded) {
+    return true;
 }
 
 
@@ -227,3 +235,50 @@ int WxGuiTestApp::OnExit ()
     }
 }
 
+////////////////////////////////////////////////////////////////////////////
+// Functions for managing queued events:
+///////////////////////////////////////////////////////////////////////////
+
+void
+WxGuiTestApp::newEventQueue() {
+    m_eventStore->push_back(new EventQueue);
+}
+
+void 
+WxGuiTestApp::queueEvent(wxEvent& event) {
+    if (m_eventStore->isEmpty()) newEventQueue();
+    EventQueue* const q = m_eventStore->get_back();
+    q->push_back(event.Clone());
+}
+
+void
+WxGuiTestApp::nextEventQueue() {
+    EventQueue* q = m_eventStore->pop_front();
+    if (q == NULL) return;
+    q = NULL;
+    delete q;
+}
+
+bool 
+WxGuiTestApp::postNextEvent() {
+    EventQueue* q = m_eventStore->get_front();
+    if (q == NULL) 
+	return false;
+    wxEvent* e = q->pop_front();
+    if (e == NULL) {
+	q = m_eventStore->pop_front();
+	delete q;
+	return false;
+    }
+    wxEvtHandler* handler = dynamic_cast<wxEvtHandler*>(e->GetEventObject());
+    if (handler)
+	handler->AddPendingEvent(*e);
+    delete e;
+    return true;
+}
+
+bool
+WxGuiTestApp::pending() { 
+    return (m_eventStore->get_front() && 
+	     !(m_eventStore->get_front()->isEmpty()));
+}

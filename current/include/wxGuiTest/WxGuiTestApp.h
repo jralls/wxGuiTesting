@@ -256,6 +256,8 @@ private:
     static wxApp* ms_instance;
 //This flag set to true when OnIdle is in control of the current event loop.
     bool m_idleCtrlFlag ;
+    wxEventLoop* m_eventLoop;
+    EventQStore* m_eventStore;
 
 };
 

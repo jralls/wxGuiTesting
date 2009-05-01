@@ -6,8 +6,11 @@
 // Licence:     wxWindows licence
 ///////////////////////////////////////////////////////////////////////////////
 
+
 #include <wxGuiTest/TestEventLoop.h>
-#incldue "EventQueue.h"
+#include <wxGuiTest/WxGuiTestApp.h>
+#include <wx/event.h>
+#include "EventQueue.h"
 
 using namespace wxTst;
 
@@ -15,11 +18,9 @@ int
 wxTestEventLoop::Run() {
     if (m_exitCode) 
 	return doExitCode();
-    wxTestGuiApp* app = dynamic_cast<wxTestGuiApp>(wxTheApp);
-    wxASSERT_MSG(app, 
-		 _T("Attempting to run TestEventLoop with a regular wxApp"));
-    app->popEventQueue();
-    while (!m_exitCode && Dispatch());
+    WxGuiTestApp& app = wxGetApp();
+    while (!m_exitCode && app.postNextEvent() && Dispatch());
+    app.nextEventQueue();
     return doExitCode();
 }
 
@@ -32,28 +33,19 @@ bool
 wxTestEventLoop::Pending() const {
     if (wxPendingEvents && !wxPendingEvents->IsEmpty())
 	return true;
-    wxTestGuiApp* app = dynamic_cast<wxTestGuiApp>(wxTheApp);
-    wxASSERT_MSG(app, 
-		 _T("Attempting to run TestEventLoop with a regular wxApp"));
-    return app->pending();
+    return wxGetApp().pending();
 }
 
 bool 
 wxTestEventLoop::Dispatch() {
-    wxTestGuiApp* app = dynamic_cast<wxTestGuiApp>(wxTheApp);
-    wxASSERT_MSG(app, 
-		 _T("Attempting to run TestEventLoop with a regular wxApp"));
-    if (wxPendingEvents && !wxPendingEvents->IsEmpty()) {
+    if (wxPendingEvents == NULL || wxPendingEvents->IsEmpty()) 
+	return false;
     wxList::compatibility_iterator node = wxPendingEvents->GetFirst();
-    if (node) {
-	wxEvtHandler* handler = (wxEvtHandler*)node->GetData();
-	wxPendingEvents->Erase(node);
-	handler->ProcessPendingEvents();
-	if (wxPendingEvents->IsEmpty() && !app->pending())
-	    return false;
-	else return true;
-    }
-    if (!app->pending()) return false;
-    app->postNextEvent();
-    return this->Dispatch();
+    if (node == NULL) return false;
+    wxEvtHandler* handler = (wxEvtHandler*)node->GetData();
+    wxPendingEvents->Erase(node);
+    handler->ProcessPendingEvents();
+    if (wxPendingEvents->IsEmpty() && !wxGetApp().pending())
+	return false;
+    return true;
 }

@@ -83,6 +83,7 @@
     $(WGTS)/CREventFactory.h
     $(WGTS)/InitWxGuiTestSetUp.h
     $(WGTS)/TempInteractiveControl.h
+    $(WGTS)/EventQueue.h
   </set>
 
 

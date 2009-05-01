@@ -15,6 +15,7 @@
 #endif
 
 #include <wxGuiTest/EventSimulationHelper.h>
+#include <wxGuiTest/WxGuiTestApp.h>
 
 #include <cppunit/TestAssert.h>
 
@@ -55,7 +56,11 @@ void EventSimulationHelper::SelectMenuItem (int id,
 {
     wxCommandEvent evt (wxEVT_COMMAND_MENU_SELECTED, id);
     evt.SetEventObject (evtHandler);
-    ::wxPostEvent (evtHandler, evt);
+//    ::wxPostEvent (evtHandler, evt);
+    WxGuiTestApp* app = dynamic_cast<WxGuiTestApp*>(wxTheApp);
+    CPPUNIT_ASSERT_MESSAGE ("wxTheApp cast to wxGuiTestApp Failed",
+                app != NULL);
+    app->queueEvent(evt);
 }
 
 

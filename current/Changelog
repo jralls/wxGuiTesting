@@ -1,3 +1,30 @@
+2009-05-01  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+	* include/wxGuiTest/EventQueue.h: Moved from src because
+	WxGuiTestApp.h needs to include it.
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::newEventQueue),
+	(WxGuiTestApp::queueEvent, WxGuiTestApp::nextEventQueue),
+	(WxGuiTestApp::postNextEvent, WxGuiTestApp::pending):
+	New functions to support event queues.
+
+	
+2009-03-26  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/EventQueue.h: New file. Defines a very simple
+	template class for queues and typedefs it to EventQueue and
+	EventQStore. 
+
+	* include/wxGuiTest/WxGuiTestApp.h: 
+	(queueEvent, postNextEvent, pending): New event queue handling
+	functions 
+	(MacDoOneEvent): Hides (we hope!) the base class function so that
+	we don't have to patch wxWidgets/mac/carbon/dialog.h to call
+	wxTheApp->Mainloop like wxGTK does.
+
+	* include/wxGuiTest/TestEventLoop.h:
+	(Exit, Pending, Dispatch): New function overrides to handle nested
+	event queues.
+	
 2009-02-22  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* test/CppGuiTest/CppUnitTextTestApp.cpp (main): Make the various
