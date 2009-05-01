@@ -14,7 +14,17 @@ namespace wxTst {
 /*! \class wxTestEventLoop
     \brief Provide a custom event loop for testing.
 
-In order to test event handling, we need to run an event loop to post events to and to dispatch the events from. WxWidgets implements this already, of course, but the test program loses control if we let that one run. WxWidgets generally wraps the underlying platform event loop, and we don't need to do that, because we're only testing wxWidgets events, not platform events. Unfortunately, wxWidgets uses native controls which run their own event loops on some platforms (message dialogs are one example, and popup menus are another). There's no way for wxGuiTesting to interrupt those loops, so the actual elements aren't testable. Program around it using a test double or mock object of some sort.
+In order to test event handling, we need to run an event loop to post
+events to and to dispatch the events from. WxWidgets implements this
+already, of course, but the test program loses control if we let that
+one run. WxWidgets generally wraps the underlying platform event loop,
+and we don't need to do that, because we're only testing wxWidgets
+events, not platform events. Unfortunately, wxWidgets uses native
+controls which run their own event loops on some platforms (message
+dialogs are one example, and popup menus are another). There's no way
+for wxGuiTesting to interrupt those loops, so the actual elements
+aren't testable. Program around it using a test double or mock object
+of some sort.
 */
 //NB: This works fine on wxGTK, which calls wxTheApp->MainLoop, and
 //wxMac for trunk, which just sets a modal state on the window and
@@ -56,7 +66,7 @@ In order to test event handling, we need to run an event loop to post events to 
     private:
 	int m_exitCode;
 	bool m_loopRunning;
-	inline int doExitCode {
+	inline int doExitCode() {
 	    int tmp = m_exitcode;
 	    m_exitCode = 0;
 	    return tmp;

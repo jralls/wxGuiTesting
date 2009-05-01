@@ -6,26 +6,21 @@
 // Modifications: John Ralls, 2007-2009
 // Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
-//
-// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifndef WXGUITESTAPP_H
 #define WXGUITESTAPP_H
 
-#ifdef __GNUG__
-    #pragma interface "WxGuiTestApp.h"
-#endif
-
 #include <wxGuiTest/Common.h>
 #include <wx/app.h>
+#include <wx/event.h>
+#include <wxGuiTest/EventQueue.h>
 
 
 namespace wxTst {
 
 class InitWxGuiTestSetUp;
 class CREventFilterInterface;
-
 
 /*! \class WxGuiTestApp
     \brief Control & do running of wxWidgets GUI CppUnit tests.
@@ -170,13 +165,88 @@ public:
     virtual int OnExit ();
 
 /** 
- * Override MainLoop() to be a manually executed platform (to catch/insert
- * native events) event loop. This replaces the somewhat fragile EventFilter
- * (for capture) and even more fragile OnIdle (for replay) approaches.
+ * \fn virtual int MainLoop()
+ * \brief Override MainLoop() to be a manually executed event loop. This
+ * replaces the somewhat fragile OnIdle (for replay) approaches.
  * 
  * @return  Event Loop's return code
  */	
 	virtual int MainLoop();
+
+/** 
+ * \fn virtual int MainLoop()
+ * \brief Override ExitMainLoop()
+ */
+	virtual void ExitMainLoop();
+
+/** \fn bool Yield (onlyIfNeeded)
+ *  \brief Override Yield so that it doesn't have us go out and get
+ *  platform events
+ *  
+ * \param onlyIfNeeded true if you want a recursive call to return
+ * false instead of asserting
+ *  
+ *  \return true unless called recursively with onlyIfNeeded == true
+ */
+	virtual bool Yield(bool onlyIfNeeded);
+
+#if defined(__WXMC_CARBON__) && !wxCHECK_VERSION(2, 9, 0)
+/** \fn void MacDoOneEvent()
+    \brief Hide wxCarbon's MacDoOneEvent so that we can control modal dialogs.
+*/
+    void MacDoOneEvent() { m_eventLoop->Dispatch();}
+#endif
+
+/// \fn virtual EventQueue* newEventQueue()
+/// \brief Create a new EventQueue in the event store
+///
+/// Create a new event queue to post to. Call this from your test
+/// program every time an event loop is created or destroyed -- for
+/// example, if a test case will result in a modal dialog, call
+/// newEventQueue() at the beginning of the test case and call
+/// queueEvent() to place each synthetic or recorded event on the
+/// queue. When the event which will launch the modal dialog has been
+/// placed on the queue, call newEventQueue again and call
+/// queueEvent() for each event that the dialog will need to
+/// process. You will likely want the event loop to finish at this
+/// point so that you can check the contents of the dialog box before
+/// it calls EndModal() and the function which called it destroys
+/// it. You can then either create a new queue and queue the final
+/// event to it or just post the event, then call MainLoop().
+///
+    virtual void newEventQueue();
+
+/** \fn void queueEvent (event)
+ *  \brief Queues a wxEvent onto the current active event queue.
+ *  
+ *  Because it calls event->Clone(), it doesn't take ownership of the
+ *  pointer, so the calling code can delete it (and EventStore doesn't
+ *  have to worry about a pointer getting invalidated.
+ *  \param event The event to queue
+ */
+
+    virtual void queueEvent(wxEvent& event);
+
+/** \fn void nextEventQueue ()
+ *  \brief make the 
+ *  
+ */
+    virtual void nextEventQueue();
+
+/** \fn bool postNextEvent ()
+ *  \brief Pops the next event from the current front queue and posts
+ *  it to its handler.
+ *  \return true if there is another event in the current queue.
+ */
+    virtual bool postNextEvent();
+
+/** \fn bool pending ()
+ *  \brief Test the current queue and all wxEventHandlers the
+ *  existence of pending events.
+ *  
+ *  \return true if there are pending events.
+ */
+    virtual bool pending();
 
 
 private:

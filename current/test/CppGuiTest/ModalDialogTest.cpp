@@ -6,8 +6,6 @@
 // Modifications: John Ralls, 2007-2009
 // Modifications Copyright: (c) 2009 John Ralls
 // Licence:     wxWindows licence
-//
-// $Id$
 ///////////////////////////////////////////////////////////////////////////////
 
 #ifdef __GNUG__
