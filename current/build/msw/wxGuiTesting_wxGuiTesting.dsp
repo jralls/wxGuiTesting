@@ -1729,6 +1729,10 @@ SOURCE=..\..\include\wxGuiTest\CppUnitWarningAsserter.h
 # End Source File
 # Begin Source File
 
+SOURCE=..\..\include\wxGuiTest\EventQueue.h
+# End Source File
+# Begin Source File
+
 SOURCE=..\..\include\wxGuiTest\EventSimulationHelper.h
 # End Source File
 # Begin Source File

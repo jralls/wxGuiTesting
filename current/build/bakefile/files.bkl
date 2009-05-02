@@ -83,7 +83,6 @@
     $(WGTS)/CREventFactory.h
     $(WGTS)/InitWxGuiTestSetUp.h
     $(WGTS)/TempInteractiveControl.h
-    $(WGTS)/EventQueue.h
   </set>
 
 
@@ -109,6 +108,7 @@
     $(WGTI)/WarningAsserterInterface.h
     $(WGTI)/WxGuiTestApp.h
     $(WGTI)/WxGuiTestHelper.h
+    $(WGTI)/EventQueue.h
   </set>
 
   <set var='VTK_HDRS' >
@@ -124,11 +124,13 @@
 
   <set var='CPPTEST_SOURCES'>
     test/CppTest/CppUnitTextTestApp.cpp
+    test/CppTest/EventQueueTest.cpp
     test/CppTest/CRCppEmitterTest.cpp
     test/CppTest/ProvokedWarningRegistryTest.cpp
   </set>
 
   <set var='CPPTEST_HDRS'>
+    test/CppTest/EventQueueTest.cpp
     test/CppTest/CRCppEmitterTest.h
     test/CppTest/ProvokedWarningRegistryTest.h
   </set>

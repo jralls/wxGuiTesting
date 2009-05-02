@@ -3150,6 +3150,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\include\wxGuiTest\EventQueue.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\include\wxGuiTest\EventSimulationHelper.h"
 				>
 			</File>

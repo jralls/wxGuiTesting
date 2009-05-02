@@ -8,7 +8,6 @@
 // Licence:     wxWindows licence
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "EventQueue.h"
 #include <wxGuiTest/WxGuiTestApp.h>
 #include "InitWxGuiTestSetUp.h"
 #include <wxGuiTest/WxGuiTestHelper.h>
@@ -89,7 +88,7 @@ void WxGuiTestApp::ExitMainLoop() {
     m_eventLoop->Exit();
 }
 
-bool WxGuiTestApp::Yield(bool onlyIfNeeded) {
+bool WxGuiTestApp::Yield(bool WXUNUSED(onlyIfNeeded)) {
     return true;
 }
 

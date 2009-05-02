@@ -23,9 +23,9 @@
 			isa = PBXBuildFile;
 			fileRef = 00000000000000000000007a;
 		};
-		0000000000000000000000aa = {
+		00000000000000000000007d = {
 			isa = PBXBuildFile;
-			fileRef = 0000000000000000000000a9;
+			fileRef = 00000000000000000000007c;
 		};
 		0000000000000000000000ac = {
 			isa = PBXBuildFile;
@@ -35,25 +35,25 @@
 			isa = PBXBuildFile;
 			fileRef = 0000000000000000000000ad;
 		};
-		0000000000000000000000db = {
+		0000000000000000000000b0 = {
 			isa = PBXBuildFile;
-			fileRef = 0000000000000000000000a9;
+			fileRef = 0000000000000000000000af;
 		};
 		0000000000000000000000dd = {
 			isa = PBXBuildFile;
-			fileRef = 0000000000000000000000dc;
+			fileRef = 0000000000000000000000ab;
 		};
 		0000000000000000000000df = {
 			isa = PBXBuildFile;
 			fileRef = 0000000000000000000000de;
 		};
-		00000000000000000000010c = {
+		0000000000000000000000e1 = {
 			isa = PBXBuildFile;
-			fileRef = 0000000000000000000000a9;
+			fileRef = 0000000000000000000000e0;
 		};
 		00000000000000000000010e = {
 			isa = PBXBuildFile;
-			fileRef = 00000000000000000000010d;
+			fileRef = 0000000000000000000000ab;
 		};
 		000000000000000000000110 = {
 			isa = PBXBuildFile;
@@ -63,21 +63,25 @@
 			isa = PBXBuildFile;
 			fileRef = 000000000000000000000111;
 		};
-		00000000000000000000013f = {
+		000000000000000000000114 = {
 			isa = PBXBuildFile;
-			fileRef = 0000000000000000000000a9;
+			fileRef = 000000000000000000000113;
 		};
 		000000000000000000000141 = {
 			isa = PBXBuildFile;
-			fileRef = 000000000000000000000140;
+			fileRef = 0000000000000000000000ab;
 		};
-		000000000000000000000160 = {
+		000000000000000000000143 = {
 			isa = PBXBuildFile;
-			fileRef = 00000000000000000000015f;
+			fileRef = 000000000000000000000142;
 		};
 		000000000000000000000162 = {
 			isa = PBXBuildFile;
 			fileRef = 000000000000000000000161;
+		};
+		000000000000000000000164 = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000163;
 		};
 /* End PBXBuildFile section */
 
@@ -90,13 +94,6 @@
 			remoteInfo = wxGuiTesting;
 		};
 		00000000000000000000004f = {
-			isa = PBXContainerItemProxy;
-			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
-			proxyType = 1;
-			remoteGlobalIDString = 000000000000000000000026;
-			remoteInfo = wxGuiTesting;
-		};
-		00000000000000000000007c = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -124,7 +121,7 @@
 			remoteGlobalIDString = 000000000000000000000026;
 			remoteInfo = wxGuiTesting;
 		};
-		0000000000000000000000af = {
+		000000000000000000000084 = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -152,7 +149,7 @@
 			remoteGlobalIDString = 000000000000000000000026;
 			remoteInfo = wxGuiTesting;
 		};
-		0000000000000000000000e0 = {
+		0000000000000000000000b7 = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -180,7 +177,7 @@
 			remoteGlobalIDString = 000000000000000000000026;
 			remoteInfo = wxGuiTesting;
 		};
-		000000000000000000000113 = {
+		0000000000000000000000e8 = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -208,7 +205,7 @@
 			remoteGlobalIDString = 000000000000000000000026;
 			remoteInfo = wxGuiTesting;
 		};
-		000000000000000000000142 = {
+		00000000000000000000011b = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -236,7 +233,7 @@
 			remoteGlobalIDString = 000000000000000000000026;
 			remoteInfo = wxGuiTesting;
 		};
-		000000000000000000000163 = {
+		00000000000000000000014a = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -244,6 +241,13 @@
 			remoteInfo = wxGuiTesting;
 		};
 		000000000000000000000165 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000026;
+			remoteInfo = wxGuiTesting;
+		};
+		000000000000000000000167 = {
 			isa = PBXContainerItemProxy;
 			containerPortal = "DD50E284-BF81-523E-8180-54C9DED40F27";
 			proxyType = 1;
@@ -284,100 +288,105 @@
 		};
 		000000000000000000000078 = {
 			isa = PBXFileReference;
-			path = CRCppEmitterTest.cpp;
+			path = EventQueueTest.cpp;
 			sourceTree = "<group>";
 		};
 		00000000000000000000007a = {
 			isa = PBXFileReference;
+			path = CRCppEmitterTest.cpp;
+			sourceTree = "<group>";
+		};
+		00000000000000000000007c = {
+			isa = PBXFileReference;
 			path = ProvokedWarningRegistryTest.cpp;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000a6 = {
+		0000000000000000000000a8 = {
 			isa = PBXFileReference;
 			includeInIndex = 0;
 			lastKnownFileType = "compiled.mach-o.executable";
 			path = CppGuiUnitTestEventSimulation;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0000000000000000000000a9 = {
+		0000000000000000000000ab = {
 			isa = PBXFileReference;
 			path = CppUnitTextTestApp.cpp;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000ab = {
+		0000000000000000000000ad = {
 			isa = PBXFileReference;
 			path = EventSimulationHelperTest.cpp;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000ad = {
+		0000000000000000000000af = {
 			isa = PBXFileReference;
 			path = EvtSimHlpEvtHandler.cpp;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000d9 = {
+		0000000000000000000000db = {
 			isa = PBXFileReference;
 			includeInIndex = 0;
 			lastKnownFileType = "compiled.mach-o.executable";
 			path = CppGuiUnitTestCaptureReplay;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0000000000000000000000dc = {
+		0000000000000000000000de = {
 			isa = PBXFileReference;
 			path = CRCaptureTest.cpp;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000de = {
+		0000000000000000000000e0 = {
 			isa = PBXFileReference;
 			path = CRWindowHierarchyHandlerTest.cpp;
 			sourceTree = "<group>";
 		};
-		00000000000000000000010a = {
+		00000000000000000000010c = {
 			isa = PBXFileReference;
 			includeInIndex = 0;
 			lastKnownFileType = "compiled.mach-o.executable";
 			path = CppGuiUnitTestModalDialog;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		00000000000000000000010d = {
+		00000000000000000000010f = {
 			isa = PBXFileReference;
 			path = DirDialogManipulator.cpp;
 			sourceTree = "<group>";
 		};
-		00000000000000000000010f = {
+		000000000000000000000111 = {
 			isa = PBXFileReference;
 			path = ModalDialogManipulator.cpp;
 			sourceTree = "<group>";
 		};
-		000000000000000000000111 = {
+		000000000000000000000113 = {
 			isa = PBXFileReference;
 			path = ModalDialogTest.cpp;
 			sourceTree = "<group>";
 		};
-		00000000000000000000013d = {
+		00000000000000000000013f = {
 			isa = PBXFileReference;
 			includeInIndex = 0;
 			lastKnownFileType = "compiled.mach-o.executable";
 			path = CppGuiUnitCapturePlusEmit;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		000000000000000000000140 = {
+		000000000000000000000142 = {
 			isa = PBXFileReference;
 			path = CapturePlusEmittingTest.cpp;
 			sourceTree = "<group>";
 		};
-		00000000000000000000015c = {
+		00000000000000000000015e = {
 			isa = PBXFileReference;
 			includeInIndex = 0;
 			lastKnownFileType = "compiled.mach-o.executable";
 			path = VTKUnitTest;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		00000000000000000000015f = {
+		000000000000000000000161 = {
 			isa = PBXFileReference;
 			path = CppUnitTextTestApp.cpp;
 			sourceTree = "<group>";
 		};
-		000000000000000000000161 = {
+		000000000000000000000163 = {
 			isa = PBXFileReference;
 			path = CRVtkCaptureTest.cpp;
 			sourceTree = "<group>";
@@ -392,8 +401,8 @@
 				00000000000000000000004a,
 				00000000000000000000004c,
 				000000000000000000000075,
-				0000000000000000000000a8,
-				00000000000000000000015e,
+				0000000000000000000000aa,
+				000000000000000000000160,
 			);
 			name = wxGuiTesting;
 			sourceTree = "<group>";
@@ -403,11 +412,11 @@
 			children = (
 				000000000000000000000048,
 				000000000000000000000073,
-				0000000000000000000000a6,
-				0000000000000000000000d9,
-				00000000000000000000010a,
-				00000000000000000000013d,
-				00000000000000000000015c,
+				0000000000000000000000a8,
+				0000000000000000000000db,
+				00000000000000000000010c,
+				00000000000000000000013f,
+				00000000000000000000015e,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,31 +427,32 @@
 				000000000000000000000076,
 				000000000000000000000078,
 				00000000000000000000007a,
+				00000000000000000000007c,
 			);
 			path = test/CppTest;
 			sourceTree = "<group>";
 		};
-		0000000000000000000000a8 = {
+		0000000000000000000000aa = {
 			isa = PBXGroup;
 			children = (
-				0000000000000000000000a9,
 				0000000000000000000000ab,
 				0000000000000000000000ad,
-				0000000000000000000000dc,
+				0000000000000000000000af,
 				0000000000000000000000de,
-				00000000000000000000010d,
+				0000000000000000000000e0,
 				00000000000000000000010f,
 				000000000000000000000111,
-				000000000000000000000140,
+				000000000000000000000113,
+				000000000000000000000142,
 			);
 			path = test/CppGuiTest;
 			sourceTree = "<group>";
 		};
-		00000000000000000000015e = {
+		000000000000000000000160 = {
 			isa = PBXGroup;
 			children = (
-				00000000000000000000015f,
 				000000000000000000000161,
+				000000000000000000000163,
 			);
 			path = test/VtkTest;
 			sourceTree = "<group>";
@@ -480,84 +490,84 @@
 			productReference = 000000000000000000000073;
 			productType = "com.apple.product-type.tool";
 		};
-		000000000000000000000084 = {
+		000000000000000000000086 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0000000000000000000000a5;
+			buildConfigurationList = 0000000000000000000000a7;
 			buildPhases = (
-				0000000000000000000000a7,
+				0000000000000000000000a9,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				000000000000000000000081,
 				000000000000000000000083,
+				000000000000000000000085,
 			);
 			name = CppGuiUnitTestEventSimulation;
-			productReference = 0000000000000000000000a6;
+			productReference = 0000000000000000000000a8;
 			productType = "com.apple.product-type.tool";
 		};
-		0000000000000000000000b7 = {
+		0000000000000000000000b9 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0000000000000000000000d8;
+			buildConfigurationList = 0000000000000000000000da;
 			buildPhases = (
-				0000000000000000000000da,
+				0000000000000000000000dc,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0000000000000000000000b4,
 				0000000000000000000000b6,
+				0000000000000000000000b8,
 			);
 			name = CppGuiUnitTestCaptureReplay;
-			productReference = 0000000000000000000000d9;
+			productReference = 0000000000000000000000db;
 			productType = "com.apple.product-type.tool";
 		};
-		0000000000000000000000e8 = {
+		0000000000000000000000ea = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000000000000000109;
+			buildConfigurationList = 00000000000000000000010b;
 			buildPhases = (
-				00000000000000000000010b,
+				00000000000000000000010d,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0000000000000000000000e5,
 				0000000000000000000000e7,
+				0000000000000000000000e9,
 			);
 			name = CppGuiUnitTestModalDialog;
-			productReference = 00000000000000000000010a;
+			productReference = 00000000000000000000010c;
 			productType = "com.apple.product-type.tool";
 		};
-		00000000000000000000011b = {
+		00000000000000000000011d = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00000000000000000000013c;
+			buildConfigurationList = 00000000000000000000013e;
 			buildPhases = (
-				00000000000000000000013e,
+				000000000000000000000140,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				000000000000000000000118,
 				00000000000000000000011a,
+				00000000000000000000011c,
 			);
 			name = CppGuiUnitCapturePlusEmit;
-			productReference = 00000000000000000000013d;
+			productReference = 00000000000000000000013f;
 			productType = "com.apple.product-type.tool";
 		};
-		00000000000000000000014a = {
+		00000000000000000000014c = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00000000000000000000015b;
+			buildConfigurationList = 00000000000000000000015d;
 			buildPhases = (
-				00000000000000000000015d,
+				00000000000000000000015f,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				000000000000000000000147,
 				000000000000000000000149,
+				00000000000000000000014b,
 			);
 			name = VTKUnitTest;
-			productReference = 00000000000000000000015c;
+			productReference = 00000000000000000000015e;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -573,11 +583,11 @@
 			targets = (
 				000000000000000000000026,
 				000000000000000000000051,
-				000000000000000000000084,
-				0000000000000000000000b7,
-				0000000000000000000000e8,
-				00000000000000000000011b,
-				00000000000000000000014a,
+				000000000000000000000086,
+				0000000000000000000000b9,
+				0000000000000000000000ea,
+				00000000000000000000011d,
+				00000000000000000000014c,
 			);
 		};
 /* End PBXProject section */
@@ -636,55 +646,56 @@
 				000000000000000000000077,
 				000000000000000000000079,
 				00000000000000000000007b,
+				00000000000000000000007d,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0000000000000000000000a7 = {
+		0000000000000000000000a9 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0000000000000000000000aa,
 				0000000000000000000000ac,
 				0000000000000000000000ae,
+				0000000000000000000000b0,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0000000000000000000000da = {
+		0000000000000000000000dc = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0000000000000000000000db,
 				0000000000000000000000dd,
 				0000000000000000000000df,
+				0000000000000000000000e1,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00000000000000000000010b = {
+		00000000000000000000010d = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00000000000000000000010c,
 				00000000000000000000010e,
 				000000000000000000000110,
 				000000000000000000000112,
+				000000000000000000000114,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00000000000000000000013e = {
+		000000000000000000000140 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00000000000000000000013f,
 				000000000000000000000141,
+				000000000000000000000143,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00000000000000000000015d = {
+		00000000000000000000015f = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000000000000000000000160,
 				000000000000000000000162,
+				000000000000000000000164,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,11 +712,6 @@
 			target = 000000000000000000000026;
 			targetProxy = 00000000000000000000004f;
 		};
-		00000000000000000000007d = {
-			isa = PBXTargetDependency;
-			target = 000000000000000000000026;
-			targetProxy = 00000000000000000000007c;
-		};
 		00000000000000000000007f = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
@@ -721,10 +727,10 @@
 			target = 000000000000000000000026;
 			targetProxy = 000000000000000000000082;
 		};
-		0000000000000000000000b0 = {
+		000000000000000000000085 = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
-			targetProxy = 0000000000000000000000af;
+			targetProxy = 000000000000000000000084;
 		};
 		0000000000000000000000b2 = {
 			isa = PBXTargetDependency;
@@ -741,10 +747,10 @@
 			target = 000000000000000000000026;
 			targetProxy = 0000000000000000000000b5;
 		};
-		0000000000000000000000e1 = {
+		0000000000000000000000b8 = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
-			targetProxy = 0000000000000000000000e0;
+			targetProxy = 0000000000000000000000b7;
 		};
 		0000000000000000000000e3 = {
 			isa = PBXTargetDependency;
@@ -761,10 +767,10 @@
 			target = 000000000000000000000026;
 			targetProxy = 0000000000000000000000e6;
 		};
-		000000000000000000000114 = {
+		0000000000000000000000e9 = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
-			targetProxy = 000000000000000000000113;
+			targetProxy = 0000000000000000000000e8;
 		};
 		000000000000000000000116 = {
 			isa = PBXTargetDependency;
@@ -781,10 +787,10 @@
 			target = 000000000000000000000026;
 			targetProxy = 000000000000000000000119;
 		};
-		000000000000000000000143 = {
+		00000000000000000000011c = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
-			targetProxy = 000000000000000000000142;
+			targetProxy = 00000000000000000000011b;
 		};
 		000000000000000000000145 = {
 			isa = PBXTargetDependency;
@@ -801,15 +807,20 @@
 			target = 000000000000000000000026;
 			targetProxy = 000000000000000000000148;
 		};
-		000000000000000000000164 = {
+		00000000000000000000014b = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
-			targetProxy = 000000000000000000000163;
+			targetProxy = 00000000000000000000014a;
 		};
 		000000000000000000000166 = {
 			isa = PBXTargetDependency;
 			target = 000000000000000000000026;
 			targetProxy = 000000000000000000000165;
+		};
+		000000000000000000000168 = {
+			isa = PBXTargetDependency;
+			target = 000000000000000000000026;
+			targetProxy = 000000000000000000000167;
 		};
 /* End PBXTargetDependency section */
 
@@ -1966,7 +1977,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000085 = {
+		000000000000000000000087 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -1981,7 +1992,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000086 = {
+		000000000000000000000088 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -1996,7 +2007,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000087 = {
+		000000000000000000000089 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2011,7 +2022,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_0";
 		};
-		000000000000000000000088 = {
+		00000000000000000000008a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2026,7 +2037,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000089 = {
+		00000000000000000000008b = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2041,7 +2052,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_0";
 		};
-		00000000000000000000008a = {
+		00000000000000000000008c = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2056,7 +2067,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_1";
 		};
-		00000000000000000000008b = {
+		00000000000000000000008d = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2071,7 +2082,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_1";
 		};
-		00000000000000000000008c = {
+		00000000000000000000008e = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2086,7 +2097,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_0";
 		};
-		00000000000000000000008d = {
+		00000000000000000000008f = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2101,7 +2112,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_1";
 		};
-		00000000000000000000008e = {
+		000000000000000000000090 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2116,7 +2127,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_0";
 		};
-		00000000000000000000008f = {
+		000000000000000000000091 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2131,7 +2142,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000090 = {
+		000000000000000000000092 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2146,7 +2157,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000091 = {
+		000000000000000000000093 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2161,7 +2172,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000092 = {
+		000000000000000000000094 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2176,7 +2187,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_0";
 		};
-		000000000000000000000093 = {
+		000000000000000000000095 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2191,7 +2202,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_0";
 		};
-		000000000000000000000094 = {
+		000000000000000000000096 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2206,7 +2217,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000095 = {
+		000000000000000000000097 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2221,7 +2232,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000096 = {
+		000000000000000000000098 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2236,7 +2247,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_0";
 		};
-		000000000000000000000097 = {
+		000000000000000000000099 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2251,7 +2262,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000098 = {
+		00000000000000000000009a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2265,36 +2276,6 @@
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_0";
-		};
-		000000000000000000000099 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_1";
-		};
-		00000000000000000000009a = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_0";
 		};
 		00000000000000000000009b = {
 			isa = XCBuildConfiguration;
@@ -2304,12 +2285,12 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
 				SYMROOT = ./bin;
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
-			name = "DLL ANSI Debug Multilib USE_VTK_1";
+			name = "DLL ANSI Debug Monolithic USE_VTK_1";
 		};
 		00000000000000000000009c = {
 			isa = XCBuildConfiguration;
@@ -2319,6 +2300,36 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Monolithic USE_VTK_0";
+		};
+		00000000000000000000009d = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Multilib USE_VTK_1";
+		};
+		00000000000000000000009e = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
 				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
 				SYMROOT = ./bin;
@@ -2326,7 +2337,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_0";
 		};
-		00000000000000000000009d = {
+		00000000000000000000009f = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2341,7 +2352,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_0";
 		};
-		00000000000000000000009e = {
+		0000000000000000000000a0 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2355,36 +2366,6 @@
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_1";
-		};
-		00000000000000000000009f = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL Unicode Debug Multilib USE_VTK_0";
-		};
-		0000000000000000000000a0 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL Unicode Debug Multilib USE_VTK_1";
 		};
 		0000000000000000000000a1 = {
 			isa = XCBuildConfiguration;
@@ -2394,12 +2375,12 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
 				SYMROOT = ./bin;
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
-			name = "DLL Unicode Debug Monolithic USE_VTK_0";
+			name = "DLL Unicode Debug Multilib USE_VTK_0";
 		};
 		0000000000000000000000a2 = {
 			isa = XCBuildConfiguration;
@@ -2409,6 +2390,36 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL Unicode Debug Multilib USE_VTK_1";
+		};
+		0000000000000000000000a3 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL Unicode Debug Monolithic USE_VTK_0";
+		};
+		0000000000000000000000a4 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
 				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestEventSimulation;
 				SYMROOT = ./bin;
@@ -2416,7 +2427,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000a3 = {
+		0000000000000000000000a5 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2431,7 +2442,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000a4 = {
+		0000000000000000000000a6 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2446,7 +2457,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000b8 = {
+		0000000000000000000000ba = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2461,7 +2472,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_1";
 		};
-		0000000000000000000000b9 = {
+		0000000000000000000000bb = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2476,7 +2487,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_0";
 		};
-		0000000000000000000000ba = {
+		0000000000000000000000bc = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2491,7 +2502,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000bb = {
+		0000000000000000000000bd = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2506,7 +2517,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000bc = {
+		0000000000000000000000be = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2521,7 +2532,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000bd = {
+		0000000000000000000000bf = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2536,7 +2547,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000be = {
+		0000000000000000000000c0 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2551,7 +2562,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000bf = {
+		0000000000000000000000c1 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2566,7 +2577,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000c0 = {
+		0000000000000000000000c2 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2581,7 +2592,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000c1 = {
+		0000000000000000000000c3 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2596,7 +2607,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000c2 = {
+		0000000000000000000000c4 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2611,7 +2622,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_0";
 		};
-		0000000000000000000000c3 = {
+		0000000000000000000000c5 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2626,7 +2637,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_1";
 		};
-		0000000000000000000000c4 = {
+		0000000000000000000000c6 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2641,7 +2652,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000c5 = {
+		0000000000000000000000c7 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2656,7 +2667,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_0";
 		};
-		0000000000000000000000c6 = {
+		0000000000000000000000c8 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2671,7 +2682,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_0";
 		};
-		0000000000000000000000c7 = {
+		0000000000000000000000c9 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2686,7 +2697,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000c8 = {
+		0000000000000000000000ca = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2701,7 +2712,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000c9 = {
+		0000000000000000000000cb = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2716,7 +2727,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000ca = {
+		0000000000000000000000cc = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2731,7 +2742,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000cb = {
+		0000000000000000000000cd = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2745,36 +2756,6 @@
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_0";
-		};
-		0000000000000000000000cc = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_1";
-		};
-		0000000000000000000000cd = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_0";
 		};
 		0000000000000000000000ce = {
 			isa = XCBuildConfiguration;
@@ -2784,12 +2765,12 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
 				SYMROOT = ./bin;
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
-			name = "DLL ANSI Debug Multilib USE_VTK_1";
+			name = "DLL ANSI Debug Monolithic USE_VTK_1";
 		};
 		0000000000000000000000cf = {
 			isa = XCBuildConfiguration;
@@ -2799,6 +2780,36 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Monolithic USE_VTK_0";
+		};
+		0000000000000000000000d0 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Multilib USE_VTK_1";
+		};
+		0000000000000000000000d1 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
 				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
 				SYMROOT = ./bin;
@@ -2806,7 +2817,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_0";
 		};
-		0000000000000000000000d0 = {
+		0000000000000000000000d2 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2821,7 +2832,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000d1 = {
+		0000000000000000000000d3 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2835,36 +2846,6 @@
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_1";
-		};
-		0000000000000000000000d2 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL Unicode Debug Multilib USE_VTK_0";
-		};
-		0000000000000000000000d3 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL Unicode Debug Multilib USE_VTK_1";
 		};
 		0000000000000000000000d4 = {
 			isa = XCBuildConfiguration;
@@ -2874,12 +2855,12 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
 				SYMROOT = ./bin;
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
-			name = "DLL Unicode Debug Monolithic USE_VTK_0";
+			name = "DLL Unicode Debug Multilib USE_VTK_0";
 		};
 		0000000000000000000000d5 = {
 			isa = XCBuildConfiguration;
@@ -2889,6 +2870,36 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28ud_richtext -lwxmsw28ud_xrc -lwxmsw28ud_html -lwxmsw28ud_adv -lwxbase28ud_xml -lwxmsw28ud_core -lwxbase28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL Unicode Debug Multilib USE_VTK_1";
+		};
+		0000000000000000000000d6 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL Unicode Debug Monolithic USE_VTK_0";
+		};
+		0000000000000000000000d7 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL _UNICODE __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
 				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28ud -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexud -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestCaptureReplay;
 				SYMROOT = ./bin;
@@ -2896,7 +2907,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000d6 = {
+		0000000000000000000000d8 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2911,7 +2922,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000d7 = {
+		0000000000000000000000d9 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2926,7 +2937,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000e9 = {
+		0000000000000000000000eb = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2941,7 +2952,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_1";
 		};
-		0000000000000000000000ea = {
+		0000000000000000000000ec = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2956,7 +2967,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_0";
 		};
-		0000000000000000000000eb = {
+		0000000000000000000000ed = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2971,7 +2982,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000ec = {
+		0000000000000000000000ee = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -2986,7 +2997,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000ed = {
+		0000000000000000000000ef = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3001,7 +3012,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000ee = {
+		0000000000000000000000f0 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3016,7 +3027,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000ef = {
+		0000000000000000000000f1 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3031,7 +3042,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000f0 = {
+		0000000000000000000000f2 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3046,7 +3057,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000f1 = {
+		0000000000000000000000f3 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3061,7 +3072,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_1";
 		};
-		0000000000000000000000f2 = {
+		0000000000000000000000f4 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3076,7 +3087,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_0";
 		};
-		0000000000000000000000f3 = {
+		0000000000000000000000f5 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3091,7 +3102,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_0";
 		};
-		0000000000000000000000f4 = {
+		0000000000000000000000f6 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3106,7 +3117,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_1";
 		};
-		0000000000000000000000f5 = {
+		0000000000000000000000f7 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3121,7 +3132,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000f6 = {
+		0000000000000000000000f8 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3136,7 +3147,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_0";
 		};
-		0000000000000000000000f7 = {
+		0000000000000000000000f9 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3151,7 +3162,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_0";
 		};
-		0000000000000000000000f8 = {
+		0000000000000000000000fa = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3166,7 +3177,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_1";
 		};
-		0000000000000000000000f9 = {
+		0000000000000000000000fb = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3181,7 +3192,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000fa = {
+		0000000000000000000000fc = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3196,7 +3207,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_0";
 		};
-		0000000000000000000000fb = {
+		0000000000000000000000fd = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3211,7 +3222,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000fc = {
+		0000000000000000000000fe = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3225,36 +3236,6 @@
 				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest ./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_0";
-		};
-		0000000000000000000000fd = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestModalDialog;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest ./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_1";
-		};
-		0000000000000000000000fe = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ./bin;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
-				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
-				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
-				PRODUCT_NAME = CppGuiUnitTestModalDialog;
-				SYMROOT = ./bin;
-				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest ./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
-			};
-			name = "DLL ANSI Debug Monolithic USE_VTK_0";
 		};
 		0000000000000000000000ff = {
 			isa = XCBuildConfiguration;
@@ -3264,6 +3245,36 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
 				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestModalDialog;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest ./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Monolithic USE_VTK_1";
+		};
+		000000000000000000000100 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
+				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -l -l -l -l -l -l -lwxmsw28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
+				PRODUCT_NAME = CppGuiUnitTestModalDialog;
+				SYMROOT = ./bin;
+				USER_HEADER_SEARCH_PATHS = "./include ./src/wxGuiTest ./include ./src/wxGuiTest /usr/local/cppunit-1.12/include";
+			};
+			name = "DLL ANSI Debug Monolithic USE_VTK_0";
+		};
+		000000000000000000000101 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ./bin;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "WXUSINGDLL  __WXDEBUG__ __WXMSW__ TESTDIR="../../test/TestData" XRCDIR="../../test/TestData/xrc" TESTSRCDIR="../../test/CppGuiTest"";
+				LIBRARY_SEARCH_PATHS = "/usr/local/cppunit-1.12/lib";
 				OTHER_LDFLAGS = " -lcppunitd ./lib/libwxGuiTestingd.a -lwxmsw28d_richtext -lwxmsw28d_xrc -lwxmsw28d_html -lwxmsw28d_adv -lwxbase28d_xml -lwxmsw28d_core -lwxbase28d -lwxtiffd -lwxjpegd -lwxpngd -lwxzlibd -lwxregexd -lwxexpatd -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32";
 				PRODUCT_NAME = CppGuiUnitTestModalDialog;
 				SYMROOT = ./bin;
@@ -3271,7 +3282,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000100 = {
+		000000000000000000000102 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3286,7 +3297,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000101 = {
+		000000000000000000000103 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3301,7 +3312,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_0";
 		};
-		000000000000000000000102 = {
+		000000000000000000000104 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3316,7 +3327,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_1";
 		};
-		000000000000000000000103 = {
+		000000000000000000000105 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3331,7 +3342,7 @@
 			};
 			name = "DLL Unicode Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000104 = {
+		000000000000000000000106 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3346,7 +3357,7 @@
 			};
 			name = "DLL Unicode Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000105 = {
+		000000000000000000000107 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3361,7 +3372,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_0";
 		};
-		000000000000000000000106 = {
+		000000000000000000000108 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3376,7 +3387,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000107 = {
+		000000000000000000000109 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3391,7 +3402,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_0";
 		};
-		000000000000000000000108 = {
+		00000000000000000000010a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3406,7 +3417,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000011c = {
+		00000000000000000000011e = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3421,7 +3432,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_1";
 		};
-		00000000000000000000011d = {
+		00000000000000000000011f = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3436,7 +3447,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_0";
 		};
-		00000000000000000000011e = {
+		000000000000000000000120 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3451,7 +3462,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_0";
 		};
-		00000000000000000000011f = {
+		000000000000000000000121 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3466,7 +3477,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000120 = {
+		000000000000000000000122 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3481,7 +3492,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_0";
 		};
-		000000000000000000000121 = {
+		000000000000000000000123 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3496,7 +3507,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_1";
 		};
-		000000000000000000000122 = {
+		000000000000000000000124 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3511,7 +3522,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_1";
 		};
-		000000000000000000000123 = {
+		000000000000000000000125 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3526,7 +3537,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_0";
 		};
-		000000000000000000000124 = {
+		000000000000000000000126 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3541,7 +3552,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_1";
 		};
-		000000000000000000000125 = {
+		000000000000000000000127 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3556,7 +3567,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_0";
 		};
-		000000000000000000000126 = {
+		000000000000000000000128 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3571,7 +3582,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000127 = {
+		000000000000000000000129 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3586,7 +3597,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000128 = {
+		00000000000000000000012a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3601,7 +3612,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000129 = {
+		00000000000000000000012b = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3616,7 +3627,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_0";
 		};
-		00000000000000000000012a = {
+		00000000000000000000012c = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3631,7 +3642,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_0";
 		};
-		00000000000000000000012b = {
+		00000000000000000000012d = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3646,7 +3657,7 @@
 			};
 			name = "Static ANSI Debug Monolithic USE_VTK_1";
 		};
-		00000000000000000000012c = {
+		00000000000000000000012e = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3661,7 +3672,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000012d = {
+		00000000000000000000012f = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3676,7 +3687,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_0";
 		};
-		00000000000000000000012e = {
+		000000000000000000000130 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3691,7 +3702,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000012f = {
+		000000000000000000000131 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3706,7 +3717,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_0";
 		};
-		000000000000000000000130 = {
+		000000000000000000000132 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3721,7 +3732,7 @@
 			};
 			name = "DLL ANSI Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000131 = {
+		000000000000000000000133 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3736,7 +3747,7 @@
 			};
 			name = "DLL ANSI Debug Monolithic USE_VTK_0";
 		};
-		000000000000000000000132 = {
+		000000000000000000000134 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3751,7 +3762,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000133 = {
+		000000000000000000000135 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3766,7 +3777,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000134 = {
+		000000000000000000000136 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3781,7 +3792,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_0";
 		};
-		000000000000000000000135 = {
+		000000000000000000000137 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3796,7 +3807,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_1";
 		};
-		000000000000000000000136 = {
+		000000000000000000000138 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3811,7 +3822,7 @@
 			};
 			name = "DLL Unicode Debug Multilib USE_VTK_0";
 		};
-		000000000000000000000137 = {
+		000000000000000000000139 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3826,7 +3837,7 @@
 			};
 			name = "DLL Unicode Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000138 = {
+		00000000000000000000013a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3841,7 +3852,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_0";
 		};
-		000000000000000000000139 = {
+		00000000000000000000013b = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3856,7 +3867,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_1";
 		};
-		00000000000000000000013a = {
+		00000000000000000000013c = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3871,7 +3882,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_0";
 		};
-		00000000000000000000013b = {
+		00000000000000000000013d = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3886,7 +3897,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000014b = {
+		00000000000000000000014d = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3902,7 +3913,7 @@
 			};
 			name = "Static Unicode Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000014c = {
+		00000000000000000000014e = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3918,7 +3929,7 @@
 			};
 			name = "DLL Unicode Debug Monolithic USE_VTK_1";
 		};
-		00000000000000000000014d = {
+		00000000000000000000014f = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3934,7 +3945,7 @@
 			};
 			name = "Static Unicode Debug Multilib USE_VTK_1";
 		};
-		00000000000000000000014e = {
+		000000000000000000000150 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3950,7 +3961,7 @@
 			};
 			name = "DLL Unicode Release Multilib USE_VTK_1";
 		};
-		00000000000000000000014f = {
+		000000000000000000000151 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3966,7 +3977,7 @@
 			};
 			name = "DLL ANSI Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000150 = {
+		000000000000000000000152 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3982,7 +3993,7 @@
 			};
 			name = "Static Unicode Release Multilib USE_VTK_1";
 		};
-		000000000000000000000151 = {
+		000000000000000000000153 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -3998,7 +4009,7 @@
 			};
 			name = "DLL Unicode Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000152 = {
+		000000000000000000000154 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4014,7 +4025,7 @@
 			};
 			name = "Static ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000153 = {
+		000000000000000000000155 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4030,7 +4041,7 @@
 			};
 			name = "DLL ANSI Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000154 = {
+		000000000000000000000156 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4046,7 +4057,7 @@
 			};
 			name = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000155 = {
+		000000000000000000000157 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4062,7 +4073,7 @@
 			};
 			name = "Static Unicode Debug Monolithic USE_VTK_1";
 		};
-		000000000000000000000156 = {
+		000000000000000000000158 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4078,7 +4089,7 @@
 			};
 			name = "DLL Unicode Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000157 = {
+		000000000000000000000159 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4094,7 +4105,7 @@
 			};
 			name = "DLL ANSI Debug Multilib USE_VTK_1";
 		};
-		000000000000000000000158 = {
+		00000000000000000000015a = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4110,7 +4121,7 @@
 			};
 			name = "Static ANSI Release Multilib USE_VTK_1";
 		};
-		000000000000000000000159 = {
+		00000000000000000000015b = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4126,7 +4137,7 @@
 			};
 			name = "DLL ANSI Release Multilib USE_VTK_1";
 		};
-		00000000000000000000015a = {
+		00000000000000000000015c = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ./bin;
@@ -4262,11 +4273,9 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000a5 = {
+		0000000000000000000000a7 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000000000085,
-				000000000000000000000086,
 				000000000000000000000087,
 				000000000000000000000088,
 				000000000000000000000089,
@@ -4297,15 +4306,15 @@
 				0000000000000000000000a2,
 				0000000000000000000000a3,
 				0000000000000000000000a4,
+				0000000000000000000000a5,
+				0000000000000000000000a6,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		0000000000000000000000d8 = {
+		0000000000000000000000da = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0000000000000000000000b8,
-				0000000000000000000000b9,
 				0000000000000000000000ba,
 				0000000000000000000000bb,
 				0000000000000000000000bc,
@@ -4336,15 +4345,15 @@
 				0000000000000000000000d5,
 				0000000000000000000000d6,
 				0000000000000000000000d7,
+				0000000000000000000000d8,
+				0000000000000000000000d9,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		000000000000000000000109 = {
+		00000000000000000000010b = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0000000000000000000000e9,
-				0000000000000000000000ea,
 				0000000000000000000000eb,
 				0000000000000000000000ec,
 				0000000000000000000000ed,
@@ -4375,15 +4384,15 @@
 				000000000000000000000106,
 				000000000000000000000107,
 				000000000000000000000108,
+				000000000000000000000109,
+				00000000000000000000010a,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000013c = {
+		00000000000000000000013e = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00000000000000000000011c,
-				00000000000000000000011d,
 				00000000000000000000011e,
 				00000000000000000000011f,
 				000000000000000000000120,
@@ -4414,15 +4423,15 @@
 				000000000000000000000139,
 				00000000000000000000013a,
 				00000000000000000000013b,
+				00000000000000000000013c,
+				00000000000000000000013d,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Release Monolithic USE_VTK_1";
 		};
-		00000000000000000000015b = {
+		00000000000000000000015d = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00000000000000000000014b,
-				00000000000000000000014c,
 				00000000000000000000014d,
 				00000000000000000000014e,
 				00000000000000000000014f,
@@ -4437,6 +4446,8 @@
 				000000000000000000000158,
 				000000000000000000000159,
 				00000000000000000000015a,
+				00000000000000000000015b,
+				00000000000000000000015c,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Static ANSI Debug Monolithic USE_VTK_1";

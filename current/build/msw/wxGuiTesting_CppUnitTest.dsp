@@ -843,6 +843,10 @@ SOURCE=..\..\test\CppTest\CppUnitTextTestApp.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=..\..\test\CppTest\EventQueueTest.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=..\..\test\CppTest\ProvokedWarningRegistryTest.cpp
 # End Source File
 # End Group

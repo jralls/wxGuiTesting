@@ -3032,6 +3032,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\test\CppTest\EventQueueTest.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\test\CppTest\ProvokedWarningRegistryTest.cpp"
 				>
 			</File>

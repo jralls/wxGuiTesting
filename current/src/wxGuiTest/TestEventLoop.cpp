@@ -10,7 +10,7 @@
 #include <wxGuiTest/TestEventLoop.h>
 #include <wxGuiTest/WxGuiTestApp.h>
 #include <wx/event.h>
-#include "EventQueue.h"
+#include <wxGuiTest/EventQueue.h>
 
 using namespace wxTst;
 

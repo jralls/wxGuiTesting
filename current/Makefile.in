@@ -55,6 +55,7 @@ CPPUNITTEST_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/wxGuiTest \
 	$(CPPFLAGS) $(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_CppUnitTextTestApp.o \
+	objects/CppUnitTest_EventQueueTest.o \
 	objects/CppUnitTest_CRCppEmitterTest.o \
 	objects/CppUnitTest_ProvokedWarningRegistryTest.o
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
@@ -130,7 +131,8 @@ COND_USE_VTK_0_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/TempInteractive.h ($WGTI)/TestEventLoop.h \
 	include/wxGuiTest/TimedDialogEnder.h \
 	include/wxGuiTest/WarningAsserterInterface.h \
-	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h
+	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h \
+	include/wxGuiTest/EventQueue.h
 @COND_USE_VTK_0@LIB_HDRS = $(COND_USE_VTK_0_LIB_HDRS)
 COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/CRCapture.h include/wxGuiTest/CRCaptureControl.h \
@@ -149,7 +151,7 @@ COND_USE_VTK_1_LIB_HDRS = include/wxGuiTest/Common.h \
 	include/wxGuiTest/TimedDialogEnder.h \
 	include/wxGuiTest/WarningAsserterInterface.h \
 	include/wxGuiTest/WxGuiTestApp.h include/wxGuiTest/WxGuiTestHelper.h \
-	src/wxVTK/wxVTKRenderWindowInteractor.h \
+	include/wxGuiTest/EventQueue.h src/wxVTK/wxVTKRenderWindowInteractor.h \
 	include/wxGuiTest/VtkGuiTesting/CRVtkCapture.h \
 	include/wxGuiTest/VtkGuiTesting/CRVtkCaptureControl.h \
 	include/wxGuiTest/VtkGuiTesting/VtkWxGuiTestHelper.h \
@@ -658,6 +660,9 @@ objects/wxGuiTesting_WxGuiTestHelper.o: $(srcdir)/src/wxGuiTest/WxGuiTestHelper.
 
 objects/CppUnitTest_CppUnitTextTestApp.o: $(srcdir)/test/CppTest/CppUnitTextTestApp.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/CppUnitTextTestApp.cpp
+
+objects/CppUnitTest_EventQueueTest.o: $(srcdir)/test/CppTest/EventQueueTest.cpp
+	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/EventQueueTest.cpp
 
 objects/CppUnitTest_CRCppEmitterTest.o: $(srcdir)/test/CppTest/CRCppEmitterTest.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/CRCppEmitterTest.cpp

@@ -1,3 +1,7 @@
+2009-05-02  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* test/CppTest/EventQueueTest.h: New test class
+
 2009-05-01  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 	* include/wxGuiTest/EventQueue.h: Moved from src because
 	WxGuiTestApp.h needs to include it.

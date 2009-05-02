@@ -32,6 +32,7 @@ CPPUNITTEST_CXXFLAGS = /MD$(__DBG_13) /DWIN32 /I..\..\include \
 	$(CXXFLAGS)
 CPPUNITTEST_OBJECTS =  \
 	objects\CppUnitTest_CppUnitTextTestApp.obj \
+	objects\CppUnitTest_EventQueueTest.obj \
 	objects\CppUnitTest_CRCppEmitterTest.obj \
 	objects\CppUnitTest_ProvokedWarningRegistryTest.obj
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = /MD$(__DBG_13) /DWIN32 \
@@ -624,6 +625,9 @@ objects\wxGuiTesting_WxGuiTestHelper.obj: ..\..\src\wxGuiTest\WxGuiTestHelper.cp
 
 objects\CppUnitTest_CppUnitTextTestApp.obj: ..\..\test\CppTest\CppUnitTextTestApp.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(CPPUNITTEST_CXXFLAGS) ..\..\test\CppTest\CppUnitTextTestApp.cpp
+
+objects\CppUnitTest_EventQueueTest.obj: ..\..\test\CppTest\EventQueueTest.cpp
+	$(CXX) /c /nologo /TP /Fo$@ $(CPPUNITTEST_CXXFLAGS) ..\..\test\CppTest\EventQueueTest.cpp
 
 objects\CppUnitTest_CRCppEmitterTest.obj: ..\..\test\CppTest\CRCppEmitterTest.cpp
 	$(CXX) /c /nologo /TP /Fo$@ $(CPPUNITTEST_CXXFLAGS) ..\..\test\CppTest\CRCppEmitterTest.cpp
