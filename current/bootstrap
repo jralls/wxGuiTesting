@@ -3,7 +3,6 @@ rm -f acconfig.h
 bakefilize -f -c
 WXPREFIX=`wx-config --prefix`
 CPPUNIT_PREFIX=`cppunit-config --prefix`
-GTK_PREFIX=/usr/local/gtk/
-aclocal -I $WXPREFIX/share/aclocal -I $CPPUNIT_PREFIX/share/aclocal -I $GTK_PREFIX/share/aclocal  -I acinclude
+aclocal -I $WXPREFIX/share/aclocal -I $CPPUNIT_PREFIX/share/aclocal -I acinclude
 autoconf -f
 

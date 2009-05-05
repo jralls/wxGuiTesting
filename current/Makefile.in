@@ -34,15 +34,14 @@ CPPUNIT_CFLAGS = @CPPUNIT_CFLAGS@
 CPPUNIT_LIBS = @CPPUNIT_LIBS@
 VTK_CXXFLAGS = @VTK_CXXFLAGS@
 VTK_LDFLAGS = @VTK_LDFLAGS@
-PLATFORM_CFLAGS = @PLATFORM_CFLAGS@
 
 ### Variables: ###
 
 DESTDIR = 
 XRCDIR = $(srcdir)/test/TestData/xrc
 WXGUITESTING_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/wxGuiTest \
-	$(CPPUNIT_CFLAGS) $(PLATFORM_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) \
-	-Wno-deprecated $(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow -Wpointer-arith \
+	$(CPPUNIT_CFLAGS) -I$(srcdir)/src/wxVTK $(VTK_CXXFLAGS) -Wno-deprecated \
+	$(OPT) $(DBG) $(WX_CXXFLAGS) -Wall -W -Wshadow -Wpointer-arith \
 	-Wno-system-headers $(CPPFLAGS) $(CXXFLAGS)
 WXGUITESTING_OBJECTS =  \
 	$(__LIB_SOURCES_OBJECTS)
@@ -58,6 +57,14 @@ CPPUNITTEST_OBJECTS =  \
 	objects/CppUnitTest_EventQueueTest.o \
 	objects/CppUnitTest_CRCppEmitterTest.o \
 	objects/CppUnitTest_ProvokedWarningRegistryTest.o
+TESTEVENTLOOPTEST_CXXFLAGS = -I$(srcdir)/include -I$(srcdir)/src/wxGuiTest \
+	-DTESTDIR=\"$(srcdir)/test/TestData\" -DXRCDIR=\"$(XRCDIR)\" \
+	-DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" $(CPPUNIT_CFLAGS) $(OPT) $(DBG) \
+	$(WX_CXXFLAGS) -Wall -W -Wshadow -Wpointer-arith -Wno-system-headers \
+	$(CPPFLAGS) $(CXXFLAGS)
+TESTEVENTLOOPTEST_OBJECTS =  \
+	objects/TestEventLoopTest_CppUnitTextTestApp.o \
+	objects/TestEventLoopTest_TestEventLoopTest.o
 CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS = -I$(srcdir)/include \
 	-I$(srcdir)/src/wxGuiTest -DTESTDIR=\"$(srcdir)/test/TestData\" \
 	-DXRCDIR=\"$(XRCDIR)\" -DTESTSRCDIR=\"$(srcdir)/test/CppGuiTest\" \
@@ -238,6 +245,11 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 @COND_PLATFORM_MAC_1@	$(SETFILE) -t APPL bin/CppUnitTest$(EXEEXT)
 @COND_TOOLKIT_MAC@____CppUnitTest_app_Contents_PkgInfo___depname \
 @COND_TOOLKIT_MAC@	= ./CppUnitTest.app/Contents/PkgInfo
+@COND_PLATFORM_MAC_0@__TestEventLoopTest___mac_setfilecmd = @true
+@COND_PLATFORM_MAC_1@__TestEventLoopTest___mac_setfilecmd \
+@COND_PLATFORM_MAC_1@	= $(SETFILE) -t APPL bin/TestEventLoopTest$(EXEEXT)
+@COND_TOOLKIT_MAC@____TestEventLoopTest_app_Contents_PkgInfo___depname \
+@COND_TOOLKIT_MAC@	= ./TestEventLoopTest.app/Contents/PkgInfo
 @COND_PLATFORM_MAC_0@__CppGuiUnitTestEventSimulation___mac_setfilecmd \
 @COND_PLATFORM_MAC_0@	= @true
 @COND_PLATFORM_MAC_1@__CppGuiUnitTestEventSimulation___mac_setfilecmd \
@@ -272,7 +284,7 @@ COND_USE_VTK_1___LIB_SOURCES_OBJECTS =  \
 
 ### Targets: ###
 
-all: objects lib bin lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest) VTKUnitTest_bundle
+all: objects lib bin lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) bin/CppUnitTest$(EXEEXT) CppUnitTest_bundle bin/TestEventLoopTest$(EXEEXT) TestEventLoopTest_bundle bin/CppGuiUnitTestEventSimulation$(EXEEXT) CppGuiUnitTestEventSimulation_bundle bin/CppGuiUnitTestCaptureReplay$(EXEEXT) CppGuiUnitTestCaptureReplay_bundle bin/CppGuiUnitTestModalDialog$(EXEEXT) CppGuiUnitTestModalDialog_bundle bin/CppGuiUnitCapturePlusEmit$(EXEEXT) CppGuiUnitCapturePlusEmit_bundle $(__VTKUnitTest) VTKUnitTest_bundle
 
 install: install_wxGuiTesting install_wxGuiTesting_headers
 
@@ -286,6 +298,8 @@ clean:
 	rm -f lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 	rm -f bin/CppUnitTest$(EXEEXT)
 	rm -rf CppUnitTest.app
+	rm -f bin/TestEventLoopTest$(EXEEXT)
+	rm -rf TestEventLoopTest.app
 	rm -f bin/CppGuiUnitTestEventSimulation$(EXEEXT)
 	rm -rf CppGuiUnitTestEventSimulation.app
 	rm -f bin/CppGuiUnitTestCaptureReplay$(EXEEXT)
@@ -309,9 +323,9 @@ lib:
 bin: 
 	@mkdir -p bin
 
-test: bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest)
+test: bin/CppUnitTest$(EXEEXT) bin/TestEventLoopTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest)
 	@failed=0; all=0; xfail=0; xpass=0; skip=0; ws='[	 ]'; \
-	for tst in  bin/CppUnitTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest); do \
+	for tst in  bin/CppUnitTest$(EXEEXT) bin/TestEventLoopTest$(EXEEXT) bin/CppGuiUnitTestEventSimulation$(EXEEXT) bin/CppGuiUnitTestModalDialog$(EXEEXT) bin/CppGuiUnitCapturePlusEmit$(EXEEXT) $(__VTKUnitTest); do \
 	if $$tst; then \
 	all=`expr $$all + 1`; \
 	case "  " in \
@@ -420,6 +434,30 @@ bin/CppUnitTest$(EXEEXT): $(CPPUNITTEST_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(W
 @COND_TOOLKIT_MAC@	./CppUnitTest.app/Contents/MacOS/CppUnitTest
 
 CppUnitTest_bundle: $(____CppUnitTest_app_Contents_PkgInfo___depname)
+
+bin/TestEventLoopTest$(EXEEXT): $(TESTEVENTLOOPTEST_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
+	$(CXX) -o $@ $(TESTEVENTLOOPTEST_OBJECTS) -Llib  $(CPPUNIT_LIBS)  $(LDFLAGS)  -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS) $(LIBS)
+	
+	$(__TestEventLoopTest___mac_setfilecmd)
+
+@COND_TOOLKIT_MAC@./TestEventLoopTest.app/Contents/PkgInfo: bin/TestEventLoopTest$(EXEEXT)
+@COND_TOOLKIT_MAC@	mkdir -p ./TestEventLoopTest.app/Contents/MacOS
+@COND_TOOLKIT_MAC@	mkdir -p ./TestEventLoopTest.app/Contents/Resources
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	sed -e "s/IDENTIFIER/org.wxwidgets.TestEventLoopTest/" \
+@COND_TOOLKIT_MAC@	-e "s/EXECUTABLE/TestEventLoopTest/" \
+@COND_TOOLKIT_MAC@	-e "s/VERSION/0.7.1/" \
+@COND_TOOLKIT_MAC@	$(WXSRCPATH)/src/mac/carbon/Info.plist.in >./TestEventLoopTest.app/Contents/Info.plist
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	echo -n "APPL????" >./TestEventLoopTest.app/Contents/PkgInfo
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	
+@COND_TOOLKIT_MAC@	ln -f bin/TestEventLoopTest$(EXEEXT) \
+@COND_TOOLKIT_MAC@	./TestEventLoopTest.app/Contents/MacOS/TestEventLoopTest
+
+TestEventLoopTest_bundle: $(____TestEventLoopTest_app_Contents_PkgInfo___depname)
 
 bin/CppGuiUnitTestEventSimulation$(EXEEXT): $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT) lib/$(LIBPREFIX)wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)$(LIBEXT)
 	$(CXX) -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_OBJECTS) -Llib  $(CPPUNIT_LIBS)  $(LDFLAGS)  -lwxGuiTesting$(WX3RDPARTYLIBPOSTFIX) $(WX_LIBS) $(LIBS)
@@ -670,6 +708,12 @@ objects/CppUnitTest_CRCppEmitterTest.o: $(srcdir)/test/CppTest/CRCppEmitterTest.
 objects/CppUnitTest_ProvokedWarningRegistryTest.o: $(srcdir)/test/CppTest/ProvokedWarningRegistryTest.cpp
 	$(CXXC) -c -o $@ $(CPPUNITTEST_CXXFLAGS) $(srcdir)/test/CppTest/ProvokedWarningRegistryTest.cpp
 
+objects/TestEventLoopTest_CppUnitTextTestApp.o: $(srcdir)/test/CppGuiTest/CppUnitTextTestApp.cpp
+	$(CXXC) -c -o $@ $(TESTEVENTLOOPTEST_CXXFLAGS) $(srcdir)/test/CppGuiTest/CppUnitTextTestApp.cpp
+
+objects/TestEventLoopTest_TestEventLoopTest.o: $(srcdir)/test/CppGuiTest/TestEventLoopTest.cpp
+	$(CXXC) -c -o $@ $(TESTEVENTLOOPTEST_CXXFLAGS) $(srcdir)/test/CppGuiTest/TestEventLoopTest.cpp
+
 objects/CppGuiUnitTestEventSimulation_CppUnitTextTestApp.o: $(srcdir)/test/CppGuiTest/CppUnitTextTestApp.cpp
 	$(CXXC) -c -o $@ $(CPPGUIUNITTESTEVENTSIMULATION_CXXFLAGS) $(srcdir)/test/CppGuiTest/CppUnitTextTestApp.cpp
 
@@ -718,7 +762,7 @@ objects/VTKUnitTest_CRVtkCaptureTest.o: $(srcdir)/test/VtkTest/CRVtkCaptureTest.
 
 .PHONY: all install uninstall clean distclean install_wxGuiTesting \
 	uninstall_wxGuiTesting install_wxGuiTesting_headers \
-	uninstall_wxGuiTesting_headers CppUnitTest_bundle \
+	uninstall_wxGuiTesting_headers CppUnitTest_bundle TestEventLoopTest_bundle \
 	CppGuiUnitTestEventSimulation_bundle CppGuiUnitTestCaptureReplay_bundle \
 	CppGuiUnitTestModalDialog_bundle CppGuiUnitCapturePlusEmit_bundle \
 	VTKUnitTest_bundle

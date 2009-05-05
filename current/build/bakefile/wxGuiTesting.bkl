@@ -168,22 +168,6 @@
 
   <include file='files.bkl'/>
 
-  <!-- Platform Libraries -->
-
-  <if cond="FORMAT in ['autoconf','gnu']">
-    <option name="PLATFORM_CFLAGS" category="path"/>
-    <option name="PLATFORM_LIBS" category="path"/>
-    <template id="platform_flags">
-      <cflags>$(PLATFORM_CFLAGS)</cflags>
-      <cxxflags>$(PLATFORM_CFLAGS)</cxxflags>
-      <ldflags>$(PLATFORM_LIBS)</ldflags>
-    </template>
-  </if>
-  <if cond="FORMAT not in ['autoconf', 'gnu']">
-    <template id="platform_flags"/>
-  </if>
-  <!-- End of Platform Libraries -->
-
   <!-- Platform-specific source files 
   <if cond="FORMAT in ['msvc', 'msvc6prj', 'msevc4prj', 'msvs2003prj', 'msvs2005prj']">
     <set var='WGT_SOURCES' append='1'>WGT_MSW_SOURCES</set>
@@ -273,7 +257,7 @@
   </template>
 
   <lib id='wxGuiTesting' 
-       template='libInclude,CppUnit,platform_flags,vtk,optimize,wx-lib'>
+       template='libInclude,CppUnit,vtk,optimize,wx-lib'>
     <libname>wxGuiTesting$(WX3RDPARTYLIBPOSTFIX)</libname>
     <dirname>$(libdir)</dirname>
     <sources>$(LIB_SOURCES)</sources>
@@ -294,11 +278,15 @@
    <sources>$(CPPTEST_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitTestEventSimulation' template='testApp,autotest'>
+  <exe id='TestEventLoopTest' template='testApp,autotest'>
+   <sources>$(TESTEVENTLOOPTEST_SOURCES)</sources>
+  </exe>
+
+   <exe id='CppGuiUnitTestEventSimulation' template='testApp,autotest'>
    <sources>$(CPPGUITESTEVENTSIMULATION_SOURCES)</sources>
   </exe>
 
-  <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
+ <exe id='CppGuiUnitTestCaptureReplay' template='testApp'>
     <sources>
       $(CPPGUITESTCAPTUREREPLAY_SOURCES) 
     </sources>

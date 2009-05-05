@@ -1,3 +1,21 @@
+2009-05-05  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* build/bakefile/wxGuiTesting.bkl: Removed the platform_flags
+	template, which was present to support compiling in gtk.
+
+	* configure.ac: Removed the call to AM_PATH_GTK_2_0; native events
+	handling is abandoned, so it's not necessary.
+
+	* bootstrap: Removed the path to the GTK aclocal directory, same
+	reason as above.
+	
+2009-05-03  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* test/CppGuiTest/TestEventLoopTest: New Test Class
+
+	* include/wxGuiTest/WxGuiTestApp.h (discardCurrentQueue): 
+	(Dispatch): New member functions. 
+
 2009-05-02  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* test/CppTest/EventQueueTest.h: New test class

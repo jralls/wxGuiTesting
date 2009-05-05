@@ -135,6 +135,15 @@
     test/CppTest/ProvokedWarningRegistryTest.h
   </set>
 
+  <set var='TESTEVENTLOOPTEST_SOURCES'>
+    test/CppGuiTest/CppUnitTextTestApp.cpp
+    test/CppGuiTest/TestEventLoopTest.cpp
+  </set>
+
+  <set var='TESTEVENTLOOPTEST_HDRS'>
+    test/CppGuiTest/TestEventLoopTest.h
+  </set>
+
   <set var='CPPGUITESTEVENTSIMULATION_SOURCES'>
     test/CppGuiTest/CppUnitTextTestApp.cpp
     test/CppGuiTest/EventSimulationHelperTest.cpp
