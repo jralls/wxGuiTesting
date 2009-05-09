@@ -14,6 +14,7 @@
 #include <wxGuiTest/Common.h>
 #include <wx/app.h>
 #include <wx/event.h>
+#include <wx/evtloop.h>
 #include <wxGuiTest/EventQueue.h>
 
 
@@ -47,7 +48,7 @@ class CREventFilterInterface;
         influence if the application is shut down when the last of its top
         level windows is closed.
 */
-class WxGuiTestApp : public wxApp
+class WxGuiTestApp : public ::wxApp
 {
     DECLARE_EVENT_TABLE()
 
@@ -179,6 +180,25 @@ public:
  */
 	virtual void ExitMainLoop();
 
+/** \fn wxEventLoop* SetMainLoop (newLoop)
+ *  \brief Set m_mainLoop to newLoop, returning the old one for deletion 
+ *  or later reuse.
+ *  EventLoops are normally created on the heap, and are normally not
+ *  ref-counted. The function calling SetMainLoop owns the returned
+ *  pointer and should (after checking to make sure that it isn't
+ *  NULL) delete it. This function will WXCHECK to make sure that a
+ *  NULL pointer isn't passed in.
+ * \param newLoop a wxEventLoop* to become the new mainLoop
+ *  \return the old value of m_mainLoop
+ */
+    virtual wxEventLoop* SetMainLoop(wxEventLoop* newLoop);
+
+/** \fn const GetMainLoop ()
+ *  \brief Return an immutable pointer to the current m_mainLoop.
+ *  \return m_mainlLoop
+ */
+    virtual const wxEventLoop* const GetMainLoop() const;
+
 /** \fn bool Yield (onlyIfNeeded)
  *  \brief Override Yield so that it doesn't have us go out and get
  *  platform events
@@ -248,6 +268,19 @@ public:
  */
     virtual bool pending();
 
+/** \fn void discardCurrentQueue ()
+ *  \brief Remove the current event queue and any events it has queued
+ *  from the store.
+ */
+    virtual void discardCurrentQueue();
+
+/** \fn bool Dispatch ()
+ *  \brief Dispatches the next event pending on event handlers. Use in
+ *  conjunction with queueNextEvent to single-step the event loop.
+ *  \return 
+ */
+    virtual bool Dispatch() { return m_mainLoop->Dispatch(); }
+
 
 private:
     InitWxGuiTestSetUp* m_testRunnerProxy;
@@ -256,9 +289,9 @@ private:
     static wxApp* ms_instance;
 //This flag set to true when OnIdle is in control of the current event loop.
     bool m_idleCtrlFlag ;
-    wxEventLoop* m_eventLoop;
+    //   wxEventLoop* m_eventLoop; Already declared by wxAppBase
     EventQStore* m_eventStore;
-
+    wxEventLoop* m_eventLoop;
 };
 
 } // End namespace wxTst

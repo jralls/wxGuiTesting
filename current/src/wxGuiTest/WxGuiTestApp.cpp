@@ -30,10 +30,9 @@ WxGuiTestApp::WxGuiTestApp (wxApp *appUnderTest) :
     m_appUnderTest(appUnderTest),
     m_eventFilter(NULL),
     m_idleCtrlFlag(false),
-    m_eventLoop(new wxTestEventLoop),
     m_eventStore(new EventQStore)
 {
-
+    m_mainLoop = new wxTestEventLoop;
     wxASSERT_MSG(ms_instance == NULL, _T("WxGuiTestApp constructed twice"));
     ms_instance = this;
 }
@@ -48,9 +47,9 @@ WxGuiTestApp::~WxGuiTestApp ()
         delete m_eventFilter;
         m_eventFilter = NULL;
     }
-    if(m_eventLoop != NULL) {
-	delete m_eventLoop;
-	m_eventLoop = NULL;
+    if(m_mainLoop != NULL) {
+	delete m_mainLoop;
+	m_mainLoop = NULL;
     }
 }
 
@@ -64,7 +63,7 @@ WxGuiTestApp::MainLoop ()
 //wxApp::MainLoop runs the regular event loop, which we need during capture and interaction.
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Running platform loop"));
-	retval = wxApp::MainLoop();
+	retval = m_mainLoop->Run();
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Exiting platform loop"));
     }
@@ -74,8 +73,7 @@ WxGuiTestApp::MainLoop ()
 //program put there!
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Running test loop"));
-		retval = 0;
-		m_eventLoop -> Run();
+	retval = m_eventLoop -> Run();
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Exiting test loop"));
     }
@@ -85,7 +83,19 @@ WxGuiTestApp::MainLoop ()
 }
 
 void WxGuiTestApp::ExitMainLoop() {
-    m_eventLoop->Exit();
+    m_mainLoop->Exit();
+}
+
+wxEventLoop* WxGuiTestApp::SetMainLoop(wxEventLoop* newLoop) {
+    wxCHECK_MSG(newLoop != NULL, NULL, 
+		_T("WxGuiTestApp::SetMainLoop: Received NULL Pointer"));
+    wxEventLoop* oldLoop = m_mainLoop;
+    m_mainLoop = newLoop;
+    return oldLoop;
+}
+
+const wxEventLoop* const WxGuiTestApp::GetMainLoop() const {
+    return m_mainLoop;
 }
 
 bool WxGuiTestApp::Yield(bool WXUNUSED(onlyIfNeeded)) {
@@ -254,8 +264,8 @@ void
 WxGuiTestApp::nextEventQueue() {
     EventQueue* q = m_eventStore->pop_front();
     if (q == NULL) return;
-    q = NULL;
     delete q;
+    q = NULL;
 }
 
 bool 
@@ -270,8 +280,11 @@ WxGuiTestApp::postNextEvent() {
 	return false;
     }
     wxEvtHandler* handler = dynamic_cast<wxEvtHandler*>(e->GetEventObject());
-    if (handler)
-	handler->AddPendingEvent(*e);
+    if (!handler) {
+	delete e; 
+	return false;
+    }
+    handler->AddPendingEvent(*e);
     delete e;
     return true;
 }
@@ -280,4 +293,11 @@ bool
 WxGuiTestApp::pending() { 
     return (m_eventStore->get_front() && 
 	     !(m_eventStore->get_front()->isEmpty()));
+}
+
+void
+WxGuiTestApp::discardCurrentQueue() {
+    EventQueue* q = m_eventStore->pop_front();
+    if (q == NULL)
+	delete q;
 }

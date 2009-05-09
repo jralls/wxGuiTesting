@@ -19,7 +19,13 @@ wxTestEventLoop::Run() {
     if (m_exitCode) 
 	return doExitCode();
     WxGuiTestApp& app = wxGetApp();
-    while (!m_exitCode && app.postNextEvent() && Dispatch());
+//Clear any pending events
+    while(Dispatch()) continue;
+//Now retrieve events from the current queue and dispatch them, one at a time
+    while (!m_exitCode && app.postNextEvent()) 
+//A single queued event can cascade, so keep dispatching until done
+	while (Dispatch()) continue;
+//Get rid of the now-empty queue
     app.nextEventQueue();
     return doExitCode();
 }

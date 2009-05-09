@@ -1,4 +1,20 @@
+2009-05-09  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop): 
+	Run either the test loop (m_eventLoop) or the full loop
+	(m_mainLoop) depending on the state of
+	WxGuiTestHelper::GetInteractive().
+
+2009-05-07  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* include/wxGuiTest/WxGuiTestApp.h (WxGuiTestApp::SetMainLoop),
+	(WxGuiTestApp::GetMainLoop): New functions, to permit dependency
+	injection of the event loop.
+
 2009-05-05  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::postNextEvent):
+	now returns false if the handler is NULL.
 
 	* build/bakefile/wxGuiTesting.bkl: Removed the platform_flags
 	template, which was present to support compiling in gtk.
