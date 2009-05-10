@@ -13,6 +13,7 @@
 #include <wxGuiTest/WxGuiTestHelper.h>
 #include <wxGuiTest/CREventFilterInterface.h>
 #include <wxGuiTest/TestEventLoop.h>
+#include <wx/ptr_scpd.h>
 
 
 IMPLEMENT_APP_NO_MAIN(wxTst::WxGuiTestApp)
@@ -20,6 +21,9 @@ IMPLEMENT_APP_NO_MAIN(wxTst::WxGuiTestApp)
 BEGIN_EVENT_TABLE(wxTst::WxGuiTestApp, wxApp)
     EVT_IDLE(wxTst::WxGuiTestApp::OnIdle)
 END_EVENT_TABLE()
+
+// this defines wxEventLoopTiedPtr
+wxDEFINE_TIED_SCOPED_PTR_TYPE(wxEventLoop)
 
 using namespace wxTst;
 
@@ -32,7 +36,6 @@ WxGuiTestApp::WxGuiTestApp (wxApp *appUnderTest) :
     m_idleCtrlFlag(false),
     m_eventStore(new EventQStore)
 {
-    m_mainLoop = new wxTestEventLoop;
     wxASSERT_MSG(ms_instance == NULL, _T("WxGuiTestApp constructed twice"));
     ms_instance = this;
 }
@@ -61,6 +64,8 @@ WxGuiTestApp::MainLoop ()
 //m_mainLoop is a special loop which processes the events pushed by wxPostEvent and returns. We use this loop to maintain control during test case execution.
     if (WxGuiTestHelper::GetInteractive ()) {
 //wxApp::MainLoop runs the regular event loop, which we need during capture and interaction.
+	wxEventLoopTiedPtr mainLoop(&m_mainLoop, new wxEventLoop);
+
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Running platform loop"));
 	retval = m_mainLoop->Run();
@@ -73,7 +78,9 @@ WxGuiTestApp::MainLoop ()
 //program put there!
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Running test loop"));
-	retval = m_eventLoop -> Run();
+	wxEventLoopTiedPtr mainLoop(&m_mainLoop, new wxTestEventLoop);
+
+	retval = m_mainLoop->Run();	
 	::wxLogTrace (_T("wxGuiTestCallTrace"), 
 		      _T("WxGuiTestApp::MainLoop: Exiting test loop"));
     }
@@ -82,21 +89,6 @@ WxGuiTestApp::MainLoop ()
 
 }
 
-void WxGuiTestApp::ExitMainLoop() {
-    m_mainLoop->Exit();
-}
-
-wxEventLoop* WxGuiTestApp::SetMainLoop(wxEventLoop* newLoop) {
-    wxCHECK_MSG(newLoop != NULL, NULL, 
-		_T("WxGuiTestApp::SetMainLoop: Received NULL Pointer"));
-    wxEventLoop* oldLoop = m_mainLoop;
-    m_mainLoop = newLoop;
-    return oldLoop;
-}
-
-const wxEventLoop* const WxGuiTestApp::GetMainLoop() const {
-    return m_mainLoop;
-}
 
 bool WxGuiTestApp::Yield(bool WXUNUSED(onlyIfNeeded)) {
     return true;

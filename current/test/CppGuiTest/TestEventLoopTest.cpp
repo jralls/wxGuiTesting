@@ -115,8 +115,7 @@ void TestEventLoopTest::testDialog ()
     CPPUNIT_ASSERT_MESSAGE("testQueueEvent: App failed to post event", 
 			   wxPendingEvents != NULL && 
 			   !wxPendingEvents->IsEmpty());
-    while (app.Dispatch()) continue;
-    //   app.MainLoop();
+    app.MainLoop();
 
     CPPUNIT_ASSERT_MESSAGE ("testQueueEvent: Dialog was not ended correctly",
             dialog.GetReturnCode () == wxID_OK);

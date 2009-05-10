@@ -174,30 +174,6 @@ public:
  */	
 	virtual int MainLoop();
 
-/** 
- * \fn virtual int MainLoop()
- * \brief Override ExitMainLoop()
- */
-	virtual void ExitMainLoop();
-
-/** \fn wxEventLoop* SetMainLoop (newLoop)
- *  \brief Set m_mainLoop to newLoop, returning the old one for deletion 
- *  or later reuse.
- *  EventLoops are normally created on the heap, and are normally not
- *  ref-counted. The function calling SetMainLoop owns the returned
- *  pointer and should (after checking to make sure that it isn't
- *  NULL) delete it. This function will WXCHECK to make sure that a
- *  NULL pointer isn't passed in.
- * \param newLoop a wxEventLoop* to become the new mainLoop
- *  \return the old value of m_mainLoop
- */
-    virtual wxEventLoop* SetMainLoop(wxEventLoop* newLoop);
-
-/** \fn const GetMainLoop ()
- *  \brief Return an immutable pointer to the current m_mainLoop.
- *  \return m_mainlLoop
- */
-    virtual const wxEventLoop* const GetMainLoop() const;
 
 /** \fn bool Yield (onlyIfNeeded)
  *  \brief Override Yield so that it doesn't have us go out and get
@@ -214,7 +190,7 @@ public:
 /** \fn void MacDoOneEvent()
     \brief Hide wxCarbon's MacDoOneEvent so that we can control modal dialogs.
 */
-    void MacDoOneEvent() { m_eventLoop->Dispatch();}
+    void MacDoOneEvent() { m_mainLoop->Dispatch();}
 #endif
 
 /// \fn virtual EventQueue* newEventQueue()
@@ -291,7 +267,6 @@ private:
     bool m_idleCtrlFlag ;
     //   wxEventLoop* m_eventLoop; Already declared by wxAppBase
     EventQStore* m_eventStore;
-    wxEventLoop* m_eventLoop;
 };
 
 } // End namespace wxTst

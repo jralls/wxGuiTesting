@@ -1,3 +1,15 @@
+2009-05-10  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
+
+	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop):
+	Reconfigured to work the way wxAppBase::MainLoop does, except with
+	the option of using the TestEventLoop instead.
+
+	* include/wxGuiTest/WxGuiTestApp.h (WxGuiTestApp::m_eventLoop):
+	Removed, again. We only need m_mainLoop, now that I see how
+	wxAppBase::MainLoop() actually works. 
+	(WxGuiTestApp::ExitMainLoop, WxGuiTestApp::SetMainLoop),
+	(WxGuiTestApp::GetMainLoop): Removed, superfluous with above change.
+
 2009-05-09  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
 	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop): 
