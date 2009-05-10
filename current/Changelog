@@ -1,5 +1,8 @@
 2009-05-10  John Ralls  <john@manjusri.ceridwen.fremont.ca.us>
 
+	* include/wxGuiTest/WxGuiTestApp.h (WxGuiTestApp::MacDoOneEvent):
+	Hiding doesn't work, so deleted the function.
+
 	* src/wxGuiTest/WxGuiTestApp.cpp (WxGuiTestApp::MainLoop):
 	Reconfigured to work the way wxAppBase::MainLoop does, except with
 	the option of using the TestEventLoop instead.

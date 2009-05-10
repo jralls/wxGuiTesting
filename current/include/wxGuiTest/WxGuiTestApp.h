@@ -186,13 +186,6 @@ public:
  */
 	virtual bool Yield(bool onlyIfNeeded);
 
-#if defined(__WXMC_CARBON__) && !wxCHECK_VERSION(2, 9, 0)
-/** \fn void MacDoOneEvent()
-    \brief Hide wxCarbon's MacDoOneEvent so that we can control modal dialogs.
-*/
-    void MacDoOneEvent() { m_mainLoop->Dispatch();}
-#endif
-
 /// \fn virtual EventQueue* newEventQueue()
 /// \brief Create a new EventQueue in the event store
 ///
